@@ -36,7 +36,7 @@ function splitHeroTitle(title: string) {
     /^(.*?)(\s+Backflow (?:Installation|Repair|Testing) Services)$/i,
     /^(.*?)(\s+Frequently Asked Questions)$/i,
     /^(.*?)(\s+Cross Connection Control\s+&\s+Backflow Prevention Regulations)$/i,
-    /^(Contact)(\s+Us)$/i,
+    /^(Contact Us)()$/i,
     /^(Privacy)(\s+policy)$/i,
     /^(.*? Installation)(\s+Testing\s+&\s+Repair)$/i,
   ];
