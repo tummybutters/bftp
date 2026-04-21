@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import Image from "next/image";
 
 import { heroImages } from "@/lib/design";
 import { TrackedHeroCta } from "@/components/sections/tracked-hero-cta";
@@ -112,16 +112,22 @@ export function PageHero({
     titlePrimary.length > 34 || titleAccent.length > 40;
   const isVeryLongHeroTitle =
     titlePrimary.length > 42 || titleAccent.length > 52;
+  const showPhotoHero = heroVariant !== "navy" && Boolean(heroImageSrc);
 
   return (
-    <section
-      className={heroVariant === "navy" ? "bftp-hero bftp-hero--navy" : "bftp-hero"}
-      style={
-        heroImageSrc
-          ? ({ "--hero-image": `url(${heroImageSrc})` } as CSSProperties)
-          : undefined
-      }
-    >
+    <section className={heroVariant === "navy" ? "bftp-hero bftp-hero--navy" : "bftp-hero"}>
+      {showPhotoHero ? (
+        <div className="bftp-hero__media" aria-hidden="true">
+          <Image
+            src={heroImageSrc!}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="bftp-hero__media-image"
+          />
+        </div>
+      ) : null}
       <div className="bftp-shell">
         <div className="bftp-hero__inner">
           <div className="bftp-hero__content">

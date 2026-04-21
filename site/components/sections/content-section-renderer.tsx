@@ -1,6 +1,12 @@
 import Image from "next/image";
 
 import { ContactFormSection } from "@/components/sections/contact-form";
+import { ClientReviewCarousel } from "@/components/sections/client-review-carousel";
+import { CredentialCarousel } from "@/components/sections/credential-carousel";
+import { FeatureSplit } from "@/components/sections/feature-split";
+import { ServiceAccordion } from "@/components/sections/service-accordion";
+import { PricingSplit } from "@/components/sections/pricing-split";
+import { SplitChecklist } from "@/components/sections/split-checklist";
 import { CredentialGrid } from "@/components/sections/credential-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { DirectoryColumns } from "@/components/sections/directory-columns";
@@ -85,7 +91,21 @@ function getFamilyHeroVariant(family: PageFamily) {
     : "navy";
 }
 
+const localHeroOverrides: Record<string, string> = {
+  "/": "/assets/heroes/testing-home.avif",
+  "/about-us": "/assets/heroes/about-hero.avif",
+  "/backflow-testing": "/assets/photos/general-1.jpg",
+  "/backflow-repair-replacement-services": "/assets/heroes/repair-hero.jpg",
+  "/backflow-installation": "/assets/heroes/installation-hero.jpg",
+};
+
 function getHeroImage(page: PageEntry, payload: AnyPagePayload) {
+  const localOverride = localHeroOverrides[page.path];
+
+  if (localOverride) {
+    return localOverride;
+  }
+
   if (payload.heroImage) {
     return payload.heroImage;
   }
@@ -197,6 +217,19 @@ function isCredentialFeatureSection(
   section: Extract<ContentSection, { kind: "feature_cards" }>,
 ) {
   return section.sourceClass.toLowerCase().includes("certifiedby-city-water-departments");
+}
+
+function isServiceAccordionSection(
+  section: Extract<ContentSection, { kind: "feature_cards" }>,
+) {
+  return section.sourceClass.toLowerCase().includes("backflow-prevention-services");
+}
+
+function isBenefitsFeatureSection(
+  section: Extract<ContentSection, { kind: "feature_cards" }>,
+) {
+  const sc = section.sourceClass.toLowerCase();
+  return sc.includes("backflow-testing-benefits") || sc.includes("premium-service");
 }
 
 function buildBulletGroups(section: BulletColumnsSection, context: SectionContext) {
@@ -401,7 +434,7 @@ function resolveHeroPromoText({
       : "";
 
   const resolvedPromo = isPlaceholderPromo
-    ? ctaLikePrimaryLabel || (primaryAction.href.startsWith("tel:") ? "Call Now" : "")
+    ? ctaLikePrimaryLabel
     : normalizedPromo.replaceAll("_", " ");
 
   if (!resolvedPromo) {
@@ -474,6 +507,28 @@ function renderPricingSection(section: PricingTilesSection, context: SectionCont
     context.family === "commercial_vertical" ||
     context.family === "contact_page";
 
+  if (context.family === "homepage") {
+    return (
+      <SectionFrame
+        id={buildSectionAnchor(section, context.overallIndex)}
+        tone={getSectionTone(context.family, section, context.kindIndex)}
+        align="left"
+      >
+        <PricingSplit
+          heading={section.heading}
+          body={section.body}
+          items={section.tiles.map((tile) => ({
+            label: tile.title,
+            price: tile.price,
+            detail: tile.detail,
+          }))}
+          calloutLabel={firstLink?.label}
+          calloutHref={firstLink?.href}
+        />
+      </SectionFrame>
+    );
+  }
+
   return (
     <SectionFrame
       id={buildSectionAnchor(section, context.overallIndex)}
@@ -533,7 +588,32 @@ function renderLinkListSection(section: LinkListSection, context: SectionContext
   );
 }
 
+function isManagedMaintenanceSection(section: BulletColumnsSection) {
+  return (section as { sourceClass?: string }).sourceClass
+    ?.toLowerCase()
+    .includes("managed-backflow-maintenance") ?? false;
+}
+
 function renderBulletColumnsSection(section: BulletColumnsSection, context: SectionContext) {
+  if (
+    (context.family === "about_page" && isManagedMaintenanceSection(section)) ||
+    context.family === "core_service"
+  ) {
+    return (
+      <SectionFrame
+        id={buildSectionAnchor(section, context.overallIndex)}
+        tone={getSectionTone(context.family, section, context.kindIndex)}
+        align="left"
+      >
+        <SplitChecklist
+          heading={section.heading}
+          body={section.body}
+          groups={section.columns.map((items) => ({ items }))}
+        />
+      </SectionFrame>
+    );
+  }
+
   const groups = buildBulletGroups(section, context);
   const totalItems = section.columns.reduce((sum, column) => sum + column.length, 0);
   const renderAsServiceAreaGroups = totalItems >= 24;
@@ -658,24 +738,53 @@ export function ContentSectionRenderer({
           useGlobalSet={section.logos.length === 0 && kindIndex === 0}
         />
       );
-    case "feature_cards":
+    case "feature_cards": {
+      const useFeatureSplit =
+        (family === "core_service" &&
+          !isReviewFeatureSection(section) &&
+          !isCredentialFeatureSection(section)) ||
+        (family === "homepage" && isBenefitsFeatureSection(section));
+
       return (
         <SectionFrame
           id={buildSectionAnchor(section, overallIndex)}
           tone={getSectionTone(family, section, kindIndex)}
-          align={getSectionAlign(family, section)}
-          title={<h2 className="bftp-section-title">{section.heading}</h2>}
-          body={renderReading(section.body)}
+          align={useFeatureSplit ? "left" : getSectionAlign(family, section)}
+          title={useFeatureSplit ? undefined : <h2 className="bftp-section-title">{section.heading}</h2>}
+          body={useFeatureSplit ? undefined : renderReading(section.body)}
         >
           {isReviewFeatureSection(section) ? (
-            <ReviewGrid items={section.cards} />
+            family === "about_page" ? (
+              <ClientReviewCarousel items={section.cards} />
+            ) : (
+              <ReviewGrid items={section.cards} />
+            )
           ) : isCredentialFeatureSection(section) ? (
-            <CredentialGrid items={section.cards} />
+            family === "homepage" || family === "about_page" ? (
+              <CredentialCarousel items={section.cards} />
+            ) : (
+              <CredentialGrid items={section.cards} />
+            )
+          ) : family === "homepage" && isServiceAccordionSection(section) ? (
+            <ServiceAccordion items={section.cards} />
+          ) : family === "homepage" && isBenefitsFeatureSection(section) ? (
+            <FeatureSplit
+              heading={section.heading}
+              body={section.body}
+              items={section.cards}
+            />
+          ) : family === "core_service" ? (
+            <FeatureSplit
+              heading={section.heading}
+              body={section.body}
+              items={section.cards}
+            />
           ) : (
             <HighlightGrid items={section.cards} />
           )}
         </SectionFrame>
       );
+    }
     case "pricing_tiles":
       return renderPricingSection(section, context);
     case "cta_banner":

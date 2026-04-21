@@ -5,10 +5,18 @@ import {
   InTheFieldStrip,
   shouldRenderInTheFieldStrip,
 } from "@/components/sections/in-the-field-strip";
+import { ScrollVideo } from "@/components/sections/scroll-video";
 import { PageHero } from "@/components/sections/page-hero";
 import type { PageFamily } from "@/lib/content/types";
 import { getPrimaryHeading } from "@/lib/content/site-index";
 import type { PageTemplateProps } from "@/lib/site-schema";
+
+/** Insert the scroll-driven video after the credential carousel on the homepage */
+function isCredentialSection(section: { sourceClass?: string }) {
+  return (section.sourceClass ?? "")
+    .toLowerCase()
+    .includes("certifiedby-city-water-departments");
+}
 
 export function StructuredPageTemplate({
   page,
@@ -57,6 +65,9 @@ export function StructuredPageTemplate({
               kindIndex={kindIndex}
             />
             {shouldInjectFieldStrip ? <InTheFieldStrip path={page.path} /> : null}
+            {family === "homepage" && isCredentialSection(section) ? (
+              <ScrollVideo src="/assets/videos/backflow-blowout.mp4" />
+            ) : null}
           </TrackedSection>
         );
       })}

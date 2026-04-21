@@ -12,6 +12,7 @@ import {
   type SiteCatalog,
   type TemplateFamily,
 } from "@/lib/site-schema";
+import { siteConfig } from "@/lib/site-config";
 
 interface UrlInventoryRow {
   url: string;
@@ -31,7 +32,6 @@ interface HeadingRow {
   h3s?: string;
 }
 
-const SITE_ORIGIN = "https://www.backflowtestpros.com";
 const FORENSICS_ROOT = path.resolve(process.cwd(), "data");
 const HTML_ROOT = path.join(FORENSICS_ROOT, "raw", "html");
 
@@ -198,7 +198,7 @@ export const getSiteCatalog = cache((): SiteCatalog => {
         pageClass: row.page_class,
         templateFamily: row.template_family,
         title: decodeHtmlEntities(row.title),
-        canonical: row.canonical || `${SITE_ORIGIN}${normalizedPath}`,
+        canonical: row.canonical || `${siteConfig.url}${normalizedPath}`,
         description:
           htmlMeta.description ||
           splitHeadingField(headingRow?.h3s)[0] ||
@@ -337,7 +337,7 @@ export function buildPageMetadata(
       title: resolvedTitle,
       description: resolvedDescription,
       url: resolvedCanonical,
-      siteName: "Backflow Test Pros",
+      siteName: siteConfig.name,
       images: resolvedImage ? [{ url: resolvedImage }] : undefined,
     },
     twitter: {

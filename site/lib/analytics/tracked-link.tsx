@@ -11,6 +11,7 @@ interface TrackedLinkProps {
   children: React.ReactNode;
   external?: boolean;
   target?: string;
+  onClick?: () => void;
 }
 
 export function TrackedLink({
@@ -21,11 +22,13 @@ export function TrackedLink({
   children,
   external,
   target,
+  onClick,
 }: TrackedLinkProps) {
   const posthog = usePostHog();
 
   const handleClick = () => {
     posthog?.capture(event, { href, ...properties });
+    onClick?.();
   };
 
   if (external || href.startsWith("http") || href.startsWith("tel:")) {
