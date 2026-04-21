@@ -33,10 +33,15 @@ export function LogoBelt({
       <div className="bftp-shell">
         <div className="bftp-logo-belt__viewport">
           <div className="bftp-logo-belt__track">
-              <div className="bftp-logo-belt__group">
+            {[0, 1].map((groupIndex) => (
+              <div
+                key={`group-${groupIndex}`}
+                className="bftp-logo-belt__group"
+                aria-hidden={groupIndex === 1}
+              >
                 {visibleLogos.map((logo, index) => (
                   <div
-                    key={`${logo.src}-${index}`}
+                    key={`${groupIndex}-${logo.src}-${index}`}
                     className="bftp-logo-belt__item"
                     style={{
                       ["--bftp-logo-scale" as string]: String(
@@ -65,6 +70,7 @@ export function LogoBelt({
                   </div>
                 ))}
               </div>
+            ))}
           </div>
         </div>
       </div>

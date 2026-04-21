@@ -712,21 +712,38 @@
 
 .bftp-logo-belt__viewport {
   overflow: clip;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    rgba(0, 0, 0, 0.95) 6%,
+    rgba(0, 0, 0, 0.95) 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    rgba(0, 0, 0, 0.95) 6%,
+    rgba(0, 0, 0, 0.95) 94%,
+    transparent 100%
+  );
 }
 
 .bftp-logo-belt__track {
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: max-content;
   min-height: 112px;
+  animation: bftp-logo-belt-scroll 36s linear infinite;
+  will-change: transform;
 }
 
 .bftp-logo-belt__group {
+  --bftp-logo-gap: clamp(3.5rem, 5vw, 6.5rem);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: clamp(2rem, 3.5vw, 4rem);
-  width: 100%;
+  gap: var(--bftp-logo-gap);
+  padding-inline-end: var(--bftp-logo-gap);
+  flex-shrink: 0;
   min-height: 112px;
   padding-block: 0.95rem;
 }
@@ -734,7 +751,7 @@
 .bftp-logo-belt__item {
   display: grid;
   place-items: center;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   width: auto;
   min-width: 0;
   height: 76px;
@@ -750,7 +767,7 @@
 
 .bftp-logo-belt__item img {
   width: auto;
-  height: calc(46px * var(--bftp-logo-scale, 1));
+  height: calc(58px * var(--bftp-logo-scale, 1));
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -841,6 +858,16 @@
 
 .bftp-field-strip__title .is-gold {
   color: var(--bftp-color-gold);
+}
+
+@keyframes bftp-logo-belt-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .bftp-band {
@@ -3063,6 +3090,12 @@
 @media (min-width: 992px) {
   .bftp-hero__title-line {
     white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bftp-logo-belt__track {
+    animation: none;
   }
 }
 
