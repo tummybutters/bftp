@@ -722,12 +722,11 @@
 }
 
 .bftp-logo-belt__group {
-  --bftp-logo-gap: clamp(3.5rem, 5vw, 6.5rem);
   display: flex;
   align-items: center;
-  gap: var(--bftp-logo-gap);
-  padding-inline-end: var(--bftp-logo-gap);
-  flex-shrink: 0;
+  justify-content: center;
+  gap: clamp(2rem, 3.5vw, 4rem);
+  width: 100%;
   min-height: 112px;
   padding-block: 0.95rem;
 }
@@ -735,7 +734,7 @@
 .bftp-logo-belt__item {
   display: grid;
   place-items: center;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   width: auto;
   min-width: 0;
   height: 76px;
@@ -751,7 +750,7 @@
 
 .bftp-logo-belt__item img {
   width: auto;
-  height: calc(58px * var(--bftp-logo-scale, 1));
+  height: calc(46px * var(--bftp-logo-scale, 1));
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -842,16 +841,6 @@
 
 .bftp-field-strip__title .is-gold {
   color: var(--bftp-color-gold);
-}
-
-@keyframes bftp-logo-belt-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 .bftp-band {
@@ -3077,8 +3066,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .bftp-logo-belt__track {
-    animation: none;
-  }
-}
