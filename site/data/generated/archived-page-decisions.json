@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "annual-backflow-testing",
+    "url": "https://www.backflowtestpros.com/annual-backflow-testing",
+    "title": "Annual Backflow Testing",
+    "roleGuess": "replaced_live_page",
+    "latestWaybackUrl": "https://web.archive.org/web/20250514052815/https://www.backflowtestpros.com/annual-backflow-testing",
+    "likelyLiveReplacement": "https://www.backflowtestpros.com/backflow-testing",
+    "roundOneDecision": "redirect",
+    "redirectTarget": "/backflow-testing",
+    "reason": "Wayback HTML is effectively the older testing service page and already has a clear live replacement."
+  },
+  {
+    "slug": "contact-us",
+    "url": "https://www.backflowtestpros.com/contact-us",
+    "title": "Backflow Test Pros - Contact Us",
+    "roleGuess": "replaced_live_page",
+    "latestWaybackUrl": "https://web.archive.org/web/20250322121651/https://www.backflowtestpros.com/contact-us",
+    "likelyLiveReplacement": "https://www.backflowtestpros.com/contact-backflowtestpros",
+    "roundOneDecision": "redirect",
+    "redirectTarget": "/contact-backflowtestpros",
+    "reason": "Historical contact page has a direct live replacement with the same job-to-be-done."
+  },
+  {
+    "slug": "flowexpo",
+    "url": "https://www.backflowtestpros.com/flowexpo",
+    "title": "Flow Expo Trade Show Registration Form",
+    "roleGuess": "campaign_event_landing",
+    "latestWaybackUrl": "https://web.archive.org/web/20250915092645/https://www.backflowtestpros.com/flowexpo",
+    "likelyLiveReplacement": "",
+    "roundOneDecision": "defer_campaign_lander",
+    "redirectTarget": "",
+    "reason": "Trade-show registration page looks campaign-specific; keep out of round-one rebuild unless backlink or paid-media continuity requires it."
+  },
+  {
+    "slug": "landscape-expo",
+    "url": "https://www.backflowtestpros.com/landscape-expo",
+    "title": "Landscape Expo - Backflow Test Pros",
+    "roleGuess": "campaign_event_landing",
+    "latestWaybackUrl": "https://web.archive.org/web/20260125060541/https://www.backflowtestpros.com/landscape-expo",
+    "likelyLiveReplacement": "",
+    "roundOneDecision": "defer_campaign_lander",
+    "redirectTarget": "",
+    "reason": "Partner offer page appears to be a time-bound campaign asset rather than a core evergreen page."
+  }
+]

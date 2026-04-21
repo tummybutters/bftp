@@ -1,0 +1,19 @@
+@import "./patterns.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+}
+
+::selection {
+  background: rgba(255, 183, 0, 0.28);
+  color: #262e4a;
+}
+
+:focus-visible {
+  outline: 2px solid #ffb700;
+  outline-offset: 3px;
+}

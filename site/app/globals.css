@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@import "../styles/globals.css";
+
+:root {
+  --color-background: var(--bftp-color-surface);
+  --color-foreground: var(--bftp-color-text-strong);
+  --color-surface: var(--bftp-color-surface);
+  --color-surface-alt: var(--bftp-color-surface-band);
+  --color-muted: var(--bftp-color-text);
+  --color-border: var(--bftp-color-border);
+  --color-navy: var(--bftp-color-navy);
+  --color-navy-strong: var(--bftp-color-navy);
+  --color-blue: var(--bftp-color-navy);
+  --color-accent: var(--bftp-color-gold);
+  --shadow-soft: var(--bftp-shadow-card);
+}
+
+@theme inline {
+  --font-sans: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-display), sans-serif;
+}
+
+a {
+  transition:
+    transform 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+::selection {
+  background: rgba(255, 183, 0, 0.24);
+}
+
+.page-shell {
+  margin-inline: auto;
+  width: min(var(--bftp-page-width), calc(100vw - (2 * var(--bftp-gutter))));
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0.95rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 183, 0, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--bftp-color-gold);
+}
+
+.cta-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: var(--bftp-radius-soft);
+  padding: 0.8rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cta-button {
+  background: var(--color-accent);
+  color: var(--color-navy-strong);
+  box-shadow: var(--bftp-shadow-button);
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  background: var(--bftp-color-gold-hover);
+}
+
+.secondary-button {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: white;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--bftp-color-gold);
+}
+
+@media (max-width: 991px) {
+  .page-shell {
+    width: min(var(--bftp-page-width), calc(100vw - (2 * var(--bftp-gutter-tablet))));
+  }
+}
+
+@media (max-width: 767px) {
+  .page-shell {
+    width: min(var(--bftp-page-width), calc(100vw - (2 * var(--bftp-gutter-mobile))));
+  }
+
+  .cta-button,
+  .secondary-button {
+    width: 100%;
+  }
+}

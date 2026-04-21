@@ -1,0 +1,367 @@
+:root,
+[data-theme="bftp"] {
+  --bftp-font-body: "PT Sans", "Lato", "Helvetica Neue", Arial, sans-serif;
+  --bftp-font-heading: "PT Sans", "Lato", "Helvetica Neue", Arial, sans-serif;
+  --bftp-font-accent: "Lato", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --bftp-color-navy: #262e4a;
+  --bftp-color-navy-deep: #1f2743;
+  --bftp-color-gold: #ffb700;
+  --bftp-color-gold-hover: #ffbe19;
+  --bftp-color-text: #6a6a6a;
+  --bftp-color-text-strong: #262e4a;
+  --bftp-color-text-soft: #7d8192;
+  --bftp-color-surface: #ffffff;
+  --bftp-color-surface-soft: #f6f6f6;
+  --bftp-color-surface-band: #f5f5fb;
+  --bftp-color-surface-paper: #faf8f1;
+  --bftp-color-surface-paper-deep: #f3eee2;
+  --bftp-color-border: rgba(38, 46, 74, 0.12);
+  --bftp-color-border-strong: rgba(38, 46, 74, 0.2);
+  --bftp-color-footer-border: rgba(246, 246, 246, 0.05);
+  --bftp-color-overlay: rgba(38, 46, 74, 0.72);
+  --bftp-color-shadow: rgba(26, 32, 54, 0.14);
+  --bftp-color-paper-line: rgba(38, 46, 74, 0.03);
+  --bftp-color-paper-line-soft: rgba(38, 46, 74, 0.02);
+  --bftp-color-navy-line: rgba(255, 255, 255, 0.04);
+  --bftp-color-navy-line-soft: rgba(255, 255, 255, 0.026);
+  --bftp-color-gold-glow: rgba(255, 183, 0, 0.14);
+  --bftp-color-gold-glow-soft: rgba(255, 183, 0, 0.08);
+
+  --bftp-page-width: 1460px;
+  --bftp-content-width: 1290px;
+  --bftp-reading-width: 820px;
+  --bftp-service-copy-width: 620px;
+  --bftp-list-width: 980px;
+  --bftp-gutter: 30px;
+  --bftp-gutter-tablet: 20px;
+  --bftp-gutter-mobile: 16px;
+
+  --bftp-step--1: 0.95rem;
+  --bftp-step-0: 1rem;
+  --bftp-step-1: 1.125rem;
+  --bftp-step-2: 1.25rem;
+  --bftp-step-3: 1.5rem;
+  --bftp-step-4: 1.75rem;
+  --bftp-step-5: clamp(2rem, 3vw, 2.875rem);
+  --bftp-step-6: clamp(2.25rem, 4vw, 3.75rem);
+
+  --bftp-section-xl: clamp(52px, 6vw, 80px);
+  --bftp-section-lg: clamp(40px, 5vw, 60px);
+  --bftp-section-md: clamp(28px, 3.5vw, 40px);
+  --bftp-section-sm: clamp(18px, 2vw, 24px);
+  --bftp-stack-xl: clamp(32px, 4vw, 50px);
+  --bftp-stack-lg: clamp(20px, 3vw, 30px);
+  --bftp-stack-md: clamp(16px, 2vw, 20px);
+  --bftp-stack-sm: clamp(10px, 1.5vw, 12px);
+
+  --bftp-radius-soft: 10px;
+  --bftp-radius-card: 18px;
+  --bftp-radius-pill: 999px;
+  --bftp-shadow-card: 0 18px 48px rgba(26, 32, 54, 0.08);
+  --bftp-shadow-band: 0 10px 30px rgba(31, 39, 67, 0.08);
+  --bftp-shadow-button: 0 10px 24px rgba(255, 183, 0, 0.2);
+
+  --bftp-transition-fast: 180ms ease;
+  --bftp-transition-base: 240ms ease;
+  --bftp-transition-slow: 360ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bftp-color-surface);
+  color: var(--bftp-color-text);
+  font-family: var(--bftp-font-body);
+  font-size: clamp(16px, 1rem + 0.15vw, 18px);
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 10px;
+  color: var(--bftp-color-text-strong);
+  font-family: var(--bftp-font-heading);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--bftp-step-6);
+  line-height: 1.16;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.6vw, 3.375rem);
+  line-height: 1.18;
+}
+
+h3 {
+  font-size: clamp(1.6rem, 2.8vw, 2.875rem);
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: clamp(1.35rem, 2.2vw, 2.25rem);
+  line-height: 1.2;
+}
+
+h5 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.2;
+}
+
+h6 {
+  font-size: clamp(1.15rem, 1.8vw, 1.375rem);
+  line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 10px;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+ul,
+ol {
+  padding-left: 1.2rem;
+}
+
+li + li {
+  margin-top: 0.35rem;
+}
+
+a {
+  color: var(--bftp-color-navy);
+  text-decoration: none;
+  transition:
+    color var(--bftp-transition-base),
+    opacity var(--bftp-transition-base),
+    background-color var(--bftp-transition-base),
+    border-color var(--bftp-transition-base);
+}
+
+a:hover {
+  color: var(--bftp-color-gold);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.bftp-shell {
+  width: min(100%, var(--bftp-page-width));
+  margin-inline: auto;
+  padding-inline: var(--bftp-gutter);
+}
+
+.bftp-content {
+  width: min(100%, var(--bftp-content-width));
+  margin-inline: auto;
+}
+
+.bftp-reading {
+  width: min(100%, var(--bftp-reading-width));
+  margin-inline: auto;
+}
+
+.bftp-section-title {
+  text-align: center;
+}
+
+.bftp-section-title.is-gold {
+  color: var(--bftp-color-gold);
+}
+
+.bftp-section-copy {
+  width: min(100%, var(--bftp-reading-width));
+  margin-inline: auto;
+  color: var(--bftp-color-text);
+  font-size: clamp(1rem, 1.6vw, 1.375rem);
+  text-align: center;
+}
+
+.bftp-section-copy.is-on-dark {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.bftp-kicker {
+  color: var(--bftp-color-gold);
+  font-family: var(--bftp-font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bftp-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 56px;
+  padding: 0.9rem 1.65rem;
+  border: 1px solid rgba(255, 183, 0, 0.28);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, #ffc72b 0%, #ffb700 52%, #f0a800 100%);
+  box-shadow:
+    0 18px 34px rgba(255, 183, 0, 0.24),
+    inset 0 1px 0 rgba(255, 246, 214, 0.72);
+  color: var(--bftp-color-navy-deep);
+  font-family: var(--bftp-font-heading);
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: none;
+  transition:
+    transform var(--bftp-transition-base),
+    box-shadow var(--bftp-transition-base),
+    background-color var(--bftp-transition-base),
+    color var(--bftp-transition-base),
+    border-color var(--bftp-transition-base);
+}
+
+.bftp-cta-button:hover {
+  background:
+    linear-gradient(180deg, #ffd45e 0%, #ffbf1c 52%, #f4ae00 100%);
+  color: var(--bftp-color-navy-deep);
+  border-color: rgba(255, 183, 0, 0.46);
+  box-shadow:
+    0 22px 40px rgba(255, 183, 0, 0.3),
+    inset 0 1px 0 rgba(255, 246, 214, 0.85);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 991px) {
+  .bftp-shell {
+    padding-inline: var(--bftp-gutter-tablet);
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    line-height: 1.55;
+  }
+
+  h1 {
+    line-height: 1.08;
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.45rem, 6.4vw, 2rem);
+  }
+
+  h4 {
+    font-size: clamp(1.2rem, 5vw, 1.55rem);
+  }
+
+  .bftp-shell {
+    padding-inline: var(--bftp-gutter-mobile);
+  }
+}
+
+.bftp-cta-button.is-inverse {
+  background: var(--bftp-color-navy);
+  box-shadow: none;
+  color: var(--bftp-color-surface);
+}
+
+.bftp-cta-button.is-inverse:hover {
+  background: var(--bftp-color-navy-deep);
+  color: var(--bftp-color-gold);
+}
+
+@media (max-width: 991px) {
+  :root,
+  [data-theme="bftp"] {
+    --bftp-section-xl: 60px;
+    --bftp-section-lg: 48px;
+    --bftp-section-md: 32px;
+    --bftp-stack-xl: 36px;
+    --bftp-stack-lg: 24px;
+  }
+
+  .bftp-shell {
+    padding-inline: var(--bftp-gutter-tablet);
+  }
+
+  body {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root,
+  [data-theme="bftp"] {
+    --bftp-section-xl: 44px;
+    --bftp-section-lg: 36px;
+    --bftp-section-md: 28px;
+    --bftp-section-sm: 20px;
+    --bftp-stack-xl: 28px;
+    --bftp-stack-lg: 18px;
+    --bftp-stack-md: 14px;
+  }
+
+  .bftp-shell {
+    padding-inline: var(--bftp-gutter-mobile);
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .bftp-section-copy {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .bftp-cta-button {
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+}

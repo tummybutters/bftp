@@ -1,0 +1,298 @@
+[
+  {
+    "slug": "orange-county__rancho-santa-margarita-backflow-testing-installation-repair",
+    "path": "/orange-county/rancho-santa-margarita-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "high",
+    "code": "locality_drift_neighborhoods",
+    "detail": "Neighborhood/service-area copy drifts into Carlsbad neighborhoods instead of Rancho Santa Margarita."
+  },
+  {
+    "slug": "backflow-installation",
+    "path": "/backflow-installation",
+    "family": "core_service",
+    "severity": "low",
+    "code": "visible_typo_installationn",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "backflow-installation-faqs",
+    "path": "/backflow-installation-faqs",
+    "family": "core_service",
+    "severity": "low",
+    "code": "promo_copy_typos",
+    "detail": "Promo copy preserves the visible typo 'installationn technicians'."
+  },
+  {
+    "slug": "backflow-installation-faqs",
+    "path": "/backflow-installation-faqs",
+    "family": "core_service",
+    "severity": "low",
+    "code": "visible_typo_differnt",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "backflow-installation-faqs",
+    "path": "/backflow-installation-faqs",
+    "family": "core_service",
+    "severity": "low",
+    "code": "visible_typo_installationn",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "backflow-testing-faqs",
+    "path": "/backflow-testing-faqs",
+    "family": "core_service",
+    "severity": "low",
+    "code": "faq_copy_typos",
+    "detail": "FAQ copy preserves visible spelling issues such as 'differnt'."
+  },
+  {
+    "slug": "backflow-testing-faqs",
+    "path": "/backflow-testing-faqs",
+    "family": "core_service",
+    "severity": "low",
+    "code": "visible_typo_differnt",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "la-county__alhambra-backflow-testing-repair",
+    "path": "/la-county/alhambra-backflow-testing-repair",
+    "family": "county_city_landing",
+    "severity": "low",
+    "code": "heading_typo",
+    "detail": "One H2 preserves the live typo 'Intallation'."
+  },
+  {
+    "slug": "la-county__alhambra-backflow-testing-repair",
+    "path": "/la-county/alhambra-backflow-testing-repair",
+    "family": "county_city_landing",
+    "severity": "low",
+    "code": "visible_typo_intallation",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "los-angeles-county-water-district-backflow-regulations",
+    "path": "/los-angeles-county-water-district-backflow-regulations",
+    "family": "regulation_page",
+    "severity": "low",
+    "code": "visible_typo_regualatory",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "orange-county-water-district-backflow-regulations",
+    "path": "/orange-county-water-district-backflow-regulations",
+    "family": "regulation_page",
+    "severity": "low",
+    "code": "visible_typo_regualatory",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "swimming-pool-backflow-installation-testing-repair",
+    "path": "/swimming-pool-backflow-installation-testing-repair",
+    "family": "core_service",
+    "severity": "low",
+    "code": "visible_typo_installationn",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "ventura-county-backflow-testing-installation-repair-service-areas",
+    "path": "/ventura-county-backflow-testing-installation-repair-service-areas",
+    "family": "service_area_hub",
+    "severity": "low",
+    "code": "visible_typo_intallation",
+    "detail": "Visible typo preserved from the live source copy."
+  },
+  {
+    "slug": "la-county__hollywood-backflow-testing-repair",
+    "path": "/la-county/hollywood-backflow-testing-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "locality_drift_regulations",
+    "detail": "Regulation content references 'Los Angeles' 6 times on the Hollywood page."
+  },
+  {
+    "slug": "orange-county__mission-viejo-backflow-testing-repair",
+    "path": "/orange-county/mission-viejo-backflow-testing-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "locality_drift_regulations",
+    "detail": "Regulations copy injects Tustin-specific requirements mid-section."
+  },
+  {
+    "slug": "orange-county__mission-viejo-backflow-testing-repair",
+    "path": "/orange-county/mission-viejo-backflow-testing-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "locality_drift_regulations",
+    "detail": "Regulation content references 'Tustin' 10 times on the Mission Viejo page."
+  },
+  {
+    "slug": "orange-county__rancho-santa-margarita-backflow-testing-installation-repair",
+    "path": "/orange-county/rancho-santa-margarita-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "locality_drift_service_area",
+    "detail": "Service-area copy references 'Carlsbad' 3 times on the Rancho Santa Margarita page."
+  },
+  {
+    "slug": "san-diego__alpine-backflow-testing-installation-repair",
+    "path": "/san-diego/alpine-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__carlsbad-backflow-testing-installation-repair",
+    "path": "/san-diego/carlsbad-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__chula-vista-backflow-testing-installation-repair",
+    "path": "/san-diego/chula-vista-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__coronado-backflow-testing-installation-repair",
+    "path": "/san-diego/coronado-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__del-mar-backflow-testing-installation-repair",
+    "path": "/san-diego/del-mar-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__el-cajon-backflow-testing-installation-repair",
+    "path": "/san-diego/el-cajon-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__encinitas-backflow-testing-installation-repair",
+    "path": "/san-diego/encinitas-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__escondido-backflow-testing-installation-repair",
+    "path": "/san-diego/escondido-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__imperial-beach-backflow-testing-installation-repair",
+    "path": "/san-diego/imperial-beach-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__la-mesa-backflow-testing-installation-repair",
+    "path": "/san-diego/la-mesa-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__lemon-grove-backflow-testing-installation-repair",
+    "path": "/san-diego/lemon-grove-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__national-city-backflow-testing-installation-repair",
+    "path": "/san-diego/national-city-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__oceanside-backflow-testing-installation-repair",
+    "path": "/san-diego/oceanside-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__poway-backflow-testing-installation-repair",
+    "path": "/san-diego/poway-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__rancho-santa-fe-backflow-testing-installation-repair",
+    "path": "/san-diego/rancho-santa-fe-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__san-diego-backflow-testing-installation-repair",
+    "path": "/san-diego/san-diego-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__san-marcos-backflow-testing-installation-repair",
+    "path": "/san-diego/san-marcos-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__santee-backflow-testing-installation-repair",
+    "path": "/san-diego/santee-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__solana-beach-backflow-testing-installation-repair",
+    "path": "/san-diego/solana-beach-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  },
+  {
+    "slug": "san-diego__vista-backflow-testing-installation-repair",
+    "path": "/san-diego/vista-backflow-testing-installation-repair",
+    "family": "county_city_landing",
+    "severity": "medium",
+    "code": "source_family_mismatch",
+    "detail": "Source CSV marks this page as 'core_service', but the slug and section pattern fit 'county_city_landing'."
+  }
+]
