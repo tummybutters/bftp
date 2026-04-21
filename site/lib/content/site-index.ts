@@ -32,12 +32,7 @@ interface HeadingRow {
 }
 
 const SITE_ORIGIN = "https://www.backflowtestpros.com";
-const FORENSICS_ROOT = path.resolve(
-  process.cwd(),
-  "..",
-  "output",
-  "backflowtestpros_forensics",
-);
+const FORENSICS_ROOT = path.resolve(process.cwd(), "data");
 const HTML_ROOT = path.join(FORENSICS_ROOT, "raw", "html");
 
 const countyLabels: Record<string, string> = {
