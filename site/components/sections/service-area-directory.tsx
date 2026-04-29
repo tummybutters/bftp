@@ -53,8 +53,8 @@ function getDirectoryMeta(heading: string, count: number) {
   };
 }
 
-function getSummaryCopy(page: PageEntry, heading: string, count: number) {
-  const meta = getDirectoryMeta(heading, count);
+function getSummaryCopy(page: PageEntry, heading: string) {
+  const meta = getDirectoryMeta(heading, 0);
   const countyName =
     page.countyLabel ??
     meta.summarySubject
@@ -63,10 +63,14 @@ function getSummaryCopy(page: PageEntry, heading: string, count: number) {
       .trim();
 
   if (meta.eyebrow === "Resource Directory") {
-    return `Municipal requirement references collected for ${countyName} with ${count} preserved directory entries.`;
+    return `Municipal requirement references and water authority links collected for ${countyName}.`;
   }
 
-  return `Certified backflow installation coverage across ${countyName} with ${count} preserved service-area references.`;
+  if (meta.eyebrow === "Service Directory") {
+    return `Browse city pages across ${countyName} for testing, installation, repair, and compliance support.`;
+  }
+
+  return `Browse local directory entries across ${countyName}.`;
 }
 
 function splitIntoColumns(items: LinkItem[], columnCount: number) {
@@ -80,15 +84,22 @@ export function ServiceAreaDirectory({
   page,
   heading,
   items,
+  hideLogos = false,
+  defaultExpanded = false,
+  hideToggle = false,
 }: {
   page: PageEntry;
   heading: string;
   items: LinkItem[];
+  hideLogos?: boolean;
+  defaultExpanded?: boolean;
+  hideToggle?: boolean;
 }) {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(defaultExpanded);
   const authorityLogo = getAuthorityLogo(page, heading);
   const count = items.length;
   const directoryMeta = getDirectoryMeta(heading, count);
+  const isExpanded = hideToggle || expanded;
   const columns = useMemo(() => {
     if (items.length >= 54) {
       return splitIntoColumns(items, 4);
@@ -102,52 +113,63 @@ export function ServiceAreaDirectory({
   }, [items]);
 
   return (
-    <section className="bftp-service-area-card">
+    <section
+      className={[
+        "bftp-service-area-card",
+        hideLogos ? "bftp-service-area-card--plain" : undefined,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <div className="bftp-service-area-card__header">
         <div className="bftp-service-area-card__identity">
-          <div className="bftp-service-area-card__logos">
-            <span className="bftp-service-area-card__crest">
-              <Image
-                src={brandAssets.footerLogo.src}
-                alt={brandAssets.footerLogo.alt}
-                width={62}
-                height={62}
-                priority={false}
-              />
-            </span>
-            <span className="bftp-service-area-card__authority">
-              <Image
-                src={authorityLogo.src}
-                alt={authorityLogo.alt}
-                width={124}
-                height={52}
-                priority={false}
-              />
-            </span>
-          </div>
-                <div className="bftp-service-area-card__copy">
-                  <span className="bftp-service-area-card__eyebrow">{directoryMeta.eyebrow}</span>
-                  <h3 className="bftp-service-area-card__title">{heading}</h3>
-                  <p className="bftp-service-area-card__summary">
-                    {getSummaryCopy(page, heading, count)}
+          {!hideLogos ? (
+            <div className="bftp-service-area-card__logos">
+              <span className="bftp-service-area-card__crest">
+                <Image
+                  src={brandAssets.footerLogo.src}
+                  alt={brandAssets.footerLogo.alt}
+                  width={62}
+                  height={62}
+                  priority={false}
+                />
+              </span>
+              <span className="bftp-service-area-card__authority">
+                <Image
+                  src={authorityLogo.src}
+                  alt={authorityLogo.alt}
+                  width={124}
+                  height={52}
+                  priority={false}
+                />
+              </span>
+            </div>
+          ) : null}
+          <div className="bftp-service-area-card__copy">
+            <span className="bftp-service-area-card__eyebrow">{directoryMeta.eyebrow}</span>
+            <h3 className="bftp-service-area-card__title">{heading}</h3>
+            <p className="bftp-service-area-card__summary">
+              {getSummaryCopy(page, heading)}
             </p>
           </div>
         </div>
-              <div className="bftp-service-area-card__meta">
+        <div className="bftp-service-area-card__meta">
           <span className="bftp-service-area-card__count">{directoryMeta.countLabel}</span>
-          <button
-            type="button"
-            className="bftp-service-area-card__toggle"
-            aria-expanded={expanded}
-            onClick={() => setExpanded((current) => !current)}
-          >
-            {expanded ? "Show fewer service areas" : "View all service areas"}
-          </button>
+          {!hideToggle ? (
+            <button
+              type="button"
+              className="bftp-service-area-card__toggle"
+              aria-expanded={expanded}
+              onClick={() => setExpanded((current) => !current)}
+            >
+              {expanded ? "Show fewer service areas" : "View all service areas"}
+            </button>
+          ) : null}
         </div>
       </div>
 
       <div
-        className={`bftp-service-area-card__body ${expanded ? "is-expanded" : ""}`}
+        className={`bftp-service-area-card__body ${isExpanded ? "is-expanded" : ""}`}
       >
         <div className="bftp-service-area-card__columns">
           {columns.map((column, index) => (
@@ -173,7 +195,7 @@ export function ServiceAreaDirectory({
             </ul>
           ))}
         </div>
-        {!expanded ? <div className="bftp-service-area-card__fade" aria-hidden="true" /> : null}
+        {!isExpanded ? <div className="bftp-service-area-card__fade" aria-hidden="true" /> : null}
       </div>
     </section>
   );

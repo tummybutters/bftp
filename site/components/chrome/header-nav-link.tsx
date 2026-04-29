@@ -9,6 +9,13 @@ function isActivePath(pathname: string, href: string) {
     return pathname === "/";
   }
 
+  if (href === "/backflow-testing-installation-repair-service-areas") {
+    return (
+      pathname === href ||
+      pathname.endsWith("-backflow-testing-installation-repair-service-areas")
+    );
+  }
+
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 

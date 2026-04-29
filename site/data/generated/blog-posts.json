@@ -1,0 +1,519 @@
+[
+  {
+    "slug": "why-backflow-testing-still-matters-57-u-s-outbreaks-and-9-734-reported-illnesses",
+    "path": "/blog/why-backflow-testing-still-matters-57-u-s-outbreaks-and-9-734-reported-illnesses",
+    "canonical": "https://www.backflowtestpros.com/blog/why-backflow-testing-still-matters-57-u-s-outbreaks-and-9-734-reported-illnesses",
+    "title": "Why Backflow Testing Still Matters: 57 U.S. Outbreaks and 9,734 Reported Illnesses",
+    "metaDescription": "EPA-documented outbreak and incident totals make backflow risk concrete for homeowners, HOAs, and facility teams. Here is what the numbers mean in plain English and what action to take next.",
+    "excerpt": "EPA's historical outbreak and incident counts turn backflow from an abstract plumbing term into a real public-health risk that property owners can understand and act on.",
+    "category": "Risk / awareness",
+    "audience": "Commercial owners, HOAs, homeowners, facility managers",
+    "geography": "United States",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "why backflow testing matters",
+    "secondaryKeywords": [
+      "backflow testing",
+      "cross connection risk",
+      "backflow prevention"
+    ],
+    "publishedAt": "2026-04-18T09:00:00.000Z",
+    "updatedAt": "2026-04-18T09:00:00.000Z",
+    "heroFact": {
+      "value": "57 outbreaks; 9,734 illnesses",
+      "label": "EPA historical outbreak total",
+      "context": "EPA's cross-connection issue paper gives property owners a concrete benchmark for why backflow prevention is not just paperwork."
+    },
+    "keyTakeaways": [
+      "The outbreak total gives non-technical readers a hard reason to take backflow prevention seriously.",
+      "EPA's larger incident count shows the issue is broader than a single headline case or isolated repair visit.",
+      "The right response is disciplined testing, repair follow-through, and documentation - not generic fear language."
+    ],
+    "sections": [
+      {
+        "id": "what-the-outbreak-data-shows",
+        "kind": "narrative",
+        "title": "What The Outbreak Data Actually Shows",
+        "body": [
+          "EPA's cross-connection issue paper summarizes 57 documented outbreaks and 9,734 reported illnesses tied to cross-connections in U.S. community water systems between 1981 and 1998. That figure matters because it turns backflow from an abstract plumbing phrase into a public-health pattern with real people, real contamination events, and real operational failures behind it.",
+          "For property owners and facility managers, the number is useful because it explains why water purveyors, inspectors, and testers treat cross-connections as a system risk. When contaminated water has a path back into the drinking supply, the consequence is not just a failed assembly or a rejected report. The consequence is exposure, liability, emergency response, and a damaged compliance record."
+        ],
+        "statCallout": {
+          "value": "57 outbreaks; 9,734 illnesses",
+          "label": "CDC-documented cross-connection outbreaks",
+          "context": "Repository row 3, U.S. EPA issue paper on cross-connections and backflow."
+        }
+      },
+      {
+        "id": "why-historical-incident-totals-still-matter",
+        "kind": "narrative",
+        "title": "Why Historical Incident Totals Still Matter To Current Owners",
+        "body": [
+          "EPA also compiled 459 reported backflow incidents and an estimated 12,093 illnesses across the United States between 1970 and 2001. Even if historical reporting undercounts the true total, the direction is still clear: incidents happen when pressure conditions, cross-connections, equipment failures, and maintenance gaps line up at the wrong time.",
+          "That is why smart owners do not treat testing, repair, and paperwork as separate chores. A scheduled test tells you whether the assembly is still doing its job. A repair visit closes the gap when it is not. A complete report gives the property a defensible record that the problem was identified and addressed instead of ignored until a utility or tenant forced the issue."
+        ],
+        "statCallout": {
+          "value": "459 incidents; estimated 12,093 illnesses",
+          "label": "EPA compilation of reported backflow incidents",
+          "context": "Repository row 10, same U.S. EPA issue paper."
+        }
+      },
+      {
+        "id": "use-the-numbers-without-overstating-them",
+        "kind": "checklist",
+        "title": "How To Use The Numbers Without Turning Them Into Hype",
+        "body": [
+          "The point of these figures is not to write dramatic copy. The point is to help an owner or manager understand why a backflow assembly deserves the same operational discipline as any other critical life-safety or utility component. The safest articles and service conversations keep the numbers intact, explain their scope honestly, and connect them to practical next steps."
+        ],
+        "bullets": [
+          "Know which domestic, irrigation, fire, or specialty lines are protected by testable assemblies.",
+          "Keep assemblies accessible so testing and repair do not get delayed by landscaping, storage, or locked areas.",
+          "Treat a failed test as an operations item that needs follow-through, not as a formality to revisit later.",
+          "Keep the report, service record, and next-due planning in one place so the property can respond quickly."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing Services",
+        "description": "Start with the core service page if the property needs a certified test, a pass/fail result, or report-ready documentation."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair And Replacement",
+        "description": "Use the repair page when a failed test turns into corrective work or an assembly can no longer be kept in service."
+      },
+      {
+        "href": "/orange-county-water-district-backflow-regulations",
+        "label": "Orange County Regulation Context",
+        "description": "Move from the national risk story into a local regulation page when the reader needs to understand utility-facing compliance."
+      }
+    ],
+    "cta": {
+      "heading": "Need A Certified Backflow Test Or Follow-Up Repair?",
+      "body": "Backflow Test Pros helps Southern California properties move from risk awareness into documented action with testing, repair coordination, and service-ready compliance support.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Editorial photo of a certified backflow tester working on a commercial assembly, with a clipboard or mobile test report visible. Real field conditions, no generic stock-water imagery.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 3,
+        "dataPoint": "CDC-documented cross-connection outbreaks",
+        "value": "57 outbreaks; 9,734 illnesses",
+        "scope": "U.S. community water systems",
+        "timePeriod": "1981-1998",
+        "whyItMatters": "This is one of the clearest historical national figures linking backflow and cross-connections to documented disease outbreaks.",
+        "sourceOrganization": "U.S. EPA",
+        "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
+        "sourceUrl": "https://www.epa.gov/sites/default/files/2015-09/documents/2007_05_18_disinfection_tcr_issuepaper_tcr_crossconnection-backflow.pdf",
+        "authorityType": "Government (federal)",
+        "notes": "Historical benchmark; older but still widely cited."
+      },
+      {
+        "repositoryRow": 10,
+        "dataPoint": "EPA compilation of reported backflow incidents and illnesses",
+        "value": "459 incidents; estimated 12,093 illnesses",
+        "scope": "United States",
+        "timePeriod": "1970-2001",
+        "whyItMatters": "One of the most practical national incident counts for backflow-related illness discussions.",
+        "sourceOrganization": "U.S. EPA",
+        "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
+        "sourceUrl": "https://www.epa.gov/sites/default/files/2015-09/documents/2007_05_18_disinfection_tcr_issuepaper_tcr_crossconnection-backflow.pdf",
+        "authorityType": "Government (federal)",
+        "notes": "Historical benchmark; underreporting likely."
+      }
+    ]
+  },
+  {
+    "slug": "the-average-family-loses-9-400-gallons-a-year-to-leaks-how-much-are-you-wasting",
+    "path": "/blog/the-average-family-loses-9-400-gallons-a-year-to-leaks-how-much-are-you-wasting",
+    "canonical": "https://www.backflowtestpros.com/blog/the-average-family-loses-9-400-gallons-a-year-to-leaks-how-much-are-you-wasting",
+    "title": "The Average Family Loses 9,400 Gallons a Year to Leaks - How Much Are You Wasting?",
+    "metaDescription": "EPA WaterSense estimates that the average family loses 9,400 gallons a year to leaks. Here is what that means for homeowners, landlords, and HOAs - and when a plumbing issue should also trigger a backflow-minded inspection.",
+    "excerpt": "Small leaks add up fast. EPA's current WaterSense figures make it easier to explain water waste in gallons homeowners can actually picture and budget around.",
+    "category": "Residential leaks / waste",
+    "audience": "Homeowners, landlords, HOA residents",
+    "geography": "United States",
+    "templateType": "cost_risk_article",
+    "primaryKeyword": "water leak waste per year",
+    "secondaryKeywords": [
+      "water leak statistics",
+      "residential plumbing waste",
+      "water waste costs"
+    ],
+    "publishedAt": "2026-04-16T09:00:00.000Z",
+    "updatedAt": "2026-04-16T09:00:00.000Z",
+    "heroFact": {
+      "value": "180 gallons per week; 9,400 gallons per year",
+      "label": "Average family leak waste",
+      "context": "EPA WaterSense gives a simple household benchmark that is easy for owners and landlords to understand."
+    },
+    "keyTakeaways": [
+      "The household number makes water waste tangible instead of vague.",
+      "The national total shows leak waste is a system-wide efficiency problem, not just a nuisance drip.",
+      "Exterior plumbing, irrigation, and protected water lines should be reviewed carefully so a repair does not create a new cross-connection risk."
+    ],
+    "sections": [
+      {
+        "id": "put-the-household-number-in-plain-english",
+        "kind": "narrative",
+        "title": "Put The Household Number In Plain English",
+        "body": [
+          "EPA WaterSense says the average family loses 180 gallons of water a week to leaks, or about 9,400 gallons a year. That is a helpful number because it gives owners something concrete to imagine. It is not just one bad toilet flapper or one outdoor drip. Over time, routine fixture leaks, irrigation issues, and overlooked plumbing wear can turn into a meaningful operating cost.",
+          "For landlords, HOAs, and owner-occupants, the practical value of the number is budgeting discipline. If a property already feels like it has normal wear and tear, the WaterSense figure is a reminder that normal-looking waste can still be expensive. It also tells you that waiting for a dramatic leak before acting is usually the wrong threshold."
+        ],
+        "statCallout": {
+          "value": "180 gallons per week; 9,400 gallons per year",
+          "label": "Water wasted by the average family from leaks",
+          "context": "Repository row 46, current EPA WaterSense page."
+        }
+      },
+      {
+        "id": "why-the-national-scale-matters",
+        "kind": "narrative",
+        "title": "Why The National Scale Matters",
+        "body": [
+          "WaterSense also says U.S. households lose nearly 900 billion gallons of water each year to leaks. The larger total matters because it reframes leak detection as a resource-management issue, not just a comfort issue. The water that disappears through preventable losses still had to be supplied, treated, distributed, and paid for somewhere in the system.",
+          "That is why leak stories resonate with both homeowners and property managers. The same maintenance culture that ignores quiet waste often ignores documentation, overdue inspection items, and small infrastructure issues that become more disruptive later. A property that is casual about one water problem is often casual about the next one too."
+        ],
+        "statCallout": {
+          "value": "Nearly 900 billion gallons per year",
+          "label": "Nationwide household water lost to leaks",
+          "context": "Repository row 47, current EPA WaterSense page."
+        }
+      },
+      {
+        "id": "where-backflow-aware-inspections-help",
+        "kind": "checklist",
+        "title": "Where A Backflow-Aware Inspection Helps",
+        "body": [
+          "Not every leak turns into a backflow problem, but exterior plumbing, irrigation tie-ins, fill lines, and protected assemblies deserve a little more caution than a simple fixture swap. When a repair touches a protected line, a backflow-minded inspection helps make sure the fix solves the leak without creating a new compliance or contamination path."
+        ],
+        "bullets": [
+          "Check irrigation and landscape water lines when high outdoor use or unexplained consumption shows up on the bill.",
+          "Review isolation points and protected assemblies before modifying plumbing that feeds a testable device.",
+          "Document repairs on lines that affect regulated or service-critical water connections.",
+          "Use the contact and service pages below when the issue moves beyond a simple fixture replacement."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/irrigation-systems-backflow-testing-installation-repair",
+        "label": "Irrigation Backflow Services",
+        "description": "Use the irrigation page when outdoor water waste or line changes may affect protected assemblies or landscape systems."
+      },
+      {
+        "href": "/backflow-testing",
+        "label": "Certified Backflow Testing",
+        "description": "Move here when a repair touches a regulated assembly or a property needs a clear test record after plumbing work."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Request A Site Review",
+        "description": "Use the contact route when the issue needs a real service conversation instead of another online estimate."
+      }
+    ],
+    "cta": {
+      "heading": "Need A Water-Waste Check That Accounts For Backflow Risk Too?",
+      "body": "Backflow Test Pros can help property owners review protected assemblies, irrigation tie-ins, and service-critical plumbing so a leak repair does not create a second problem.",
+      "label": "Request A Water System Review",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "A homeowner or property manager reviewing a water bill near an exterior irrigation backflow assembly. Practical, daylight field photography with real equipment visible.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 46,
+        "dataPoint": "Water wasted by the average family from leaks",
+        "value": "180 gallons per week; 9,400 gallons per year",
+        "scope": "Typical U.S. home",
+        "timePeriod": "Current EPA page",
+        "whyItMatters": "Simple, memorable leak statistic that is easy to localize and explain.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Statistics and Facts",
+        "sourceUrl": "https://www.epa.gov/watersense/statistics-and-facts",
+        "authorityType": "Government (federal)",
+        "notes": null
+      },
+      {
+        "repositoryRow": 47,
+        "dataPoint": "Nationwide household water lost to leaks",
+        "value": "Nearly 900 billion gallons per year",
+        "scope": "United States",
+        "timePeriod": "Current EPA page",
+        "whyItMatters": "This gives scale beyond the single-home example.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Statistics and Facts",
+        "sourceUrl": "https://www.epa.gov/watersense/statistics-and-facts",
+        "authorityType": "Government (federal)",
+        "notes": null
+      }
+    ]
+  },
+  {
+    "slug": "commercial-buildings-use-17-of-public-water-withdrawals-why-property-managers-should-track-water-like-energy",
+    "path": "/blog/commercial-buildings-use-17-of-public-water-withdrawals-why-property-managers-should-track-water-like-energy",
+    "canonical": "https://www.backflowtestpros.com/blog/commercial-buildings-use-17-of-public-water-withdrawals-why-property-managers-should-track-water-like-energy",
+    "title": "Commercial Buildings Use 17% of Public-Water Withdrawals - Why Property Managers Should Track Water Like Energy",
+    "metaDescription": "EPA WaterSense says commercial and institutional facilities account for 17% of public-water withdrawals. This article explains why water should be managed like a real operating resource - and where backflow compliance fits into that workflow.",
+    "excerpt": "Water is not a side issue for commercial buildings. EPA's 17% benchmark gives property managers a fast way to explain why leaks, fixture upgrades, and backflow compliance belong in the same operational conversation.",
+    "category": "Portfolio / benchmarking",
+    "audience": "Property managers, commercial owners, facility directors",
+    "geography": "United States",
+    "templateType": "commercial_facility_article",
+    "primaryKeyword": "commercial building water use statistics",
+    "secondaryKeywords": [
+      "commercial water benchmarking",
+      "property manager water use",
+      "facility water compliance"
+    ],
+    "publishedAt": "2026-04-14T09:00:00.000Z",
+    "updatedAt": "2026-04-14T09:00:00.000Z",
+    "heroFact": {
+      "value": "17%",
+      "label": "Commercial and institutional share of public-water withdrawals",
+      "context": "EPA WaterSense gives facility teams a clear benchmark for why water deserves the same management attention as energy and waste."
+    },
+    "keyTakeaways": [
+      "Commercial water use is large enough to justify portfolio-level tracking, not just reactive repairs.",
+      "Backflow testing and repair fit naturally inside a water-management workflow because they protect both compliance and continuity.",
+      "The best building teams connect benchmarks, field inspections, service documentation, and tenant communication."
+    ],
+    "sections": [
+      {
+        "id": "why-water-should-be-tracked-like-energy",
+        "kind": "narrative",
+        "title": "Why Water Should Be Tracked Like Energy",
+        "body": [
+          "EPA WaterSense says commercial and institutional facilities account for 17% of public-water withdrawals in the United States. For property managers, that benchmark matters because it reframes water as a real operating resource instead of a background utility line item. If a portfolio already tracks electricity, gas, and maintenance tickets closely, water should sit in the same management stack.",
+          "The benefit of using a national benchmark is that it gives internal teams a common starting point. You do not need a perfect submetering program on day one to know that leak response time, fixture performance, irrigation losses, and protected assemblies deserve attention. The 17% figure is a strong reminder that water is large enough to manage on purpose."
+        ],
+        "statCallout": {
+          "value": "17%",
+          "label": "Commercial and institutional share of public-water withdrawals",
+          "context": "Repository row 64, EPA WaterSense Types of Facilities."
+        }
+      },
+      {
+        "id": "where-backflow-compliance-fits",
+        "kind": "narrative",
+        "title": "Where Backflow Compliance Fits Into The Portfolio View",
+        "body": [
+          "Backflow testing belongs in the same conversation because commercial properties often have multiple protected systems running at once. Domestic service, irrigation, fire lines, cooling or process water, and tenant improvements can all affect how a building manages water risk. A team that only looks at monthly consumption can miss the compliance and contamination side of the picture.",
+          "That is why strong facility workflows connect the benchmarking conversation to field work. When a site reviews water use, it should also review whether assemblies are accessible, whether any failed tests still need corrective action, and whether recent plumbing or tenant work changed the risk profile of the building. Good water management is operational, not just analytical."
+        ]
+      },
+      {
+        "id": "what-a-commercial-review-should-include",
+        "kind": "checklist",
+        "title": "What A Commercial Water Review Should Include",
+        "body": [
+          "The most useful commercial reviews are not generic. They combine resource visibility with the parts of the site that create service calls, deadlines, or avoidable exposure. For most portfolios, that means leak visibility, documentation discipline, and protected-system follow-through."
+        ],
+        "bullets": [
+          "Track obvious usage spikes, repeat leak locations, and recurring irrigation losses by site.",
+          "Map which properties have testable assemblies and when those records were last updated.",
+          "Review planned tenant work or plumbing changes before they create a surprise compliance problem.",
+          "Use service pages that match the property type when the building needs testing, repair, or a broader facility review."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/commercial-backflow-specialists/office-property-backflow-testing-installation-repair-services",
+        "label": "Office Property Backflow Services",
+        "description": "Use the office-property service page when a building needs testing, repair, or a more tailored commercial review."
+      },
+      {
+        "href": "/commercial-backflow-specialists/residential-community-hoa-backflow-testing-installation-repair",
+        "label": "HOA And Community Backflow Services",
+        "description": "This page is useful when the portfolio includes common-area water systems, multi-building communities, or HOA-managed assets."
+      },
+      {
+        "href": "/orange-county-backflow-testing-installation-repair-service-areas",
+        "label": "Orange County Service Coverage",
+        "description": "Move from benchmarking into geography-specific service coverage when an operations team is ready to schedule work."
+      }
+    ],
+    "cta": {
+      "heading": "Need A Commercial Backflow And Water-Risk Review?",
+      "body": "Backflow Test Pros supports Southern California facility teams with testing, repair planning, and service-ready compliance follow-through for commercial sites.",
+      "label": "Request A Commercial Review",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Commercial facility manager and certified tester standing near a backflow assembly, reviewing a checklist on site. Editorial and operational, not glossy corporate stock imagery.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 64,
+        "dataPoint": "Commercial and institutional share of public-water withdrawals",
+        "value": "17%",
+        "scope": "United States",
+        "timePeriod": "Current EPA page",
+        "whyItMatters": "Good high-level benchmark for why commercial plumbing efficiency matters nationally.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Types of Facilities",
+        "sourceUrl": "https://www.epa.gov/watersense/types-facilities",
+        "authorityType": "Government (federal)",
+        "notes": null
+      }
+    ]
+  },
+  {
+    "slug": "2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-1-day-incident-notice",
+    "path": "/blog/2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-1-day-incident-notice",
+    "canonical": "https://www.backflowtestpros.com/blog/2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-1-day-incident-notice",
+    "title": "2026 California Backflow Testing Rules: Annual Tests, 30-Day Repairs, and 1-Day Incident Notice",
+    "metaDescription": "Draft-only seed post covering California testing frequency, failed-test repair timing, and incident notice expectations. This entry stays review-only until a human verifies the latest state policy language.",
+    "excerpt": "This is a review-only example that shows how refresh or regulation-heavy posts should be modeled in data while staying out of the public blog until a reviewer verifies the current California rule language.",
+    "category": "Localized / statewide",
+    "audience": "California homeowners, HOAs, commercial owners, testers",
+    "geography": "California",
+    "templateType": "refresh_update_article",
+    "primaryKeyword": "california backflow testing requirements 2026",
+    "secondaryKeywords": [
+      "california backflow rules",
+      "backflow repair deadline",
+      "incident notice period"
+    ],
+    "publishedAt": null,
+    "updatedAt": "2026-04-20T16:15:00.000Z",
+    "heroFact": {
+      "value": "At least annually; within 30 days; within 1 day",
+      "label": "California rule checkpoints requiring live review",
+      "context": "The workbook captures policy language that is useful for drafting, but a human needs to verify whether the current California text still matches the refresh framing."
+    },
+    "keyTakeaways": [
+      "Statewide or refresh-style posts can exist in the data layer without becoming public routes.",
+      "The conservative agent should keep regulation-heavy refresh pieces in review until current policy text is confirmed.",
+      "Localization has to carry through the hero, body, and related links rather than relying on a localized headline alone."
+    ],
+    "sections": [
+      {
+        "id": "why-this-post-stays-review-only",
+        "kind": "narrative",
+        "title": "Why This Post Stays Review Only",
+        "body": [
+          "The workbook includes clear California policy checkpoints for annual testing, post-failure repair timing, and fast incident notice expectations. That is enough to support a draft. It is not enough, by itself, to support a confident public claim that the article is a current 2026 update. The conservative workflow should pause here and require a reviewer to verify the latest state language before the post goes live.",
+          "This review-only record is intentional. It gives the future content agent a place to store a title, slug, structure, source notes, and related links without pretending the article is ready for publication. The data contract is the same as a public article, but the status and review flags keep it out of the public blog index and out of sitemap generation."
+        ]
+      },
+      {
+        "id": "what-needs-verification",
+        "kind": "checklist",
+        "title": "What Needs Verification Before Publication",
+        "body": [
+          "A reviewer should confirm that the cited California policy text still supports the refresh framing, that no newer adopted language changes the timing, and that the article body preserves the statewide angle instead of accidentally implying a local rule where none is documented."
+        ],
+        "bullets": [
+          "Confirm the current statewide testing frequency requirement before using a year-based headline.",
+          "Confirm the current failed-test repair deadline and whether any adoption status has changed since the cited draft text.",
+          "Confirm the current incident notice timing and the authority that enforces it.",
+          "Keep the article statewide unless a separate approved local source adds a county or city layer."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/los-angeles-county-water-district-backflow-regulations",
+        "label": "Los Angeles County Regulation Page",
+        "description": "Use this existing regulation page for local context once statewide language is verified."
+      },
+      {
+        "href": "/orange-county-water-district-backflow-regulations",
+        "label": "Orange County Regulation Page",
+        "description": "Keep readers anchored to an existing regulation page while the statewide refresh remains under review."
+      },
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing Services",
+        "description": "Move to the core service page when the reader needs action instead of a policy update."
+      }
+    ],
+    "cta": {
+      "heading": "Reviewer Sign-Off Required Before Publication",
+      "body": "This review-only entry is part of the seed dataset so the future content agent has a safe example of how to hold a refresh article without publishing it.",
+      "label": "Review Workflow Needed",
+      "href": "/blog"
+    },
+    "imageBrief": "California-specific compliance visual, such as a certified tester reviewing paperwork beside a backflow assembly. Use only after the underlying rule language is verified.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [
+      {
+        "code": "live_verification_required",
+        "label": "Live verification required",
+        "reason": "The title frames the piece as a current 2026 update, but the workbook source cited here still needs live policy verification before publication.",
+        "severity": "warning"
+      },
+      {
+        "code": "statewide_only",
+        "label": "Do not imply local rules",
+        "reason": "The approved source here supports statewide policy language, not city-specific or county-specific claims.",
+        "severity": "info"
+      }
+    ],
+    "status": "Review Required",
+    "sourceNotes": [
+      {
+        "repositoryRow": 19,
+        "dataPoint": "California minimum assembly testing frequency",
+        "value": "At least annually",
+        "scope": "California public water systems / regulated assemblies",
+        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
+        "whyItMatters": "A practical compliance benchmark that businesses and property owners can actually act on.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "authorityType": "Government (state)",
+        "notes": "Regulatory/policy requirement; California-specific."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "California repair deadline after failed field test",
+        "value": "Within 30 days",
+        "scope": "California public water systems / regulated assemblies",
+        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
+        "whyItMatters": "Useful when explaining urgency after a failed test.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "authorityType": "Government (state)",
+        "notes": "Regulatory/policy requirement; California-specific."
+      },
+      {
+        "repositoryRow": 21,
+        "dataPoint": "California tester notice period when incident or cross-connection is observed",
+        "value": "Within 1 day",
+        "scope": "California public water systems / regulated assemblies",
+        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
+        "whyItMatters": "Shows that incident response expectations are fast, not leisurely.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "authorityType": "Government (state)",
+        "notes": "Regulatory/policy requirement; California-specific."
+      }
+    ]
+  }
+]

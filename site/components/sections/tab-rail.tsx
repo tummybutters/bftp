@@ -1,84 +1,168 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { usePostHog } from "posthog-js/react";
 
-import type { TabItem } from "@/lib/content/types";
+import type { ContentLinkItem, TabItem } from "@/lib/content/types";
+import { siteConfig } from "@/lib/site-config";
+
+type BodyBlock =
+  | { kind: "paragraph"; content: string }
+  | { kind: "list"; items: string[] };
 
 function normalizeBody(body: string) {
-  return body.replaceAll("‍", "\n").split(/\n+/).map((part) => part.trim()).filter(Boolean);
+  return body
+    .replaceAll("‍", "\n")
+    .replace(/\u200d/g, "\n")
+    .replace(/([:.])\s+(?=-\s+)/g, "$1\n\n")
+    .replace(/\s+(?=-\s+)/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
-function splitSentences(paragraphs: string[]) {
-  return paragraphs
-    .flatMap((paragraph) =>
-      paragraph
-        .split(/(?<=[.!?])\s+/)
-        .map((sentence) => sentence.trim())
-        .filter(Boolean),
-    );
-}
+function splitLongParagraph(content: string) {
+  const normalized = content.replace(/\s+/g, " ").trim();
 
-function buildKeyPoints(paragraphs: string[]) {
-  const sentencePool = splitSentences(paragraphs);
-  const preferred = sentencePool.filter((sentence) =>
-    /(must|required|ensure|install|installed|testing|tested|accessible|maintain|inspection|permit|protect)/i.test(
-      sentence,
-    ),
-  );
-
-  return (preferred.length ? preferred : sentencePool)
-    .filter((sentence) => sentence.length >= 48 && sentence.length <= 220)
-    .slice(0, 4);
-}
-
-function formatCtaLabel(label?: string) {
-  if (!label) {
-    return "Call Now";
+  if (normalized.length <= 520) {
+    return [normalized];
   }
 
-  const normalized = label
-    .replace(/[_-]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
+  const sentences =
+    normalized.match(/[^.!?]+[.!?]+(?:\s+|$)|[^.!?]+$/g)?.map((sentence) => sentence.trim()) ??
+    [normalized];
+  const chunks: string[] = [];
+  let chunk = "";
 
-  if (normalized === "call now") {
-    return "Call Now";
+  for (const sentence of sentences) {
+    if (chunk && `${chunk} ${sentence}`.length > 520) {
+      chunks.push(chunk);
+      chunk = sentence;
+    } else {
+      chunk = chunk ? `${chunk} ${sentence}` : sentence;
+    }
   }
 
-  return normalized.replace(/\b\w/g, (character) => character.toUpperCase());
+  if (chunk) {
+    chunks.push(chunk);
+  }
+
+  return chunks;
+}
+
+function buildBodyBlocks(body: string): BodyBlock[] {
+  return normalizeBody(body)
+    .split(/\n{2,}/)
+    .map((chunk) => chunk.trim())
+    .filter(Boolean)
+    .map((chunk) => {
+      const lines = chunk
+        .split("\n")
+        .map((line) => line.trim())
+        .filter(Boolean);
+
+      if (lines.length > 0 && lines.every((line) => line.startsWith("- "))) {
+        return {
+          kind: "list" as const,
+          items: lines.map((line) => line.replace(/^-+\s*/, "").trim()).filter(Boolean),
+        };
+      }
+
+      return {
+        kind: "paragraph" as const,
+        content: chunk.replace(/\s+/g, " ").trim(),
+      };
+    })
+    .flatMap((block): BodyBlock[] => {
+      if (block.kind === "paragraph") {
+        return splitLongParagraph(block.content).map((content): BodyBlock => ({
+          kind: "paragraph",
+          content,
+        }));
+      }
+
+      return [block];
+    });
+}
+
+const tabPhotos: Array<[RegExp, string]> = [
+  [/testing|annual/i, "/assets/services/device-test.avif"],
+  [/repair/i, "/assets/services/device-repair.avif"],
+  [/troubleshooting|inspection/i, "/assets/photos/dcda-test-cock-oc-2.jpg"],
+  [/installation|device/i, "/assets/services/device-installation.avif"],
+  [/security|lock|cage/i, "/assets/services/security-cage.avif"],
+  [/water|authority|department|district|municipal|county/i, "/assets/photos/general-3.jpg"],
+  [/compliance|regulation|requirement|certification|report|document/i, "/assets/photos/testing-oc.jpg"],
+  [/fire|irrigation|pool|spa/i, "/assets/photos/general-4.jpg"],
+  [/brands|preferred|trusted/i, "/assets/photos/chickfila-exterior.jpg"],
+];
+
+function getTabPhoto(tab: TabItem) {
+  const fingerprint = `${tab.label} ${tab.title}`;
+
+  return tabPhotos.find(([pattern]) => pattern.test(fingerprint))?.[1] ?? "/assets/photos/general-2.jpg";
+}
+
+function blockWeight(block: BodyBlock) {
+  return block.kind === "paragraph"
+    ? block.content.length
+    : block.items.reduce((sum, item) => sum + item.length, 0);
+}
+
+function splitIntoColumns(blocks: BodyBlock[]) {
+  const columns: BodyBlock[][] = [[], []];
+  const weights = [0, 0];
+
+  for (const block of blocks) {
+    const columnIndex = weights[0] <= weights[1] ? 0 : 1;
+    columns[columnIndex].push(block);
+    weights[columnIndex] += blockWeight(block);
+  }
+
+  return columns;
 }
 
 export function TabRail({
   tabs,
-  ctaLabel,
-  ctaHref = "/contact-backflowtestpros",
+  showPhotos = true,
+  titleMode = "title",
 }: {
   tabs: TabItem[];
-  ctaLabel?: string;
-  ctaHref?: string;
+  showPhotos?: boolean;
+  titleMode?: "title" | "label";
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const posthog = usePostHog();
   const activeTab = tabs[activeIndex];
+  const activeTitle = titleMode === "label" ? activeTab?.label : activeTab?.title;
+
+  const bodyBlocks = useMemo(
+    () => (activeTab ? buildBodyBlocks(activeTab.body) : []),
+    [activeTab],
+  );
+  const bodyColumns = useMemo(() => splitIntoColumns(bodyBlocks), [bodyBlocks]);
 
   if (!activeTab) {
     return null;
   }
 
-  const paragraphs = normalizeBody(activeTab.body);
-  const summaryParagraphs =
-    paragraphs.length > 1 ? paragraphs.slice(0, 2) : paragraphs.slice(0, 1);
-  const detailParagraphs =
-    paragraphs.length > 2 ? paragraphs.slice(2) : paragraphs.slice(summaryParagraphs.length);
-  const keyPoints = buildKeyPoints(paragraphs);
+  const linkColumns =
+    activeTab.links.length >= 42 ? 3 : activeTab.links.length >= 18 ? 2 : 1;
+  const defaultCta: ContentLinkItem = {
+    href: siteConfig.contactPath,
+    label: "Schedule Service",
+    external: false,
+    target: "",
+  };
+  const ctaLinks =
+    activeTab.links.length > 0
+      ? activeTab.links
+      : [defaultCta];
 
   return (
     <div className="bftp-tab-panel">
       <aside className="bftp-tab-panel__rail-wrap">
-        <div className="bftp-tab-panel__rail-kicker">Installation Guide</div>
         <div className="bftp-tab-panel__rail" role="tablist" aria-label="Compliance topics">
           {tabs.map((tab, index) => (
             <button
@@ -102,62 +186,61 @@ export function TabRail({
         </div>
       </aside>
       <div className="bftp-tab-panel__body">
-        <div className="bftp-tab-panel__intro">
-          <div className="bftp-tab-panel__eyebrow">Selected Topic</div>
-          <h3 className="bftp-tab-panel__title">{activeTab.title}</h3>
-          <div className="bftp-tab-panel__summary">
-            {summaryParagraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-        {keyPoints.length > 0 ? (
-          <section className="bftp-tab-panel__summary-card">
-            <div className="bftp-tab-panel__summary-kicker">What Matters Most</div>
-            <h4 className="bftp-tab-panel__summary-title">Key installation requirements</h4>
-            <ul className="bftp-tab-panel__summary-list">
-              {keyPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
-        {detailParagraphs.length > 0 ? (
-          <div className="bftp-tab-panel__detail">
-            {detailParagraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+        {showPhotos ? (
+          <div className="bftp-tab-panel__media">
+            <Image
+              src={getTabPhoto(activeTab)}
+              alt=""
+              fill
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) calc(100vw - 40px), 54vw"
+              className="bftp-tab-panel__image"
+            />
           </div>
         ) : null}
-        {activeTab.links.length > 0 ? (
-          <div className="bftp-tab-panel__references">
-            <div className="bftp-tab-panel__summary-kicker">Reference Links</div>
-            <ul className="bftp-tab-panel__links">
-              {activeTab.links.map((link) => (
-                <li key={`${link.href}-${link.label}`}>
+        <h3 className="bftp-tab-panel__title">{activeTitle}</h3>
+        <div className="bftp-tab-panel__content">
+          <div className="bftp-tab-panel__text">
+            {bodyColumns.map((column, columnIndex) => (
+              <div
+                key={`${activeTab.title}-column-${columnIndex}`}
+                className="bftp-tab-panel__text-column"
+              >
+                {column.map((block, index) => (
+                  <Fragment key={`${activeTab.title}-${columnIndex}-${index}`}>
+                    {block.kind === "paragraph" ? (
+                      <p className="bftp-tab-panel__paragraph">{block.content}</p>
+                    ) : (
+                      <ul className="bftp-tab-panel__list">
+                        {block.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </Fragment>
+                ))}
+              </div>
+            ))}
+          </div>
+          <ul
+            className="bftp-tab-panel__link-grid"
+            style={{ ["--bftp-tab-link-columns" as string]: String(linkColumns) }}
+          >
+            {ctaLinks.map((link) => (
+              <li
+                key={`${activeTab.title}-${link.href}-${link.label}`}
+                className="bftp-tab-panel__link-item"
+              >
+                {link.external ? (
                   <a href={link.href} target={link.target || "_blank"} rel="noreferrer">
                     {link.label}
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-        {ctaLabel ? (
-          <div className="bftp-tab-panel__cta-card">
-            <div className="bftp-tab-panel__summary-kicker">Next Step</div>
-            <h4 className="bftp-tab-panel__cta-title">Talk with a certified backflow specialist</h4>
-            <p className="bftp-tab-panel__cta-copy">
-              Get installation guidance, testing support, and local compliance help without
-              digging through municipal requirements alone.
-            </p>
-            <div className="bftp-tab-panel__actions">
-              <Link href={ctaHref} className="bftp-cta-button" onClick={() => posthog?.capture("contact_cta_clicked", { location: "tab-rail", label: formatCtaLabel(ctaLabel) })}>
-                {formatCtaLabel(ctaLabel)}
-              </Link>
-            </div>
-          </div>
-        ) : null}
+                ) : (
+                  <Link href={link.href}>{link.label}</Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

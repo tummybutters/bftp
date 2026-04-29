@@ -82,6 +82,24 @@
             "options": []
           },
           {
+            "label": "Company / property name",
+            "name": "company_name",
+            "fieldType": "input",
+            "inputType": "text",
+            "placeholder": "Company, HOA, or property name",
+            "required": false,
+            "options": []
+          },
+          {
+            "label": "Phone",
+            "name": "phone",
+            "fieldType": "input",
+            "inputType": "tel",
+            "placeholder": "(555) 555-5555",
+            "required": true,
+            "options": []
+          },
+          {
             "label": "Email",
             "name": "email-field-2",
             "fieldType": "input",
@@ -91,12 +109,12 @@
             "options": []
           },
           {
-            "label": "Message",
+            "label": "Anything else we should know?",
             "name": "Message-Field-4",
             "fieldType": "textarea",
             "inputType": "textarea",
-            "placeholder": "Leave us a message...",
-            "required": true,
+            "placeholder": "Optional notes like notice letters, failed tests, access details, or scheduling needs.",
+            "required": false,
             "options": []
           }
         ]
@@ -136,6 +154,24 @@
           "options": []
         },
         {
+          "label": "Company / property name",
+          "name": "company_name",
+          "fieldType": "input",
+          "inputType": "text",
+          "placeholder": "Company, HOA, or property name",
+          "required": false,
+          "options": []
+        },
+        {
+          "label": "Phone",
+          "name": "phone",
+          "fieldType": "input",
+          "inputType": "tel",
+          "placeholder": "(555) 555-5555",
+          "required": true,
+          "options": []
+        },
+        {
           "label": "Email",
           "name": "email-field-2",
           "fieldType": "input",
@@ -145,12 +181,12 @@
           "options": []
         },
         {
-          "label": "Message",
+          "label": "Anything else we should know?",
           "name": "Message-Field-4",
           "fieldType": "textarea",
           "inputType": "textarea",
-          "placeholder": "Leave us a message...",
-          "required": true,
+          "placeholder": "Optional notes like notice letters, failed tests, access details, or scheduling needs.",
+          "required": false,
           "options": []
         }
       ]

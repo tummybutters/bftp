@@ -2,12 +2,11 @@ import Image from "next/image";
 
 import { ContactFormSection } from "@/components/sections/contact-form";
 import { ClientReviewCarousel } from "@/components/sections/client-review-carousel";
-import { CredentialCarousel } from "@/components/sections/credential-carousel";
 import { FeatureSplit } from "@/components/sections/feature-split";
-import { ServiceAccordion } from "@/components/sections/service-accordion";
-import { PricingSplit } from "@/components/sections/pricing-split";
+import { BenefitShowcase } from "@/components/sections/benefit-showcase";
+import { ProofMarquee } from "@/components/sections/proof-marquee";
+import { ServiceTriad } from "@/components/sections/service-triad";
 import { SplitChecklist } from "@/components/sections/split-checklist";
-import { CredentialGrid } from "@/components/sections/credential-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { DirectoryColumns } from "@/components/sections/directory-columns";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
@@ -86,7 +85,10 @@ function renderReading(body: string) {
 function getFamilyHeroVariant(family: PageFamily) {
   return family === "homepage" ||
     family === "core_service" ||
-    family === "about_page"
+    family === "about_page" ||
+    family === "contact_page" ||
+    family === "service_area_hub" ||
+    family === "county_service_hub"
     ? "photo"
     : "navy";
 }
@@ -94,6 +96,7 @@ function getFamilyHeroVariant(family: PageFamily) {
 const localHeroOverrides: Record<string, string> = {
   "/": "/assets/heroes/testing-home.avif",
   "/about-us": "/assets/heroes/about-hero.avif",
+  "/contact-backflowtestpros": "/assets/photos/general-3.jpg",
   "/backflow-testing": "/assets/photos/general-1.jpg",
   "/backflow-repair-replacement-services": "/assets/heroes/repair-hero.jpg",
   "/backflow-installation": "/assets/heroes/installation-hero.jpg",
@@ -200,6 +203,12 @@ function getSectionAlign(family: PageFamily, section: ContentSection) {
   return "center";
 }
 
+function getServiceAreaCountyName(context: SectionContext) {
+  return context.payload.family === "service_area_hub"
+    ? context.payload.countyName
+    : context.page.countyLabel;
+}
+
 function isReviewFeatureSection(
   section: Extract<ContentSection, { kind: "feature_cards" }>,
 ) {
@@ -219,6 +228,15 @@ function isCredentialFeatureSection(
   return section.sourceClass.toLowerCase().includes("certifiedby-city-water-departments");
 }
 
+function isAwwaCertificationLinkList(section: LinkListSection) {
+  const fingerprint = `${section.sourceClass} ${section.heading}`.toLowerCase();
+
+  return (
+    fingerprint.includes("certifiedby-city-water-departments") ||
+    fingerprint.includes("awwa certified backflow testers cross connection control")
+  );
+}
+
 function isServiceAccordionSection(
   section: Extract<ContentSection, { kind: "feature_cards" }>,
 ) {
@@ -229,7 +247,62 @@ function isBenefitsFeatureSection(
   section: Extract<ContentSection, { kind: "feature_cards" }>,
 ) {
   const sc = section.sourceClass.toLowerCase();
-  return sc.includes("backflow-testing-benefits") || sc.includes("premium-service");
+  return (
+    sc.includes("backflow-testing-benefits") ||
+    sc.includes("backflow-repair-benefits") ||
+    sc.includes("backflow-installation-benefits") ||
+    sc.includes("premium-service")
+  );
+}
+
+function isEverythingDoneSection(section: ContentSection) {
+  return (
+    "heading" in section &&
+    section.heading.toLowerCase().startsWith("everything done for you")
+  );
+}
+
+function collapseServiceAreaColumns(columns: string[][]) {
+  const localityGroups = columns.map((items) => items.map(extractLocalityFromListItem));
+
+  if (localityGroups.length < 2) {
+    return null;
+  }
+
+  const [firstGroup, ...restGroups] = localityGroups;
+
+  if (
+    firstGroup.length === 0 ||
+    restGroups.some(
+      (group) =>
+        group.length !== firstGroup.length ||
+        group.some((locality, index) => locality !== firstGroup[index]),
+    )
+  ) {
+    return null;
+  }
+
+  return firstGroup.filter((locality, index, all) => all.indexOf(locality) === index);
+}
+
+function mergeServiceAreaColumns(columns: string[][]) {
+  const merged: string[] = [];
+  const seen = new Set<string>();
+
+  for (const column of columns) {
+    for (const item of column) {
+      const locality = extractLocalityFromListItem(item);
+
+      if (!locality || seen.has(locality)) {
+        continue;
+      }
+
+      seen.add(locality);
+      merged.push(locality);
+    }
+  }
+
+  return merged;
 }
 
 function buildBulletGroups(section: BulletColumnsSection, context: SectionContext) {
@@ -261,9 +334,19 @@ function buildBulletGroups(section: BulletColumnsSection, context: SectionContex
   }
 
   if (context.family === "service_area_hub") {
+    const collapsedLocalities = collapseServiceAreaColumns(section.columns);
     const featureSection = context.payload.sections.find(
       (candidate) => candidate.kind === "feature_cards",
     );
+
+    if (collapsedLocalities) {
+      return [
+        {
+          heading: section.heading,
+          items: collapsedLocalities,
+        },
+      ];
+    }
 
     return section.columns.map((items, index) => ({
       heading:
@@ -408,16 +491,19 @@ function resolveCityPath(heading: string, item: string) {
       extractCitySlugFromPagePath(candidate.path) === citySlug,
   );
 
-  return pages[0]?.path;
+  const preferredPage =
+    pages.find((candidate) => candidate.path.endsWith("-backflow-testing-installation-repair")) ??
+    pages.find((candidate) => candidate.path.endsWith("-backflow-testing-and-repair")) ??
+    pages[0];
+
+  return preferredPage?.path;
 }
 
 function resolveHeroPromoText({
   rawPromoText,
-  heroPrimaryAction,
   primaryAction,
 }: {
   rawPromoText?: string;
-  heroPrimaryAction?: { href: string; label: string };
   primaryAction: { href: string; label: string };
 }) {
   const normalizedPromo = rawPromoText?.trim() ?? "";
@@ -425,16 +511,9 @@ function resolveHeroPromoText({
     !normalizedPromo ||
     normalizedPromo === "call_now" ||
     /^[a-z0-9]+(?:_[a-z0-9]+)+$/.test(normalizedPromo);
-  const ctaLikePrimaryLabel =
-    heroPrimaryAction?.label &&
-    /(call|contact|schedule|qualify|quote|request|book|lock|sign up|get)/i.test(
-      heroPrimaryAction.label,
-    )
-      ? heroPrimaryAction.label.trim()
-      : "";
 
   const resolvedPromo = isPlaceholderPromo
-    ? ctaLikePrimaryLabel
+    ? ""
     : normalizedPromo.replaceAll("_", " ");
 
   if (!resolvedPromo) {
@@ -481,7 +560,6 @@ function renderHeroSection(context: SectionContext) {
   const rawPromoText = context.payload.ctaPattern[0] || context.page.headings.h3[0];
   const promoText = resolveHeroPromoText({
     rawPromoText,
-    heroPrimaryAction,
     primaryAction,
   });
 
@@ -500,35 +578,6 @@ function renderHeroSection(context: SectionContext) {
 }
 
 function renderPricingSection(section: PricingTilesSection, context: SectionContext) {
-  const firstLink = section.links[0];
-  const primaryCta = context.payload.hero?.primaryCta;
-  const useCtaButton =
-    context.family === "county_city_landing" ||
-    context.family === "commercial_vertical" ||
-    context.family === "contact_page";
-
-  if (context.family === "homepage") {
-    return (
-      <SectionFrame
-        id={buildSectionAnchor(section, context.overallIndex)}
-        tone={getSectionTone(context.family, section, context.kindIndex)}
-        align="left"
-      >
-        <PricingSplit
-          heading={section.heading}
-          body={section.body}
-          items={section.tiles.map((tile) => ({
-            label: tile.title,
-            price: tile.price,
-            detail: tile.detail,
-          }))}
-          calloutLabel={firstLink?.label}
-          calloutHref={firstLink?.href}
-        />
-      </SectionFrame>
-    );
-  }
-
   return (
     <SectionFrame
       id={buildSectionAnchor(section, context.overallIndex)}
@@ -543,10 +592,6 @@ function renderPricingSection(section: PricingTilesSection, context: SectionCont
           price: tile.price,
           detail: tile.detail,
         }))}
-        calloutLabel={!useCtaButton ? firstLink?.label : undefined}
-        calloutHref={!useCtaButton ? firstLink?.href : undefined}
-        ctaLabel={useCtaButton ? primaryCta?.label ?? firstLink?.label : undefined}
-        ctaHref={useCtaButton ? primaryCta?.href ?? firstLink?.href : undefined}
       />
     </SectionFrame>
   );
@@ -554,6 +599,11 @@ function renderPricingSection(section: PricingTilesSection, context: SectionCont
 
 function renderLinkListSection(section: LinkListSection, context: SectionContext) {
   const items = toLinkItemsFromContent(section.items);
+  const hideLinkedResources =
+    context.family === "homepage" && isAwwaCertificationLinkList(section);
+  const isServiceAreaHubCountyDirectory =
+    context.family === "service_area_hub" &&
+    section.heading.trim().toLowerCase() === "browse counties";
   const renderAsServiceCards =
     context.family === "homepage" && context.kindIndex === 1;
   const renderAsDirectoryCard =
@@ -562,17 +612,22 @@ function renderLinkListSection(section: LinkListSection, context: SectionContext
   const renderAsServiceAreaDirectory =
     renderAsDirectoryCard;
   const variant =
-    context.family === "homepage" && context.kindIndex === 0 ? "compact" : "directory";
+    isServiceAreaHubCountyDirectory
+      ? "county-directory"
+      : context.family === "homepage" && context.kindIndex === 0
+        ? "compact"
+        : "directory";
 
   return (
     <SectionFrame
       id={buildSectionAnchor(section, context.overallIndex)}
+      className={hideLinkedResources ? "bftp-frame--center-only" : undefined}
       tone={getSectionTone(context.family, section, context.kindIndex)}
       align={getSectionAlign(context.family, section)}
       title={<h2 className="bftp-section-title">{section.heading}</h2>}
       body={renderReading(section.body)}
     >
-      {renderAsServiceCards ? (
+      {hideLinkedResources ? null : renderAsServiceCards ? (
         <ServiceCardGrid items={items} />
       ) : renderAsServiceAreaDirectory ? (
         <ServiceAreaDirectory
@@ -583,7 +638,7 @@ function renderLinkListSection(section: LinkListSection, context: SectionContext
       ) : (
         <LinkGrid items={items} variant={variant} />
       )}
-      {section.map ? <MapFrame map={section.map} /> : null}
+      {!hideLinkedResources && section.map ? <MapFrame map={section.map} /> : null}
     </SectionFrame>
   );
 }
@@ -595,10 +650,21 @@ function isManagedMaintenanceSection(section: BulletColumnsSection) {
 }
 
 function renderBulletColumnsSection(section: BulletColumnsSection, context: SectionContext) {
-  if (
-    (context.family === "about_page" && isManagedMaintenanceSection(section)) ||
-    context.family === "core_service"
-  ) {
+  if (context.family === "core_service") {
+    return (
+      <SectionFrame
+        id={buildSectionAnchor(section, context.overallIndex)}
+        tone={getSectionTone(context.family, section, context.kindIndex)}
+        align="center"
+      >
+        <ProofMarquee
+          items={section.columns.flat().filter(Boolean)}
+        />
+      </SectionFrame>
+    );
+  }
+
+  if (context.family === "about_page" && isManagedMaintenanceSection(section)) {
     return (
       <SectionFrame
         id={buildSectionAnchor(section, context.overallIndex)}
@@ -615,8 +681,18 @@ function renderBulletColumnsSection(section: BulletColumnsSection, context: Sect
   }
 
   const groups = buildBulletGroups(section, context);
+  const mergedServiceAreaLocalities =
+    context.family === "service_area_hub" ? mergeServiceAreaColumns(section.columns) : [];
   const totalItems = section.columns.reduce((sum, column) => sum + column.length, 0);
   const renderAsServiceAreaGroups = totalItems >= 24;
+  const renderAsMergedServiceAreaDirectory =
+    context.family === "service_area_hub" &&
+    mergedServiceAreaLocalities.length > 0;
+  const renderAsSingleServiceAreaDirectory =
+    context.family === "service_area_hub" &&
+    groups.length === 1 &&
+    groups[0] &&
+    groups[0].items.length > 0;
 
   return (
     <SectionFrame
@@ -626,14 +702,48 @@ function renderBulletColumnsSection(section: BulletColumnsSection, context: Sect
       title={<h2 className="bftp-section-title">{section.heading}</h2>}
       body={renderReading(section.body)}
     >
-      {renderAsServiceAreaGroups ? (
+      {renderAsMergedServiceAreaDirectory ? (
+        <ServiceAreaDirectory
+          page={context.page}
+          heading={
+            getServiceAreaCountyName(context)
+              ? `${getServiceAreaCountyName(context)} Service Areas`
+              : section.heading
+          }
+          items={mergedServiceAreaLocalities.map((item) => ({
+            label: item,
+            href:
+              resolveCityPath(
+                getServiceAreaCountyName(context)
+                  ? `${getServiceAreaCountyName(context)} Service Areas`
+                  : section.heading,
+                item,
+              ) ?? "",
+          }))}
+          hideLogos={context.family === "service_area_hub"}
+          defaultExpanded={context.family === "service_area_hub"}
+          hideToggle={context.family === "service_area_hub"}
+        />
+      ) : renderAsSingleServiceAreaDirectory ? (
+        <ServiceAreaDirectory
+          page={context.page}
+          heading={groups[0].heading}
+          items={groups[0].items.map((item) => ({
+            label: item,
+            href: resolveCityPath(groups[0].heading, item) ?? "",
+          }))}
+          hideLogos={context.family === "service_area_hub"}
+          defaultExpanded={context.family === "service_area_hub"}
+          hideToggle={context.family === "service_area_hub"}
+        />
+      ) : renderAsServiceAreaGroups ? (
         <ServiceAreaGroups
           page={context.page}
           groups={groups.map((group) => ({
             heading: group.heading,
             items: group.items.map((item) => ({
               label: item,
-              href: resolveCityPath(group.heading, item),
+              href: resolveCityPath(group.heading, item) ?? "",
             })),
           }))}
         />
@@ -649,19 +759,17 @@ function renderBulletColumnsSection(section: BulletColumnsSection, context: Sect
 
 function renderRichTextSection(section: RichTextSection, context: SectionContext) {
   const proofItems = extractProofItems(section.body);
-  const hasLogoStrip = context.payload.sections.some(
-    (payloadSection) => payloadSection.kind === "logo_strip",
-  );
+  const isExplicitProofStrip = section.sourceClass.toLowerCase().includes("marquee-simple-item");
   const shouldRenderProofStrip =
-    (context.family === "homepage" ||
+    proofItems.length > 0 &&
+    (isExplicitProofStrip ||
+      context.family === "homepage" ||
       context.family === "core_service" ||
       context.family === "commercial_vertical") &&
-    context.kindIndex === 0 &&
-    !hasLogoStrip &&
-    proofItems.length > 0;
+    (isExplicitProofStrip || context.kindIndex === 0);
 
   if (shouldRenderProofStrip) {
-    return <LogoBelt useGlobalSet />;
+    return <ProofMarquee items={proofItems} />;
   }
 
   const isCommercialCta =
@@ -739,19 +847,36 @@ export function ContentSectionRenderer({
         />
       );
     case "feature_cards": {
+      const suppressCountyHubBenefitShowcase =
+        family === "service_area_hub" &&
+        page.path !== "/backflow-testing-installation-repair-service-areas" &&
+        isBenefitsFeatureSection(section);
+      const suppressReviewSection =
+        isReviewFeatureSection(section) &&
+        (family === "service_area_hub" || family === "county_service_hub");
       const useFeatureSplit =
         (family === "core_service" &&
           !isReviewFeatureSection(section) &&
-          !isCredentialFeatureSection(section)) ||
-        (family === "homepage" && isBenefitsFeatureSection(section));
+          !isCredentialFeatureSection(section) &&
+          !isBenefitsFeatureSection(section));
+      const useBenefitShowcase = isBenefitsFeatureSection(section);
+
+      if (suppressReviewSection || suppressCountyHubBenefitShowcase) {
+        return null;
+      }
 
       return (
         <SectionFrame
           id={buildSectionAnchor(section, overallIndex)}
+          className={isEverythingDoneSection(section) ? "bftp-frame--everything-done" : undefined}
           tone={getSectionTone(family, section, kindIndex)}
           align={useFeatureSplit ? "left" : getSectionAlign(family, section)}
-          title={useFeatureSplit ? undefined : <h2 className="bftp-section-title">{section.heading}</h2>}
-          body={useFeatureSplit ? undefined : renderReading(section.body)}
+          title={
+            useFeatureSplit || useBenefitShowcase
+              ? undefined
+              : <h2 className="bftp-section-title">{section.heading}</h2>
+          }
+          body={useFeatureSplit || useBenefitShowcase ? undefined : renderReading(section.body)}
         >
           {isReviewFeatureSection(section) ? (
             family === "about_page" ? (
@@ -760,18 +885,18 @@ export function ContentSectionRenderer({
               <ReviewGrid items={section.cards} />
             )
           ) : isCredentialFeatureSection(section) ? (
-            family === "homepage" || family === "about_page" ? (
-              <CredentialCarousel items={section.cards} />
-            ) : (
-              <CredentialGrid items={section.cards} />
-            )
+            <ProofMarquee
+              items={section.cards.map((card) => card.title).filter(Boolean)}
+            />
           ) : family === "homepage" && isServiceAccordionSection(section) ? (
-            <ServiceAccordion items={section.cards} />
-          ) : family === "homepage" && isBenefitsFeatureSection(section) ? (
-            <FeatureSplit
+            <ServiceTriad items={section.cards} />
+          ) : useBenefitShowcase ? (
+            <BenefitShowcase
               heading={section.heading}
               body={section.body}
               items={section.cards}
+              ctaLabel={section.links?.[0]?.label}
+              ctaHref={section.links?.[0]?.href}
             />
           ) : family === "core_service" ? (
             <FeatureSplit
@@ -801,19 +926,20 @@ export function ContentSectionRenderer({
       return (
         <SectionFrame
           id={buildSectionAnchor(section, overallIndex)}
+          className={[
+            "bftp-frame--tabbed-compact",
+            isEverythingDoneSection(section) ? "bftp-frame--everything-done" : undefined,
+          ]
+            .filter(Boolean)
+            .join(" ")}
           tone={getSectionTone(family, section, kindIndex)}
           align={getSectionAlign(family, section)}
           title={<h2 className="bftp-section-title">{section.heading}</h2>}
-          body={renderReading(section.body)}
         >
           <TabRail
             tabs={section.tabs}
-            ctaLabel={
-              payload.hero?.primaryCta?.label ||
-              payload.ctaPattern[0] ||
-              undefined
-            }
-            ctaHref={payload.hero?.primaryCta?.href}
+            showPhotos
+            titleMode={family === "about_page" ? "label" : "title"}
           />
         </SectionFrame>
       );
@@ -840,7 +966,8 @@ export function ContentSectionRenderer({
         <SectionFrame
           id={buildSectionAnchor(section, overallIndex)}
           tone={getSectionTone(family, section, kindIndex)}
-          align="left"
+          align={family === "contact_page" ? "center" : "left"}
+          inset={family === "contact_page" ? "reading" : "wide"}
           title={<h2 className="bftp-section-title">{section.heading}</h2>}
           body={renderReading(section.body)}
         >
@@ -849,6 +976,7 @@ export function ContentSectionRenderer({
             submitLabel={section.submitLabel}
             formAction={section.formAction}
             formMethod={section.formMethod}
+            pagePath={context.page.path}
           />
         </SectionFrame>
       );

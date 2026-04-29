@@ -239,13 +239,9 @@ select {
   gap: 0.5rem;
   min-height: 56px;
   padding: 0.85rem 1.65rem 0.95rem;
-  border: 1px solid rgba(255, 183, 0, 0.28);
-  border-radius: 18px;
-  background:
-    linear-gradient(180deg, #ffc72b 0%, #ffb700 52%, #f0a800 100%);
-  box-shadow:
-    0 18px 34px rgba(255, 183, 0, 0.24),
-    inset 0 1px 0 rgba(255, 246, 214, 0.42);
+  border: 1px solid rgba(216, 162, 0, 0.34);
+  border-radius: 12px;
+  background: #ffc72b;
   color: var(--bftp-color-navy-deep);
   font-family: var(--bftp-font-heading);
   font-size: clamp(1rem, 1.4vw, 1.08rem);
@@ -255,22 +251,15 @@ select {
   text-align: center;
   text-transform: none;
   transition:
-    transform var(--bftp-transition-base),
-    box-shadow var(--bftp-transition-base),
     background-color var(--bftp-transition-base),
     color var(--bftp-transition-base),
     border-color var(--bftp-transition-base);
 }
 
 .bftp-cta-button:hover {
-  background:
-    linear-gradient(180deg, #ffd45e 0%, #ffbf1c 52%, #f4ae00 100%);
+  background: #ffbf1c;
   color: var(--bftp-color-navy-deep);
-  border-color: rgba(255, 183, 0, 0.46);
-  box-shadow:
-    0 22px 40px rgba(255, 183, 0, 0.3),
-    inset 0 1px 0 rgba(255, 246, 214, 0.85);
-  transform: translateY(-1px);
+  border-color: rgba(216, 162, 0, 0.46);
 }
 
 @media (max-width: 991px) {

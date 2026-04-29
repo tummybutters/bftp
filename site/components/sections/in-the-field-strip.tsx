@@ -63,31 +63,6 @@ const stripConfigs: Record<string, StripConfig> = {
       },
     ],
   },
-  "/backflow-testing": {
-    title: {
-      primary: "ON",
-      accent: "SITE",
-    },
-    insertAfterKinds: ["bullet_columns", "pricing_tiles"],
-    photos: [
-      {
-        src: "/assets/photos/testing-oc.jpg",
-        alt: "Backflow testing setup on site",
-      },
-      {
-        src: "/assets/photos/technician-eddie-irvine.jpg",
-        alt: "Backflow technician preparing for a field test",
-      },
-      {
-        src: "/assets/photos/dcda-test-cock-oc-2.jpg",
-        alt: "Close-up of a backflow testing assembly",
-      },
-      {
-        src: "/assets/photos/general-3.jpg",
-        alt: "Field-ready backflow assembly detail",
-      },
-    ],
-  },
   "/backflow-installation": {
     title: {
       primary: "NEW",

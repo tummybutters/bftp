@@ -14,7 +14,7 @@
       "Preferred by Leading Brands",
       "Best Value Los Angeles County Backflow Preventer Testing Installation & Repair",
       "Everything Done For You Backflow Testing & Repair Services",
-      "AWWA Certified Backflow Testers & Cross Connect Control Specialists",
+      "AWWA Certified Backflow Testers & Cross Connection Control Specialists",
       "Backflow Test Pros Los Angeles Testin Installation & Repair Services Near You"
     ],
     "h3s": [
@@ -36,7 +36,7 @@
       "kind": "hero",
       "sourceClass": "simple-hero-section service-hero",
       "heading": "Los Angeles County Backflow Installation Testing Repair",
-      "body": "As a bonded and insured licensed contractor, Backflow Test Pros not only guarantees top-tier workmanship but also provides expedited scheduling, document retrieval, same-day certification, and a multi-device discounts to help you meet backflow compliance regulations.\n\nWhether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+      "body": "As a bonded and insured licensed contractor, Backflow Test Pros not only guarantees top-tier workmanship but also provides expedited scheduling, document retrieval, same-day certification, and a multi-device discounts to help you meet backflow compliance regulations. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
       "primaryCta": null,
       "phoneCta": {
         "label": "(310) 753-7325",
@@ -45,50 +45,13 @@
         "target": ""
       }
     },
-    "brandLogos": [
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13ec47600af0fce0f10_In-N-Out-Burger-Logo-1536x864.avif",
-        "alt": "Backflow Client Logo: IN N OUT"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78230fa486d8708e7958d_76-orange-logo-1.svg",
-        "alt": "Backflow Client Logo: Union 76 Gas Station"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78231c8704cc08abb9fe1_logo-amazon.svg",
-        "alt": "Backflow Client Logo: Amazon"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a782310a0689a34ec281b0_burger-king-4.svg",
-        "alt": "Backflow Client Logo: Burger King"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e7d8ae8936b064423_Costco-logo-1536x864.avif",
-        "alt": "Backflow Client Logo: Costco"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13efca886a143f7a89c_Starbucks-logo-1024x717.avif",
-        "alt": "Backflow Client Logo: Starbucks"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e148fa6e5408695c1_AMC-Theatres-Logo-1536x960.avif",
-        "alt": "Backflow Client Logo: AMC Theaters"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e69e6abbfa2d16ac8_Chick-fil-A-logo-1024x442.avif",
-        "alt": "Backflow Client Logo: Chick fil A"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13eee30532166b723fe_Davita-logo-1536x864.avif",
-        "alt": "Backflow Client Logo: Davita Dialysis"
-      }
-    ],
+    "brandLogos": [],
     "sections": [
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section service-hero",
         "heading": "Los Angeles County Backflow Installation Testing Repair",
-        "body": "As a bonded and insured licensed contractor, Backflow Test Pros not only guarantees top-tier workmanship but also provides expedited scheduling, document retrieval, same-day certification, and a multi-device discounts to help you meet backflow compliance regulations.\n\nWhether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+        "body": "As a bonded and insured licensed contractor, Backflow Test Pros not only guarantees top-tier workmanship but also provides expedited scheduling, document retrieval, same-day certification, and a multi-device discounts to help you meet backflow compliance regulations. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
         "primaryCta": null,
         "phoneCta": {
           "label": "(310) 753-7325",
@@ -98,26 +61,11 @@
         }
       },
       {
-        "kind": "bullet_columns",
-        "sourceClass": "trust-badges",
+        "kind": "rich_text",
+        "sourceClass": "marquee-simple-item",
         "heading": "",
-        "body": "",
-        "columns": [
-          [
-            "Multi-Device Discount",
-            "CA Contractor License",
-            "Bonded",
-            "Insured for over $2,000,000",
-            "Free Repair Coverage"
-          ],
-          [
-            "Serving All of Southern California",
-            "Same Day Certification",
-            "Priority Booking",
-            "Backflow Certified",
-            "Emergency Service"
-          ]
-        ]
+        "body": "Multi-Device DiscountCA Contractor License BondedInsured for over $2,000,000Free Repair CoverageServing All of Southern CaliforniaSame Day CertificationPriority BookingBackflow CertifiedEmergency Service",
+        "links": []
       },
       {
         "kind": "rich_text",
@@ -127,53 +75,10 @@
         "links": []
       },
       {
-        "kind": "logo_strip",
-        "sourceClass": "client-brands-section",
-        "heading": "",
-        "logos": [
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13ec47600af0fce0f10_In-N-Out-Burger-Logo-1536x864.avif",
-            "alt": "Backflow Client Logo: IN N OUT"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78230fa486d8708e7958d_76-orange-logo-1.svg",
-            "alt": "Backflow Client Logo: Union 76 Gas Station"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78231c8704cc08abb9fe1_logo-amazon.svg",
-            "alt": "Backflow Client Logo: Amazon"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a782310a0689a34ec281b0_burger-king-4.svg",
-            "alt": "Backflow Client Logo: Burger King"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e7d8ae8936b064423_Costco-logo-1536x864.avif",
-            "alt": "Backflow Client Logo: Costco"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13efca886a143f7a89c_Starbucks-logo-1024x717.avif",
-            "alt": "Backflow Client Logo: Starbucks"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e148fa6e5408695c1_AMC-Theatres-Logo-1536x960.avif",
-            "alt": "Backflow Client Logo: AMC Theaters"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e69e6abbfa2d16ac8_Chick-fil-A-logo-1024x442.avif",
-            "alt": "Backflow Client Logo: Chick fil A"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13eee30532166b723fe_Davita-logo-1536x864.avif",
-            "alt": "Backflow Client Logo: Davita Dialysis"
-          }
-        ]
-      },
-      {
         "kind": "pricing_tiles",
         "sourceClass": "competitive-price light-background",
         "heading": "Best Value Los Angeles County Backflow Preventer Testing Installation & Repair",
-        "body": "We provide the best value in backflow prevention testing and repair services by combining competitive pricing with premium service and unmatched expertise. Our national, state and locla municipality certified specialists ensure regulatory compliance to deliver precision and reliability in every inspection.\n\nWhether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+        "body": "We provide the best value in backflow prevention testing and repair services by combining competitive pricing with premium service and unmatched expertise. Our national, state and locla municipality certified specialists ensure regulatory compliance to deliver precision and reliability in every inspection. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
         "tiles": [
           {
             "price": "$999",
@@ -191,19 +96,12 @@
             "detail": "Request Pricing *"
           }
         ],
-        "links": []
-      },
-      {
-        "kind": "cta_banner",
-        "sourceClass": "cta-section",
-        "heading": "Schedule to Qualify for $500 in Repair Coverage",
-        "body": "",
         "links": [
           {
             "label": "Call to Lock Your 2026 Pricing Today!",
             "href": "/contact-backflowtestpros",
             "external": false,
-            "target": "_blank"
+            "target": ""
           }
         ]
       },
@@ -211,7 +109,7 @@
         "kind": "feature_cards",
         "sourceClass": "premium-service",
         "heading": "Everything Done For You Backflow Testing & Repair Services",
-        "body": "Backflow Test Pros is 100% dedicated to ensuring your business meets local water authority annual backflow testing and repair requirements so you can avoid fines, civil liability and ensure your water is not turned off for noncompliance.",
+        "body": "Backflow Test Pros is 100% dedicated to ensuring your business meets local water authority annual backflow testing and repair requirements so you can avoid fines, civil liability and ensure your water is not turned off for noncompliance.\n\nEnsure you're fully compliant with specific city, county and water districts backflow prevention requirements\n\nFully managed, headache-free turn-key backflow installation testing and repair service compliance tracking\n\nAvoid costly disruptions to your business operations with the Backflow Test Pros backflow repair coverage\n\nFree initial backflow certification testing, same-day report submittal and 2-year warranty",
         "cards": [
           {
             "title": "Backflow Installation & Testing Compliance",
@@ -245,491 +143,111 @@
               "alt": "Best Value Pricing"
             }
           }
-        ]
+        ],
+        "links": []
       },
       {
-        "kind": "feature_cards",
+        "kind": "rich_text",
         "sourceClass": "certifiedby-city-water-departments",
-        "heading": "AWWA Certified Backflow Testers & Cross Connect Control Specialists",
+        "heading": "AWWA Certified Backflow Testers & Cross Connection Control Specialists",
         "body": "Backflow Test Pros is an AWWA Certified Backflow Tester and Certified Backflow Tester with County Health Departments across Southern California. As a CA State licensed contractor and AWWA Certified backflow specialists, our team of experienced backflow experts work with County Health Boards and Municipal Water Departments throughout Southern California to protect our water and prevent backflow contamination.",
-        "cards": [
-          {
-            "title": "CA Contractor License",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Multi-Device Discount",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "AWWA Backflow Certified",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Bonded & Insured for over $2,000,000",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Free Repair Coverage",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Same Day Certification",
-            "body": "",
-            "icon": null
-          }
-        ]
+        "links": []
       },
       {
-        "kind": "link_list",
-        "sourceClass": "service-area-directory",
-        "heading": "Backflow Test Pros Los Angeles  Testin Installation & Repair   Services Near You",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair these devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow assembly testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.\n\nLos Angeles County Backflow Testing Installation & Repair Service Areas",
-        "items": [
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Altadena",
-            "href": "/la-county/altadena-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Agoura Hills",
-            "href": "/la-county/agoura-hills-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Alhambra",
-            "href": "/la-county/alhambra-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Arcadia",
-            "href": "/la-county/arcadia-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Artesia",
-            "href": "/la-county/artesia-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Avalon",
-            "href": "/la-county/avalon-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Azusa",
-            "href": "/la-county/azusa-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Baldwin Park",
-            "href": "/la-county/baldwin-park-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Bell Gardens",
-            "href": "/la-county/bell-gardens-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Bellflower",
-            "href": "/la-county/bellflower-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Burbank",
-            "href": "/la-county/burbank-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Calabasas",
-            "href": "/la-county/calabasas-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Carson",
-            "href": "/la-county/carson-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Cerritos",
-            "href": "/la-county/cerritos-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Claremont",
-            "href": "/la-county/claremont-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in City of Commerce",
-            "href": "/la-county/city-of-commerce-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Compton",
-            "href": "/la-county/compton-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Covina",
-            "href": "/la-county/covina-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Culver City",
-            "href": "/la-county/culver-city-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Diamond Bar",
-            "href": "/la-county/diamond-bar-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Downey",
-            "href": "/la-county/downey-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Duarte",
-            "href": "/la-county/duarte-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in East Los Angeles",
-            "href": "/la-county/east-los-angeles-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in El Monte",
-            "href": "/la-county/el-monte-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in El Segundo",
-            "href": "/la-county/el-segundo-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Gardena",
-            "href": "/la-county/gardena-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Glendale",
-            "href": "/la-county/glendale-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Glendora",
-            "href": "/la-county/glendora-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Hawaiian Gardens",
-            "href": "/la-county/hawaiian-gardens-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Hawthorne",
-            "href": "/la-county/hawthorne-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Hermosa Beach",
-            "href": "/la-county/hermosa-beach-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Huntington Park",
-            "href": "/la-county/huntington-park-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in City of Industry",
-            "href": "/la-county/city-of-industry-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Inglewood",
-            "href": "/la-county/inglewood-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in La Mirada",
-            "href": "/la-county/la-mirada-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in La Puente",
-            "href": "/la-county/la-puente-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in La Verne",
-            "href": "/la-county/la-verne-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Lakewood",
-            "href": "/la-county/lakewood-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Lancaster",
-            "href": "/la-county/lancaster-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Lawndale",
-            "href": "/la-county/lawndale-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Lomita",
-            "href": "/la-county/lomita-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Los Angeles",
-            "href": "/la-county/los-angeles-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Lynwood",
-            "href": "/la-county/lynwood-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Malibu",
-            "href": "/la-county/malibu-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Marina del Rey",
-            "href": "/la-county/marina-del-rey-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Manhattan Beach",
-            "href": "/la-county/manhattan-beach-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Monrovia",
-            "href": "/la-county/monrovia-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Montebello",
-            "href": "/la-county/montebello-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Monterey Park",
-            "href": "/la-county/monterey-park-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Norwalk",
-            "href": "/la-county/norwalk-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Paramount",
-            "href": "/la-county/paramount-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Pasadena",
-            "href": "/la-county/pasadena-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Pico Rivera",
-            "href": "/la-county/pico-rivera-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Pomona",
-            "href": "/la-county/pomona-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Rancho Palos Verdes",
-            "href": "/la-county/rancho-palos-verdes-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Redondo Beach",
-            "href": "/la-county/redondo-beach-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Rolling Hills",
-            "href": "/la-county/rolling-hills-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Rowland Heights",
-            "href": "/la-county/rowland-heights-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in San Fernando",
-            "href": "/la-county/san-fernando-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in San Gabriel",
-            "href": "/la-county/san-gabriel-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Santa Clarita",
-            "href": "/la-county/santa-clarita-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Santa Fe Springs",
-            "href": "/la-county/santa-fe-springs-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Santa Monica",
-            "href": "/la-county/santa-monica-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Signal Hill",
-            "href": "/la-county/signal-hill-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in South Gate",
-            "href": "/la-county/south-gate-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Torrance",
-            "href": "/la-county/torrance-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Vernon",
-            "href": "/la-county/vernon-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in West Covina",
-            "href": "/la-county/west-covina-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in West Hollywood",
-            "href": "/la-county/west-hollywood-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Westlake Village",
-            "href": "/la-county/westlake-village-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
-          {
-            "label": "Backflow Preventer Testing Installation & Repair in Whittier",
-            "href": "/la-county/whittier-backflow-testing-repair",
-            "external": false,
-            "target": ""
-          }
+        "kind": "bullet_columns",
+        "sourceClass": "explaiber-section service-areas",
+        "heading": "Backflow Test Pros Los Angeles Testin Installation & Repair Services Near You",
+        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair these devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply. ‍ Relying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow assembly testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "columns": [
+          [
+            "Backflow Preventer Testing Installation & Repair in Altadena",
+            "Backflow Preventer Testing Installation & Repair in Agoura Hills",
+            "Backflow Preventer Testing Installation & Repair in Alhambra",
+            "Backflow Preventer Testing Installation & Repair in Arcadia",
+            "Backflow Preventer Testing Installation & Repair in Artesia",
+            "Backflow Preventer Testing Installation & Repair in Avalon",
+            "Backflow Preventer Testing Installation & Repair in Azusa",
+            "Backflow Preventer Testing Installation & Repair in Baldwin Park",
+            "Backflow Preventer Testing Installation & Repair in Bell Gardens",
+            "Backflow Preventer Testing Installation & Repair in Bellflower",
+            "Backflow Preventer Testing Installation & Repair in Beverly Hills",
+            "Backflow Preventer Testing Installation & Repair in Burbank",
+            "Backflow Preventer Testing Installation & Repair in Calabasas",
+            "Backflow Preventer Testing Installation & Repair in Carson",
+            "Backflow Preventer Testing Installation & Repair in Cerritos",
+            "Backflow Preventer Testing Installation & Repair in Claremont",
+            "Backflow Preventer Testing Installation & Repair in City of Commerce",
+            "Backflow Preventer Testing Installation & Repair in Compton",
+            "Backflow Preventer Testing Installation & Repair in Covina",
+            "Backflow Preventer Testing Installation & Repair in Culver City",
+            "Backflow Preventer Testing Installation & Repair in Diamond Bar",
+            "Backflow Preventer Testing Installation & Repair in Downey",
+            "Backflow Preventer Testing Installation & Repair in Duarte",
+            "Backflow Preventer Testing Installation & Repair in East Los Angeles",
+            "Backflow Preventer Testing Installation & Repair in El Monte",
+            "Backflow Preventer Testing Installation & Repair in El Segundo",
+            "Backflow Preventer Testing Installation & Repair in Gardena",
+            "Backflow Preventer Testing Installation & Repair in Glendale",
+            "Backflow Preventer Testing Installation & Repair in Glendora",
+            "Backflow Preventer Testing Installation & Repair in Hawaiian Gardens",
+            "Backflow Preventer Testing Installation & Repair in Hawthorne",
+            "Backflow Preventer Testing Installation & Repair in Hermosa Beach",
+            "Backflow Preventer Testing Installation & Repair in Huntington Park",
+            "Backflow Preventer Testing Installation & Repair in City of Industry",
+            "Backflow Preventer Testing Installation & Repair in Inglewood",
+            "Backflow Preventer Testing Installation & Repair in La Cañada",
+            "Backflow Preventer Testing Installation & Repair in La Mirada"
+          ],
+          [
+            "Backflow Preventer Testing Installation & Repair in La Puente",
+            "Backflow Preventer Testing Installation & Repair in La Verne",
+            "Backflow Preventer Testing Installation & Repair in Lakewood",
+            "Backflow Preventer Testing Installation & Repair in Lancaster",
+            "Backflow Preventer Testing Installation & Repair in Lawndale",
+            "Backflow Preventer Testing Installation & Repair in Lomita",
+            "Backflow Preventer Testing Installation & Repair in Long Beach",
+            "Backflow Preventer Testing Installation & Repair in Los Angeles",
+            "Backflow Preventer Testing Installation & Repair in Lynwood",
+            "Backflow Preventer Testing Installation & Repair in Malibu",
+            "Backflow Preventer Testing Installation & Repair in Marina del Rey",
+            "Backflow Preventer Testing Installation & Repair in Manhattan Beach",
+            "Backflow Preventer Testing Installation & Repair in Monrovia",
+            "Backflow Preventer Testing Installation & Repair in Montebello",
+            "Backflow Preventer Testing Installation & Repair in Monterey Park",
+            "Backflow Preventer Testing Installation & Repair in Norwalk",
+            "Backflow Preventer Testing Installation & Repair in Paramount",
+            "Backflow Preventer Testing Installation & Repair in Pasadena",
+            "Backflow Preventer Testing Installation & Repair in Pico Rivera",
+            "Backflow Preventer Testing Installation & Repair in Pomona",
+            "Backflow Preventer Testing Installation & Repair in Rancho Palos Verdes",
+            "Backflow Preventer Testing Installation & Repair in Redondo Beach",
+            "Backflow Preventer Testing Installation & Repair in Rolling Hills",
+            "Backflow Preventer Testing Installation & Repair in Rowland Heights",
+            "Backflow Preventer Testing Installation & Repair in San Fernando",
+            "Backflow Preventer Testing Installation & Repair in San Gabriel",
+            "Backflow Preventer Testing Installation & Repair in Santa Clarita",
+            "Backflow Preventer Testing Installation & Repair in Santa Fe Springs",
+            "Backflow Preventer Testing Installation & Repair in Santa Monica",
+            "Backflow Preventer Testing Installation & Repair in Signal Hill",
+            "Backflow Preventer Testing Installation & Repair in South Gate",
+            "Backflow Preventer Testing Installation & Repair in Torrance",
+            "Backflow Preventer Testing Installation & Repair in Vernon",
+            "Backflow Preventer Testing Installation & Repair in West Covina",
+            "Backflow Preventer Testing Installation & Repair in West Hollywood",
+            "Backflow Preventer Testing Installation & Repair in Westlake Village",
+            "Backflow Preventer Testing Installation & Repair in Whittier"
+          ]
         ]
       }
     ],
     "sectionKinds": [
       "hero",
-      "bullet_columns",
       "rich_text",
-      "logo_strip",
+      "rich_text",
       "pricing_tiles",
-      "cta_banner",
       "feature_cards",
-      "feature_cards",
-      "link_list"
+      "rich_text",
+      "bullet_columns"
     ],
     "anomalyFlags": [],
     "anomalyRecords": [],
@@ -786,433 +304,6 @@
         "detail": "Request Pricing *"
       }
     ],
-    "serviceAreaItems": [
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Altadena",
-        "href": "/la-county/altadena-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Agoura Hills",
-        "href": "/la-county/agoura-hills-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Alhambra",
-        "href": "/la-county/alhambra-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Arcadia",
-        "href": "/la-county/arcadia-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Artesia",
-        "href": "/la-county/artesia-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Avalon",
-        "href": "/la-county/avalon-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Azusa",
-        "href": "/la-county/azusa-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Baldwin Park",
-        "href": "/la-county/baldwin-park-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Bell Gardens",
-        "href": "/la-county/bell-gardens-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Bellflower",
-        "href": "/la-county/bellflower-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Burbank",
-        "href": "/la-county/burbank-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Calabasas",
-        "href": "/la-county/calabasas-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Carson",
-        "href": "/la-county/carson-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Cerritos",
-        "href": "/la-county/cerritos-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Claremont",
-        "href": "/la-county/claremont-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in City of Commerce",
-        "href": "/la-county/city-of-commerce-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Compton",
-        "href": "/la-county/compton-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Covina",
-        "href": "/la-county/covina-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Culver City",
-        "href": "/la-county/culver-city-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Diamond Bar",
-        "href": "/la-county/diamond-bar-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Downey",
-        "href": "/la-county/downey-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Duarte",
-        "href": "/la-county/duarte-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in East Los Angeles",
-        "href": "/la-county/east-los-angeles-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in El Monte",
-        "href": "/la-county/el-monte-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in El Segundo",
-        "href": "/la-county/el-segundo-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Gardena",
-        "href": "/la-county/gardena-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Glendale",
-        "href": "/la-county/glendale-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Glendora",
-        "href": "/la-county/glendora-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Hawaiian Gardens",
-        "href": "/la-county/hawaiian-gardens-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Hawthorne",
-        "href": "/la-county/hawthorne-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Hermosa Beach",
-        "href": "/la-county/hermosa-beach-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Huntington Park",
-        "href": "/la-county/huntington-park-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in City of Industry",
-        "href": "/la-county/city-of-industry-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Inglewood",
-        "href": "/la-county/inglewood-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in La Mirada",
-        "href": "/la-county/la-mirada-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in La Puente",
-        "href": "/la-county/la-puente-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in La Verne",
-        "href": "/la-county/la-verne-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Lakewood",
-        "href": "/la-county/lakewood-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Lancaster",
-        "href": "/la-county/lancaster-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Lawndale",
-        "href": "/la-county/lawndale-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Lomita",
-        "href": "/la-county/lomita-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Los Angeles",
-        "href": "/la-county/los-angeles-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Lynwood",
-        "href": "/la-county/lynwood-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Malibu",
-        "href": "/la-county/malibu-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Marina del Rey",
-        "href": "/la-county/marina-del-rey-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Manhattan Beach",
-        "href": "/la-county/manhattan-beach-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Monrovia",
-        "href": "/la-county/monrovia-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Montebello",
-        "href": "/la-county/montebello-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Monterey Park",
-        "href": "/la-county/monterey-park-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Norwalk",
-        "href": "/la-county/norwalk-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Paramount",
-        "href": "/la-county/paramount-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Pasadena",
-        "href": "/la-county/pasadena-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Pico Rivera",
-        "href": "/la-county/pico-rivera-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Pomona",
-        "href": "/la-county/pomona-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Rancho Palos Verdes",
-        "href": "/la-county/rancho-palos-verdes-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Redondo Beach",
-        "href": "/la-county/redondo-beach-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Rolling Hills",
-        "href": "/la-county/rolling-hills-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Rowland Heights",
-        "href": "/la-county/rowland-heights-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in San Fernando",
-        "href": "/la-county/san-fernando-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in San Gabriel",
-        "href": "/la-county/san-gabriel-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Santa Clarita",
-        "href": "/la-county/santa-clarita-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Santa Fe Springs",
-        "href": "/la-county/santa-fe-springs-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Santa Monica",
-        "href": "/la-county/santa-monica-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Signal Hill",
-        "href": "/la-county/signal-hill-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in South Gate",
-        "href": "/la-county/south-gate-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Torrance",
-        "href": "/la-county/torrance-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Vernon",
-        "href": "/la-county/vernon-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in West Covina",
-        "href": "/la-county/west-covina-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in West Hollywood",
-        "href": "/la-county/west-hollywood-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Westlake Village",
-        "href": "/la-county/westlake-village-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Backflow Preventer Testing Installation & Repair in Whittier",
-        "href": "/la-county/whittier-backflow-testing-repair",
-        "external": false,
-        "target": ""
-      }
-    ]
+    "serviceAreaItems": []
   }
 ]

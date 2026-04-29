@@ -10,6 +10,11 @@ export interface SiteOffice {
   lines: string[];
 }
 
+export interface SiteMetaLink {
+  href: string;
+  label: string;
+}
+
 const featureIconMap = new Map(featureIcons.map((icon) => [icon.key, icon]));
 
 function requireFeatureIcon(key: string): AssetReference {
@@ -33,6 +38,10 @@ export const siteConfig = {
     display: "(800) 803-6658",
     href: "tel:18008036658",
   },
+  email: {
+    address: "contactus@teambackflowpros.team",
+    href: "mailto:contactus@teambackflowpros.team",
+  },
   promoBanner: {
     label: "Qualify for Free Backflow Repair Coverage",
     href: "/contact-backflowtestpros",
@@ -46,37 +55,48 @@ export const siteConfig = {
       label: "Backflow Repair",
     },
     { href: "/backflow-installation", label: "Backflow Installation" },
+    {
+      href: "/backflow-testing-installation-repair-service-areas",
+      label: "Service Areas",
+    },
   ] as SiteNavItem[],
   footerNavigation: [
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About Us" },
+    { href: "/blog", label: "Blog" },
     { href: "/backflow-testing", label: "Backflow Preventer Testing" },
     {
       href: "/backflow-installation",
-      label: "Backflow Preventer Installations",
+      label: "Backflow Preventer Installations & Replacements",
     },
     {
       href: "/backflow-repair-replacement-services",
-      label: "Backflow Preventer Repairs Replacements",
+      label: "Backflow Preventer Repairs",
     },
     {
-      href: "/orange-county-backflow-testing-installation-repair-service-areas",
-      label: "Backflow Installation Testing & Repairs Service Areas",
+      href: "/backflow-testing-installation-repair-service-areas",
+      label: "Service Areas",
     },
     { href: "/contact-backflowtestpros", label: "Contact Us" },
     { href: "/privacy-policy", label: "Privacy Policy" },
   ] as SiteNavItem[],
   footerAuthorities: [
-    "Los Angeles County Water Departments",
-    "Ventura County Water Departments",
-    "Orange County Water Departments",
-    "Riverside County Water Departments",
-    "San Diego County Water Departments",
-  ],
+    { href: "#", label: "Los Angeles County Water Departments" },
+    { href: "#", label: "Ventura County Water Departments" },
+    { href: "#", label: "Orange County Water Departments" },
+    { href: "#", label: "Riverside County Water Departments" },
+    { href: "#", label: "San Diego County Water Departments" },
+  ] as SiteMetaLink[],
   footerRegulations: [
-    "Orange County Backflow Regulations",
-    "Los Angeles County Backflow Regulations",
-  ],
+    {
+      href: "/orange-county-water-district-backflow-regulations",
+      label: "Orange County Backflow Regulations",
+    },
+    {
+      href: "/los-angeles-county-water-district-backflow-regulations",
+      label: "Los Angeles County Backflow Regulations",
+    },
+  ] as SiteMetaLink[],
   footerCopy: [
     "Backflow Test Pros is a bonded and insured CA Licensed Contractor and American Water Works Association (AWWA) Certified Cross Connection Control + Backflow Testing Specialist 100% dedicated to helping Southern California property owners meet backflow prevention compliance requirements.",
     "With a reputation built on expertise, integrity, and customer satisfaction; Backflow Test Pros manages your backflow prevention concerns so you can avoid water service interruptions and liabilities.",

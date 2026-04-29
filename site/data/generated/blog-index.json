@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "why-backflow-testing-still-matters-57-u-s-outbreaks-and-9-734-reported-illnesses",
+    "path": "/blog/why-backflow-testing-still-matters-57-u-s-outbreaks-and-9-734-reported-illnesses",
+    "canonical": "https://www.backflowtestpros.com/blog/why-backflow-testing-still-matters-57-u-s-outbreaks-and-9-734-reported-illnesses",
+    "title": "Why Backflow Testing Still Matters: 57 U.S. Outbreaks and 9,734 Reported Illnesses",
+    "excerpt": "EPA's historical outbreak and incident counts turn backflow from an abstract plumbing term into a real public-health risk that property owners can understand and act on.",
+    "category": "Risk / awareness",
+    "audience": "Commercial owners, HOAs, homeowners, facility managers",
+    "geography": "United States",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "why backflow testing matters",
+    "heroFact": {
+      "value": "57 outbreaks; 9,734 illnesses",
+      "label": "EPA historical outbreak total",
+      "context": "EPA's cross-connection issue paper gives property owners a concrete benchmark for why backflow prevention is not just paperwork."
+    },
+    "publishedAt": "2026-04-18T09:00:00.000Z",
+    "updatedAt": "2026-04-18T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
+    "slug": "the-average-family-loses-9-400-gallons-a-year-to-leaks-how-much-are-you-wasting",
+    "path": "/blog/the-average-family-loses-9-400-gallons-a-year-to-leaks-how-much-are-you-wasting",
+    "canonical": "https://www.backflowtestpros.com/blog/the-average-family-loses-9-400-gallons-a-year-to-leaks-how-much-are-you-wasting",
+    "title": "The Average Family Loses 9,400 Gallons a Year to Leaks - How Much Are You Wasting?",
+    "excerpt": "Small leaks add up fast. EPA's current WaterSense figures make it easier to explain water waste in gallons homeowners can actually picture and budget around.",
+    "category": "Residential leaks / waste",
+    "audience": "Homeowners, landlords, HOA residents",
+    "geography": "United States",
+    "templateType": "cost_risk_article",
+    "primaryKeyword": "water leak waste per year",
+    "heroFact": {
+      "value": "180 gallons per week; 9,400 gallons per year",
+      "label": "Average family leak waste",
+      "context": "EPA WaterSense gives a simple household benchmark that is easy for owners and landlords to understand."
+    },
+    "publishedAt": "2026-04-16T09:00:00.000Z",
+    "updatedAt": "2026-04-16T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
+    "slug": "commercial-buildings-use-17-of-public-water-withdrawals-why-property-managers-should-track-water-like-energy",
+    "path": "/blog/commercial-buildings-use-17-of-public-water-withdrawals-why-property-managers-should-track-water-like-energy",
+    "canonical": "https://www.backflowtestpros.com/blog/commercial-buildings-use-17-of-public-water-withdrawals-why-property-managers-should-track-water-like-energy",
+    "title": "Commercial Buildings Use 17% of Public-Water Withdrawals - Why Property Managers Should Track Water Like Energy",
+    "excerpt": "Water is not a side issue for commercial buildings. EPA's 17% benchmark gives property managers a fast way to explain why leaks, fixture upgrades, and backflow compliance belong in the same operational conversation.",
+    "category": "Portfolio / benchmarking",
+    "audience": "Property managers, commercial owners, facility directors",
+    "geography": "United States",
+    "templateType": "commercial_facility_article",
+    "primaryKeyword": "commercial building water use statistics",
+    "heroFact": {
+      "value": "17%",
+      "label": "Commercial and institutional share of public-water withdrawals",
+      "context": "EPA WaterSense gives facility teams a clear benchmark for why water deserves the same management attention as energy and waste."
+    },
+    "publishedAt": "2026-04-14T09:00:00.000Z",
+    "updatedAt": "2026-04-14T09:00:00.000Z",
+    "status": "Published"
+  }
+]

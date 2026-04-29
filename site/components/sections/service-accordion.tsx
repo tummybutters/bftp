@@ -7,6 +7,8 @@ interface ServiceAccordionItem {
   body: string;
 }
 
+// Deprecated shared variant retained on disk for possible future reuse.
+
 function truncateBody(body: string, maxSentences = 3) {
   const sentences = body
     .split(/(?<=[.!?])\s+/)

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "blog:build-index": "node scripts/build-blog-index.mjs",
+    "blog:validate": "node scripts/validate-blog-data.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

@@ -30,9 +30,10 @@ export function SiteFooter() {
               {socialIcons.map((icon) => (
                 <TrackedLink
                   key={icon.key}
-                  href={siteConfig.contactPath}
+                  href={icon.href || siteConfig.contactPath}
                   event="footer_social_clicked"
                   properties={{ platform: icon.alt }}
+                  external={Boolean(icon.href?.startsWith("http"))}
                   className="bftp-footer__social-link"
                 >
                   <Image src={icon.src} alt={icon.alt} width={20} height={20} />
@@ -69,8 +70,8 @@ export function SiteFooter() {
           <div className="bftp-footer__nav-column">
             <h2 className="bftp-footer__heading">California Local Water Authorities</h2>
             {siteConfig.footerAuthorities.map((item) => (
-              <p key={item} className="bftp-footer__meta">
-                {item}
+              <p key={item.label} className="bftp-footer__meta">
+                {item.label}
               </p>
             ))}
           </div>
@@ -79,9 +80,15 @@ export function SiteFooter() {
               California Local County Water Regulations
             </h2>
             {siteConfig.footerRegulations.map((item) => (
-              <p key={item} className="bftp-footer__meta">
-                {item}
-              </p>
+              <TrackedLink
+                key={item.href}
+                href={item.href}
+                event="footer_link_clicked"
+                properties={{ label: item.label, column: "regulations" }}
+                className="bftp-footer__link"
+              >
+                {item.label}
+              </TrackedLink>
             ))}
           </div>
         </div>

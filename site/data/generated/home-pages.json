@@ -11,7 +11,7 @@
     "canonical": "https://www.backflowtestpros.com/",
     "h1": "SoCals Premier Backflow Installation, Testing & Repair",
     "h2s": [
-      "AWWA Certified Backflow Testers Cross Connect Control Specialists",
+      "AWWA Certified Backflow Testers Cross Connection Control Specialists",
       "Everything Done For You Backflow Testing Installation & Repair",
       "Competitive Best Value Pricing",
       "Turnkey Backflow Prevention Testing Installation & Repair Services",
@@ -161,42 +161,38 @@
         ]
       },
       {
-        "kind": "feature_cards",
+        "kind": "link_list",
         "sourceClass": "certifiedby-city-water-departments",
-        "heading": "AWWA Certified Backflow Testers Cross Connect Control Specialists",
+        "heading": "AWWA Certified Backflow Testers Cross Connection Control Specialists",
         "body": "Under the regulatory guidelines of the Cross Connection Control Policy Handbook (CCCPH) which replaces Title 17 of the California Code of Regulations, the American Water Works Association (AWWA) is the only agency recognized under new laws for backflow testing certification.\n\nBackflow Test Pros is AWWA Certified Backflow Tester and Approved Cross-Connect Specialist + Certified Backflow Testers with County Health Departments across Southern California. As a CA State Licensed Contractor and AWWA Cross Connection Control Specialists, our team of experienced backflow experts work with County Health Departments and Municipal Water Departments throughout Southern California to protect our water and prevent backflow contamination.",
-        "cards": [
+        "items": [
           {
-            "title": "CA Contractor License",
-            "body": "",
-            "icon": null
+            "label": "Cross Connection Control Policy Handbook (CCCPH)",
+            "href": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/cccph.html",
+            "external": true,
+            "target": "_blank"
           },
           {
-            "title": "Multi-Device Discount",
-            "body": "",
-            "icon": null
+            "label": "AWWA Certified Backflow Tester",
+            "href": "https://www.awwa.org/",
+            "external": true,
+            "target": "_blank"
           },
           {
-            "title": "AWWA Backflow Certified",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Bonded & Insured for over $2,000,000",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Free Repair Coverage",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Same Day Certification",
-            "body": "",
-            "icon": null
+            "label": "Approved Cross-Connect Specialist + Certified Backflow Testers",
+            "href": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/specialists-certification.html",
+            "external": true,
+            "target": "_blank"
           }
-        ]
+        ],
+        "map": null
+      },
+      {
+        "kind": "rich_text",
+        "sourceClass": "marquee-simple-item",
+        "heading": "",
+        "body": "CA Contractor License\nMulti-Device Discount\nAWWA Backflow Certified\nBonded & Insured for over $2,000,000\nFree Repair Coverage\nSame Day Certification",
+        "links": []
       },
       {
         "kind": "feature_cards",
@@ -222,7 +218,7 @@
           },
           {
             "title": "Repair Coverage",
-            "body": "Avoid costly disruptions to your business operations with the Backflow Test Pros backflow repair coverage",
+            "body": "Avoid costly disruptions to your business operations with the Backflow Test Pros  backflow repair coverage",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68cfe194a32653e14b847821_67eef63aa3ededc3427026db_Repair%20Coverage-Blue.svg",
               "alt": "Repair Coverage"
@@ -235,6 +231,14 @@
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68cfe185a0f4c9d7c10c80ed_67cba7b68ae8762187a686db_same-day-certification-Blue.svg",
               "alt": "Same-Day Certification"
             }
+          }
+        ],
+        "links": [
+          {
+            "label": "Contact Us to Lock Your 2026 Pricing!",
+            "href": "/contact-backflowtestpros",
+            "external": false,
+            "target": "_blank"
           }
         ]
       },
@@ -270,49 +274,41 @@
         ]
       },
       {
-        "kind": "feature_cards",
+        "kind": "link_list",
         "sourceClass": "backflow-prevention-services",
         "heading": "Turnkey Backflow Prevention Testing Installation & Repair Services",
         "body": "In order to protect our drinking water quality, and safety, backflow prevention assemblies are utilized to prevent unclean or contaminated water from entering the potable domestic water system. California state law, county health board regulations and local municipal codes require that approved backflow preventer be installed, tested, and repaired by licensed and certified backflow testers.\n\nAs a county and local water authority certified backflow tester, and CA licensed contractor, Backflow Test Pros is committed to providing you the best service at the industry's most competitive prices to help you avoid civil penalties and keep your water turned on.",
-        "cards": [
+        "items": [
           {
-            "title": "Backflow Prevention Testing",
-            "body": "Backflow prevention testing refers to annual testing of installed backflow preventer that ensure water flows in only one direction to prevent the contamination of our public water supply.\n\nCommercial and public facilities are typically required to have backflow preventers tested annually to ensure that they are functioning properly.\n\nIn California, backflow prevention testing can only be performed by certified backflow testers who have the proper training and credentials to test, repair and install backflow assemblies in addition to submitting formal reports to local water authority, health department, or relevant regulatory body.\n\nFailure to provide proper documentation or submit test results on time can lead to penalties, fines, or other actions.\n\nBackflow Test Pros helps ensure you meet water safety compliance requirements and avoid civil penalties.",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/6813f5ea3b8a0e582926bfaa_Backflow%20Device%20Test.avif",
-              "alt": "Backflow Device Inspection"
-            }
+            "label": "Backflow Prevention Testing",
+            "href": "/backflow-testing",
+            "external": false,
+            "target": "",
+            "description": "Backflow prevention testing refers to annual testing of installed backflow preventer that ensure water flows in only one direction to prevent the contamination of our public water supply.\n\nCommercial and public facilities are typically required to have backflow preventers tested annually to ensure that they are functioning properly.\n\nIn California, backflow prevention testing can only be performed by certified backflow testers who have the proper training and credentials to test, repair and install backflow assemblies in addition to submitting formal reports to local water authority, health department, or relevant regulatory body.\n\nFailure to provide proper documentation or submit test results on time can lead to penalties, fines, or other actions.\n\nBackflow Test Pros helps ensure you meet water safety compliance requirements and avoid civil penalties."
           },
           {
-            "title": "Backflow Repair & Replacement",
-            "body": "Failure to comply with the state, county and local municipality backflow inspection, repair and maintenance requirements may expose you to fines or penalties in addition to having the county health department or local water authority disconnect your property's water service.\n\nIf a backflow preventer is found to be leaking, malfunctioning or damaged during testing or inspection, the facility must repair or replace the device promptly.\n\nFailure to do so can result in fines, water service disconnection, lawsuits, and potential liability for any damages caused by contamination.\n\nDon't risk letting your defective, leaking or broken backflow prevention assemblies trigger costly civil penalties and disruption of your business.\n\nBackflow Test Pros helps ensure you meet water safety avoid civil penalties and disruptions to your business.",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/683506d47277987a4d4a66ec_Backflow%20Repair.avif",
-              "alt": "Backflow Device Repair & Replacement"
-            }
+            "label": "Backflow Repair & Replacement",
+            "href": "/backflow-repair-replacement-services",
+            "external": false,
+            "target": "",
+            "description": "Failure to comply with the state, county and local municipality backflow inspection, repair and maintenance requirements may expose you to fines or penalties in addition to having the county health department or local water authority disconnect your property's water service.\n\nIf a backflow preventer is found to be leaking, malfunctioning or damaged during testing or inspection, the facility must repair or replace the device promptly.\n\nFailure to do so can result in fines, water service disconnection, lawsuits, and potential liability for any damages caused by contamination.\n\nDon't risk letting your defective, leaking or broken backflow prevention assemblies trigger costly civil penalties and disruption of your business.\n\nBackflow Test Pros helps ensure you meet water safety avoid civil penalties and disruptions to your business."
           },
           {
-            "title": "Backflow preventer Installations",
-            "body": "Backflow is the undesired unintended reversal of flow of water and/or other liquids, gases, or other substances into a PWS's distribution system or water supply.\n\nThe California State Water Resource Control Board requires that properly installed and maintained backflow assemblies be installed by certified specialists who are trained to properly evaluate the type and degree of hazards which exists in the distribution system.\n\nFailure to install approved backflow preventers can lead to significant fines and disruptions to your water service until the backflow prevention issues are resolved\n\nNon-compliance also increases the risk of water contamination, which can lead to contamination related health hazards, lawsuits, and potential liability for any damages caused by any contamination.\n\nBackflow Test Pros helps ensure you meet water safety avoid civil penalties and disruptions to your business.",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/686599bbc05883e402b2e461_backflow%20installation.avif",
-              "alt": "Backflow Device Iinstallation"
-            }
+            "label": "Backflow preventer Installations",
+            "href": "/backflow-installation",
+            "external": false,
+            "target": "",
+            "description": "Backflow is the undesired unintended reversal of flow of water and/or other liquids, gases, or other substances into a PWS's distribution system or water supply.\n\nThe California State Water Resource Control Board requires that properly installed and maintained backflow assemblies be installed by certified specialists who are trained to properly evaluate the type and degree of hazards which exists in the distribution system.\n\nFailure to install approved backflow preventers can lead to significant fines and disruptions to your water service until the backflow prevention issues are resolved\n\nNon-compliance also increases the risk of water contamination, which can lead to contamination related health hazards, lawsuits, and potential liability for any damages caused by any contamination.\n\nBackflow Test Pros helps ensure you meet water safety avoid civil penalties and disruptions to your business."
           }
-        ]
+        ],
+        "map": null
       },
       {
         "kind": "link_list",
         "sourceClass": "explaiber-section service-areas",
         "heading": "Orange County Backflow Testing Installation & Repair Service Areas",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply. ‍ Relying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
         "items": [
-          {
-            "label": "Backflow Installation Services in Rancho Mission Viejo",
-            "href": "/orange-county/rancho-mission-viejo-backflow-testing-installation-repair",
-            "external": false,
-            "target": ""
-          },
           {
             "label": "Backflow Testing & Installation Services in Aliso Viejo",
             "href": "/orange-county/aliso-viejo-backflow-testing-repair",
@@ -554,10 +550,11 @@
     "sectionKinds": [
       "hero",
       "logo_strip",
-      "feature_cards",
+      "link_list",
+      "rich_text",
       "feature_cards",
       "pricing_tiles",
-      "feature_cards",
+      "link_list",
       "link_list"
     ],
     "anomalyFlags": [],
@@ -741,12 +738,6 @@
         "href": "/orange-county/placentia-backflow-testing-repair",
         "external": false,
         "target": "_blank"
-      },
-      {
-        "label": "Backflow Testing & Installation Services in Rancho Mission Viejo",
-        "href": "/orange-county/rancho-mission-viejo-backflow-testing-installation-repair",
-        "external": false,
-        "target": ""
       },
       {
         "label": "Backflow Testing & Installation Services in Rancho Santa Margarita",

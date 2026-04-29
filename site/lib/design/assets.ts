@@ -2,6 +2,7 @@ export type AssetReference = {
   key: string;
   src: string;
   alt: string;
+  href?: string;
   usage: string[];
   notes?: string;
   beltScale?: number;
@@ -341,54 +342,63 @@ export const socialIcons: AssetReference[] = [
     key: "google",
     src: "/assets/social/google.svg",
     alt: "Google icon",
+    href: "https://www.google.com/search?sca_esv=55a910f019e63594&hl=en&authuser=0&kgmid=/g/11h5rxj6_j&q=Backflow+Test+Pros&shndl=30&shem=lcuae,lsptbl1c,uaasie&source=sh/x/loc/uni/m1/1&kgs=c2e8d88de7b5e93c&utm_source=lcuae,lsptbl1c,uaasie,sh/x/loc/uni/m1/1",
     usage: ["footer social row"],
   },
   {
     key: "googleMaps",
     src: "/assets/social/google-maps.svg",
     alt: "Google Maps icon",
+    href: "https://www.google.com/search?sca_esv=adbe3f455b36db8e&hl=en&authuser=0&kgmid=/g/11btvl7wt1&q=Backflow+Test+Pros+Los+Angeles&shndl=30&shem=lcuae,lsptbl1c,uaasie&source=sh/x/loc/uni/m1/1&kgs=43c74b7db7be27d2&utm_source=lcuae,lsptbl1c,uaasie,sh/x/loc/uni/m1/1",
     usage: ["footer social row"],
   },
   {
     key: "bing",
     src: "/assets/social/bing.svg",
     alt: "Bing icon",
+    href: "https://www.bing.com/maps/search?ty=18&description=1150+S+Olive+St+Floor+10th%2C+Los+Angeles%2C+CA+90015%C2%B7Backflow+services&cardbg=%23F98745&dt=1755637200000&tt=Backflow+Test+Pros+Los+Angeles&tsts0=%2526ty%253D18%2526q%253DBackflow%252520Test%252520Pros%252520Los%252520Angeles%25252C%2525201150%252520S%252520Olive%252520St%252520Floor%25252010th%25252C%252520Los%252520Angeles%25252C%252520CA%25252C%252520United%252520States%2526ss%253Dypid.YN873x8123508003196499285%2526mb%253D34.046161%7E-118.271567%7E34.032986%7E-118.251804%2526description%253D1150%252520S%252520Olive%252520St%252520Floor%25252010th%25252C%252520Los%252520Angeles%25252C%252520CA%25252090015%2525C2%2525B7Backflow%252520services%2526cardbg%253D%252523F98745%2526dt%253D1755637200000&tstt0=Backflow+Test+Pros+Los+Angeles&ftst=0&ftics=False&v=2&sV=2&form=S00027&q=Backflow+Test+Pros+Los+Angeles%2C+1150+S+Olive+St+Floor+10th%2C+Los+Angeles%2C+CA%2C+United+States&ss=id.ypid%3AYN873x8123508003196499285&mb=34.046161%7E-118.271567%7E34.032986%7E-118.251804&cp=34.039574%7E-118.267007&lvl=16&style=r",
     usage: ["footer social row"],
   },
   {
     key: "appleMaps",
     src: "/assets/social/apple-maps.svg",
     alt: "Apple Maps icon",
+    href: "https://maps.apple.com/place?address=2211%20Michelson%20Dr%2C%20FL%209%2C%20Irvine%2C%20CA%20%2092612%2C%20United%20States&coordinate=33.677464%2C-117.855357&name=Backflow%20Test%20Pros&place-id=IEB409312E945C682&_provider=9902",
     usage: ["footer social row"],
   },
   {
     key: "facebook",
     src: "/assets/social/facebook.svg",
     alt: "Facebook icon",
+    href: "https://www.facebook.com/backflowtestpros/",
     usage: ["footer social row"],
   },
   {
     key: "yelp",
     src: "/assets/social/yelp.svg",
     alt: "Yelp icon",
+    href: "https://www.yelp.com/biz/backflow-test-pros-los-angeles",
     usage: ["footer social row"],
   },
   {
     key: "bbb",
     src: "/assets/social/bbb.svg",
     alt: "Better Business Bureau icon",
+    href: "https://www.bbb.org/us/ca/irvine/profile/backflow-testing/backflow-test-pros-1126-1000149225",
     usage: ["footer social row"],
   },
   {
     key: "quora",
     src: "/assets/social/quora.svg",
     alt: "Quora icon",
+    href: "https://www.quora.com/profile/Backflow-Test-Pros",
     usage: ["footer social row"],
   },
   {
     key: "youtube",
     src: "/assets/social/youtube.svg",
     alt: "YouTube icon",
+    href: "https://www.youtube.com/@BackflowTestPros",
     usage: ["footer social row"],
   },
 ];

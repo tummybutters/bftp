@@ -26,6 +26,7 @@ export type SectionKind =
 export interface ContentLinkItem {
   label: string;
   href: string;
+  description?: string;
   external: boolean;
   target: string;
 }
@@ -99,6 +100,7 @@ export interface FeatureCardsSection {
   heading: string;
   body: string;
   cards: ContentCard[];
+  links?: ContentLinkItem[];
 }
 
 export interface PricingTilesSection {

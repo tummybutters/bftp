@@ -4,6 +4,14 @@ import { decorativeShapes, serviceImages } from "@/lib/design";
 import type { LinkItem } from "@/lib/site-schema";
 import { TrackedLink } from "@/lib/analytics/tracked-link";
 
+function splitDescription(description: string) {
+  return description
+    .replaceAll("\u200d", "\n")
+    .split(/\n+/)
+    .map((segment) => segment.trim())
+    .filter(Boolean);
+}
+
 function buildServiceDescription(label: string) {
   if (/testing/i.test(label)) {
     return "Annual testing, report filing, and certification support managed by certified backflow specialists.";
@@ -60,9 +68,13 @@ export function ServiceCardGrid({ items }: { items: LinkItem[] }) {
                   {item.label}
                 </TrackedLink>
               </h3>
-              <p className="bftp-service-card__copy">
-                {item.description ?? buildServiceDescription(item.label)}
-              </p>
+              <div className="bftp-service-card__copy">
+                {splitDescription(item.description ?? buildServiceDescription(item.label)).map(
+                  (paragraph, paragraphIndex) => (
+                    <p key={`${item.label}-copy-${paragraphIndex}`}>{paragraph}</p>
+                  ),
+                )}
+              </div>
             </div>
           </article>
         );

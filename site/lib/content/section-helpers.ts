@@ -53,26 +53,70 @@ export function splitContentBody(body: string) {
 
 export function extractProofItems(body: string) {
   const candidates = [
-    "CA Contractor License",
-    "Multi-Device Discount",
-    "AWWA Backflow Certified",
-    "Bonded & Insured for over $2,000,000",
-    "Free Repair Coverage",
-    "Same Day Certification",
-    "Serving All of Southern California",
+    {
+      label: "Licensed CA Contractor",
+      matches: ["CA Contractor License", "CA State Licensed Contractor", "Licensed CA Contractor"],
+    },
+    {
+      label: "Multi-Device Discounts",
+      matches: ["Multi-Device Discount", "Multi-Device Discounts"],
+    },
+    {
+      label: "AWWA Certified Testers",
+      matches: ["AWWA Backflow Certified", "AWWA Certified", "Backflow Certified"],
+    },
+    {
+      label: "Bonded & Insured",
+      matches: ["Bonded & Insured for over $2,000,000", "BondedInsured", "Bonded & Insured"],
+    },
+    {
+      label: "Repair Coverage Available",
+      matches: ["Free Repair Coverage", "Repair Coverage", "Repair Coverage Available"],
+    },
+    {
+      label: "Same-Day Report Submittal",
+      matches: ["Same Day Certification", "Same-Day Certification", "Same-Day Report Submittal"],
+    },
+    {
+      label: "Southern California Service",
+      matches: ["Serving All of Southern California", "Southern California Service"],
+    },
+    {
+      label: "Priority Scheduling",
+      matches: ["Priority Booking", "Priority Scheduling"],
+    },
+    {
+      label: "Emergency Service",
+      matches: ["Emergency Service"],
+    },
+  ];
+  const safeFillers = [
+    "Local Authority Coordination",
+    "Compliance Scheduling Support",
+    "Report Submittal Support",
   ];
 
   const normalized = body.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const proofItems = candidates
+    .filter((candidate) =>
+      candidate.matches.some((match) =>
+        normalized.includes(match.toLowerCase().replace(/[^a-z0-9]/g, "")),
+      ),
+    )
+    .map((candidate) => candidate.label);
 
-  return candidates.filter((candidate) =>
-    normalized.includes(candidate.toLowerCase().replace(/[^a-z0-9]/g, "")),
-  );
+  if (proofItems.length > 0 && proofItems.length < 9) {
+    proofItems.push(...safeFillers.slice(0, 9 - proofItems.length));
+  }
+
+  return proofItems;
 }
 
 export function toLinkItemsFromContent(items: ContentLinkItem[]): LinkItem[] {
   return items.map((item) => ({
     href: item.href,
     label: item.label,
+    description: item.description,
     external: item.external,
     target: item.target,
   }));

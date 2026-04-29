@@ -80,26 +80,6 @@ export function SiteHeader() {
               <HeaderNavLink key={link.href} href={link.href} label={link.label} />
             ))}
           </nav>
-          <div className="bftp-navbar__cta-wrap">
-            <TrackedLink
-              href={siteConfig.phone.href}
-              event="phone_cta_clicked"
-              properties={{
-                location: "header-navbar",
-                phone_number: siteConfig.phone.raw,
-              }}
-              className="bftp-navbar__cta bftp-cta-button"
-            >
-              <Image
-                src={siteIcons.phone.src}
-                alt={siteIcons.phone.alt}
-                width={18}
-                height={18}
-                className="bftp-navbar__cta-icon"
-              />
-              <span className="bftp-navbar__cta-label">{siteConfig.phone.display}</span>
-            </TrackedLink>
-          </div>
           <SiteHeaderMobileMenu />
         </div>
       </div>

@@ -6,13 +6,13 @@
     "family": "service_area_hub",
     "sourceTemplateFamily": "service_area_hub",
     "pageClass": "county_hub",
-    "title": "Backflow Test Pros Backflow Testing Service Areas",
-    "metaDescription": "SoCals Preferred Backflow Testing Installation and Repair Services | Call 800-803-6658 to Schedule your Test in Advance to Qualify for Free Repair Coverage. Multi-Location Discounts. Same-Day Certification.",
+    "title": "Southern California Backflow Service Areas | Backflow Test Pros",
+    "metaDescription": "Browse county and city service areas for backflow testing, installation, and repair throughout Southern California.",
     "canonical": "https://www.backflowtestpros.com/backflow-testing-installation-repair-service-areas",
     "h1": "Backflow Prevention Installation Testing & Repair Service Areas",
     "h2s": [
-      "Everything Done For You Backflow Prevention Services",
-      "Trusted by Leading Brands Throughout Southern California"
+      "Browse Counties",
+      "Trusted Across Southern California"
     ],
     "h3s": [
       "Costco",
@@ -44,309 +44,8 @@
     "hero": {
       "kind": "hero",
       "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "Backflow Prevention Installation Testing & Repair Service Areas",
-      "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services across Southern California.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
-      "primaryCta": {
-        "label": "Qualify for Free Backflow Repair Coverage",
-        "href": "/contact-backflowtestpros",
-        "external": false,
-        "target": ""
-      },
-      "phoneCta": {
-        "label": "Contact Us",
-        "href": "/contact-backflowtestpros",
-        "external": false,
-        "target": ""
-      }
-    },
-    "brandLogos": [
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13ec47600af0fce0f10_In-N-Out-Burger-Logo-1536x864.avif",
-        "alt": "Backflow Client Logo: IN N OUT"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78230fa486d8708e7958d_76-orange-logo-1.svg",
-        "alt": "Backflow Client Logo: Union 76 Gas Station"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78231c8704cc08abb9fe1_logo-amazon.svg",
-        "alt": "Backflow Client Logo: Amazon"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a782310a0689a34ec281b0_burger-king-4.svg",
-        "alt": "Backflow Client Logo: Burger King"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e7d8ae8936b064423_Costco-logo-1536x864.avif",
-        "alt": "Backflow Client Logo: Costco"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13efca886a143f7a89c_Starbucks-logo-1024x717.avif",
-        "alt": "Backflow Client Logo: Starbucks"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e148fa6e5408695c1_AMC-Theatres-Logo-1536x960.avif",
-        "alt": "Backflow Client Logo: AMC Theaters"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e69e6abbfa2d16ac8_Chick-fil-A-logo-1024x442.avif",
-        "alt": "Backflow Client Logo: Chick fil A"
-      },
-      {
-        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13eee30532166b723fe_Davita-logo-1536x864.avif",
-        "alt": "Backflow Client Logo: Davita Dialysis"
-      }
-    ],
-    "sections": [
-      {
-        "kind": "hero",
-        "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "Backflow Prevention Installation Testing & Repair Service Areas",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services across Southern California.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
-        "primaryCta": {
-          "label": "Qualify for Free Backflow Repair Coverage",
-          "href": "/contact-backflowtestpros",
-          "external": false,
-          "target": ""
-        },
-        "phoneCta": {
-          "label": "Contact Us",
-          "href": "/contact-backflowtestpros",
-          "external": false,
-          "target": ""
-        }
-      },
-      {
-        "kind": "logo_strip",
-        "sourceClass": "client-brands-section",
-        "heading": "",
-        "logos": [
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13ec47600af0fce0f10_In-N-Out-Burger-Logo-1536x864.avif",
-            "alt": "Backflow Client Logo: IN N OUT"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78230fa486d8708e7958d_76-orange-logo-1.svg",
-            "alt": "Backflow Client Logo: Union 76 Gas Station"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78231c8704cc08abb9fe1_logo-amazon.svg",
-            "alt": "Backflow Client Logo: Amazon"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a782310a0689a34ec281b0_burger-king-4.svg",
-            "alt": "Backflow Client Logo: Burger King"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e7d8ae8936b064423_Costco-logo-1536x864.avif",
-            "alt": "Backflow Client Logo: Costco"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13efca886a143f7a89c_Starbucks-logo-1024x717.avif",
-            "alt": "Backflow Client Logo: Starbucks"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e148fa6e5408695c1_AMC-Theatres-Logo-1536x960.avif",
-            "alt": "Backflow Client Logo: AMC Theaters"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e69e6abbfa2d16ac8_Chick-fil-A-logo-1024x442.avif",
-            "alt": "Backflow Client Logo: Chick fil A"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13eee30532166b723fe_Davita-logo-1536x864.avif",
-            "alt": "Backflow Client Logo: Davita Dialysis"
-          }
-        ]
-      },
-      {
-        "kind": "feature_cards",
-        "sourceClass": "backflow-testing-benefits",
-        "heading": "Everything Done For You Backflow Prevention Services",
-        "body": "As licensed contractors, certified backflow experts and trusted cross connection control specialists, we provide Los Angeles, Orange, San Diego, San Bernardino, Riverside and Ventura County residential and business communities turn-key backflow testing, installation, repairs services to keep our local water clean and help you avoid water disruptions, fines and civil liability.",
-        "cards": [
-          {
-            "title": "Ventura County Backflow Testing Installation & Repair Service Areas",
-            "body": "Call us to Qualify for Included Warranty, Repair Coverage & Multi-location pricing for your Ventura County Backflow Prevention Testing Installation & Repair Requirements!",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
-              "alt": "Priority Scheduling"
-            }
-          },
-          {
-            "title": "Los Angeles County Backflow Testing Installation & Repair Service Areas",
-            "body": "Call us to Qualify for Included Warranty, Repair Coverage & Multi-location pricing for your Los Angeles Backflow Prevention Testing Installation & Repair Requirements!",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
-              "alt": "City Documents Retrieval"
-            }
-          },
-          {
-            "title": "Orange County Backflow Testing Installation & Repair Service Areas",
-            "body": "Call us to Qualify for Included Warranty, Repair Coverage & Multi-location pricing for your Orange County Backflow Prevention Testing Installation & Repair Requirements!",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
-              "alt": "Same-Day Certification"
-            }
-          },
-          {
-            "title": "San Bernardino County Backflow Testing Installation & Repair Service Areas",
-            "body": "Call us to Qualify for Included Warranty, Repair Coverage & Multi-location pricing for your San Bernardino County Backflow Prevention Testing Installation & Repair Requirements!",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
-              "alt": "Priority Scheduling"
-            }
-          },
-          {
-            "title": "Riverside County Backflow Testing Installation & Repair Service Areas",
-            "body": "Call us to Qualify for Included Warranty, Repair Coverage & Multi-location pricing for your Riverside County Backflow Prevention Testing Installation & Repair Requirements!",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
-              "alt": "City Documents Retrieval"
-            }
-          },
-          {
-            "title": "San Diego County Backflow Testing Installation & Repair Service Areas",
-            "body": "Call us to Qualify for Included Warranty, Repair Coverage & Multi-location pricing for your San Diego County Backflow Prevention Testing Installation & Repair Requirements!",
-            "icon": {
-              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
-              "alt": "Same-Day Certification"
-            }
-          }
-        ]
-      },
-      {
-        "kind": "feature_cards",
-        "sourceClass": "testimonial-section section-spacing",
-        "heading": "Trusted by Leading Brands Throughout Southern California",
-        "body": "From the single family homes and apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing and repair services across Southern California. Our certified specialists ensure that every backflow prevention device is properly inspected, tested, and repaired to safeguard your water supply and maintain full compliance with local and state regulations. Whether you're a homeowner, property manager, or business owner; we offer fast, reliable service, including priority scheduling, same-day certification, and emergency repairs.\n\nWith a reputation built on expertise, integrity and customer satisfaction, we provide affordable, backflow installation, testing and repair solutions that protect both your business and the public water supply.",
-        "cards": [
-          {
-            "title": "Costco",
-            "body": "Sydney and her team are amazing.\n\nThey've been taking care of all of our backflow needs for years. Everything is so convenient, and they even saved us money when it was time to replace our main backflow valve\n\nHonest and reliable company. Excellent service. I highly recommend their annual backflow testing and repair services.",
-            "icon": null
-          },
-          {
-            "title": "Hilton Hotels",
-            "body": "I manage a hotel in Garden Grove, near Disneyland and I am very happy with the service One Flow Backflow Test Pros provides.\n\nI have been using them for 3 years now. Their customer service and reliability are top notch.\n\nI highly recommend them. They handle everything professionally, they even submit the paper work to the city for me.",
-            "icon": null
-          },
-          {
-            "title": "Davita Dialysis",
-            "body": "John and his One Flow team have assisted me on multiple occasions where it was after hours and short notice. Most recently I needed assistance and even though he was on vacation he still arranged to get my testing completed.\n\nOn time, professional, knowledgeable, and willing to help resolve unforeseen issues when on site. Definitely the company I reach out to whenever I have needs.",
-            "icon": null
-          },
-          {
-            "title": "Flame Broiler",
-            "body": "Honest and reliable company. I have used them for a few years and they are always available for testing and repairs.\n\nThis company is great! They handle everything professionally, they even submit the paper work to the city for me. Thank you so much!",
-            "icon": null
-          },
-          {
-            "title": "Chick-Fil-A",
-            "body": "Wow! This company raises the bar every time I call. They are reliable and do excellent work!\n\nThe testing is easy, the repairs are affordable, and I'm able to schedule around my store hours to avoid disruption to my water.\n\nOutstanding service, highly recommend.",
-            "icon": null
-          },
-          {
-            "title": "ARCO Gas Stations",
-            "body": "We've used One Flow Backflow Test Pros for for years.\n\nThey provide dependable service, and submit our paperwork on time. We also really like their multi-device discounts!\n\nHighly recommend them for certification and repairs of backflow preventer devices.",
-            "icon": null
-          }
-        ]
-      }
-    ],
-    "sectionKinds": [
-      "hero",
-      "logo_strip",
-      "feature_cards",
-      "feature_cards"
-    ],
-    "anomalyFlags": [],
-    "anomalyRecords": [],
-    "countySlug": "",
-    "countyName": "",
-    "hubScope": "Southern California",
-    "quickLinks": [],
-    "cityLinks": [
-      {
-        "label": "Ventura County Backflow Testing Installation & Repair Service Areas",
-        "href": "/ventura-county-backflow-testing-installation-repair-service-areas",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Los Angeles County Backflow Testing Installation & Repair Service Areas",
-        "href": "/los-angeles-county-backflow-testing-installation-repair-service-areas",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Orange County Backflow Testing Installation & Repair Service Areas",
-        "href": "/orange-county-backflow-testing-installation-repair-service-areas",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "San Bernardino County Backflow Testing Installation & Repair Service Areas",
-        "href": "/san-bernardino-county-backflow-testing-installation-repair-service-areas",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "Riverside County Backflow Testing Installation & Repair Service Areas",
-        "href": "/riverside-county-backflow-testing-installation-repair-service-areas",
-        "external": false,
-        "target": ""
-      },
-      {
-        "label": "San Diego County Backflow Testing Installation & Repair Service Areas",
-        "href": "/san-diego-county-backflow-testing-installation-repair-service-areas",
-        "external": false,
-        "target": ""
-      }
-    ]
-  },
-  {
-    "slug": "los-angeles-county-backflow-testing-installation-repair-service-areas",
-    "path": "/los-angeles-county-backflow-testing-installation-repair-service-areas",
-    "url": "https://www.backflowtestpros.com/los-angeles-county-backflow-testing-installation-repair-service-areas",
-    "family": "service_area_hub",
-    "sourceTemplateFamily": "service_area_hub",
-    "pageClass": "county_hub",
-    "title": "Los Angeles County Backflow Testing Installation & Repair Service Areas",
-    "metaDescription": "Los Angeles  County's Preferred Backflow Testing Installation and Repair Services | Call 800-803-6658 to Schedule your Test in Advance to Qualify for Free Repair Coverage. Multi-Location Discounts. Same-Day Certification.",
-    "canonical": "https://www.backflowtestpros.com/los-angeles-county-backflow-testing-installation-repair-service-areas",
-    "h1": "Los Angeles County Backflow Installation Testing & Repair Service Areas",
-    "h2s": [
-      "Everything Done For You Backflow Prevention Services",
-      "Los Angeles County Backflow Installation Testing & Repair Service Areas"
-    ],
-    "h3s": [
-      "Lock your 2026 pricing with multi-location scheduling"
-    ],
-    "schemaTypes": [
-      "WebPage",
-      "Service",
-      "LocalBusiness",
-      "PostalAddress",
-      "City",
-      "Offer"
-    ],
-    "wordCount": 1732,
-    "primaryKeywordIntent": "los angeles county backflow testing installation repair service areas",
-    "ctaPattern": [
-      "call_now",
-      "contact_form",
-      "schedule",
-      "pricing",
-      "repair_coverage",
-      "same_day_certification"
-    ],
-    "heroImage": "",
-    "hero": {
-      "kind": "hero",
-      "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "Los Angeles County Backflow Installation Testing & Repair Service Areas",
-      "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Los Angeles County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+      "heading": "Southern California Backflow Service Areas",
+      "body": "Browse county-by-county service coverage for backflow testing, installation, and repair throughout Southern California.\n\nStart with your county, then open the city page that matches your property, paperwork, and scheduling needs.",
       "primaryCta": null,
       "phoneCta": {
         "label": "(800) 803-6658",
@@ -397,8 +96,269 @@
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "Los Angeles County Backflow Installation Testing & Repair Service Areas",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Los Angeles County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+        "heading": "Southern California Backflow Service Areas",
+        "body": "Browse county-by-county service coverage for backflow testing, installation, and repair throughout Southern California.\n\nStart with your county, then open the city page that matches your property, paperwork, and scheduling needs.",
+        "primaryCta": null,
+        "phoneCta": {
+          "label": "(800) 803-6658",
+          "href": "tel:+18008036658",
+          "external": false,
+          "target": ""
+        }
+      },
+      {
+        "kind": "logo_strip",
+        "sourceClass": "client-brands-section",
+        "heading": "",
+        "logos": [
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13ec47600af0fce0f10_In-N-Out-Burger-Logo-1536x864.avif",
+            "alt": "Backflow Client Logo: IN N OUT"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78230fa486d8708e7958d_76-orange-logo-1.svg",
+            "alt": "Backflow Client Logo: Union 76 Gas Station"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78231c8704cc08abb9fe1_logo-amazon.svg",
+            "alt": "Backflow Client Logo: Amazon"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a782310a0689a34ec281b0_burger-king-4.svg",
+            "alt": "Backflow Client Logo: Burger King"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e7d8ae8936b064423_Costco-logo-1536x864.avif",
+            "alt": "Backflow Client Logo: Costco"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13efca886a143f7a89c_Starbucks-logo-1024x717.avif",
+            "alt": "Backflow Client Logo: Starbucks"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e148fa6e5408695c1_AMC-Theatres-Logo-1536x960.avif",
+            "alt": "Backflow Client Logo: AMC Theaters"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e69e6abbfa2d16ac8_Chick-fil-A-logo-1024x442.avif",
+            "alt": "Backflow Client Logo: Chick fil A"
+          },
+          {
+            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13eee30532166b723fe_Davita-logo-1536x864.avif",
+            "alt": "Backflow Client Logo: Davita Dialysis"
+          }
+        ]
+      },
+      {
+        "kind": "link_list",
+        "sourceClass": "backflow-testing-benefits",
+        "heading": "Browse Counties",
+        "body": "Start with the county, then drill down to the city page that matches your property. Each county directory leads to local testing, installation, and repair coverage.",
+        "items": [
+          {
+            "label": "Ventura County",
+            "href": "/ventura-county-backflow-testing-installation-repair-service-areas",
+            "external": false,
+            "target": "",
+            "description": "Coverage for Ventura, Oxnard, Camarillo, Thousand Oaks, and surrounding Ventura County properties."
+          },
+          {
+            "label": "Los Angeles County",
+            "href": "/los-angeles-county-backflow-testing-installation-repair-service-areas",
+            "external": false,
+            "target": "",
+            "description": "Service support for restaurants, retail, multifamily, and commercial sites across Los Angeles County."
+          },
+          {
+            "label": "Orange County",
+            "href": "/orange-county-backflow-testing-installation-repair-service-areas",
+            "external": false,
+            "target": "",
+            "description": "Managed testing, installation, and repair coverage throughout Orange County's core business corridors."
+          },
+          {
+            "label": "San Bernardino County",
+            "href": "/san-bernardino-county-backflow-testing-installation-repair-service-areas",
+            "external": false,
+            "target": "",
+            "description": "Backflow compliance support for Inland Empire commercial, industrial, and residential properties."
+          },
+          {
+            "label": "Riverside County",
+            "href": "/riverside-county-backflow-testing-installation-repair-service-areas",
+            "external": false,
+            "target": "",
+            "description": "Local scheduling and compliance help for Riverside County HOAs, retail sites, and growing portfolios."
+          },
+          {
+            "label": "San Diego County",
+            "href": "/san-diego-county-backflow-testing-installation-repair-service-areas",
+            "external": false,
+            "target": "",
+            "description": "Certified backflow service for coastal and inland San Diego County properties and municipalities."
+          }
+        ],
+        "map": null
+      },
+      {
+        "kind": "rich_text",
+        "sourceClass": "testimonial-section section-spacing",
+        "heading": "Trusted Across Southern California",
+        "body": "Commercial properties, HOAs, restaurants, retail sites, and multi-location operators across Southern California rely on us for dependable scheduling, certification paperwork, and compliant backflow service.",
+        "links": []
+      }
+    ],
+    "sectionKinds": [
+      "hero",
+      "logo_strip",
+      "link_list",
+      "rich_text"
+    ],
+    "anomalyFlags": [],
+    "anomalyRecords": [],
+    "countySlug": "",
+    "countyName": "",
+    "hubScope": "Southern California",
+    "quickLinks": [],
+    "cityLinks": [
+      {
+        "label": "Ventura County",
+        "href": "/ventura-county-backflow-testing-installation-repair-service-areas",
+        "external": false,
+        "target": "",
+        "description": "Coverage for Ventura, Oxnard, Camarillo, Thousand Oaks, and surrounding Ventura County properties."
+      },
+      {
+        "label": "Los Angeles County",
+        "href": "/los-angeles-county-backflow-testing-installation-repair-service-areas",
+        "external": false,
+        "target": "",
+        "description": "Service support for restaurants, retail, multifamily, and commercial sites across Los Angeles County."
+      },
+      {
+        "label": "Orange County",
+        "href": "/orange-county-backflow-testing-installation-repair-service-areas",
+        "external": false,
+        "target": "",
+        "description": "Managed testing, installation, and repair coverage throughout Orange County's core business corridors."
+      },
+      {
+        "label": "San Bernardino County",
+        "href": "/san-bernardino-county-backflow-testing-installation-repair-service-areas",
+        "external": false,
+        "target": "",
+        "description": "Backflow compliance support for Inland Empire commercial, industrial, and residential properties."
+      },
+      {
+        "label": "Riverside County",
+        "href": "/riverside-county-backflow-testing-installation-repair-service-areas",
+        "external": false,
+        "target": "",
+        "description": "Local scheduling and compliance help for Riverside County HOAs, retail sites, and growing portfolios."
+      },
+      {
+        "label": "San Diego County",
+        "href": "/san-diego-county-backflow-testing-installation-repair-service-areas",
+        "external": false,
+        "target": "",
+        "description": "Certified backflow service for coastal and inland San Diego County properties and municipalities."
+      }
+    ]
+  },
+  {
+    "slug": "los-angeles-county-backflow-testing-installation-repair-service-areas",
+    "path": "/los-angeles-county-backflow-testing-installation-repair-service-areas",
+    "url": "https://www.backflowtestpros.com/los-angeles-county-backflow-testing-installation-repair-service-areas",
+    "family": "service_area_hub",
+    "sourceTemplateFamily": "service_area_hub",
+    "pageClass": "county_hub",
+    "title": "Los Angeles County Backflow Testing, Installation & Repair Service Areas",
+    "metaDescription": "Browse 76 cities we serve in Los Angeles County for backflow testing, installation, repair, and certification support.",
+    "canonical": "https://www.backflowtestpros.com/los-angeles-county-backflow-testing-installation-repair-service-areas",
+    "h1": "Los Angeles County Backflow Installation Testing & Repair Service Areas",
+    "h2s": [
+      "Schedule service anywhere in Los Angeles County",
+      "Cities We Serve in Los Angeles County"
+    ],
+    "h3s": [
+      "Lock your 2026 pricing with multi-location scheduling"
+    ],
+    "schemaTypes": [
+      "WebPage",
+      "Service",
+      "LocalBusiness",
+      "PostalAddress",
+      "City",
+      "Offer"
+    ],
+    "wordCount": 1732,
+    "primaryKeywordIntent": "los angeles county backflow testing installation repair service areas",
+    "ctaPattern": [
+      "call_now",
+      "contact_form",
+      "schedule",
+      "pricing",
+      "repair_coverage",
+      "same_day_certification"
+    ],
+    "heroImage": "",
+    "hero": {
+      "kind": "hero",
+      "sourceClass": "simple-hero-section home-hero contact-page",
+      "heading": "Los Angeles County Backflow Testing, Installation & Repair Service Areas",
+      "body": "Use this county directory to find the city page that matches your property in Los Angeles County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
+      "primaryCta": null,
+      "phoneCta": {
+        "label": "(800) 803-6658",
+        "href": "tel:+18008036658",
+        "external": false,
+        "target": ""
+      }
+    },
+    "brandLogos": [
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13ec47600af0fce0f10_In-N-Out-Burger-Logo-1536x864.avif",
+        "alt": "Backflow Client Logo: IN N OUT"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78230fa486d8708e7958d_76-orange-logo-1.svg",
+        "alt": "Backflow Client Logo: Union 76 Gas Station"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a78231c8704cc08abb9fe1_logo-amazon.svg",
+        "alt": "Backflow Client Logo: Amazon"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/69a782310a0689a34ec281b0_burger-king-4.svg",
+        "alt": "Backflow Client Logo: Burger King"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e7d8ae8936b064423_Costco-logo-1536x864.avif",
+        "alt": "Backflow Client Logo: Costco"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13efca886a143f7a89c_Starbucks-logo-1024x717.avif",
+        "alt": "Backflow Client Logo: Starbucks"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e148fa6e5408695c1_AMC-Theatres-Logo-1536x960.avif",
+        "alt": "Backflow Client Logo: AMC Theaters"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13e69e6abbfa2d16ac8_Chick-fil-A-logo-1024x442.avif",
+        "alt": "Backflow Client Logo: Chick fil A"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c7c13eee30532166b723fe_Davita-logo-1536x864.avif",
+        "alt": "Backflow Client Logo: Davita Dialysis"
+      }
+    ],
+    "sections": [
+      {
+        "kind": "hero",
+        "sourceClass": "simple-hero-section home-hero contact-page",
+        "heading": "Los Angeles County Backflow Testing, Installation & Repair Service Areas",
+        "body": "Use this county directory to find the city page that matches your property in Los Angeles County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
         "primaryCta": null,
         "phoneCta": {
           "label": "(800) 803-6658",
@@ -453,40 +413,41 @@
       {
         "kind": "feature_cards",
         "sourceClass": "backflow-testing-benefits",
-        "heading": "Everything Done For You Backflow Prevention Services",
-        "body": "As California licensed plumbers and American Water Works Association certified backflow testers, Backflow Test Pros is 100% dedicated to helping commercial and residential clients throughout Los Angeles County meet backflow prevention compliance requirements. We thank you for the opportunity to serve as your preferred Los Angeles County backflow prevention installation, testing and repair partner.",
+        "heading": "Service Coverage Across Los Angeles County",
+        "body": "Choose the city page that matches your property in Los Angeles County, then contact us if you need help confirming scope, paperwork, or scheduling.",
         "cards": [
           {
-            "title": "Los Angeles County Backflow Prevention Testing Service Areas",
-            "body": "Qualify for Priority Scheduling, City Document Retrieval, Same Day Certification, Repair Coverage & Multi-location pricing for your Los Angeles County Annual Backflow Testing!",
+            "title": "Los Angeles County Annual Testing",
+            "body": "Find the right city page for annual testing, certification paperwork, and ongoing compliance support.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Priority Scheduling"
             }
           },
           {
-            "title": "Los Angeles County Backflow Preventer Installation Service Areas",
-            "body": "Qualify for 2-Year Warranty, Free Certification Testing, Repair Coverage & Multi-location pricing for your Los Angeles County Backflow Preventer Installation!",
+            "title": "Los Angeles County Installation",
+            "body": "Review local service coverage for new devices, replacements, and installation planning.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "City Documents Retrieval"
             }
           },
           {
-            "title": "Los Angeles County Backflow Preventer Repair Service Areas",
-            "body": "Qualify for Priority Scheduling, Same Day Certification, Free Certification Testing & Multi-location pricing for your Los Angeles County Backflow Preventer Repair Requirements!",
+            "title": "Los Angeles County Repair",
+            "body": "Open the city page that fits your property when a device fails, needs troubleshooting, or requires replacement.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Same-Day Certification"
             }
           }
-        ]
+        ],
+        "links": []
       },
       {
         "kind": "cta_banner",
         "sourceClass": "cta-section",
-        "heading": "Lock your 2026 pricing with multi-location scheduling",
-        "body": "Best price guarantee. Schedule in advance with confidence of knowing you're receiving best in class service for the most competitive price.",
+        "heading": "Schedule service anywhere in Los Angeles County",
+        "body": "We coordinate testing, installation, repair, certification paperwork, and multi-property scheduling throughout Los Angeles County.",
         "links": [
           {
             "label": "Sign Up to Lock In Your Savings!",
@@ -499,8 +460,8 @@
       {
         "kind": "bullet_columns",
         "sourceClass": "explaiber-section service-areas",
-        "heading": "Los Angeles County Backflow Installation Testing & Repair Service Areas",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "heading": "Cities We Serve in Los Angeles County",
+        "body": "Browse all 76 cities we cover in Los Angeles County, then open the city page that best matches your property, compliance requirements, and service needs.",
         "columns": [
           [
             "Agoura Hills Annual Backflow Test Services",
@@ -748,9 +709,9 @@
     ],
     "anomalyFlags": [],
     "anomalyRecords": [],
-    "countySlug": "los-angeles-county",
+    "countySlug": "la-county",
     "countyName": "Los Angeles County",
-    "hubScope": "Southern California",
+    "hubScope": "Los Angeles County",
     "quickLinks": [],
     "cityLinks": []
   },
@@ -761,13 +722,13 @@
     "family": "service_area_hub",
     "sourceTemplateFamily": "service_area_hub",
     "pageClass": "county_hub",
-    "title": "Orange County Backflow Testing Installation & Repair Service Areas",
-    "metaDescription": "Orange  County's Preferred Backflow Testing Installation and Repair Services | Call 800-803-6658 to Schedule your Test in Advance to Qualify for Free Repair Coverage. Multi-Location Discounts. Same-Day Certification.",
+    "title": "Orange County Backflow Testing, Installation & Repair Service Areas",
+    "metaDescription": "Browse 40 cities we serve in Orange County for backflow testing, installation, repair, and certification support.",
     "canonical": "https://www.backflowtestpros.com/orange-county-backflow-testing-installation-repair-service-areas",
     "h1": "Orange County Backflow Installation Testing & Repair Service Areas",
     "h2s": [
-      "Everything Done For You Backflow Prevention Services",
-      "Orange County Backflow Installation Testing & Repair Service Areas"
+      "Schedule service anywhere in Orange County",
+      "Cities We Serve in Orange County"
     ],
     "h3s": [
       "Lock your 2026 pricing with multi-location scheduling"
@@ -796,8 +757,8 @@
     "hero": {
       "kind": "hero",
       "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "Orange County Backflow Installation Testing & Repair Service Areas",
-      "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Orange County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+      "heading": "Orange County Backflow Testing, Installation & Repair Service Areas",
+      "body": "Use this county directory to find the city page that matches your property in Orange County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
       "primaryCta": null,
       "phoneCta": {
         "label": "(800) 803-6658",
@@ -848,8 +809,8 @@
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "Orange County Backflow Installation Testing & Repair Service Areas",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Orange County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+        "heading": "Orange County Backflow Testing, Installation & Repair Service Areas",
+        "body": "Use this county directory to find the city page that matches your property in Orange County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
         "primaryCta": null,
         "phoneCta": {
           "label": "(800) 803-6658",
@@ -904,40 +865,41 @@
       {
         "kind": "feature_cards",
         "sourceClass": "backflow-testing-benefits",
-        "heading": "Everything Done For You Backflow Prevention Services",
-        "body": "As California licensed plumbers and American Water Works Association certified backflow testers, Backflow Test Pros is 100% dedicated to helping commercial and residential clients throughout Orange County meet backflow prevention compliance requirements. We thank you for the opportunity to serve as your preferred Orange County backflow prevention installation, testing and repair partner.",
+        "heading": "Service Coverage Across Orange County",
+        "body": "Choose the city page that matches your property in Orange County, then contact us if you need help confirming scope, paperwork, or scheduling.",
         "cards": [
           {
-            "title": "Orange County Backflow Prevention Testing Service Areas",
-            "body": "Qualify for Priority Scheduling, City Document Retrieval, Same Day Certification, Repair Coverage & Multi-location pricing for your Orange County Annual Backflow Testing!",
+            "title": "Orange County Annual Testing",
+            "body": "Find the right city page for annual testing, certification paperwork, and ongoing compliance support.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Priority Scheduling"
             }
           },
           {
-            "title": "Orange County Backflow Preventer Installation Service Areas",
-            "body": "Qualify for 2-Year Warranty, Free Certification Testing, Repair Coverage & Multi-location pricing for your Orange County Backflow Preventer Installation!",
+            "title": "Orange County Installation",
+            "body": "Review local service coverage for new devices, replacements, and installation planning.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "City Documents Retrieval"
             }
           },
           {
-            "title": "Orange County Backflow Preventer Repair Service Areas",
-            "body": "Qualify for Priority Scheduling, Same Day Certification, Free Certification Testing & Multi-location pricing for your Orange County Backflow Preventer Repair Requirements!",
+            "title": "Orange County Repair",
+            "body": "Open the city page that fits your property when a device fails, needs troubleshooting, or requires replacement.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Repair Coverage"
             }
           }
-        ]
+        ],
+        "links": []
       },
       {
         "kind": "cta_banner",
         "sourceClass": "cta-section",
-        "heading": "Lock your 2026 pricing with multi-location scheduling",
-        "body": "Best price guarantee. Schedule in advance with confidence of knowing you're receiving best in class service for the most competitive price.",
+        "heading": "Schedule service anywhere in Orange County",
+        "body": "We coordinate testing, installation, repair, certification paperwork, and multi-property scheduling throughout Orange County.",
         "links": [
           {
             "label": "Sign Up to Lock In Your Savings!",
@@ -950,8 +912,8 @@
       {
         "kind": "bullet_columns",
         "sourceClass": "explaiber-section service-areas",
-        "heading": "Orange County Backflow Installation Testing & Repair Service Areas",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "heading": "Cities We Serve in Orange County",
+        "body": "Browse all 40 cities we cover in Orange County, then open the city page that best matches your property, compliance requirements, and service needs.",
         "columns": [
           [
             "Aliso Viejo Annual Backflow Test Services",
@@ -1095,13 +1057,13 @@
     "family": "service_area_hub",
     "sourceTemplateFamily": "service_area_hub",
     "pageClass": "county_hub",
-    "title": "Riverside County Backflow Testing Installation & Repair Service Areas",
-    "metaDescription": "Riverside County's Preferred Backflow Testing Installation and Repair Services | Call 800-803-6658 to Schedule your Test in Advance to Qualify for Free Repair Coverage. Multi-Location Discounts. Same-Day Certification.",
+    "title": "Riverside County Backflow Testing, Installation & Repair Service Areas",
+    "metaDescription": "Browse 13 cities we serve in Riverside County for backflow testing, installation, repair, and certification support.",
     "canonical": "https://www.backflowtestpros.com/riverside-county-backflow-testing-installation-repair-service-areas",
     "h1": "Riverside County Backflow Installation Testing & Repair Service Areas",
     "h2s": [
-      "Everything Done For You Backflow Prevention Services",
-      "Riverside County Backflow Installation Testing & Repair Service Areas"
+      "Schedule service anywhere in Riverside County",
+      "Cities We Serve in Riverside County"
     ],
     "h3s": [
       "Lock your 2026 pricing with multi-location scheduling"
@@ -1129,8 +1091,8 @@
     "hero": {
       "kind": "hero",
       "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "Riverside County Backflow Installation Testing & Repair Service Areas",
-      "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Riverside County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+      "heading": "Riverside County Backflow Testing, Installation & Repair Service Areas",
+      "body": "Use this county directory to find the city page that matches your property in Riverside County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
       "primaryCta": null,
       "phoneCta": {
         "label": "(800) 803-6658",
@@ -1181,8 +1143,8 @@
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "Riverside County Backflow Installation Testing & Repair Service Areas",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Riverside County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+        "heading": "Riverside County Backflow Testing, Installation & Repair Service Areas",
+        "body": "Use this county directory to find the city page that matches your property in Riverside County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
         "primaryCta": null,
         "phoneCta": {
           "label": "(800) 803-6658",
@@ -1237,40 +1199,41 @@
       {
         "kind": "feature_cards",
         "sourceClass": "backflow-testing-benefits",
-        "heading": "Everything Done For You Backflow Prevention Services",
-        "body": "As California licensed plumbers and American Water Works Association certified backflow testers, Backflow Test Pros is 100% dedicated to helping commercial and residential clients throughout Riverside County meet backflow prevention compliance requirements. We thank you for the opportunity to serve as your preferred Riverside County backflow prevention installation, testing and repair partner.",
+        "heading": "Service Coverage Across Riverside County",
+        "body": "Choose the city page that matches your property in Riverside County, then contact us if you need help confirming scope, paperwork, or scheduling.",
         "cards": [
           {
-            "title": "Riverside County Backflow Prevention Testing Service Areas",
-            "body": "Qualify for Priority Scheduling, City Document Retrieval, Same Day Certification, Repair Coverage & Multi-location pricing for your Riverside County Annual Backflow Testing!",
+            "title": "Riverside County Annual Testing",
+            "body": "Find the right city page for annual testing, certification paperwork, and ongoing compliance support.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Priority Scheduling"
             }
           },
           {
-            "title": "Riverside County Backflow Preventer Installation Service Areas",
-            "body": "Qualify for 2-Year Warranty, Free Certification Testing, Repair Coverage & Multi-location pricing for your Riverside County Backflow Preventer Installation!",
+            "title": "Riverside County Installation",
+            "body": "Review local service coverage for new devices, replacements, and installation planning.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "City Documents Retrieval"
             }
           },
           {
-            "title": "Riverside County Backflow Preventer Repair Service Areas",
-            "body": "Qualify for Priority Scheduling, Same Day Certification, Free Certification Testing & Multi-location pricing for your Riverside County Backflow Preventer Repair Requirements!",
+            "title": "Riverside County Repair",
+            "body": "Open the city page that fits your property when a device fails, needs troubleshooting, or requires replacement.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Same-Day Certification"
             }
           }
-        ]
+        ],
+        "links": []
       },
       {
         "kind": "cta_banner",
         "sourceClass": "cta-section",
-        "heading": "Lock your 2026 pricing with multi-location scheduling",
-        "body": "Best price guarantee. Schedule in advance with confidence of knowing you're receiving best in class service for the most competitive price.",
+        "heading": "Schedule service anywhere in Riverside County",
+        "body": "We coordinate testing, installation, repair, certification paperwork, and multi-property scheduling throughout Riverside County.",
         "links": [
           {
             "label": "Sign Up to Lock In Your Savings!",
@@ -1283,8 +1246,8 @@
       {
         "kind": "bullet_columns",
         "sourceClass": "explaiber-section service-areas",
-        "heading": "Riverside County Backflow Installation Testing & Repair Service Areas",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "heading": "Cities We Serve in Riverside County",
+        "body": "Browse all 13 cities we cover in Riverside County, then open the city page that best matches your property, compliance requirements, and service needs.",
         "columns": [
           [
             "Corona Annual Backflow Test Services",
@@ -1356,13 +1319,13 @@
     "family": "service_area_hub",
     "sourceTemplateFamily": "service_area_hub",
     "pageClass": "county_hub",
-    "title": "San Bernardino County Backflow Testing Installation & Repair Service Areas",
-    "metaDescription": "San Bernardino County's Preferred Backflow Testing Installation and Repair Services | Call 800-803-6658 to Schedule your Test in Advance to Qualify for Free Repair Coverage. Multi-Location Discounts. Same-Day Certification.",
+    "title": "San Bernardino County Backflow Testing, Installation & Repair Service Areas",
+    "metaDescription": "Browse 14 cities we serve in San Bernardino County for backflow testing, installation, repair, and certification support.",
     "canonical": "https://www.backflowtestpros.com/san-bernardino-county-backflow-testing-installation-repair-service-areas",
     "h1": "San Bernardino County Backflow Installation Testing & Repair Service Areas",
     "h2s": [
-      "Everything Done For You Backflow Prevention Services",
-      "San Bernardino County Backflow Installation Testing & Repair Service Areas"
+      "Schedule service anywhere in San Bernardino County",
+      "Cities We Serve in San Bernardino County"
     ],
     "h3s": [
       "Lock your 2026 pricing with multi-location scheduling"
@@ -1390,8 +1353,8 @@
     "hero": {
       "kind": "hero",
       "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "San Bernardino County Backflow Installation Testing & Repair Service Areas",
-      "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout San Bernardino County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+      "heading": "San Bernardino County Backflow Testing, Installation & Repair Service Areas",
+      "body": "Use this county directory to find the city page that matches your property in San Bernardino County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
       "primaryCta": null,
       "phoneCta": {
         "label": "(800) 803-6658",
@@ -1442,8 +1405,8 @@
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "San Bernardino County Backflow Installation Testing & Repair Service Areas",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout San Bernardino County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+        "heading": "San Bernardino County Backflow Testing, Installation & Repair Service Areas",
+        "body": "Use this county directory to find the city page that matches your property in San Bernardino County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
         "primaryCta": null,
         "phoneCta": {
           "label": "(800) 803-6658",
@@ -1498,40 +1461,41 @@
       {
         "kind": "feature_cards",
         "sourceClass": "backflow-testing-benefits",
-        "heading": "Everything Done For You Backflow Prevention Services",
-        "body": "As California licensed plumbers and American Water Works Association certified backflow testers, Backflow Test Pros is 100% dedicated to helping commercial and residential clients throughout San Bernardino County meet backflow prevention compliance requirements. We thank you for the opportunity to serve as your preferred San Bernardino County backflow prevention installation, testing and repair partner.",
+        "heading": "Service Coverage Across San Bernardino County",
+        "body": "Choose the city page that matches your property in San Bernardino County, then contact us if you need help confirming scope, paperwork, or scheduling.",
         "cards": [
           {
-            "title": "San Bernardino County Backflow Prevention Testing Service Areas",
-            "body": "Qualify for Priority Scheduling, City Document Retrieval, Same Day Certification, Repair Coverage & Multi-location pricing for your San Bernardino County Annual Backflow Testing!",
+            "title": "San Bernardino County Annual Testing",
+            "body": "Find the right city page for annual testing, certification paperwork, and ongoing compliance support.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Priority Scheduling"
             }
           },
           {
-            "title": "San Bernardino County Backflow Preventer Installation Service Areas",
-            "body": "Qualify for 2-Year Warranty, Free Certification Testing, Repair Coverage & Multi-location pricing for your San Bernardino County Backflow Preventer Installation!",
+            "title": "San Bernardino County Installation",
+            "body": "Review local service coverage for new devices, replacements, and installation planning.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "City Documents Retrieval"
             }
           },
           {
-            "title": "San Bernardino County Backflow Preventer Repair Service Areas",
-            "body": "Qualify for Priority Scheduling, Same Day Certification, Free Certification Testing & Multi-location pricing for your San Bernardino County Backflow Preventer Repair Requirements!",
+            "title": "San Bernardino County Repair",
+            "body": "Open the city page that fits your property when a device fails, needs troubleshooting, or requires replacement.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Same-Day Certification"
             }
           }
-        ]
+        ],
+        "links": []
       },
       {
         "kind": "cta_banner",
         "sourceClass": "cta-section",
-        "heading": "Lock your 2026 pricing with multi-location scheduling",
-        "body": "Best price guarantee. Schedule in advance with confidence of knowing you're receiving best in class service for the most competitive price.",
+        "heading": "Schedule service anywhere in San Bernardino County",
+        "body": "We coordinate testing, installation, repair, certification paperwork, and multi-property scheduling throughout San Bernardino County.",
         "links": [
           {
             "label": "Sign Up to Lock In Your Savings!",
@@ -1544,8 +1508,8 @@
       {
         "kind": "bullet_columns",
         "sourceClass": "explaiber-section service-areas",
-        "heading": "San Bernardino County Backflow Installation Testing & Repair Service Areas",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "heading": "Cities We Serve in San Bernardino County",
+        "body": "Browse all 14 cities we cover in San Bernardino County, then open the city page that best matches your property, compliance requirements, and service needs.",
         "columns": [
           [
             "Chino Hills Annual Backflow Test Services",
@@ -1620,13 +1584,13 @@
     "family": "service_area_hub",
     "sourceTemplateFamily": "service_area_hub",
     "pageClass": "county_hub",
-    "title": "San Diego County Backflow Testing Installation & Repair Service Areas",
-    "metaDescription": "San Diego County's Preferred Backflow Testing Installation and Repair Services | Call 800-803-6658 to Schedule your Test in Advance to Qualify for Free Repair Coverage. Multi-Location Discounts. Same-Day Certification.",
+    "title": "San Diego County Backflow Testing, Installation & Repair Service Areas",
+    "metaDescription": "Browse 20 cities we serve in San Diego County for backflow testing, installation, repair, and certification support.",
     "canonical": "https://www.backflowtestpros.com/san-diego-county-backflow-testing-installation-repair-service-areas",
     "h1": "San Diego County Backflow Installation Testing & Repair Service Areas",
     "h2s": [
-      "Everything Done For You Backflow Prevention Services",
-      "San Diego County Backflow Installation Testing & Repair Service Areas"
+      "Schedule service anywhere in San Diego County",
+      "Cities We Serve in San Diego County"
     ],
     "h3s": [
       "Lock your 2026 pricing with multi-location scheduling"
@@ -1654,8 +1618,8 @@
     "hero": {
       "kind": "hero",
       "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "San Diego County Backflow Installation Testing & Repair Service Areas",
-      "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout San Diego County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+      "heading": "San Diego County Backflow Testing, Installation & Repair Service Areas",
+      "body": "Use this county directory to find the city page that matches your property in San Diego County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
       "primaryCta": null,
       "phoneCta": {
         "label": "(800) 803-6658",
@@ -1706,8 +1670,8 @@
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "San Diego County Backflow Installation Testing & Repair Service Areas",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout San Diego County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+        "heading": "San Diego County Backflow Testing, Installation & Repair Service Areas",
+        "body": "Use this county directory to find the city page that matches your property in San Diego County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
         "primaryCta": null,
         "phoneCta": {
           "label": "(800) 803-6658",
@@ -1762,40 +1726,41 @@
       {
         "kind": "feature_cards",
         "sourceClass": "backflow-testing-benefits",
-        "heading": "Everything Done For You Backflow Prevention Services",
-        "body": "As California licensed plumbers and American Water Works Association certified backflow testers, Backflow Test Pros is 100% dedicated to helping commercial and residential clients throughout San Diego County meet backflow prevention compliance requirements. We thank you for the opportunity to serve as your preferred San Diego County backflow prevention installation, testing and repair partner.",
+        "heading": "Service Coverage Across San Diego County",
+        "body": "Choose the city page that matches your property in San Diego County, then contact us if you need help confirming scope, paperwork, or scheduling.",
         "cards": [
           {
-            "title": "San Diego County Backflow Prevention Testing Service Areas",
-            "body": "Qualify for Priority Scheduling, City Document Retrieval, Same Day Certification, Repair Coverage & Multi-location pricing for your San Diego County Annual Backflow Testing!",
+            "title": "San Diego County Annual Testing",
+            "body": "Find the right city page for annual testing, certification paperwork, and ongoing compliance support.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Priority Scheduling"
             }
           },
           {
-            "title": "San Diego County Backflow Preventer Installation Service Areas",
-            "body": "Qualify for 2-Year Warranty, Free Certification Testing, Repair Coverage & Multi-location pricing for your San Diego County Backflow Preventer Installation!",
+            "title": "San Diego County Installation",
+            "body": "Review local service coverage for new devices, replacements, and installation planning.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "City Documents Retrieval"
             }
           },
           {
-            "title": "San Diego County Backflow Preventer Repair Service Areas",
-            "body": "Qualify for Priority Scheduling, Same Day Certification, Free Certification Testing & Multi-location pricing for your San Diego County Backflow Preventer Repair Requirements!",
+            "title": "San Diego County Repair",
+            "body": "Open the city page that fits your property when a device fails, needs troubleshooting, or requires replacement.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Same-Day Certification"
             }
           }
-        ]
+        ],
+        "links": []
       },
       {
         "kind": "cta_banner",
         "sourceClass": "cta-section",
-        "heading": "Lock your 2026 pricing with multi-location scheduling",
-        "body": "Best price guarantee. Schedule in advance with confidence of knowing you're receiving best in class service for the most competitive price.",
+        "heading": "Schedule service anywhere in San Diego County",
+        "body": "We coordinate testing, installation, repair, certification paperwork, and multi-property scheduling throughout San Diego County.",
         "links": [
           {
             "label": "Sign Up to Lock In Your Savings!",
@@ -1808,8 +1773,8 @@
       {
         "kind": "bullet_columns",
         "sourceClass": "explaiber-section service-areas",
-        "heading": "San Diego County Backflow Installation Testing & Repair Service Areas",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "heading": "Cities We Serve in San Diego County",
+        "body": "Browse all 20 cities we cover in San Diego County, then open the city page that best matches your property, compliance requirements, and service needs.",
         "columns": [
           [
             "Alpine Annual Backflow Test Services",
@@ -1902,13 +1867,13 @@
     "family": "service_area_hub",
     "sourceTemplateFamily": "service_area_hub",
     "pageClass": "county_hub",
-    "title": "Ventura County Backflow Testing Installation & Repair Service Areas",
-    "metaDescription": "Ventura County's Preferred Backflow Testing Installation and Repair Services | Call 800-803-6658 to Schedule your Test in Advance to Qualify for Free Repair Coverage. Multi-Location Discounts. Same-Day Certification.",
+    "title": "Ventura County Backflow Testing, Installation & Repair Service Areas",
+    "metaDescription": "Browse 10 cities we serve in Ventura County for backflow testing, installation, repair, and certification support.",
     "canonical": "https://www.backflowtestpros.com/ventura-county-backflow-testing-installation-repair-service-areas",
     "h1": "Ventura County Backflow Installation Testing & Repair Service Areas",
     "h2s": [
-      "Everything Done For You Backflow Prevention Services",
-      "Ventura County Backflow Installation Testing & Repair Service Areas"
+      "Schedule service anywhere in Ventura County",
+      "Cities We Serve in Ventura County"
     ],
     "h3s": [
       "Lock your 2026 pricing with multi-location scheduling"
@@ -1936,8 +1901,8 @@
     "hero": {
       "kind": "hero",
       "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "Ventura County Backflow Installation Testing & Repair Service Areas",
-      "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Ventura County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+      "heading": "Ventura County Backflow Testing, Installation & Repair Service Areas",
+      "body": "Use this county directory to find the city page that matches your property in Ventura County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
       "primaryCta": null,
       "phoneCta": {
         "label": "(800) 803-6658",
@@ -1988,8 +1953,8 @@
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "Ventura County Backflow Installation Testing & Repair Service Areas",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing, installation and repair services throughout Ventura County.\n\nEverything Done for Your Backflow Installation, Testing & Repair\n\nGuaranteed backflow testing compliance\n\nAsk for Repair Coverage & Multi-location Discounts",
+        "heading": "Ventura County Backflow Testing, Installation & Repair Service Areas",
+        "body": "Use this county directory to find the city page that matches your property in Ventura County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
         "primaryCta": null,
         "phoneCta": {
           "label": "(800) 803-6658",
@@ -2044,40 +2009,41 @@
       {
         "kind": "feature_cards",
         "sourceClass": "backflow-testing-benefits",
-        "heading": "Everything Done For You Backflow Prevention Services",
-        "body": "As California licensed plumbers and American Water Works Association certified backflow testers, Backflow Test Pros is 100% dedicated to helping commercial and residential clients throughout Ventura County meet backflow prevention compliance requirements. We thank you for the opportunity to serve as your preferred Ventura County backflow prevention installation, testing and repair partner.",
+        "heading": "Service Coverage Across Ventura County",
+        "body": "Choose the city page that matches your property in Ventura County, then contact us if you need help confirming scope, paperwork, or scheduling.",
         "cards": [
           {
-            "title": "Ventura County Backflow Prevention Testing Service Areas",
-            "body": "Qualify for Priority Scheduling, City Document Retrieval, Same Day Certification, Repair Coverage & Multi-location pricing for your Ventura County Annual Backflow Testing!",
+            "title": "Ventura County Annual Testing",
+            "body": "Find the right city page for annual testing, certification paperwork, and ongoing compliance support.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Priority Scheduling"
             }
           },
           {
-            "title": "Ventura County Backflow Preventer Installation Service Areas",
-            "body": "Qualify for 2-Year Warranty, Free Certification Testing, Repair Coverage & Multi-location pricing for your Ventura County Backflow Preventer Installation!",
+            "title": "Ventura County Installation",
+            "body": "Review local service coverage for new devices, replacements, and installation planning.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "City Documents Retrieval"
             }
           },
           {
-            "title": "Ventura County Backflow Preventer Repair Service Areas",
-            "body": "Qualify for Priority Scheduling, Same Day Certification, Free Certification Testing & Multi-location pricing for your Ventura County Backflow Preventer Repair Requirements!",
+            "title": "Ventura County Repair",
+            "body": "Open the city page that fits your property when a device fails, needs troubleshooting, or requires replacement.",
             "icon": {
               "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68a4d6b9fb1a59045611342f_98dda030ffc2b3203a1ddd5b6c0698a3_Footer%20Icon%20Three.svg",
               "alt": "Same-Day Certification"
             }
           }
-        ]
+        ],
+        "links": []
       },
       {
         "kind": "cta_banner",
         "sourceClass": "cta-section",
-        "heading": "Lock your 2026 pricing with multi-location scheduling",
-        "body": "Best price guarantee. Schedule in advance with confidence of knowing you're receiving best in class service for the most competitive price.",
+        "heading": "Schedule service anywhere in Ventura County",
+        "body": "We coordinate testing, installation, repair, certification paperwork, and multi-property scheduling throughout Ventura County.",
         "links": [
           {
             "label": "Sign Up to Lock In Your Savings!",
@@ -2090,8 +2056,8 @@
       {
         "kind": "bullet_columns",
         "sourceClass": "explaiber-section service-areas",
-        "heading": "Ventura County Backflow Installation Testing & Repair Service Areas",
-        "body": "Our highly experienced technicians know how to properly test, diagnose, and repair backflow preventer devices without causing damage to other parts of the plumbing system, increasing the cost of repairs or resulting in prolonged disruptions to the water supply.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer testing is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow prevention testing protocols required by state water board regulations and backflow prevention certification bodies.",
+        "heading": "Cities We Serve in Ventura County",
+        "body": "Browse all 10 cities we cover in Ventura County, then open the city page that best matches your property, compliance requirements, and service needs.",
         "columns": [
           [
             "Camarillo Annual Backflow Test Services",

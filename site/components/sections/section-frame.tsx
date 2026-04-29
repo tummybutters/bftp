@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 interface SectionFrameProps {
   id?: string;
+  className?: string;
   eyebrow?: string;
   title?: ReactNode;
   body?: ReactNode;
@@ -14,6 +15,7 @@ interface SectionFrameProps {
 
 export function SectionFrame({
   id,
+  className,
   eyebrow,
   title,
   body,
@@ -28,7 +30,14 @@ export function SectionFrame({
   return (
     <section
       id={id}
-      className={`bftp-frame bftp-frame--${resolvedTone} bftp-frame--${align}`}
+      className={[
+        "bftp-frame",
+        `bftp-frame--${resolvedTone}`,
+        `bftp-frame--${align}`,
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       <div className="bftp-shell">
         <div

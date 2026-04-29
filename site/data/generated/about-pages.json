@@ -12,7 +12,7 @@
     "h1": "Managed Backflow Installation Testing & Repair",
     "h2s": [
       "Dedicated to Protecting Southern California's Public Water Resource",
-      "AWWA Certified Backflow Testers Cross Connect Control Specialists",
+      "AWWA Certified Backflow Testers Cross Connection Control Specialists",
       "Everything Done For You Backflow Prevention Services",
       "Best Value Competitively Priced Backflow Prevention Testing Installation & Repair Services",
       "Trusted by Residential & Commercial Clients Throughout Southern California",
@@ -165,42 +165,18 @@
         "links": []
       },
       {
-        "kind": "feature_cards",
+        "kind": "rich_text",
         "sourceClass": "certifiedby-city-water-departments",
-        "heading": "AWWA Certified Backflow Testers Cross Connect Control Specialists",
+        "heading": "AWWA Certified Backflow Testers Cross Connection Control Specialists",
         "body": "As a CA State Licensed Contractor and AWWA Cross Connection Control Specialists, our team of experienced backflow experts work with County Health Departments and Municipal Water Departments throughout Southern California to protect our water and prevent backflow contamination.",
-        "cards": [
-          {
-            "title": "CA Contractor License",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Multi-Device Discount",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "AWWA Backflow Certified",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Bonded & Insured for over $2,000,000",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Free Repair Coverage",
-            "body": "",
-            "icon": null
-          },
-          {
-            "title": "Same Day Certification",
-            "body": "",
-            "icon": null
-          }
-        ]
+        "links": []
+      },
+      {
+        "kind": "rich_text",
+        "sourceClass": "marquee-simple-item",
+        "heading": "",
+        "body": "CA Contractor License\nMulti-Device Discount\nAWWA Backflow Certified\nBonded & Insured for over $2,000,000\nFree Repair Coverage\nSame Day Certification",
+        "links": []
       },
       {
         "kind": "tabbed_content",
@@ -224,7 +200,7 @@
           {
             "label": "Backflow Preventer Repairs",
             "title": "Backflow Device Repair",
-            "body": "Keeping backflow preventer devices in good working condition through timely repairs is required by law and ensures public safety, regulatory compliance, and the ongoing integrity of the water system. It’s essential that any damage or malfunction is addressed quickly to avoid any risk to water quality and public health.\n\nDelaying repairs to a backflow preventer device can potentially cause more severe and costly damage over time and can result in fines, water service disconnection, lawsuits, and potential liability for any damages caused by contamination.\n\nOur certified backflow technicians are prepared for any and all backflow leaks, breaks and failures. No matter how serious or urgent your backflow preventer repair, we’ve got you covered. Unlike general plumbers, our certified backflow technicians specialize in backflow installs, testing, repair and replacement.\n\nSo whether you need a test or risk having your water shut off due to backflow leaks, failures and breaks; our Industry leading backflow specialized technicians have the knowledge and experience to ensure your backflow devices meet local water authority compliance to prevent your water from being shut off.\n\nAs a bonded and insured licensed contractor, we offer peace of mind and guarantee top-tier workmanship. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+            "body": "Keeping backflow preventer devices in good working condition through timely repairs is required by law and ensures public safety, regulatory compliance, and the ongoing integrity of the water system. It’s essential that any damage or malfunction is addressed quickly to avoid any risk to water quality and public health. Delaying repairs to a backflow preventer device can potentially cause more severe and costly damage over time and can result in fines, water service disconnection, lawsuits, and potential liability for any damages caused by contamination. Our certified backflow technicians are prepared for any and all backflow leaks, breaks and failures. No matter how serious or urgent your backflow preventer repair, we’ve got you covered. Unlike general plumbers, our certified backflow technicians specialize in backflow installs, testing, repair and replacement. ‍ So whether you need a test or risk having your water shut off due to backflow leaks, failures and breaks; our Industry leading backflow specialized technicians have the knowledge and experience to ensure your backflow devices meet local water authority compliance to prevent your water from being shut off. As a bonded and insured licensed contractor, we offer peace of mind and guarantee top-tier workmanship. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
             "links": [
               {
                 "label": "Backflow Repair Services",
@@ -237,7 +213,7 @@
           {
             "label": "Backflow Troubleshooting",
             "title": "Backflow Device Inspection",
-            "body": "Got Backflow questions? Backflow Test Pros has answers. Our backflow certified technicians' diagnostic skills acquired through years of field experience separate our backflow technicians from general plumbing industry professionals.\n\nPeriodic monitoring and inspection of your backflow prevention device is essential to avoid any risk to water quality and public health.\n\nBackflow preventer devices are often exposed to harsh conditions, including water with high mineral content, chlorine, or other problematic elements.\n\nAlso, backflow preventer assembly check valves and seals that prevent water from flowing in the wrong direction can wear out or become damaged due to age, pressure changes, debris buildup.\n\nAnd sometimes, the main body of the backflow preventer which is responsible for housing all the vital internal and external components becomes damaged. Damage to the backflow body may cause the backflow preventer to leak. These leaks may result in wasted water and property damage. In some cases emergency water shut down may be necessary.\n\nSo, whether you have a minor repair or complex break or failure which risks having your water turned off, our managed backflow maintenance services ensure you can focus on your business knowing that you have Backflow Test Pros' certified technicians diagnosing and resolving unanticipated backflow issues.\n\nIt’s important to address these issues promptly to avoid disruption of your water supply. Regular insepctmaintenance and testing by qualified professionals can help identify and fix these common backflow repair issues before they lead to serious problems.",
+            "body": "Got Backflow questions? Backflow Test Pros has answers. Our backflow certified technicians' diagnostic skills acquired through years of field experience separate our backflow technicians from general plumbing industry professionals. Periodic monitoring and inspection of your backflow prevention device is essential to avoid any risk to water quality and public health. Backflow preventer devices are often exposed to harsh conditions, including water with high mineral content, chlorine, or other problematic elements. Also, backflow preventer assembly check valves and seals that prevent water from flowing in the wrong direction can wear out or become damaged due to age, pressure changes, debris buildup. And sometimes, the main body of the backflow preventer which is responsible for housing all the vital internal and external components becomes damaged. Damage to the backflow body may cause the backflow preventer to leak. These leaks may result in wasted water and property damage. In some cases emergency water shut down may be necessary. ‍ So, whether you have a minor repair or complex break or failure which risks having your water turned off, our managed backflow maintenance services ensure you can focus on your business knowing that you have Backflow Test Pros' certified technicians diagnosing and resolving unanticipated backflow issues. It’s important to address these issues promptly to avoid disruption of your water supply. Regular insepctmaintenance and testing by qualified professionals can help identify and fix these common backflow repair issues before they lead to serious problems. ‍",
             "links": [
               {
                 "label": "Call Today for Your $500 Repair Credit",
@@ -250,7 +226,7 @@
           {
             "label": "Backflow Preventer Device Installation",
             "title": "Backflow Device Installation",
-            "body": "The installation and testing of backflow preventer devices are essential for ensuring the safety of the water supply and compliance with state and local regulations.\n\nCompliance with local backflow prevention regulations is governed by a combination of California State Water Resources Control Board guidelines, plumbing codes, Department of Public Health (CDPH) guidelines, and the specific ordinances and requirements set by local municipalities and water districts.\n\nHiring a certified backflow professionals to perform backflow prevention assembly installation and testing is key to ensuring compliance with state and municipal water department regulations.\n\nFrom determining the specific requirements for your property, system, and jurisdiction to perfoming hazard level assessment and site preparation to the final stage of backflow prevention assembly selection, installation, initial testing and certification; our licensed contractors guarantee compliance with local water authority standards and state contractor plumbing codes for backflow installations, repairs, and replacements of all types and sizes.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer installation is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow preventer installation and maintenance protocols required by state water board regulations and backflow prevention certification bodies.",
+            "body": "The installation and testing of backflow preventer devices are essential for ensuring the safety of the water supply and compliance with state and local regulations. Compliance with local backflow prevention regulations is governed by a combination of California State Water Resources Control Board guidelines, plumbing codes, Department of Public Health (CDPH) guidelines, and the specific ordinances and requirements set by local municipalities and water districts. Hiring a certified backflow professionals to perform backflow prevention assembly installation and testing is key to ensuring compliance with state and municipal water department regulations. From determining the specific requirements for your property, system, and jurisdiction to perfoming hazard level assessment and site preparation to the final stage of backflow prevention assembly selection, installation, initial testing and certification; our licensed contractors guarantee compliance with local water authority standards and state contractor plumbing codes for backflow installations, repairs, and replacements of all types and sizes. Relying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer installation is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow preventer installation and maintenance protocols required by state water board regulations and backflow prevention certification bodies. ‍",
             "links": [
               {
                 "label": "Backflow Preventer Installation Services",
@@ -263,13 +239,13 @@
           {
             "label": "Backflow Preventer Security",
             "title": "Backflow Preventer Security",
-            "body": "Backflow preventers are essential to maintaining safe and clean water systems—but they are also high-value targets for theft due to their brass, copper, and even stainless steel components.\n\nInstalling a robust backflow security cage is one of the most effective ways to prevent theft and the costly consequences that follow. When these devices are stolen, replacement costs can run into the thousands, and the impact doesn’t stop there: your business may experience operational downtime with no water service, jeopardizing health, safety, and productivity.\n\nProperly installed cages—especially those designed for high-risk areas—act as strong deterrents and physical barriers against tampering or removal.\n\nBeyond standard enclosures, bypass protectors with puck locks and stem protectors are critical for protecting fireline backflow preventers, which are often targeted for their exposed valves and stems. Thieves frequently cut stems and remove bypass valves to cash in on scrap metal, making these specialized add-ons essential to a comprehensive backflow security plan.\n\nInvesting in the right protection now can prevent major financial and operational headaches later.",
+            "body": "Backflow preventers are essential to maintaining safe and clean water systems—but they are also high-value targets for theft due to their brass, copper, and even stainless steel components. Installing a robust backflow security cage is one of the most effective ways to prevent theft and the costly consequences that follow. When these devices are stolen, replacement costs can run into the thousands, and the impact doesn’t stop there: your business may experience operational downtime with no water service, jeopardizing health, safety, and productivity. Properly installed cages—especially those designed for high-risk areas—act as strong deterrents and physical barriers against tampering or removal. Beyond standard enclosures, bypass protectors with puck locks and stem protectors are critical for protecting fireline backflow preventers, which are often targeted for their exposed valves and stems. Thieves frequently cut stems and remove bypass valves to cash in on scrap metal, making these specialized add-ons essential to a comprehensive backflow security plan. Investing in the right protection now can prevent major financial and operational headaches later. ‍",
             "links": []
           },
           {
             "label": "Preferred by Leading Brands",
             "title": "The Trusted Backflow Testing Installation and Repair Partner for Leading Brands",
-            "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; Backflow Test Pros is the trusted choice for backflow prevention testing, installation and repair services across Southern California.\n\nWith a reputation built on expertise, integrity and customer satisfaction, we provide the best value in backflow testing, installation and repair services through our turn-key \"Everything Done for You\" backflow maintenance program.\n\nOur signature white-glove support takes care of everything from initial scheduling, water department communications, due date tracking, same day certification, routine maintenance, installation warranty and repair coverage to ensure that your backflow testing, installation and maintenance concerns are addressed in a professional and timely manner.\n\nThat's why leading commercial property owners and facilities managers trust Backflow Test Pros' hassel-free backflow testing, installation and repair services to ensure regulatory compliance and avoid civil liability in for all their routine and mission critical backflow prevention applications.\n\n- Professional, Hassel-Free Service\n- Everything Done for You\n- Availability Outside Business Hours\n- Multi-Device Test Discounts\n- Advanced Scheduling\n- Due Date Monitoring\n- Fire Line Test Mode Assistance\n- Water Authority Documentation\n- Discounted Cage\n- Free Backflow Preventer Lock\n- 24/7 Backflow Expert Support\n- Up to $500 Repair Credit",
+            "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; Backflow Test Pros is the trusted choice for backflow prevention testing, installation and repair services across Southern California. With a reputation built on expertise, integrity and customer satisfaction, we provide the best value in backflow testing, installation and repair services through our turn-key \"Everything Done for You\" backflow maintenance program. Our signature white-glove support takes care of everything from initial scheduling, water department communications, due date tracking, same day certification, routine maintenance, installation warranty and repair coverage to ensure that your backflow testing, installation and maintenance concerns are addressed in a professional and timely manner. That's why leading commercial property owners and facilities managers trust Backflow Test Pros' hassel-free backflow testing, installation and repair services to ensure regulatory compliance and avoid civil liability in for all their routine and mission critical backflow prevention applications.",
             "links": []
           }
         ]
@@ -301,42 +277,11 @@
         ]
       },
       {
-        "kind": "feature_cards",
+        "kind": "rich_text",
         "sourceClass": "testimonial-section section-spacing",
         "heading": "Trusted by Residential & Commercial Clients Throughout Southern California",
-        "body": "From the single family homes and apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing and repair services across Southern California. Our certified specialists ensure that every backflow prevention device is properly inspected, tested, and repaired to safeguard your water supply and maintain full compliance with local and state regulations. Whether you're a homeowner, property manager, or business owner; we offer fast, reliable service, including priority scheduling, same-day certification, and emergency repairs.\n\nWith a reputation built on expertise, integrity and customer satisfaction, we provide affordable, backflow testing and repair solutions that protect both your business and the public water supply.",
-        "cards": [
-          {
-            "title": "Costco",
-            "body": "Sydney and her team at Backflow Test Pros are amazing.\n\nThey've been taking care of all of our backflow needs for years. Everything is so convenient, and they even saved us money when it was time to replace our main backflow valve\n\nHonest and reliable company. Excellent service. I highly recommend their annual backflow testing and repair services.",
-            "icon": null
-          },
-          {
-            "title": "Hilton Hotels",
-            "body": "I manage a hotel in Garden Grove, near Disneyland and I am very happy with the service Backflow Test Pros provides.\n\nI have been using them for 3 years now. Their customer service and reliability are top notch.\n\nI highly recommend them. They handle everything professionally, they even submit the paper work to the city for me.",
-            "icon": null
-          },
-          {
-            "title": "Davita Dialysis",
-            "body": "John and his Backflow Test Pros team have assisted me on multiple occasions where it was after hours and short notice. Most recently I needed assistance and even though he was on vacation he still arranged to get my testing completed.\n\nOn time, professional, knowledgeable, and willing to help resolve unforeseen issues when on site. Definitely the company I reach out to whenever I have needs.",
-            "icon": null
-          },
-          {
-            "title": "Flame Broiler",
-            "body": "Honest and reliable company. Backflow Test Pros delivers on their promise expertise and professionalism. I have used them for a few years and they are always available for testing and repairs.\n\nThis company is great! They handle everything professionally, they even submit the paper work to the city for me. Thank you so much!",
-            "icon": null
-          },
-          {
-            "title": "Chick-Fil-A",
-            "body": "Wow! Backflow Test Pros raises the bar every time I call. They are reliable and do excellent work!\n\nThe testing is easy, the repairs are affordable, and I'm able to schedule around my store hours to avoid disruption to my water.\n\nOutstanding service, highly recommend.",
-            "icon": null
-          },
-          {
-            "title": "ARCO Gas Stations",
-            "body": "We've used Backflow Test Pros for for years.\n\nThey provide competitively prices, quality dependable service, and submit our paperwork on time. We also really like their multi-device discounts!\n\nHighly recommend them for certification and repairs of backflow preventer devices.",
-            "icon": null
-          }
-        ]
+        "body": "From the single family homes and apartment communities to restaurants, service stations, department stores and industrial facilities; we are the trusted choice for backflow prevention testing and repair services across Southern California. Our certified specialists ensure that every backflow prevention device is properly inspected, tested, and repaired to safeguard your water supply and maintain full compliance with local and state regulations. Whether you're a homeowner, property manager, or business owner; we offer fast, reliable service, including priority scheduling, same-day certification, and emergency repairs. With a reputation built on expertise, integrity and customer satisfaction, we provide affordable, backflow testing and repair solutions that protect both your business and the public water supply. ‍\n\nSydney and her team at Backflow Test Pros are amazing. They've been taking care of all of our backflow needs for years. Everything is so convenient, and they even saved us money when it was time to replace our main backflow valve Honest and reliable company. Excellent service. I highly recommend their annual backflow testing and repair services.\n\nI manage a hotel in Garden Grove, near Disneyland and I am very happy with the service Backflow Test Pros provides. I have been using them for 3 years now. Their customer service and reliability are top notch. I highly recommend them. They handle everything professionally, they even submit the paper work to the city for me.\n\nJohn and his Backflow Test Pros team have assisted me on multiple occasions where it was after hours and short notice. Most recently I needed assistance and even though he was on vacation he still arranged to get my testing completed. On time, professional, knowledgeable, and willing to help resolve unforeseen issues when on site. Definitely the company I reach out to whenever I have needs.\n\nHonest and reliable company. Backflow Test Pros delivers on their promise expertise and professionalism. I have used them for a few years and they are always available for testing and repairs. This company is great! They handle everything professionally, they even submit the paper work to the city for me. Thank you so much!\n\nWow! Backflow Test Pros raises the bar every time I call. They are reliable and do excellent work! The testing is easy, the repairs are affordable, and I'm able to schedule around my store hours to avoid disruption to my water. Outstanding service, highly recommend.\n\nWe've used Backflow Test Pros for for years. They provide competitively prices, quality dependable service, and submit our paperwork on time. We also really like their multi-device discounts! Highly recommend them for certification and repairs of backflow preventer devices.",
+        "links": []
       },
       {
         "kind": "cta_banner",
@@ -358,150 +303,90 @@
         "heading": "Recognized by National, State & Local Backflow Certification Organizations",
         "body": "As a water authority certified backflow tester, cross connect specialist, and bonded + insured CA licensed contractor, backflow Test Pros is 100% dedicated to backflow preventer assembly installation, testing and maintenance. Our managed backflow testing and maintenance service manages every step of the local water authority compliance process and simplifies an otherwise complicated and time consuming process of backflow testing and maintenance.",
         "links": []
-      },
-      {
-        "kind": "logo_strip",
-        "sourceClass": "certification-organizations bg-white",
-        "heading": "",
-        "logos": [
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c8f13288ceedc48ee3142f_Orange%20County%20Water%20District.avif",
-            "alt": "Orange County Water District"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c8f152df306186850846a5_Los%20Angeles%20County%20Waterworks%20Districts.avif",
-            "alt": "Los Angeles County Waterworks Districts"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c8f1b440c100cc3fd6d7ca_LADWP.avif",
-            "alt": "Los Angeles Departement of Water & Power"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c8eac40085fc6f20c0ae39_American%20Water%20Works%20Association.avif",
-            "alt": "American Water Works Association"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c8eac4cf87f58d29ea26f3_State%20Water%20Resources%20Control%20Board.avif",
-            "alt": "California State Water Resources Control Board"
-          },
-          {
-            "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67c8eac46e8b57d41fcd9cbc_PublicHealthHE-Blue.gif",
-            "alt": "County of Los Angeles Public Health"
-          }
-        ]
       }
     ],
     "sectionKinds": [
       "hero",
       "logo_strip",
       "rich_text",
-      "feature_cards",
+      "rich_text",
+      "rich_text",
       "tabbed_content",
       "bullet_columns",
-      "feature_cards",
-      "cta_banner",
       "rich_text",
-      "logo_strip"
+      "cta_banner",
+      "rich_text"
     ],
     "anomalyFlags": [],
     "anomalyRecords": [],
-    "featureCards": [
-      {
-        "title": "CA Contractor License",
-        "body": "",
-        "icon": null
-      },
-      {
-        "title": "Multi-Device Discount",
-        "body": "",
-        "icon": null
-      },
-      {
-        "title": "AWWA Backflow Certified",
-        "body": "",
-        "icon": null
-      },
-      {
-        "title": "Bonded & Insured for over $2,000,000",
-        "body": "",
-        "icon": null
-      },
-      {
-        "title": "Free Repair Coverage",
-        "body": "",
-        "icon": null
-      },
-      {
-        "title": "Same Day Certification",
-        "body": "",
-        "icon": null
-      }
-    ],
+    "featureCards": [],
     "tabGroups": [
-      {
-        "label": "Annual Backflow Testing",
-        "title": "Backflow Preventer Testing",
-        "body": "No matter what the type and size of your backflow preventer devices, Backflow Test Pros' certified backflow specialized technicians have the knowledge and experience to ensure your backflow preventer devices are properly tested to meet local water authority backflow prevention test compliance requirements.\n\nFrom obtaining and deciphering your annual water department backflow test report letters to communicating your test results with the local water authority and ensuring your backflow test compliance is documented before due dates, we manage your backflow test prevention compliance process so you can focus on your business.\n\nWe specialize in delivering managed, hassel-free backflow maintenance services to the leading commercial clients in Southern California. Our managed turn-key backflow installation, testing and repair services ensure that your backflow preventer assemblies are in compliance and that you avoid costly fines and civil liabilities.\n\n- Professional, Hassel-Free Service\n- Everything Done for You\n- Availability Outside Business Hours\n- Multi-Device Test Discounts\n- Advanced Scheduling\n- Due Date Monitoring\n- Fire Line Test Mode Assistance\n- Water Authority Documentation\n- Discounted Cage\n- Free Backflow Preventer Lock\n- 24/7 Backflow Expert Support\n- Up to $500 Repair Credit",
-        "links": [
-          {
-            "label": "Backflow Testing Services",
-            "href": "/backflow-testing",
-            "external": false,
-            "target": "_blank"
-          }
-        ]
-      },
-      {
-        "label": "Backflow Preventer Repairs",
-        "title": "Backflow Device Repair",
-        "body": "Keeping backflow preventer devices in good working condition through timely repairs is required by law and ensures public safety, regulatory compliance, and the ongoing integrity of the water system. It’s essential that any damage or malfunction is addressed quickly to avoid any risk to water quality and public health.\n\nDelaying repairs to a backflow preventer device can potentially cause more severe and costly damage over time and can result in fines, water service disconnection, lawsuits, and potential liability for any damages caused by contamination.\n\nOur certified backflow technicians are prepared for any and all backflow leaks, breaks and failures. No matter how serious or urgent your backflow preventer repair, we’ve got you covered. Unlike general plumbers, our certified backflow technicians specialize in backflow installs, testing, repair and replacement.\n\nSo whether you need a test or risk having your water shut off due to backflow leaks, failures and breaks; our Industry leading backflow specialized technicians have the knowledge and experience to ensure your backflow devices meet local water authority compliance to prevent your water from being shut off.\n\nAs a bonded and insured licensed contractor, we offer peace of mind and guarantee top-tier workmanship. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
-        "links": [
-          {
-            "label": "Backflow Repair Services",
-            "href": "/backflow-repair-replacement-services",
-            "external": false,
-            "target": "_blank"
-          }
-        ]
-      },
-      {
-        "label": "Backflow Troubleshooting",
-        "title": "Backflow Device Inspection",
-        "body": "Got Backflow questions? Backflow Test Pros has answers. Our backflow certified technicians' diagnostic skills acquired through years of field experience separate our backflow technicians from general plumbing industry professionals.\n\nPeriodic monitoring and inspection of your backflow prevention device is essential to avoid any risk to water quality and public health.\n\nBackflow preventer devices are often exposed to harsh conditions, including water with high mineral content, chlorine, or other problematic elements.\n\nAlso, backflow preventer assembly check valves and seals that prevent water from flowing in the wrong direction can wear out or become damaged due to age, pressure changes, debris buildup.\n\nAnd sometimes, the main body of the backflow preventer which is responsible for housing all the vital internal and external components becomes damaged. Damage to the backflow body may cause the backflow preventer to leak. These leaks may result in wasted water and property damage. In some cases emergency water shut down may be necessary.\n\nSo, whether you have a minor repair or complex break or failure which risks having your water turned off, our managed backflow maintenance services ensure you can focus on your business knowing that you have Backflow Test Pros' certified technicians diagnosing and resolving unanticipated backflow issues.\n\nIt’s important to address these issues promptly to avoid disruption of your water supply. Regular insepctmaintenance and testing by qualified professionals can help identify and fix these common backflow repair issues before they lead to serious problems.",
-        "links": [
-          {
-            "label": "Call Today for Your $500 Repair Credit",
-            "href": "/contact-backflowtestpros",
-            "external": false,
-            "target": "_blank"
-          }
-        ]
-      },
-      {
-        "label": "Backflow Preventer Device Installation",
-        "title": "Backflow Device Installation",
-        "body": "The installation and testing of backflow preventer devices are essential for ensuring the safety of the water supply and compliance with state and local regulations.\n\nCompliance with local backflow prevention regulations is governed by a combination of California State Water Resources Control Board guidelines, plumbing codes, Department of Public Health (CDPH) guidelines, and the specific ordinances and requirements set by local municipalities and water districts.\n\nHiring a certified backflow professionals to perform backflow prevention assembly installation and testing is key to ensuring compliance with state and municipal water department regulations.\n\nFrom determining the specific requirements for your property, system, and jurisdiction to perfoming hazard level assessment and site preparation to the final stage of backflow prevention assembly selection, installation, initial testing and certification; our licensed contractors guarantee compliance with local water authority standards and state contractor plumbing codes for backflow installations, repairs, and replacements of all types and sizes.\n\nRelying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer installation is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow preventer installation and maintenance protocols required by state water board regulations and backflow prevention certification bodies.",
-        "links": [
-          {
-            "label": "Backflow Preventer Installation Services",
-            "href": "/backflow-installation",
-            "external": false,
-            "target": "_blank"
-          }
-        ]
-      },
-      {
-        "label": "Backflow Preventer Security",
-        "title": "Backflow Preventer Security",
-        "body": "Backflow preventers are essential to maintaining safe and clean water systems—but they are also high-value targets for theft due to their brass, copper, and even stainless steel components.\n\nInstalling a robust backflow security cage is one of the most effective ways to prevent theft and the costly consequences that follow. When these devices are stolen, replacement costs can run into the thousands, and the impact doesn’t stop there: your business may experience operational downtime with no water service, jeopardizing health, safety, and productivity.\n\nProperly installed cages—especially those designed for high-risk areas—act as strong deterrents and physical barriers against tampering or removal.\n\nBeyond standard enclosures, bypass protectors with puck locks and stem protectors are critical for protecting fireline backflow preventers, which are often targeted for their exposed valves and stems. Thieves frequently cut stems and remove bypass valves to cash in on scrap metal, making these specialized add-ons essential to a comprehensive backflow security plan.\n\nInvesting in the right protection now can prevent major financial and operational headaches later.",
-        "links": []
-      },
-      {
-        "label": "Preferred by Leading Brands",
-        "title": "The Trusted Backflow Testing Installation and Repair Partner for Leading Brands",
-        "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; Backflow Test Pros is the trusted choice for backflow prevention testing, installation and repair services across Southern California.\n\nWith a reputation built on expertise, integrity and customer satisfaction, we provide the best value in backflow testing, installation and repair services through our turn-key \"Everything Done for You\" backflow maintenance program.\n\nOur signature white-glove support takes care of everything from initial scheduling, water department communications, due date tracking, same day certification, routine maintenance, installation warranty and repair coverage to ensure that your backflow testing, installation and maintenance concerns are addressed in a professional and timely manner.\n\nThat's why leading commercial property owners and facilities managers trust Backflow Test Pros' hassel-free backflow testing, installation and repair services to ensure regulatory compliance and avoid civil liability in for all their routine and mission critical backflow prevention applications.\n\n- Professional, Hassel-Free Service\n- Everything Done for You\n- Availability Outside Business Hours\n- Multi-Device Test Discounts\n- Advanced Scheduling\n- Due Date Monitoring\n- Fire Line Test Mode Assistance\n- Water Authority Documentation\n- Discounted Cage\n- Free Backflow Preventer Lock\n- 24/7 Backflow Expert Support\n- Up to $500 Repair Credit",
-        "links": []
-      }
+      [
+        {
+          "label": "Annual Backflow Testing",
+          "title": "Backflow Preventer Testing",
+          "body": "No matter what the type and size of your backflow preventer devices, Backflow Test Pros' certified backflow specialized technicians have the knowledge and experience to ensure your backflow preventer devices are properly tested to meet local water authority backflow prevention test compliance requirements.\n\nFrom obtaining and deciphering your annual water department backflow test report letters to communicating your test results with the local water authority and ensuring your backflow test compliance is documented before due dates, we manage your backflow test prevention compliance process so you can focus on your business.\n\nWe specialize in delivering managed, hassel-free backflow maintenance services to the leading commercial clients in Southern California. Our managed turn-key backflow installation, testing and repair services ensure that your backflow preventer assemblies are in compliance and that you avoid costly fines and civil liabilities.\n\n- Professional, Hassel-Free Service\n- Everything Done for You\n- Availability Outside Business Hours\n- Multi-Device Test Discounts\n- Advanced Scheduling\n- Due Date Monitoring\n- Fire Line Test Mode Assistance\n- Water Authority Documentation\n- Discounted Cage\n- Free Backflow Preventer Lock\n- 24/7 Backflow Expert Support\n- Up to $500 Repair Credit",
+          "links": [
+            {
+              "label": "Backflow Testing Services",
+              "href": "/backflow-testing",
+              "external": false,
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "Backflow Preventer Repairs",
+          "title": "Backflow Device Repair",
+          "body": "Keeping backflow preventer devices in good working condition through timely repairs is required by law and ensures public safety, regulatory compliance, and the ongoing integrity of the water system. It’s essential that any damage or malfunction is addressed quickly to avoid any risk to water quality and public health. Delaying repairs to a backflow preventer device can potentially cause more severe and costly damage over time and can result in fines, water service disconnection, lawsuits, and potential liability for any damages caused by contamination. Our certified backflow technicians are prepared for any and all backflow leaks, breaks and failures. No matter how serious or urgent your backflow preventer repair, we’ve got you covered. Unlike general plumbers, our certified backflow technicians specialize in backflow installs, testing, repair and replacement. ‍ So whether you need a test or risk having your water shut off due to backflow leaks, failures and breaks; our Industry leading backflow specialized technicians have the knowledge and experience to ensure your backflow devices meet local water authority compliance to prevent your water from being shut off. As a bonded and insured licensed contractor, we offer peace of mind and guarantee top-tier workmanship. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+          "links": [
+            {
+              "label": "Backflow Repair Services",
+              "href": "/backflow-repair-replacement-services",
+              "external": false,
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "Backflow Troubleshooting",
+          "title": "Backflow Device Inspection",
+          "body": "Got Backflow questions? Backflow Test Pros has answers. Our backflow certified technicians' diagnostic skills acquired through years of field experience separate our backflow technicians from general plumbing industry professionals. Periodic monitoring and inspection of your backflow prevention device is essential to avoid any risk to water quality and public health. Backflow preventer devices are often exposed to harsh conditions, including water with high mineral content, chlorine, or other problematic elements. Also, backflow preventer assembly check valves and seals that prevent water from flowing in the wrong direction can wear out or become damaged due to age, pressure changes, debris buildup. And sometimes, the main body of the backflow preventer which is responsible for housing all the vital internal and external components becomes damaged. Damage to the backflow body may cause the backflow preventer to leak. These leaks may result in wasted water and property damage. In some cases emergency water shut down may be necessary. ‍ So, whether you have a minor repair or complex break or failure which risks having your water turned off, our managed backflow maintenance services ensure you can focus on your business knowing that you have Backflow Test Pros' certified technicians diagnosing and resolving unanticipated backflow issues. It’s important to address these issues promptly to avoid disruption of your water supply. Regular insepctmaintenance and testing by qualified professionals can help identify and fix these common backflow repair issues before they lead to serious problems. ‍",
+          "links": [
+            {
+              "label": "Call Today for Your $500 Repair Credit",
+              "href": "/contact-backflowtestpros",
+              "external": false,
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "Backflow Preventer Device Installation",
+          "title": "Backflow Device Installation",
+          "body": "The installation and testing of backflow preventer devices are essential for ensuring the safety of the water supply and compliance with state and local regulations. Compliance with local backflow prevention regulations is governed by a combination of California State Water Resources Control Board guidelines, plumbing codes, Department of Public Health (CDPH) guidelines, and the specific ordinances and requirements set by local municipalities and water districts. Hiring a certified backflow professionals to perform backflow prevention assembly installation and testing is key to ensuring compliance with state and municipal water department regulations. From determining the specific requirements for your property, system, and jurisdiction to perfoming hazard level assessment and site preparation to the final stage of backflow prevention assembly selection, installation, initial testing and certification; our licensed contractors guarantee compliance with local water authority standards and state contractor plumbing codes for backflow installations, repairs, and replacements of all types and sizes. Relying on Backflow Testing Pros' licensed, certified and bonded professionals ensures that your backflow preventer installation is performed by certified cross connection control and backflow prevention experts in a timely manner conforming to backflow preventer installation and maintenance protocols required by state water board regulations and backflow prevention certification bodies. ‍",
+          "links": [
+            {
+              "label": "Backflow Preventer Installation Services",
+              "href": "/backflow-installation",
+              "external": false,
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "Backflow Preventer Security",
+          "title": "Backflow Preventer Security",
+          "body": "Backflow preventers are essential to maintaining safe and clean water systems—but they are also high-value targets for theft due to their brass, copper, and even stainless steel components. Installing a robust backflow security cage is one of the most effective ways to prevent theft and the costly consequences that follow. When these devices are stolen, replacement costs can run into the thousands, and the impact doesn’t stop there: your business may experience operational downtime with no water service, jeopardizing health, safety, and productivity. Properly installed cages—especially those designed for high-risk areas—act as strong deterrents and physical barriers against tampering or removal. Beyond standard enclosures, bypass protectors with puck locks and stem protectors are critical for protecting fireline backflow preventers, which are often targeted for their exposed valves and stems. Thieves frequently cut stems and remove bypass valves to cash in on scrap metal, making these specialized add-ons essential to a comprehensive backflow security plan. Investing in the right protection now can prevent major financial and operational headaches later. ‍",
+          "links": []
+        },
+        {
+          "label": "Preferred by Leading Brands",
+          "title": "The Trusted Backflow Testing Installation and Repair Partner for Leading Brands",
+          "body": "From shopping centers, apartment communities to restaurants, service stations, department stores and industrial facilities; Backflow Test Pros is the trusted choice for backflow prevention testing, installation and repair services across Southern California. With a reputation built on expertise, integrity and customer satisfaction, we provide the best value in backflow testing, installation and repair services through our turn-key \"Everything Done for You\" backflow maintenance program. Our signature white-glove support takes care of everything from initial scheduling, water department communications, due date tracking, same day certification, routine maintenance, installation warranty and repair coverage to ensure that your backflow testing, installation and maintenance concerns are addressed in a professional and timely manner. That's why leading commercial property owners and facilities managers trust Backflow Test Pros' hassel-free backflow testing, installation and repair services to ensure regulatory compliance and avoid civil liability in for all their routine and mission critical backflow prevention applications.",
+          "links": []
+        }
+      ]
     ]
   }
 ]

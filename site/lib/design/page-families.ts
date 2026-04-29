@@ -122,7 +122,8 @@ export const pageFamilyRules: Record<PageFamilyId, PageFamilyRule> = {
   },
   serviceAreaHub: {
     label: "Service-area hub",
-    heroVariant: "navyStatic",
+    heroVariant: "photoOverlay",
+    heroImageKey: "commercialVertical",
     orderedModules: [
       "topBar",
       "navbar",

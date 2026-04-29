@@ -9,6 +9,40 @@ interface ActionLink {
   label: string;
 }
 
+function splitHeroBlocks(value?: string) {
+  return (
+    value
+      ?.replaceAll("‍", "\n")
+      .replaceAll("\u200d", "\n")
+      .split(/\n+/)
+      .map((segment) => segment.trim())
+      .filter(Boolean) ?? []
+  );
+}
+
+function isHeroPromoLine(line: string) {
+  const normalized = line.replace(/\s+/g, " ").trim();
+
+  return normalized.length > 0 && normalized.length <= 84 && !/[.!?]$/.test(normalized);
+}
+
+function partitionHeroCopyLines(lines: string[]) {
+  const bodyLines = [...lines];
+  const promoLines: string[] = [];
+
+  while (bodyLines.length > 1) {
+    const candidate = bodyLines[bodyLines.length - 1];
+
+    if (!candidate || !isHeroPromoLine(candidate)) {
+      break;
+    }
+
+    promoLines.unshift(bodyLines.pop()!);
+  }
+
+  return { bodyLines, promoLines };
+}
+
 function splitHeroTitle(title: string) {
   const normalized = title.replace(/\s+/g, " ").trim();
 
@@ -78,6 +112,7 @@ interface PageHeroProps {
   primaryAction?: ActionLink;
   heroVariant?: "photo" | "navy";
   heroImageSrc?: string;
+  styleVariant?: "site" | "editorial";
 }
 
 export function PageHero({
@@ -90,14 +125,21 @@ export function PageHero({
   primaryAction,
   heroVariant = "photo",
   heroImageSrc = heroImages[0]?.src,
+  styleVariant = "site",
 }: PageHeroProps) {
+  const isEditorialHero = styleVariant === "editorial";
   const isPhonePrimaryAction = primaryAction?.href.startsWith("tel:") ?? false;
-  const primaryActionClassName = isPhonePrimaryAction
+  const editorialActionClassName = isPhonePrimaryAction
     ? "bftp-cta-button bftp-hero__phone"
     : "bftp-cta-button";
-  const heroCopyLines = bodyLines?.length ? bodyLines : subtitle ? [subtitle] : [];
+  const heroCopyLines = bodyLines?.length ? bodyLines : splitHeroBlocks(subtitle);
   const previewCopyLines = heroCopyLines.slice(0, 1);
   const expandedCopyLines = heroCopyLines.slice(1);
+  const { bodyLines: siteCopyLines, promoLines: inferredPromoLines } =
+    partitionHeroCopyLines(heroCopyLines);
+  const sitePromoLines = Array.from(
+    new Set([...inferredPromoLines, ...splitHeroBlocks(promoText)]),
+  );
   const { primary: titlePrimary, accent: titleAccent } = splitHeroTitle(title);
   const normalizedSubtitle = normalizeHeroText(subtitle);
   const normalizedPreviewLine = normalizeHeroText(previewCopyLines[0]);
@@ -113,9 +155,16 @@ export function PageHero({
   const isVeryLongHeroTitle =
     titlePrimary.length > 42 || titleAccent.length > 52;
   const showPhotoHero = heroVariant !== "navy" && Boolean(heroImageSrc);
+  const rootClassName = [
+    "bftp-hero",
+    heroVariant === "navy" ? "bftp-hero--navy" : "",
+    isEditorialHero ? "bftp-hero--editorial" : "bftp-hero--site",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <section className={heroVariant === "navy" ? "bftp-hero bftp-hero--navy" : "bftp-hero"}>
+    <section className={rootClassName}>
       {showPhotoHero ? (
         <div className="bftp-hero__media" aria-hidden="true">
           <Image
@@ -129,77 +178,109 @@ export function PageHero({
         </div>
       ) : null}
       <div className="bftp-shell">
-        <div className="bftp-hero__inner">
-          <div className="bftp-hero__content">
-            {eyebrow ? <p className="bftp-kicker">{eyebrow}</p> : null}
-            <h1
-              className={`bftp-hero__title${
-                isLongHeroTitle ? " bftp-hero__title--long" : ""
-              }${isVeryLongHeroTitle ? " bftp-hero__title--very-long" : ""}`}
-            >
-              <span className="bftp-hero__title-line bftp-hero__title-line--primary">
-                {titlePrimary}
-              </span>
-              {titleAccent ? (
-                <span className="bftp-hero__title-line bftp-hero__title-line--accent">
-                  {titleAccent}
+        {isEditorialHero ? (
+          <div className="bftp-hero__inner">
+            <div className="bftp-hero__content">
+              {eyebrow ? <p className="bftp-kicker">{eyebrow}</p> : null}
+              <h1
+                className={`bftp-hero__title${
+                  isLongHeroTitle ? " bftp-hero__title--long" : ""
+                }${isVeryLongHeroTitle ? " bftp-hero__title--very-long" : ""}`}
+              >
+                <span className="bftp-hero__title-line bftp-hero__title-line--primary">
+                  {titlePrimary}
                 </span>
+                {titleAccent ? (
+                  <span className="bftp-hero__title-line bftp-hero__title-line--accent">
+                    {titleAccent}
+                  </span>
+                ) : null}
+              </h1>
+              {showSubtitle ? (
+                <p className="bftp-hero__subtitle">{subtitle}</p>
               ) : null}
-            </h1>
-            {showSubtitle ? (
-              <p className="bftp-hero__subtitle">{subtitle}</p>
-            ) : null}
-            {expandedCopyLines.length > 0 ? (
-              <div className="bftp-hero__copy-details">
-                <div className="bftp-hero__copy bftp-hero__copy--preview">
-                  {previewCopyLines.map((line, index) => (
-                    <p key={`${index}-${line}`}>{line}</p>
-                  ))}
-                </div>
-                <TrackedHeroDetails className="bftp-hero__copy-expand">
-                  <summary className="bftp-hero__copy-summary">
-                    <span className="bftp-hero__copy-summary-label bftp-hero__copy-summary-label--closed">
-                      Read More
-                    </span>
-                    <span className="bftp-hero__copy-summary-label bftp-hero__copy-summary-label--open">
-                      Show Less
-                    </span>
-                  </summary>
-                  <div className="bftp-hero__copy bftp-hero__copy--expanded">
-                    {expandedCopyLines.map((line, index) => (
+              {expandedCopyLines.length > 0 ? (
+                <div className="bftp-hero__copy-details">
+                  <div className="bftp-hero__copy bftp-hero__copy--preview">
+                    {previewCopyLines.map((line, index) => (
                       <p key={`${index}-${line}`}>{line}</p>
                     ))}
                   </div>
-                </TrackedHeroDetails>
-              </div>
-            ) : (
-              <div className="bftp-hero__copy">
-                {heroCopyLines.map((line, index) => (
-                  <p key={`${index}-${line}`}>{line}</p>
-                ))}
-              </div>
-            )}
-            {promoText ? <p className="bftp-hero__promo">{promoText}</p> : null}
-            {badges.length > 0 ? (
-              <div className="bftp-hero__badges">
-                {badges.map((badge) => (
-                  <span key={badge} className="badge-pill">
-                    {badge}
-                  </span>
-                ))}
-              </div>
-            ) : null}
-            {primaryAction ? (
-              <div className="bftp-hero__actions">
-                <TrackedHeroCta
-                  href={primaryAction.href}
-                  label={primaryAction.label}
-                  className={primaryActionClassName}
-                />
-              </div>
-            ) : null}
+                  <TrackedHeroDetails className="bftp-hero__copy-expand">
+                    <summary className="bftp-hero__copy-summary">
+                      <span className="bftp-hero__copy-summary-label bftp-hero__copy-summary-label--closed">
+                        Read More
+                      </span>
+                      <span className="bftp-hero__copy-summary-label bftp-hero__copy-summary-label--open">
+                        Show Less
+                      </span>
+                    </summary>
+                    <div className="bftp-hero__copy bftp-hero__copy--expanded">
+                      {expandedCopyLines.map((line, index) => (
+                        <p key={`${index}-${line}`}>{line}</p>
+                      ))}
+                    </div>
+                  </TrackedHeroDetails>
+                </div>
+              ) : (
+                <div className="bftp-hero__copy">
+                  {heroCopyLines.map((line, index) => (
+                    <p key={`${index}-${line}`}>{line}</p>
+                  ))}
+                </div>
+              )}
+              {promoText ? <p className="bftp-hero__promo">{promoText}</p> : null}
+              {badges.length > 0 ? (
+                <div className="bftp-hero__badges">
+                  {badges.map((badge) => (
+                    <span key={badge} className="badge-pill">
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+              {primaryAction ? (
+                <div className="bftp-hero__actions">
+                  <TrackedHeroCta
+                    href={primaryAction.href}
+                    label={primaryAction.label}
+                    className={editorialActionClassName}
+                  />
+                </div>
+              ) : null}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="bftp-hero__site-inner">
+            <div className="bftp-hero__site-content">
+              {eyebrow ? <p className="bftp-kicker">{eyebrow}</p> : null}
+              <h1 className="bftp-hero__site-title">{title}</h1>
+              {siteCopyLines.length > 0 ? (
+                <div className="bftp-hero__site-copy">
+                  {siteCopyLines.map((line, index) => (
+                    <p key={`${index}-${line}`}>{line}</p>
+                  ))}
+                </div>
+              ) : null}
+              {sitePromoLines.length > 0 ? (
+                <div className="bftp-hero__site-promo">
+                  {sitePromoLines.map((line, index) => (
+                    <p key={`${index}-${line}`}>{line}</p>
+                  ))}
+                </div>
+              ) : null}
+              {primaryAction ? (
+                <div className="bftp-hero__site-actions">
+                  <TrackedHeroCta
+                    href={primaryAction.href}
+                    label={primaryAction.label}
+                    className="bftp-cta-button bftp-hero__site-phone"
+                  />
+                </div>
+              ) : null}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
