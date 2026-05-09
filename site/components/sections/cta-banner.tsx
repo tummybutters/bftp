@@ -53,7 +53,7 @@ export function CtaBanner({
   const { primary, accent } = splitBannerHeading(heading);
 
   return (
-    <section className="bftp-band bftp-band--plain">
+    <section className="bftp-band bftp-band--plain bftp-band--cta">
       <div className="bftp-shell">
         <div
           className="bftp-cta-banner"

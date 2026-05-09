@@ -93,6 +93,14 @@ function orderServiceAreaSections(
   );
 }
 
+function orderCtaLastSections(sections: ContentSection[]): OrderedSection[] {
+  const indexed = sections.map((section, originalIndex) => ({ section, originalIndex }));
+  const ctaSections = indexed.filter(({ section }) => section.kind === "cta_banner");
+  const otherSections = indexed.filter(({ section }) => section.kind !== "cta_banner");
+
+  return [...otherSections, ...ctaSections];
+}
+
 function getOrderedSections(
   pagePath: string,
   family: PageFamily,
@@ -104,6 +112,10 @@ function getOrderedSections(
 
   if (pagePath === "/about-us") {
     return orderAboutSections(sections);
+  }
+
+  if (pagePath === "/backflow-installation" || pagePath === "/backflow-testing") {
+    return orderCtaLastSections(sections);
   }
 
   return sections.map((section, originalIndex) => ({ section, originalIndex }));

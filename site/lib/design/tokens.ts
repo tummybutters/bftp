@@ -13,7 +13,7 @@ export const designTokens = {
     textStrong: "#262e4a",
     textSoft: "#7d8192",
     surface: "#ffffff",
-    surfaceSoft: "#f6f6f6",
+    surfaceSoft: "#f5f5fb",
     surfaceBand: "#f5f5fb",
     border: "rgba(38, 46, 74, 0.12)",
     borderStrong: "rgba(38, 46, 74, 0.2)",

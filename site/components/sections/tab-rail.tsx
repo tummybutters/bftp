@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, type KeyboardEvent, useMemo, useState } from "react";
 import { usePostHog } from "posthog-js/react";
 
 import type { ContentLinkItem, TabItem } from "@/lib/content/types";
@@ -98,7 +98,13 @@ const tabPhotos: Array<[RegExp, string]> = [
   [/brands|preferred|trusted/i, "/assets/photos/chickfila-exterior.jpg"],
 ];
 
-function getTabPhoto(tab: TabItem) {
+function getTabPhoto(tab: TabItem, overrides?: Record<string, string>) {
+  const override = overrides?.[tab.label] ?? overrides?.[tab.title];
+
+  if (override) {
+    return override;
+  }
+
   const fingerprint = `${tab.label} ${tab.title}`;
 
   return tabPhotos.find(([pattern]) => pattern.test(fingerprint))?.[1] ?? "/assets/photos/general-2.jpg";
@@ -123,13 +129,21 @@ function splitIntoColumns(blocks: BodyBlock[]) {
   return columns;
 }
 
+function isWaterAuthorityTab(tab: TabItem) {
+  const fingerprint = `${tab.label} ${tab.title}`.toLowerCase();
+
+  return fingerprint.includes("water authority contact") || fingerprint.includes("water department");
+}
+
 export function TabRail({
   tabs,
   showPhotos = true,
+  photoOverrides,
   titleMode = "title",
 }: {
   tabs: TabItem[];
   showPhotos?: boolean;
+  photoOverrides?: Record<string, string>;
   titleMode?: "title" | "label";
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -142,23 +156,69 @@ export function TabRail({
     [activeTab],
   );
   const bodyColumns = useMemo(() => splitIntoColumns(bodyBlocks), [bodyBlocks]);
+  const tabBaseId = useMemo(
+    () =>
+      `bftp-tabs-${tabs
+        .map((tab) => tab.label)
+        .join("-")
+        .replace(/[^a-z0-9]+/gi, "-")
+        .toLowerCase()}`,
+    [tabs],
+  );
 
   if (!activeTab) {
     return null;
   }
 
-  const linkColumns =
-    activeTab.links.length >= 42 ? 3 : activeTab.links.length >= 18 ? 2 : 1;
+  const renderWaterAuthorityLinks = isWaterAuthorityTab(activeTab);
+  const hasProvidedLinks = activeTab.links.length > 0;
+  const useSeoLinkList = activeTab.links.length >= 4;
+  const linkColumns = useSeoLinkList
+    ? activeTab.links.length >= 18
+      ? 3
+      : activeTab.links.length >= 6
+        ? 2
+        : 1
+    : activeTab.links.length >= 42
+      ? 3
+      : activeTab.links.length >= 18
+        ? 2
+        : 1;
   const defaultCta: ContentLinkItem = {
     href: siteConfig.contactPath,
     label: "Schedule Service",
     external: false,
     target: "",
   };
-  const ctaLinks =
-    activeTab.links.length > 0
-      ? activeTab.links
+  const ctaLinks = hasProvidedLinks
+    ? activeTab.links
+    : renderWaterAuthorityLinks
+      ? []
       : [defaultCta];
+  const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    const tabButtons = Array.from(
+      event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('[role="tab"]') ?? [],
+    );
+    let nextIndex: number | null = null;
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (index + 1) % tabs.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex = (index - 1 + tabs.length) % tabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = tabs.length - 1;
+    }
+
+    if (nextIndex === null) {
+      return;
+    }
+
+    event.preventDefault();
+    setActiveIndex(nextIndex);
+    tabButtons[nextIndex]?.focus();
+  };
 
   return (
     <div className="bftp-tab-panel">
@@ -168,8 +228,11 @@ export function TabRail({
             <button
               key={`${tab.label}-${index}`}
               type="button"
+              id={`${tabBaseId}-tab-${index}`}
               role="tab"
               aria-selected={index === activeIndex}
+              aria-controls={`${tabBaseId}-panel`}
+              tabIndex={index === activeIndex ? 0 : -1}
               className={
                 index === activeIndex
                   ? "bftp-tab-panel__tab is-active"
@@ -179,17 +242,23 @@ export function TabRail({
                 posthog?.capture("tab_selected", { tab_label: tab.label, tab_index: index });
                 setActiveIndex(index);
               }}
+              onKeyDown={(event) => handleTabKeyDown(event, index)}
             >
               <span className="bftp-tab-panel__tab-label">{tab.label}</span>
             </button>
           ))}
         </div>
       </aside>
-      <div className="bftp-tab-panel__body">
+      <div
+        id={`${tabBaseId}-panel`}
+        className="bftp-tab-panel__body"
+        role="tabpanel"
+        aria-labelledby={`${tabBaseId}-tab-${activeIndex}`}
+      >
         {showPhotos ? (
           <div className="bftp-tab-panel__media">
             <Image
-              src={getTabPhoto(activeTab)}
+              src={getTabPhoto(activeTab, photoOverrides)}
               alt=""
               fill
               sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) calc(100vw - 40px), 54vw"
@@ -221,25 +290,51 @@ export function TabRail({
               </div>
             ))}
           </div>
-          <ul
-            className="bftp-tab-panel__link-grid"
-            style={{ ["--bftp-tab-link-columns" as string]: String(linkColumns) }}
-          >
-            {ctaLinks.map((link) => (
-              <li
-                key={`${activeTab.title}-${link.href}-${link.label}`}
-                className="bftp-tab-panel__link-item"
-              >
-                {link.external ? (
-                  <a href={link.href} target={link.target || "_blank"} rel="noreferrer">
+          {renderWaterAuthorityLinks && ctaLinks.length > 0 ? (
+            <div className="bftp-tab-panel__authority-links">
+              <span className="bftp-tab-panel__authority-label">Website:</span>
+              {ctaLinks.map((link) =>
+                link.external ? (
+                  <a
+                    key={`${activeTab.title}-${link.href}-${link.label}`}
+                    href={link.href}
+                    target={link.target || "_blank"}
+                    rel="noreferrer"
+                  >
                     {link.label}
                   </a>
                 ) : (
-                  <Link href={link.href}>{link.label}</Link>
-                )}
-              </li>
-            ))}
-          </ul>
+                  <Link key={`${activeTab.title}-${link.href}-${link.label}`} href={link.href}>
+                    {link.label}
+                  </Link>
+                ),
+              )}
+            </div>
+          ) : ctaLinks.length > 0 ? (
+            <ul
+              className={
+                useSeoLinkList
+                  ? "bftp-tab-panel__link-grid bftp-tab-panel__link-grid--seo"
+                  : "bftp-tab-panel__link-grid"
+              }
+              style={{ ["--bftp-tab-link-columns" as string]: String(linkColumns) }}
+            >
+              {ctaLinks.map((link) => (
+                <li
+                  key={`${activeTab.title}-${link.href}-${link.label}`}
+                  className="bftp-tab-panel__link-item"
+                >
+                  {link.external ? (
+                    <a href={link.href} target={link.target || "_blank"} rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href}>{link.label}</Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
     </div>

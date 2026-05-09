@@ -87,6 +87,7 @@ export function ServiceAreaDirectory({
   hideLogos = false,
   defaultExpanded = false,
   hideToggle = false,
+  centered = false,
 }: {
   page: PageEntry;
   heading: string;
@@ -94,29 +95,37 @@ export function ServiceAreaDirectory({
   hideLogos?: boolean;
   defaultExpanded?: boolean;
   hideToggle?: boolean;
+  centered?: boolean;
 }) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   const authorityLogo = getAuthorityLogo(page, heading);
   const count = items.length;
   const directoryMeta = getDirectoryMeta(heading, count);
   const isExpanded = hideToggle || expanded;
+  const previewLimit = 18;
+  const visibleItems =
+    isExpanded || items.length <= previewLimit ? items : items.slice(0, previewLimit);
+  const hasHiddenItems = !isExpanded && visibleItems.length < items.length;
   const columns = useMemo(() => {
-    if (items.length >= 54) {
-      return splitIntoColumns(items, 4);
+    if (visibleItems.length >= 54) {
+      return splitIntoColumns(visibleItems, 4);
     }
 
-    if (items.length >= 24) {
-      return splitIntoColumns(items, 3);
+    if (visibleItems.length >= 24) {
+      return splitIntoColumns(visibleItems, 3);
     }
 
-    return splitIntoColumns(items, 2);
-  }, [items]);
+    return splitIntoColumns(visibleItems, 2);
+  }, [visibleItems]);
 
   return (
     <section
       className={[
         "bftp-service-area-card",
         hideLogos ? "bftp-service-area-card--plain" : undefined,
+        hideLogos ? "bftp-service-area-card--open" : undefined,
+        centered ? "bftp-service-area-card--centered" : undefined,
+        `bftp-service-area-card--cols-${columns.length}`,
       ]
         .filter(Boolean)
         .join(" ")}
@@ -195,7 +204,7 @@ export function ServiceAreaDirectory({
             </ul>
           ))}
         </div>
-        {!isExpanded ? <div className="bftp-service-area-card__fade" aria-hidden="true" /> : null}
+        {hasHiddenItems ? <div className="bftp-service-area-card__fade" aria-hidden="true" /> : null}
       </div>
     </section>
   );

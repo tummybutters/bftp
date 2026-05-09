@@ -1,16 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { usePostHog } from "posthog-js/react";
 
 import { HeaderNavLink } from "@/components/chrome/header-nav-link";
+import { HeaderMobileServicesDropdown } from "@/components/chrome/header-services-dropdown";
 import { TrackedLink } from "@/lib/analytics";
 import { siteConfig, siteIcons } from "@/lib/site-config";
 
 export function SiteHeaderMobileMenu() {
   const posthog = usePostHog();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [homeLink, ...remainingLinks] = siteConfig.primaryNavigation;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1120px)");
@@ -34,9 +38,20 @@ export function SiteHeaderMobileMenu() {
     }
 
     document.body.style.overflow = "hidden";
+    panelRef.current?.focus({ preventScroll: true });
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+        toggleRef.current?.focus({ preventScroll: true });
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [mobileMenuOpen]);
 
@@ -44,6 +59,7 @@ export function SiteHeaderMobileMenu() {
     <>
       <div className="bftp-navbar__mobile-controls">
         <button
+          ref={toggleRef}
           type="button"
           className={`bftp-navbar__toggle${mobileMenuOpen ? " is-open" : ""}`}
           aria-expanded={mobileMenuOpen}
@@ -71,13 +87,26 @@ export function SiteHeaderMobileMenu() {
             onClick={() => setMobileMenuOpen(false)}
           />
           <div
+            ref={panelRef}
             id="bftp-mobile-menu"
             className="bftp-navbar__mobile-panel is-open"
-            aria-hidden={false}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            tabIndex={-1}
           >
             <div className="bftp-navbar__mobile-surface">
               <nav className="bftp-navbar__mobile-menu" aria-label="Mobile navigation">
-                {siteConfig.primaryNavigation.map((link) => (
+                {homeLink ? (
+                  <HeaderNavLink
+                    href={homeLink.href}
+                    label={homeLink.label}
+                    mobile
+                    onNavigate={() => setMobileMenuOpen(false)}
+                  />
+                ) : null}
+                <HeaderMobileServicesDropdown onNavigate={() => setMobileMenuOpen(false)} />
+                {remainingLinks.map((link) => (
                   <HeaderNavLink
                     key={link.href}
                     href={link.href}
@@ -98,13 +127,6 @@ export function SiteHeaderMobileMenu() {
                   className="bftp-navbar__mobile-phone bftp-cta-button"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <Image
-                    src={siteIcons.phone.src}
-                    alt={siteIcons.phone.alt}
-                    width={18}
-                    height={18}
-                    className="bftp-navbar__cta-icon"
-                  />
                   <span>{siteConfig.phone.display}</span>
                 </TrackedLink>
                 <TrackedLink

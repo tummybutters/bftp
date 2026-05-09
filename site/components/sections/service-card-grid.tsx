@@ -28,13 +28,31 @@ function buildServiceDescription(label: string) {
   return "Turnkey backflow service coverage designed around compliance, scheduling, and dependable follow-through.";
 }
 
+function getServiceCardImage(label: string, index: number) {
+  if (/repair|replacement/i.test(label)) {
+    return {
+      src: "/assets/services/home-repair-2026.jpg",
+      alt: "Backflow repair and replacement service work",
+    };
+  }
+
+  if (/installation/i.test(label)) {
+    return {
+      src: "/assets/services/home-installation-2026.jpg",
+      alt: "Backflow preventer installation service work",
+    };
+  }
+
+  return serviceImages[index % serviceImages.length];
+}
+
 export function ServiceCardGrid({ items }: { items: LinkItem[] }) {
   const cards = items.slice(0, 3);
 
   return (
     <div className="bftp-service-grid">
       {cards.map((item, index) => {
-        const image = serviceImages[index % serviceImages.length];
+        const image = getServiceCardImage(item.label, index);
 
         return (
           <article

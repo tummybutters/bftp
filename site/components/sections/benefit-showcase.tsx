@@ -34,6 +34,13 @@ function splitHeading(heading: string) {
     };
   }
 
+  if (normalized.startsWith("Certified Technician ")) {
+    return {
+      primary: "Certified Technician",
+      secondary: normalized.replace("Certified Technician ", ""),
+    };
+  }
+
   const words = normalized.split(" ");
   const midpoint = Math.max(2, Math.ceil(words.length / 2));
 
@@ -66,8 +73,8 @@ export function BenefitShowcase({
   heading,
   body,
   items,
-  ctaLabel = "Contact Backflow Test Pros",
-  ctaHref = "/contact-backflowtestpros",
+  ctaLabel,
+  ctaHref,
 }: {
   heading: string;
   body: string;
@@ -89,6 +96,7 @@ export function BenefitShowcase({
           {secondary ? <span>{secondary}</span> : null}
         </h2>
       </div>
+      <p className="bftp-benefit-showcase__body">{normalizeBody(body)}</p>
       <div className={gridClassName}>
         {items.map((item, index) => {
           const href = resolveBenefitHref(item.title);
@@ -132,12 +140,13 @@ export function BenefitShowcase({
           );
         })}
       </div>
-      <p className="bftp-benefit-showcase__body">{normalizeBody(body)}</p>
-      <div className="bftp-benefit-showcase__actions">
-        <Link href={ctaHref} className="bftp-cta-button bftp-benefit-showcase__button">
-          {ctaLabel}
-        </Link>
-      </div>
+      {ctaLabel && ctaHref ? (
+        <div className="bftp-benefit-showcase__actions">
+          <Link href={ctaHref} className="bftp-cta-button bftp-benefit-showcase__button">
+            {ctaLabel}
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 }

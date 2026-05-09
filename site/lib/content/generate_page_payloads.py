@@ -61,6 +61,18 @@ SPECIAL_COUNTY_PREFIXES = {
     "ventura-county": "ventura-county",
 }
 CITY_PAGE_PREFIXES = set(COUNTY_NAMES)
+CITY_SOURCE_FALLBACKS = {
+    "orange-county__villa-park-backflow-testing-repair":
+        "orange-county__villa-park-backflow-testing-installation-repair",
+}
+WATER_AUTHORITY_LINK_FALLBACKS = {
+    "la-county__pomona-backflow-testing-repair": {
+        "label": "City of Pomona Cross Connection Program",
+        "href": "https://www.pomonaca.gov/government/departments/water-resources-department/cross-connection",
+        "external": True,
+        "target": "_blank",
+    },
+}
 MODELED_FAMILIES = {
     "homepage",
     "about_page",
@@ -135,15 +147,13 @@ KNOWN_PAGE_ANOMALIES: dict[str, list[dict[str, str]]] = {
 }
 
 HOMEPAGE_PROOF_ITEMS = [
+    "Same Day Report Submission",
     "Licensed CA Contractor",
-    "Multi-Device Discounts",
     "AWWA Certified Testers",
-    "Bonded & Insured",
-    "Repair Coverage Available",
-    "Same-Day Report Submittal",
+    "Multi-Device Discounts",
+    "Free Repair Coverage",
+    "Insured 2+ Million",
     "Priority Scheduling",
-    "Local Authority Coordination",
-    "Compliance Scheduling Support",
 ]
 
 HOMEPAGE_SERVICE_ITEMS = [
@@ -275,6 +285,200 @@ def split_pipe(value: str) -> list[str]:
     if not value:
         return []
     return [part.strip() for part in value.split("|") if part.strip()]
+
+
+def clean_visible_text(value: str) -> str:
+    if not value:
+        return value
+
+    cleaned = value
+    replacements = {
+        "Backflow Testing 7 Installation Regulations": "Backflow Testing & Installation Regulations",
+        "Fountain Backflow Testing & Installation Regulations": "Fountain Valley Backflow Testing & Installation Regulations",
+        "Garden Backflow Testing & Installation Regulations": "Garden Grove Backflow Testing & Installation Regulations",
+        "Huntington Backflow Testing & Installation Regulations": "Huntington Beach Backflow Testing & Installation Regulations",
+        "hassel-free": "hassle-free",
+        "Hassel-Free": "Hassle-Free",
+        "insepctmaintenance": "inspection, maintenance",
+        "perfoming": "performing",
+        "Hiring a certified backflow professionals": "Hiring certified backflow professionals",
+        "avoid civil liability in for all": "avoid civil liability for all",
+        "water safety avoid civil": "water safety and avoid civil",
+        "information.Device": "information.\n- Device",
+        "Testers: Test As of": "Testers: As of",
+        "Approved Devices: nly backflow": "Approved Devices: Only backflow",
+        "Property OwnersInstallation": "Property Owners\n\nInstallation",
+        "codes.---": "codes.\n\n",
+        "Testing of backflow prevention devices are": "Testing of backflow prevention devices is",
+        "Maintenance of backflow prevention devices are": "Maintenance of backflow prevention devices is",
+        "Irrigation systemsFire": "Irrigation systems\nFire",
+        "treated water ‍ Swimming pools": "treated water)\n\nSwimming pools",
+        "treated water Swimming pools": "treated water)\n\nSwimming pools",
+        "follwoing": "following",
+        "requuire": "require",
+        "Inglwood": "Inglewood",
+        "California Codein": "California Code in",
+        "adopted by the Califor and aim": (
+            "adopted by the California State Water Resources Control Board (SWRCB) and aim"
+        ),
+        "enforeced": "enforced",
+        "which build the California Code": "which builds on the California Code",
+        "which build on": "which builds on",
+        "program are based": "program is based",
+        "or or OCHCA": "or OCHCA",
+    }
+
+    for old, new in replacements.items():
+        cleaned = cleaned.replace(old, new)
+
+    cleaned = re.sub(r"\s*---+\s*", "\n\n", cleaned)
+    cleaned = re.sub(r"([.:])\s+-\s+", r"\1\n- ", cleaned)
+    cleaned = re.sub(r"(?<=[a-z\)])\.(?=[A-Z])", ". ", cleaned)
+    cleaned = re.sub(r"(?<!\.)\.\.(?!\.)", ".", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned
+
+
+def mission_viejo_device_requirements_body() -> str:
+    return (
+        "Mission Viejo requires approved backflow prevention assemblies wherever a cross-connection "
+        "or contamination risk is present. Devices must be installed in accessible locations, protected "
+        "from damage, and maintained in accordance with California plumbing rules, Title 17 requirements, "
+        "and local water authority standards.\n\n"
+        "Common Mission Viejo backflow prevention requirements include:\n"
+        "- Mission Viejo Property Irrigation Systems: Irrigation systems that use fertilizers, pesticides, "
+        "or other additives must be protected so contaminants cannot enter the potable water supply.\n"
+        "- Mission Viejo Commercial and Industrial Properties: Facilities with chemical systems, pressurized "
+        "equipment, food service operations, or other cross-connection risks may require approved backflow "
+        "prevention assemblies.\n"
+        "- Mission Viejo Property Fire Protection Systems: Fire sprinkler and suppression systems must be "
+        "protected to prevent stagnant or treated water from flowing back into the drinking water supply.\n"
+        "- Mission Viejo Property Auxiliary Water Sources: Properties with wells, cisterns, rainwater systems, "
+        "or other alternate water sources must prevent cross-contamination with the public water system.\n\n"
+        "Backflow assemblies in Mission Viejo must be tested after installation, relocation, repair, or "
+        "replacement, and then tested annually by a certified backflow tester. Test results should be "
+        "submitted to the proper local water authority or regulatory agency so the property remains in "
+        "compliance.\n\n"
+        "Approved backflow prevention devices may include reduced pressure principle assemblies, double "
+        "check valve assemblies, pressure vacuum breakers, or air gap separation, depending on the hazard "
+        "level and local authority requirements. Failure to install, test, repair, or report a required "
+        "assembly may result in penalties or water service interruption until compliance is restored."
+    )
+
+
+def remove_repeated_offer_text(body: str, links: list[dict[str, Any]]) -> str:
+    if not body or not links:
+        return body
+
+    offer_labels = [
+        link.get("label", "")
+        for link in links
+        if re.search(r"annual backflow testing promotion offer", link.get("label", ""), re.I)
+    ]
+    if not offer_labels:
+        return body
+
+    cleaned = body
+    for label in offer_labels:
+        cleaned = re.sub(rf"\s*{re.escape(label)}\s*$", "", cleaned, flags=re.I)
+
+    cleaned = re.sub(
+        r"[\s\u200d]*[A-Za-z][A-Za-z .'-]* Annual Backflow Testing Promotion Offer[\s\u200d]*$",
+        "",
+        cleaned,
+        flags=re.I,
+    )
+    return cleaned.strip()
+
+
+def remove_inline_website_label(body: str, links: list[dict[str, Any]]) -> str:
+    if not body or not links:
+        return body
+
+    cleaned = body
+    for link in links:
+        label = link.get("label", "").strip()
+        if not label:
+            continue
+        cleaned = re.sub(
+            rf"[\s\u200d]*(?:[-–]\s*)?Website:\s*{re.escape(label)}[\s\u200d]*",
+            "\n",
+            cleaned,
+            flags=re.I,
+        )
+
+    cleaned = re.sub(
+        r"[\s\u200d]*(?:[-–]\s*)?Website:\s*Pomona Annual Backflow Testing[\s\u200d]*",
+        "\n",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(r"\s*Website:\s*http:\s*", " ", cleaned, flags=re.I)
+    cleaned = re.sub(
+        r"[\s\u200d]*(?:[-–]\s*)?Website:\s*Los Angeles County Department of Public Health - Backflow Prevention Testing\s*",
+        " ",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned.strip()
+
+
+def normalize_tabbed_sections(payload: dict[str, Any]) -> None:
+    skipped_keys = {"url", "canonical", "href", "src", "path", "slug", "og:image"}
+
+    def clean_nested(value: Any, key: str = "") -> Any:
+        if isinstance(value, str):
+            return value if key in skipped_keys else clean_visible_text(value)
+
+        if isinstance(value, list):
+            return [clean_nested(item) for item in value]
+
+        if isinstance(value, dict):
+            return {nested_key: clean_nested(nested_value, nested_key) for nested_key, nested_value in value.items()}
+
+        return value
+
+    for key in list(payload.keys()):
+        payload[key] = clean_nested(payload[key], key)
+
+    for key in ("h2s", "h3s"):
+        payload[key] = [clean_visible_text(item) for item in payload.get(key, [])]
+
+    city_name = payload.get("cityName", "")
+
+    for section in payload.get("sections", []):
+        if "heading" in section:
+            section["heading"] = clean_visible_text(section["heading"])
+
+        if section.get("kind") != "tabbed_content":
+            continue
+
+        if payload.get("family") == "county_city_landing" and city_name:
+            if re.search(
+                r"^(Buena Park|Fountain|Garden|Huntington) Backflow Testing",
+                section.get("heading", ""),
+            ):
+                section["heading"] = f"{city_name} Backflow Testing & Installation Regulations"
+
+        if "body" in section:
+            section["body"] = clean_visible_text(section["body"])
+
+        for tab in section.get("tabs", []):
+            for key in ("label", "title", "body"):
+                if key in tab:
+                    tab[key] = clean_visible_text(tab[key])
+            if (
+                payload.get("slug") == "orange-county__mission-viejo-backflow-testing-repair"
+                and tab.get("title") == "Mission Viejo Backflow Prevention Device Requirements"
+            ):
+                tab["body"] = mission_viejo_device_requirements_body()
+            tab["body"] = remove_repeated_offer_text(tab.get("body", ""), tab.get("links", []))
+            fingerprint = f"{tab.get('label', '')} {tab.get('title', '')}".lower()
+            if "water authority contact" in fingerprint or "water department" in fingerprint:
+                if not tab.get("links") and payload.get("slug") in WATER_AUTHORITY_LINK_FALLBACKS:
+                    tab["links"] = [WATER_AUTHORITY_LINK_FALLBACKS[payload["slug"]]]
+                tab["body"] = remove_inline_website_label(tab.get("body", ""), tab.get("links", []))
 
 
 def class_attr(node: Node) -> str:
@@ -1028,8 +1232,7 @@ def rewrite_root_service_area_hub_copy(
     if county_directory:
         county_directory["heading"] = "Browse Counties"
         county_directory["body"] = (
-            "Start with the county, then drill down to the city page that matches your property. "
-            "Each county directory leads to local testing, installation, and repair coverage."
+            "Start with the county, then drill down to the city page that matches your property."
         )
         for item in county_directory.get("items", []):
             county_match = county_from_card_title(item.get("label", ""))
@@ -1131,6 +1334,7 @@ def rewrite_city_landing_copy(payload: dict[str, Any]) -> None:
         f"Backflow {service_copy['noun']} in {city_name}, {county_name}. Certified service, local "
         "compliance support, repairs, and scheduling for residential and commercial properties."
     )
+    payload["canonical"] = payload["url"]
     payload["h1"] = f"{city_name} Backflow {service_copy['title']}"
 
     hero = first_section(payload, "hero")
@@ -1143,7 +1347,7 @@ def rewrite_city_landing_copy(payload: dict[str, Any]) -> None:
             "on schedule, and avoid preventable compliance issues with the local water authority."
         )
         if hero.get("primaryCta"):
-            hero["primaryCta"]["label"] = f"Request Service in {city_name}"
+            hero["primaryCta"]["label"] = "Contact Us to See if You Qualify for a Free Backflow Test"
 
     cta_banner = first_section(payload, "cta_banner")
     if cta_banner:
@@ -1155,15 +1359,81 @@ def rewrite_city_landing_copy(payload: dict[str, Any]) -> None:
 
     bullet_columns = first_section(payload, "bullet_columns")
     if bullet_columns:
-        bullet_columns["heading"] = f"What We Handle in {city_name}"
+        bullet_columns["sourceClass"] = "managed-backflow-maintenance"
+        bullet_columns["heading"] = f"Avoid {city_name} Water Service Disruptions, Civil Liabilities & Fines"
         bullet_columns["body"] = (
-            f"We help {city_name} properties stay compliant, keep water service moving, and resolve "
-            "backflow issues without unnecessary delays or paperwork confusion."
+            "Backflow Test Pros provides dedicated support in everything from initial scheduling, "
+            "water department communications, due date tracking, same day approval, routine "
+            "maintenance and urgent repairs.\n\n"
+            "As a Backflow Test Pros client you can rest assured knowing that your backflow "
+            "assemblies are monitored and compliant with local water authority regulations.\n\n"
+            "Backflow Test Pros Turn-key Backflow Maintenance includes:"
         )
         bullet_columns["columns"] = [
-            service_copy["service_items"],
-            coordination_items(),
+            [
+                "Backflow Installation",
+                "Backflow Prevention Testing",
+                "Backflow Repair Replacement",
+                "Backflow Management",
+                "Backflow Repair Coverage",
+                "Multi-Device Discounts",
+                "Emergency Service",
+            ],
+            [
+                "Serving Southern California",
+                "Multi-Location Scheduling",
+                "Test Document Retrieval",
+                "Due Date Extensions",
+                "Same-Day Certification",
+                "Free Lock Upgrades",
+                "Priority Scheduling",
+            ],
         ]
+        payload["h2s"] = [
+            bullet_columns["heading"]
+            if (
+                heading.startswith("What We Handle")
+                or "Water Service Disruptions, Civil Liabilities & Fines" in heading
+            )
+            else heading
+            for heading in payload.get("h2s", [])
+        ]
+
+    city_cta_heading = f"Schedule Your {city_name} Backflow Testing to Qualify for $500 in Maintenance Coverage"
+    payload["sections"] = [
+        section
+        for section in payload["sections"]
+        if not (
+            section.get("kind") == "cta_banner"
+            and section.get("sourceClass") == "city-qualification-cta"
+        )
+    ]
+    bullet_index = next(
+        (index for index, section in enumerate(payload["sections"]) if section.get("kind") == "bullet_columns"),
+        None,
+    )
+    if bullet_index is not None:
+        payload["sections"].insert(
+            bullet_index + 1,
+            {
+                "kind": "cta_banner",
+                "sourceClass": "city-qualification-cta",
+                "heading": city_cta_heading,
+                "body": (
+                    f"Contact us before your {city_name} backflow deadline to confirm eligibility, "
+                    "protect your water service, and lock in local scheduling support."
+                ),
+                "links": [
+                    {
+                        "label": "Call to Lock Your 2026 Pricing Today!",
+                        "href": "/contact-backflowtestpros",
+                        "external": False,
+                        "target": "",
+                    }
+                ],
+            },
+        )
+        payload["h3s"] = [city_cta_heading]
 
     service_area = next(
         (section for section in payload["sections"] if section["kind"] == "link_list" and section.get("map")),
@@ -1176,6 +1446,11 @@ def rewrite_city_landing_copy(payload: dict[str, Any]) -> None:
             "If you manage multiple properties or need help confirming coverage, contact us and we "
             "will point you to the right route."
         )
+        if service_area.get("map"):
+            service_area["map"]["title"] = f"{city_name} Backflow Testing & Repair Service Area"
+            service_area["map"]["tooltip"] = "Backflow Test Pros testing, repair, and installation service area"
+
+    payload["sectionKinds"] = [section["kind"] for section in payload["sections"]]
 
 
 def build_core_service_payload(payload: dict[str, Any]) -> dict[str, Any]:
@@ -1663,6 +1938,13 @@ def build_city_payload(payload: dict[str, Any], row: dict[str, str]) -> dict[str
         }
     )
     rewrite_city_landing_copy(payload)
+    bullet_columns = first_section(payload, "bullet_columns")
+    service_area = next((section for section in payload["sections"] if section["kind"] == "link_list" and section.get("map")), None)
+    tabbed = first_section(payload, "tabbed_content")
+    payload["maintenanceColumns"] = bullet_columns.get("columns", []) if bullet_columns else []
+    payload["neighborhoodItems"] = service_area.get("items", []) if service_area else []
+    payload["serviceAreaMap"] = service_area.get("map") if service_area else None
+    payload["regulationTabs"] = tabbed.get("tabs", []) if tabbed else []
     return payload
 
 
@@ -2389,7 +2671,8 @@ def main() -> int:
             )
             continue
 
-        html_path = HTML_ROOT / f"{row['slug']}.html"
+        source_slug = CITY_SOURCE_FALLBACKS.get(row["slug"], row["slug"])
+        html_path = HTML_ROOT / f"{source_slug}.html"
         if not html_path.exists():
             continue
 
@@ -2433,6 +2716,7 @@ def main() -> int:
             payload = build_legal_payload(payload)
             legal_pages.append(payload)
 
+        normalize_tabbed_sections(payload)
         modeled_pages.append(payload)
 
     archived_decisions = build_archived_decisions(archived_rows)

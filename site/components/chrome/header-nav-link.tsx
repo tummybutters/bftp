@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 import { TrackedLink } from "@/lib/analytics";
 
-function isActivePath(pathname: string, href: string) {
+export function isActivePath(pathname: string, href: string) {
   if (href === "/") {
     return pathname === "/";
   }

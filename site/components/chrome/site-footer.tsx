@@ -16,7 +16,7 @@ export function SiteFooter() {
                 src={brandAssets.footerLogo.src}
                 alt={brandAssets.footerLogo.alt}
                 width={150}
-                height={150}
+                height={170}
               />
             </Link>
           </div>
@@ -68,11 +68,18 @@ export function SiteFooter() {
             ))}
           </div>
           <div className="bftp-footer__nav-column">
-            <h2 className="bftp-footer__heading">California Local Water Authorities</h2>
+            <h2 className="bftp-footer__heading">Southern California Water Authorities</h2>
             {siteConfig.footerAuthorities.map((item) => (
-              <p key={item.label} className="bftp-footer__meta">
+              <TrackedLink
+                key={item.href}
+                href={item.href}
+                event="footer_link_clicked"
+                properties={{ label: item.label, column: "authorities" }}
+                external={item.href.startsWith("http")}
+                className="bftp-footer__link"
+              >
                 {item.label}
-              </p>
+              </TrackedLink>
             ))}
           </div>
           <div className="bftp-footer__nav-column">

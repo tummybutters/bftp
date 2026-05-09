@@ -13,31 +13,6 @@ type StripConfig = {
 };
 
 const stripConfigs: Record<string, StripConfig> = {
-  "/": {
-    title: {
-      primary: "IN THE",
-      accent: "FIELD",
-    },
-    insertAfterKinds: ["pricing_tiles", "feature_cards"],
-    photos: [
-      {
-        src: "/assets/photos/technician-eddie-irvine.jpg",
-        alt: "Backflow technician working in the field",
-      },
-      {
-        src: "/assets/photos/dcda-test-cock-oc-2.jpg",
-        alt: "Close-up of backflow testing hardware",
-      },
-      {
-        src: "/assets/photos/installation-hilton-oc.jpg",
-        alt: "Commercial backflow installation in the field",
-      },
-      {
-        src: "/assets/photos/replacement-costco-tustin-1.jpg",
-        alt: "Backflow replacement assembly at a commercial property",
-      },
-    ],
-  },
   "/about-us": {
     title: {
       primary: "OUR",
@@ -50,16 +25,16 @@ const stripConfigs: Record<string, StripConfig> = {
         alt: "Backflow technician on a job site",
       },
       {
-        src: "/assets/photos/general-3.jpg",
-        alt: "Backflow assembly close-up in the field",
+        src: "/assets/photos/about-crew-2-2026.jpg",
+        alt: "Backflow Test Pros crew member in the field",
       },
       {
-        src: "/assets/photos/testing-oc.jpg",
-        alt: "Backflow testing setup at a Southern California property",
+        src: "/assets/photos/about-crew-3-2026.jpg",
+        alt: "Backflow Test Pros technician preparing field service work",
       },
       {
-        src: "/assets/photos/storefront-2.jpg",
-        alt: "Commercial property served by Backflow Test Pros",
+        src: "/assets/photos/about-crew-4-2026.jpg",
+        alt: "Backflow Test Pros technician at a commercial property",
       },
     ],
   },
@@ -68,23 +43,23 @@ const stripConfigs: Record<string, StripConfig> = {
       primary: "NEW",
       accent: "INSTALLS",
     },
-    insertAfterKinds: ["bullet_columns", "pricing_tiles"],
+    insertAfterKinds: ["rich_text"],
     photos: [
       {
-        src: "/assets/photos/installation-anaheim.jpg",
-        alt: "Backflow installation work in Anaheim",
-      },
-      {
-        src: "/assets/photos/technician-6ft-nipple-anaheim.jpg",
-        alt: "Technician preparing installation hardware",
-      },
-      {
-        src: "/assets/photos/rp-installation-seal-beach.jpg",
-        alt: "Installed reduced pressure assembly in the field",
+        src: "/assets/photos/install-new-1-2026.jpg",
+        alt: "Backflow installation work in the field",
       },
       {
         src: "/assets/photos/installation-santa-ana.jpg",
         alt: "Freshly installed backflow device in Santa Ana",
+      },
+      {
+        src: "/assets/photos/install-new-3-2026.jpg",
+        alt: "Newly installed backflow preventer assembly",
+      },
+      {
+        src: "/assets/photos/rp-installation-seal-beach.jpg",
+        alt: "Installed reduced pressure assembly in the field",
       },
     ],
   },
@@ -93,23 +68,23 @@ const stripConfigs: Record<string, StripConfig> = {
       primary: "REPAIR",
       accent: "WORK",
     },
-    insertAfterKinds: ["bullet_columns", "link_list"],
+    insertAfterKinds: ["rich_text"],
     photos: [
       {
-        src: "/assets/photos/repair-cypress.jpg",
-        alt: "Backflow repair work in Cypress",
+        src: "/assets/photos/repair-work-1-2026.jpg",
+        alt: "Backflow repair work in the field",
       },
       {
-        src: "/assets/photos/debris-relief-valve-oc.jpg",
-        alt: "Backflow relief valve during repair inspection",
+        src: "/assets/photos/repair-work-2-2026.jpg",
+        alt: "Backflow repair detail during service",
       },
       {
         src: "/assets/photos/preventer-repair-best-oc.jpg",
         alt: "Repaired backflow preventer assembly",
       },
       {
-        src: "/assets/photos/replacement-newport-beach.jpg",
-        alt: "Replacement backflow assembly in Newport Beach",
+        src: "/assets/photos/repair-work-4-2026.jpg",
+        alt: "Backflow repair technician working on an assembly",
       },
     ],
   },
@@ -147,8 +122,15 @@ export function InTheFieldStrip({ path }: { path: string }) {
     return null;
   }
 
+  const isServiceStrip =
+    path === "/backflow-installation" ||
+    path === "/backflow-repair-replacement-services";
+  const className = ["bftp-field-strip", isServiceStrip ? "bftp-field-strip--service" : ""]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <section className="bftp-field-strip" aria-label="In the field project photography">
+    <section className={className} aria-label="In the field project photography">
       <div className="bftp-field-strip__grid">
         {config.photos.map((photo, index) => (
           <div key={`${path}-${photo.src}`} className="bftp-field-strip__panel">

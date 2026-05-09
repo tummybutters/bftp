@@ -6,6 +6,7 @@ interface SplitChecklistProps {
   groups: Array<{ items: string[] }>;
   ctaLabel?: string;
   ctaHref?: string;
+  showCta?: boolean;
 }
 
 function splitBody(body: string) {
@@ -23,6 +24,7 @@ export function SplitChecklist({
   groups,
   ctaLabel = "Schedule Service",
   ctaHref = "/contact-backflowtestpros",
+  showCta = true,
 }: SplitChecklistProps) {
   const allItems = groups.flatMap((g) => g.items);
   const mid = Math.ceil(allItems.length / 2);
@@ -37,9 +39,11 @@ export function SplitChecklist({
         {paragraphs.map((p) => (
           <p key={p} className="bftp-split-check__copy">{p}</p>
         ))}
-        <Link href={ctaHref} className="bftp-cta-button">
-          {ctaLabel}
-        </Link>
+        {showCta ? (
+          <Link href={ctaHref} className="bftp-cta-button">
+            {ctaLabel}
+          </Link>
+        ) : null}
       </div>
       <div className="bftp-split-check__list">
         <div className="bftp-split-check__col">

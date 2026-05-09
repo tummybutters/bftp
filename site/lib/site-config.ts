@@ -49,16 +49,18 @@ export const siteConfig = {
   primaryNavigation: [
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About" },
+    {
+      href: "/backflow-testing-installation-repair-service-areas",
+      label: "Service Areas",
+    },
+  ] as SiteNavItem[],
+  serviceNavigation: [
     { href: "/backflow-testing", label: "Backflow Testing" },
     {
       href: "/backflow-repair-replacement-services",
       label: "Backflow Repair",
     },
     { href: "/backflow-installation", label: "Backflow Installation" },
-    {
-      href: "/backflow-testing-installation-repair-service-areas",
-      label: "Service Areas",
-    },
   ] as SiteNavItem[],
   footerNavigation: [
     { href: "/", label: "Home" },
@@ -81,11 +83,26 @@ export const siteConfig = {
     { href: "/privacy-policy", label: "Privacy Policy" },
   ] as SiteNavItem[],
   footerAuthorities: [
-    { href: "#", label: "Los Angeles County Water Departments" },
-    { href: "#", label: "Ventura County Water Departments" },
-    { href: "#", label: "Orange County Water Departments" },
-    { href: "#", label: "Riverside County Water Departments" },
-    { href: "#", label: "San Diego County Water Departments" },
+    {
+      href: "https://pw.lacounty.gov/core-service-areas/water-resources/waterworks-districts/backflow-prevention/",
+      label: "Los Angeles County Water Departments",
+    },
+    {
+      href: "https://www.vcpublicworks.org/wsd/",
+      label: "Ventura County Water Departments",
+    },
+    {
+      href: "https://www.ocwd.com/",
+      label: "Orange County Water Departments",
+    },
+    {
+      href: "https://rcflood.org/",
+      label: "Riverside County Water Departments",
+    },
+    {
+      href: "https://www.sdcwa.org/",
+      label: "San Diego County Water Departments",
+    },
   ] as SiteMetaLink[],
   footerRegulations: [
     {

@@ -113,6 +113,7 @@ interface PageHeroProps {
   heroVariant?: "photo" | "navy";
   heroImageSrc?: string;
   styleVariant?: "site" | "editorial";
+  heroClassName?: string;
 }
 
 export function PageHero({
@@ -126,6 +127,7 @@ export function PageHero({
   heroVariant = "photo",
   heroImageSrc = heroImages[0]?.src,
   styleVariant = "site",
+  heroClassName,
 }: PageHeroProps) {
   const isEditorialHero = styleVariant === "editorial";
   const isPhonePrimaryAction = primaryAction?.href.startsWith("tel:") ?? false;
@@ -159,6 +161,7 @@ export function PageHero({
     "bftp-hero",
     heroVariant === "navy" ? "bftp-hero--navy" : "",
     isEditorialHero ? "bftp-hero--editorial" : "bftp-hero--site",
+    heroClassName ?? "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -254,7 +257,13 @@ export function PageHero({
           <div className="bftp-hero__site-inner">
             <div className="bftp-hero__site-content">
               {eyebrow ? <p className="bftp-kicker">{eyebrow}</p> : null}
-              <h1 className="bftp-hero__site-title">{title}</h1>
+              <h1
+                className={`bftp-hero__site-title${
+                  isLongHeroTitle ? " bftp-hero__site-title--long" : ""
+                }${isVeryLongHeroTitle ? " bftp-hero__site-title--very-long" : ""}`}
+              >
+                {title}
+              </h1>
               {siteCopyLines.length > 0 ? (
                 <div className="bftp-hero__site-copy">
                   {siteCopyLines.map((line, index) => (

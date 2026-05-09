@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HeaderNavLink } from "@/components/chrome/header-nav-link";
+import { HeaderServicesDropdown } from "@/components/chrome/header-services-dropdown";
 import { SiteHeaderMobileMenu } from "@/components/chrome/site-header-mobile-menu";
 import { TrackedLink } from "@/lib/analytics";
 import { brandAssets } from "@/lib/design";
 import { siteConfig, siteIcons } from "@/lib/site-config";
 
 export function SiteHeader() {
+  const [homeLink, ...remainingLinks] = siteConfig.primaryNavigation;
+
   return (
     <header className="sticky top-0 z-40 bftp-site-header">
       <div className="bftp-topbar">
@@ -76,7 +79,11 @@ export function SiteHeader() {
             />
           </Link>
           <nav className="bftp-navbar__menu">
-            {siteConfig.primaryNavigation.map((link) => (
+            {homeLink ? (
+              <HeaderNavLink href={homeLink.href} label={homeLink.label} />
+            ) : null}
+            <HeaderServicesDropdown />
+            {remainingLinks.map((link) => (
               <HeaderNavLink key={link.href} href={link.href} label={link.label} />
             ))}
           </nav>

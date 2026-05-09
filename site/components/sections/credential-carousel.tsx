@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface CredentialItem {
   title: string;
@@ -30,15 +30,43 @@ function resolveCredentialPhoto(title: string) {
   return "/assets/photos/general-2.jpg";
 }
 
+function getVisibleCardCount() {
+  if (typeof window === "undefined") {
+    return 3.5;
+  }
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    return 1.5;
+  }
+
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    return 2.5;
+  }
+
+  return 3.5;
+}
+
 export function CredentialCarousel({ items }: { items: CredentialItem[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
+  const [visibleCardCount, setVisibleCardCount] = useState(3.5);
   const isDragging = useRef(false);
   const dragStartX = useRef(0);
   const dragStartOffset = useRef(0);
 
   const cardCount = items.length;
-  const maxOffset = Math.max(0, cardCount - 3);
+  const maxOffset = Math.max(0, cardCount - Math.floor(visibleCardCount));
+
+  useEffect(() => {
+    const syncVisibleCards = () => setVisibleCardCount(getVisibleCardCount());
+
+    syncVisibleCards();
+    window.addEventListener("resize", syncVisibleCards);
+
+    return () => window.removeEventListener("resize", syncVisibleCards);
+  }, []);
+
+  const safeOffset = Math.min(offset, maxOffset);
 
   const shift = useCallback(
     (direction: -1 | 1) => {
@@ -52,23 +80,23 @@ export function CredentialCarousel({ items }: { items: CredentialItem[] }) {
       if (!trackRef.current) return;
       isDragging.current = true;
       dragStartX.current = e.clientX;
-      dragStartOffset.current = offset;
+      dragStartOffset.current = safeOffset;
       trackRef.current.setPointerCapture(e.pointerId);
     },
-    [offset],
+    [safeOffset],
   );
 
   const handlePointerMove = useCallback(
     (e: React.PointerEvent) => {
       if (!isDragging.current || !trackRef.current) return;
       const delta = dragStartX.current - e.clientX;
-      const trackWidth = trackRef.current.offsetWidth;
-      const cardWidth = trackWidth / 3.5;
+      const firstCard = trackRef.current.querySelector<HTMLElement>(".bftp-cred-carousel__card");
+      const cardWidth = firstCard?.offsetWidth ?? trackRef.current.offsetWidth / visibleCardCount;
       const cardsDragged = delta / cardWidth;
       const next = Math.round(dragStartOffset.current + cardsDragged);
       setOffset(Math.max(0, Math.min(maxOffset, next)));
     },
-    [maxOffset],
+    [maxOffset, visibleCardCount],
   );
 
   const handlePointerUp = useCallback(() => {
@@ -79,7 +107,7 @@ export function CredentialCarousel({ items }: { items: CredentialItem[] }) {
 
   return (
     <div className="bftp-cred-carousel">
-      {offset > 0 ? (
+      {safeOffset > 0 ? (
         <button
           type="button"
           className="bftp-cred-carousel__arrow bftp-cred-carousel__arrow--prev"
@@ -103,7 +131,7 @@ export function CredentialCarousel({ items }: { items: CredentialItem[] }) {
         <div
           className="bftp-cred-carousel__slider"
           style={{
-            transform: `translateX(calc(-${offset} * (100% / 3.5 + var(--_gap) * 3 / 3.5)))`,
+            transform: `translateX(calc(-${safeOffset} * ((100% - var(--_gap) * ${visibleCardCount - 1}) / ${visibleCardCount} + var(--_gap))))`,
           }}
         >
           {items.map((item, index) => {
@@ -128,7 +156,7 @@ export function CredentialCarousel({ items }: { items: CredentialItem[] }) {
         </div>
       </div>
 
-      {offset < maxOffset ? (
+      {safeOffset < maxOffset ? (
         <button
           type="button"
           className="bftp-cred-carousel__arrow bftp-cred-carousel__arrow--next"

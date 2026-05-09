@@ -12,10 +12,10 @@
   --bftp-color-text-strong: #262e4a;
   --bftp-color-text-soft: #7d8192;
   --bftp-color-surface: #ffffff;
-  --bftp-color-surface-soft: #f6f6f6;
+  --bftp-color-surface-soft: #f5f5fb;
   --bftp-color-surface-band: #f5f5fb;
-  --bftp-color-surface-paper: #faf8f1;
-  --bftp-color-surface-paper-deep: #f3eee2;
+  --bftp-color-surface-paper: #f5f5fb;
+  --bftp-color-surface-paper-deep: #f5f5fb;
   --bftp-color-border: rgba(38, 46, 74, 0.12);
   --bftp-color-border-strong: rgba(38, 46, 74, 0.2);
   --bftp-color-footer-border: rgba(246, 246, 246, 0.05);
@@ -240,7 +240,7 @@ select {
   min-height: 56px;
   padding: 0.85rem 1.65rem 0.95rem;
   border: 1px solid rgba(216, 162, 0, 0.34);
-  border-radius: 12px;
+  border-radius: 18px;
   background: #ffc72b;
   color: var(--bftp-color-navy-deep);
   font-family: var(--bftp-font-heading);
@@ -253,10 +253,12 @@ select {
   transition:
     background-color var(--bftp-transition-base),
     color var(--bftp-transition-base),
-    border-color var(--bftp-transition-base);
+    border-color var(--bftp-transition-base),
+    transform var(--bftp-transition-base);
 }
 
 .bftp-cta-button:hover {
+  transform: translateY(-1px);
   background: #ffbf1c;
   color: var(--bftp-color-navy-deep);
   border-color: rgba(216, 162, 0, 0.46);

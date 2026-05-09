@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { usePostHog } from "posthog-js/react";
 import type { ContactFormField } from "@/lib/content/types";
 
@@ -27,6 +27,13 @@ interface QuizValues {
   urgency: string;
   deviceCount: string;
 }
+
+const subscribeToBrowserLocation = () => () => {};
+
+const getBrowserLocationSnapshot = () =>
+  typeof window === "undefined" ? "\n" : `${window.location.search}\n${window.location.href}`;
+
+const getServerLocationSnapshot = () => "\n";
 
 const SERVICE_OPTIONS: QuizOption[] = [
   {
@@ -516,10 +523,12 @@ export function TrackedContactForm({
   const normalizedAction = formAction?.trim() || "/api/contact";
   const normalizedMethod = (formMethod?.trim() || (formAction ? "get" : "post")).toLowerCase();
   const handlesInlineSubmit = !formAction?.trim();
-  const searchParams = new URLSearchParams(
-    typeof window === "undefined" ? "" : window.location.search,
-  );
-  const sourceUrl = typeof window === "undefined" ? "" : window.location.href;
+  const [browserSearch, sourceUrl] = useSyncExternalStore(
+    subscribeToBrowserLocation,
+    getBrowserLocationSnapshot,
+    getServerLocationSnapshot,
+  ).split("\n");
+  const searchParams = new URLSearchParams(browserSearch);
   const leadTopic =
     searchParams.get("topic")?.trim() || searchParams.get("service")?.trim() || "";
   const prefilledMessage =
@@ -744,7 +753,7 @@ export function TrackedContactForm({
                     type="button"
                     className={`group relative flex min-h-[8.75rem] flex-col justify-between overflow-hidden rounded-none border px-4 py-4 text-left transition ${
                       selected
-                        ? "border-[color:rgba(255,183,0,0.58)] bg-[#fffdf7] shadow-[0_14px_28px_rgba(204,150,32,0.14)]"
+                        ? "border-[color:rgba(255,183,0,0.58)] bg-white shadow-[0_14px_28px_rgba(31,39,67,0.1)]"
                         : "border-[color:rgba(38,46,74,0.1)] bg-[#f7f7fb] shadow-none hover:-translate-y-0.5 hover:border-[color:rgba(255,183,0,0.28)] hover:bg-white hover:shadow-[0_16px_32px_rgba(31,39,67,0.08)]"
                     }`}
                     onClick={() => handleQuizChoice(activeStep, option.value)}

@@ -51,6 +51,16 @@ export function splitContentBody(body: string) {
     .filter(Boolean);
 }
 
+const BENEFITS_CAROUSEL_ITEMS = [
+  "Same Day Report Submission",
+  "Licensed CA Contractor",
+  "AWWA Certified Testers",
+  "Multi-Device Discounts",
+  "Free Repair Coverage",
+  "Insured 2+ Million",
+  "Priority Scheduling",
+];
+
 export function extractProofItems(body: string) {
   const candidates = [
     {
@@ -90,12 +100,6 @@ export function extractProofItems(body: string) {
       matches: ["Emergency Service"],
     },
   ];
-  const safeFillers = [
-    "Local Authority Coordination",
-    "Compliance Scheduling Support",
-    "Report Submittal Support",
-  ];
-
   const normalized = body.toLowerCase().replace(/[^a-z0-9]/g, "");
   const proofItems = candidates
     .filter((candidate) =>
@@ -105,8 +109,8 @@ export function extractProofItems(body: string) {
     )
     .map((candidate) => candidate.label);
 
-  if (proofItems.length > 0 && proofItems.length < 9) {
-    proofItems.push(...safeFillers.slice(0, 9 - proofItems.length));
+  if (proofItems.length > 0) {
+    return BENEFITS_CAROUSEL_ITEMS;
   }
 
   return proofItems;
