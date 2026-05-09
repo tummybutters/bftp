@@ -587,10 +587,13 @@ function renderHeroSection(context: SectionContext) {
   };
   const primaryAction = heroPhoneAction ?? heroPrimaryAction ?? fallbackPhoneAction;
   const rawPromoText = context.payload.ctaPattern[0] || context.page.headings.h3[0];
-  const promoText = resolveHeroPromoText({
-    rawPromoText,
-    primaryAction,
-  });
+  const promoText =
+    context.family === "county_city_landing" && heroPrimaryAction
+      ? heroPrimaryAction.label
+      : resolveHeroPromoText({
+          rawPromoText,
+          primaryAction,
+        });
 
   return (
     <PageHero
