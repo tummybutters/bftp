@@ -870,7 +870,22 @@
 }
 
 .bftp-hero--testing .bftp-hero__media-image {
-  object-position: center 28%;
+  object-position: center 30%;
+}
+
+@media (min-width: 768px) {
+  .bftp-hero--testing .bftp-hero__media-image {
+    object-position: center 34%;
+  }
+
+  .bftp-hero--testing .bftp-hero__site-inner {
+    min-height: min(clamp(560px, 90svh, 820px), calc(100svh - 72px));
+    padding-block: clamp(40px, 4.6vw, 64px);
+  }
+
+  .bftp-hero--testing .bftp-hero__site-copy {
+    margin-block-start: 90px;
+  }
 }
 
 .bftp-hero--city.bftp-hero--site::before {
@@ -2250,7 +2265,7 @@
 }
 
 .bftp-benefit-showcase__body {
-  width: min(100%, 1640px);
+  width: min(100%, 1080px);
   margin: clamp(2.25rem, 3.6vw, 3.9rem) auto 0;
   color: rgba(104, 105, 108, 1);
   font-size: clamp(1.05rem, 1.45vw, 1.55rem);

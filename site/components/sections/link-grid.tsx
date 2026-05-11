@@ -45,7 +45,9 @@ export function LinkGrid({
                 <>
                   <span className="bftp-link-list__county-name">{item.label}</span>
                   {item.description ? (
-                    <span className="bftp-link-list__county-description">{item.description}</span>
+                    <span className="bftp-link-list__county-description">
+                      {` ${item.description}`}
+                    </span>
                   ) : null}
                 </>
               ) : (

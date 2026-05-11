@@ -149,7 +149,7 @@ export function InTheFieldStrip({ path }: { path: string }) {
       <div className="bftp-field-strip__title-wrap">
         <h2 className="bftp-field-strip__title">
           <span>{config.title.primary}</span>
-          <span className="is-gold">{config.title.accent}</span>
+          <span className="is-gold">{` ${config.title.accent}`}</span>
         </h2>
       </div>
     </section>

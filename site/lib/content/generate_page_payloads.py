@@ -109,20 +109,6 @@ VOID_TAGS = {
 }
 
 KNOWN_PAGE_ANOMALIES: dict[str, list[dict[str, str]]] = {
-    "orange-county__rancho-santa-margarita-backflow-testing-installation-repair": [
-        {
-            "code": "locality_drift_neighborhoods",
-            "severity": "high",
-            "detail": "Neighborhood/service-area copy drifts into Carlsbad neighborhoods instead of Rancho Santa Margarita.",
-        }
-    ],
-    "orange-county__mission-viejo-backflow-testing-repair": [
-        {
-            "code": "locality_drift_regulations",
-            "severity": "medium",
-            "detail": "Regulations copy injects Tustin-specific requirements mid-section.",
-        }
-    ],
     "la-county__alhambra-backflow-testing-repair": [
         {
             "code": "heading_typo",
@@ -144,6 +130,10 @@ KNOWN_PAGE_ANOMALIES: dict[str, list[dict[str, str]]] = {
             "detail": "Promo copy preserves the visible typo 'installationn technicians'.",
         }
     ],
+}
+
+LEGITIMATE_CITY_REFERENCES_BY_PATH: dict[str, set[str]] = {
+    "/la-county/hollywood-backflow-testing-repair": {"Los Angeles"},
 }
 
 HOMEPAGE_PROOF_ITEMS = [
@@ -314,6 +304,10 @@ def clean_visible_text(value: str) -> str:
         "Irrigation systemsFire": "Irrigation systems\nFire",
         "treated water ‍ Swimming pools": "treated water)\n\nSwimming pools",
         "treated water Swimming pools": "treated water)\n\nSwimming pools",
+        "Aslo": "Also",
+        "Certified Backflow Prevention Device Tester (C.B.P.D.T.) certification": (
+            "Certified Backflow Prevention Device Tester certification"
+        ),
         "follwoing": "following",
         "requuire": "require",
         "Inglwood": "Inglewood",
@@ -331,8 +325,12 @@ def clean_visible_text(value: str) -> str:
     for old, new in replacements.items():
         cleaned = cleaned.replace(old, new)
 
+    cleaned = re.sub(r"\s*\u200d\s*[-–]\s*", "\n- ", cleaned)
+    cleaned = re.sub(r"\s*\u200d\s*(?=\d+\.\s)", "\n\n", cleaned)
+    cleaned = re.sub(r"\s*\u200d\s*", "\n\n", cleaned)
     cleaned = re.sub(r"\s*---+\s*", "\n\n", cleaned)
     cleaned = re.sub(r"([.:])\s+-\s+", r"\1\n- ", cleaned)
+    cleaned = re.sub(r"(?<!\n)-\s+([A-Z][^:\n]{1,80}:)", r"\n- \1", cleaned)
     cleaned = re.sub(r"(?<=[a-z\)])\.(?=[A-Z])", ". ", cleaned)
     cleaned = re.sub(r"(?<!\.)\.\.(?!\.)", ".", cleaned)
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
@@ -363,6 +361,71 @@ def mission_viejo_device_requirements_body() -> str:
         "check valve assemblies, pressure vacuum breakers, or air gap separation, depending on the hazard "
         "level and local authority requirements. Failure to install, test, repair, or report a required "
         "assembly may result in penalties or water service interruption until compliance is restored."
+    )
+
+
+def mission_viejo_regulations_intro_body() -> str:
+    return (
+        "Because backflow devices are critical to maintaining clean, safe water supplies, California "
+        "water districts, county health agencies, and local municipalities require qualified backflow "
+        "professionals to install, test, repair, and replace backflow prevention assemblies in accordance "
+        "with applicable standards.\n\n"
+        "Mission Viejo property owners are responsible for keeping backflow prevention assemblies in good "
+        "working order, completing required annual testing, repairing failed assemblies promptly, and "
+        "submitting documentation to the proper water authority or reporting system. Failure to comply with "
+        "local backflow prevention requirements can result in penalties, correction notices, or water service "
+        "interruption until compliance is restored."
+    )
+
+
+def rancho_santa_margarita_neighborhood_items() -> list[dict[str, Any]]:
+    neighborhoods = [
+        "Central Rancho Santa Margarita",
+        "Rancho Santa Margarita Lake Area",
+        "Melinda Heights",
+        "Robinson Ranch",
+        "Dove Canyon",
+        "Rancho Cielo",
+        "Trabuco Highlands",
+        "Tijeras Creek",
+        "Arroyo Vista",
+        "Plaza Empresa Business Corridor",
+        "Antonio Parkway Corridor",
+        "Santa Margarita Parkway Corridor",
+        "Avenida de las Flores Corridor",
+    ]
+
+    return [
+        {
+            "label": f"Backflow Testing & Repair in the {neighborhood} Neighborhood",
+            "href": "",
+            "external": False,
+            "target": "",
+        }
+        for neighborhood in neighborhoods
+    ]
+
+
+def rancho_santa_margarita_regulations_body() -> str:
+    return (
+        "Rancho Santa Margarita backflow testing, installation, and repair requirements are tied to "
+        "cross-connection control standards administered by Santa Margarita Water District (SMWD) and "
+        "applicable California water quality regulations. SMWD's cross-connection program helps protect "
+        "the public water supply by identifying and eliminating potential cross-connections, and backflow "
+        "prevention assemblies are used to keep contaminants from entering the distribution system.\n\n"
+        "Backflow prevention assemblies are commonly required for irrigation systems, fire protection "
+        "systems, commercial and industrial water uses, auxiliary water sources, and other service "
+        "connections where a hazard or cross-connection risk is present. Devices must be installed in "
+        "accessible locations, protected from damage, and matched to the hazard level for the property.\n\n"
+        "SMWD requires backflow assemblies to be tested annually, and the water account holder is "
+        "responsible for completing that testing. Testers should follow local reporting requirements, use "
+        "approved assemblies, and submit results through the applicable SMWD or backflow reporting process. "
+        "A device that fails testing must be repaired or replaced promptly, then retested so the property "
+        "can remain in compliance.\n\n"
+        "For Rancho Santa Margarita property owners, Backflow Test Pros helps coordinate annual testing, "
+        "repairs, replacement planning, and documentation so commercial, residential, and multi-device "
+        "properties stay aligned with local water authority requirements and avoid preventable service "
+        "interruptions."
     )
 
 
@@ -420,6 +483,12 @@ def remove_inline_website_label(body: str, links: list[dict[str, Any]]) -> str:
         cleaned,
         flags=re.I,
     )
+    cleaned = re.sub(
+        r"\n-\s*Website:\s*Los Angeles County Department of Public Health\s*\n-\s*Backflow Prevention Testing\s*",
+        "\n",
+        cleaned,
+        flags=re.I,
+    )
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned.strip()
 
@@ -429,7 +498,9 @@ def normalize_tabbed_sections(payload: dict[str, Any]) -> None:
 
     def clean_nested(value: Any, key: str = "") -> Any:
         if isinstance(value, str):
-            return value if key in skipped_keys else clean_visible_text(value)
+            if key in skipped_keys:
+                return value.replace("\u200d", "").strip()
+            return clean_visible_text(value)
 
         if isinstance(value, list):
             return [clean_nested(item) for item in value]
@@ -460,6 +531,8 @@ def normalize_tabbed_sections(payload: dict[str, Any]) -> None:
                 section.get("heading", ""),
             ):
                 section["heading"] = f"{city_name} Backflow Testing & Installation Regulations"
+            if payload.get("slug") == "orange-county__mission-viejo-backflow-testing-repair":
+                section["body"] = mission_viejo_regulations_intro_body()
 
         if "body" in section:
             section["body"] = clean_visible_text(section["body"])
@@ -479,6 +552,23 @@ def normalize_tabbed_sections(payload: dict[str, Any]) -> None:
                 if not tab.get("links") and payload.get("slug") in WATER_AUTHORITY_LINK_FALLBACKS:
                     tab["links"] = [WATER_AUTHORITY_LINK_FALLBACKS[payload["slug"]]]
                 tab["body"] = remove_inline_website_label(tab.get("body", ""), tab.get("links", []))
+
+    if payload.get("family") == "county_city_landing":
+        regulation_section = next(
+            (section for section in payload.get("sections", []) if section.get("kind") == "tabbed_content"),
+            None,
+        )
+        service_area_section = next(
+            (
+                section
+                for section in payload.get("sections", [])
+                if section.get("kind") == "link_list" and section.get("map")
+            ),
+            None,
+        )
+        payload["regulationTabs"] = regulation_section.get("tabs", []) if regulation_section else []
+        payload["neighborhoodItems"] = service_area_section.get("items", []) if service_area_section else []
+        payload["serviceAreaMap"] = service_area_section.get("map") if service_area_section else None
 
 
 def class_attr(node: Node) -> str:
@@ -1328,6 +1418,9 @@ def rewrite_city_landing_copy(payload: dict[str, Any]) -> None:
     county_name = payload.get("countyName", "")
     service_variant = payload.get("serviceVariant", "testing_installation_repair")
     service_copy = city_page_service_copy(service_variant)
+    is_rancho_santa_margarita = (
+        payload.get("slug") == "orange-county__rancho-santa-margarita-backflow-testing-installation-repair"
+    )
 
     payload["title"] = f"{city_name} Backflow {service_copy['title']} | Backflow Test Pros"
     payload["metaDescription"] = (
@@ -1449,6 +1542,21 @@ def rewrite_city_landing_copy(payload: dict[str, Any]) -> None:
         if service_area.get("map"):
             service_area["map"]["title"] = f"{city_name} Backflow Testing & Repair Service Area"
             service_area["map"]["tooltip"] = "Backflow Test Pros testing, repair, and installation service area"
+        if is_rancho_santa_margarita:
+            service_area["items"] = rancho_santa_margarita_neighborhood_items()
+
+    if is_rancho_santa_margarita:
+        regulation_section = next(
+            (
+                section
+                for section in payload["sections"]
+                if section["kind"] == "rich_text"
+                and "Regulations" in section.get("heading", "")
+            ),
+            None,
+        )
+        if regulation_section:
+            regulation_section["body"] = rancho_santa_margarita_regulations_body()
 
     payload["sectionKinds"] = [section["kind"] for section in payload["sections"]]
 
@@ -2470,6 +2578,7 @@ def audit_city_payload(
 
     city_name = payload.get("cityName", "")
     county_name = payload.get("countyName", "")
+    legitimate_city_refs = LEGITIMATE_CITY_REFERENCES_BY_PATH.get(payload.get("path", ""), set())
     service_area_sections = [
         section
         for section in payload["sections"]
@@ -2518,6 +2627,7 @@ def audit_city_payload(
         city_names,
         ignore_name=city_name,
     )
+    service_area_hits = [(count, name) for count, name in service_area_hits if name not in legitimate_city_refs]
     if service_area_hits and service_area_hits[0][0] >= 3:
         count, other_city = service_area_hits[0]
         add_unique_anomaly(
@@ -2532,6 +2642,7 @@ def audit_city_payload(
         city_names,
         ignore_name=city_name,
     )
+    regulation_hits = [(count, name) for count, name in regulation_hits if name not in legitimate_city_refs]
     if regulation_hits and regulation_hits[0][0] >= 5:
         count, other_city = regulation_hits[0]
         add_unique_anomaly(
@@ -2698,6 +2809,7 @@ def main() -> int:
             core_service_pages.append(payload)
         elif family == "county_city_landing":
             payload = build_city_payload(payload, row)
+            normalize_tabbed_sections(payload)
             payload = audit_city_payload(payload, city_names, county_label_names)
             county_city_pages.append(payload)
         elif family == "service_area_hub":
@@ -2716,7 +2828,8 @@ def main() -> int:
             payload = build_legal_payload(payload)
             legal_pages.append(payload)
 
-        normalize_tabbed_sections(payload)
+        if family != "county_city_landing":
+            normalize_tabbed_sections(payload)
         modeled_pages.append(payload)
 
     archived_decisions = build_archived_decisions(archived_rows)

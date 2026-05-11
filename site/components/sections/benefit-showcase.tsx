@@ -27,26 +27,29 @@ function splitHeading(heading: string) {
     return { primary: "", secondary: "" };
   }
 
-  if (normalized.startsWith("Everything Done For You ")) {
-    return {
-      primary: "Everything Done For You",
-      secondary: normalized.replace("Everything Done For You ", ""),
-    };
-  }
-
-  if (normalized.startsWith("Certified Technician ")) {
-    return {
-      primary: "Certified Technician",
-      secondary: normalized.replace("Certified Technician ", ""),
-    };
-  }
-
   const words = normalized.split(" ");
-  const midpoint = Math.max(2, Math.ceil(words.length / 2));
+
+  if (words.length < 5) {
+    return { primary: normalized, secondary: "" };
+  }
+
+  let bestSplit = Math.ceil(words.length / 2);
+  let bestDelta = Number.POSITIVE_INFINITY;
+
+  for (let index = 2; index <= words.length - 2; index += 1) {
+    const primaryLength = words.slice(0, index).join(" ").length;
+    const secondaryLength = words.slice(index).join(" ").length;
+    const delta = Math.abs(primaryLength - secondaryLength);
+
+    if (delta < bestDelta) {
+      bestDelta = delta;
+      bestSplit = index;
+    }
+  }
 
   return {
-    primary: words.slice(0, midpoint).join(" "),
-    secondary: words.slice(midpoint).join(" "),
+    primary: words.slice(0, bestSplit).join(" "),
+    secondary: words.slice(bestSplit).join(" "),
   };
 }
 
@@ -93,7 +96,7 @@ export function BenefitShowcase({
       <div className="bftp-benefit-showcase__header">
         <h2 className="bftp-benefit-showcase__heading">
           <span>{primary}</span>
-          {secondary ? <span>{secondary}</span> : null}
+          {secondary ? <span>{` ${secondary}`}</span> : null}
         </h2>
       </div>
       <p className="bftp-benefit-showcase__body">{normalizeBody(body)}</p>

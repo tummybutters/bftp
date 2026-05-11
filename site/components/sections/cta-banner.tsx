@@ -70,7 +70,7 @@ export function CtaBanner({
               </span>
               {accent ? (
                 <span className="bftp-cta-banner__title-line bftp-cta-banner__title-line--accent">
-                  {accent}
+                  {` ${accent}`}
                 </span>
               ) : null}
             </h2>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T22:59:57.510823+00:00",
+  "generatedAt": "2026-05-09T19:45:18.502301+00:00",
   "familyCounts": {
     "homepage": 1,
     "about_page": 1,
@@ -25,10 +25,6 @@
       3
     ],
     [
-      "locality_drift_regulations",
-      3
-    ],
-    [
       "visible_typo_differnt",
       2
     ],
@@ -41,10 +37,6 @@
       2
     ],
     [
-      "locality_drift_neighborhoods",
-      1
-    ],
-    [
       "promo_copy_typos",
       1
     ],
@@ -54,10 +46,6 @@
     ],
     [
       "heading_typo",
-      1
-    ],
-    [
-      "locality_drift_service_area",
       1
     ]
   ],

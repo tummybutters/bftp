@@ -38,8 +38,7 @@ function shouldHideSection(pagePath: string, section: ContentSection) {
   if (
     pagePath === "/about-us" &&
     (section.kind === "feature_cards" || section.kind === "rich_text") &&
-    (fingerprint.includes("testimonial") ||
-      fingerprint.includes("trusted by residential"))
+    fingerprint.includes("recognized by national")
   ) {
     return true;
   }

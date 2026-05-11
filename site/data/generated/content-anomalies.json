@@ -1,13 +1,5 @@
 [
   {
-    "slug": "orange-county__rancho-santa-margarita-backflow-testing-installation-repair",
-    "path": "/orange-county/rancho-santa-margarita-backflow-testing-installation-repair",
-    "family": "county_city_landing",
-    "severity": "high",
-    "code": "locality_drift_neighborhoods",
-    "detail": "Neighborhood/service-area copy drifts into Carlsbad neighborhoods instead of Rancho Santa Margarita."
-  },
-  {
     "slug": "backflow-installation",
     "path": "/backflow-installation",
     "family": "core_service",
@@ -102,38 +94,6 @@
     "severity": "low",
     "code": "visible_typo_intallation",
     "detail": "Visible typo preserved from the live source copy."
-  },
-  {
-    "slug": "la-county__hollywood-backflow-testing-repair",
-    "path": "/la-county/hollywood-backflow-testing-repair",
-    "family": "county_city_landing",
-    "severity": "medium",
-    "code": "locality_drift_regulations",
-    "detail": "Regulation content references 'Los Angeles' 6 times on the Hollywood page."
-  },
-  {
-    "slug": "orange-county__mission-viejo-backflow-testing-repair",
-    "path": "/orange-county/mission-viejo-backflow-testing-repair",
-    "family": "county_city_landing",
-    "severity": "medium",
-    "code": "locality_drift_regulations",
-    "detail": "Regulations copy injects Tustin-specific requirements mid-section."
-  },
-  {
-    "slug": "orange-county__mission-viejo-backflow-testing-repair",
-    "path": "/orange-county/mission-viejo-backflow-testing-repair",
-    "family": "county_city_landing",
-    "severity": "medium",
-    "code": "locality_drift_regulations",
-    "detail": "Regulation content references 'Tustin' 10 times on the Mission Viejo page."
-  },
-  {
-    "slug": "orange-county__rancho-santa-margarita-backflow-testing-installation-repair",
-    "path": "/orange-county/rancho-santa-margarita-backflow-testing-installation-repair",
-    "family": "county_city_landing",
-    "severity": "medium",
-    "code": "locality_drift_service_area",
-    "detail": "Service-area copy references 'Carlsbad' 3 times on the Rancho Santa Margarita page."
   },
   {
     "slug": "san-diego__alpine-backflow-testing-installation-repair",
