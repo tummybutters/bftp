@@ -1289,11 +1289,22 @@
   background: var(--bftp-color-surface);
 }
 
+.bftp-frame--home-pricing {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.16)),
+    var(--bftp-color-surface-band);
+}
+
 .bftp-frame--benefit-showcase {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.16)),
     var(--bftp-color-surface-band);
   padding-block: clamp(3.25rem, 5.2vw, 5.25rem);
+}
+
+.bftp-frame--home-everything-done {
+  background: var(--bftp-color-surface);
+  box-shadow: none;
 }
 
 .bftp-frame--benefit-showcase .bftp-shell {

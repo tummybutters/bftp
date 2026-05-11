@@ -613,6 +613,7 @@ function renderHeroSection(context: SectionContext) {
 function renderPricingSection(section: PricingTilesSection, context: SectionContext) {
   const className = [
     "bftp-frame--pricing",
+    context.family === "homepage" ? "bftp-frame--home-pricing" : undefined,
     context.page.path === "/backflow-installation"
       ? "bftp-frame--installation-warranty"
       : undefined,
@@ -933,6 +934,9 @@ export function ContentSectionRenderer({
           id={buildSectionAnchor(section, overallIndex)}
           className={[
             isEverythingDoneSection(section) ? "bftp-frame--everything-done" : undefined,
+            family === "homepage" && isEverythingDoneSection(section)
+              ? "bftp-frame--home-everything-done"
+              : undefined,
             useBenefitShowcase ? "bftp-frame--benefit-showcase" : undefined,
           ]
             .filter(Boolean)
