@@ -2372,6 +2372,10 @@
   line-height: 1.42;
 }
 
+.bftp-frame--home-everything-done .bftp-benefit-showcase__actions {
+  margin-top: clamp(2.25rem, 4vw, 4rem);
+}
+
 .bftp-frame--home-everything-done .bftp-benefit-showcase__button {
   min-height: 44px;
   font-size: 0.96rem;
