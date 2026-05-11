@@ -1266,6 +1266,10 @@
   padding-block: var(--bftp-section-lg);
 }
 
+.bftp-frame--home-compact {
+  padding-block: clamp(30px, 3.8vw, 48px);
+}
+
 .bftp-frame--everything-done {
   padding-block: clamp(26px, 3.4vw, 40px);
 }
@@ -1293,6 +1297,7 @@
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.16)),
     var(--bftp-color-surface-band);
+  padding-block: clamp(32px, 4vw, 52px);
 }
 
 .bftp-frame--benefit-showcase {
@@ -1305,6 +1310,7 @@
 .bftp-frame--home-everything-done {
   background: var(--bftp-color-surface);
   box-shadow: none;
+  padding-block: clamp(22px, 3vw, 34px);
 }
 
 .bftp-frame--benefit-showcase .bftp-shell {
@@ -1319,8 +1325,16 @@
   gap: clamp(2.25rem, 4.5vw, 4rem);
 }
 
+.bftp-frame--home-pricing .bftp-frame__inner {
+  gap: clamp(1.2rem, 2.1vw, 2rem);
+}
+
 .bftp-frame--pricing .bftp-frame__content {
   padding-block: clamp(0.55rem, 1.8vw, 1.35rem);
+}
+
+.bftp-frame--home-pricing .bftp-frame__content {
+  padding-block: 0;
 }
 
 .bftp-frame--navy {
@@ -1333,6 +1347,10 @@
 .bftp-frame__inner {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.bftp-frame--home-compact .bftp-frame__inner {
+  gap: clamp(1rem, 2vw, 1.8rem);
 }
 
 .bftp-frame--everything-done .bftp-frame__inner {
@@ -1392,6 +1410,10 @@
   gap: 1rem;
 }
 
+.bftp-frame--home-compact .bftp-frame__header {
+  gap: 0.7rem;
+}
+
 .bftp-frame--center .bftp-frame__header {
   justify-items: center;
   text-align: center;
@@ -1416,12 +1438,21 @@
   line-height: 1.75;
 }
 
+.bftp-frame--home-compact .bftp-frame__body {
+  font-size: clamp(0.98rem, 1.15vw, 1.1rem);
+  line-height: 1.58;
+}
+
 .bftp-frame__body p {
   margin: 0;
 }
 
 .bftp-frame__body p + p {
   margin-top: 1rem;
+}
+
+.bftp-frame--home-compact .bftp-frame__body p + p {
+  margin-top: 0.65rem;
 }
 
 .bftp-frame--navy .bftp-frame__title > *,
@@ -2297,6 +2328,55 @@
   font-size: clamp(1rem, 1.15vw, 1.15rem);
 }
 
+.bftp-frame--home-everything-done .bftp-benefit-showcase {
+  width: min(100%, 1500px);
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__heading {
+  width: min(100%, 1180px);
+  font-size: clamp(1.9rem, 3vw, 3.35rem);
+  line-height: 1.06;
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__body {
+  width: min(100%, 920px);
+  margin-top: clamp(1.15rem, 2vw, 1.9rem);
+  font-size: clamp(0.98rem, 1.08vw, 1.15rem);
+  line-height: 1.42;
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__grid {
+  width: min(100%, 1500px);
+  margin-block-start: clamp(1.7rem, 3vw, 2.7rem);
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__item {
+  gap: clamp(0.85rem, 1.35vw, 1.35rem);
+  padding: 0.2rem clamp(0.8rem, 1.5vw, 1.2rem) 0;
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__icon {
+  width: clamp(2.7rem, 3vw, 3.35rem);
+  height: clamp(2.7rem, 3vw, 3.35rem);
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__title {
+  max-width: 15ch;
+  font-size: clamp(1rem, 1.08vw, 1.15rem);
+  line-height: 1.18;
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__copy {
+  max-width: 25ch;
+  font-size: clamp(0.9rem, 0.96vw, 0.98rem);
+  line-height: 1.42;
+}
+
+.bftp-frame--home-everything-done .bftp-benefit-showcase__button {
+  min-height: 44px;
+  font-size: 0.96rem;
+}
+
 @media (max-width: 991px) {
   .bftp-benefit-showcase__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2717,6 +2797,32 @@
   line-height: 1.45;
   text-transform: none;
   transition: color var(--bftp-transition-base);
+}
+
+.bftp-frame--home-pricing .bftp-section-title {
+  font-size: clamp(2.25rem, 4vw, 3.6rem);
+  line-height: 1.06;
+}
+
+.bftp-frame--home-pricing .bftp-frame__body {
+  width: min(100%, 1040px);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.5;
+}
+
+.bftp-frame--home-pricing .bftp-pricing {
+  --bftp-pricing-diamond-size: clamp(170px, 13.5vw, 190px);
+  --bftp-pricing-stagger: calc(var(--bftp-pricing-diamond-size) * 0.22);
+}
+
+.bftp-frame--home-pricing .bftp-pricing__grid {
+  gap: clamp(1.25rem, 3vw, 3rem);
+  padding-block-start: clamp(1.2rem, 2.8vw, 2.2rem);
+  padding-block-end: calc(clamp(1.4rem, 2.8vw, 2.4rem) + var(--bftp-pricing-stagger));
+}
+
+.bftp-frame--home-pricing .bftp-pricing__value {
+  font-size: clamp(1.85rem, 2.5vw, 2.45rem);
 }
 
 .bftp-service-grid {

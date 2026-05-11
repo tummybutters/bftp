@@ -612,6 +612,7 @@ function renderHeroSection(context: SectionContext) {
 
 function renderPricingSection(section: PricingTilesSection, context: SectionContext) {
   const className = [
+    context.family === "homepage" ? "bftp-frame--home-compact" : undefined,
     "bftp-frame--pricing",
     context.family === "homepage" ? "bftp-frame--home-pricing" : undefined,
     context.page.path === "/backflow-installation"
@@ -678,7 +679,12 @@ function renderLinkListSection(section: LinkListSection, context: SectionContext
   return (
     <SectionFrame
       id={buildSectionAnchor(section, context.overallIndex)}
-      className={hideLinkedResources ? "bftp-frame--center-only" : undefined}
+      className={[
+        context.family === "homepage" ? "bftp-frame--home-compact" : undefined,
+        hideLinkedResources ? "bftp-frame--center-only" : undefined,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       tone={getSectionTone(context.family, section, context.kindIndex)}
       align={getSectionAlign(context.family, section)}
       title={<h2 className="bftp-section-title">{section.heading}</h2>}
@@ -933,6 +939,7 @@ export function ContentSectionRenderer({
         <SectionFrame
           id={buildSectionAnchor(section, overallIndex)}
           className={[
+            family === "homepage" ? "bftp-frame--home-compact" : undefined,
             isEverythingDoneSection(section) ? "bftp-frame--everything-done" : undefined,
             family === "homepage" && isEverythingDoneSection(section)
               ? "bftp-frame--home-everything-done"
