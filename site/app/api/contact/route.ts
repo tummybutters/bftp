@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import {
+  type AgentMailAttachment,
   resolveAgentMailInboxId,
   sendAgentMailMessage,
 } from "@/lib/agentmail";
@@ -21,6 +22,10 @@ interface ContactSubmission {
   county: string;
   urgency: string;
   deviceCount: string;
+  testingCount: string;
+  sizeMakeModel: string;
+  serviceDetails: string;
+  uploadFiles: UploadedFileSummary[];
   notes: string;
   message: string;
   pagePath: string;
@@ -31,6 +36,14 @@ interface ContactSubmission {
   referrer: string;
   userAgent: string;
 }
+
+interface UploadedFileSummary {
+  name: string;
+  size: number;
+  type: string;
+}
+
+const MAX_UPLOAD_BYTES = 15 * 1024 * 1024;
 
 function readField(formData: FormData, names: string[]) {
   for (const name of names) {
@@ -44,17 +57,66 @@ function readField(formData: FormData, names: string[]) {
   return "";
 }
 
+function readUploadedFiles(formData: FormData): UploadedFileSummary[] {
+  return formData
+    .getAll("contact_uploads")
+    .filter((value): value is File => value instanceof File && value.size > 0)
+    .map((file) => ({
+      name: file.name || "upload",
+      size: file.size,
+      type: file.type || "application/octet-stream",
+    }));
+}
+
+async function buildAgentMailAttachments(formData: FormData): Promise<AgentMailAttachment[]> {
+  const files = formData
+    .getAll("contact_uploads")
+    .filter((value): value is File => value instanceof File && value.size > 0);
+
+  return Promise.all(
+    files.map(async (file) => ({
+      filename: file.name || "upload",
+      content_type: file.type || "application/octet-stream",
+      content_disposition: "attachment" as const,
+      content: Buffer.from(await file.arrayBuffer()).toString("base64"),
+    })),
+  );
+}
+
 function buildStructuredMessage(submission: ContactSubmission) {
   const lines = [
     `Service Type: ${submission.leadTopic || "Not provided"}`,
     `Property Type: ${submission.propertyType || "Not provided"}`,
     `County: ${submission.county || "Not provided"}`,
     `Urgency: ${submission.urgency || "Not provided"}`,
-    `Device Count: ${submission.deviceCount || "Not provided"}`,
   ];
 
   if (submission.companyName) {
-    lines.push(`Company / Property Name: ${submission.companyName}`);
+    lines.push(`Company Name: ${submission.companyName}`);
+  }
+
+  if (submission.testingCount) {
+    lines.push(`# of Backflow Tests Needed: ${submission.testingCount}`);
+  }
+
+  if (submission.sizeMakeModel) {
+    lines.push(`Size, Make, Model: ${submission.sizeMakeModel}`);
+  }
+
+  if (submission.serviceDetails) {
+    lines.push(`Brief Description: ${submission.serviceDetails}`);
+  }
+
+  if (submission.deviceCount) {
+    lines.push(`Device Count: ${submission.deviceCount}`);
+  }
+
+  if (submission.uploadFiles.length > 0) {
+    lines.push(
+      `Uploaded Files: ${submission.uploadFiles
+        .map((file) => `${file.name} (${Math.round(file.size / 1024)} KB)`)
+        .join(", ")}`,
+    );
   }
 
   if (submission.city) {
@@ -81,6 +143,10 @@ function normalizeSubmission(formData: FormData, request: Request): ContactSubmi
     county: readField(formData, ["county", "service_county", "serviceCounty"]),
     urgency: readField(formData, ["urgency", "timeline"]),
     deviceCount: readField(formData, ["device_count", "deviceCount"]),
+    testingCount: readField(formData, ["testing_count", "testingCount"]),
+    sizeMakeModel: readField(formData, ["size_make_model", "sizeMakeModel"]),
+    serviceDetails: readField(formData, ["service_details", "serviceDetails"]),
+    uploadFiles: readUploadedFiles(formData),
     notes: readField(formData, ["Message-Field-4", "message", "details"]),
     message: "",
     pagePath: readField(formData, ["page_path", "pagePath", "source_path"]),
@@ -113,8 +179,7 @@ function validateSubmission(submission: ContactSubmission) {
     !submission.leadTopic ||
     !submission.propertyType ||
     !submission.county ||
-    !submission.urgency ||
-    !submission.deviceCount
+    !submission.urgency
   ) {
     return "Please complete all required fields.";
   }
@@ -123,8 +188,29 @@ function validateSubmission(submission: ContactSubmission) {
     return "Please enter a valid email address.";
   }
 
-  if (submission.phone.replace(/\D/g, "").length < 10) {
-    return "Please enter a valid phone number.";
+  if (submission.phone.replace(/\D/g, "").length !== 10) {
+    return "Please enter a 10-digit phone number.";
+  }
+
+  if (submission.leadTopic === "Testing" && !submission.testingCount) {
+    return "Please enter the number of backflow tests needed or choose Not Sure.";
+  }
+
+  if (
+    submission.leadTopic === "Repair / Replacement" &&
+    (!submission.sizeMakeModel || !submission.serviceDetails)
+  ) {
+    return "Please add the size/make/model and a brief description.";
+  }
+
+  if (submission.leadTopic === "New Installation" && !submission.serviceDetails) {
+    return "Please add a brief description.";
+  }
+
+  const uploadBytes = submission.uploadFiles.reduce((total, file) => total + file.size, 0);
+
+  if (uploadBytes > MAX_UPLOAD_BYTES) {
+    return "Please keep uploads under 15 MB total.";
   }
 
   return null;
@@ -148,7 +234,7 @@ function buildNotificationText(submission: ContactSubmission) {
     `Submission ID: ${submission.submissionId}`,
     `Name: ${fullName}`,
     ...(submission.companyName
-      ? [`Company / Property Name: ${submission.companyName}`]
+      ? [`Company Name: ${submission.companyName}`]
       : []),
     `Email: ${submission.email}`,
     `Phone: ${submission.phone}`,
@@ -159,6 +245,22 @@ function buildNotificationText(submission: ContactSubmission) {
     ...(submission.county ? [`County: ${submission.county}`] : []),
     ...(submission.deviceCount
       ? [`Device Count: ${submission.deviceCount}`]
+      : []),
+    ...(submission.testingCount
+      ? [`# of Backflow Tests Needed: ${submission.testingCount}`]
+      : []),
+    ...(submission.sizeMakeModel
+      ? [`Size, Make, Model: ${submission.sizeMakeModel}`]
+      : []),
+    ...(submission.serviceDetails
+      ? [`Brief Description: ${submission.serviceDetails}`]
+      : []),
+    ...(submission.uploadFiles.length > 0
+      ? [
+          `Uploaded Files: ${submission.uploadFiles
+            .map((file) => `${file.name} (${Math.round(file.size / 1024)} KB)`)
+            .join(", ")}`,
+        ]
       : []),
     ...(submission.urgency ? [`Urgency: ${submission.urgency}`] : []),
     ...(submission.city ? [`City: ${submission.city}`] : []),
@@ -186,7 +288,7 @@ function buildNotificationHtml(submission: ContactSubmission) {
     `<p style="margin:0 0 8px;"><strong>Name:</strong> ${fullName}</p>`,
     ...(submission.companyName
       ? [
-          `<p style="margin:0 0 8px;"><strong>Company / Property Name:</strong> ${escapeHtml(
+          `<p style="margin:0 0 8px;"><strong>Company Name:</strong> ${escapeHtml(
             submission.companyName,
           )}</p>`,
         ]
@@ -218,6 +320,36 @@ function buildNotificationHtml(submission: ContactSubmission) {
       ? [
           `<p style="margin:0 0 8px;"><strong>Device Count:</strong> ${escapeHtml(
             submission.deviceCount,
+          )}</p>`,
+        ]
+      : []),
+    ...(submission.testingCount
+      ? [
+          `<p style="margin:0 0 8px;"><strong># of Backflow Tests Needed:</strong> ${escapeHtml(
+            submission.testingCount,
+          )}</p>`,
+        ]
+      : []),
+    ...(submission.sizeMakeModel
+      ? [
+          `<p style="margin:0 0 8px;"><strong>Size, Make, Model:</strong> ${escapeHtml(
+            submission.sizeMakeModel,
+          )}</p>`,
+        ]
+      : []),
+    ...(submission.serviceDetails
+      ? [
+          `<p style="margin:0 0 8px;"><strong>Brief Description:</strong> ${escapeHtml(
+            submission.serviceDetails,
+          )}</p>`,
+        ]
+      : []),
+    ...(submission.uploadFiles.length > 0
+      ? [
+          `<p style="margin:0 0 8px;"><strong>Uploaded Files:</strong> ${escapeHtml(
+            submission.uploadFiles
+              .map((file) => `${file.name} (${Math.round(file.size / 1024)} KB)`)
+              .join(", "),
           )}</p>`,
         ]
       : []),
@@ -374,6 +506,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: validationError }, { status: 400 });
   }
 
+  const notificationAttachments = await buildAgentMailAttachments(formData);
   const agentMailApiKey = process.env.AGENTMAIL_API_KEY?.trim() || "";
   const hasAgentMail = Boolean(agentMailApiKey);
 
@@ -410,6 +543,7 @@ export async function POST(request: Request) {
           : `New contact form lead: ${fullName}`,
         text: buildNotificationText(submission),
         html: buildNotificationHtml(submission),
+        attachments: notificationAttachments,
       });
       notificationThreadId = notification.thread_id;
       notificationStatus = "sent";

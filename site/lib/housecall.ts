@@ -11,6 +11,14 @@ export interface HousecallLeadSubmission {
   county: string;
   urgency: string;
   deviceCount: string;
+  testingCount: string;
+  sizeMakeModel: string;
+  serviceDetails: string;
+  uploadFiles: Array<{
+    name: string;
+    size: number;
+    type: string;
+  }>;
   notes: string;
   message: string;
   pagePath: string;
@@ -143,11 +151,34 @@ function buildHousecallNote(submission: HousecallLeadSubmission) {
     `Property Type: ${submission.propertyType || "Not provided"}`,
     `County: ${submission.county || "Not provided"}`,
     `Urgency: ${submission.urgency || "Not provided"}`,
-    `Device Count: ${submission.deviceCount || "Not provided"}`,
   ];
 
   if (submission.companyName) {
-    lines.push(`Company / Property Name: ${submission.companyName}`);
+    lines.push(`Company Name: ${submission.companyName}`);
+  }
+
+  if (submission.testingCount) {
+    lines.push(`# of Backflow Tests Needed: ${submission.testingCount}`);
+  }
+
+  if (submission.deviceCount) {
+    lines.push(`Device Count: ${submission.deviceCount}`);
+  }
+
+  if (submission.sizeMakeModel) {
+    lines.push(`Size, Make, Model: ${submission.sizeMakeModel}`);
+  }
+
+  if (submission.serviceDetails) {
+    lines.push(`Brief Description: ${submission.serviceDetails}`);
+  }
+
+  if (submission.uploadFiles.length > 0) {
+    lines.push(
+      `Uploaded Files: ${submission.uploadFiles
+        .map((file) => `${file.name} (${Math.round(file.size / 1024)} KB)`)
+        .join(", ")}`,
+    );
   }
 
   if (submission.city) {
@@ -190,6 +221,7 @@ function buildHousecallTags(submission: HousecallLeadSubmission) {
     submission.city ? `City: ${submission.city}` : "",
     submission.urgency ? `Urgency: ${submission.urgency}` : "",
     submission.deviceCount ? `Devices: ${submission.deviceCount}` : "",
+    submission.testingCount ? `Tests: ${submission.testingCount}` : "",
   ];
 
   const unique = new Set<string>();

@@ -103,6 +103,18 @@ function getFamilyHeroVariant(family: PageFamily) {
     : "navy";
 }
 
+function isAboutAwwaCertificationSection(section: ContentSection) {
+  const fingerprint = `${section.sourceClass} ${
+    "heading" in section ? section.heading : ""
+  }`.toLowerCase();
+
+  return (
+    section.kind === "rich_text" &&
+    (fingerprint.includes("certifiedby-city-water-departments") ||
+      fingerprint.includes("awwa certified backflow testers"))
+  );
+}
+
 const localHeroOverrides: Record<string, string> = {
   "/": "/assets/heroes/home-hero-2026.jpg",
   "/about-us": "/assets/heroes/about-hero-2026.jpg",
@@ -163,6 +175,11 @@ function getSectionTone(
         return "band";
       }
       if (section.kind === "link_list") {
+        return "navy";
+      }
+      return "surface";
+    case "about_page":
+      if (isAboutAwwaCertificationSection(section)) {
         return "navy";
       }
       return "surface";
@@ -293,6 +310,7 @@ function getTabPhotoOverrides(path: string) {
 
 function getHeroClassName(page: PageEntry, family: PageFamily) {
   return [
+    usesMainNavSectionTreatment(page.path) ? "bftp-hero--main-nav" : undefined,
     family === "county_city_landing" ? "bftp-hero--city" : undefined,
     page.path === "/backflow-testing" ? "bftp-hero--testing" : undefined,
   ]
@@ -1056,15 +1074,22 @@ export function ContentSectionRenderer({
       );
     case "rich_text":
       return renderRichTextSection(section, context);
-    case "form_section":
+    case "form_section": {
+      const isContactIntake = family === "contact_page";
+
       return (
         <SectionFrame
           id={buildSectionAnchor(section, overallIndex)}
+          className={isContactIntake ? "bftp-frame--contact-intake" : undefined}
           tone={getSectionTone(family, section, kindIndex)}
           align={family === "contact_page" ? "center" : "left"}
           inset={family === "contact_page" ? "reading" : "wide"}
-          title={<h2 className="bftp-section-title">{section.heading}</h2>}
-          body={renderReading(section.body)}
+          title={
+            isContactIntake ? undefined : (
+              <h2 className="bftp-section-title">{section.heading}</h2>
+            )
+          }
+          body={isContactIntake ? undefined : renderReading(section.body)}
         >
           <ContactFormSection
             fields={section.fields}
@@ -1075,6 +1100,7 @@ export function ContentSectionRenderer({
           />
         </SectionFrame>
       );
+    }
     default:
       return null;
   }

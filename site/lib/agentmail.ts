@@ -15,6 +15,7 @@ interface AgentMailSendMessageParams {
   subject: string;
   text: string;
   html?: string;
+  attachments?: AgentMailAttachment[];
 }
 
 interface AgentMailCreateDraftParams {
@@ -26,6 +27,13 @@ interface AgentMailCreateDraftParams {
   html?: string;
   sendAt?: string;
   clientId?: string;
+}
+
+export interface AgentMailAttachment {
+  filename?: string;
+  content_type?: string;
+  content_disposition?: "attachment";
+  content: string;
 }
 
 function buildAgentMailHeaders(apiKey: string) {
@@ -91,6 +99,7 @@ export async function sendAgentMailMessage({
   subject,
   text,
   html,
+  attachments,
 }: AgentMailSendMessageParams) {
   const recipients = Array.isArray(to) ? to : [to];
   const response = await fetch(
@@ -103,6 +112,7 @@ export async function sendAgentMailMessage({
         subject,
         text,
         ...(html ? { html } : {}),
+        ...(attachments?.length ? { attachments } : {}),
       }),
     },
   );

@@ -10,14 +10,17 @@ import { siteConfig } from "@/lib/site-config";
 
 type BodyBlock =
   | { kind: "paragraph"; content: string }
-  | { kind: "list"; items: string[] };
+  | { kind: "list"; items: string[]; ordered?: boolean };
 
 function normalizeBody(body: string) {
   return body
     .replaceAll("‍", "\n")
     .replace(/\u200d/g, "\n")
     .replace(/([:.])\s+(?=-\s+)/g, "$1\n\n")
-    .replace(/\s+(?=-\s+)/g, "\n")
+    .replace(/([:.])\s+(?=\d+\.\s+)/g, "$1\n\n")
+    .replace(/([.!?])\s+([A-Z][A-Za-z &/()]+:)(?=\s*(?:-|\d+\.))/g, "$1\n\n$2")
+    .replace(/[^\S\n]+(?=-\s+)/g, "\n")
+    .replace(/[^\S\n]+(?=\d+\.\s+)/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
@@ -51,39 +54,93 @@ function splitLongParagraph(content: string) {
   return chunks;
 }
 
+function appendParagraph(blocks: BodyBlock[], lines: string[]) {
+  const content = lines.join(" ").replace(/\s+/g, " ").trim();
+
+  if (!content) {
+    return;
+  }
+
+  for (const paragraph of splitLongParagraph(content)) {
+    blocks.push({ kind: "paragraph", content: paragraph });
+  }
+}
+
+function appendList(blocks: BodyBlock[], items: string[], ordered: boolean) {
+  const cleanItems = items.map((item) => item.replace(/\s+/g, " ").trim()).filter(Boolean);
+
+  if (cleanItems.length === 0) {
+    return;
+  }
+
+  const previous = blocks.at(-1);
+
+  if (previous?.kind === "list" && previous.ordered === ordered) {
+    previous.items.push(...cleanItems);
+    return;
+  }
+
+  blocks.push({ kind: "list", items: cleanItems, ordered });
+}
+
+function splitChunkIntoBlocks(chunk: string): BodyBlock[] {
+  const blocks: BodyBlock[] = [];
+  const paragraphLines: string[] = [];
+  const listItems: string[] = [];
+  let currentListOrdered = false;
+
+  const flushParagraph = () => {
+    appendParagraph(blocks, paragraphLines);
+    paragraphLines.length = 0;
+  };
+
+  const flushList = () => {
+    appendList(blocks, listItems, currentListOrdered);
+    listItems.length = 0;
+  };
+
+  for (const rawLine of chunk.split("\n")) {
+    const line = rawLine.trim();
+
+    if (!line) {
+      flushParagraph();
+      flushList();
+      continue;
+    }
+
+    const unorderedMatch = line.match(/^-+\s*(.+)$/);
+    const orderedMatch = line.match(/^\d+\.\s*(.+)$/);
+
+    if (unorderedMatch || orderedMatch) {
+      const ordered = Boolean(orderedMatch);
+
+      flushParagraph();
+
+      if (listItems.length > 0 && currentListOrdered !== ordered) {
+        flushList();
+      }
+
+      currentListOrdered = ordered;
+      listItems.push((unorderedMatch?.[1] ?? orderedMatch?.[1] ?? "").trim());
+      continue;
+    }
+
+    flushList();
+    paragraphLines.push(line);
+  }
+
+  flushParagraph();
+  flushList();
+
+  return blocks;
+}
+
 function buildBodyBlocks(body: string): BodyBlock[] {
   return normalizeBody(body)
     .split(/\n{2,}/)
     .map((chunk) => chunk.trim())
     .filter(Boolean)
-    .map((chunk) => {
-      const lines = chunk
-        .split("\n")
-        .map((line) => line.trim())
-        .filter(Boolean);
-
-      if (lines.length > 0 && lines.every((line) => line.startsWith("- "))) {
-        return {
-          kind: "list" as const,
-          items: lines.map((line) => line.replace(/^-+\s*/, "").trim()).filter(Boolean),
-        };
-      }
-
-      return {
-        kind: "paragraph" as const,
-        content: chunk.replace(/\s+/g, " ").trim(),
-      };
-    })
-    .flatMap((block): BodyBlock[] => {
-      if (block.kind === "paragraph") {
-        return splitLongParagraph(block.content).map((content): BodyBlock => ({
-          kind: "paragraph",
-          content,
-        }));
-      }
-
-      return [block];
-    });
+    .flatMap(splitChunkIntoBlocks);
 }
 
 const tabPhotos: Array<[RegExp, string]> = [
@@ -278,6 +335,12 @@ export function TabRail({
                   <Fragment key={`${activeTab.title}-${columnIndex}-${index}`}>
                     {block.kind === "paragraph" ? (
                       <p className="bftp-tab-panel__paragraph">{block.content}</p>
+                    ) : block.ordered ? (
+                      <ol className="bftp-tab-panel__list">
+                        {block.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ol>
                     ) : (
                       <ul className="bftp-tab-panel__list">
                         {block.items.map((item) => (

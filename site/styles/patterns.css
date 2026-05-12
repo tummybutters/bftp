@@ -878,7 +878,7 @@
     object-position: center 34%;
   }
 
-  .bftp-hero--testing .bftp-hero__site-inner {
+  .bftp-hero--main-nav .bftp-hero__site-inner {
     min-height: min(clamp(560px, 90svh, 820px), calc(100svh - 72px));
     padding-block: clamp(40px, 4.6vw, 64px);
   }
@@ -1269,6 +1269,10 @@
 .bftp-frame--home-compact,
 .bftp-frame--main-compact {
   padding-block: clamp(30px, 3.8vw, 48px);
+}
+
+.bftp-frame--contact-intake {
+  padding-block: clamp(18px, 2.8vw, 36px) var(--bftp-section-lg);
 }
 
 .bftp-frame--everything-done {

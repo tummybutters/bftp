@@ -10,11 +10,13 @@ import { siteConfig } from "@/lib/site-config";
 interface QuizOption {
   value: string;
   label: string;
-  description: string;
+  description?: string;
 }
 
+type QuizChoiceKey = "serviceType" | "propertyType" | "county" | "urgency";
+
 interface QuizStep {
-  key: keyof QuizValues;
+  key: QuizChoiceKey;
   title: string;
   description: string;
   options: QuizOption[];
@@ -25,7 +27,6 @@ interface QuizValues {
   propertyType: string;
   county: string;
   urgency: string;
-  deviceCount: string;
 }
 
 const subscribeToBrowserLocation = () => () => {};
@@ -37,19 +38,19 @@ const getServerLocationSnapshot = () => "\n";
 
 const SERVICE_OPTIONS: QuizOption[] = [
   {
-    value: "Annual Testing",
-    label: "Annual Testing",
-    description: "Annual certification, due-date coverage, and water authority paperwork.",
+    value: "Testing",
+    label: "Testing",
+    description: "Annual Testing, New Installation Testing, and Recertification Testing",
   },
   {
     value: "Repair / Replacement",
     label: "Repair / Replacement",
-    description: "Failed tests, leaking assemblies, broken devices, and urgent fixes.",
+    description: "Failed tests, leaking backflows, stolen backflows, and vandalized backflows",
   },
   {
     value: "New Installation",
     label: "New Installation",
-    description: "New assemblies, compliance installs, and approved device selection.",
+    description: "Notice to install, temporary installation, and new construction",
   },
   {
     value: "Not Sure Yet",
@@ -62,22 +63,22 @@ const PROPERTY_OPTIONS: QuizOption[] = [
   {
     value: "Commercial / Business",
     label: "Commercial / Business",
-    description: "Restaurants, retail, offices, stations, medical, and other business sites.",
+    description: "Restaurants, retail, offices, construction sites, and other businesses",
   },
   {
-    value: "Apartment / HOA / Multifamily",
-    label: "Apartment / HOA / Multifamily",
-    description: "HOAs, apartment communities, and shared-property water systems.",
+    value: "Apartment/Multi-Family",
+    label: "Apartment/Multi-Family",
+    description: "HOA, apartment communities, and shared property water systems",
   },
   {
     value: "Residential",
     label: "Residential",
-    description: "Single-family homes and private residential irrigation or plumbing setups.",
+    description: "Single-family home, condo, or townhouse",
   },
   {
-    value: "Industrial / Facility",
-    label: "Industrial / Facility",
-    description: "Industrial, manufacturing, and specialized facility water connections.",
+    value: "Industrial",
+    label: "Industrial",
+    description: "Industrial, manufacturing, and processing facilities",
   },
 ];
 
@@ -85,32 +86,26 @@ const COUNTY_OPTIONS: QuizOption[] = [
   {
     value: "Los Angeles County",
     label: "Los Angeles County",
-    description: "Coverage across LA County service areas and water authority requirements.",
   },
   {
     value: "Orange County",
     label: "Orange County",
-    description: "Orange County commercial, multifamily, and residential coverage.",
   },
   {
     value: "San Diego County",
     label: "San Diego County",
-    description: "San Diego County testing, installation, and repair coverage.",
   },
   {
     value: "Riverside County",
     label: "Riverside County",
-    description: "Riverside County scheduling, compliance, and managed service support.",
   },
   {
     value: "San Bernardino County",
     label: "San Bernardino County",
-    description: "San Bernardino County device testing, repair, and installation coverage.",
   },
   {
     value: "Ventura County",
     label: "Ventura County",
-    description: "Ventura County service coordination and local compliance support.",
   },
 ];
 
@@ -137,34 +132,6 @@ const URGENCY_OPTIONS: QuizOption[] = [
   },
 ];
 
-const DEVICE_COUNT_OPTIONS: QuizOption[] = [
-  {
-    value: "1 Device",
-    label: "1 Device",
-    description: "One assembly or one property device needs attention.",
-  },
-  {
-    value: "2-3 Devices",
-    label: "2-3 Devices",
-    description: "A small group of devices at one property or location.",
-  },
-  {
-    value: "4-10 Devices",
-    label: "4-10 Devices",
-    description: "A multi-device property that may qualify for bundle or managed scheduling.",
-  },
-  {
-    value: "10+ Devices",
-    label: "10+ Devices",
-    description: "A larger property, campus, portfolio, or multi-location need.",
-  },
-  {
-    value: "Not Sure",
-    label: "Not Sure",
-    description: "You do not know the device count yet and need help figuring it out.",
-  },
-];
-
 const QUIZ_STEPS: QuizStep[] = [
   {
     key: "serviceType",
@@ -181,7 +148,7 @@ const QUIZ_STEPS: QuizStep[] = [
   {
     key: "county",
     title: "Which county is the property in?",
-    description: "Pick the county so we can anchor the lead to the right coverage area.",
+    description: "",
     options: COUNTY_OPTIONS,
   },
   {
@@ -190,13 +157,11 @@ const QUIZ_STEPS: QuizStep[] = [
     description: "This helps us prioritize urgent failures, notices, and due dates.",
     options: URGENCY_OPTIONS,
   },
-  {
-    key: "deviceCount",
-    title: "About how many devices are involved?",
-    description: "A quick estimate is enough. We can confirm exact counts later.",
-    options: DEVICE_COUNT_OPTIONS,
-  },
 ];
+
+const TOTAL_STEPS = 6;
+const DETAIL_STEP_INDEX = 4;
+const FINAL_STEP_INDEX = 5;
 
 const FINAL_FIELD_ORDER = [
   "first-name-2",
@@ -227,11 +192,11 @@ const FINAL_FIELD_FALLBACKS: ContactFormField[] = [
     options: [],
   },
   {
-    label: "Company / property name",
+    label: "Company Name",
     name: "company_name",
     fieldType: "input",
     inputType: "text",
-    placeholder: "Company, HOA, or property name",
+    placeholder: "Company name",
     required: false,
     options: [],
   },
@@ -371,7 +336,7 @@ function normalizeLeadTopicToServiceValue(leadTopic: string) {
   }
 
   if (normalized.includes("test")) {
-    return "Annual Testing";
+    return "Testing";
   }
 
   if (normalized.includes("compliance")) {
@@ -389,11 +354,35 @@ function getQuizFields(fields: ContactFormField[]) {
   ).filter((field): field is ContactFormField => Boolean(field));
 }
 
-function getQuizValueLabel(stepKey: keyof QuizValues, value: string) {
+function getFinalFieldsForQuiz(fields: ContactFormField[], quizValues: QuizValues) {
+  return getQuizFields(fields)
+    .map((field) =>
+      field.name === "company_name"
+        ? { ...field, label: "Company Name", placeholder: "Company name" }
+        : field,
+    )
+    .filter((field) => {
+      if (field.name === "company_name") {
+        return quizValues.propertyType !== "Residential";
+      }
+
+      if (field.name === "Message-Field-4") {
+        return quizValues.serviceType === "Testing" || quizValues.serviceType === "Not Sure Yet";
+      }
+
+      return true;
+    });
+}
+
+function getQuizValueLabel(stepKey: QuizChoiceKey, value: string) {
   const step = QUIZ_STEPS.find((entry) => entry.key === stepKey);
   const option = step?.options.find((entry) => entry.value === value);
 
   return option?.label || value;
+}
+
+function getPhoneDigitCount(value: string) {
+  return value.replace(/\D/g, "").length;
 }
 
 function renderLegacyForm({
@@ -520,6 +509,7 @@ export function TrackedContactForm({
   );
   const [statusMessage, setStatusMessage] = useState("");
   const [fieldValues, setFieldValues] = useState<Record<string, string>>({});
+  const [uploadFiles, setUploadFiles] = useState<File[]>([]);
   const normalizedAction = formAction?.trim() || "/api/contact";
   const normalizedMethod = (formMethod?.trim() || (formAction ? "get" : "post")).toLowerCase();
   const handlesInlineSubmit = !formAction?.trim();
@@ -541,14 +531,13 @@ export function TrackedContactForm({
     propertyType: "",
     county: "",
     urgency: "",
-    deviceCount: "",
   });
   const [currentStep, setCurrentStep] = useState(0);
   const useQuizIntake = pagePath === "/contact-backflowtestpros";
-  const finalFields = getQuizFields(fields);
-  const totalSteps = QUIZ_STEPS.length + 1;
-  const isFinalStep = currentStep >= QUIZ_STEPS.length;
-  const visibleStep = isFinalStep ? totalSteps : currentStep + 1;
+  const finalFields = getFinalFieldsForQuiz(fields, quizValues);
+  const isDetailStep = currentStep === DETAIL_STEP_INDEX;
+  const isFinalStep = currentStep === FINAL_STEP_INDEX;
+  const visibleStep = isFinalStep ? TOTAL_STEPS : currentStep + 1;
 
   const handleFocus = (fieldName: string, fieldType: string) => {
     posthog?.capture("form_field_focused", {
@@ -569,15 +558,27 @@ export function TrackedContactForm({
     }
 
     event.preventDefault();
+
+    if (useQuizIntake && getPhoneDigitCount(fieldValues.phone || "") !== 10) {
+      setStatus("error");
+      setStatusMessage("Please enter a 10-digit phone number.");
+      return;
+    }
+
     setStatus("submitting");
-    setStatusMessage("Sending your message...");
+    setStatusMessage("Sending your message. This can take a few seconds...");
 
     const form = event.currentTarget;
+    const submitData = new FormData(form);
+
+    for (const file of uploadFiles) {
+      submitData.append("contact_uploads", file, file.name);
+    }
 
     try {
       const response = await fetch(normalizedAction, {
         method: "POST",
-        body: new FormData(form),
+        body: submitData,
       });
       const payload = (await response.json()) as { error?: string };
 
@@ -587,12 +588,12 @@ export function TrackedContactForm({
 
       form.reset();
       setFieldValues({});
+      setUploadFiles([]);
       setQuizValues({
         serviceType: normalizeLeadTopicToServiceValue(leadTopic),
         propertyType: "",
         county: "",
         urgency: "",
-        deviceCount: "",
       });
       setCurrentStep(0);
       setStatus("success");
@@ -615,6 +616,16 @@ export function TrackedContactForm({
   };
 
   const handleQuizChoice = (step: QuizStep, value: string) => {
+    if (step.key === "serviceType") {
+      setFieldValues((current) => ({
+        ...current,
+        testing_count: "",
+        size_make_model: "",
+        service_details: "",
+      }));
+      setUploadFiles([]);
+    }
+
     setQuizValues((current) => ({
       ...current,
       [step.key]: value,
@@ -623,10 +634,96 @@ export function TrackedContactForm({
       step: step.key,
       value,
     });
-    setCurrentStep((current) => Math.min(current + 1, QUIZ_STEPS.length));
+
+    if (step.key === "urgency" && quizValues.serviceType === "Not Sure Yet") {
+      setCurrentStep(FINAL_STEP_INDEX);
+    } else if (step.key === "urgency") {
+      setCurrentStep(DETAIL_STEP_INDEX);
+    } else {
+      setCurrentStep((current) => Math.min(current + 1, DETAIL_STEP_INDEX));
+    }
+
     setStatus("idle");
     setStatusMessage("");
   };
+
+  const handleBack = () => {
+    if (isFinalStep && quizValues.serviceType === "Not Sure Yet") {
+      setCurrentStep(DETAIL_STEP_INDEX - 1);
+      return;
+    }
+
+    setCurrentStep((current) => Math.max(0, current - 1));
+  };
+
+  const handleDetailContinue = () => {
+    if (quizValues.serviceType === "Testing" && !fieldValues.testing_count?.trim()) {
+      setStatus("error");
+      setStatusMessage("Please enter the number of backflow tests needed or choose Not Sure.");
+      return;
+    }
+
+    if (
+      quizValues.serviceType === "Repair / Replacement" &&
+      (!fieldValues.size_make_model?.trim() || !fieldValues.service_details?.trim())
+    ) {
+      setStatus("error");
+      setStatusMessage("Please add the size/make/model and a brief description.");
+      return;
+    }
+
+    if (
+      quizValues.serviceType === "New Installation" &&
+      !fieldValues.service_details?.trim()
+    ) {
+      setStatus("error");
+      setStatusMessage("Please add a brief description.");
+      return;
+    }
+
+    setCurrentStep(FINAL_STEP_INDEX);
+    setStatus("idle");
+    setStatusMessage("");
+  };
+
+  const renderUploadControl = (label: string) => (
+    <div className="space-y-2 md:col-span-2">
+      <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
+        {label}
+      </span>
+      <label className="flex cursor-pointer flex-col gap-3 rounded-none border border-dashed border-[color:rgba(31,45,78,0.28)] bg-white px-5 py-5 text-[color:var(--color-foreground)] transition hover:border-[color:var(--color-accent)] hover:bg-[#fffdf7] sm:flex-row sm:items-center sm:justify-between">
+        <input
+          type="file"
+          accept="image/*,.pdf"
+          multiple
+          className="sr-only"
+          onFocus={() => handleFocus("contact_uploads", "file")}
+          onChange={(event) => setUploadFiles(Array.from(event.target.files || []))}
+        />
+        <span className="space-y-1">
+          <span className="block text-base font-semibold">Add PDF or photos</span>
+          <span className="block text-sm leading-6 text-[color:var(--color-foreground)]/70">
+            Upload device photos, notice letters, or PDFs.
+          </span>
+        </span>
+        <span className="inline-flex min-h-11 items-center justify-center rounded-none bg-[color:var(--color-accent)] px-5 text-sm font-bold text-[color:var(--color-foreground)] shadow-[0_10px_24px_rgba(255,183,0,0.2)]">
+          Choose files
+        </span>
+      </label>
+      {uploadFiles.length > 0 ? (
+        <div className="rounded-none border border-[color:rgba(31,45,78,0.12)] bg-[#f7f7fb] px-4 py-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-blue)]/70">
+            Selected files
+          </p>
+          <ul className="mt-2 space-y-1 text-sm font-semibold text-[color:var(--color-foreground)]/78">
+            {uploadFiles.map((file) => (
+              <li key={`${file.name}-${file.size}`}>{file.name}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </div>
+  );
 
   if (!useQuizIntake) {
     return renderLegacyForm({
@@ -649,6 +746,16 @@ export function TrackedContactForm({
   }
 
   const activeStep = QUIZ_STEPS[currentStep];
+  const detailTitle =
+    quizValues.serviceType === "Testing"
+      ? "How many backflow tests are needed?"
+      : quizValues.serviceType === "Repair / Replacement"
+        ? "Tell us about the repair or replacement"
+        : "Tell us about the installation";
+  const detailDescription =
+    quizValues.serviceType === "Testing"
+      ? "Add the count if you know it, or choose Not Sure."
+      : "Add the information you have now. Photos, PDFs, or notices are optional.";
   const summaryEntries = QUIZ_STEPS.map((step) => ({
     key: step.key,
     title: step.title,
@@ -670,7 +777,9 @@ export function TrackedContactForm({
       <input type="hidden" name="property_type" value={quizValues.propertyType} />
       <input type="hidden" name="county" value={quizValues.county} />
       <input type="hidden" name="urgency" value={quizValues.urgency} />
-      <input type="hidden" name="device_count" value={quizValues.deviceCount} />
+      <input type="hidden" name="testing_count" value={fieldValues.testing_count || ""} />
+      <input type="hidden" name="size_make_model" value={fieldValues.size_make_model || ""} />
+      <input type="hidden" name="service_details" value={fieldValues.service_details || ""} />
       <div className="rounded-none border border-[color:rgba(31,45,78,0.12)] bg-[linear-gradient(180deg,rgba(255,255,255,0.99),rgba(248,249,252,0.96))] p-4 shadow-[0_18px_42px_rgba(15,23,42,0.06)] sm:p-6 lg:p-7">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -681,26 +790,32 @@ export function TrackedContactForm({
               <h3 className="text-[clamp(1.65rem,3.2vw,2.45rem)] font-semibold tracking-[-0.035em] text-[color:var(--color-foreground)]">
                 {isFinalStep
                   ? "How should we reach you?"
+                  : isDetailStep
+                    ? detailTitle
                   : activeStep?.title}
               </h3>
-              <p className="max-w-[50rem] text-sm leading-7 text-[color:var(--color-foreground)]/78 sm:text-base">
-                {isFinalStep
-                  ? "You’re almost done. Add your contact details and any extra notes, and we’ll take it from there."
-                  : activeStep?.description}
-              </p>
+              {isFinalStep || isDetailStep || activeStep?.description ? (
+                <p className="max-w-[50rem] text-sm leading-7 text-[color:var(--color-foreground)]/78 sm:text-base">
+                  {isFinalStep
+                    ? "You're almost done. Add your contact details, and we'll take it from there."
+                    : isDetailStep
+                      ? detailDescription
+                      : activeStep?.description}
+                </p>
+              ) : null}
             </div>
             <div className="rounded-none border border-[color:rgba(31,45,78,0.14)] bg-[#f7f7fb] px-4 py-3 text-sm text-[color:var(--color-foreground)] shadow-none">
               <span className="font-semibold text-[color:var(--color-blue)]">
                 Step {visibleStep}
               </span>{" "}
-              of {totalSteps}
+              of {TOTAL_STEPS}
             </div>
           </div>
 
           <div className="grid gap-2 sm:grid-cols-6">
-            {Array.from({ length: totalSteps }).map((_, index) => {
-              const completed = index < currentStep || (isFinalStep && index < totalSteps - 1);
-              const active = index === currentStep || (isFinalStep && index === totalSteps - 1);
+            {Array.from({ length: TOTAL_STEPS }).map((_, index) => {
+              const completed = index < currentStep || (isFinalStep && index < TOTAL_STEPS - 1);
+              const active = index === currentStep || (isFinalStep && index === TOTAL_STEPS - 1);
 
               return (
                 <span
@@ -780,9 +895,11 @@ export function TrackedContactForm({
                           aria-hidden="true"
                         />
                       </div>
-                      <p className="text-[0.9rem] leading-6 text-[color:var(--color-foreground)]/75">
-                        {option.description}
-                      </p>
+                      {option.description ? (
+                        <p className="text-[0.9rem] leading-6 text-[color:var(--color-foreground)]/75">
+                          {option.description}
+                        </p>
+                      ) : null}
                     </div>
                     <span className="mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-blue)]/64">
                       Tap to continue
@@ -790,6 +907,120 @@ export function TrackedContactForm({
                   </button>
                 );
               })}
+            </div>
+          ) : isDetailStep ? (
+            <div className="grid gap-5 md:grid-cols-2">
+              {quizValues.serviceType === "Testing" ? (
+                <>
+                  <label className="space-y-2">
+                    <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
+                      # of backflow tests needed
+                    </span>
+                    <input
+                      name="testing_count"
+                      type="text"
+                      inputMode="numeric"
+                      placeholder="Example: 3"
+                      required={fieldValues.testing_count !== "Not Sure"}
+                      value={fieldValues.testing_count === "Not Sure" ? "" : fieldValues.testing_count || ""}
+                      disabled={fieldValues.testing_count === "Not Sure"}
+                      className="bftp-intake-input"
+                      onFocus={() => handleFocus("testing_count", "text")}
+                      onChange={(event) =>
+                        handleValueChange("testing_count", event.target.value)
+                      }
+                    />
+                  </label>
+                  <label className="flex items-center gap-3 rounded-none border border-[color:rgba(31,45,78,0.14)] bg-[#f7f7fb] px-4 py-3 text-sm font-semibold text-[color:var(--color-foreground)]">
+                    <input
+                      name="testing_count_not_sure"
+                      type="checkbox"
+                      value="Not Sure"
+                      checked={fieldValues.testing_count === "Not Sure"}
+                      onChange={(event) =>
+                        handleValueChange(
+                          "testing_count",
+                          event.target.checked ? "Not Sure" : "",
+                        )
+                      }
+                    />
+                    Not Sure
+                  </label>
+                </>
+              ) : null}
+
+              {quizValues.serviceType === "Repair / Replacement" ? (
+                <>
+                  <label className="space-y-2 md:col-span-2">
+                    <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
+                      Size, Make, Model
+                    </span>
+                    <input
+                      name="size_make_model"
+                      type="text"
+                      placeholder="Example: 2 inch Wilkins 975XL"
+                      required
+                      value={fieldValues.size_make_model || ""}
+                      className="bftp-intake-input"
+                      onFocus={() => handleFocus("size_make_model", "text")}
+                      onChange={(event) =>
+                        handleValueChange("size_make_model", event.target.value)
+                      }
+                    />
+                  </label>
+                  <label className="space-y-2 md:col-span-2">
+                    <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
+                      Brief description
+                    </span>
+                    <textarea
+                      name="service_details"
+                      placeholder="Briefly describe the failed test, leak, stolen device, or vandalism."
+                      required
+                      rows={5}
+                      value={fieldValues.service_details || ""}
+                      className="bftp-intake-input min-h-[8rem] resize-y"
+                      onFocus={() => handleFocus("service_details", "textarea")}
+                      onChange={(event) =>
+                        handleValueChange("service_details", event.target.value)
+                      }
+                    />
+                  </label>
+                  {renderUploadControl("Photos/Device Info")}
+                </>
+              ) : null}
+
+              {quizValues.serviceType === "New Installation" ? (
+                <>
+                  <label className="space-y-2 md:col-span-2">
+                    <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
+                      Brief description
+                    </span>
+                    <textarea
+                      name="service_details"
+                      placeholder="Briefly describe the notice to install, temporary installation, or new construction."
+                      required
+                      rows={5}
+                      value={fieldValues.service_details || ""}
+                      className="bftp-intake-input min-h-[8rem] resize-y"
+                      onFocus={() => handleFocus("service_details", "textarea")}
+                      onChange={(event) =>
+                        handleValueChange("service_details", event.target.value)
+                      }
+                    />
+                  </label>
+                  {renderUploadControl("Photos/Notice Info")}
+                </>
+              ) : null}
+
+              <div className="md:col-span-2">
+                <button
+                  type="button"
+                  className="bftp-cta-button w-full sm:w-auto"
+                  onClick={handleDetailContinue}
+                >
+                  Continue
+                </button>
+              </div>
             </div>
           ) : (
             <div className="grid gap-5 md:grid-cols-2">
@@ -833,7 +1064,7 @@ export function TrackedContactForm({
                 <button
                   type="button"
                   className="rounded-none border border-[color:rgba(31,45,78,0.16)] bg-[#f7f7fb] px-5 py-3 text-sm font-semibold text-[color:var(--color-foreground)] transition hover:border-[color:rgba(31,45,78,0.28)] hover:bg-white"
-                  onClick={() => setCurrentStep((current) => Math.max(0, current - 1))}
+                  onClick={handleBack}
                 >
                   Back
                 </button>

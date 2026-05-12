@@ -105,6 +105,12 @@ function getOrderedSections(
   family: PageFamily,
   sections: ContentSection[],
 ): OrderedSection[] {
+  if (family === "contact_page") {
+    return sections
+      .map((section, originalIndex) => ({ section, originalIndex }))
+      .filter(({ section }) => section.kind === "form_section");
+  }
+
   if (family === "service_area_hub") {
     return orderServiceAreaSections(pagePath, sections);
   }
