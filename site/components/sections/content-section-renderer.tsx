@@ -29,6 +29,7 @@ import {
 } from "@/lib/content/section-helpers";
 import { getAllPages } from "@/lib/content/site-index";
 import { heroImages } from "@/lib/design";
+import { siteConfig } from "@/lib/site-config";
 import type {
   AnyPagePayload,
   BulletColumnsSection,
@@ -47,6 +48,15 @@ interface SectionContext {
   family: PageFamily;
   overallIndex: number;
   kindIndex: number;
+}
+
+const mainNavPagePaths = new Set([
+  ...siteConfig.primaryNavigation.map((link) => link.href),
+  ...siteConfig.serviceNavigation.map((link) => link.href),
+]);
+
+function usesMainNavSectionTreatment(path: string) {
+  return mainNavPagePaths.has(path);
 }
 
 function slugify(value: string) {
@@ -611,10 +621,11 @@ function renderHeroSection(context: SectionContext) {
 }
 
 function renderPricingSection(section: PricingTilesSection, context: SectionContext) {
+  const useMainNavTreatment = usesMainNavSectionTreatment(context.page.path);
   const className = [
-    context.family === "homepage" ? "bftp-frame--home-compact" : undefined,
+    useMainNavTreatment ? "bftp-frame--main-compact" : undefined,
     "bftp-frame--pricing",
-    context.family === "homepage" ? "bftp-frame--home-pricing" : undefined,
+    useMainNavTreatment ? "bftp-frame--main-pricing" : undefined,
     context.page.path === "/backflow-installation"
       ? "bftp-frame--installation-warranty"
       : undefined,
@@ -930,6 +941,7 @@ export function ContentSectionRenderer({
           !isCredentialFeatureSection(section) &&
           !isBenefitsFeatureSection(section));
       const useBenefitShowcase = isBenefitsFeatureSection(section);
+      const useMainNavTreatment = usesMainNavSectionTreatment(page.path);
 
       if (suppressReviewSection || suppressCountyHubBenefitShowcase) {
         return null;
@@ -939,10 +951,12 @@ export function ContentSectionRenderer({
         <SectionFrame
           id={buildSectionAnchor(section, overallIndex)}
           className={[
-            family === "homepage" ? "bftp-frame--home-compact" : undefined,
+            useMainNavTreatment && useBenefitShowcase
+              ? "bftp-frame--main-compact"
+              : undefined,
             isEverythingDoneSection(section) ? "bftp-frame--everything-done" : undefined,
-            family === "homepage" && isEverythingDoneSection(section)
-              ? "bftp-frame--home-everything-done"
+            useMainNavTreatment && useBenefitShowcase
+              ? "bftp-frame--main-benefit"
               : undefined,
             useBenefitShowcase ? "bftp-frame--benefit-showcase" : undefined,
           ]
