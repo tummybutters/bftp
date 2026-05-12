@@ -3277,7 +3277,9 @@
 }
 
 .bftp-link-list[data-variant="county-directory"] .bftp-link-list__grid {
+  align-items: stretch;
   gap: 1rem 1.15rem;
+  grid-auto-rows: 1fr;
 }
 
 .bftp-link-list__item {
@@ -3286,6 +3288,7 @@
 }
 
 .bftp-link-list__item--county-directory {
+  display: flex;
   text-align: left;
 }
 
@@ -3309,6 +3312,7 @@
   justify-content: flex-start;
   text-align: left;
   width: 100%;
+  height: clamp(220px, 13vw, 236px);
   min-height: 172px;
   padding: 1.45rem 1.45rem 1.55rem;
   border: 1px solid rgba(38, 46, 74, 0.08);
