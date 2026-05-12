@@ -3277,9 +3277,9 @@
 }
 
 .bftp-link-list[data-variant="county-directory"] .bftp-link-list__grid {
-  align-items: stretch;
+  align-items: start;
   gap: 1rem 1.15rem;
-  grid-auto-rows: 1fr;
+  grid-auto-rows: clamp(220px, 13vw, 236px);
 }
 
 .bftp-link-list__item {
@@ -3289,6 +3289,9 @@
 
 .bftp-link-list__item--county-directory {
   display: flex;
+  align-self: stretch;
+  height: 100%;
+  margin: 0;
   text-align: left;
 }
 
@@ -3312,8 +3315,8 @@
   justify-content: flex-start;
   text-align: left;
   width: 100%;
-  height: clamp(220px, 13vw, 236px);
-  min-height: 172px;
+  height: 100%;
+  min-height: 0;
   padding: 1.45rem 1.45rem 1.55rem;
   border: 1px solid rgba(38, 46, 74, 0.08);
   border-radius: 0;
@@ -3340,7 +3343,7 @@
 }
 
 .bftp-link-list__item .bftp-link-list__county-link:hover {
-  transform: translateY(-2px);
+  transform: none;
   background: #fff;
   border-color: rgba(255, 183, 0, 0.28);
   box-shadow: 0 18px 34px rgba(31, 39, 67, 0.08);
