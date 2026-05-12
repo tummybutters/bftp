@@ -162,6 +162,7 @@ const QUIZ_STEPS: QuizStep[] = [
 const TOTAL_STEPS = 6;
 const DETAIL_STEP_INDEX = 4;
 const FINAL_STEP_INDEX = 5;
+const INITIAL_REPAIR_DEVICES = [""];
 
 const FINAL_FIELD_ORDER = [
   "first-name-2",
@@ -385,6 +386,14 @@ function getPhoneDigitCount(value: string) {
   return value.replace(/\D/g, "").length;
 }
 
+function summarizeRepairDevices(devices: string[]) {
+  return devices
+    .map((device) => device.trim())
+    .filter(Boolean)
+    .map((device, index) => `Device ${index + 1}: ${device}`)
+    .join("\n");
+}
+
 function renderLegacyForm({
   fields,
   submitLabel,
@@ -509,6 +518,7 @@ export function TrackedContactForm({
   );
   const [statusMessage, setStatusMessage] = useState("");
   const [fieldValues, setFieldValues] = useState<Record<string, string>>({});
+  const [repairDevices, setRepairDevices] = useState<string[]>(INITIAL_REPAIR_DEVICES);
   const [uploadFiles, setUploadFiles] = useState<File[]>([]);
   const normalizedAction = formAction?.trim() || "/api/contact";
   const normalizedMethod = (formMethod?.trim() || (formAction ? "get" : "post")).toLowerCase();
@@ -588,6 +598,7 @@ export function TrackedContactForm({
 
       form.reset();
       setFieldValues({});
+      setRepairDevices(INITIAL_REPAIR_DEVICES);
       setUploadFiles([]);
       setQuizValues({
         serviceType: normalizeLeadTopicToServiceValue(leadTopic),
@@ -615,6 +626,39 @@ export function TrackedContactForm({
     }));
   };
 
+  const handleRepairDeviceChange = (index: number, value: string) => {
+    setRepairDevices((current) => {
+      const next = current.map((device, deviceIndex) =>
+        deviceIndex === index ? value : device,
+      );
+
+      setFieldValues((fieldCurrent) => ({
+        ...fieldCurrent,
+        size_make_model: summarizeRepairDevices(next),
+      }));
+
+      return next;
+    });
+  };
+
+  const handleAddRepairDevice = () => {
+    setRepairDevices((current) => [...current, ""]);
+  };
+
+  const handleRemoveRepairDevice = (index: number) => {
+    setRepairDevices((current) => {
+      const next = current.filter((_, deviceIndex) => deviceIndex !== index);
+      const normalizedNext = next.length > 0 ? next : INITIAL_REPAIR_DEVICES;
+
+      setFieldValues((fieldCurrent) => ({
+        ...fieldCurrent,
+        size_make_model: summarizeRepairDevices(normalizedNext),
+      }));
+
+      return normalizedNext;
+    });
+  };
+
   const handleQuizChoice = (step: QuizStep, value: string) => {
     if (step.key === "serviceType") {
       setFieldValues((current) => ({
@@ -623,6 +667,7 @@ export function TrackedContactForm({
         size_make_model: "",
         service_details: "",
       }));
+      setRepairDevices(INITIAL_REPAIR_DEVICES);
       setUploadFiles([]);
     }
 
@@ -951,23 +996,64 @@ export function TrackedContactForm({
 
               {quizValues.serviceType === "Repair / Replacement" ? (
                 <>
-                  <label className="space-y-2 md:col-span-2">
-                    <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
-                      Size, Make, Model
-                    </span>
-                    <input
-                      name="size_make_model"
-                      type="text"
-                      placeholder="Example: 2 inch Wilkins 975XL"
-                      required
-                      value={fieldValues.size_make_model || ""}
-                      className="bftp-intake-input"
-                      onFocus={() => handleFocus("size_make_model", "text")}
-                      onChange={(event) =>
-                        handleValueChange("size_make_model", event.target.value)
-                      }
-                    />
-                  </label>
+                  <div className="space-y-3 md:col-span-2">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                      <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
+                        Size, Make, Model
+                      </span>
+                      <button
+                        type="button"
+                        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none border border-[color:rgba(31,45,78,0.16)] bg-[#f7f7fb] px-4 text-sm font-semibold text-[color:var(--color-foreground)] transition hover:border-[color:rgba(31,45,78,0.28)] hover:bg-white"
+                        onClick={handleAddRepairDevice}
+                      >
+                        <span aria-hidden="true" className="text-lg leading-none">
+                          +
+                        </span>
+                        Add another device
+                      </button>
+                    </div>
+                    <div className="space-y-3">
+                      {repairDevices.map((device, index) => {
+                        const inputId = `repair-device-${index + 1}`;
+
+                        return (
+                          <div
+                            key={inputId}
+                            className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end"
+                          >
+                            <label className="space-y-2" htmlFor={inputId}>
+                              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-blue)]/70">
+                                Device {index + 1}
+                              </span>
+                              <input
+                                id={inputId}
+                                name="size_make_model_device"
+                                type="text"
+                                placeholder="Example: 2 inch Wilkins 975XL"
+                                required={index === 0}
+                                value={device}
+                                className="bftp-intake-input"
+                                onFocus={() => handleFocus("size_make_model", "text")}
+                                onChange={(event) =>
+                                  handleRepairDeviceChange(index, event.target.value)
+                                }
+                              />
+                            </label>
+                            {repairDevices.length > 1 ? (
+                              <button
+                                type="button"
+                                className="min-h-11 rounded-none border border-[color:rgba(31,45,78,0.16)] bg-white px-4 text-sm font-semibold text-[color:var(--color-foreground)] transition hover:border-[color:#b42318]/40 hover:text-[color:#b42318]"
+                                onClick={() => handleRemoveRepairDevice(index)}
+                                aria-label={`Remove device ${index + 1}`}
+                              >
+                                Remove
+                              </button>
+                            ) : null}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                   <label className="space-y-2 md:col-span-2">
                     <span className="text-sm font-semibold text-[color:var(--color-foreground)]">
                       Brief description

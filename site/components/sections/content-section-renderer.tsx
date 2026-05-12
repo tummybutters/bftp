@@ -311,6 +311,7 @@ function getTabPhotoOverrides(path: string) {
 function getHeroClassName(page: PageEntry, family: PageFamily) {
   return [
     usesMainNavSectionTreatment(page.path) ? "bftp-hero--main-nav" : undefined,
+    page.path === "/about-us" ? "bftp-hero--about" : undefined,
     family === "county_city_landing" ? "bftp-hero--city" : undefined,
     page.path === "/backflow-testing" ? "bftp-hero--testing" : undefined,
   ]

@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 
 import {
   type AgentMailAttachment,
@@ -23,6 +23,7 @@ interface ContactSubmission {
   urgency: string;
   deviceCount: string;
   testingCount: string;
+  deviceDetails: string[];
   sizeMakeModel: string;
   serviceDetails: string;
   uploadFiles: UploadedFileSummary[];
@@ -66,6 +67,22 @@ function readUploadedFiles(formData: FormData): UploadedFileSummary[] {
       size: file.size,
       type: file.type || "application/octet-stream",
     }));
+}
+
+function readDeviceDetails(formData: FormData) {
+  return formData
+    .getAll("size_make_model_device")
+    .filter((value): value is string => typeof value === "string")
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+function formatDeviceDetails(deviceDetails: string[]) {
+  return deviceDetails
+    .map((device, index) =>
+      deviceDetails.length > 1 ? `Device ${index + 1}: ${device}` : device,
+    )
+    .join("\n");
 }
 
 async function buildAgentMailAttachments(formData: FormData): Promise<AgentMailAttachment[]> {
@@ -132,6 +149,9 @@ function buildStructuredMessage(submission: ContactSubmission) {
 
 function normalizeSubmission(formData: FormData, request: Request): ContactSubmission {
   const headers = request.headers;
+  const deviceDetails = readDeviceDetails(formData);
+  const sizeMakeModel =
+    formatDeviceDetails(deviceDetails) || readField(formData, ["size_make_model", "sizeMakeModel"]);
   const submission: ContactSubmission = {
     submissionId: crypto.randomUUID(),
     firstName: readField(formData, ["first-name-2", "first_name", "firstName"]),
@@ -144,7 +164,8 @@ function normalizeSubmission(formData: FormData, request: Request): ContactSubmi
     urgency: readField(formData, ["urgency", "timeline"]),
     deviceCount: readField(formData, ["device_count", "deviceCount"]),
     testingCount: readField(formData, ["testing_count", "testingCount"]),
-    sizeMakeModel: readField(formData, ["size_make_model", "sizeMakeModel"]),
+    deviceDetails,
+    sizeMakeModel,
     serviceDetails: readField(formData, ["service_details", "serviceDetails"]),
     uploadFiles: readUploadedFiles(formData),
     notes: readField(formData, ["Message-Field-4", "message", "details"]),
@@ -520,19 +541,20 @@ export async function POST(request: Request) {
   }
 
   let notificationThreadId = "";
-  let autoReplyStatus: "sent" | "skipped" | "failed" = "skipped";
+  let autoReplyStatus: "sent" | "skipped" | "failed" | "queued" = "skipped";
   let notificationStatus: "sent" | "skipped" | "failed" = "skipped";
   let notificationErrorDetail = "";
+  let inboxId = "";
+  const fromName = process.env.AGENTMAIL_FROM_NAME || "Backflow Test Pros";
 
   if (hasAgentMail) {
     try {
-      const inboxId = await resolveAgentMailInboxId({
+      inboxId = await resolveAgentMailInboxId({
         apiKey: agentMailApiKey,
         inboxId: process.env.AGENTMAIL_INBOX_ID,
       });
       const fullName = `${submission.firstName} ${submission.lastName}`.trim();
       const notificationRecipient = process.env.CONTACT_NOTIFICATION_TO || inboxId;
-      const fromName = process.env.AGENTMAIL_FROM_NAME || "Backflow Test Pros";
 
       const notification = await sendAgentMailMessage({
         apiKey: agentMailApiKey,
@@ -547,30 +569,6 @@ export async function POST(request: Request) {
       });
       notificationThreadId = notification.thread_id;
       notificationStatus = "sent";
-
-      if (process.env.CONTACT_AUTOREPLY_ENABLED === "true") {
-        try {
-          const autoReplyText = await buildPersonalizedAutoReplyText(submission);
-
-          // Keep customer auto-replies immediate for now. We can revisit a delayed
-          // send path later once we have a reliable background scheduler.
-          await sendAgentMailMessage({
-            apiKey: agentMailApiKey,
-            inboxId,
-            to: submission.email,
-            subject: `${fromName} received your message`,
-            text: autoReplyText,
-            html: buildEmailHtmlFromText(autoReplyText),
-          });
-          autoReplyStatus = "sent";
-        } catch (error) {
-          autoReplyStatus = "failed";
-          console.error("AgentMail auto-reply failed.", {
-            submissionId: submission.submissionId,
-            error,
-          });
-        }
-      }
     } catch (error) {
       notificationStatus = "failed";
       notificationErrorDetail =
@@ -582,9 +580,52 @@ export async function POST(request: Request) {
     }
   }
 
+  if (notificationStatus === "sent") {
+    const hasHousecall = Boolean(process.env.HOUSECALLPRO_API_KEY?.trim());
+
+    autoReplyStatus = process.env.CONTACT_AUTOREPLY_ENABLED === "true" ? "queued" : "skipped";
+
+    after(async () => {
+      if (process.env.CONTACT_AUTOREPLY_ENABLED === "true") {
+        try {
+          const autoReplyText = await buildPersonalizedAutoReplyText(submission);
+
+          // Keep customer auto-replies immediate, but let Next run the work after
+          // the response so the browser is not blocked on OpenRouter/AgentMail.
+          await sendAgentMailMessage({
+            apiKey: agentMailApiKey,
+            inboxId,
+            to: submission.email,
+            subject: `${fromName} received your message`,
+            text: autoReplyText,
+            html: buildEmailHtmlFromText(autoReplyText),
+          });
+        } catch (error) {
+          console.error("AgentMail auto-reply failed.", {
+            submissionId: submission.submissionId,
+            error,
+          });
+        }
+      }
+
+      if (hasHousecall) {
+        await sendHousecallLead(submission);
+      }
+    });
+
+    return NextResponse.json({
+      ok: true,
+      submissionId: submission.submissionId,
+      notificationStatus,
+      notificationThreadId: notificationThreadId || undefined,
+      autoReplyStatus,
+      housecallStatus: hasHousecall ? "queued" : "skipped",
+    });
+  }
+
   const housecallResult = await sendHousecallLead(submission);
 
-  if (notificationStatus !== "sent" && housecallResult.status !== "sent") {
+  if (housecallResult.status !== "sent") {
     console.error("Contact form delivery failed for all downstream destinations.", {
       submissionId: submission.submissionId,
       notificationStatus,
