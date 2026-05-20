@@ -50,6 +50,37 @@ interface SectionContext {
   kindIndex: number;
 }
 
+interface HeroAction {
+  href: string;
+  label: string;
+}
+
+const losAngelesPhoneAction: HeroAction = {
+  href: "tel:+13107537325",
+  label: "(310) 753-7325",
+};
+
+const orangeCountyPhoneAction: HeroAction = {
+  href: "tel:+17148521213",
+  label: "(714) 852-1213",
+};
+
+const sanDiegoPhoneAction: HeroAction = {
+  href: "tel:+16194156937",
+  label: "(619) 415-6937",
+};
+
+const locationHeroPhoneActions: Record<string, HeroAction> = {
+  "la-county": losAngelesPhoneAction,
+  "los-angeles-county": losAngelesPhoneAction,
+  "ventura-county": losAngelesPhoneAction,
+  "orange-county": orangeCountyPhoneAction,
+  "riverside-county": orangeCountyPhoneAction,
+  "san-bernardino-county": orangeCountyPhoneAction,
+  "san-diego": sanDiegoPhoneAction,
+  "san-diego-county": sanDiegoPhoneAction,
+};
+
 const mainNavPagePaths = new Set([
   ...siteConfig.primaryNavigation.map((link) => link.href),
   ...siteConfig.serviceNavigation.map((link) => link.href),
@@ -310,7 +341,9 @@ function getTabPhotoOverrides(path: string) {
 
 function getHeroClassName(page: PageEntry, family: PageFamily) {
   return [
-    usesMainNavSectionTreatment(page.path) ? "bftp-hero--main-nav" : undefined,
+    usesMainNavSectionTreatment(page.path) || family === "county_service_hub"
+      ? "bftp-hero--main-nav"
+      : undefined,
     page.path === "/about-us" ? "bftp-hero--about" : undefined,
     family === "county_city_landing" ? "bftp-hero--city" : undefined,
     page.path === "/backflow-testing" ? "bftp-hero--testing" : undefined,
@@ -471,7 +504,7 @@ function resolveCountySegmentFromHeading(heading: string) {
   }
 
   if (value.includes("san diego county")) {
-    return "san-diego-county";
+    return "san-diego";
   }
 
   return undefined;
@@ -487,6 +520,22 @@ function slugifyLocality(value: string) {
     .replace(/^-+|-+$/g, "");
 }
 
+const citySlugAliasesByCounty: Record<string, Record<string, string>> = {
+  "la-county": {
+    manhattan: "manhattan-beach",
+  },
+  "riverside-county": {
+    menifee: "menifee-lake",
+  },
+  "san-diego": {
+    solana: "solana-beach",
+  },
+};
+
+function normalizeCitySlugForCounty(countySegment: string, citySlug: string) {
+  return citySlugAliasesByCounty[countySegment]?.[citySlug] ?? citySlug;
+}
+
 function extractLocalityFromListItem(item: string) {
   const trimmed = item.trim();
   const explicitIn = trimmed.match(/\bin\s+(.+)$/i);
@@ -497,9 +546,13 @@ function extractLocalityFromListItem(item: string) {
 
   const serviceSuffixes = [
     / annual backflow test services?$/i,
+    / backflow test services?$/i,
     / backflow installation (?:testing|test) and repair services?$/i,
     / backflow installation testing and repair services?$/i,
     / backflow installation services?$/i,
+    / backflow intallation (?:testing|test) and repair services?$/i,
+    / backflow intallation testing and repair services?$/i,
+    / backflow intallation services?$/i,
     / backflow preventer installation services?$/i,
     / backflow preventer testing services?$/i,
     / backflow testing services?$/i,
@@ -540,11 +593,14 @@ function resolveCityPath(heading: string, item: string) {
     return undefined;
   }
 
-  const citySlug = slugifyLocality(extractLocalityFromListItem(item));
+  const citySlug = normalizeCitySlugForCounty(
+    countySegment,
+    slugifyLocality(extractLocalityFromListItem(item)),
+  );
   const pages = getAllPages().filter(
     (candidate) =>
-      candidate.templateFamily === "county_city_landing" &&
       candidate.countySegment === countySegment &&
+      candidate.path.split("/").filter(Boolean).length > 1 &&
       extractCitySlugFromPagePath(candidate.path) === citySlug,
   );
 
@@ -561,7 +617,7 @@ function resolveHeroPromoText({
   primaryAction,
 }: {
   rawPromoText?: string;
-  primaryAction: { href: string; label: string };
+  primaryAction: HeroAction;
 }) {
   const normalizedPromo = rawPromoText?.trim() ?? "";
   const isPlaceholderPromo =
@@ -580,6 +636,55 @@ function resolveHeroPromoText({
   return resolvedPromo.toLowerCase() === primaryAction.label.trim().toLowerCase()
     ? undefined
     : resolvedPromo;
+}
+
+function getPayloadCountySlug(payload: AnyPagePayload) {
+  return "countySlug" in payload ? payload.countySlug : undefined;
+}
+
+function resolveLocationHeroPhoneAction(context: SectionContext) {
+  const countySlug = context.page.countySegment ?? getPayloadCountySlug(context.payload);
+
+  if (countySlug && locationHeroPhoneActions[countySlug]) {
+    return locationHeroPhoneActions[countySlug];
+  }
+
+  const locationFingerprint = [
+    context.page.path,
+    context.page.title,
+    context.payload.title,
+    context.payload.h1,
+    context.payload.hero?.heading,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  if (locationFingerprint.includes("san-diego") || locationFingerprint.includes("san diego")) {
+    return sanDiegoPhoneAction;
+  }
+
+  if (
+    locationFingerprint.includes("orange-county") ||
+    locationFingerprint.includes("orange county") ||
+    locationFingerprint.includes("riverside-county") ||
+    locationFingerprint.includes("riverside county") ||
+    locationFingerprint.includes("san-bernardino-county") ||
+    locationFingerprint.includes("san bernardino county")
+  ) {
+    return orangeCountyPhoneAction;
+  }
+
+  if (
+    locationFingerprint.includes("la-county") ||
+    locationFingerprint.includes("los-angeles") ||
+    locationFingerprint.includes("los angeles") ||
+    locationFingerprint.includes("ventura-county") ||
+    locationFingerprint.includes("ventura county")
+  ) {
+    return losAngelesPhoneAction;
+  }
+
+  return undefined;
 }
 
 function renderHeroSection(context: SectionContext) {
@@ -614,7 +719,9 @@ function renderHeroSection(context: SectionContext) {
     href: "tel:18008036658",
     label: "(800) 803-6658",
   };
-  const primaryAction = heroPhoneAction ?? heroPrimaryAction ?? fallbackPhoneAction;
+  const locationPhoneAction = resolveLocationHeroPhoneAction(context);
+  const primaryAction =
+    locationPhoneAction ?? heroPhoneAction ?? heroPrimaryAction ?? fallbackPhoneAction;
   const rawPromoText = context.payload.ctaPattern[0] || context.page.headings.h3[0];
   const promoText =
     context.family === "county_city_landing" && heroPrimaryAction

@@ -17,7 +17,8 @@ const SERVICE_AREA_CARD_PATHS: Record<string, string> = {
   "san bernardino county":
     "/san-bernardino-county-backflow-testing-installation-repair-service-areas",
   "riverside county": "/riverside-county-backflow-testing-installation-repair-service-areas",
-  "san diego county": "/san-diego-county-backflow-testing-installation-repair-service-areas",
+  "san diego county":
+    "/san-diego-county-backflow-testing-installation-repair-service-area-directory",
 };
 
 function splitHeading(heading: string) {

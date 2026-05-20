@@ -57,9 +57,9 @@ const countyHubPaths: Record<string, string> = {
   "ventura-county":
     "/ventura-county-backflow-testing-installation-repair-service-areas",
   "san-diego":
-    "/san-diego-county-backflow-testing-installation-repair-service-areas",
+    "/san-diego-county-backflow-testing-installation-repair-service-area-directory",
   "san-diego-county":
-    "/san-diego-county-backflow-testing-installation-repair-service-areas",
+    "/san-diego-county-backflow-testing-installation-repair-service-area-directory",
 };
 
 function decodeHtmlEntities(value: string) {
@@ -167,11 +167,14 @@ function resolveCountySegment(
 
   if (
     templateFamily === "service_area_hub" &&
-    segments[0]?.endsWith("-county-backflow-testing-installation-repair-service-areas")
+    (segments[0]?.endsWith("-county-backflow-testing-installation-repair-service-areas") ||
+      segments[0]?.endsWith("-county-backflow-testing-installation-repair-service-area-directory"))
   ) {
     return segments[0]
       .replace("-backflow-testing-installation-repair-service-areas", "")
-      .replace("los-angeles-county", "la-county");
+      .replace("-backflow-testing-installation-repair-service-area-directory", "")
+      .replace("los-angeles-county", "la-county")
+      .replace("san-diego-county", "san-diego");
   }
 
   return undefined;

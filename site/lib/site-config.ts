@@ -39,8 +39,8 @@ export const siteConfig = {
     href: "tel:18008036658",
   },
   email: {
-    address: "contactus@teambackflowpros.team",
-    href: "mailto:contactus@teambackflowpros.team",
+    address: "contact@backflowtestpros.com",
+    href: "mailto:contact@backflowtestpros.com",
   },
   promoBanner: {
     label: "Qualify for Free Backflow Repair Coverage",

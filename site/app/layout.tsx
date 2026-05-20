@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, PT_Sans } from "next/font/google";
 import "./globals.css";
-import { PostHogProvider } from "@/lib/analytics";
+import { GoogleAnalytics, PostHogProvider } from "@/lib/analytics";
 import { brandAssets } from "@/lib/design";
 import { siteConfig } from "@/lib/site-config";
 
@@ -57,6 +57,7 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <GoogleAnalytics />
         <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>

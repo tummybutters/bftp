@@ -188,7 +188,9 @@ export function ServiceAreaDirectory({
                   key={`${item.href}-${item.label}-${itemIndex}`}
                   className="bftp-service-area-card__item"
                 >
-                  {item.external ? (
+                  {!item.href ? (
+                    <span className="bftp-service-area-card__text">{item.label}</span>
+                  ) : item.external ? (
                     <a
                       href={item.href}
                       target={item.target || "_blank"}

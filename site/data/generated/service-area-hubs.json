@@ -192,7 +192,7 @@
           },
           {
             "label": "San Diego County",
-            "href": "/san-diego-county-backflow-testing-installation-repair-service-areas",
+            "href": "/san-diego-county-backflow-testing-installation-repair-service-area-directory",
             "external": false,
             "target": "",
             "description": "Certified backflow service for coastal and inland San Diego County properties and municipalities."
@@ -258,7 +258,7 @@
       },
       {
         "label": "San Diego County",
-        "href": "/san-diego-county-backflow-testing-installation-repair-service-areas",
+        "href": "/san-diego-county-backflow-testing-installation-repair-service-area-directory",
         "external": false,
         "target": "",
         "description": "Certified backflow service for coastal and inland San Diego County properties and municipalities."
@@ -1578,16 +1578,16 @@
     "cityLinks": []
   },
   {
-    "slug": "san-diego-county-backflow-testing-installation-repair-service-areas",
-    "path": "/san-diego-county-backflow-testing-installation-repair-service-areas",
-    "url": "https://www.backflowtestpros.com/san-diego-county-backflow-testing-installation-repair-service-areas",
+    "slug": "san-diego-county-backflow-testing-installation-repair-service-area-directory",
+    "path": "/san-diego-county-backflow-testing-installation-repair-service-area-directory",
+    "url": "https://www.backflowtestpros.com/san-diego-county-backflow-testing-installation-repair-service-area-directory",
     "family": "service_area_hub",
     "sourceTemplateFamily": "service_area_hub",
     "pageClass": "county_hub",
-    "title": "San Diego County Backflow Testing, Installation & Repair Service Areas",
-    "metaDescription": "Browse 20 cities we serve in San Diego County for backflow testing, installation, repair, and certification support.",
-    "canonical": "https://www.backflowtestpros.com/san-diego-county-backflow-testing-installation-repair-service-areas",
-    "h1": "San Diego County Backflow Installation Testing & Repair Service Areas",
+    "title": "San Diego County Backflow Testing Installation Repair Service Area Directory",
+    "metaDescription": "Browse 20 city pages we serve in San Diego County for backflow testing, installation, repair, and certification support.",
+    "canonical": "https://www.backflowtestpros.com/san-diego-county-backflow-testing-installation-repair-service-area-directory",
+    "h1": "San Diego County Backflow Installation Testing & Repair Service Area Directory",
     "h2s": [
       "Schedule service anywhere in San Diego County",
       "Cities We Serve in San Diego County"
@@ -1605,7 +1605,7 @@
       "Offer"
     ],
     "wordCount": 904,
-    "primaryKeywordIntent": "san diego county backflow testing installation repair service areas",
+    "primaryKeywordIntent": "san diego county backflow testing installation repair service area directory",
     "ctaPattern": [
       "call_now",
       "contact_form",
@@ -1618,7 +1618,7 @@
     "hero": {
       "kind": "hero",
       "sourceClass": "simple-hero-section home-hero contact-page",
-      "heading": "San Diego County Backflow Testing, Installation & Repair Service Areas",
+      "heading": "San Diego County Backflow Testing, Installation & Repair Service Area Directory",
       "body": "Use this county directory to find the city page that matches your property in San Diego County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
       "primaryCta": null,
       "phoneCta": {
@@ -1670,7 +1670,7 @@
       {
         "kind": "hero",
         "sourceClass": "simple-hero-section home-hero contact-page",
-        "heading": "San Diego County Backflow Testing, Installation & Repair Service Areas",
+        "heading": "San Diego County Backflow Testing, Installation & Repair Service Area Directory",
         "body": "Use this county directory to find the city page that matches your property in San Diego County.\n\nEach city page rolls up local service coverage for annual testing, installation work, repairs, certification paperwork, and ongoing compliance support.",
         "primaryCta": null,
         "phoneCta": {
@@ -1795,7 +1795,7 @@
             "San Diego Annual Backflow Test Services",
             "San Marcos Annual Backflow Test Services",
             "Santee Annual Backflow Test Services",
-            "Solana Annual Backflow Test Services",
+            "Solana Beach Annual Backflow Test Services",
             "Vista Annual Backflow Test Services"
           ],
           [
@@ -1817,7 +1817,7 @@
             "San Diego Backflow Installation Services",
             "San Marcos Backflow Installation Services",
             "Santee Backflow Installation Services",
-            "Solana Backflow Installation Services",
+            "Solana Beach Backflow Installation Services",
             "Vista Backflow Installation Services"
           ],
           [
@@ -1839,7 +1839,7 @@
             "San Diego Backflow Repair Services",
             "San Marcos Backflow Repair Services",
             "Santee Backflow Repair Services",
-            "Solana Backflow Repair Services",
+            "Solana Beach Backflow Repair Services",
             "Vista Backflow Repair Services"
           ]
         ]

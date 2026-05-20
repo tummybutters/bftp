@@ -8,11 +8,11 @@
     "commercial_vertical": 16,
     "contact_page": 1,
     "county_city_landing": 172,
-    "county_service_hub": 1,
+    "county_service_hub": 2,
     "regulation_page": 2,
     "legal_page": 1
   },
-  "modeledPageCount": 213,
+  "modeledPageCount": 214,
   "omittedLivePageCount": 0,
   "sourceFamilyMismatchCount": 20,
   "topAnomalyCodes": [
@@ -1483,10 +1483,18 @@
       "citySlug": "yucaipa"
     },
     {
+      "slug": "san-diego-county-backflow-testing-installation-repair-service-area-directory",
+      "path": "/san-diego-county-backflow-testing-installation-repair-service-area-directory",
+      "family": "service_area_hub",
+      "title": "San Diego County Backflow Testing Installation Repair Service Area Directory",
+      "countySlug": "san-diego",
+      "citySlug": ""
+    },
+    {
       "slug": "san-diego-county-backflow-testing-installation-repair-service-areas",
       "path": "/san-diego-county-backflow-testing-installation-repair-service-areas",
-      "family": "service_area_hub",
-      "title": "San Diego County Backflow Testing, Installation & Repair Service Areas",
+      "family": "county_service_hub",
+      "title": "San Diego County Backflow Testing Installation & Repair",
       "countySlug": "san-diego",
       "citySlug": ""
     },

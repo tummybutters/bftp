@@ -305,5 +305,258 @@
       }
     ],
     "serviceAreaItems": []
+  },
+  {
+    "slug": "san-diego-county-backflow-testing-installation-repair-service-areas",
+    "path": "/san-diego-county-backflow-testing-installation-repair-service-areas",
+    "url": "https://www.backflowtestpros.com/san-diego-county-backflow-testing-installation-repair-service-areas",
+    "family": "county_service_hub",
+    "sourceTemplateFamily": "county_service_hub",
+    "pageClass": "county_hub",
+    "title": "San Diego County Backflow Testing Installation & Repair",
+    "metaDescription": "Annual Backflow Prevention Testing, Installation and Repair Services. Schedule your San Diego County backflow service to qualify for $500 repair coverage. Multi-device discount. Expedited scheduling. Licensed, bonded and insured.",
+    "canonical": "https://www.backflowtestpros.com/san-diego-county-backflow-testing-installation-repair-service-areas",
+    "h1": "San Diego County Backflow Installation Testing Repair",
+    "h2s": [
+      "Preferred by Leading Brands",
+      "Best Value San Diego County Backflow Preventer Testing Installation & Repair",
+      "Everything Done For You Backflow Testing & Repair Services",
+      "AWWA Certified Backflow Testers & Cross Connect Control Specialists",
+      "Backflow Test Pros San Diego County Testing Installation & Repair Services Near You"
+    ],
+    "h3s": [
+      "Schedule to Qualify for $500 in Repair Coverage"
+    ],
+    "schemaTypes": [],
+    "wordCount": 1180,
+    "primaryKeywordIntent": "san diego county backflow testing installation repair",
+    "ctaPattern": [
+      "call_now",
+      "contact_form",
+      "schedule",
+      "pricing",
+      "repair_coverage",
+      "same_day_certification"
+    ],
+    "heroImage": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67ee454a1177ce0f7d9d3418_Backflow-Repair.jpg",
+    "hero": {
+      "kind": "hero",
+      "sourceClass": "simple-hero-section service-hero",
+      "heading": "San Diego County Backflow Installation Testing Repair",
+      "body": "As a bonded and insured licensed contractor, Backflow Test Pros not only guarantees top-tier workmanship but also provides expedited scheduling, document retrieval, same-day certification, and a multi-device discounts to help you meet backflow compliance regulations. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+      "primaryCta": null,
+      "phoneCta": {
+        "label": "(800) 803-6658",
+        "href": "tel:+18008036658",
+        "external": false,
+        "target": ""
+      }
+    },
+    "brandLogos": [],
+    "sections": [
+      {
+        "kind": "hero",
+        "sourceClass": "simple-hero-section service-hero",
+        "heading": "San Diego County Backflow Installation Testing Repair",
+        "body": "As a bonded and insured licensed contractor, Backflow Test Pros not only guarantees top-tier workmanship but also provides expedited scheduling, document retrieval, same-day certification, and a multi-device discounts to help you meet backflow compliance regulations. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+        "primaryCta": null,
+        "phoneCta": {
+          "label": "(800) 803-6658",
+          "href": "tel:+18008036658",
+          "external": false,
+          "target": ""
+        }
+      },
+      {
+        "kind": "rich_text",
+        "sourceClass": "marquee-simple-item",
+        "heading": "",
+        "body": "Multi-Device DiscountCA Contractor License BondedInsured for over $2,000,000Free Repair CoverageServing All of Southern CaliforniaSame Day CertificationPriority BookingBackflow CertifiedEmergency Service",
+        "links": []
+      },
+      {
+        "kind": "rich_text",
+        "sourceClass": "preferred-by-brands",
+        "heading": "Preferred by Leading Brands",
+        "body": "Leading local businesses and national brands trust our backflow preventer testing and repair services to safeguard our public water supply and maintain compliance with strict state and municipal regulations. With state-of-the-art diagnostics, timely repairs, and proactive maintenance, we help leading brands across industries (from commercial properties to residential communities) avoid civil liabilities and costly service disruptions.",
+        "links": []
+      },
+      {
+        "kind": "pricing_tiles",
+        "sourceClass": "competitive-price light-background",
+        "heading": "Best Value San Diego County Backflow Preventer Testing Installation & Repair",
+        "body": "We provide the best value in backflow prevention testing and repair services by combining competitive pricing with premium service and unmatched expertise. Our national, state and local municipality certified specialists ensure regulatory compliance to deliver precision and reliability in every inspection. Whether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
+        "tiles": [
+          {
+            "price": "$999",
+            "title": "1 \" Reduced Pressure Principle Installation",
+            "detail": "Request Pricing *"
+          },
+          {
+            "price": "$99",
+            "title": "Multi-Device Testing Bundle",
+            "detail": "Request Pricing *"
+          },
+          {
+            "price": "$1950",
+            "title": "2 \" Reduced Pressure Principle Installation",
+            "detail": "Request Pricing *"
+          }
+        ],
+        "links": [
+          {
+            "label": "Call to Lock Your 2026 Pricing Today!",
+            "href": "/contact-backflowtestpros",
+            "external": false,
+            "target": ""
+          }
+        ]
+      },
+      {
+        "kind": "feature_cards",
+        "sourceClass": "premium-service",
+        "heading": "Everything Done For You Backflow Testing & Repair Services",
+        "body": "Backflow Test Pros is 100% dedicated to ensuring your business meets local water authority annual backflow testing and repair requirements so you can avoid fines, civil liability and ensure your water is not turned off for noncompliance.\n\nEnsure you're fully compliant with specific city, county and water districts backflow prevention requirements\n\nFully managed, headache-free turn-key backflow installation testing and repair service compliance tracking\n\nAvoid costly disruptions to your business operations with the Backflow Test Pros backflow repair coverage\n\nFree initial backflow certification testing, same-day report submittal and 2-year warranty",
+        "cards": [
+          {
+            "title": "Backflow Installation & Testing Compliance",
+            "body": "Ensure you're fully compliant with specific city, county and water districts backflow prevention requirements",
+            "icon": {
+              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/683f988935e3886405842de0_Water%20Droplet%20Installation%20Page.svg",
+              "alt": "Water Authority Compliance"
+            }
+          },
+          {
+            "title": "Managed Backflow Installation Testing Repair",
+            "body": "Fully managed, headache-free turn-key backflow installation testing and repair service compliance tracking",
+            "icon": {
+              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/683f98f9bb4e8299b2340cdf_Permit%20Approval.svg",
+              "alt": "Plan & Permitting Approval"
+            }
+          },
+          {
+            "title": "Backflow Device Repair Coverage",
+            "body": "Avoid costly disruptions to your business operations with the Backflow Test Pros backflow repair coverage",
+            "icon": {
+              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67eef63aa3ededc3427026db_Repair%20Coverage.svg",
+              "alt": "Repair Coverage icon"
+            }
+          },
+          {
+            "title": "Best Value Backflow Installation Testing Repair",
+            "body": "Free initial backflow certification testing, same-day report submittal and 2-year warranty",
+            "icon": {
+              "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68350866fa20a387ad11d850_Money%20Icon.svg",
+              "alt": "Best Value Pricing"
+            }
+          }
+        ],
+        "links": []
+      },
+      {
+        "kind": "rich_text",
+        "sourceClass": "certifiedby-city-water-departments",
+        "heading": "AWWA Certified Backflow Testers & Cross Connect Control Specialists",
+        "body": "Backflow Test Pros is an AWWA Certified Backflow Tester and Certified Backflow Tester with County Health Departments across Southern California. As a CA State licensed contractor and AWWA Certified backflow specialists, our team of experienced backflow experts work with County Health Boards and Municipal Water Departments throughout Southern California to protect our water and prevent backflow contamination.",
+        "links": []
+      },
+      {
+        "kind": "bullet_columns",
+        "sourceClass": "explaiber-section service-areas",
+        "heading": "Backflow Test Pros San Diego County Testing Installation & Repair Services Near You",
+        "body": "Our experienced technicians test, diagnose, install, and repair backflow prevention devices throughout San Diego County so properties can stay aligned with local water authority requirements.\n\nRelying on Backflow Test Pros licensed, certified, and bonded professionals helps keep annual testing, repair work, and certification paperwork moving without preventable delays or water service interruptions.",
+        "columns": [
+          [
+            "Backflow Preventer Testing Installation & Repair in Alpine",
+            "Backflow Preventer Testing Installation & Repair in Carlsbad",
+            "Backflow Preventer Testing Installation & Repair in Chula Vista",
+            "Backflow Preventer Testing Installation & Repair in Coronado",
+            "Backflow Preventer Testing Installation & Repair in Del Mar",
+            "Backflow Preventer Testing Installation & Repair in El Cajon",
+            "Backflow Preventer Testing Installation & Repair in Encinitas",
+            "Backflow Preventer Testing Installation & Repair in Escondido",
+            "Backflow Preventer Testing Installation & Repair in Imperial Beach",
+            "Backflow Preventer Testing Installation & Repair in La Mesa"
+          ],
+          [
+            "Backflow Preventer Testing Installation & Repair in Lemon Grove",
+            "Backflow Preventer Testing Installation & Repair in National City",
+            "Backflow Preventer Testing Installation & Repair in Oceanside",
+            "Backflow Preventer Testing Installation & Repair in Poway",
+            "Backflow Preventer Testing Installation & Repair in Rancho Santa Fe",
+            "Backflow Preventer Testing Installation & Repair in San Diego",
+            "Backflow Preventer Testing Installation & Repair in San Marcos",
+            "Backflow Preventer Testing Installation & Repair in Santee",
+            "Backflow Preventer Testing Installation & Repair in Solana Beach",
+            "Backflow Preventer Testing Installation & Repair in Vista"
+          ]
+        ]
+      }
+    ],
+    "sectionKinds": [
+      "hero",
+      "rich_text",
+      "rich_text",
+      "pricing_tiles",
+      "feature_cards",
+      "rich_text",
+      "bullet_columns"
+    ],
+    "anomalyFlags": [],
+    "anomalyRecords": [],
+    "countySlug": "san-diego",
+    "countyName": "San Diego County",
+    "featureCards": [
+      {
+        "title": "Backflow Installation & Testing Compliance",
+        "body": "Ensure you're fully compliant with specific city, county and water districts backflow prevention requirements",
+        "icon": {
+          "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/683f988935e3886405842de0_Water%20Droplet%20Installation%20Page.svg",
+          "alt": "Water Authority Compliance"
+        }
+      },
+      {
+        "title": "Managed Backflow Installation Testing Repair",
+        "body": "Fully managed, headache-free turn-key backflow installation testing and repair service compliance tracking",
+        "icon": {
+          "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/683f98f9bb4e8299b2340cdf_Permit%20Approval.svg",
+          "alt": "Plan & Permitting Approval"
+        }
+      },
+      {
+        "title": "Backflow Device Repair Coverage",
+        "body": "Avoid costly disruptions to your business operations with the Backflow Test Pros backflow repair coverage",
+        "icon": {
+          "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/67eef63aa3ededc3427026db_Repair%20Coverage.svg",
+          "alt": "Repair Coverage icon"
+        }
+      },
+      {
+        "title": "Best Value Backflow Installation Testing Repair",
+        "body": "Free initial backflow certification testing, same-day report submittal and 2-year warranty",
+        "icon": {
+          "src": "https://cdn.prod.website-files.com/67bfdff7943122ff2def874b/68350866fa20a387ad11d850_Money%20Icon.svg",
+          "alt": "Best Value Pricing"
+        }
+      }
+    ],
+    "pricingTiles": [
+      {
+        "price": "$999",
+        "title": "1 \" Reduced Pressure Principle Installation",
+        "detail": "Request Pricing *"
+      },
+      {
+        "price": "$99",
+        "title": "Multi-Device Testing Bundle",
+        "detail": "Request Pricing *"
+      },
+      {
+        "price": "$1950",
+        "title": "2 \" Reduced Pressure Principle Installation",
+        "detail": "Request Pricing *"
+      }
+    ],
+    "serviceAreaItems": []
   }
 ]

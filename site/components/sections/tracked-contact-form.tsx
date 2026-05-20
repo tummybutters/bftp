@@ -580,6 +580,17 @@ export function TrackedContactForm({
 
     const form = event.currentTarget;
     const submitData = new FormData(form);
+    const distinctId = posthog?.get_distinct_id();
+    const sessionId = posthog?.get_session_id?.();
+    const headers: HeadersInit = {};
+
+    if (distinctId) {
+      headers["X-PostHog-Distinct-Id"] = distinctId;
+    }
+
+    if (sessionId) {
+      headers["X-PostHog-Session-Id"] = sessionId;
+    }
 
     for (const file of uploadFiles) {
       submitData.append("contact_uploads", file, file.name);
@@ -588,6 +599,7 @@ export function TrackedContactForm({
     try {
       const response = await fetch(normalizedAction, {
         method: "POST",
+        headers,
         body: submitData,
       });
       const payload = (await response.json()) as { error?: string };
@@ -609,13 +621,23 @@ export function TrackedContactForm({
       setCurrentStep(0);
       setStatus("success");
       setStatusMessage("Thanks. Your message has been sent.");
+      posthog?.capture("form_submit_succeeded", {
+        form_action: normalizedAction,
+        intake_variant: useQuizIntake ? "quiz" : "legacy",
+      });
     } catch (error) {
-      setStatus("error");
-      setStatusMessage(
+      const errorMessage =
         error instanceof Error
           ? error.message
-          : "Unable to send your message right now.",
-      );
+          : "Unable to send your message right now.";
+
+      setStatus("error");
+      setStatusMessage(errorMessage);
+      posthog?.capture("form_submit_failed", {
+        form_action: normalizedAction,
+        intake_variant: useQuizIntake ? "quiz" : "legacy",
+        error_message: errorMessage,
+      });
     }
   };
 

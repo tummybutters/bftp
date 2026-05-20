@@ -33,27 +33,44 @@ export function LinkGrid({
               isCountyDirectory ? " bftp-link-list__item--county-directory" : ""
             }`}
           >
-            <TrackedLink
-              href={item.href}
-              event="link_grid_clicked"
-              properties={{ label: item.label }}
-              className={isCountyDirectory ? "bftp-link-list__county-link" : undefined}
-              external={item.external}
-              target={item.target}
-            >
-              {isCountyDirectory ? (
-                <>
-                  <span className="bftp-link-list__county-name">{item.label}</span>
-                  {item.description ? (
-                    <span className="bftp-link-list__county-description">
-                      {` ${item.description}`}
-                    </span>
-                  ) : null}
-                </>
-              ) : (
-                item.label
-              )}
-            </TrackedLink>
+            {item.href ? (
+              <TrackedLink
+                href={item.href}
+                event="link_grid_clicked"
+                properties={{ label: item.label }}
+                className={isCountyDirectory ? "bftp-link-list__county-link" : undefined}
+                external={item.external}
+                target={item.target}
+              >
+                {isCountyDirectory ? (
+                  <>
+                    <span className="bftp-link-list__county-name">{item.label}</span>
+                    {item.description ? (
+                      <span className="bftp-link-list__county-description">
+                        {` ${item.description}`}
+                      </span>
+                    ) : null}
+                  </>
+                ) : (
+                  item.label
+                )}
+              </TrackedLink>
+            ) : (
+              <span className={isCountyDirectory ? "bftp-link-list__county-link" : undefined}>
+                {isCountyDirectory ? (
+                  <>
+                    <span className="bftp-link-list__county-name">{item.label}</span>
+                    {item.description ? (
+                      <span className="bftp-link-list__county-description">
+                        {` ${item.description}`}
+                      </span>
+                    ) : null}
+                  </>
+                ) : (
+                  item.label
+                )}
+              </span>
+            )}
           </li>
         ))}
       </ul>

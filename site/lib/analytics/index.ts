@@ -1,3 +1,4 @@
+export { GoogleAnalytics } from "./google-analytics";
 export { PostHogProvider } from "./posthog-provider";
 export { TrackedLink } from "./tracked-link";
 export { TrackedSection } from "./tracked-section";

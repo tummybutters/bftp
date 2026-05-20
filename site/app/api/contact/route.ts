@@ -5,6 +5,7 @@ import {
   resolveAgentMailInboxId,
   sendAgentMailMessage,
 } from "@/lib/agentmail";
+import { captureServerEvent } from "@/lib/analytics/posthog-server";
 import { sendHousecallLead } from "@/lib/housecall";
 import { generatePersonalizedAutoReply } from "@/lib/openrouter";
 import { siteConfig } from "@/lib/site-config";
@@ -13,6 +14,7 @@ export const runtime = "nodejs";
 
 interface ContactSubmission {
   submissionId: string;
+  submittedAt: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -45,6 +47,78 @@ interface UploadedFileSummary {
 }
 
 const MAX_UPLOAD_BYTES = 15 * 1024 * 1024;
+const DEFAULT_NOTIFICATION_EMAIL = "contact@backflowtestpros.com";
+const SUBMISSION_TIME_ZONE = "America/Los_Angeles";
+
+function splitRecipientList(value: string) {
+  return value
+    .split(/[,;\s]+/)
+    .map((recipient) => recipient.trim())
+    .filter(Boolean);
+}
+
+function buildNotificationRecipients(configuredRecipient: string) {
+  const recipients = splitRecipientList(configuredRecipient);
+
+  return Array.from(new Set(recipients.length > 0 ? recipients : [DEFAULT_NOTIFICATION_EMAIL]));
+}
+
+function formatSubmittedAt(value: string) {
+  try {
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: SUBMISSION_TIME_ZONE,
+      timeZoneName: "short",
+    }).format(new Date(value));
+  } catch {
+    return value;
+  }
+}
+
+function readHeader(request: Request, name: string) {
+  return request.headers.get(name)?.trim() || "";
+}
+
+function getAnalyticsDistinctId(request: Request, submission: ContactSubmission) {
+  return readHeader(request, "x-posthog-distinct-id") || `lead:${submission.submissionId}`;
+}
+
+function getEmailDomain(email: string) {
+  return email.split("@")[1]?.trim().toLowerCase() || "";
+}
+
+function getLeadAnalyticsProperties(
+  submission: ContactSubmission,
+  request: Request,
+  extra: Record<string, string | number | boolean | null | undefined> = {},
+) {
+  const sessionId = readHeader(request, "x-posthog-session-id");
+
+  return {
+    submission_id: submission.submissionId,
+    posthog_session_id: sessionId || undefined,
+    lead_topic: submission.leadTopic || undefined,
+    service_type: submission.leadTopic || undefined,
+    property_type: submission.propertyType || undefined,
+    county: submission.county || undefined,
+    urgency: submission.urgency || undefined,
+    city: submission.city || undefined,
+    page_path: submission.pagePath || undefined,
+    lead_source: submission.leadSource || undefined,
+    submitted_at: submission.submittedAt,
+    email_domain: getEmailDomain(submission.email) || undefined,
+    has_company_name: Boolean(submission.companyName),
+    has_uploads: submission.uploadFiles.length > 0,
+    upload_count: submission.uploadFiles.length,
+    source_url_present: Boolean(submission.sourceUrl),
+    referrer_present: Boolean(submission.referrer),
+    ...extra,
+  };
+}
 
 function readField(formData: FormData, names: string[]) {
   for (const name of names) {
@@ -154,6 +228,7 @@ function normalizeSubmission(formData: FormData, request: Request): ContactSubmi
     formatDeviceDetails(deviceDetails) || readField(formData, ["size_make_model", "sizeMakeModel"]);
   const submission: ContactSubmission = {
     submissionId: crypto.randomUUID(),
+    submittedAt: new Date().toISOString(),
     firstName: readField(formData, ["first-name-2", "first_name", "firstName"]),
     lastName: readField(formData, ["last-name-2", "last_name", "lastName"]),
     email: readField(formData, ["email-field-2", "email", "emailAddress"]),
@@ -253,6 +328,7 @@ function buildNotificationText(submission: ContactSubmission) {
     "New Backflow Test Pros contact form submission",
     "",
     `Submission ID: ${submission.submissionId}`,
+    `Submitted At: ${formatSubmittedAt(submission.submittedAt)}`,
     `Name: ${fullName}`,
     ...(submission.companyName
       ? [`Company Name: ${submission.companyName}`]
@@ -306,6 +382,9 @@ function buildNotificationHtml(submission: ContactSubmission) {
     "<div style=\"font-family:Arial,sans-serif;color:#1f2d4e;line-height:1.6;\">",
     "<h2 style=\"margin:0 0 16px;\">New Backflow Test Pros contact form submission</h2>",
     `<p style="margin:0 0 8px;"><strong>Submission ID:</strong> ${escapeHtml(submission.submissionId)}</p>`,
+    `<p style="margin:0 0 8px;"><strong>Submitted At:</strong> ${escapeHtml(
+      formatSubmittedAt(submission.submittedAt),
+    )}</p>`,
     `<p style="margin:0 0 8px;"><strong>Name:</strong> ${fullName}</p>`,
     ...(submission.companyName
       ? [
@@ -522,10 +601,30 @@ export async function POST(request: Request) {
   const formData = await request.formData();
   const submission = normalizeSubmission(formData, request);
   const validationError = validateSubmission(submission);
+  const distinctId = getAnalyticsDistinctId(request, submission);
+  const analyticsProperties = (
+    extra: Record<string, string | number | boolean | null | undefined> = {},
+  ) => getLeadAnalyticsProperties(submission, request, extra);
 
   if (validationError) {
+    await captureServerEvent({
+      distinctId,
+      event: "contact_form_validation_failed",
+      properties: analyticsProperties({
+        validation_error: validationError,
+      }),
+    });
+
     return NextResponse.json({ error: validationError }, { status: 400 });
   }
+
+  await captureServerEvent({
+    distinctId,
+    event: "lead_received",
+    properties: analyticsProperties({
+      intake_source: "contact_api",
+    }),
+  });
 
   const notificationAttachments = await buildAgentMailAttachments(formData);
   const agentMailApiKey = process.env.AGENTMAIL_API_KEY?.trim() || "";
@@ -533,6 +632,15 @@ export async function POST(request: Request) {
 
   if (!hasAgentMail && !process.env.HOUSECALLPRO_API_KEY?.trim()) {
     console.error("Contact form has no downstream delivery configured.");
+    await captureServerEvent({
+      distinctId,
+      event: "lead_delivery_failed",
+      properties: analyticsProperties({
+        failure_reason: "no_downstream_delivery_configured",
+        notification_status: "skipped",
+        housecall_status: "skipped",
+      }),
+    });
 
     return NextResponse.json(
       { error: "The contact form is not configured yet." },
@@ -554,12 +662,14 @@ export async function POST(request: Request) {
         inboxId: process.env.AGENTMAIL_INBOX_ID,
       });
       const fullName = `${submission.firstName} ${submission.lastName}`.trim();
-      const notificationRecipient = process.env.CONTACT_NOTIFICATION_TO || inboxId;
+      const notificationRecipients = buildNotificationRecipients(
+        process.env.CONTACT_NOTIFICATION_TO || "",
+      );
 
       const notification = await sendAgentMailMessage({
         apiKey: agentMailApiKey,
         inboxId,
-        to: notificationRecipient,
+        to: notificationRecipients,
         subject: submission.leadTopic
           ? `New contact form lead: ${fullName} - ${submission.leadTopic}`
           : `New contact form lead: ${fullName}`,
@@ -576,6 +686,14 @@ export async function POST(request: Request) {
       console.error("Contact form email delivery failed.", {
         submissionId: submission.submissionId,
         error,
+      });
+      await captureServerEvent({
+        distinctId,
+        event: "lead_notification_failed",
+        properties: analyticsProperties({
+          notification_status: notificationStatus,
+          failure_reason: "agentmail_delivery_failed",
+        }),
       });
     }
   }
@@ -605,12 +723,42 @@ export async function POST(request: Request) {
             submissionId: submission.submissionId,
             error,
           });
+          await captureServerEvent({
+            distinctId,
+            event: "lead_auto_reply_failed",
+            properties: analyticsProperties({
+              notification_status: notificationStatus,
+              auto_reply_status: "failed",
+            }),
+          });
         }
       }
 
       if (hasHousecall) {
-        await sendHousecallLead(submission);
+        const queuedHousecallResult = await sendHousecallLead(submission);
+
+        await captureServerEvent({
+          distinctId,
+          event: "lead_housecall_delivery_completed",
+          properties: analyticsProperties({
+            notification_status: notificationStatus,
+            housecall_status: queuedHousecallResult.status,
+            has_housecall_customer_id: Boolean(queuedHousecallResult.customerId),
+            has_housecall_lead_id: Boolean(queuedHousecallResult.leadId),
+          }),
+        });
       }
+    });
+
+    await captureServerEvent({
+      distinctId,
+      event: "lead_delivered",
+      properties: analyticsProperties({
+        delivery_path: "agentmail",
+        notification_status: notificationStatus,
+        auto_reply_status: autoReplyStatus,
+        housecall_status: hasHousecall ? "queued" : "skipped",
+      }),
     });
 
     return NextResponse.json({
@@ -632,6 +780,15 @@ export async function POST(request: Request) {
       notificationErrorDetail,
       housecallResult,
     });
+    await captureServerEvent({
+      distinctId,
+      event: "lead_delivery_failed",
+      properties: analyticsProperties({
+        failure_reason: "all_downstream_delivery_failed",
+        notification_status: notificationStatus,
+        housecall_status: housecallResult.status,
+      }),
+    });
 
     return NextResponse.json(
       {
@@ -641,6 +798,19 @@ export async function POST(request: Request) {
       { status: 500 },
     );
   }
+
+  await captureServerEvent({
+    distinctId,
+    event: "lead_delivered",
+    properties: analyticsProperties({
+      delivery_path: "housecall",
+      notification_status: notificationStatus,
+      auto_reply_status: autoReplyStatus,
+      housecall_status: housecallResult.status,
+      has_housecall_customer_id: Boolean(housecallResult.customerId),
+      has_housecall_lead_id: Boolean(housecallResult.leadId),
+    }),
+  });
 
   return NextResponse.json({
     ok: true,
