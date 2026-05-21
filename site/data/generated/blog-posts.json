@@ -767,5 +767,131 @@
       "Row 5: Chemical outbreaks 15; 679 illnesses. 1981-1998. U.S. EPA cross-connection issue paper."
     ],
     "status": "Published"
+  },
+  {
+    "slug": "the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
+    "path": "/blog/the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
+    "canonical": "https://www.backflowtestpros.com/blog/the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
+    "title": "The Backflow Problem We Probably Underreport: What EPA's Incident Gap Really Means",
+    "metaDescription": "EPA data shows only 26 of 75 backflow illness outbreaks appeared in CDC summaries \u2014 meaning most contamination events go uncounted. Here's what that gap means for your building.",
+    "excerpt": "EPA researchers cross-checked their backflow incident database against CDC outbreak records and found a striking gap: most illness events tied to backflow never made it into national surveillance summaries.",
+    "category": "Risk / education",
+    "audience": "Commercial decision-makers, compliance-sensitive readers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "backflow incidents underreported",
+    "secondaryKeywords": [
+      "backflow contamination risk",
+      "cross-connection incidents",
+      "EPA backflow data",
+      "commercial building water safety"
+    ],
+    "publishedAt": "2026-05-23T09:00:00.000Z",
+    "updatedAt": "2026-05-23T09:00:00.000Z",
+    "heroFact": {
+      "value": "26 of 75",
+      "label": "backflow illness outbreaks that appeared in CDC national summaries",
+      "context": "EPA's incident database captured 75 outbreaks with illness data from 1981\u20131999. Only 26 showed up in CDC surveillance \u2014 fewer than 35% of known cases."
+    },
+    "keyTakeaways": [
+      "EPA documented 22 cross-connection outbreaks causing 2,722 illnesses from 1981\u20131998 where the contaminant was never reported.",
+      "Of 309 EPA-tracked backflow incidents, only 97 included illness counts; of 75 with illness data, fewer than half appeared in CDC outbreak summaries.",
+      "Estimated illness toll across those 75 incidents was 4,416 \u2014 largely outside the national public health record.",
+      "Building owners cannot rely on public outbreak statistics alone to gauge their actual risk.",
+      "Annual backflow testing and a functioning prevention assembly are the only reliable controls."
+    ],
+    "sections": [
+      {
+        "id": "why-the-gap-exists",
+        "kind": "narrative",
+        "title": "Why Backflow Incidents Don't Always Make the Database",
+        "body": [
+          "When someone gets sick from contaminated tap water at a commercial property, the chain of events that follows is rarely clean. Unless a physician suspects waterborne illness and files a report, and unless a public health investigator traces the source, the event simply disappears.",
+          "EPA researchers compiled a database of backflow-related incidents spanning nearly two decades, then compared it against CDC's national outbreak surveillance records. The match rate was sobering.",
+          "Of 75 backflow incidents in the EPA database that included illness counts, only 26 appeared in CDC outbreak summaries. The remaining 49 incidents \u2014 which EPA estimated contributed to 4,416 illnesses \u2014 were essentially invisible to the national public health record.",
+          "This reflects how waterborne illness surveillance works: it depends on sick people seeking care, clinicians ordering the right tests, labs reporting results, and investigators connecting the dots back to a water source. Each step is a place where the trail goes cold."
+        ],
+        "statCallout": {
+          "value": "4,416 estimated illnesses",
+          "label": "tied to backflow incidents that largely did not appear in CDC outbreak summaries",
+          "context": "Source: U.S. EPA cross-connection issue paper, 1981\u20131999 U.S. data. Repository row 11."
+        }
+      },
+      {
+        "id": "what-the-numbers-actually-show",
+        "kind": "narrative",
+        "title": "What EPA's Numbers Actually Show",
+        "body": [
+          "The EPA paper documented 309 backflow-related incidents. Of those, only 97 \u2014 about 31% \u2014 included any illness count at all. That alone suggests significant underreporting.",
+          "Within the 75 incidents that did have illness data, fewer than 35% made it into CDC's national record. A separate finding: between 1981 and 1998, EPA identified 22 cross-connection outbreaks in U.S. community water systems where the contaminant was never identified. Those 22 outbreaks caused 2,722 illnesses with no attributed cause.",
+          "For a building owner or compliance officer, these figures reframe the question. The issue is not whether your local utility has logged a backflow incident recently. The issue is that most backflow-related illness events never generate a log entry anywhere."
+        ],
+        "statCallout": {
+          "value": "22 outbreaks, 2,722 illnesses",
+          "label": "cross-connection events where the contaminant was never identified, 1981\u20131998",
+          "context": "Source: U.S. EPA cross-connection issue paper. Repository row 6."
+        }
+      },
+      {
+        "id": "what-this-means-for-your-building",
+        "kind": "checklist",
+        "title": "What This Means for Your Building",
+        "body": [
+          "You cannot use the absence of local incident reports as evidence that your facility is safe. The data shows that most backflow-related illness events never produce a visible public record.",
+          "The controls that actually work are mechanical and procedural, not surveillance-based. A properly installed and annually tested backflow prevention assembly stops the event before it starts."
+        ],
+        "bullets": [
+          "Verify your backflow preventer type is appropriate for the hazard level of each cross-connection on your property.",
+          "Confirm your preventer is on a documented annual testing schedule \u2014 gaps create both liability and real risk.",
+          "Keep test records on file \u2014 documentation of a tested assembly is your primary defense if an incident occurs.",
+          "Ask your water utility or local authority having jurisdiction whether your property requires a full cross-connection survey.",
+          "Do not interpret a clean local outbreak history as a safe building \u2014 the EPA data shows most events never reach public records."
+        ]
+      },
+      {
+        "id": "prevention-over-monitoring",
+        "kind": "narrative",
+        "title": "Prevention, Not Monitoring, Is the Right Frame",
+        "body": [
+          "By the time a backflow event generates a public record, the harm has already occurred. For commercial decision-makers, the more useful question is: what would have stopped this before it happened?",
+          "The answer is consistent: a tested backflow prevention assembly, installed at every significant cross-connection, checked annually by a certified tester. That is the standard EPA's own research points toward, and it is the one control that does not depend on anyone else in the reporting chain doing their job.",
+          "If your facility's backflow preventer has not been tested this year, or if you are not certain one is installed at every required location, that gap is worth closing now \u2014 not because an outbreak has been reported nearby, but because most outbreaks never are."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Annual Backflow Testing",
+        "description": "Certified testing and documentation for commercial backflow prevention assemblies."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "When a test fails, corrective work and re-test before the deadline."
+      },
+      {
+        "href": "/commercial-backflow-testing",
+        "label": "Commercial Backflow Testing",
+        "description": "Services for businesses, schools, restaurants, and multi-tenant facilities."
+      }
+    ],
+    "cta": {
+      "heading": "Don't Wait for an Incident That Won't Make the News",
+      "body": "Most backflow contamination events never reach public records \u2014 clean local statistics are not the same as a safe facility. Schedule your annual backflow test and get documented proof your prevention assembly is working.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Close-up of a commercial backflow prevention assembly mounted on a pipe in a mechanical room, visible test cocks and shutoff valves, clean documentary style, neutral lighting, no people or branding.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "sourceNotes": [
+      "Row 6: 22 outbreaks; 2,722 illnesses with unreported contaminants. 1981\u20131998. U.S. EPA cross-connection issue paper.",
+      "Row 11: 309 incidents, 97 with illness counts, 75 with illness data, 26 in CDC summaries, 4,416 estimated illnesses. 1981\u20131999. U.S. EPA cross-connection issue paper."
+    ],
+    "status": "Published"
   }
 ]

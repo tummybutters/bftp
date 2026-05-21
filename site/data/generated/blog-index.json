@@ -1,5 +1,25 @@
 [
   {
+    "slug": "the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
+    "path": "/blog/the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
+    "canonical": "https://www.backflowtestpros.com/blog/the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
+    "title": "The Backflow Problem We Probably Underreport: What EPA's Incident Gap Really Means",
+    "excerpt": "EPA researchers cross-checked their backflow incident database against CDC outbreak records and found a striking gap: most illness events tied to backflow never made it into national surveillance summaries.",
+    "category": "Risk / education",
+    "audience": "Commercial decision-makers, compliance-sensitive readers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "backflow incidents underreported",
+    "heroFact": {
+      "value": "26 of 75",
+      "label": "backflow illness outbreaks that appeared in CDC national summaries",
+      "context": "EPA's incident database captured 75 outbreaks with illness data from 1981–1999. Only 26 showed up in CDC surveillance — fewer than 35% of known cases."
+    },
+    "publishedAt": "2026-05-23T09:00:00.000Z",
+    "updatedAt": "2026-05-23T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "backflow-isn-t-just-dirty-water-biological-vs-chemical-contamination-in-the-outbreak-record",
     "path": "/blog/backflow-isn-t-just-dirty-water-biological-vs-chemical-contamination-in-the-outbreak-record",
     "canonical": "https://www.backflowtestpros.com/blog/backflow-isn-t-just-dirty-water-biological-vs-chemical-contamination-in-the-outbreak-record",
