@@ -1,5 +1,25 @@
 [
   {
+    "slug": "backflow-isn-t-just-dirty-water-biological-vs-chemical-contamination-in-the-outbreak-record",
+    "path": "/blog/backflow-isn-t-just-dirty-water-biological-vs-chemical-contamination-in-the-outbreak-record",
+    "canonical": "https://www.backflowtestpros.com/blog/backflow-isn-t-just-dirty-water-biological-vs-chemical-contamination-in-the-outbreak-record",
+    "title": "Backflow Isn’t Just Dirty Water: Biological vs. Chemical Contamination in the Outbreak Record",
+    "excerpt": "Most people picture backflow as dirty water flowing the wrong way. The reality is more specific — and more useful. EPA records document two distinct contamination categories with different sources, different illness counts, and different prevention priorities.",
+    "category": "Risk / education",
+    "audience": "Businesses, schools, restaurants, health-sensitive facilities",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "biological vs chemical backflow",
+    "heroFact": {
+      "value": "6,333 illnesses",
+      "label": "Traced to biological backflow outbreaks in U.S. community water systems, 1981–1998",
+      "context": "That figure comes from just 20 documented outbreaks — an average of over 300 people sickened per event. The EPA separates these from chemical contamination events, which produced a very different profile."
+    },
+    "publishedAt": "2026-05-22T09:00:00.000Z",
+    "updatedAt": "2026-05-22T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "the-hidden-half-of-water-system-outbreaks-cross-connections-caused-50-6-of-distribution-system-cases",
     "path": "/blog/the-hidden-half-of-water-system-outbreaks-cross-connections-caused-50-6-of-distribution-system-cases",
     "canonical": "https://www.backflowtestpros.com/blog/the-hidden-half-of-water-system-outbreaks-cross-connections-caused-50-6-of-distribution-system-cases",
