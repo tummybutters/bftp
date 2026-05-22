@@ -1,5 +1,25 @@
 [
   {
+    "slug": "what-459-reported-backflow-incidents-reveal-about-real-world-water-safety",
+    "path": "/blog/what-459-reported-backflow-incidents-reveal-about-real-world-water-safety",
+    "canonical": "https://www.backflowtestpros.com/blog/what-459-reported-backflow-incidents-reveal-about-real-world-water-safety",
+    "title": "What 459 Reported Backflow Incidents Reveal About Real-World Water Safety",
+    "excerpt": "Between 1970 and 2001, the EPA compiled 459 reported backflow incidents tied to an estimated 12,093 illnesses. A closer look at the reporting gaps shows those numbers are a floor, not a ceiling.",
+    "category": "Risk / awareness",
+    "audience": "General audience, commercial property owners",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "backflow contamination incidents",
+    "heroFact": {
+      "value": "459 incidents / ~12,093 illnesses",
+      "label": "Reported backflow contamination events in the U.S., 1970–2001",
+      "context": "EPA compilation of reported backflow incidents — and most cases were never counted at all"
+    },
+    "publishedAt": "2026-05-25T09:00:00.000Z",
+    "updatedAt": "2026-05-25T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
     "path": "/blog/the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
     "canonical": "https://www.backflowtestpros.com/blog/the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
