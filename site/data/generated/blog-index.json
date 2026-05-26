@@ -1,5 +1,25 @@
 [
   {
+    "slug": "why-pressure-loss-creates-backflow-risk-11-186-pressure-reduction-incidents-in-one-year",
+    "path": "/blog/why-pressure-loss-creates-backflow-risk-11-186-pressure-reduction-incidents-in-one-year",
+    "canonical": "https://www.backflowtestpros.com/blog/why-pressure-loss-creates-backflow-risk-11-186-pressure-reduction-incidents-in-one-year",
+    "title": "Why Pressure Loss Creates Backflow Risk: 11,186 Pressure-Reduction Incidents in One Year",
+    "excerpt": "Backflow does not require a catastrophic failure. It requires only a pressure drop — and EPA-cited survey data shows those happen thousands of times a year, across ordinary systems, for entirely routine reasons.",
+    "category": "Pressure events",
+    "audience": "Facility managers, building engineers, commercial readers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "low water pressure backflow risk",
+    "heroFact": {
+      "value": "11,186",
+      "label": "pressure-reduction incidents reported by 70 water systems in a single year",
+      "context": "ABPA 2000 survey cited by U.S. EPA. That is more than 30 incidents per day across just 70 systems — each one a potential backsiphonage window."
+    },
+    "publishedAt": "2026-05-30T09:00:00.000Z",
+    "updatedAt": "2026-05-30T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "the-4-cross-connections-inspectors-find-most-irrigation-fire-lines-hoses-and-boilers",
     "path": "/blog/the-4-cross-connections-inspectors-find-most-irrigation-fire-lines-hoses-and-boilers",
     "canonical": "https://www.backflowtestpros.com/blog/the-4-cross-connections-inspectors-find-most-irrigation-fire-lines-hoses-and-boilers",
@@ -37,6 +57,26 @@
     },
     "publishedAt": "2026-05-27T09:00:00.000Z",
     "updatedAt": "2026-05-27T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
+    "slug": "nearly-one-third-of-community-water-outbreaks-came-from-distribution-system-contamination",
+    "path": "/blog/nearly-one-third-of-community-water-outbreaks-came-from-distribution-system-contamination",
+    "canonical": "https://www.backflowtestpros.com/blog/nearly-one-third-of-community-water-outbreaks-came-from-distribution-system-contamination",
+    "title": "Nearly One-Third of Community-Water Outbreaks Came From Distribution-System Contamination",
+    "excerpt": "Treating water before it leaves the plant is only half the job. EPA data from nearly three decades shows that almost a third of all community-water outbreaks traced back to contamination that entered after the water was already clean.",
+    "category": "Risk / awareness",
+    "audience": "General audience, utility-conscious readers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "distribution system contamination outbreaks",
+    "heroFact": {
+      "value": "30.3%",
+      "label": "of community-water outbreaks caused by distribution-system contamination",
+      "context": "U.S. EPA analysis of waterborne disease outbreaks in U.S. community water systems, 1971–1998. The problem is not always at the source — it often enters the system after treatment."
+    },
+    "publishedAt": "2026-05-26T09:00:00.000Z",
+    "updatedAt": "2026-05-26T09:00:00.000Z",
     "status": "Published"
   },
   {
