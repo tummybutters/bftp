@@ -1,5 +1,25 @@
 [
   {
+    "slug": "a-backflow-device-isnt-a-backflow-program",
+    "path": "/blog/a-backflow-device-isnt-a-backflow-program",
+    "canonical": "https://www.backflowtestpros.com/blog/a-backflow-device-isnt-a-backflow-program",
+    "title": "A Backflow Device Isn't a Backflow Program",
+    "excerpt": "Surveys cited by the EPA found many water storage facilities had never been inspected — and many more were inspected less often than AWWA's 3-year recommendation. A device on the wall is not the same as a program that keeps it working.",
+    "category": "Program quality",
+    "audience": "Commercial owners, associations, facility managers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "backflow prevention program",
+    "heroFact": {
+      "value": "3 years",
+      "label": "is AWWA's maximum recommended inspection interval for water storage facilities",
+      "context": "EPA-cited surveys found many facilities were inspected less often than this — and many had never been inspected at all."
+    },
+    "publishedAt": "2026-06-03T09:00:00.000Z",
+    "updatedAt": "2026-06-03T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "why-pressure-loss-creates-backflow-risk-11-186-pressure-reduction-incidents-in-one-year",
     "path": "/blog/why-pressure-loss-creates-backflow-risk-11-186-pressure-reduction-incidents-in-one-year",
     "canonical": "https://www.backflowtestpros.com/blog/why-pressure-loss-creates-backflow-risk-11-186-pressure-reduction-incidents-in-one-year",
