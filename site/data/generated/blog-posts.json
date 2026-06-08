@@ -1572,8 +1572,8 @@
       "distribution system contamination",
       "backflow intrusion"
     ],
-    "publishedAt": "2026-06-01T09:00:00.000Z",
-    "updatedAt": "2026-06-01T09:00:00.000Z",
+    "publishedAt": "2026-06-08T09:00:00.000Z",
+    "updatedAt": "2026-06-08T09:00:00.000Z",
     "heroFact": {
       "value": "78 gal",
       "label": "can intrude into a water line in 60 seconds",
@@ -1680,7 +1680,7 @@
     "sourceNotes": [
       "Row 16: Negative-pressure intrusion modeling \u2014 pump-failure surge: -10.1 psi, 69 gallons in 60 sec; main-break surge: 78 gallons in 60 sec. U.S. EPA, Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks (2007)."
     ],
-    "status": "Draft"
+    "status": "Published"
   },
   {
     "slug": "a-backflow-device-isnt-a-backflow-program",

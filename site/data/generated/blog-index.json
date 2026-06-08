@@ -1,5 +1,25 @@
 [
   {
+    "slug": "when-pressure-drops-contamination-moves-fast",
+    "path": "/blog/when-pressure-drops-contamination-moves-fast",
+    "canonical": "https://www.backflowtestpros.com/blog/when-pressure-drops-contamination-moves-fast",
+    "title": "When Pressure Drops, Contamination Moves Fast",
+    "excerpt": "A negative pressure event in a distribution system is not just a loss of flow — it creates suction. EPA modeling found 69 to 78 gallons could intrude into a water line in under a minute. Backflow preventers are what stand between that event and your water supply.",
+    "category": "Pressure events",
+    "audience": "Engineers, property managers, skeptical readers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "negative pressure backflow",
+    "heroFact": {
+      "value": "78 gal",
+      "label": "can intrude into a water line in 60 seconds",
+      "context": "EPA pilot-scale modeling of negative pressure events — pump-failure and main-break surges — showed 69 to 78 gallons of external water entering a distribution line within one minute."
+    },
+    "publishedAt": "2026-06-08T09:00:00.000Z",
+    "updatedAt": "2026-06-08T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "a-backflow-device-isnt-a-backflow-program",
     "path": "/blog/a-backflow-device-isnt-a-backflow-program",
     "canonical": "https://www.backflowtestpros.com/blog/a-backflow-device-isnt-a-backflow-program",
