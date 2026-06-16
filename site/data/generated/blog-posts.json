@@ -1810,5 +1810,143 @@
       "Row 17: Many water storage facilities inspected less often than AWWA's 3-year recommendation; many never inspected. U.S. EPA, Evaluating HACCP Strategies for Distribution System Monitoring and Hazard Assessment and Control (2007 EPA HACCP paper)."
     ],
     "status": "Published"
+  },
+  {
+    "slug": "91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
+    "path": "/blog/91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
+    "canonical": "https://www.backflowtestpros.com/blog/91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
+    "title": "91% of Systems Had Backflow Programs - So Why Did Only 49% Require Incident Reporting?",
+    "metaDescription": "EPA-cited survey data found 91% of systems had cross-connection control programs, but only 49% required backflow incident reporting. Here is why that gap matters.",
+    "excerpt": "Having a backflow program on paper is not the same as knowing when something went wrong. EPA-cited survey data found 91% of systems had cross-connection control programs, but only 49% required backflow incident reporting.",
+    "category": "Program quality",
+    "audience": "Compliance-minded readers, utilities, facility managers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "backflow incident reporting",
+    "secondaryKeywords": [
+      "cross-connection control program",
+      "backflow reporting",
+      "backflow compliance",
+      "backflow prevention program"
+    ],
+    "publishedAt": "2026-06-15T09:00:00.000Z",
+    "updatedAt": "2026-06-15T09:00:00.000Z",
+    "heroFact": {
+      "value": "49%",
+      "label": "required reporting backflow incidents",
+      "context": "EPA-cited survey data found 91% of systems had cross-connection control programs, while only 49% required backflow incident reporting."
+    },
+    "keyTakeaways": [
+      "A written backflow program is only useful if it produces real visibility into failures, hazards, repairs, and incidents.",
+      "EPA-cited survey data found 91% of respondents had cross-connection control programs, but only 49% required reporting of backflow incidents.",
+      "That gap matters because unreported incidents make it harder for utilities, property managers, and owners to spot repeat hazards.",
+      "For commercial properties, the practical question is not just whether a device exists. It is whether testing, repairs, incident notes, and certificates are tracked in one place.",
+      "Annual testing should create a clear record trail: device, location, result, repair status, retest status, and filing confirmation."
+    ],
+    "sections": [
+      {
+        "id": "intro",
+        "kind": "narrative",
+        "title": "A Program Is Not the Same as Proof",
+        "body": [
+          "Backflow prevention often gets described as a yes-or-no issue: does the property have a backflow device, and was it tested this year? Those questions matter, but they do not tell the whole story.",
+          "A working program has to do more than place devices on pipes. It has to find hazards, document test results, repair failures, retest after repairs, and capture incidents when reverse flow or a cross-connection is observed.",
+          "That is where the reporting gap becomes important. In a survey cited by the U.S. EPA, 91% of respondents had cross-connection control programs, but only 49% required reporting of backflow incidents. Nearly everyone had a program. Fewer than half had the reporting discipline that helps show when the program actually caught a problem."
+        ]
+      },
+      {
+        "id": "the-numbers",
+        "kind": "narrative",
+        "title": "What the EPA-Cited Survey Shows",
+        "body": [
+          "The EPA's HACCP issue paper on distribution system monitoring cites survey results showing that 91% of respondents had cross-connection control programs. The same source says 99% of respondents were community water systems, which means the data mostly reflects systems that are already operating inside formal public-water oversight.",
+          "The surprising part is the second number: only 49% required reporting of backflow incidents. In other words, a system could have a formal cross-connection control program and still lack a consistent requirement for recording the moments when a backflow incident occurred.",
+          "For property owners, that is the difference between compliance paperwork and operational control. Paperwork can say a program exists. Reporting shows whether the program is seeing the failures it was designed to prevent."
+        ],
+        "statCallout": {
+          "value": "91% vs. 49%",
+          "label": "had programs, but required incident reporting at a much lower rate",
+          "context": "Survey cited by U.S. EPA, Evaluating HACCP Strategies for Distribution System Monitoring and Hazard Assessment and Control."
+        }
+      },
+      {
+        "id": "why-reporting-matters",
+        "kind": "narrative",
+        "title": "Why Incident Reporting Changes the Risk Picture",
+        "body": [
+          "Backflow incidents are not always obvious to the people using the building. A failed check valve, an unprotected hose connection, or a pressure event may not create a visible emergency right away. Without reporting, the event can disappear into a maintenance conversation and never become part of the property's risk history.",
+          "That matters because patterns are what make prevention smarter. If the same assembly fails repeatedly, the owner may need repair or replacement instead of another annual test. If a cross-connection is observed near irrigation or chemical storage, the property may need a layout change, not just a certificate. If paperwork is submitted late, the problem may be administrative rather than mechanical.",
+          "Incident reporting turns those details into a record. It gives the utility, tester, facility team, and owner the same map of what happened and what still needs follow-up."
+        ]
+      },
+      {
+        "id": "owner-view",
+        "kind": "narrative",
+        "title": "What Commercial Owners Should Ask For",
+        "body": [
+          "A commercial property does not need to run like a public water system, but it should borrow the same habit: make the backflow program visible.",
+          "For a single site, that can be simple. Keep a list of every assembly, the exact location, the last test date, the pass or fail result, any repair notes, the retest outcome, and the report filing status. If a tester observes a cross-connection or a device failure, keep that note with the certificate instead of burying it in a text thread or invoice.",
+          "For portfolios, the same discipline becomes even more important. A property manager cannot fix what never makes it onto the dashboard. The goal is not paperwork for its own sake. The goal is knowing which assemblies are overdue, which ones failed, which ones were repaired, and which hazards keep coming back."
+        ]
+      },
+      {
+        "id": "checklist",
+        "kind": "checklist",
+        "title": "A Practical Reporting Checklist",
+        "body": [
+          "Use this quick checklist after every backflow test, repair, or observed cross-connection."
+        ],
+        "bullets": [
+          "Record the assembly type, serial number, service location, and hazard served by the device.",
+          "Save the test result with the date, tester name, certification number, and pass or fail status.",
+          "If the device failed, document the repair recommendation and whether the assembly needs replacement.",
+          "After repair, keep the retest result with the original failure record so the chain is complete.",
+          "Note any observed cross-connections, hose hazards, irrigation concerns, boiler connections, or fire-line issues.",
+          "Confirm whether the report was filed with the water utility and keep proof of submission."
+        ]
+      },
+      {
+        "id": "bottom-line",
+        "kind": "narrative",
+        "title": "The Bottom Line",
+        "body": [
+          "The EPA-cited numbers make a simple point: backflow prevention can look mature on paper and still have a visibility problem. A program without incident reporting may satisfy a checklist, but it gives owners less warning when something is starting to fail.",
+          "For property owners, the fix is practical. Test on schedule, repair failures quickly, retest after repair, and keep the full record together. That record is what turns annual backflow testing from a yearly obligation into a working prevention system."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing Services",
+        "description": "Annual backflow testing and certification for commercial and residential assemblies."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Repair and replacement support when a device fails testing or no longer meets requirements."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Schedule service, ask about compliance deadlines, or coordinate testing across multiple devices."
+      }
+    ],
+    "cta": {
+      "heading": "Turn Backflow Testing Into a Clear Record",
+      "body": "Backflow Test Pros documents the assembly, result, repair status, and filing path so your property is not just tested - it has a usable compliance trail.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Commercial property backflow preventer assembly with a technician clipboard nearby, clean mechanical area, brass valves and tagged assembly visible, no people faces, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "sourceNotes": [
+      "Row 18: Cross-connection control program adoption and reporting - 91% had cross-connection control programs; 49% required reporting backflow incidents; 99% of respondents were community water systems. U.S. EPA, Evaluating HACCP Strategies for Distribution System Monitoring and Hazard Assessment and Control. https://www.epa.gov/sites/default/files/2021-05/documents/issuepaper_tcr_haccp-strategies_posted.pdf"
+    ],
+    "status": "Published"
   }
 ]

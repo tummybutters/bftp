@@ -1,5 +1,25 @@
 [
   {
+    "slug": "91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
+    "path": "/blog/91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
+    "canonical": "https://www.backflowtestpros.com/blog/91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
+    "title": "91% of Systems Had Backflow Programs - So Why Did Only 49% Require Incident Reporting?",
+    "excerpt": "Having a backflow program on paper is not the same as knowing when something went wrong. EPA-cited survey data found 91% of systems had cross-connection control programs, but only 49% required backflow incident reporting.",
+    "category": "Program quality",
+    "audience": "Compliance-minded readers, utilities, facility managers",
+    "geography": "",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "backflow incident reporting",
+    "heroFact": {
+      "value": "49%",
+      "label": "required reporting backflow incidents",
+      "context": "EPA-cited survey data found 91% of systems had cross-connection control programs, while only 49% required backflow incident reporting."
+    },
+    "publishedAt": "2026-06-15T09:00:00.000Z",
+    "updatedAt": "2026-06-15T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "when-pressure-drops-contamination-moves-fast",
     "path": "/blog/when-pressure-drops-contamination-moves-fast",
     "canonical": "https://www.backflowtestpros.com/blog/when-pressure-drops-contamination-moves-fast",
