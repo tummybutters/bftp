@@ -5,6 +5,9 @@ import { GoogleAnalytics, PostHogProvider } from "@/lib/analytics";
 import { brandAssets } from "@/lib/design";
 import { siteConfig } from "@/lib/site-config";
 
+const posthogPublicKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+const posthogApiHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
+
 const bodyFont = Lato({
   variable: "--font-body",
   subsets: ["latin"],
@@ -58,7 +61,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <GoogleAnalytics />
-        <PostHogProvider>{children}</PostHogProvider>
+        <PostHogProvider apiHost={posthogApiHost} publicKey={posthogPublicKey}>
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
