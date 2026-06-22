@@ -249,17 +249,17 @@
         "body": "We provide the best value in backflow preventer installation testing and repair services by combining competitive pricing with premium service and unmatched expertise. Our national, state and local municipality certified specialists ensure regulatory compliance to deliver precision and reliability in every inspection. As a bonded and insured licensed contractor, we offer peace of mind while guaranteeing top-tier workmanship. With priority scheduling, same-day certification, and a multi-device discount, we take care of your backflow preventer installation testing and maintenance needs so you can focus on running your business.\n\nWhether you need routine testing or urgent repairs, our satisfaction guarantee ensures you receive the highest level of service at the most competitive rates.",
         "tiles": [
           {
-            "price": "$99",
+            "price": "$109",
             "title": "Residential Testing Value Package",
             "detail": "Call to Schedule"
           },
           {
-            "price": "$99",
+            "price": "$119",
             "title": "Multi-Device Testing Bundle",
             "detail": "Request Pricing *"
           },
           {
-            "price": "$159",
+            "price": "$179",
             "title": "Commercial Testing Value Package",
             "detail": "Managed Service"
           }
@@ -561,17 +561,17 @@
     "anomalyRecords": [],
     "pricingTiles": [
       {
-        "price": "$99",
+        "price": "$109",
         "title": "Residential Testing Value Package",
         "detail": "Call to Schedule"
       },
       {
-        "price": "$99",
+        "price": "$119",
         "title": "Multi-Device Testing Bundle",
         "detail": "Request Pricing *"
       },
       {
-        "price": "$159",
+        "price": "$179",
         "title": "Commercial Testing Value Package",
         "detail": "Managed Service"
       }
