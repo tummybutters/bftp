@@ -15,7 +15,7 @@
         "dataPoint": "CDC-documented cross-connection outbreaks",
         "value": "57 outbreaks; 9,734 illnesses",
         "scope": "U.S. community water systems",
-        "timePeriod": "1981\u20131998",
+        "timePeriod": "1981–1998",
         "whyItMatters": "This is one of the clearest historical national figures linking backflow/cross-connections to documented disease outbreaks.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -28,7 +28,7 @@
         "dataPoint": "EPA compilation of reported backflow incidents and illnesses",
         "value": "459 incidents; estimated 12,093 illnesses",
         "scope": "United States",
-        "timePeriod": "1970\u20132001",
+        "timePeriod": "1970–2001",
         "whyItMatters": "One of the most practical national incident counts for backflow-related illness discussions.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -39,7 +39,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "why-backflow-testing-still-matters-57-u-s-outbreaks-and-9-734-reported-illnesses",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -58,7 +58,7 @@
         "dataPoint": "Share of distribution-system outbreaks attributable to cross-connection/backflow",
         "value": "50.6%",
         "scope": "U.S. community water system waterborne disease outbreaks caused by distribution-system deficiencies",
-        "timePeriod": "1971\u20131998",
+        "timePeriod": "1971–1998",
         "whyItMatters": "Strongest historical percentage for showing how central cross-connection/backflow is inside distribution-system contamination.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -82,12 +82,12 @@
     ],
     "ctaType": "commercial_compliance_review",
     "slug": "the-hidden-half-of-water-system-outbreaks-cross-connections-caused-50-6-of-distribution-system-cases",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
     "id": "backflow_article_bank-003",
-    "articleTitle": "Backflow Isn\u2019t Just Dirty Water: Biological vs. Chemical Contamination in the Outbreak Record",
+    "articleTitle": "Backflow Isn’t Just Dirty Water: Biological vs. Chemical Contamination in the Outbreak Record",
     "category": "Risk / education",
     "sheetName": "Backflow Article Bank",
     "audience": "Businesses, schools, restaurants, health-sensitive facilities",
@@ -101,8 +101,8 @@
         "dataPoint": "Microbiological cross-connection outbreaks within that CDC total",
         "value": "20 outbreaks; 6,333 illnesses",
         "scope": "U.S. community water systems",
-        "timePeriod": "1981\u20131998",
-        "whyItMatters": "Useful for showing that biological contamination\u2014not just chemical contamination\u2014has been a major backflow risk.",
+        "timePeriod": "1981–1998",
+        "whyItMatters": "Useful for showing that biological contamination—not just chemical contamination—has been a major backflow risk.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
         "sourceUrl": "https://www.epa.gov/sites/default/files/2015-09/documents/2007_05_18_disinfection_tcr_issuepaper_tcr_crossconnection-backflow.pdf",
@@ -114,7 +114,7 @@
         "dataPoint": "Chemical cross-connection outbreaks within that CDC total",
         "value": "15 outbreaks; 679 illnesses",
         "scope": "U.S. community water systems",
-        "timePeriod": "1981\u20131998",
+        "timePeriod": "1981–1998",
         "whyItMatters": "Shows that chemical backflow events are a meaningful share of documented incidents.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -125,12 +125,12 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "backflow-isn-t-just-dirty-water-biological-vs-chemical-contamination-in-the-outbreak-record",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
     "id": "backflow_article_bank-004",
-    "articleTitle": "The Backflow Problem We Probably Underreport: What EPA\u2019s Incident Gap Really Means",
+    "articleTitle": "The Backflow Problem We Probably Underreport: What EPA’s Incident Gap Really Means",
     "category": "Risk / education",
     "sheetName": "Backflow Article Bank",
     "audience": "Commercial decision-makers, compliance-sensitive readers",
@@ -144,7 +144,7 @@
         "dataPoint": "Cross-connection outbreaks where contaminant was not reported",
         "value": "22 outbreaks; 2,722 illnesses",
         "scope": "U.S. community water systems",
-        "timePeriod": "1981\u20131998",
+        "timePeriod": "1981–1998",
         "whyItMatters": "Helpful when explaining that reporting has often been incomplete, so documented numbers likely understate the true burden.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -157,7 +157,7 @@
         "dataPoint": "Illness-count reporting gap in EPA backflow incident compilation",
         "value": "97 of 309 incidents had illness counts; 22 of those 97 reported no illnesses; only 26 of 75 incidents with illness appeared in CDC outbreak summaries; estimated 4,416 illnesses across those 75 incidents",
         "scope": "United States",
-        "timePeriod": "1981\u20131999",
+        "timePeriod": "1981–1999",
         "whyItMatters": "Excellent evidence that backflow illness events are likely undercounted in formal outbreak surveillance.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -168,7 +168,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "the-backflow-problem-we-probably-underreport-what-epa-s-incident-gap-really-means",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -187,7 +187,7 @@
         "dataPoint": "EPA compilation of reported backflow incidents and illnesses",
         "value": "459 incidents; estimated 12,093 illnesses",
         "scope": "United States",
-        "timePeriod": "1970\u20132001",
+        "timePeriod": "1970–2001",
         "whyItMatters": "One of the most practical national incident counts for backflow-related illness discussions.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -200,7 +200,7 @@
         "dataPoint": "Illness-count reporting gap in EPA backflow incident compilation",
         "value": "97 of 309 incidents had illness counts; 22 of those 97 reported no illnesses; only 26 of 75 incidents with illness appeared in CDC outbreak summaries; estimated 4,416 illnesses across those 75 incidents",
         "scope": "United States",
-        "timePeriod": "1981\u20131999",
+        "timePeriod": "1981–1999",
         "whyItMatters": "Excellent evidence that backflow illness events are likely undercounted in formal outbreak surveillance.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -211,7 +211,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "what-459-reported-backflow-incidents-reveal-about-real-world-water-safety",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -241,7 +241,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "how-common-are-cross-connections-california-says-42-of-surveys-found-one",
-    "status": "Queued",
+    "status": "Published",
     "notes": "Carry the California angle through the hero, body, and related links."
   },
   {
@@ -271,7 +271,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "the-4-cross-connections-inspectors-find-most-irrigation-fire-lines-hoses-and-boilers",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -290,7 +290,7 @@
         "dataPoint": "Share of community-water outbreaks caused by contamination in distribution systems",
         "value": "30.3%",
         "scope": "U.S. community water system waterborne disease outbreaks",
-        "timePeriod": "1971\u20131998",
+        "timePeriod": "1971–1998",
         "whyItMatters": "This frames distribution-system integrity as a major public-health issue, not a niche technical problem.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -301,7 +301,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "nearly-one-third-of-community-water-outbreaks-came-from-distribution-system-contamination",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -331,7 +331,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "why-pressure-loss-creates-backflow-risk-11-186-pressure-reduction-incidents-in-one-year",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -361,7 +361,7 @@
     ],
     "ctaType": "commercial_compliance_review",
     "slug": "how-fast-can-contamination-enter-a-water-line-epa-modeling-saw-69-to-78-gallons-in-60-seconds",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -391,12 +391,12 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "backflow-prevention-is-a-program-not-just-a-device-the-inspection-gap-owners-never-see",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
     "id": "backflow_article_bank-012",
-    "articleTitle": "91% of Systems Had Backflow Programs\u2014So Why Did Only 49% Require Incident Reporting?",
+    "articleTitle": "91% of Systems Had Backflow Programs—So Why Did Only 49% Require Incident Reporting?",
     "category": "Program quality",
     "sheetName": "Backflow Article Bank",
     "audience": "Compliance-minded readers, utilities, facility managers",
@@ -421,12 +421,12 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
     "id": "backflow_article_bank-013",
-    "articleTitle": "California Backflow Testing Requirements: What \u201cAt Least Annually\u201d Actually Means",
+    "articleTitle": "California Backflow Testing Requirements: What “At Least Annually” Actually Means",
     "category": "Compliance / California",
     "sheetName": "Backflow Article Bank",
     "audience": "California businesses, HOAs, property owners",
@@ -451,7 +451,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "california-backflow-testing-requirements-what-at-least-annually-actually-means",
-    "status": "Queued",
+    "status": "Review Required",
     "notes": "Carry the California angle through the hero, body, and related links."
   },
   {
@@ -481,7 +481,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "failed-a-backflow-test-in-california-you-may-have-30-days-to-repair-it",
-    "status": "Queued",
+    "status": "Review Required",
     "notes": "Carry the California angle through the hero, body, and related links."
   },
   {
@@ -511,7 +511,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "why-california-requires-tester-notice-within-1-day-after-a-cross-connection-is-observed",
-    "status": "Queued",
+    "status": "Review Required",
     "notes": "Carry the California angle through the hero, body, and related links."
   },
   {
@@ -541,8 +541,8 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "backflow-testing-in-san-bernardino-annual-testing-and-30-day-submission-rules",
-    "status": "Queued",
-    "notes": ""
+    "status": "Published",
+    "notes": "Published 2026-06-24 after checking the San Bernardino County source URL and keeping the 30-day submission language framed as a local county example."
   },
   {
     "id": "backflow_article_bank-017",
@@ -783,7 +783,7 @@
         "dataPoint": "Share of community-distribution contamination outbreaks attributed to cross-connections and backflow",
         "value": "78% of outbreaks; 95% of illness cases",
         "scope": "U.S. community distribution-system contamination",
-        "timePeriod": "1920\u20131980",
+        "timePeriod": "1920–1980",
         "whyItMatters": "Very strong historical statistic, but it should be labeled as long-run historical context rather than current-year data.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -842,7 +842,7 @@
   },
   {
     "id": "plumbing_water_article_bank-001",
-    "articleTitle": "The Average Family Loses 9,400 Gallons a Year to Leaks\u2014How Much Are You Wasting?",
+    "articleTitle": "The Average Family Loses 9,400 Gallons a Year to Leaks—How Much Are You Wasting?",
     "category": "Residential leaks / waste",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, landlords, HOA residents",
@@ -880,7 +880,7 @@
     ],
     "ctaType": "request_plumbing_inspection",
     "slug": "the-average-family-loses-9-400-gallons-a-year-to-leaks-how-much-are-you-wasting",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -953,7 +953,7 @@
       {
         "repositoryRow": 50,
         "dataPoint": "Homes with easy-to-fix leaks wasting 90 gallons/day or more",
-        "value": "Approximately 5%\u201310% of homes",
+        "value": "Approximately 5%–10% of homes",
         "scope": "United States",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Helpful for showing how much waste is tied to relatively simple repairs.",
@@ -971,7 +971,7 @@
   },
   {
     "id": "plumbing_water_article_bank-004",
-    "articleTitle": "More Than Half of Indoor Water Use Happens in the Bathroom\u2014Start There First",
+    "articleTitle": "More Than Half of Indoor Water Use Happens in the Bathroom—Start There First",
     "category": "Residential water use",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, remodelers, water-conscious families",
@@ -1027,7 +1027,7 @@
   },
   {
     "id": "plumbing_water_article_bank-005",
-    "articleTitle": "Replacing One Showerhead Can Save 2,700+ Gallons a Year\u2014and More Than $70",
+    "articleTitle": "Replacing One Showerhead Can Save 2,700+ Gallons a Year—and More Than $70",
     "category": "Residential fixture efficiency",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, apartment residents, landlords",
@@ -1125,7 +1125,7 @@
       {
         "repositoryRow": 58,
         "dataPoint": "Average-family savings from replacing old inefficient toilets with WaterSense models",
-        "value": "20%\u201360% reduction in toilet water use; nearly 13,000 gallons/year; more than $170/year; about $3,400 over toilet life",
+        "value": "20%–60% reduction in toilet water use; nearly 13,000 gallons/year; more than $170/year; about $3,400 over toilet life",
         "scope": "Typical U.S. family",
         "timePeriod": "Current EPA page",
         "whyItMatters": "One of the best all-in-one toilet retrofit statistics available from a primary source.",
@@ -1156,7 +1156,7 @@
   },
   {
     "id": "plumbing_water_article_bank-008",
-    "articleTitle": "Your Water Heater Drives About 18% of Home Energy Use\u2014Plumbing Choices Affect That",
+    "articleTitle": "Your Water Heater Drives About 18% of Home Energy Use—Plumbing Choices Affect That",
     "category": "Energy + plumbing",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, energy-conscious readers, remodelers",
@@ -1181,7 +1181,7 @@
       {
         "repositoryRow": 63,
         "dataPoint": "Potential hot-water savings from low-flow fixtures",
-        "value": "25%\u201360% water savings",
+        "value": "25%–60% water savings",
         "scope": "Low-flow fixtures",
         "timePeriod": "Current DOE page",
         "whyItMatters": "Useful for water-heater and hot-water-use reduction content.",
@@ -1199,7 +1199,7 @@
   },
   {
     "id": "plumbing_water_article_bank-009",
-    "articleTitle": "Reverse Osmosis Systems Can Waste 5+ Gallons for Every Gallon Treated\u2014What to Look For Instead",
+    "articleTitle": "Reverse Osmosis Systems Can Waste 5+ Gallons for Every Gallon Treated—What to Look For Instead",
     "category": "Water filtration / efficiency",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners shopping for filtration systems",
@@ -1229,7 +1229,7 @@
   },
   {
     "id": "plumbing_water_article_bank-010",
-    "articleTitle": "Efficient Fixtures Can Cut Water Use by at Least 20%\u2014Where the Biggest Gains Usually Come From",
+    "articleTitle": "Efficient Fixtures Can Cut Water Use by at Least 20%—Where the Biggest Gains Usually Come From",
     "category": "Residential efficiency overview",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, utility-bill shoppers, renovators",
@@ -1267,7 +1267,7 @@
       {
         "repositoryRow": 58,
         "dataPoint": "Average-family savings from replacing old inefficient toilets with WaterSense models",
-        "value": "20%\u201360% reduction in toilet water use; nearly 13,000 gallons/year; more than $170/year; about $3,400 over toilet life",
+        "value": "20%–60% reduction in toilet water use; nearly 13,000 gallons/year; more than $170/year; about $3,400 over toilet life",
         "scope": "Typical U.S. family",
         "timePeriod": "Current EPA page",
         "whyItMatters": "One of the best all-in-one toilet retrofit statistics available from a primary source.",
@@ -1280,7 +1280,7 @@
       {
         "repositoryRow": 63,
         "dataPoint": "Potential hot-water savings from low-flow fixtures",
-        "value": "25%\u201360% water savings",
+        "value": "25%–60% water savings",
         "scope": "Low-flow fixtures",
         "timePeriod": "Current DOE page",
         "whyItMatters": "Useful for water-heater and hot-water-use reduction content.",
@@ -1298,7 +1298,7 @@
   },
   {
     "id": "plumbing_water_article_bank-011",
-    "articleTitle": "40 Out of 50 States Expect Water Shortages\u2014Why Home Plumbing Efficiency Isn\u2019t Optional",
+    "articleTitle": "40 Out of 50 States Expect Water Shortages—Why Home Plumbing Efficiency Isn’t Optional",
     "category": "Conservation / climate pressure",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, drought-conscious readers, policymakers",
@@ -1341,7 +1341,7 @@
   },
   {
     "id": "plumbing_water_article_bank-012",
-    "articleTitle": "WaterSense Has Saved 8.7 Trillion Gallons Since 2006\u2014What That Means for Real Homes",
+    "articleTitle": "WaterSense Has Saved 8.7 Trillion Gallons Since 2006—What That Means for Real Homes",
     "category": "Authority / standards",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, skeptical shoppers, contractors",
@@ -1440,7 +1440,7 @@
   },
   {
     "id": "plumbing_water_article_bank-014",
-    "articleTitle": "Nearly 8 Billion Gallons a Day Go to Residential Outdoor Use\u2014Why Hose and Irrigation Habits Matter",
+    "articleTitle": "Nearly 8 Billion Gallons a Day Go to Residential Outdoor Use—Why Hose and Irrigation Habits Matter",
     "category": "Outdoor use / conservation",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, landscapers, HOA communities",
@@ -1483,7 +1483,7 @@
   },
   {
     "id": "plumbing_water_article_bank-015",
-    "articleTitle": "Commercial and Institutional Buildings Use 17% of Public-Water Withdrawals\u2014Why Plumbing Efficiency Matters at Scale",
+    "articleTitle": "Commercial and Institutional Buildings Use 17% of Public-Water Withdrawals—Why Plumbing Efficiency Matters at Scale",
     "category": "Commercial plumbing overview",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Facility managers, owners, engineers",
@@ -1526,7 +1526,7 @@
   },
   {
     "id": "plumbing_water_article_bank-016",
-    "articleTitle": "Leaks Can Consume More Than 6% of a Facility\u2019s Water Use\u2014Before Anyone Notices",
+    "articleTitle": "Leaks Can Consume More Than 6% of a Facility’s Water Use—Before Anyone Notices",
     "category": "Commercial leaks / diagnostics",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Facility managers, office managers, building engineers",
@@ -1551,7 +1551,7 @@
       {
         "repositoryRow": 71,
         "dataPoint": "Running fill valve leak magnitude",
-        "value": "0.5\u20133 gpm; up to 4,000 gallons per day",
+        "value": "0.5–3 gpm; up to 4,000 gallons per day",
         "scope": "Commercial restrooms",
         "timePeriod": "2025 EPA webinar",
         "whyItMatters": "Excellent for showing how quickly a single commercial toilet failure can waste water.",
@@ -1607,7 +1607,7 @@
       {
         "repositoryRow": 71,
         "dataPoint": "Running fill valve leak magnitude",
-        "value": "0.5\u20133 gpm; up to 4,000 gallons per day",
+        "value": "0.5–3 gpm; up to 4,000 gallons per day",
         "scope": "Commercial restrooms",
         "timePeriod": "2025 EPA webinar",
         "whyItMatters": "Excellent for showing how quickly a single commercial toilet failure can waste water.",
@@ -1663,7 +1663,7 @@
       {
         "repositoryRow": 69,
         "dataPoint": "Kitchen water use in other facility types",
-        "value": "Upwards of 10%\u201315%",
+        "value": "Upwards of 10%–15%",
         "scope": "Hospitals, offices, schools, and hotels",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Useful when writing about non-restaurant commercial buildings that still have significant kitchen loads.",
@@ -1736,7 +1736,7 @@
       {
         "repositoryRow": 73,
         "dataPoint": "Installed base of flushometer-valve toilets and inefficiency share",
-        "value": "Nearly 27 million installed; 26% (7 million) old toilets flush 3.0\u20137.0 gpf",
+        "value": "Nearly 27 million installed; 26% (7 million) old toilets flush 3.0–7.0 gpf",
         "scope": "United States",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Strong installed-base evidence for commercial toilet replacement opportunities.",
@@ -1835,7 +1835,7 @@
       {
         "repositoryRow": 71,
         "dataPoint": "Running fill valve leak magnitude",
-        "value": "0.5\u20133 gpm; up to 4,000 gallons per day",
+        "value": "0.5–3 gpm; up to 4,000 gallons per day",
         "scope": "Commercial restrooms",
         "timePeriod": "2025 EPA webinar",
         "whyItMatters": "Excellent for showing how quickly a single commercial toilet failure can waste water.",
@@ -1853,7 +1853,7 @@
   },
   {
     "id": "plumbing_water_article_bank-023",
-    "articleTitle": "That \u2018Small\u2019 Flapper Leak? It Can Waste 900 Gallons a Month",
+    "articleTitle": "That ‘Small’ Flapper Leak? It Can Waste 900 Gallons a Month",
     "category": "Commercial maintenance",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, business owners, maintenance staff",
@@ -1883,7 +1883,7 @@
   },
   {
     "id": "plumbing_water_article_bank-024",
-    "articleTitle": "Water Damage and Freezing Claims Hit 1.5% of Insured Homes\u2014and Average $15,400",
+    "articleTitle": "Water Damage and Freezing Claims Hit 1.5% of Insured Homes—and Average $15,400",
     "category": "Water damage / insurance",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, landlords, insurance-minded readers",
@@ -1897,7 +1897,7 @@
         "dataPoint": "Insured homes with any claim, and homes with water-damage/freezing claims",
         "value": "5.6% of insured homes had a claim; 1.5% had water-damage/freezing losses",
         "scope": "United States",
-        "timePeriod": "2019\u20132023",
+        "timePeriod": "2019–2023",
         "whyItMatters": "A strong credibility anchor for water-damage risk in homeowner education content.",
         "sourceOrganization": "Insurance Information Institute",
         "sourceTitle": "Facts + Statistics: Homeowners and renters insurance",
@@ -1910,7 +1910,7 @@
         "dataPoint": "Average severity of water-damage/freezing claims",
         "value": "$15,400 weighted average claim severity",
         "scope": "United States homeowners insurance claims",
-        "timePeriod": "2019\u20132023",
+        "timePeriod": "2019–2023",
         "whyItMatters": "Very reusable cost-of-inaction statistic for plumbing repairs and preventive maintenance.",
         "sourceOrganization": "Insurance Information Institute",
         "sourceTitle": "Archived Tables",
@@ -1940,7 +1940,7 @@
         "dataPoint": "State Farm frozen-pipe and water-damage claims",
         "value": "Over $806 million paid on 32,000+ claims; average claim about $25,000",
         "scope": "State Farm claims",
-        "timePeriod": "Aug. 2022\u2013Aug. 2023",
+        "timePeriod": "Aug. 2022–Aug. 2023",
         "whyItMatters": "Good insurer-sourced benchmark for freeze-related plumbing losses.",
         "sourceOrganization": "State Farm",
         "sourceTitle": "Freeze & Thaw: Bad Mix For All",
@@ -1994,7 +1994,7 @@
       {
         "repositoryRow": 82,
         "dataPoint": "Drying window that usually prevents mold growth",
-        "value": "24\u201348 hours",
+        "value": "24–48 hours",
         "scope": "Indoor leak/spill response",
         "timePeriod": "Current EPA guidance",
         "whyItMatters": "A practical emergency-response benchmark after leaks or overflows.",
@@ -2009,7 +2009,7 @@
         "dataPoint": "Insured homes with any claim, and homes with water-damage/freezing claims",
         "value": "5.6% of insured homes had a claim; 1.5% had water-damage/freezing losses",
         "scope": "United States",
-        "timePeriod": "2019\u20132023",
+        "timePeriod": "2019–2023",
         "whyItMatters": "A strong credibility anchor for water-damage risk in homeowner education content.",
         "sourceOrganization": "Insurance Information Institute",
         "sourceTitle": "Facts + Statistics: Homeowners and renters insurance",
@@ -2025,7 +2025,7 @@
   },
   {
     "id": "plumbing_water_article_bank-027",
-    "articleTitle": "Tap Water That\u2019s Too Hot Sends an Estimated 1,500 People to the Hospital Each Year",
+    "articleTitle": "Tap Water That’s Too Hot Sends an Estimated 1,500 People to the Hospital Each Year",
     "category": "Plumbing safety",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Families with kids, seniors, landlords, remodelers",
@@ -2069,7 +2069,7 @@
         "dataPoint": "Annual U.S. burden of waterborne disease",
         "value": "7.2 million illnesses; 118,000 hospitalizations; 6,630 deaths; $3.33 billion direct healthcare cost",
         "scope": "United States",
-        "timePeriod": "Annual estimate based on 2000\u20132015 analysis",
+        "timePeriod": "Annual estimate based on 2000–2015 analysis",
         "whyItMatters": "This is one of the best national 'why water safety matters' numbers for any plumbing or backflow business.",
         "sourceOrganization": "CDC",
         "sourceTitle": "Waterborne Disease in the United States",
@@ -2082,10 +2082,10 @@
         "dataPoint": "Legionella share of drinking-water outbreak burden",
         "value": "786 illnesses (37%); 544 hospitalizations (97%); 86 deaths (98%)",
         "scope": "United States",
-        "timePeriod": "2015\u20132020",
+        "timePeriod": "2015–2020",
         "whyItMatters": "This is the clearest evidence that premise-plumbing pathogens dominate the severe end of the drinking-water outbreak burden.",
         "sourceOrganization": "CDC",
-        "sourceTitle": "Surveillance of Waterborne Disease Outbreaks Associated with Drinking Water \u2014 United States, 2015\u20132020 (PDF)",
+        "sourceTitle": "Surveillance of Waterborne Disease Outbreaks Associated with Drinking Water — United States, 2015–2020 (PDF)",
         "sourceUrl": "https://www.cdc.gov/mmwr/volumes/73/ss/pdfs/ss7301a1-H.pdf",
         "authorityType": "Government (federal)",
         "notes": "CDC outbreak surveillance summary."
@@ -2095,10 +2095,10 @@
         "dataPoint": "Biofilm-associated outbreak reports citing premise/point-of-use location as contributing factor",
         "value": "287 outbreaks (63%)",
         "scope": "Legionella and other biofilm-associated pathogen outbreaks",
-        "timePeriod": "2015\u20132020",
+        "timePeriod": "2015–2020",
         "whyItMatters": "A strong stat for explaining that the problem is often inside buildings, not only at the utility source.",
         "sourceOrganization": "CDC",
-        "sourceTitle": "Surveillance of Waterborne Disease Outbreaks Associated with Drinking Water \u2014 United States, 2015\u20132020 (PDF)",
+        "sourceTitle": "Surveillance of Waterborne Disease Outbreaks Associated with Drinking Water — United States, 2015–2020 (PDF)",
         "sourceUrl": "https://www.cdc.gov/mmwr/volumes/73/ss/pdfs/ss7301a1-H.pdf",
         "authorityType": "Government (federal)",
         "notes": "CDC outbreak surveillance summary."
@@ -2154,7 +2154,7 @@
   },
   {
     "id": "plumbing_water_article_bank-030",
-    "articleTitle": "America\u2019s Water Mains Break About Every 2 Minutes\u2014Why That Matters Inside Your Property Line",
+    "articleTitle": "America’s Water Mains Break About Every 2 Minutes—Why That Matters Inside Your Property Line",
     "category": "Infrastructure context",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Homeowners, businesses, utility-conscious readers",
@@ -2283,7 +2283,7 @@
   },
   {
     "id": "plumbing_water_article_bank-033",
-    "articleTitle": "One in Five Households Relies on Septic\u2014And 10% to 20% of Systems Fail Over Their Lifetime",
+    "articleTitle": "One in Five Households Relies on Septic—And 10% to 20% of Systems Fail Over Their Lifetime",
     "category": "Septic systems",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Rural homeowners, homebuyers, septic-service customers",
@@ -2308,7 +2308,7 @@
       {
         "repositoryRow": 95,
         "dataPoint": "Homes using septic and systems failing over their lives",
-        "value": "Approximately 20% of homes use septic systems; an estimated 10%\u201320% fail during their operational lifetimes",
+        "value": "Approximately 20% of homes use septic systems; an estimated 10%–20% fail during their operational lifetimes",
         "scope": "United States",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Useful for septic inspection and maintenance content.",
@@ -2339,7 +2339,7 @@
   },
   {
     "id": "plumbing_water_article_bank-034",
-    "articleTitle": "About 1 in 8 Residents Uses a Private Well\u2014And 1 in 5 Sampled Wells Had a Chemical at Health-Relevant Levels",
+    "articleTitle": "About 1 in 8 Residents Uses a Private Well—And 1 in 5 Sampled Wells Had a Chemical at Health-Relevant Levels",
     "category": "Private wells",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Rural homeowners, buyers, county residents",
@@ -2382,7 +2382,7 @@
   },
   {
     "id": "plumbing_water_article_bank-035",
-    "articleTitle": "America Still Has About 4 Million Lead Service Lines\u2014What That Means for Older Homes",
+    "articleTitle": "America Still Has About 4 Million Lead Service Lines—What That Means for Older Homes",
     "category": "Older homes / lead risk",
     "sheetName": "Plumbing Water Article Bank",
     "audience": "Older-home owners, buyers, landlords, renovators",
@@ -2425,7 +2425,7 @@
   },
   {
     "id": "local_regulation_article_bank-001",
-    "articleTitle": "California Backflow Testing Rules: What \u201cAt Least Annually\u201d Means for Property Owners",
+    "articleTitle": "California Backflow Testing Rules: What “At Least Annually” Means for Property Owners",
     "category": "California rules / timing",
     "sheetName": "Local Regulation Article Bank",
     "audience": "California property owners, HOAs, restaurants, commercial managers",
@@ -2498,7 +2498,7 @@
   },
   {
     "id": "local_regulation_article_bank-003",
-    "articleTitle": "Saw a Cross-Connection? California\u2019s 1-Day Notice Expectation Is Faster Than Most Owners Think",
+    "articleTitle": "Saw a Cross-Connection? California’s 1-Day Notice Expectation Is Faster Than Most Owners Think",
     "category": "California incident response",
     "sheetName": "Local Regulation Article Bank",
     "audience": "Backflow testers, commercial owners, maintenance teams",
@@ -2730,7 +2730,7 @@
   },
   {
     "id": "local_regulation_article_bank-009",
-    "articleTitle": "Oregon\u2019s March 31 Deadline: What Annual Cross-Connection Program Reporting Looks Like",
+    "articleTitle": "Oregon’s March 31 Deadline: What Annual Cross-Connection Program Reporting Looks Like",
     "category": "State program reporting",
     "sheetName": "Local Regulation Article Bank",
     "audience": "Water-system staff, engineers, compliance-minded property readers",
@@ -2773,7 +2773,7 @@
   },
   {
     "id": "local_regulation_article_bank-010",
-    "articleTitle": "Most Systems Had Backflow Programs\u2014So Why Did Only 49% Require Incident Reporting?",
+    "articleTitle": "Most Systems Had Backflow Programs—So Why Did Only 49% Require Incident Reporting?",
     "category": "Program quality / reporting gaps",
     "sheetName": "Local Regulation Article Bank",
     "audience": "Engineers, water professionals, compliance-focused readers",
@@ -2800,7 +2800,7 @@
         "dataPoint": "Illness-count reporting gap in EPA backflow incident compilation",
         "value": "97 of 309 incidents had illness counts; 22 of those 97 reported no illnesses; only 26 of 75 incidents with illness appeared in CDC outbreak summaries; estimated 4,416 illnesses across those 75 incidents",
         "scope": "United States",
-        "timePeriod": "1981\u20131999",
+        "timePeriod": "1981–1999",
         "whyItMatters": "Excellent evidence that backflow illness events are likely undercounted in formal outbreak surveillance.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -2859,7 +2859,7 @@
   },
   {
     "id": "local_regulation_article_bank-012",
-    "articleTitle": "Annual Testing Isn\u2019t Just Paperwork: One Utility Found 7 Failed RP Assemblies in a Year",
+    "articleTitle": "Annual Testing Isn’t Just Paperwork: One Utility Found 7 Failed RP Assemblies in a Year",
     "category": "Utility field data / annual testing",
     "sheetName": "Local Regulation Article Bank",
     "audience": "Commercial owners, engineers, water professionals",
@@ -3045,7 +3045,7 @@
         "dataPoint": "Share of community-water outbreaks caused by contamination in distribution systems",
         "value": "30.3%",
         "scope": "U.S. community water system waterborne disease outbreaks",
-        "timePeriod": "1971\u20131998",
+        "timePeriod": "1971–1998",
         "whyItMatters": "This frames distribution-system integrity as a major public-health issue, not a niche technical problem.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -3190,7 +3190,7 @@
   },
   {
     "id": "local_regulation_article_bank-020",
-    "articleTitle": "Septic Compliance by the Numbers: 1 in 5 Households Use Septic and 10%\u201320% of Systems Fail",
+    "articleTitle": "Septic Compliance by the Numbers: 1 in 5 Households Use Septic and 10%–20% of Systems Fail",
     "category": "Septic / local responsibility",
     "sheetName": "Local Regulation Article Bank",
     "audience": "Homeowners, rural property buyers, real-estate readers",
@@ -3202,7 +3202,7 @@
       {
         "repositoryRow": 95,
         "dataPoint": "Homes using septic and systems failing over their lives",
-        "value": "Approximately 20% of homes use septic systems; an estimated 10%\u201320% fail during their operational lifetimes",
+        "value": "Approximately 20% of homes use septic systems; an estimated 10%–20% fail during their operational lifetimes",
         "scope": "United States",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Useful for septic inspection and maintenance content.",
@@ -3358,7 +3358,7 @@
   },
   {
     "id": "commercial_facility_bank-001",
-    "articleTitle": "Commercial Buildings Use 17% of Public-Water Withdrawals\u2014Why Property Managers Should Track Water Like Energy",
+    "articleTitle": "Commercial Buildings Use 17% of Public-Water Withdrawals—Why Property Managers Should Track Water Like Energy",
     "category": "Portfolio / benchmarking",
     "sheetName": "Commercial Facility Bank",
     "audience": "Property managers, commercial owners, facility directors",
@@ -3383,7 +3383,7 @@
     ],
     "ctaType": "commercial_compliance_review",
     "slug": "commercial-buildings-use-17-of-public-water-withdrawals-why-property-managers-should-track-water-like-energy",
-    "status": "Queued",
+    "status": "Published",
     "notes": ""
   },
   {
@@ -3418,7 +3418,7 @@
   },
   {
     "id": "commercial_facility_bank-003",
-    "articleTitle": "More Than 6% of Facility Water Use Can Disappear Through Leaks\u2014Before Anyone Notices",
+    "articleTitle": "More Than 6% of Facility Water Use Can Disappear Through Leaks—Before Anyone Notices",
     "category": "Leaks / maintenance",
     "sheetName": "Commercial Facility Bank",
     "audience": "Property managers, maintenance supervisors, building engineers",
@@ -3448,7 +3448,7 @@
   },
   {
     "id": "commercial_facility_bank-004",
-    "articleTitle": "Nearly Half of Facility Water Use Happens in Restrooms and Laundries\u2014Start Your Audit There",
+    "articleTitle": "Nearly Half of Facility Water Use Happens in Restrooms and Laundries—Start Your Audit There",
     "category": "Restrooms / audits",
     "sheetName": "Commercial Facility Bank",
     "audience": "Facility owners, school administrators, hotel operators",
@@ -3478,7 +3478,7 @@
   },
   {
     "id": "commercial_facility_bank-005",
-    "articleTitle": "In Restaurants, Nearly Half of Water Use Happens in the Kitchen\u2014Why Equipment and Plumbing Both Matter",
+    "articleTitle": "In Restaurants, Nearly Half of Water Use Happens in the Kitchen—Why Equipment and Plumbing Both Matter",
     "category": "Restaurants / kitchens",
     "sheetName": "Commercial Facility Bank",
     "audience": "Restaurant owners, franchise operators, hospitality managers",
@@ -3508,7 +3508,7 @@
   },
   {
     "id": "commercial_facility_bank-006",
-    "articleTitle": "Offices, Hotels, Schools, and Hospitals Still Put 10%\u201315% of Water Into Kitchens",
+    "articleTitle": "Offices, Hotels, Schools, and Hospitals Still Put 10%–15% of Water Into Kitchens",
     "category": "Buildings with kitchens",
     "sheetName": "Commercial Facility Bank",
     "audience": "Office managers, school districts, healthcare and hospitality operators",
@@ -3520,7 +3520,7 @@
       {
         "repositoryRow": 69,
         "dataPoint": "Kitchen water use in other facility types",
-        "value": "Upwards of 10%\u201315%",
+        "value": "Upwards of 10%–15%",
         "scope": "Hospitals, offices, schools, and hotels",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Useful when writing about non-restaurant commercial buildings that still have significant kitchen loads.",
@@ -3580,7 +3580,7 @@
       {
         "repositoryRow": 71,
         "dataPoint": "Running fill valve leak magnitude",
-        "value": "0.5\u20133 gpm; up to 4,000 gallons per day",
+        "value": "0.5–3 gpm; up to 4,000 gallons per day",
         "scope": "Commercial restrooms",
         "timePeriod": "2025 EPA webinar",
         "whyItMatters": "Excellent for showing how quickly a single commercial toilet failure can waste water.",
@@ -3598,7 +3598,7 @@
   },
   {
     "id": "commercial_facility_bank-009",
-    "articleTitle": "A \u2018Small\u2019 Toilet Leak Can Still Waste 900 Gallons a Month in Your Building",
+    "articleTitle": "A ‘Small’ Toilet Leak Can Still Waste 900 Gallons a Month in Your Building",
     "category": "Restroom leaks",
     "sheetName": "Commercial Facility Bank",
     "audience": "HOA managers, office operators, retail property managers",
@@ -3628,7 +3628,7 @@
   },
   {
     "id": "commercial_facility_bank-010",
-    "articleTitle": "America Has Nearly 27 Million Flushometer Toilets\u2014and 7 Million Are Old, High-Volume Models",
+    "articleTitle": "America Has Nearly 27 Million Flushometer Toilets—and 7 Million Are Old, High-Volume Models",
     "category": "Retrofits / toilets",
     "sheetName": "Commercial Facility Bank",
     "audience": "Commercial owners, REIT operators, facility planners",
@@ -3640,7 +3640,7 @@
       {
         "repositoryRow": 73,
         "dataPoint": "Installed base of flushometer-valve toilets and inefficiency share",
-        "value": "Nearly 27 million installed; 26% (7 million) old toilets flush 3.0\u20137.0 gpf",
+        "value": "Nearly 27 million installed; 26% (7 million) old toilets flush 3.0–7.0 gpf",
         "scope": "United States",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Strong installed-base evidence for commercial toilet replacement opportunities.",
@@ -3778,7 +3778,7 @@
   },
   {
     "id": "commercial_facility_bank-015",
-    "articleTitle": "82% of Legionella Environmental Deficiencies Were Process Failures\u2014What Facility Owners Can Actually Control",
+    "articleTitle": "82% of Legionella Environmental Deficiencies Were Process Failures—What Facility Owners Can Actually Control",
     "category": "Health / operations",
     "sheetName": "Commercial Facility Bank",
     "audience": "Building engineers, operations leaders, compliance teams",
@@ -3808,7 +3808,7 @@
   },
   {
     "id": "commercial_facility_bank-016",
-    "articleTitle": "After a Commercial Leak, You May Have Only 24\u201348 Hours to Beat Mold",
+    "articleTitle": "After a Commercial Leak, You May Have Only 24–48 Hours to Beat Mold",
     "category": "Emergency response / leaks",
     "sheetName": "Commercial Facility Bank",
     "audience": "Property managers, restoration decision-makers, landlords",
@@ -3820,7 +3820,7 @@
       {
         "repositoryRow": 82,
         "dataPoint": "Drying window that usually prevents mold growth",
-        "value": "24\u201348 hours",
+        "value": "24–48 hours",
         "scope": "Indoor leak/spill response",
         "timePeriod": "Current EPA guidance",
         "whyItMatters": "A practical emergency-response benchmark after leaks or overflows.",
@@ -3838,7 +3838,7 @@
   },
   {
     "id": "commercial_facility_bank-017",
-    "articleTitle": "Water Main Breaks Happen About Every 2 Minutes\u2014Why Property Managers Need a Building Water Emergency Plan",
+    "articleTitle": "Water Main Breaks Happen About Every 2 Minutes—Why Property Managers Need a Building Water Emergency Plan",
     "category": "Emergency planning / infrastructure",
     "sheetName": "Commercial Facility Bank",
     "audience": "Property managers, campuses, hospitals, multifamily operators",
@@ -3881,7 +3881,7 @@
   },
   {
     "id": "commercial_facility_bank-018",
-    "articleTitle": "80% of Boil-Water Advisories Were Tied to Breaks, Repairs, or Pressure Loss\u2014What Building Managers Should Do Next",
+    "articleTitle": "80% of Boil-Water Advisories Were Tied to Breaks, Repairs, or Pressure Loss—What Building Managers Should Do Next",
     "category": "Emergency planning / advisories",
     "sheetName": "Commercial Facility Bank",
     "audience": "Property managers, schools, hospitality operators, commercial owners",
@@ -3962,7 +3962,7 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-1-day-incident-notice",
-    "status": "Queued",
+    "status": "Review Required",
     "notes": "Requires reviewer sign-off before publication. Carry the California angle through the hero, body, and related links."
   },
   {
@@ -4093,7 +4093,7 @@
         "dataPoint": "Illness-count reporting gap in EPA backflow incident compilation",
         "value": "97 of 309 incidents had illness counts; 22 of those 97 reported no illnesses; only 26 of 75 incidents with illness appeared in CDC outbreak summaries; estimated 4,416 illnesses across those 75 incidents",
         "scope": "United States",
-        "timePeriod": "1981\u20131999",
+        "timePeriod": "1981–1999",
         "whyItMatters": "Excellent evidence that backflow illness events are likely undercounted in formal outbreak surveillance.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -4136,7 +4136,7 @@
         "dataPoint": "Illness-count reporting gap in EPA backflow incident compilation",
         "value": "97 of 309 incidents had illness counts; 22 of those 97 reported no illnesses; only 26 of 75 incidents with illness appeared in CDC outbreak summaries; estimated 4,416 illnesses across those 75 incidents",
         "scope": "United States",
-        "timePeriod": "1981\u20131999",
+        "timePeriod": "1981–1999",
         "whyItMatters": "Excellent evidence that backflow illness events are likely undercounted in formal outbreak surveillance.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -4149,7 +4149,7 @@
         "dataPoint": "EPA compilation of reported backflow incidents and illnesses",
         "value": "459 incidents; estimated 12,093 illnesses",
         "scope": "United States",
-        "timePeriod": "1970\u20132001",
+        "timePeriod": "1970–2001",
         "whyItMatters": "One of the most practical national incident counts for backflow-related illness discussions.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -4334,7 +4334,7 @@
         "dataPoint": "Illness-count reporting gap in EPA backflow incident compilation",
         "value": "97 of 309 incidents had illness counts; 22 of those 97 reported no illnesses; only 26 of 75 incidents with illness appeared in CDC outbreak summaries; estimated 4,416 illnesses across those 75 incidents",
         "scope": "United States",
-        "timePeriod": "1981\u20131999",
+        "timePeriod": "1981–1999",
         "whyItMatters": "Excellent evidence that backflow illness events are likely undercounted in formal outbreak surveillance.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -4377,7 +4377,7 @@
         "dataPoint": "Illness-count reporting gap in EPA backflow incident compilation",
         "value": "97 of 309 incidents had illness counts; 22 of those 97 reported no illnesses; only 26 of 75 incidents with illness appeared in CDC outbreak summaries; estimated 4,416 illnesses across those 75 incidents",
         "scope": "United States",
-        "timePeriod": "1981\u20131999",
+        "timePeriod": "1981–1999",
         "whyItMatters": "Excellent evidence that backflow illness events are likely undercounted in formal outbreak surveillance.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -4390,7 +4390,7 @@
         "dataPoint": "EPA compilation of reported backflow incidents and illnesses",
         "value": "459 incidents; estimated 12,093 illnesses",
         "scope": "United States",
-        "timePeriod": "1970\u20132001",
+        "timePeriod": "1970–2001",
         "whyItMatters": "One of the most practical national incident counts for backflow-related illness discussions.",
         "sourceOrganization": "U.S. EPA",
         "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
@@ -4588,7 +4588,7 @@
         "dataPoint": "Average severity of water-damage/freezing claims",
         "value": "$15,400 weighted average claim severity",
         "scope": "United States homeowners insurance claims",
-        "timePeriod": "2019\u20132023",
+        "timePeriod": "2019–2023",
         "whyItMatters": "Very reusable cost-of-inaction statistic for plumbing repairs and preventive maintenance.",
         "sourceOrganization": "Insurance Information Institute",
         "sourceTitle": "Archived Tables",
@@ -4685,7 +4685,7 @@
       {
         "repositoryRow": 50,
         "dataPoint": "Homes with easy-to-fix leaks wasting 90 gallons/day or more",
-        "value": "Approximately 5%\u201310% of homes",
+        "value": "Approximately 5%–10% of homes",
         "scope": "United States",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Helpful for showing how much waste is tied to relatively simple repairs.",
@@ -4754,7 +4754,7 @@
       {
         "repositoryRow": 58,
         "dataPoint": "Average-family savings from replacing old inefficient toilets with WaterSense models",
-        "value": "20%\u201360% reduction in toilet water use; nearly 13,000 gallons/year; more than $170/year; about $3,400 over toilet life",
+        "value": "20%–60% reduction in toilet water use; nearly 13,000 gallons/year; more than $170/year; about $3,400 over toilet life",
         "scope": "Typical U.S. family",
         "timePeriod": "Current EPA page",
         "whyItMatters": "One of the best all-in-one toilet retrofit statistics available from a primary source.",
@@ -4784,7 +4784,7 @@
       {
         "repositoryRow": 71,
         "dataPoint": "Running fill valve leak magnitude",
-        "value": "0.5\u20133 gpm; up to 4,000 gallons per day",
+        "value": "0.5–3 gpm; up to 4,000 gallons per day",
         "scope": "Commercial restrooms",
         "timePeriod": "2025 EPA webinar",
         "whyItMatters": "Excellent for showing how quickly a single commercial toilet failure can waste water.",
@@ -4810,7 +4810,7 @@
       {
         "repositoryRow": 73,
         "dataPoint": "Installed base of flushometer-valve toilets and inefficiency share",
-        "value": "Nearly 27 million installed; 26% (7 million) old toilets flush 3.0\u20137.0 gpf",
+        "value": "Nearly 27 million installed; 26% (7 million) old toilets flush 3.0–7.0 gpf",
         "scope": "United States",
         "timePeriod": "Current EPA page",
         "whyItMatters": "Strong installed-base evidence for commercial toilet replacement opportunities.",
@@ -4909,7 +4909,7 @@
       {
         "repositoryRow": 100,
         "dataPoint": "USGS domestic-well benchmark",
-        "value": "More than 43 million people\u2014about 15% of the U.S. population",
+        "value": "More than 43 million people—about 15% of the U.S. population",
         "scope": "United States",
         "timePeriod": "Current USGS page",
         "whyItMatters": "Useful cross-check from a primary water-data agency.",

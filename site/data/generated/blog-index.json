@@ -1,5 +1,25 @@
 [
   {
+    "slug": "backflow-testing-in-san-bernardino-annual-testing-and-30-day-submission-rules",
+    "path": "/blog/backflow-testing-in-san-bernardino-annual-testing-and-30-day-submission-rules",
+    "canonical": "https://www.backflowtestpros.com/blog/backflow-testing-in-san-bernardino-annual-testing-and-30-day-submission-rules",
+    "title": "Backflow Testing in San Bernardino: Annual Testing and 30-Day Submission Rules",
+    "excerpt": "A county inspection example makes the compliance clock concrete: annual backflow testing, then paperwork due within 30 days. Here is how San Bernardino property owners can turn that into a practical testing and reporting workflow.",
+    "category": "Local / San Bernardino",
+    "audience": "San Bernardino businesses, apartments, HOAs",
+    "geography": "San Bernardino County",
+    "templateType": "compliance_article",
+    "primaryKeyword": "San Bernardino backflow testing",
+    "heroFact": {
+      "value": "Annual testing; 30-day submission",
+      "label": "is the San Bernardino County compliance example captured in the BFTP workbook",
+      "context": "The workbook cites a San Bernardino County Public Health inspection report example. Treat this as a local compliance example and confirm property-specific requirements with the applicable water supplier or authority."
+    },
+    "publishedAt": "2026-06-24T09:00:00.000Z",
+    "updatedAt": "2026-06-24T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
     "path": "/blog/91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
     "canonical": "https://www.backflowtestpros.com/blog/91-of-systems-had-backflow-programs-so-why-did-only-49-require-incident-reporting",
