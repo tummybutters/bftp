@@ -15,6 +15,15 @@ function slugify(value) {
   return String(value ?? "")
     .toLowerCase()
     .replace(/&/g, "and")
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function legacySlugify(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .replace(/&/g, "and")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
@@ -173,7 +182,7 @@ for (const post of posts) {
     errors.push(`Blog title conflicts with existing site title: ${post.title}`);
   }
 
-  if (slugify(post.title) !== post.slug) {
+  if (![slugify(post.title), legacySlugify(post.title)].includes(post.slug)) {
     errors.push(`Slug does not match title slugification for ${post.slug}`);
   }
 }

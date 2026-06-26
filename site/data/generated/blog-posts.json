@@ -1954,8 +1954,8 @@
     "path": "/blog/california-backflow-testing-requirements-what-at-least-annually-actually-means",
     "canonical": "https://www.backflowtestpros.com/blog/california-backflow-testing-requirements-what-at-least-annually-actually-means",
     "title": "California Backflow Testing Requirements: What “At Least Annually” Actually Means",
-    "metaDescription": "California guidance cited in the BFTP workbook says regulated backflow assemblies must be tested at least annually. This local draft explains what that baseline means operationally while staying review-gated pending live rule verification.",
-    "excerpt": "“At least annually” sounds simple until a California property owner has multiple assemblies, repair follow-up, and utility paperwork to track. This draft turns the annual-testing baseline into an operational checklist while holding publication until current state language is verified.",
+    "metaDescription": "California's April 2026 Cross-Connection Control Policy Handbook says backflow prevention assemblies must be field tested at least annually. Here is what that baseline means for property owners, HOAs, and commercial sites.",
+    "excerpt": "“At least annually” sounds simple until a California property owner has multiple assemblies, repair follow-up, and utility paperwork to track. Here is how to turn the annual-testing baseline into an operational checklist.",
     "category": "Compliance / California",
     "audience": "California businesses, HOAs, property owners",
     "geography": "California",
@@ -1966,18 +1966,18 @@
       "california hoa backflow testing",
       "commercial backflow testing california"
     ],
-    "publishedAt": null,
-    "updatedAt": "2026-06-17T16:04:47.000Z",
+    "publishedAt": "2026-06-26T09:00:00.000Z",
+    "updatedAt": "2026-06-26T09:00:00.000Z",
     "heroFact": {
       "value": "At least annually",
       "label": "is the California testing baseline cited in the workbook for regulated assemblies",
-      "context": "The workbook points to California State Water Resources Control Board draft handbook language. The operational takeaway is useful, but the exact live policy text still needs human verification before publication."
+      "context": "The April 2026 California Cross-Connection Control Policy Handbook says backflow prevention assemblies must be field tested at least annually, while allowing more frequent testing for high-hazard or increased-risk premises."
     },
     "keyTakeaways": [
-      "California's cited annual-testing rule is a minimum cadence, not permission to wait for a utility notice.",
+      "California's annual-testing rule is a minimum cadence, not permission to wait for a utility notice.",
       "Properties with irrigation, fire lines, boilers, or multiple domestic assemblies need a repeatable testing calendar, not ad hoc scheduling.",
       "Annual compliance still breaks down when owners lose last year's certificates, miss tester availability windows, or treat repairs as separate from reporting.",
-      "This draft is intentionally review-gated because the workbook cites draft-state policy language that should be checked live before publication."
+      "The April 2026 California Cross-Connection Control Policy Handbook keeps this article statewide; local water suppliers may add specific paperwork or timing steps."
     ],
     "sections": [
       {
@@ -1985,7 +1985,7 @@
         "kind": "narrative",
         "title": "In California, Annual Testing Is the Floor, Not the Entire Plan",
         "body": [
-          "The California source note in the BFTP workbook points to a simple requirement: regulated backflow assemblies must be tested at least annually. Property owners often hear that as a vague reminder. Operationally, it is more demanding than that. If a site has multiple assemblies, a seasonal irrigation load, or a tenant schedule that limits shutdown windows, waiting until the last minute turns “annual” into a scramble.",
+          "The April 2026 California Cross-Connection Control Policy Handbook gives property owners a simple baseline: backflow prevention assemblies must be field tested at least annually. Property owners often hear that as a vague reminder. Operationally, it is more demanding than that. If a site has multiple assemblies, a seasonal irrigation load, or a tenant schedule that limits shutdown windows, waiting until the last minute turns “annual” into a scramble.",
           "That is why the useful interpretation of at least annually is not “sometime this year.” It means building a calendar that gives your tester time to inspect every assembly, surface failures early, and leave enough room for paperwork before the utility starts sending non-compliance notices.",
           "For California HOAs, restaurants, retail centers, and mixed-use properties, the annual rule works best when it is treated like any other recurring life-safety or compliance task: fixed date, assigned owner, documented result."
         ]
@@ -2002,7 +2002,7 @@
         "statCallout": {
           "value": "At least annually",
           "label": "is the cited statewide timing baseline in the workbook source",
-          "context": "California State Water Resources Control Board draft handbook language captured in repository row 19. Useful for workflow planning, but still held for live verification before publication."
+          "context": "California State Water Resources Control Board Cross-Connection Control Policy Handbook, April 2026. Local water suppliers may require more frequent testing for high-hazard or increased-risk premises."
         }
       },
       {
@@ -2059,34 +2059,21 @@
       "BlogPosting",
       "BreadcrumbList"
     ],
-    "reviewFlags": [
-      {
-        "code": "live_verification_required",
-        "label": "Live verification required",
-        "reason": "The workbook source for this article cites California draft handbook language, so the exact current policy text should be verified before publication.",
-        "severity": "warning"
-      },
-      {
-        "code": "statewide_only",
-        "label": "Keep the article statewide",
-        "reason": "This draft should not imply city-specific or county-specific rules unless a separately verified local source is added.",
-        "severity": "info"
-      }
-    ],
-    "status": "Review Required",
+    "reviewFlags": [],
+    "status": "Published",
     "sourceNotes": [
       {
         "repositoryRow": 19,
-        "dataPoint": "California minimum assembly testing frequency",
+        "dataPoint": "California minimum backflow prevention assembly field testing frequency",
         "value": "At least annually",
-        "scope": "California public water systems / regulated assemblies",
-        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
-        "whyItMatters": "A practical compliance benchmark that businesses and property owners can actually act on.",
+        "scope": "California public water systems / regulated backflow prevention assemblies",
+        "timePeriod": "Effective July 1, 2024; amended April 21, 2026",
+        "whyItMatters": "A practical compliance benchmark that California businesses and property owners can use to schedule annual testing before utility reminders or non-compliance notices.",
         "sourceOrganization": "California State Water Resources Control Board",
-        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
-        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
         "authorityType": "Government (state)",
-        "notes": "Regulatory/policy requirement; California-specific."
+        "notes": "CCCPH section 3.3.3 states that BPAs must be field tested at least annually; local programs may require more frequent testing for high-hazard or increased-risk premises."
       }
     ]
   },

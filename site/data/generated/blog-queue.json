@@ -437,21 +437,21 @@
     "sourceStats": [
       {
         "repositoryRow": 19,
-        "dataPoint": "California minimum assembly testing frequency",
+        "dataPoint": "California minimum backflow prevention assembly field testing frequency",
         "value": "At least annually",
-        "scope": "California public water systems / regulated assemblies",
-        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
-        "whyItMatters": "A practical compliance benchmark that businesses and property owners can actually act on.",
+        "scope": "California public water systems / regulated backflow prevention assemblies",
+        "timePeriod": "Effective July 1, 2024; amended April 21, 2026",
+        "whyItMatters": "A practical compliance benchmark that California businesses and property owners can use to schedule annual testing before utility reminders or non-compliance notices.",
         "sourceOrganization": "California State Water Resources Control Board",
-        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
-        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
         "authorityType": "Government (state)",
-        "notes": "Regulatory/policy requirement; California-specific."
+        "notes": "CCCPH section 3.3.3 states that BPAs must be field tested at least annually; local programs may require more frequent testing for high-hazard or increased-risk premises."
       }
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "california-backflow-testing-requirements-what-at-least-annually-actually-means",
-    "status": "Review Required",
+    "status": "Published",
     "notes": "Carry the California angle through the hero, body, and related links."
   },
   {
