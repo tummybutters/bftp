@@ -467,22 +467,22 @@
     "sourceStats": [
       {
         "repositoryRow": 20,
-        "dataPoint": "California repair deadline after failed field test",
-        "value": "Within 30 days",
-        "scope": "California public water systems / regulated assemblies",
-        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
-        "whyItMatters": "Useful when explaining urgency after a failed test.",
+        "dataPoint": "California repair deadline after failed backflow prevention assembly field test",
+        "value": "Repair or replace within 30 days of notification of the failure",
+        "scope": "California public water systems / regulated backflow prevention assemblies",
+        "timePeriod": "Effective July 1, 2024; amended April 21, 2026",
+        "whyItMatters": "A failed test creates a short, trackable repair window for property owners, managers, testers, and repair contractors.",
         "sourceOrganization": "California State Water Resources Control Board",
-        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
-        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
         "authorityType": "Government (state)",
-        "notes": "Regulatory/policy requirement; California-specific."
+        "notes": "CCCPH section 3.3.3(e) states that BPAs that fail the field test must be repaired or replaced within 30 days of notification of the failure. Extensions may be allowed by the PWS if included in the Cross-Connection Control Plan."
       }
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "failed-a-backflow-test-in-california-you-may-have-30-days-to-repair-it",
-    "status": "Review Required",
-    "notes": "Carry the California angle through the hero, body, and related links."
+    "status": "Published",
+    "notes": "Published 2026-06-29 under standing BFTP M/W/F cadence approval. Updated from old draft-handbook source note to verified April 2026 California Cross-Connection Control Policy Handbook."
   },
   {
     "id": "backflow_article_bank-015",

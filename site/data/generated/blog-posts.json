@@ -2082,8 +2082,8 @@
     "path": "/blog/failed-a-backflow-test-in-california-you-may-have-30-days-to-repair-it",
     "canonical": "https://www.backflowtestpros.com/blog/failed-a-backflow-test-in-california-you-may-have-30-days-to-repair-it",
     "title": "Failed a Backflow Test in California? You May Have 30 Days to Repair It",
-    "metaDescription": "The BFTP workbook cites California guidance giving regulated assemblies 30 days after a failed field test for repair. This local draft turns that rule into a practical response plan while staying review-gated until the live policy text is verified.",
-    "excerpt": "A failed backflow test is not just a bad result on paper. In the California source captured in the workbook, it starts a 30-day repair clock. This draft explains the operational response while holding publication until a reviewer confirms the current policy language.",
+    "metaDescription": "California’s April 2026 Cross-Connection Control Policy Handbook gives failed backflow assemblies a 30-day repair-or-replace window after notification. Here is the practical response plan for property owners.",
+    "excerpt": "A failed backflow test is not just a bad result on paper. California’s April 2026 handbook says failed assemblies must be repaired or replaced within 30 days of notification, so owners need a fast repair, retest, and documentation workflow.",
     "category": "Compliance / California",
     "audience": "California property owners, managers, contractors",
     "geography": "California",
@@ -2094,18 +2094,18 @@
       "failed backflow assembly california",
       "backflow retest after repair california"
     ],
-    "publishedAt": null,
-    "updatedAt": "2026-06-19T16:02:00.000Z",
+    "publishedAt": "2026-06-29T09:00:00.000Z",
+    "updatedAt": "2026-06-29T09:00:00.000Z",
     "heroFact": {
-      "value": "Within 30 days",
-      "label": "is the California repair deadline cited in the workbook after a failed field test",
-      "context": "The workbook points to California State Water Resources Control Board draft handbook language. The deadline is useful for drafting, but the exact live policy text still needs human verification before publication."
+      "value": "30 days",
+      "label": "is the California repair-or-replace window after notification of a failed field test",
+      "context": "California State Water Resources Control Board Cross-Connection Control Policy Handbook, April 2026. Extensions may be allowed by the public water system when included in its Cross-Connection Control Plan."
     },
     "keyTakeaways": [
       "A failed backflow test should trigger a repair workflow immediately, not at the end of the month.",
+      "California’s April 2026 handbook says failed assemblies must be repaired or replaced within 30 days of notification of the failure.",
       "The useful owner question is not just whether the device failed, but what parts of the repair, retest, and paperwork chain still remain open.",
-      "California properties with multiple assemblies need a single owner for deadline tracking so one failed device does not disappear into routine maintenance noise.",
-      "This draft stays review-gated because the cited deadline comes from draft-state policy language that should be checked live before publication."
+      "California properties with multiple assemblies need a single owner for deadline tracking so one failed device does not disappear into routine maintenance noise."
     ],
     "sections": [
       {
@@ -2113,7 +2113,7 @@
         "kind": "narrative",
         "title": "A Failed Test Is the Start of the Deadline, Not the End of the Job",
         "body": [
-          "The California source note captured in the BFTP workbook points to a clear practical benchmark: after a failed field test, the repair deadline is within 30 days. For a property owner or site manager, that matters because a failed backflow assembly is not a simple pass-fail formality. It creates a short window to diagnose the device, coordinate the repair, retest the assembly if required, and make sure the paperwork does not stall somewhere between the tester, the plumber, and the utility.",
+          "California’s April 2026 Cross-Connection Control Policy Handbook gives property owners a clear practical benchmark: after notification of a failed field test, a backflow prevention assembly must be repaired or replaced within 30 days. For a property owner or site manager, that matters because a failed assembly is not a simple pass-fail formality. It creates a short window to diagnose the device, coordinate the repair, retest the assembly if required, and make sure the paperwork does not stall somewhere between the tester, the plumber, and the utility.",
           "That is why the safest interpretation of a failed result is not \"we have a month.\" It is \"the clock is already running.\" The first few days are usually when the real schedule risk appears: parts availability, tenant access, irrigation shutdown timing, or uncertainty about whether the assembly can be rebuilt or needs replacement instead.",
           "For California restaurants, HOAs, industrial sites, and mixed-use properties, the deadline matters most when the property has more than one assembly. One failed device can be easy to miss if maintenance records live in separate inboxes or if the repair contractor is not tied back to the original test record."
         ]
@@ -2128,9 +2128,9 @@
           "That distinction matters in California because property owners often manage multiple vendors across one compliance event. The tester identifies the failure, the plumber makes the repair, the manager tracks the paperwork, and the utility expects the complete chain to be visible if questions come up later."
         ],
         "statCallout": {
-          "value": "Within 30 days",
-          "label": "is the repair timing captured in repository row 20",
-          "context": "California State Water Resources Control Board draft handbook language cited in the workbook. Strong enough for a local draft, but still review-gated until the current policy text is confirmed."
+          "value": "30 days",
+          "label": "is the repair-or-replace window in California’s April 2026 handbook",
+          "context": "The State Water Resources Control Board handbook says BPAs that fail field testing must be repaired or replaced within 30 days of notification of failure, with possible public-water-system extensions when included in the Cross-Connection Control Plan."
         }
       },
       {
@@ -2139,8 +2139,8 @@
         "title": "Why the California Angle Needs More Than a Deadline Headline",
         "body": [
           "A California-specific article should not stop at saying there is a 30-day repair window. The useful local angle is what that deadline means for properties that have irrigation assemblies, fire-line protection, domestic-service devices, or tenant spaces that make access and shutdown coordination harder. On those sites, thirty days disappears quickly if nobody owns the entire sequence from failed result to corrected documentation.",
-          "That is also why this draft is not treated as publish-ready. The workbook cites draft California policy language, so the responsible workflow is to preserve the source-backed structure, keep the California context visible throughout the piece, and hold the post for live rule verification before it goes public.",
-          "The article can still do real work in the data layer now. It gives the blog queue a prepared next post, a clean slug, an operational framing, and source notes that the future publishing pass can build on without rediscovering the topic."
+          "The April 2026 handbook also leaves room for public water systems to allow extensions when those extensions are included in the Cross-Connection Control Plan. That does not make the deadline casual. It means property owners should communicate early, document the failed result, and keep repair status visible before they need an exception.",
+          "The practical takeaway is simple: once an assembly fails, the property needs a repair owner, a retest plan, and a documentation trail. Waiting for the next reminder is how a repair task turns into a compliance problem."
         ]
       },
       {
@@ -2189,32 +2189,26 @@
     ],
     "reviewFlags": [
       {
-        "code": "live_verification_required",
-        "label": "Live verification required",
-        "reason": "The workbook source for this article cites California draft handbook language, so the exact current repair deadline text should be verified before publication.",
-        "severity": "warning"
-      },
-      {
         "code": "statewide_only",
         "label": "Keep the article statewide",
-        "reason": "This draft should not imply city-specific or county-specific rules unless a separately verified local source is added.",
+        "reason": "This post cites the California State Water Resources Control Board handbook and should not imply city-specific or county-specific rules unless a separately verified local source is added.",
         "severity": "info"
       }
     ],
-    "status": "Review Required",
+    "status": "Published",
     "sourceNotes": [
       {
         "repositoryRow": 20,
-        "dataPoint": "California repair deadline after failed field test",
-        "value": "Within 30 days",
-        "scope": "California public water systems / regulated assemblies",
-        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
-        "whyItMatters": "Useful when explaining urgency after a failed test.",
+        "dataPoint": "California repair deadline after failed backflow prevention assembly field test",
+        "value": "Repair or replace within 30 days of notification of the failure",
+        "scope": "California public water systems / regulated backflow prevention assemblies",
+        "timePeriod": "Effective July 1, 2024; amended April 21, 2026",
+        "whyItMatters": "A failed test creates a short, trackable repair window for property owners, managers, testers, and repair contractors.",
         "sourceOrganization": "California State Water Resources Control Board",
-        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
-        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
         "authorityType": "Government (state)",
-        "notes": "Regulatory/policy requirement; California-specific."
+        "notes": "CCCPH section 3.3.3(e) states that BPAs that fail the field test must be repaired or replaced within 30 days of notification of the failure. Extensions may be allowed by the PWS if included in the Cross-Connection Control Plan."
       }
     ]
   },
