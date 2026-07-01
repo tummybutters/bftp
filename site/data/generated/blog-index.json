@@ -1,5 +1,25 @@
 [
   {
+    "slug": "backflow-testing-after-repair-replacement-or-relocation-why-retesting-matters",
+    "path": "/blog/backflow-testing-after-repair-replacement-or-relocation-why-retesting-matters",
+    "canonical": "https://www.backflowtestpros.com/blog/backflow-testing-after-repair-replacement-or-relocation-why-retesting-matters",
+    "title": "Backflow Testing After Repair, Replacement, or Relocation: Why Retesting Matters",
+    "excerpt": "A repaired or moved backflow assembly should not disappear from the compliance file. The useful owner move is simple: treat repair, replacement, relocation, retesting, and documentation as one job, not five loose handoffs.",
+    "category": "Maintenance / Retesting",
+    "audience": "Property owners, managers, plumbers, and contractors",
+    "geography": "Southern California",
+    "templateType": "cost_risk_article",
+    "primaryKeyword": "backflow retest after repair",
+    "heroFact": {
+      "value": "After repair, replacement, or relocation",
+      "label": "is when one Southern California water district says backflow testing is required, in addition to at least annual testing",
+      "context": "Otay Water District says testing is required at least annually from the installation date and after repair, replacement, or relocation. Treat this as a utility-specific example and confirm requirements with the applicable water supplier."
+    },
+    "publishedAt": "2026-07-01T09:00:00.000Z",
+    "updatedAt": "2026-07-01T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "failed-a-backflow-test-in-california-you-may-have-30-days-to-repair-it",
     "path": "/blog/failed-a-backflow-test-in-california-you-may-have-30-days-to-repair-it",
     "canonical": "https://www.backflowtestpros.com/blog/failed-a-backflow-test-in-california-you-may-have-30-days-to-repair-it",
