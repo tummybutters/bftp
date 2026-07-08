@@ -1,5 +1,25 @@
 [
   {
+    "slug": "why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
+    "path": "/blog/why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
+    "canonical": "https://www.backflowtestpros.com/blog/why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
+    "title": "Why California Requires Tester Notice Within 24 Hours After a Cross-Connection Is Observed",
+    "excerpt": "A cross-connection observation is not paperwork for later. California’s current handbook points to a within-24-hours tester notice expectation, which means owners need a fast response path before a routine inspection turns into a compliance scramble.",
+    "category": "Compliance / California",
+    "audience": "California testers, owners, managers",
+    "geography": "California",
+    "templateType": "localized_service_article",
+    "primaryKeyword": "backflow incident reporting California",
+    "heroFact": {
+      "value": "Within 24 hours",
+      "label": "is the California tester notice window when a backflow incident or unprotected cross-connection is observed during field testing",
+      "context": "The State Water Board’s April 2026 Cross-Connection Control Policy Handbook uses “as soon as possible within 24 hours” language for this tester notice path."
+    },
+    "publishedAt": "2026-07-08T09:00:00.000Z",
+    "updatedAt": "2026-07-08T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "backflow-testing-after-repair-replacement-or-relocation-why-retesting-matters",
     "path": "/blog/backflow-testing-after-repair-replacement-or-relocation-why-retesting-matters",
     "canonical": "https://www.backflowtestpros.com/blog/backflow-testing-after-repair-replacement-or-relocation-why-retesting-matters",

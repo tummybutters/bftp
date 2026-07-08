@@ -486,7 +486,7 @@
   },
   {
     "id": "backflow_article_bank-015",
-    "articleTitle": "Why California Requires Tester Notice Within 1 Day After a Cross-Connection Is Observed",
+    "articleTitle": "Why California Requires Tester Notice Within 24 Hours After a Cross-Connection Is Observed",
     "category": "Compliance / California",
     "sheetName": "Backflow Article Bank",
     "audience": "California testers, owners, managers",
@@ -497,22 +497,24 @@
     "sourceStats": [
       {
         "repositoryRow": 21,
-        "dataPoint": "California tester notice period when incident or cross-connection is observed",
-        "value": "Within 1 day",
-        "scope": "California public water systems / regulated assemblies",
-        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
+        "dataPoint": "California tester notice period when a backflow incident or unprotected cross-connection is observed during field testing",
+        "value": "As soon as possible within 24 hours",
+        "scope": "California public water systems / regulated backflow prevention assemblies",
+        "timePeriod": "Current CCCPH version amended April 21, 2026; effective July 1, 2024",
         "whyItMatters": "Shows that incident response expectations are fast, not leisurely.",
         "sourceOrganization": "California State Water Resources Control Board",
-        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
-        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "sourceTitle": "Cross-Connection Control Policy Handbook (April 2026)",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
         "authorityType": "Government (state)",
-        "notes": "Regulatory/policy requirement; California-specific."
+        "notes": "Regulatory/policy requirement; statewide California source; section 3.3.3(f)."
       }
     ],
     "ctaType": "schedule_backflow_service",
-    "slug": "why-california-requires-tester-notice-within-1-day-after-a-cross-connection-is-observed",
-    "status": "Review Required",
-    "notes": "Carry the California angle through the hero, body, and related links."
+    "slug": "why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
+    "status": "Published",
+    "notes": "Updated before publication against the April 2026 State Water Board CCCPH; keep statewide unless a separately verified local source is added.",
+    "publishedAt": "2026-07-08T09:00:00.000Z",
+    "updatedAt": "2026-07-08T09:00:00.000Z"
   },
   {
     "id": "backflow_article_bank-016",

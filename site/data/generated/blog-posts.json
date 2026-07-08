@@ -2213,12 +2213,12 @@
     ]
   },
   {
-    "slug": "why-california-requires-tester-notice-within-1-day-after-a-cross-connection-is-observed",
-    "path": "/blog/why-california-requires-tester-notice-within-1-day-after-a-cross-connection-is-observed",
-    "canonical": "https://www.backflowtestpros.com/blog/why-california-requires-tester-notice-within-1-day-after-a-cross-connection-is-observed",
-    "title": "Why California Requires Tester Notice Within 1 Day After a Cross-Connection Is Observed",
-    "metaDescription": "The BFTP workbook cites California draft handbook language expecting tester notice within 1 day after an incident or observed cross-connection. This review-gated local draft turns that fast clock into an owner response plan.",
-    "excerpt": "A cross-connection observation is not paperwork for later. The California source captured in the workbook points to a 1-day tester notice expectation, which means owners need a fast response path before a routine inspection turns into a compliance scramble.",
+    "slug": "why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
+    "path": "/blog/why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
+    "canonical": "https://www.backflowtestpros.com/blog/why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
+    "title": "Why California Requires Tester Notice Within 24 Hours After a Cross-Connection Is Observed",
+    "metaDescription": "California’s current Cross-Connection Control Policy Handbook expects tester notice as soon as possible within 24 hours when a backflow incident or unprotected cross-connection is observed during field testing.",
+    "excerpt": "A cross-connection observation is not paperwork for later. California’s current handbook points to a within-24-hours tester notice expectation, which means owners need a fast response path before a routine inspection turns into a compliance scramble.",
     "category": "Compliance / California",
     "audience": "California testers, owners, managers",
     "geography": "California",
@@ -2229,26 +2229,26 @@
       "backflow tester notice california",
       "cross connection observed california"
     ],
-    "publishedAt": null,
-    "updatedAt": "2026-06-22T09:00:00.000Z",
+    "publishedAt": "2026-07-08T09:00:00.000Z",
+    "updatedAt": "2026-07-08T09:00:00.000Z",
     "heroFact": {
-      "value": "Within 1 day",
-      "label": "is the California tester notice period cited in the workbook when an incident or cross-connection is observed",
-      "context": "The workbook points to California State Water Resources Control Board draft handbook language. The timing is useful for workflow planning, but the exact live policy text still needs human verification before publication."
+      "value": "Within 24 hours",
+      "label": "is the California tester notice window when a backflow incident or unprotected cross-connection is observed during field testing",
+      "context": "The State Water Board’s April 2026 Cross-Connection Control Policy Handbook uses “as soon as possible within 24 hours” language for this tester notice path."
     },
     "keyTakeaways": [
       "A cross-connection observation should trigger same-day coordination, not a loose follow-up note.",
-      "The cited California notice window is fast enough that property owners need a clear handoff between tester, manager, and utility contact.",
+      "California’s current handbook uses a within-24-hours tester notice window when a backflow incident or unprotected cross-connection is observed during field testing.",
       "The useful operational question is who owns the next 24 hours after an incident or cross-connection is observed.",
-      "This draft remains review-gated because the workbook source cites draft-state policy language that should be verified live before publication."
+      "Owners should keep assembly records, site access, repair authorization, and utility contacts ready before a finding happens."
     ],
     "sections": [
       {
-        "id": "one-day-clock",
+        "id": "twenty-four-hour-clock",
         "kind": "narrative",
         "title": "A Cross-Connection Observation Starts a Fast Clock",
         "body": [
-          "The California source captured in the BFTP workbook points to a short response window: when an incident or cross-connection is observed, tester notice is expected within 1 day. For property owners, that changes the way an inspection should be handled. A finding is not just a note for the next maintenance meeting. It can start a fast communication chain that needs a clear owner immediately.",
+          "California’s current Cross-Connection Control Policy Handbook points to a short response window: when a backflow incident or unprotected cross-connection is observed at the assembly or prior to the user premises during field testing, tester notice is expected as soon as possible within 24 hours. For property owners, that changes the way an inspection should be handled. A finding is not just a note for the next maintenance meeting. It can start a fast communication chain that needs a clear owner immediately.",
           "That matters because cross-connections are often found in ordinary places: irrigation tie-ins, hose connections, boiler makeup lines, equipment rooms, and service areas where potable water can meet a non-potable source. The risk is not always dramatic on sight. The operational risk is that nobody knows who is supposed to notify whom, what documentation is needed, or whether the condition must be isolated before normal work continues.",
           "The practical interpretation is simple. If a tester sees a cross-connection, the property should already know the next step before the tester leaves the site."
         ]
@@ -2258,14 +2258,14 @@
         "kind": "narrative",
         "title": "Why Owners Should Care About a Tester Notice Rule",
         "body": [
-          "A notice obligation can sound like the tester's problem. In reality, the owner or manager usually controls the conditions that make the notice useful: site access, maintenance records, shutoff coordination, vendor approvals, and the contact information for whoever handles utility compliance. If those pieces are scattered, a 1-day expectation becomes difficult fast.",
-          "The workbook statistic is useful because it turns incident response from a vague best practice into a time-bound workflow. The issue is not only whether the tester sends notice. The issue is whether the property has enough information to help the tester identify the assembly, document the condition, and move the correction forward before the next day disappears.",
+          "A notice obligation can sound like the tester's problem. In reality, the owner or manager usually controls the conditions that make the notice useful: site access, maintenance records, shutoff coordination, vendor approvals, and the contact information for whoever handles utility compliance. If those pieces are scattered, a within-24-hours expectation becomes difficult fast.",
+          "The current California source is useful because it turns incident response from a vague best practice into a time-bound workflow. The issue is not only whether the tester sends notice. The issue is whether the property has enough information to help the tester identify the assembly, document the condition, and move the correction forward before the first day disappears.",
           "That is especially important for California HOAs, restaurants, mixed-use buildings, and commercial sites with more than one assembly. One observed cross-connection can involve a board member, onsite manager, plumber, tester, tenant, and utility contact in less than a day."
         ],
         "statCallout": {
-          "value": "Within 1 day",
-          "label": "is the incident or observed cross-connection notice period captured in repository row 21",
-          "context": "California State Water Resources Control Board draft handbook language cited in the workbook. Strong enough for a prepared draft, but still held for live rule verification before publication."
+          "value": "Within 24 hours",
+          "label": "is the current California notice window for this observed-condition path",
+          "context": "State Water Board Cross-Connection Control Policy Handbook, amended April 21, 2026, section 3.3.3(f)."
         }
       },
       {
@@ -2275,15 +2275,15 @@
         "body": [
           "The strongest response is prepared before anything goes wrong. A property should know where its backflow assemblies are, which hazards each assembly protects, who receives test reports, and who can authorize immediate correction if a cross-connection is observed. Without that setup, the first day after a finding gets spent looking for basic information.",
           "A good response path does not need to be complicated. It needs to be explicit. The tester identifies the condition. The property contact confirms access and records. The repair or isolation decision gets assigned. The utility or required notice path is handled by the correct party. The documentation stays tied to the same incident record until the issue is closed.",
-          "That is why this article belongs in the queue even while it waits for live policy verification. It gives the BFTP blog a California-specific compliance draft that is grounded in the workbook and useful to owners without overstating city-specific rules."
+          "That is why this article belongs in the live cadence. It gives the BFTP blog a California-specific compliance article grounded in the current State Water Board handbook and useful to owners without overstating city-specific rules."
         ]
       },
       {
-        "id": "one-day-checklist",
+        "id": "twenty-four-hour-checklist",
         "kind": "checklist",
         "title": "A Practical Same-Day Cross-Connection Checklist",
         "body": [
-          "Use this workflow when a California property learns that a tester observed an incident or cross-connection and the next-day clock may matter."
+          "Use this workflow when a California property learns that a tester observed a backflow incident or unprotected cross-connection and the 24-hour notice window may matter."
         ],
         "bullets": [
           "Record the exact location, assembly, connected equipment, and observed condition before the tester leaves the site.",
@@ -2324,32 +2324,32 @@
     ],
     "reviewFlags": [
       {
-        "code": "live_verification_required",
-        "label": "Live verification required",
-        "reason": "The workbook source for this article cites California draft handbook language, so the exact current notice requirement should be verified before publication.",
-        "severity": "warning"
+        "code": "source_verified_2026_07_08",
+        "label": "Current source checked",
+        "reason": "Verified against the State Water Board CCCPH page and April 2026 Cross-Connection Control Policy Handbook before publication.",
+        "severity": "info"
       },
       {
         "code": "statewide_only",
         "label": "Keep the article statewide",
-        "reason": "This draft should not imply city-specific or county-specific rules unless a separately verified local source is added.",
+        "reason": "This article does not imply city-specific or county-specific rules without a separately verified local source.",
         "severity": "info"
       }
     ],
-    "status": "Review Required",
+    "status": "Published",
     "sourceNotes": [
       {
         "repositoryRow": 21,
-        "dataPoint": "California tester notice period when incident or cross-connection is observed",
-        "value": "Within 1 day",
-        "scope": "California public water systems / regulated assemblies",
-        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
+        "dataPoint": "California tester notice period when a backflow incident or unprotected cross-connection is observed during field testing",
+        "value": "As soon as possible within 24 hours",
+        "scope": "California public water systems / regulated backflow prevention assemblies",
+        "timePeriod": "Current CCCPH version amended April 21, 2026; effective July 1, 2024",
         "whyItMatters": "Shows that incident response expectations are fast, not leisurely.",
         "sourceOrganization": "California State Water Resources Control Board",
-        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
-        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
+        "sourceTitle": "Cross-Connection Control Policy Handbook (April 2026)",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
         "authorityType": "Government (state)",
-        "notes": "Regulatory/policy requirement; California-specific."
+        "notes": "Regulatory/policy requirement; statewide California source; section 3.3.3(f)."
       }
     ]
   },
