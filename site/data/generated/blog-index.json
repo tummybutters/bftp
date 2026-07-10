@@ -1,5 +1,25 @@
 [
   {
+    "slug": "can-utilities-fine-you-or-shut-off-water-over-backflow-non-compliance",
+    "path": "/blog/can-utilities-fine-you-or-shut-off-water-over-backflow-non-compliance",
+    "canonical": "https://www.backflowtestpros.com/blog/can-utilities-fine-you-or-shut-off-water-over-backflow-non-compliance",
+    "title": "Can Utilities Fine You or Shut Off Water Over Backflow Non-Compliance?",
+    "excerpt": "Backflow non-compliance is not just a paperwork issue. A California utility example shows missed required testing can lead to fines, water-service termination, or both, which makes annual scheduling a real operating risk.",
+    "category": "Compliance / consequences",
+    "audience": "Commercial owners, restaurants, apartment operators",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "backflow non-compliance penalties",
+    "heroFact": {
+      "value": "Fines or shutoff risk",
+      "label": "can appear when required backflow testing is missed, according to a California utility example",
+      "context": "San Francisco Public Utilities Commission says covered customers must install an approved backflow prevention assembly and have it tested at least annually; failure to test as required may lead to termination of water service, fines, or both. Utility requirements vary by jurisdiction."
+    },
+    "publishedAt": "2026-07-10T09:00:00.000Z",
+    "updatedAt": "2026-07-10T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
     "path": "/blog/why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
     "canonical": "https://www.backflowtestpros.com/blog/why-california-requires-tester-notice-within-24-hours-after-a-cross-connection-is-observed",
