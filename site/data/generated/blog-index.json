@@ -1,5 +1,25 @@
 [
   {
+    "slug": "what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
+    "path": "/blog/what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
+    "canonical": "https://www.backflowtestpros.com/blog/what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
+    "title": "What 7 Failed RP Assemblies Reveal About Annual Backflow Testing",
+    "excerpt": "One utility's annual filing recorded seven failed reduced-pressure assemblies among 483 tested. For California commercial properties, the lesson is practical: annual testing finds problems that appearance alone cannot rule out.",
+    "category": "Utility data / field results",
+    "audience": "Commercial property owners, facility managers, and sites with RP assemblies",
+    "geography": "California",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "RP assembly annual testing",
+    "heroFact": {
+      "value": "7 failures",
+      "label": "were recorded among 483 RP assemblies tested in one utility's 2024 annual filing",
+      "context": "Clackamas River Water reported 580 installed reduced-pressure assemblies, 483 tested, 476 passed, and seven failed. This is one utility's field data, not a national failure-rate estimate."
+    },
+    "publishedAt": "2026-07-13T09:00:00.000Z",
+    "updatedAt": "2026-07-13T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "can-utilities-fine-you-or-shut-off-water-over-backflow-non-compliance",
     "path": "/blog/can-utilities-fine-you-or-shut-off-water-over-backflow-non-compliance",
     "canonical": "https://www.backflowtestpros.com/blog/can-utilities-fine-you-or-shut-off-water-over-backflow-non-compliance",

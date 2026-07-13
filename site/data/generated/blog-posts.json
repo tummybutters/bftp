@@ -2788,5 +2788,176 @@
         "notes": "Local example; utility-specific."
       }
     ]
+  },
+  {
+    "sourceQueueId": "backflow_article_bank-021",
+    "slug": "what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
+    "path": "/blog/what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
+    "canonical": "https://www.backflowtestpros.com/blog/what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
+    "title": "What 7 Failed RP Assemblies Reveal About Annual Backflow Testing",
+    "metaDescription": "A public utility tested 483 reduced-pressure backflow assemblies and recorded seven failures. See what that field data means for California property owners.",
+    "excerpt": "One utility's annual filing recorded seven failed reduced-pressure assemblies among 483 tested. For California commercial properties, the lesson is practical: annual testing finds problems that appearance alone cannot rule out.",
+    "category": "Utility data / field results",
+    "audience": "Commercial property owners, facility managers, and sites with RP assemblies",
+    "geography": "California",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "RP assembly annual testing",
+    "secondaryKeywords": [
+      "reduced pressure backflow assembly test",
+      "annual backflow testing California",
+      "RP backflow preventer failure",
+      "commercial backflow testing"
+    ],
+    "publishedAt": "2026-07-13T09:00:00.000Z",
+    "updatedAt": "2026-07-13T09:00:00.000Z",
+    "heroFact": {
+      "value": "7 failures",
+      "label": "were recorded among 483 RP assemblies tested in one utility's 2024 annual filing",
+      "context": "Clackamas River Water reported 580 installed reduced-pressure assemblies, 483 tested, 476 passed, and seven failed. This is one utility's field data, not a national failure-rate estimate."
+    },
+    "keyTakeaways": [
+      "A backflow assembly can look normal and still fail a certified field test.",
+      "One public utility's annual filing recorded seven RP failures among 483 assemblies tested.",
+      "California's current Cross-Connection Control Policy Handbook requires backflow prevention assemblies to be field tested at least annually, with more frequent testing possible for higher-risk premises.",
+      "Commercial owners should track the test, result, repair, retest, and submission as one complete compliance workflow."
+    ],
+    "sections": [
+      {
+        "id": "field-data-makes-the-risk-visible",
+        "kind": "narrative",
+        "title": "Field Data Makes the Testing Question Concrete",
+        "body": [
+          "Annual backflow testing can feel repetitive when an assembly has never caused an obvious problem. The trouble with that logic is that a backflow prevention assembly is mechanical equipment. Its condition is determined by a field test, not by whether the enclosure looks clean or the property has avoided a visible water incident.",
+          "A 2024 annual summary report filed by Clackamas River Water gives property owners a useful real-world example. The utility reported 580 reduced-pressure backflow prevention assemblies installed in its system. Of 483 assemblies recorded as tested, 476 passed and seven failed.",
+          "That result should not be treated as a national benchmark or applied as a prediction for every California property. It does show why annual testing is more than calendar paperwork. Even in a system where most tested RP assemblies passed, the testing program still found equipment that did not."
+        ],
+        "statCallout": {
+          "value": "483 tested",
+          "label": "with 476 passes and seven failures in one utility's annual report",
+          "context": "The same filing listed 580 RP assemblies installed. The report also noted that some tests were not recorded in the annual summary because the tester had not paid a report-submission fee, so the filing should be read as the utility's recorded data rather than a complete universal rate."
+        }
+      },
+      {
+        "id": "what-an-rp-assembly-does",
+        "kind": "narrative",
+        "title": "Why RP Assemblies Deserve a Real Test",
+        "body": [
+          "A reduced-pressure principle assembly is designed to protect the public water supply where a higher-hazard cross-connection may exist. It uses independently acting check valves and a differential-pressure relief valve, creating a testable mechanical barrier between the property's water system and the public supply.",
+          "Because the assembly has moving and sealing components, a passing result cannot be assumed from age, appearance, or last year's certificate. Wear, debris, pressure conditions, damaged components, or a prior repair can change how the assembly performs. Certified field testing measures that performance under a defined procedure.",
+          "For commercial sites, RP assemblies may protect irrigation, boilers, process equipment, fire-related systems, medical uses, or other connections identified by the local water supplier. The exact protection and testing requirements still come from the supplier serving the property."
+        ]
+      },
+      {
+        "id": "california-annual-testing-rule",
+        "kind": "narrative",
+        "title": "California Treats Annual Testing as the Minimum",
+        "body": [
+          "California's April 2026 Cross-Connection Control Policy Handbook says backflow prevention assemblies must be field tested at least annually. It also allows a public water system, the State Water Board, or a local health agency to require more frequent testing for high-hazard premises or assemblies at increased risk of failure.",
+          "The handbook also requires testing after installation, repair, depressurization for winterizing, or permanent relocation. If an assembly fails, the public water system must ensure that it is repaired or replaced within 30 days after notification of the failure, unless an allowed extension is part of the system's cross-connection control plan.",
+          "For an owner or facility manager, that means the annual due date is only one part of the workflow. A repair can create a retest requirement, and a passing field result may still need to be submitted through the local utility's process."
+        ]
+      },
+      {
+        "id": "rp-testing-checklist",
+        "kind": "checklist",
+        "title": "A Practical RP Assembly Testing Checklist",
+        "body": [
+          "Keep the entire compliance trail together so a failed test does not become a second missed deadline."
+        ],
+        "bullets": [
+          "Confirm the assembly location, serial number, size, device type, and the water account or meter it protects.",
+          "Schedule before the utility deadline and confirm that the tester holds a certification accepted for the required California compliance work.",
+          "Record the pass-fail result, test date, tester information, and any repair recommendation in the same property file.",
+          "If the assembly fails, coordinate repair or replacement promptly and schedule the required retest instead of treating the repair invoice as completion.",
+          "Keep proof that the passing result was submitted or accepted through the local water supplier's reporting process."
+        ]
+      },
+      {
+        "id": "common-rp-testing-questions",
+        "kind": "faq",
+        "title": "Common Questions About RP Assembly Testing",
+        "body": [
+          "Local water suppliers control the property-specific notice and reporting process, but these planning questions apply broadly."
+        ],
+        "faqItems": [
+          {
+            "question": "Does seven failures mean RP assemblies usually fail?",
+            "answer": "No. The seven failures came from one utility's annual filing and should not be used as a national or California-wide failure rate. The useful takeaway is that certified testing identified failed assemblies that required follow-up."
+          },
+          {
+            "question": "How often must an RP assembly be tested in California?",
+            "answer": "California's current policy handbook requires backflow prevention assemblies to be field tested at least annually. A water supplier, the State Water Board, or a local health agency may require more frequent testing for higher-risk conditions."
+          },
+          {
+            "question": "What happens after an RP assembly fails?",
+            "answer": "The next steps normally include repair or replacement, a passing retest, and submission through the applicable water supplier process. California's handbook says public water systems must ensure failed assemblies are repaired or replaced within 30 days after notification, subject to allowed plan extensions."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing Services",
+        "description": "Schedule certified testing for commercial and multi-assembly properties."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Move from a failed test to repair, replacement, and retesting without losing the compliance trail."
+      },
+      {
+        "href": "/commercial-backflow-specialists/apartment-community-backflow-testing-installation-repair",
+        "label": "Apartment and HOA Backflow Support",
+        "description": "Coordinate testing and follow-up across properties with multiple assemblies and access points."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the assembly list, due date, or utility notice already in hand."
+      }
+    ],
+    "cta": {
+      "heading": "Make the Annual Test the Start of a Closed Loop",
+      "body": "Backflow Test Pros can help coordinate certified testing, repair follow-up, retesting, and the documentation trail for commercial properties across Southern California.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "A certified tester working on a reduced-pressure backflow assembly at a clean Southern California commercial property, with a field test kit connected and a clipboard showing an annual test record. No text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "FAQPage",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 28,
+        "dataPoint": "Clackamas River Water 2024 RP assembly results",
+        "value": "580 installed; 483 tested; 476 passed; 7 failed",
+        "scope": "Clackamas River Water, Oregon",
+        "timePeriod": "2024 data filed February 7, 2025",
+        "whyItMatters": "A real utility filing showing that annual field testing identified failed RP assemblies.",
+        "sourceOrganization": "Clackamas River Water / Oregon Health Authority",
+        "sourceTitle": "2024 Annual Summary Report Cross Connection & Backflow Prevention (PWS 00187)",
+        "sourceUrl": "https://yourwater.oregon.gov/docs/asrs/00187_2024.pdf",
+        "authorityType": "Utility / state filing",
+        "notes": "One utility's recorded field data; not a national failure-rate benchmark."
+      },
+      {
+        "repositoryRow": 19,
+        "dataPoint": "California field-testing frequency and failed-assembly follow-up",
+        "value": "At least annual field testing; failed assemblies repaired or replaced within 30 days after notification, subject to allowed plan extensions",
+        "scope": "California public water systems under the CCCPH",
+        "timePeriod": "April 2026 policy handbook",
+        "whyItMatters": "Connects the field-data example to California's current testing and repair framework.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Current California policy source checked before publication."
+      }
+    ]
   }
 ]
