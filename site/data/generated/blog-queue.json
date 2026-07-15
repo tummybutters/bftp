@@ -676,8 +676,8 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "backflow-paperwork-deadlines-why-some-reports-are-due-in-10-business-days",
-    "status": "Queued",
-    "notes": ""
+    "status": "Published",
+    "notes": "Published 2026-07-15 as a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job."
   },
   {
     "id": "backflow_article_bank-021",

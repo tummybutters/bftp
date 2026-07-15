@@ -2959,5 +2959,180 @@
         "notes": "Current California policy source checked before publication."
       }
     ]
+  },
+  {
+    "sourceQueueId": "backflow_article_bank-020",
+    "slug": "a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
+    "path": "/blog/a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
+    "canonical": "https://www.backflowtestpros.com/blog/a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
+    "title": "A Backflow Test Report Can Be Due in 10 Business Days: Why Passing Is Only Half the Job",
+    "metaDescription": "One utility requires backflow reports within 10 business days. Learn why California owners should track testing, submission, repair, and acceptance as one workflow.",
+    "excerpt": "Portland requires testers to submit backflow test reports within 10 business days. That deadline is local, but the operating lesson travels: a passing test is not complete until the right water supplier receives the right record.",
+    "category": "Compliance / paperwork",
+    "audience": "Commercial property owners, facility managers, HOAs, and teams coordinating backflow paperwork",
+    "geography": "United States",
+    "templateType": "compliance_article",
+    "primaryKeyword": "backflow test report deadline",
+    "secondaryKeywords": [
+      "backflow test report submission",
+      "California backflow paperwork",
+      "backflow testing records",
+      "backflow compliance deadline"
+    ],
+    "publishedAt": "2026-07-15T09:00:00.000Z",
+    "updatedAt": "2026-07-15T09:00:00.000Z",
+    "heroFact": {
+      "value": "10 business days",
+      "label": "is the test-report submission window published by the Portland Water Bureau",
+      "context": "This is a Portland-specific deadline, not a universal California rule. It is a useful example of why property teams must confirm the reporting process for the water supplier serving each site."
+    },
+    "keyTakeaways": [
+      "A passing field test and a submitted, accepted report are separate steps in the compliance workflow.",
+      "The Portland Water Bureau says the tester submits the report within 10 business days, showing how quickly paperwork can become the next deadline.",
+      "California requires backflow assemblies to be field tested at least annually, while local public water systems administer the tracking and follow-up process.",
+      "Property teams should preserve the assembly identity, test result, repair status, submission proof, and utility response together."
+    ],
+    "sections": [
+      {
+        "id": "passing-is-not-the-last-step",
+        "kind": "narrative",
+        "title": "A Passing Test Is Not Always the Last Step",
+        "body": [
+          "A certified tester can finish the field procedure, record a passing result, and still leave one important compliance step open: getting the report to the water supplier in the required format and on the required schedule. That administrative handoff is easy to overlook when the assembly passed and no repair is needed.",
+          "The Portland Water Bureau gives a concrete example. Its official testing page says a tester will submit the backflow test report within 10 business days. The same page explains that the report needs identifying information such as the property record, assembly type, serial number, and assembly location so the utility can process it correctly.",
+          "That 10-business-day window belongs to Portland. It should not be copied onto a California calendar as though every utility uses the same rule. The broader lesson is operational: the test appointment, report preparation, submission, and utility record update are connected tasks, and the workflow is incomplete when one of them has no owner."
+        ],
+        "statCallout": {
+          "value": "10 business days",
+          "label": "for tester submission to the Portland Water Bureau",
+          "context": "Official local-utility example. California owners should follow the notice and reporting instructions issued by the public water system serving the property."
+        }
+      },
+      {
+        "id": "what-the-california-rule-adds",
+        "kind": "narrative",
+        "title": "What California's Current Backflow Rules Add",
+        "body": [
+          "California's April 2026 Cross-Connection Control Policy Handbook requires backflow prevention assemblies to be field tested at least annually. It also requires public water systems to maintain testing and recordkeeping procedures, which is why the local utility notice and submission method matter even when the statewide testing frequency is clear.",
+          "The handbook also creates follow-up events that deserve their own tracking. Assemblies must be tested after installation, repair, depressurization for winterizing, or permanent relocation. A failed assembly generally must be repaired or replaced within 30 days after notification, subject to an extension allowed through the public water system's approved plan.",
+          "For a California property owner, the safest interpretation is not that every report is due in 10 business days. It is that every test should have a documented finish line: who submits it, where it goes, what confirmation is retained, and what additional repair or retest clock begins if the assembly does not pass."
+        ]
+      },
+      {
+        "id": "close-the-paperwork-loop",
+        "kind": "checklist",
+        "title": "A Practical Backflow Paperwork Checklist",
+        "body": [
+          "Use the utility notice as the source of truth, then keep these steps together in the property file."
+        ],
+        "bullets": [
+          "Confirm the property, water account, assembly type, size, serial number, and physical location before the appointment.",
+          "Ask who is responsible for submitting the report: the tester, the owner, a property manager, or an approved online portal user.",
+          "Record the utility-specific deadline and submission method instead of relying on a deadline from another city.",
+          "Retain the completed test report and evidence of email, portal, or other accepted submission.",
+          "If the assembly fails, track repair, replacement, passing retest, and final submission as one open issue.",
+          "Confirm that the water supplier's record is updated when the notice or portal offers a status check."
+        ]
+      },
+      {
+        "id": "backflow-report-deadline-questions",
+        "kind": "faq",
+        "title": "Common Questions About Backflow Report Deadlines",
+        "body": [
+          "The exact deadline and reporting channel depend on the water supplier, but these distinctions prevent common handoff failures."
+        ],
+        "faqItems": [
+          {
+            "question": "Are all California backflow reports due within 10 business days?",
+            "answer": "No. The 10-business-day requirement discussed here is published by the Portland Water Bureau. California property owners should follow the deadline and reporting instructions from the public water system serving their property."
+          },
+          {
+            "question": "Who normally submits the backflow test report?",
+            "answer": "The responsible party varies by utility. Some utilities expect the certified tester to submit the report, while others use owner, tester, email, paper, or portal workflows. Confirm ownership before the test so the report does not stall afterward."
+          },
+          {
+            "question": "Is a repair invoice enough after a failed test?",
+            "answer": "Usually not. A failed assembly commonly needs repair or replacement, a passing retest, and submission through the applicable utility process. Keep the repair and passing test documentation together."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing Services",
+        "description": "Schedule certified testing and keep the test details tied to the correct assembly record."
+      },
+      {
+        "href": "/blog/backflow-testing-in-san-bernardino-annual-testing-and-30-day-submission-rules",
+        "label": "San Bernardino Testing and Submission Rules",
+        "description": "See a local Southern California example of annual testing and report-submission language."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Coordinate repair, replacement, retesting, and the documentation trail after a failed result."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the utility notice, assembly list, or reporting question already in hand."
+      }
+    ],
+    "cta": {
+      "heading": "Close the Loop From Field Test to Final Record",
+      "body": "Backflow Test Pros helps Southern California property teams coordinate certified testing, repair follow-up, retesting, and the paperwork trail required by the serving water supplier.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "A certified backflow tester at a clean Southern California commercial property reviewing a completed test form beside a field test kit and tagged backflow assembly. Natural daylight, documentary realism, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "FAQPage",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 25,
+        "dataPoint": "Portland Water Bureau report submission rule",
+        "value": "Tester must submit report within 10 business days",
+        "scope": "Portland Water Bureau customers",
+        "timePeriod": "Current page checked July 15, 2026",
+        "whyItMatters": "Shows that the administrative deadline can follow quickly after the field test.",
+        "sourceOrganization": "Portland Water Bureau",
+        "sourceTitle": "Testing backflow prevention assemblies",
+        "sourceUrl": "https://www.portland.gov/water/backflow-prevention/testing-requirements-and-reports",
+        "authorityType": "Government / utility",
+        "notes": "Portland-specific example; not presented as a California-wide deadline."
+      },
+      {
+        "repositoryRow": 27,
+        "dataPoint": "Oregon annual summary report deadline",
+        "value": "Community water-system annual summary report due by March 31",
+        "scope": "Oregon community water systems",
+        "timePeriod": "Current state page checked July 15, 2026",
+        "whyItMatters": "Illustrates that individual test reports and program-level reporting can operate on different clocks.",
+        "sourceOrganization": "Oregon Health Authority",
+        "sourceTitle": "Annual Summary Reports: Cross Connection & Backflow Prevention",
+        "sourceUrl": "https://www.oregon.gov/oha/ph/healthyenvironments/drinkingwater/crossconnection/pages/reports.aspx",
+        "authorityType": "Government (state)",
+        "notes": "Program-level Oregon reporting example."
+      },
+      {
+        "repositoryRow": 19,
+        "dataPoint": "California testing, recordkeeping, and failed-assembly follow-up",
+        "value": "At least annual field testing; public water-system recordkeeping procedures; failed assemblies repaired or replaced within 30 days after notification, subject to allowed extensions",
+        "scope": "California public water systems under the CCCPH",
+        "timePeriod": "April 2026 policy handbook",
+        "whyItMatters": "Connects the paperwork lesson to California's current testing and follow-up framework without inventing a universal submission deadline.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Current California policy source checked before publication."
+      }
+    ]
   }
 ]

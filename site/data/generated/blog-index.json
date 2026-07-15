@@ -1,5 +1,25 @@
 [
   {
+    "slug": "a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
+    "path": "/blog/a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
+    "canonical": "https://www.backflowtestpros.com/blog/a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
+    "title": "A Backflow Test Report Can Be Due in 10 Business Days: Why Passing Is Only Half the Job",
+    "excerpt": "Portland requires testers to submit backflow test reports within 10 business days. That deadline is local, but the operating lesson travels: a passing test is not complete until the right water supplier receives the right record.",
+    "category": "Compliance / paperwork",
+    "audience": "Commercial property owners, facility managers, HOAs, and teams coordinating backflow paperwork",
+    "geography": "United States",
+    "templateType": "compliance_article",
+    "primaryKeyword": "backflow test report deadline",
+    "heroFact": {
+      "value": "10 business days",
+      "label": "is the test-report submission window published by the Portland Water Bureau",
+      "context": "This is a Portland-specific deadline, not a universal California rule. It is a useful example of why property teams must confirm the reporting process for the water supplier serving each site."
+    },
+    "publishedAt": "2026-07-15T09:00:00.000Z",
+    "updatedAt": "2026-07-15T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
     "path": "/blog/what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
     "canonical": "https://www.backflowtestpros.com/blog/what-7-failed-rp-assemblies-reveal-about-annual-backflow-testing",
