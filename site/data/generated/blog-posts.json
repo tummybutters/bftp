@@ -3134,5 +3134,184 @@
         "notes": "Current California policy source checked before publication."
       }
     ]
+  },
+  {
+    "sourceQueueId": "backflow_article_bank-022",
+    "slug": "what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
+    "path": "/blog/what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
+    "canonical": "https://www.backflowtestpros.com/blog/what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
+    "title": "What 2,140 Double Check Assembly Tests Reveal About Annual Backflow Testing",
+    "metaDescription": "One utility recorded 2,140 double check assembly tests and 15 failures. Learn what that field data means for California property owners and managers.",
+    "excerpt": "One public utility's annual filing recorded 2,140 double check assembly tests, 2,121 passes, and 15 failures. The useful lesson is not a universal failure rate; it is why every assembly needs a documented annual test and a closed follow-up loop.",
+    "category": "Utility data / field results",
+    "audience": "Commercial property owners, facility managers, HOAs, and sites with double check assemblies",
+    "geography": "California",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "double check backflow assembly test results",
+    "secondaryKeywords": [
+      "double check assembly annual testing",
+      "DCVA backflow test",
+      "California backflow testing",
+      "commercial backflow preventer testing"
+    ],
+    "publishedAt": "2026-07-17T09:00:00.000Z",
+    "updatedAt": "2026-07-17T09:00:00.000Z",
+    "heroFact": {
+      "value": "2,140 tests",
+      "label": "were recorded for double check assemblies in one utility's 2024 annual filing",
+      "context": "Clackamas River Water listed 2,573 installed double check assemblies, 2,140 tested, 2,121 passed, and 15 failed. The reported pass and fail counts do not add exactly to the tested total, so this article does not calculate or present a failure rate."
+    },
+    "keyTakeaways": [
+      "A double check assembly can look normal and still require a certified field test to confirm performance.",
+      "One utility recorded 2,140 double check assembly tests, 2,121 passes, and 15 failures in its 2024 annual filing.",
+      "The filing's totals do not reconcile exactly, which is why the numbers should be reported as recorded rather than converted into a universal failure rate.",
+      "California's current Cross-Connection Control Policy Handbook requires backflow prevention assemblies to be field tested at least annually, with repair and retesting tracked when an assembly fails."
+    ],
+    "sections": [
+      {
+        "id": "what-the-utility-recorded",
+        "kind": "narrative",
+        "title": "What the Utility Actually Recorded",
+        "body": [
+          "Annual backflow testing can feel routine when most assemblies pass. A 2024 annual summary report filed by Clackamas River Water shows why the routine still matters. The utility listed 2,573 double check backflow prevention assemblies installed in its system and recorded 2,140 as tested.",
+          "The same filing listed 2,121 assemblies as passing and 15 as failing their annual test. Those pass and fail figures add to 2,136 rather than 2,140, so the filing leaves four recorded tests outside those two totals. The report also notes that some tests were not recorded in the annual summary because of a report-submission fee issue.",
+          "That detail is important. It would be misleading to turn the filing into a precise failure-rate claim when the reported totals do not reconcile exactly. The defensible takeaway is simpler: a large annual testing program still identified failed assemblies, and the quality of the records matters alongside the field work."
+        ],
+        "statCallout": {
+          "value": "2,573 installed",
+          "label": "with 2,140 tested, 2,121 recorded passes, and 15 recorded failures",
+          "context": "Clackamas River Water's 2024 filing. These are one utility's recorded counts, not a California or national benchmark."
+        }
+      },
+      {
+        "id": "why-double-check-assemblies-need-testing",
+        "kind": "narrative",
+        "title": "Why a Double Check Assembly Needs More Than a Visual Check",
+        "body": [
+          "A double check valve assembly uses two independently acting check valves to resist reverse flow. Those internal components are mechanical. Debris, wear, damaged seals, pressure conditions, or prior service can affect performance even when the enclosure, piping, and exterior of the device look normal.",
+          "A certified field test checks whether the assembly performs within the applicable test procedure. That is different from looking for a leak or confirming that water still flows through the property. Appearance can help identify obvious damage, but it cannot replace the measurements used to document a passing result.",
+          "The appropriate assembly type depends on the hazard and the local water supplier's requirements. A double check assembly is not interchangeable with every other backflow prevention method, and property owners should not change device type or configuration without confirming the approved protection for the connection."
+        ]
+      },
+      {
+        "id": "what-california-owners-should-track",
+        "kind": "narrative",
+        "title": "What California Property Teams Should Track",
+        "body": [
+          "California's April 2026 Cross-Connection Control Policy Handbook requires backflow prevention assemblies to be field tested at least annually. It also allows more frequent testing when a public water system, the State Water Board, or a local health agency identifies a higher-risk premise or an increased risk of assembly failure.",
+          "The handbook requires testing after installation, repair, depressurization for winterizing, or permanent relocation. When an assembly fails, the public water system must ensure repair or replacement within 30 days after notification, subject to an extension allowed through the system's approved cross-connection control plan.",
+          "For an owner, HOA, or facility manager, the annual appointment is only one checkpoint. The complete record should connect the assembly identity, test result, repair authorization, passing retest, and proof of submission to the serving water supplier. That closed loop is what prevents a field test from becoming an unresolved compliance task."
+        ]
+      },
+      {
+        "id": "double-check-assembly-checklist",
+        "kind": "checklist",
+        "title": "A Practical Double Check Assembly Testing Checklist",
+        "body": [
+          "Use one record for the full testing and follow-up chain, especially at properties with several assemblies."
+        ],
+        "bullets": [
+          "Confirm the assembly type, size, serial number, location, water account, and the connection it protects.",
+          "Schedule the certified field test before the local water supplier's deadline instead of waiting for a final notice.",
+          "Record the tester, test date, measured result, and pass-fail status under the correct assembly record.",
+          "If the assembly fails, assign repair or replacement immediately and schedule the required passing retest.",
+          "Keep the test report, repair documentation, retest, and submission confirmation together.",
+          "Review property records for missing or unreconciled counts before assuming every installed assembly is current."
+        ]
+      },
+      {
+        "id": "double-check-assembly-questions",
+        "kind": "faq",
+        "title": "Common Questions About Double Check Assembly Testing",
+        "body": [
+          "The serving water supplier controls the property-specific assembly, notice, and reporting requirements, but these distinctions help owners plan."
+        ],
+        "faqItems": [
+          {
+            "question": "Do 15 failures out of 2,140 tests establish a typical failure rate?",
+            "answer": "No. These figures come from one utility filing, and the filing's pass and fail counts do not add exactly to the tested total. They should not be presented as a California or national failure-rate benchmark."
+          },
+          {
+            "question": "How often must a double check assembly be tested in California?",
+            "answer": "California's current policy handbook requires backflow prevention assemblies to be field tested at least annually. More frequent testing may be required for higher-risk premises or assemblies at increased risk of failure."
+          },
+          {
+            "question": "Is a repair invoice enough after a failed annual test?",
+            "answer": "No. The normal compliance chain includes repair or replacement, a passing retest, and submission through the applicable water supplier process. Keep all three steps tied to the original failed result."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing Services",
+        "description": "Schedule certified annual testing for commercial, HOA, and multi-assembly properties."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Coordinate repair, replacement, and retesting after a failed assembly result."
+      },
+      {
+        "href": "/commercial-backflow-specialists/residential-community-hoa-backflow-testing-installation-repair",
+        "label": "HOA Backflow Testing and Repair",
+        "description": "Keep assembly records and annual testing organized across communities with multiple devices."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the assembly list, utility notice, or annual due date already in hand."
+      }
+    ],
+    "cta": {
+      "heading": "Turn Every Assembly Into a Closed Compliance Record",
+      "body": "Backflow Test Pros helps Southern California property teams coordinate certified testing, repair follow-up, retesting, and the documentation trail for every assembly on the property.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "A certified backflow tester working on a double check valve assembly at a clean Southern California commercial property, with the field test kit connected and an organized assembly list on a clipboard. Natural daylight, documentary realism, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "FAQPage",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [
+      {
+        "code": "source_totals_do_not_reconcile",
+        "label": "Do not calculate a failure rate",
+        "reason": "The source lists 2,140 tested, 2,121 passed, and 15 failed; those counts differ by four, so the article reports the figures as recorded without deriving a rate.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 29,
+        "dataPoint": "Clackamas River Water 2024 double check assembly results",
+        "value": "2,573 installed; 2,140 tested; 2,121 passed; 15 failed",
+        "scope": "Clackamas River Water, Oregon",
+        "timePeriod": "2024 data filed in 2025",
+        "whyItMatters": "A real utility filing showing that annual field testing identified failed double check assemblies and that record reconciliation matters.",
+        "sourceOrganization": "Clackamas River Water / Oregon Health Authority",
+        "sourceTitle": "2024 Annual Summary Report Cross Connection & Backflow Prevention (PWS 00187)",
+        "sourceUrl": "https://yourwater.oregon.gov/docs/asrs/00187_2024.pdf",
+        "authorityType": "Utility / state filing",
+        "notes": "Verified against the official PDF on July 17, 2026. One utility's recorded field data; not a national failure-rate benchmark."
+      },
+      {
+        "repositoryRow": 19,
+        "dataPoint": "California field-testing frequency and failed-assembly follow-up",
+        "value": "At least annual field testing; failed assemblies repaired or replaced within 30 days after notification, subject to allowed plan extensions",
+        "scope": "California public water systems under the CCCPH",
+        "timePeriod": "April 2026 policy handbook",
+        "whyItMatters": "Connects the field-data example to California's current testing and repair framework.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Current California policy source checked before publication."
+      }
+    ]
   }
 ]

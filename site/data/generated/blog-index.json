@@ -1,5 +1,25 @@
 [
   {
+    "slug": "what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
+    "path": "/blog/what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
+    "canonical": "https://www.backflowtestpros.com/blog/what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
+    "title": "What 2,140 Double Check Assembly Tests Reveal About Annual Backflow Testing",
+    "excerpt": "One public utility's annual filing recorded 2,140 double check assembly tests, 2,121 passes, and 15 failures. The useful lesson is not a universal failure rate; it is why every assembly needs a documented annual test and a closed follow-up loop.",
+    "category": "Utility data / field results",
+    "audience": "Commercial property owners, facility managers, HOAs, and sites with double check assemblies",
+    "geography": "California",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "double check backflow assembly test results",
+    "heroFact": {
+      "value": "2,140 tests",
+      "label": "were recorded for double check assemblies in one utility's 2024 annual filing",
+      "context": "Clackamas River Water listed 2,573 installed double check assemblies, 2,140 tested, 2,121 passed, and 15 failed. The reported pass and fail counts do not add exactly to the tested total, so this article does not calculate or present a failure rate."
+    },
+    "publishedAt": "2026-07-17T09:00:00.000Z",
+    "updatedAt": "2026-07-17T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
     "path": "/blog/a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
     "canonical": "https://www.backflowtestpros.com/blog/a-backflow-test-report-can-be-due-in-10-business-days-why-passing-is-only-half-the-job",
