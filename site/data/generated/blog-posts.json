@@ -3313,5 +3313,197 @@
         "notes": "Current California policy source checked before publication."
       }
     ]
+  },
+  {
+    "sourceQueueId": "backflow_article_bank-023",
+    "slug": "73-failed-double-check-assemblies-in-one-year-why-annual-testing-finds-problems-early",
+    "path": "/blog/73-failed-double-check-assemblies-in-one-year-why-annual-testing-finds-problems-early",
+    "canonical": "https://www.backflowtestpros.com/blog/73-failed-double-check-assemblies-in-one-year-why-annual-testing-finds-problems-early",
+    "title": "73 Failed Double Check Assemblies in One Year: Why Annual Testing Finds Problems Early",
+    "metaDescription": "An Oregon water system recorded 73 failed double check assemblies, all repaired and retested. Learn why annual testing and follow-up matter.",
+    "excerpt": "A public water system's state filing recorded 844 double check assemblies installed, 716 tested, and 73 failed, with every failed assembly repaired, retested, and returned to passing. The lesson for property owners is that annual testing catches quiet failures while they are still fixable.",
+    "category": "Utility data / field results",
+    "audience": "Southern California commercial owners, HOAs, property managers",
+    "geography": "California",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "annual backflow testing importance",
+    "secondaryKeywords": [
+      "double check assembly failure",
+      "annual backflow testing",
+      "backflow test and repair",
+      "commercial backflow compliance"
+    ],
+    "publishedAt": "2026-07-20T09:00:00.000Z",
+    "updatedAt": "2026-07-20T09:00:00.000Z",
+    "heroFact": {
+      "value": "73 failed assemblies",
+      "label": "double check assemblies that failed in one reporting year",
+      "context": "Perrydale Domestic Water Association's official Oregon filing recorded 844 double check assemblies installed, 716 tested, and 73 failed, with every failed assembly repaired, retested, and returned to passing."
+    },
+    "keyTakeaways": [
+      "An official Oregon state filing from Perrydale Domestic Water Association recorded, as reported, 844 double check assemblies installed, 716 tested, 721 passed, and 73 failed.",
+      "Because the filing states every failed assembly was repaired, retested, and passed, the pass count includes retested devices, so pass plus fail is larger than the number tested and the figures do not support a simple failure rate.",
+      "The values are useful anyway: 73 assemblies were found not doing their job, and annual testing is what surfaced them before a pressure event could pull contamination back into the drinking supply.",
+      "For Southern California commercial and HOA properties, the same discipline applies. Test on schedule, repair failures promptly, retest, and keep the full record together.",
+      "California's April 2026 Cross-Connection Control Policy Handbook requires backflow prevention assemblies to be field tested at least annually and failed assemblies to be repaired or replaced within 30 days after notification, subject to allowed plan extensions."
+    ],
+    "sections": [
+      {
+        "id": "what-the-filing-records",
+        "kind": "narrative",
+        "title": "What the Perrydale Filing Actually Records",
+        "body": [
+          "Public water systems file annual cross-connection reports with their state, and those filings are one of the few places you can see backflow prevention working at scale. Perrydale Domestic Water Association's filing with Oregon is a clear example.",
+          "As reported in that filing, the system had 844 double check assemblies installed. Of those, 716 were tested during the reporting period, 721 are recorded as passing, and 73 are recorded as failing. The filing also states that all of the failed assemblies were repaired, retested, and passed.",
+          "A double check assembly is a common backflow preventer for lower-hazard connections, such as many irrigation and fire lines. It uses two independent check valves so that if one fails, the other still blocks reverse flow. The point of testing it every year is simple: a check valve can wear, foul, or stick without anyone noticing, because nothing looks wrong until the day water tries to flow backward.",
+          "The filing does not say whether these assemblies showed visible symptoms before testing. What it does establish is that certified field testing identified 73 failed results and that the repair-and-retest process returned those assemblies to passing condition."
+        ],
+        "statCallout": {
+          "value": "844 installed / 716 tested / 73 failed",
+          "label": "double check assemblies in Perrydale's official filing, as reported",
+          "context": "Perrydale Domestic Water Association, Oregon annual cross-connection filing (record 01149, 2024)."
+        }
+      },
+      {
+        "id": "why-not-a-failure-rate",
+        "kind": "narrative",
+        "title": "Why These Numbers Are Not a Simple Failure Rate",
+        "body": [
+          "It is tempting to divide 73 failures by the number tested and publish a percentage. That would be a mistake, and the filing itself tells you why.",
+          "The report states that every failed assembly was repaired, retested, and passed. That means the pass count includes assemblies that were retested after repair, not just devices that passed on a first look. It shows up in the arithmetic: the recorded passes (721) plus the recorded failures (73) add up to more than the number of assemblies tested (716). A clean, first-test-only tally could not do that.",
+          "So the honest way to read Perrydale's numbers is to report them exactly as recorded and resist turning them into a rate. We do not know from the filing how many devices failed on the very first test versus how many results reflect the repair-and-retest cycle, and the pass figure is not a first-test figure. Presenting a percentage would imply a precision the data does not contain.",
+          "What the values do support is the thing that matters for a property owner: a large group of protective devices was checked, dozens were caught not doing their job, and every one of those was driven back to a passing condition. That is annual testing functioning as designed."
+        ]
+      },
+      {
+        "id": "why-annual-testing-finds-problems-early",
+        "kind": "narrative",
+        "title": "Why Annual Testing Finds Problems Early",
+        "body": [
+          "Backflow preventers are quiet parts of a plumbing system. Under normal pressure, a worn check valve and a perfect one behave identically. The difference only appears when supply pressure drops, during a main break, a hydrant flush, or a sudden spike in demand, and water tries to reverse direction. At that moment, a failed assembly is an open path between a non-potable source and the drinking supply.",
+          "Annual testing exists precisely because you cannot see this coming from the outside. A certified tester isolates the assembly, applies gauges to its test cocks, and confirms each check valve holds against reverse flow. Either it holds or it does not. Perrydale's 73 failures are 73 devices that would have looked fine to any building occupant right up until they were needed.",
+          "The second half of the lesson is the repair loop. A failed test is not the end of the story; it is the start of corrective work. In the Perrydale filing, every failed assembly was repaired and retested until it passed. For a commercial building or HOA, that same sequence, test, repair, retest, document, is what converts a yearly obligation into real protection. Skipping the retest, or letting a failed device sit, leaves the gap open even though the paperwork trail has started."
+        ]
+      },
+      {
+        "id": "checklist",
+        "kind": "checklist",
+        "title": "What Southern California Owners and Managers Should Do",
+        "body": [
+          "Perrydale is a public water system, but the operating habit translates directly to a commercial property, HOA, or managed portfolio in Southern California. Use this checklist to keep your own assemblies from becoming a silent version of those 73."
+        ],
+        "bullets": [
+          "Inventory every testable assembly on the property, including domestic, irrigation, and fire lines, with its type, location, and hazard served.",
+          "Schedule certified testing at least annually so mechanical performance is measured before the assembly must stop a reversal.",
+          "Treat any failed test as corrective work with a deadline. California's handbook requires public water systems to ensure failed assemblies are repaired or replaced within 30 days after notification, subject to allowed plan extensions.",
+          "Keep the failure record and the retest record together so the chain from problem to fix is complete and auditable.",
+          "Confirm results are filed with the water purveyor and keep proof of submission for your compliance record.",
+          "Reassess cross-connections after plumbing changes, new tenant equipment, or landscape and irrigation modifications."
+        ]
+      },
+      {
+        "id": "faq",
+        "kind": "faq",
+        "title": "Frequently Asked Questions",
+        "body": [
+          "Common questions from commercial and HOA property owners about failed assemblies and annual testing."
+        ],
+        "faqItems": [
+          {
+            "question": "Does a failed backflow test mean the device has to be replaced?",
+            "answer": "Not necessarily. Many failures are repairable. In the Perrydale filing, every failed double check assembly was repaired, retested, and passed. A certified tester determines whether cleaning or a repair kit restores the assembly or whether it has reached the point of replacement. Either way, the device must be retested and confirmed passing before the compliance loop is closed."
+          },
+          {
+            "question": "Why can't you calculate a failure rate from 73 failures out of 716 tested?",
+            "answer": "Because the filing records that failed assemblies were repaired and retested, the recorded pass count includes those retested devices, not first-test results only. That is why the reported passes plus failures add up to more than the number tested. The numbers are accurate as recorded, but they are not structured as a first-test tally, so a simple percentage would misrepresent them."
+          },
+          {
+            "question": "How often does California require backflow assemblies to be tested?",
+            "answer": "California's April 2026 Cross-Connection Control Policy Handbook requires backflow prevention assemblies to be field tested at least annually. A public water system, the State Water Board, or a local health agency may require more frequent testing for higher-risk premises or assemblies at increased risk of failure."
+          },
+          {
+            "question": "What kinds of connections use a double check assembly?",
+            "answer": "Double check assemblies are typically used on lower-hazard cross-connections, such as many irrigation systems and fire suppression lines that do not contain additives. Higher-hazard connections, where a health risk is present, generally require a reduced pressure principle assembly instead. Matching the assembly to the hazard is part of a proper cross-connection survey."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Annual Backflow Testing",
+        "description": "Certified annual testing and pass or fail documentation for commercial and residential assemblies."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Corrective work and retesting when an assembly fails its annual test."
+      },
+      {
+        "href": "/commercial-backflow-specialists/residential-community-hoa-backflow-testing-installation-repair",
+        "label": "HOA Backflow Testing and Repair",
+        "description": "Keep annual testing and follow-up organized across communities with multiple assemblies."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the assembly list, utility notice, or annual due date already in hand."
+      }
+    ],
+    "cta": {
+      "heading": "Find the Failures Before a Pressure Event Does",
+      "body": "Backflow Test Pros tests your assemblies on schedule, repairs and retests the ones that fail, and keeps the full record together so your Southern California property is protected and compliant.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Certified backflow tester applying a test gauge to a brass double check assembly on a commercial water line, test cocks and copper pipe visible, clean mechanical area, no faces, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "counts_not_a_rate",
+        "label": "Report counts as recorded; do not compute a failure rate",
+        "reason": "The source filing states failed assemblies were repaired and retested, so recorded passes plus failures exceed the number tested. Values must be reported exactly as recorded and not converted into a first-test failure rate.",
+        "severity": "info"
+      },
+      {
+        "code": "california_rule_verified",
+        "label": "California testing and repair language verified",
+        "reason": "The April 2026 handbook requires at least annual field testing and repair or replacement within 30 days after failure notification, subject to allowed public-water-system plan extensions.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 31,
+        "dataPoint": "Perrydale 2024 double check assembly results",
+        "value": "844 installed; 716 tested; 721 passed; 73 failed; all failed assemblies repaired, retested, and passed",
+        "scope": "Perrydale Domestic Water Association, Oregon",
+        "timePeriod": "2024 data filed in 2025",
+        "whyItMatters": "A real utility filing showing that annual testing identified failed double check assemblies and that repair and retesting closed the loop.",
+        "sourceOrganization": "Perrydale Domestic Water Association / Oregon Health Authority",
+        "sourceTitle": "2024 Annual Summary Report Cross Connection & Backflow Prevention (PWS 01149)",
+        "sourceUrl": "https://yourwater.oregon.gov/docs/asrs/01149_2024.pdf",
+        "authorityType": "Utility / state filing",
+        "notes": "Verified against the official PDF on July 20, 2026. Passes plus failures exceed tested assemblies because the filing includes repaired and retested assemblies; no failure rate is calculated."
+      },
+      {
+        "repositoryRow": 19,
+        "dataPoint": "California field-testing frequency and failed-assembly follow-up",
+        "value": "At least annual field testing; failed assemblies repaired or replaced within 30 days after notification, subject to allowed plan extensions",
+        "scope": "California public water systems under the CCCPH",
+        "timePeriod": "April 2026 policy handbook",
+        "whyItMatters": "Connects the Oregon field-data example to California's current testing and repair framework.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Current California policy source checked before publication; sections 3.3.3(b) and 3.3.3(e)."
+      }
+    ]
   }
 ]

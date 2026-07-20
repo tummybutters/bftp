@@ -1,5 +1,25 @@
 [
   {
+    "slug": "73-failed-double-check-assemblies-in-one-year-why-annual-testing-finds-problems-early",
+    "path": "/blog/73-failed-double-check-assemblies-in-one-year-why-annual-testing-finds-problems-early",
+    "canonical": "https://www.backflowtestpros.com/blog/73-failed-double-check-assemblies-in-one-year-why-annual-testing-finds-problems-early",
+    "title": "73 Failed Double Check Assemblies in One Year: Why Annual Testing Finds Problems Early",
+    "excerpt": "A public water system's state filing recorded 844 double check assemblies installed, 716 tested, and 73 failed, with every failed assembly repaired, retested, and returned to passing. The lesson for property owners is that annual testing catches quiet failures while they are still fixable.",
+    "category": "Utility data / field results",
+    "audience": "Southern California commercial owners, HOAs, property managers",
+    "geography": "California",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "annual backflow testing importance",
+    "heroFact": {
+      "value": "73 failed assemblies",
+      "label": "double check assemblies that failed in one reporting year",
+      "context": "Perrydale Domestic Water Association's official Oregon filing recorded 844 double check assemblies installed, 716 tested, and 73 failed, with every failed assembly repaired, retested, and returned to passing."
+    },
+    "publishedAt": "2026-07-20T09:00:00.000Z",
+    "updatedAt": "2026-07-20T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
     "path": "/blog/what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",
     "canonical": "https://www.backflowtestpros.com/blog/what-2-140-double-check-assembly-tests-reveal-about-annual-backflow-testing",

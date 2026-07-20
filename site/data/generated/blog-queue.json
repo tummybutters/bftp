@@ -766,8 +766,8 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "73-failed-double-check-assemblies-in-one-year-why-annual-testing-finds-problems-early",
-    "status": "Queued",
-    "notes": ""
+    "status": "Published",
+    "notes": "Published July 20, 2026 with source totals reported as recorded; no failure rate calculated because repair retests are included."
   },
   {
     "id": "backflow_article_bank-024",
