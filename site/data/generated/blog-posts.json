@@ -3682,5 +3682,213 @@
         "notes": "Verified against the official EPA PDF on July 22, 2026. The EPA issue paper was published in 2001 and cites AWWA 1990 for the 1920–1980 compilation. Historical scope and denominator are stated throughout the article."
       }
     ]
+  },
+  {
+    "sourceQueueId": "backflow_article_bank-025",
+    "slug": "routine-flushing-main-breaks-and-service-line-breaks-the-pressure-events-that-make-backflow-prevention-essential",
+    "path": "/blog/routine-flushing-main-breaks-and-service-line-breaks-the-pressure-events-that-make-backflow-prevention-essential",
+    "canonical": "https://www.backflowtestpros.com/blog/routine-flushing-main-breaks-and-service-line-breaks-the-pressure-events-that-make-backflow-prevention-essential",
+    "title": "Routine Flushing, Main Breaks, and Service Line Breaks: The Pressure Events That Make Backflow Prevention Essential",
+    "metaDescription": "See what EPA-cited survey and modeling results reveal about main break backflow risk, routine flushing, service line breaks, and negative pressure.",
+    "excerpt": "Routine maintenance and broken pipes can create the pressure conditions that allow unwanted flow to reverse. EPA-cited historical survey and modeling results show why commercial properties, HOAs, and public-water stakeholders should treat backflow prevention as an operating control, not an afterthought.",
+    "category": "Pressure events",
+    "audience": "Municipal/commercial readers, property managers, HOAs",
+    "geography": "United States",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "main break backflow risk",
+    "secondaryKeywords": [
+      "routine flushing backflow risk",
+      "service line break backflow",
+      "low pressure backsiphonage",
+      "commercial cross-connection control"
+    ],
+    "publishedAt": "2026-07-24T09:00:00.000Z",
+    "updatedAt": "2026-07-24T09:00:00.000Z",
+    "heroFact": {
+      "value": "70.2%",
+      "label": "of pressure-reduction incidents were attributed to routine flushing, main breaks, or service-line breaks",
+      "context": "Combined share in an ABPA 2000 historical survey of 70 systems, cited by the U.S. EPA. The survey recorded 11,186 incidents during the prior year; it does not establish current national prevalence."
+    },
+    "keyTakeaways": [
+      "An ABPA 2000 historical survey cited by EPA recorded 11,186 pressure-reduction incidents across 70 water systems during the prior year.",
+      "Routine flushing accounted for 34.8% of the surveyed incidents, compared with 19.2% for main breaks and 16.2% for service-line breaks.",
+      "A pressure drop creates an opportunity for backsiphonage, but contamination also requires a cross-connection and missing, inappropriate, or failed protection.",
+      "A study cited by EPA observed pressure as low as -10.1 psi, while a simple-pipe model predicted 69 gallons of intrusion in 60 seconds for a pump-failure surge and 78 gallons for a main-break surge.",
+      "Those figures are historical survey and study-specific results, not current national rates and not predictions for any Southern California property.",
+      "Commercial properties and HOAs can respond by inventorying cross-connections and assemblies, checking current test and service records, and confirming site-specific requirements with their water supplier."
+    ],
+    "sections": [
+      {
+        "id": "pressure-event-is-not-yet-contamination",
+        "kind": "narrative",
+        "title": "A Pressure Event Is Not Yet a Contamination Event",
+        "body": [
+          "Main break backflow risk begins with a change in the pressure relationship between potable water and another connected source. Under normal conditions, public-water pressure pushes water toward a property. When distribution pressure falls far enough, that relationship can reverse. The EPA issue paper calls reverse flow caused by negative or sub-atmospheric pressure backsiphonage.",
+          "Pressure loss alone does not prove that contamination occurred. The EPA paper describes three conditions needed for contamination through a cross-connection: a connection between potable water and a nonpotable source, a pressure condition that can reverse flow, and protection that is absent or fails. That distinction keeps the risk in perspective without minimizing it.",
+          "For a municipal operator, property manager, or HOA board, the useful question is therefore not whether every pressure event causes backflow. It is whether the property has identified its cross-connections and placed suitable, functioning protection between those connections and the potable supply before an ordinary pressure event arrives."
+        ]
+      },
+      {
+        "id": "what-the-historical-survey-counted",
+        "kind": "narrative",
+        "title": "What 11,186 Historical Incidents Actually Tell Us",
+        "body": [
+          "The U.S. EPA issue paper cites an American Backflow Prevention Association survey from 2000 in which 70 systems reported 11,186 pressure-reduction incidents during the prior year. Routine flushing represented 34.8% of the total, main breaks 19.2%, and service-line breaks 16.2%. Together, those three categories accounted for 70.2% of the incidents in that survey.",
+          "The distribution is revealing because the largest category was planned work, not a broken main. Routine flushing is a standard utility activity. Main and service-line breaks are unplanned, but they are familiar operating events rather than exotic scenarios. In the surveyed systems, the pressure conditions relevant to backsiphonage were tied largely to recognizable maintenance and repair activity.",
+          "The boundaries of the data matter just as much as the percentages. This was a historical survey of 70 systems, not a census of every U.S. utility. It does not show the current national frequency of pressure reductions, the number of actual backflow incidents, or the probability of contamination at a particular building."
+        ],
+        "statCallout": {
+          "value": "34.8% / 19.2% / 16.2%",
+          "label": "routine flushing, main breaks, and service-line breaks",
+          "context": "Shares of 11,186 pressure-reduction incidents reported by 70 systems in an ABPA 2000 historical survey cited by EPA."
+        }
+      },
+      {
+        "id": "routine-flushing-and-planned-pressure-change",
+        "kind": "narrative",
+        "title": "Routine Flushing Shows Why Planned Work Still Deserves Preparation",
+        "body": [
+          "Hydrant and system flushing can move water at high rates and create localized pressure variation. EPA lists hydrant flushing among maintenance activities that can reduce pressure, and the historical survey attributed more than one-third of reported pressure-reduction incidents to routine flushing.",
+          "That does not make flushing unsafe or suggest that utilities should avoid it. Flushing is part of water-system operation and maintenance. The practical lesson is that a planned event can still create the hydraulic condition that matters to an unprotected cross-connection. A property does not gain protection merely because the pressure change was scheduled.",
+          "Commercial teams can use planned utility work as a prompt to check what is connected downstream: irrigation equipment, boilers, fire systems, process water, chemical feed equipment, hose connections, pools, and other site-specific uses. The applicable protection depends on the connection and hazard, so device selection and compliance questions should be confirmed with the water supplier or other authority having jurisdiction."
+        ]
+      },
+      {
+        "id": "main-breaks-and-service-line-breaks",
+        "kind": "narrative",
+        "title": "Main Breaks and Service-Line Breaks Create Different Work, but the Same Core Question",
+        "body": [
+          "A water-main break can disturb pressure across part of a distribution system. A service-line break is closer to an individual customer connection. Their repair scopes differ, but each can be associated with reduced pressure. In the EPA-cited survey, main breaks represented 19.2% of reported pressure-reduction incidents and service-line breaks represented 16.2%.",
+          "For a property team, the central question after either event is whether reduced supply pressure could meet an unprotected or inadequately protected connection on the premises. An irrigation zone, elevated piping, a booster-pump arrangement, or equipment connected to potable water may change the local pressure relationship. The answer depends on the actual plumbing and hydraulic conditions, not the event label alone.",
+          "Southern California properties also operate under different water suppliers and local procedures. A notice, repair, test, or documentation step that applies in one service area should not be assumed to apply everywhere. Follow utility instructions during a pressure or water-quality event, and verify the property's backflow obligations directly instead of relying on a generic deadline."
+        ]
+      },
+      {
+        "id": "what-negative-pressure-modeling-shows",
+        "kind": "narrative",
+        "title": "What the -10.1 PSI and 60-Second Results Mean",
+        "body": [
+          "EPA cites a distribution-system study that recorded pressure as low as -10.1 psi during a pump test, routine operation, and a power outage, with the cited negative-pressure periods lasting 16 to 51 seconds. The paper then describes a simple single-pipe model used to examine intrusion under surge conditions.",
+          "In that model, a simulated pump-failure surge predicted 69 gallons of external water entering the pipe within 60 seconds. A main-break surge predicted 78 gallons in the same period. The result helps explain why short pressure transients deserve attention: under the conditions represented by the model, intrusion was measured in gallons per minute, not drops per hour.",
+          "It is important not to turn those study results into a forecast. The 69- and 78-gallon values were model predictions under specific conditions. They do not say that every pump failure or main break draws in that volume, and they do not predict what would happen at a specific commercial property or HOA. Actual movement depends on system hydraulics, the pressure difference, event duration, openings or leaks, cross-connections, and the condition of protective controls."
+        ],
+        "statCallout": {
+          "value": "69 to 78 gallons in 60 seconds",
+          "label": "predicted intrusion under two modeled surge scenarios",
+          "context": "Simple single-pipe model cited by EPA: 69 gallons for a simulated pump-failure surge and 78 gallons for a main-break surge. These are study-specific predictions, not property forecasts."
+        }
+      },
+      {
+        "id": "commercial-compliance-response",
+        "kind": "narrative",
+        "title": "Turn Pressure-Event Awareness Into a Commercial Compliance Review",
+        "body": [
+          "For commercial properties and HOAs in Southern California and elsewhere in the United States, the most useful response is a documented review rather than a universal rule. Start with an inventory of assemblies and potential cross-connections. Record the assembly type, location, water use served, most recent test result, open repair items, and the water supplier responsible for the account.",
+          "Then compare the records with what is physically present. Tenant improvements, irrigation changes, replacement equipment, temporary hoses, and building modifications can create or alter connections without making it into the property file. A qualified backflow professional can help identify where the records and site conditions need a closer look, while the water supplier or authority having jurisdiction determines applicable requirements.",
+          "Finally, define the response path for a pressure event. Keep utility contact information available, preserve notices and service records, follow any water-use or flushing instructions issued by the supplier, and document follow-up on assemblies or cross-connections when warranted. This does not guarantee that an incident cannot occur, but it gives the property a practical way to manage a known pressure-related pathway."
+        ]
+      },
+      {
+        "id": "pressure-event-questions",
+        "kind": "faq",
+        "title": "Questions About Pressure Events and Backflow",
+        "body": [
+          "These answers keep the historical statistics and model results in their proper scope."
+        ],
+        "faqItems": [
+          {
+            "question": "Does every water-main break cause backflow?",
+            "answer": "No. A main break may reduce pressure, but contamination through backflow also requires a cross-connection and protection that is absent, inappropriate, or fails. The actual outcome depends on the local hydraulic and plumbing conditions."
+          },
+          {
+            "question": "Why did routine flushing account for the largest survey share?",
+            "answer": "The EPA-cited historical survey attributed 34.8% of reported pressure-reduction incidents to routine flushing. Flushing can move water at high rates and create localized pressure changes. The percentage describes those 70 surveyed systems during the reported year; it is not a current national rate."
+          },
+          {
+            "question": "What does the 78-gallon main-break figure mean for my property?",
+            "answer": "It is not a property estimate. EPA reported that a simple single-pipe model predicted 78 gallons of external water intrusion within 60 seconds under a modeled main-break surge. A specific property's result would depend on its system, pressure conditions, connection pathways, and protective controls."
+          },
+          {
+            "question": "What should a property manager or HOA do after a pressure-loss event?",
+            "answer": "Follow notices and water-use instructions from the serving utility, retain the event documentation, and review whether site-specific assemblies or cross-connections need inspection, testing, service, or other follow-up. Confirm the required steps with the water supplier because procedures can vary."
+          },
+          {
+            "question": "Does a current backflow test record eliminate main break backflow risk?",
+            "answer": "No single record eliminates risk. A sound program combines identification of cross-connections, appropriate protection, proper installation, testing and maintenance, repair follow-through, accurate records, and coordination with the water supplier. Testing provides evidence about an assembly at the time of the test; it is not a guarantee against every future condition."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/commercial-backflow-specialists",
+        "label": "Commercial Backflow Specialists",
+        "description": "Review commercial and multi-property backflow testing, repair, replacement, and compliance coordination services."
+      },
+      {
+        "href": "/backflow-testing",
+        "label": "Annual Backflow Testing",
+        "description": "Certified testing and compliance documentation for commercial and residential assemblies."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Corrective work and passing retests when an assembly does not meet the test standard."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Request a site-specific commercial compliance review or discuss assemblies, records, and follow-up needs."
+      }
+    ],
+    "cta": {
+      "heading": "Review Your Property's Pressure-Event Readiness",
+      "body": "Backflow Test Pros can review your commercial or HOA assembly records, known cross-connections, test status, and open service items in the context of your water supplier's requirements.",
+      "label": "Request a Commercial Compliance Review",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Documentary-style wide photograph showing a Southern California municipal hydrant flushing operation in the background and a clearly visible commercial backflow prevention assembly in the foreground, realistic daylight, active water flow contained at the curb, brass valves and test cocks in sharp focus, no faces, no logos, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "historical_and_modeled_scope",
+        "label": "Keep survey and model caveats visible",
+        "reason": "The 11,186 incidents and percentage breakdown come from an ABPA 2000 historical survey of 70 systems, while the 69- and 78-gallon values are simple-pipe model predictions cited by EPA. None is a current national prevalence estimate or a prediction for a specific property.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 15,
+        "dataPoint": "Pressure-reduction incidents reported by 70 systems in one year",
+        "value": "11,186 incidents total; 34.8% routine flushing; 19.2% main breaks; 16.2% service-line breaks",
+        "scope": "70 surveyed systems",
+        "timePeriod": "Past year in ABPA 2000 survey cited by EPA",
+        "whyItMatters": "Shows that routine utility work and common pipe failures were major categories of reported pressure-reduction events in the historical survey.",
+        "sourceOrganization": "U.S. EPA",
+        "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
+        "sourceUrl": "https://www.epa.gov/sites/default/files/2015-09/documents/2007_05_18_disinfection_tcr_issuepaper_tcr_crossconnection-backflow.pdf",
+        "authorityType": "Government (federal)",
+        "notes": "Verified against the official EPA PDF on July 24, 2026. Historical ABPA survey data cited in the issue paper; operational pressure-reduction incidents, not outbreak data or a current national prevalence estimate."
+      },
+      {
+        "repositoryRow": 16,
+        "dataPoint": "Negative-pressure observations and intrusion modeling results from distribution-system research",
+        "value": "Pressure as low as -10.1 psi; 69 gallons predicted in 60 seconds for a pump-failure surge; 78 gallons predicted in 60 seconds for a main-break surge",
+        "scope": "Observed distribution-system pressure and simple single-pipe modeled surge conditions",
+        "timePeriod": "LeChevallier et al. 2001 study cited by EPA",
+        "whyItMatters": "Illustrates that short negative-pressure events can create rapid intrusion potential under the conditions represented by the study and model.",
+        "sourceOrganization": "U.S. EPA",
+        "sourceTitle": "Potential Contamination Due to Cross-Connections and Backflow and the Associated Health Risks",
+        "sourceUrl": "https://www.epa.gov/sites/default/files/2015-09/documents/2007_05_18_disinfection_tcr_issuepaper_tcr_crossconnection-backflow.pdf",
+        "authorityType": "Government (federal)",
+        "notes": "Verified against the official EPA PDF on July 24, 2026. Study-specific observations and model predictions; not national prevalence statistics or predictions for a specific utility or property."
+      }
+    ]
   }
 ]
