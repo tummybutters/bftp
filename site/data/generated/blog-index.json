@@ -1,5 +1,25 @@
 [
   {
+    "slug": "missed-your-backflow-deadline-one-city-allows-penalties-up-to-500-per-assembly",
+    "path": "/blog/missed-your-backflow-deadline-one-city-allows-penalties-up-to-500-per-assembly",
+    "canonical": "https://www.backflowtestpros.com/blog/missed-your-backflow-deadline-one-city-allows-penalties-up-to-500-per-assembly",
+    "title": "Missed Your Backflow Deadline? One City Allows Penalties Up to $500 Per Assembly",
+    "excerpt": "An official City of Longmont FAQ shows how an overdue annual backflow test can escalate from a reminder to contracted testing, a civil penalty of up to $500 per assembly, and possible water-service interruption. The amounts are local, but the operating lesson applies anywhere: know the due date before the final notice arrives.",
+    "category": "Compliance / consequences",
+    "audience": "Commercial owners, HOAs, cost-conscious managers",
+    "geography": "United States",
+    "templateType": "compliance_article",
+    "primaryKeyword": "overdue backflow testing penalty",
+    "heroFact": {
+      "value": "Up to $500",
+      "label": "per assembly at 91 days past due in the City of Longmont enforcement example",
+      "context": "Longmont's official Backflow and Cross-Connection FAQs describe this local civil penalty when a required test or approved alternative schedule has not been submitted. It is not a California penalty or a universal national amount."
+    },
+    "publishedAt": "2026-07-27T09:00:00.000Z",
+    "updatedAt": "2026-07-27T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "routine-flushing-main-breaks-and-service-line-breaks-the-pressure-events-that-make-backflow-prevention-essential",
     "path": "/blog/routine-flushing-main-breaks-and-service-line-breaks-the-pressure-events-that-make-backflow-prevention-essential",
     "canonical": "https://www.backflowtestpros.com/blog/routine-flushing-main-breaks-and-service-line-breaks-the-pressure-events-that-make-backflow-prevention-essential",
