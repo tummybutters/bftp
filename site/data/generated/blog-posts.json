@@ -4071,5 +4071,205 @@
         "notes": "Verified against the official City of Longmont PDF on July 27, 2026. Local enforcement example only; not a California or nationwide penalty."
       }
     ]
+  },
+  {
+    "sourceQueueId": "local_regulation_article_bank-009",
+    "slug": "oregon-s-march-31-deadline-what-annual-cross-connection-program-reporting-looks-like",
+    "path": "/blog/oregon-s-march-31-deadline-what-annual-cross-connection-program-reporting-looks-like",
+    "canonical": "https://www.backflowtestpros.com/blog/oregon-s-march-31-deadline-what-annual-cross-connection-program-reporting-looks-like",
+    "title": "Oregon’s March 31 Deadline: What Annual Cross-Connection Program Reporting Looks Like",
+    "metaDescription": "Oregon requires community water systems to submit an annual cross-connection report by March 31. See what that reveals about organized backflow compliance.",
+    "excerpt": "Oregon requires every community water system to report on its cross-connection control program each year by March 31. The rule is Oregon-specific, but the operating lesson travels: reliable backflow compliance depends on complete records, clear ownership, and proof that the work was finished.",
+    "category": "State program reporting",
+    "audience": "Water-system staff, engineers, compliance-minded property readers",
+    "geography": "United States",
+    "templateType": "compliance_article",
+    "primaryKeyword": "oregon cross connection annual summary report march 31",
+    "secondaryKeywords": [
+      "cross connection annual report",
+      "backflow program record keeping",
+      "community water system compliance",
+      "backflow testing documentation"
+    ],
+    "publishedAt": "2026-07-29T09:00:00.000Z",
+    "updatedAt": "2026-07-29T09:00:00.000Z",
+    "heroFact": {
+      "value": "March 31",
+      "label": "annual reporting deadline for Oregon community water systems",
+      "context": "The Oregon Health Authority says every community water system in Oregon must report requested information about its cross-connection control program each year. This is an Oregon program deadline, not a California property-owner deadline."
+    },
+    "keyTakeaways": [
+      "Oregon requires every community water system to submit a Cross Connection Annual Summary Report each year.",
+      "The Oregon Health Authority states that the annual report is due by March 31.",
+      "The state provides both an online reporting option and a form-based submission option, then lets systems check whether a report has been entered.",
+      "Oregon’s deadline does not apply to Southern California properties, where the serving water supplier controls the exact testing and paperwork requirements.",
+      "Property owners can borrow the same operating discipline by keeping one reliable record for each assembly, due date, test, repair, retest, and report submission."
+    ],
+    "sections": [
+      {
+        "id": "what-oregon-requires",
+        "kind": "narrative",
+        "title": "What Oregon Requires Each Year",
+        "body": [
+          "The Oregon Health Authority’s current Annual Summary Reports page says the Cross Connection Annual Summary Report is required for every community water system in Oregon. Each system must report requested information about its cross-connection control program every year, using the reporting options provided by the state.",
+          "The same page states that the report is due by March 31 each year. For the current reporting cycle shown on the page, Oregon offers an online SmartSheet option and a form that can be submitted by email, fax, or mail. The state also provides a way to check whether the report has been entered.",
+          "That deadline belongs to Oregon community water systems. It is not a California testing deadline, and it does not replace the notice or instructions issued by the water supplier serving a Southern California property. Its value for owners and facility teams is the example it sets: cross-connection control is treated as a recurring program with records, reporting, and follow-through."
+        ],
+        "statCallout": {
+          "value": "Every year",
+          "label": "Oregon community water systems report on their cross-connection control programs",
+          "context": "The Oregon Health Authority pairs the annual requirement with a March 31 due date and state-provided reporting methods."
+        }
+      },
+      {
+        "id": "why-reporting-matters",
+        "kind": "narrative",
+        "title": "Why Reporting Matters as Much as the Field Test",
+        "body": [
+          "A backflow test happens at a physical assembly, but a compliance program has to answer a larger set of questions. Which assemblies are active? Which ones were tested? Which failed? Were repairs and retests completed? Was the final result sent to the right authority? A report forces those details into one accountable record.",
+          "Historical research summarized in a U.S. EPA issue paper helps explain why that discipline matters. The paper cites a survey in which 91 percent of respondents had cross-connection control programs, yet only 49 percent required backflow incidents to be reported to state primacy agencies. Most respondents were community water systems. The survey is historical and does not describe current Oregon performance, but it illustrates a durable distinction: having a program on paper is not the same as consistently capturing what happened.",
+          "For a property owner, the equivalent gap appears when the annual test is completed but the report, repair, retest, or submission confirmation cannot be found. The field work and the documentation should be managed as one job."
+        ]
+      },
+      {
+        "id": "what-property-owners-can-borrow",
+        "kind": "checklist",
+        "title": "What Property Owners Can Borrow From the Annual-Report Model",
+        "body": [
+          "Southern California owners do not file Oregon’s report, but they can use the same annual-review habit. A short assembly register makes it easier to prepare for testing, answer a utility notice, and prove completion."
+        ],
+        "bullets": [
+          "List every assembly by property, location, serial number, size, type, and serving water supplier.",
+          "Record each utility-issued due date rather than applying one assumed date to every assembly.",
+          "Track the scheduled test date, completed test date, pass-fail result, repair, replacement, and required retest.",
+          "Keep access instructions for locked cages, rooftops, irrigation areas, tenant spaces, fire systems, and equipment rooms.",
+          "Save the final test report with the portal, email, or other submission confirmation.",
+          "Review the register before the next annual cycle so missing records are corrected before a notice becomes urgent."
+        ]
+      },
+      {
+        "id": "california-scope",
+        "kind": "narrative",
+        "title": "Use the Serving Utility’s Rules in California",
+        "body": [
+          "Backflow requirements are administered through state rules and local water-supplier programs, so the exact deadline, form, tester qualifications, submission method, and enforcement process can differ by location. A date published by another state or city should never be copied onto a California property’s calendar without confirmation.",
+          "Start with the notice for the actual property. Match the address, assembly information, account, and due date to the device in the field. If the notice is unclear, contact the serving water supplier for the controlling requirement.",
+          "Then schedule early enough to leave room for access issues and corrective work. An assembly that fails may need repair or replacement followed by a passing retest. Completing the first appointment on the due date can still leave the overall compliance job unfinished."
+        ]
+      },
+      {
+        "id": "how-backflow-test-pros-helps",
+        "kind": "narrative",
+        "title": "Turn the Notice Into a Completed Record",
+        "body": [
+          "Backflow Test Pros helps Southern California homeowners, commercial owners, HOAs, and facility teams move from a utility notice to completed testing and clear documentation. When an assembly does not pass, the next step can include repair or replacement coordination and retesting.",
+          "Bring the property address, serving water supplier, notice, assembly details, and due date to the scheduling conversation. For sites with multiple assemblies, identify each device separately so one completed test does not hide another open requirement.",
+          "The goal is simple: finish the field work, resolve any failure, and keep the paperwork together. That is the property-level version of the program discipline Oregon’s annual report makes visible."
+        ]
+      },
+      {
+        "id": "annual-reporting-questions",
+        "kind": "faq",
+        "title": "Questions About Annual Cross-Connection Reporting",
+        "body": [
+          "These answers keep the Oregon example in its proper scope and focus on practical next steps."
+        ],
+        "faqItems": [
+          {
+            "question": "Does the March 31 deadline apply to California property owners?",
+            "answer": "No. March 31 is the annual summary reporting deadline stated by the Oregon Health Authority for Oregon community water systems. California owners should follow the date and instructions issued by the water supplier serving their property."
+          },
+          {
+            "question": "Is an annual program report the same as an individual backflow test report?",
+            "answer": "No. Oregon’s annual summary covers a community water system’s cross-connection control program. An individual property’s test report documents the result for a specific assembly. The exact submission process is set by the responsible authority."
+          },
+          {
+            "question": "What records should a multi-assembly property keep?",
+            "answer": "Keep a separate record for each assembly with its location, serial number, type, due date, test result, repairs, retests, final report, and submission confirmation."
+          },
+          {
+            "question": "What should I send when requesting backflow service?",
+            "answer": "Send the property address, water-supplier notice, assembly information, due date, access notes, and any prior test or repair records available."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Annual Backflow Testing",
+        "description": "Schedule certified testing and keep each assembly’s compliance record moving."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Resolve failed assemblies and complete the corrective work needed before a passing retest."
+      },
+      {
+        "href": "/commercial-backflow-specialists",
+        "label": "Commercial Backflow Specialists",
+        "description": "Coordinate testing and documentation across commercial and multi-assembly properties."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the notice, property address, assembly details, and due date."
+      }
+    ],
+    "cta": {
+      "heading": "Make the Annual Test a Finished Job",
+      "body": "Backflow Test Pros can help complete the field work, resolve failed assemblies, and keep the service documentation organized.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Documentary editorial photograph of a certified backflow tester reviewing an organized assembly register beside a commercial backflow prevention device, realistic Southern California daylight, no private information, no logos, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "oregon_program_scope",
+        "label": "Keep the Oregon deadline local",
+        "reason": "The March 31 annual summary deadline applies to Oregon community water systems. It is not a California property-owner testing deadline.",
+        "severity": "info"
+      },
+      {
+        "code": "historical_survey_scope",
+        "label": "Keep the EPA survey historical",
+        "reason": "The 91 percent and 49 percent figures come from a historical survey cited in a 2007 EPA issue paper and do not measure current Oregon or California program performance.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 27,
+        "dataPoint": "Oregon annual summary report deadline",
+        "value": "Due by March 31 each year",
+        "scope": "All Oregon community water systems",
+        "timePeriod": "Current state page",
+        "whyItMatters": "Shows how a state turns cross-connection control into a recurring reporting program with a clear annual deadline.",
+        "sourceOrganization": "Oregon Health Authority",
+        "sourceTitle": "Annual Summary Reports: Cross Connection & Backflow Prevention",
+        "sourceUrl": "https://www.oregon.gov/oha/ph/healthyenvironments/drinkingwater/crossconnection/pages/reports.aspx",
+        "authorityType": "Government (state)",
+        "notes": "Verified against the current Oregon Health Authority page on July 29, 2026. Oregon community-water-system requirement only."
+      },
+      {
+        "repositoryRow": 18,
+        "dataPoint": "Cross-connection control program adoption and reporting",
+        "value": "91% had cross-connection control programs; 49% required reporting backflow incidents; 99% of respondents were community water systems",
+        "scope": "Survey respondents",
+        "timePeriod": "Historical survey cited in a 2007 EPA issue paper",
+        "whyItMatters": "Illustrates the difference between having a control program and consistently reporting incidents.",
+        "sourceOrganization": "U.S. EPA",
+        "sourceTitle": "Evaluating HACCP Strategies for Distribution System Monitoring and Hazard Assessment and Control",
+        "sourceUrl": "https://www.epa.gov/sites/default/files/2021-05/documents/issuepaper_tcr_haccp-strategies_posted.pdf",
+        "authorityType": "Government (federal)",
+        "notes": "Verified against the official EPA PDF on July 29, 2026. Historical survey result; not current Oregon or California performance."
+      }
+    ]
   }
 ]
