@@ -3913,7 +3913,7 @@
   },
   {
     "id": "refresh_localized_bank-001",
-    "articleTitle": "2026 California Backflow Testing Rules: Annual Tests, 30-Day Repairs, and 1-Day Incident Notice",
+    "articleTitle": "2026 California Backflow Testing Rules: Annual Tests, 30-Day Repairs, and 24-Hour Incident Notice",
     "category": "Localized / statewide",
     "sheetName": "Refresh Localized Bank",
     "audience": "California homeowners, HOAs, commercial owners, testers",
@@ -3923,49 +3923,49 @@
     "secondaryKeywords": [],
     "sourceStats": [
       {
-        "repositoryRow": 17,
-        "dataPoint": "Finished-water storage inspection gap versus AWWA recommendation",
-        "value": "Many facilities never inspected; many inspected less often than the 3-year AWWA recommendation",
-        "scope": "U.S. water storage facilities",
-        "timePeriod": "Survey cited in 2007 EPA HACCP paper",
-        "whyItMatters": "Useful for explaining that prevention depends on program follow-through, not just equipment requirements.",
-        "sourceOrganization": "U.S. EPA",
-        "sourceTitle": "Evaluating HACCP Strategies for Distribution System Monitoring and Hazard Assessment and Control",
-        "sourceUrl": "https://www.epa.gov/sites/default/files/2021-05/documents/issuepaper_tcr_haccp-strategies_posted.pdf",
-        "authorityType": "Government (federal)",
-        "notes": "Directional finding; source does not provide a precise national percentage."
-      },
-      {
-        "repositoryRow": 18,
-        "dataPoint": "Cross-connection control program adoption and reporting",
-        "value": "91% had cross-connection control programs; 49% required reporting backflow incidents; 99% of respondents were community water systems",
-        "scope": "Survey respondents",
-        "timePeriod": "Survey cited in 2007 EPA HACCP paper",
-        "whyItMatters": "Good for contrasting program adoption with weaker incident-reporting discipline.",
-        "sourceOrganization": "U.S. EPA",
-        "sourceTitle": "Evaluating HACCP Strategies for Distribution System Monitoring and Hazard Assessment and Control",
-        "sourceUrl": "https://www.epa.gov/sites/default/files/2021-05/documents/issuepaper_tcr_haccp-strategies_posted.pdf",
-        "authorityType": "Government (federal)",
-        "notes": "Historical survey result."
-      },
-      {
         "repositoryRow": 19,
         "dataPoint": "California minimum assembly testing frequency",
-        "value": "At least annually",
-        "scope": "California public water systems / regulated assemblies",
-        "timePeriod": "Current policy text in draft handbook cited here (2021 draft)",
-        "whyItMatters": "A practical compliance benchmark that businesses and property owners can actually act on.",
+        "value": "Backflow prevention assemblies must be field tested at least annually; more frequent testing may be required for higher-risk premises or assemblies",
+        "scope": "California public water systems and assemblies in their cross-connection control programs",
+        "timePeriod": "April 2026 handbook, amended April 21, 2026",
+        "whyItMatters": "Establishes the statewide minimum testing frequency while preserving the ability to require a tighter schedule for higher risk.",
         "sourceOrganization": "California State Water Resources Control Board",
-        "sourceTitle": "Cross-Connection Control Policy Handbook (draft)",
-        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/cccph/cccph_draft_feb2021.pdf",
-        "authorityType": "Government (state)",
-        "notes": "Regulatory/policy requirement; California-specific."
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Verified July 31, 2026. Section 3.3.3(b). The public water system administers the customer-facing schedule and process."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "California failed-assembly repair or replacement window",
+        "value": "Within 30 days after notification of failure; extensions may be allowed through the public water system's Cross-Connection Control Plan",
+        "scope": "California public water systems and failed backflow prevention assemblies in their programs",
+        "timePeriod": "April 2026 handbook, amended April 21, 2026",
+        "whyItMatters": "Turns a failed result into a time-bound repair, replacement, and retest workflow.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Verified July 31, 2026. Sections 3.3.3(a) and 3.3.3(e). The duty is stated as a public-water-system responsibility."
+      },
+      {
+        "repositoryRow": 21,
+        "dataPoint": "California 24-hour backflow incident notice chain",
+        "value": "Tester to public water system within 24 hours when an incident or unprotected cross-connection is observed during field testing; public water system to State Water Board and local health agencies within 24 hours of its determination",
+        "scope": "Certified testers and California public water systems under the CCCPH",
+        "timePeriod": "April 2026 handbook, amended April 21, 2026",
+        "whyItMatters": "Shows that suspected backflow incidents move into investigation and agency notification on an urgent timeline.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Verified July 31, 2026. Sections 3.3.3(f) and 3.5.3(a). Actor and trigger language is preserved."
       }
     ],
     "ctaType": "schedule_backflow_service",
-    "slug": "2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-1-day-incident-notice",
-    "status": "Review Required",
-    "notes": "Requires reviewer sign-off before publication. Carry the California angle through the hero, body, and related links."
+    "slug": "2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-24-hour-incident-notice",
+    "status": "Published",
+    "notes": "Verified against the official April 2026 California handbook on 2026-07-31; public-water-system and certified-tester responsibilities remain explicit."
   },
   {
     "id": "refresh_localized_bank-002",

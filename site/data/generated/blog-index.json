@@ -1,5 +1,25 @@
 [
   {
+    "slug": "2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-24-hour-incident-notice",
+    "path": "/blog/2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-24-hour-incident-notice",
+    "canonical": "https://www.backflowtestpros.com/blog/2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-24-hour-incident-notice",
+    "title": "2026 California Backflow Testing Rules: Annual Tests, 30-Day Repairs, and 24-Hour Incident Notice",
+    "excerpt": "California's current Cross-Connection Control Policy Handbook creates three timing checkpoints worth understanding: backflow prevention assemblies are tested at least annually, failed assemblies are repaired or replaced within 30 days of failure notification, and certain incident notices move within 24 hours. The duties fall on public water systems and certified testers, while property owners still need to act quickly on the instructions from their serving utility.",
+    "category": "California rules / timing",
+    "audience": "California homeowners, HOAs, commercial owners, facility managers",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "california backflow testing requirements 2026",
+    "heroFact": {
+      "value": "Annual / 30 days / 24 hours",
+      "label": "three timing checkpoints in California's current backflow policy handbook",
+      "context": "The April 2026 handbook assigns these duties to public water systems and certified testers. Property owners should follow the due date, repair instructions, and reporting process issued by the water supplier serving the property."
+    },
+    "publishedAt": "2026-07-31T09:00:00.000Z",
+    "updatedAt": "2026-07-31T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "oregon-s-march-31-deadline-what-annual-cross-connection-program-reporting-looks-like",
     "path": "/blog/oregon-s-march-31-deadline-what-annual-cross-connection-program-reporting-looks-like",
     "canonical": "https://www.backflowtestpros.com/blog/oregon-s-march-31-deadline-what-annual-cross-connection-program-reporting-looks-like",
