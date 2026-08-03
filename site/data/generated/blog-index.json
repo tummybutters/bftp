@@ -1,5 +1,25 @@
 [
   {
+    "slug": "backflow-retesting-after-repair-replacement-or-relocation-what-california-owners-should-know",
+    "path": "/blog/backflow-retesting-after-repair-replacement-or-relocation-what-california-owners-should-know",
+    "canonical": "https://www.backflowtestpros.com/blog/backflow-retesting-after-repair-replacement-or-relocation-what-california-owners-should-know",
+    "title": "Backflow Retesting After Repair, Replacement, or Relocation: What California Owners Should Know",
+    "excerpt": "A passing annual test does not cover every later change to a backflow prevention assembly. California's current handbook requires public water systems to ensure certified field testing after installation, repair, winterizing depressurization, or permanent relocation. Some utilities also state replacement as a customer-facing trigger. Here is how owners and property teams can close the repair, retest, and reporting loop without assuming the annual test was enough.",
+    "category": "Post-repair compliance",
+    "audience": "California property managers, owners, contractors, irrigation teams, and facility teams",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "backflow retesting after repair replacement relocation",
+    "heroFact": {
+      "value": "Work can trigger a new test",
+      "label": "installation, repair, winterizing depressurization, and permanent relocation are separate California testing triggers",
+      "context": "The April 2026 handbook requires certified field testing after these events. Customer scheduling, forms, and submission steps still come from the water supplier serving the property."
+    },
+    "publishedAt": "2026-08-03T09:00:00.000Z",
+    "updatedAt": "2026-08-03T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-24-hour-incident-notice",
     "path": "/blog/2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-24-hour-incident-notice",
     "canonical": "https://www.backflowtestpros.com/blog/2026-california-backflow-testing-rules-annual-tests-30-day-repairs-and-24-hour-incident-notice",
