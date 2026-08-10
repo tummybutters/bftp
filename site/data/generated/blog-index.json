@@ -1,5 +1,25 @@
 [
   {
+    "slug": "california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
+    "path": "/blog/california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
+    "canonical": "https://www.backflowtestpros.com/blog/california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
+    "title": "California Backflow Testing Rules: What ‘At Least Annually’ Means for Property Owners",
+    "excerpt": "California's current Cross-Connection Control Policy Handbook requires public water systems to ensure backflow prevention assemblies are field tested at least annually, with more frequent testing for some hazards or local program needs. Annual does not mean every possible obligation is identical statewide. Here is what property owners should confirm before the due date.",
+    "category": "California rules / timing",
+    "audience": "California property owners, managers, facility teams, HOAs, and irrigation customers",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "California annual backflow testing rules",
+    "heroFact": {
+      "value": "At least once every year",
+      "label": "the statewide minimum field-testing frequency for assemblies in a public water system's cross-connection control program",
+      "context": "The April 2026 handbook also allows more frequent testing based on hazard, assembly type, location, history, or the serving water system's program."
+    },
+    "publishedAt": "2026-08-10T09:00:00.000Z",
+    "updatedAt": "2026-08-10T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "backflow-retesting-after-repair-replacement-or-relocation-what-california-owners-should-know",
     "path": "/blog/backflow-retesting-after-repair-replacement-or-relocation-what-california-owners-should-know",
     "canonical": "https://www.backflowtestpros.com/blog/backflow-retesting-after-repair-replacement-or-relocation-what-california-owners-should-know",

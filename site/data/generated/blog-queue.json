@@ -2452,8 +2452,10 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
-    "status": "Queued",
-    "notes": "Requires reviewer sign-off before publication. Carry the California angle through the hero, body, and related links."
+    "status": "Published",
+    "notes": "Published from the current April 2026 California handbook; supersedes the queued 2021 draft source.",
+    "publishedAt": "2026-08-10T09:00:00.000Z",
+    "publishedSlug": "california-backflow-testing-rules-what-at-least-annually-means-for-property-owners"
   },
   {
     "id": "local_regulation_article_bank-002",

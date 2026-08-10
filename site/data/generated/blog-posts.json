@@ -4625,5 +4625,201 @@
         "notes": "The current program page identifies the April 2026 handbook as the revised adopted version."
       }
     ]
+  },
+  {
+    "sourceQueueId": "local_regulation_article_bank-001",
+    "slug": "california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
+    "path": "/blog/california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
+    "canonical": "https://www.backflowtestpros.com/blog/california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
+    "title": "California Backflow Testing Rules: What ‘At Least Annually’ Means for Property Owners",
+    "metaDescription": "Understand California's current annual backflow testing rule, added testing triggers, certified-tester requirement, and the role of your local water supplier.",
+    "excerpt": "California's current Cross-Connection Control Policy Handbook requires public water systems to ensure backflow prevention assemblies are field tested at least annually, with more frequent testing for some hazards or local program needs. Annual does not mean every possible obligation is identical statewide. Here is what property owners should confirm before the due date.",
+    "category": "California rules / timing",
+    "audience": "California property owners, managers, facility teams, HOAs, and irrigation customers",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "California annual backflow testing rules",
+    "secondaryKeywords": [
+      "annual backflow test California",
+      "California backflow test deadline",
+      "certified backflow tester",
+      "backflow testing frequency"
+    ],
+    "publishedAt": "2026-08-10T09:00:00.000Z",
+    "updatedAt": "2026-08-10T09:00:00.000Z",
+    "heroFact": {
+      "value": "At least once every year",
+      "label": "the statewide minimum field-testing frequency for assemblies in a public water system's cross-connection control program",
+      "context": "The April 2026 handbook also allows more frequent testing based on hazard, assembly type, location, history, or the serving water system's program."
+    },
+    "keyTakeaways": [
+      "California's April 2026 handbook requires public water systems to ensure assemblies in their programs are field tested at least annually.",
+      "The handbook sets a minimum frequency, not one universal statewide appointment date or submission process.",
+      "Testing must be performed by a certified backflow prevention assembly tester.",
+      "Installation, repair, winterizing depressurization, and permanent relocation create separate testing triggers.",
+      "The serving water supplier controls customer notices, approved-tester rules, forms, portals, and any shorter local deadline."
+    ],
+    "sections": [
+      {
+        "id": "what-annual-means",
+        "kind": "narrative",
+        "title": "What ‘At Least Annually’ Actually Means",
+        "body": [
+          "Section 3.3.3(a) of California's April 2026 Cross-Connection Control Policy Handbook says a public water system must ensure that backflow prevention assemblies in its cross-connection control program are field tested at least annually. The test must be completed by a certified backflow prevention assembly tester.",
+          "The words ‘at least’ matter. One passing test per year is the statewide floor for an assembly covered by the program. It is not a promise that every assembly will be tested only once, and it does not create one statewide due date for every property.",
+          "Public water systems may require more frequent testing based on factors such as the hazard, assembly type, location, history, or local program. Property owners should use the due date and instructions from the water supplier serving the meter rather than calculating a date from a general article.",
+          "A useful operating habit is to schedule before the notice deadline. Failed shutoff valves, locked enclosures, missing access, repairs, and retesting can turn one appointment into several steps."
+        ],
+        "statCallout": {
+          "value": "At least annually",
+          "label": "California's minimum field-testing frequency",
+          "context": "California State Water Resources Control Board, April 2026 Cross-Connection Control Policy Handbook, section 3.3.3(a)."
+        }
+      },
+      {
+        "id": "annual-is-not-only-trigger",
+        "kind": "narrative",
+        "title": "Annual Testing Is Not the Only Trigger",
+        "body": [
+          "The same state section requires testing after installation, repair, depressurization for winterizing, or permanent relocation. A property can therefore have a passing annual result and still need another certified test later in the year after work changes the assembly or its operating condition.",
+          "This is why owners should keep a maintenance history, not only the latest certificate. Record installation, repair, relocation, winterizing, failed results, passing retests, and proof that the serving utility received the report.",
+          "If an assembly fails, California's handbook says the public water system must ensure repair or replacement within 30 days after failure notification, unless an allowed extension is included in the system's Cross-Connection Control Plan. The utility notice for the property remains the practical source for the exact workflow."
+        ]
+      },
+      {
+        "id": "utility-controls-process",
+        "kind": "narrative",
+        "title": "Why Your Water Supplier Still Controls the Customer Process",
+        "body": [
+          "The State Water Board sets the statewide framework, while each public water system runs its cross-connection control program. That local program sends notices, identifies covered assemblies, specifies accepted testers, collects reports, and follows up on overdue or failed tests.",
+          "Two California properties can share the same statewide minimum and still receive different forms, portal instructions, approved-tester requirements, or submission dates. Follow the current notice from the serving supplier and contact that supplier when an assembly number, address, ownership record, or due date appears wrong.",
+          "The safest sequence is simple: identify the serving water system, confirm the assembly and deadline, hire a tester accepted by that program, provide access, and retain the passing report plus submission confirmation."
+        ]
+      },
+      {
+        "id": "owner-checklist",
+        "kind": "checklist",
+        "title": "Annual Backflow Test Checklist",
+        "body": [
+          "Use this checklist before the due date on the serving water supplier's notice."
+        ],
+        "bullets": [
+          "Match the notice to the correct address, meter, assembly type, serial number, and physical location.",
+          "Confirm the water supplier's current tester qualifications, forms, portal, and submission deadline.",
+          "Clear access to cages, valves, rooftops, irrigation areas, tenant spaces, and fire equipment.",
+          "Tell the tester about recent repairs, replacement, relocation, winterizing, or known valve problems.",
+          "Leave time for repair and a passing retest if the first test fails.",
+          "Keep the field-test report and proof that the result reached the water supplier.",
+          "Record the next due date without assuming it will always be exactly 12 months from the appointment."
+        ]
+      },
+      {
+        "id": "annual-testing-faq",
+        "kind": "faq",
+        "title": "California Annual Backflow Testing FAQ",
+        "body": [
+          "These answers summarize the statewide framework. The serving water supplier's current notice controls the customer process for a specific property."
+        ],
+        "faqItems": [
+          {
+            "question": "Is backflow testing required every year in California?",
+            "answer": "For assemblies included in a public water system's cross-connection control program, the April 2026 handbook requires the system to ensure field testing at least annually. Some assemblies may be tested more often."
+          },
+          {
+            "question": "Can I use any plumber or technician?",
+            "answer": "The handbook requires a certified backflow prevention assembly tester. The serving water supplier may also maintain an accepted or approved tester process, so check its current instructions before scheduling."
+          },
+          {
+            "question": "Does a passing annual test cover a repair later in the year?",
+            "answer": "No. The handbook separately requires field testing after repair, installation, winterizing depressurization, or permanent relocation."
+          },
+          {
+            "question": "Who decides my exact due date?",
+            "answer": "The public water system serving the property administers the customer schedule and notice process. Use its stated deadline and ask it to correct account or assembly information when needed."
+          },
+          {
+            "question": "What happens if the assembly fails?",
+            "answer": "The handbook says the public water system must ensure repair or replacement within 30 days after failure notification unless its Cross-Connection Control Plan allows an extension. Follow the serving utility's notice and arrange a passing retest after corrective work."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Certified Backflow Testing",
+        "description": "Schedule annual field testing before the utility deadline."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Move from a failed result through corrective work and a passing retest."
+      },
+      {
+        "href": "/commercial-backflow-specialists",
+        "label": "Commercial Backflow Specialists",
+        "description": "Coordinate testing and records across commercial properties and multiple assemblies."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the utility notice, assembly information, and deadline."
+      }
+    ],
+    "cta": {
+      "heading": "Schedule Before the Backflow Deadline",
+      "body": "Backflow Test Pros provides certified testing, repair coordination, retesting, and documentation support for Southern California properties.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Certified Southern California backflow tester checking gauges on a brass commercial backflow assembly in a clean realistic property setting, no logos, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "april_2026_handbook_verified",
+        "label": "Current California source verified",
+        "reason": "Annual frequency, tester qualification, post-work triggers, and failed-assembly timing were checked against the official April 2026 handbook and current State Water Board program page on August 10, 2026.",
+        "severity": "info"
+      },
+      {
+        "code": "utility_scope_preserved",
+        "label": "Local process kept utility-specific",
+        "reason": "The article distinguishes the statewide public-water-system framework from each supplier's customer notices, deadlines, forms, and tester process.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 20,
+        "dataPoint": "California annual assembly field-testing frequency",
+        "value": "At least annually, performed by a certified backflow prevention assembly tester",
+        "scope": "Assemblies in California public water system cross-connection control programs",
+        "timePeriod": "April 2026 handbook, amended April 21, 2026",
+        "whyItMatters": "Establishes the current statewide minimum while preserving the public water system as the responsible program actor.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Verified August 10, 2026. Section 3.3.3(a)."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "Current California CCCPH publication status",
+        "value": "Handbook effective July 1, 2024; revised version adopted April 21, 2026",
+        "scope": "California Cross-Connection Control Policy Handbook",
+        "timePeriod": "Current State Water Board page checked August 10, 2026",
+        "whyItMatters": "Confirms use of the current adopted handbook rather than the queue's older draft source.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook (CCCPH)",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/cccph.html",
+        "authorityType": "Government / state program page",
+        "notes": "The current page identifies the April 2026 handbook as the revised adopted version."
+      }
+    ]
   }
 ]
