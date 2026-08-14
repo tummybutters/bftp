@@ -1,5 +1,25 @@
 [
   {
+    "slug": "why-local-cross-connection-rules-focus-on-irrigation-fire-lines-hoses-and-boilers",
+    "path": "/blog/why-local-cross-connection-rules-focus-on-irrigation-fire-lines-hoses-and-boilers",
+    "canonical": "https://www.backflowtestpros.com/blog/why-local-cross-connection-rules-focus-on-irrigation-fire-lines-hoses-and-boilers",
+    "title": "Why Local Cross-Connection Rules Focus on Irrigation, Fire Lines, Hoses, and Boilers",
+    "excerpt": "Irrigation systems, fire lines, garden and washdown hoses, and boilers repeatedly appear in cross-connection surveys because each can create a path between drinking water and a nonpotable source. California's current handbook requires water systems to evaluate actual hazards and choose protection accordingly. Here is what owners should know before an inspection or test.",
+    "category": "Inspection targeting / local risk",
+    "audience": "Property owners, irrigation contractors, facility managers, and commercial maintenance teams",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "common cross connections irrigation fire line boiler hose",
+    "heroFact": {
+      "value": "Four recurring risk areas",
+      "label": "irrigation, fire systems, hoses, and boilers repeatedly appeared in survey findings cited by California's adopted staff report",
+      "context": "Those survey percentages describe reported findings, not a device prescription. The serving water system must evaluate the actual premises and hazard under the current handbook."
+    },
+    "publishedAt": "2026-08-14T09:00:00.000Z",
+    "updatedAt": "2026-08-14T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
     "path": "/blog/california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",
     "canonical": "https://www.backflowtestpros.com/blog/california-backflow-testing-rules-what-at-least-annually-means-for-property-owners",

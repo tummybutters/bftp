@@ -2871,8 +2871,10 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "why-local-cross-connection-rules-focus-on-irrigation-fire-lines-hoses-and-boilers",
-    "status": "Queued",
-    "notes": "Requires reviewer sign-off before publication."
+    "status": "Published",
+    "notes": "Published with reviewer sign-off, current April 2026 handbook context, and explicit survey-scope limitations.",
+    "publishedAt": "2026-08-14T09:00:00.000Z",
+    "publishedSlug": "why-local-cross-connection-rules-focus-on-irrigation-fire-lines-hoses-and-boilers"
   },
   {
     "id": "local_regulation_article_bank-012",
