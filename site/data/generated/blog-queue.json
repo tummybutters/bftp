@@ -2497,8 +2497,10 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "failed-a-california-backflow-test-the-30-day-repair-rule-explained",
-    "status": "Queued",
-    "notes": "Requires reviewer sign-off before publication. Carry the California angle through the hero, body, and related links."
+    "status": "Published",
+    "notes": "Published using the current April 2026 handbook; supersedes the queued 2021 draft source.",
+    "publishedAt": "2026-08-17T09:00:00.000Z",
+    "publishedSlug": "failed-a-california-backflow-test-the-30-day-repair-rule-explained"
   },
   {
     "id": "local_regulation_article_bank-003",

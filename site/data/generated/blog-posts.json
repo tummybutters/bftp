@@ -5046,5 +5046,243 @@
         "notes": "Current program page verified August 14, 2026."
       }
     ]
+  },
+  {
+    "sourceQueueId": "local_regulation_article_bank-002",
+    "slug": "failed-a-california-backflow-test-the-30-day-repair-rule-explained",
+    "path": "/blog/failed-a-california-backflow-test-the-30-day-repair-rule-explained",
+    "canonical": "https://www.backflowtestpros.com/blog/failed-a-california-backflow-test-the-30-day-repair-rule-explained",
+    "title": "Failed a California Backflow Test? The 30-Day Repair Rule Explained",
+    "metaDescription": "Learn what California's current 30-day failed-backflow-assembly rule means, what happens after repair, and why your serving utility's notice controls the process.",
+    "excerpt": "A failed backflow test starts a compliance workflow. California's April 2026 handbook says a public water system must ensure a failed assembly is repaired or replaced within 30 days after failure notification, unless its Cross-Connection Control Plan allows an extension. Owners still need to follow the serving utility's notice, arrange corrective work, complete the certified retest, and keep proof of submission.",
+    "category": "California rules / failed tests",
+    "audience": "California property owners, managers, HOAs, facility teams, and irrigation customers",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "California backflow test failed 30 day repair rule",
+    "secondaryKeywords": [
+      "failed backflow test California",
+      "backflow repair deadline",
+      "backflow retest after repair",
+      "30 day backflow rule"
+    ],
+    "publishedAt": "2026-08-17T09:00:00.000Z",
+    "updatedAt": "2026-08-17T09:00:00.000Z",
+    "heroFact": {
+      "value": "Within 30 days",
+      "label": "the current California handbook's repair-or-replacement window after notification of an assembly failure",
+      "context": "The handbook states this as a public-water-system duty. Any extension must be allowed through that system's Cross-Connection Control Plan, and customer instructions come from the serving utility."
+    },
+    "keyTakeaways": [
+      "A failed field test is not closed by the test report alone; it begins repair-or-replacement and retesting steps.",
+      "California's April 2026 handbook says the public water system must ensure repair or replacement within 30 days after failure notification.",
+      "An extension is not automatic; the handbook allows one only when the serving system includes that option in its Cross-Connection Control Plan.",
+      "After repair or replacement, the assembly needs a certified field test before the compliance record is complete.",
+      "The serving utility controls customer notices, accepted testers, forms, portals, and enforcement for the property."
+    ],
+    "sections": [
+      {
+        "id": "what-the-rule-says",
+        "kind": "narrative",
+        "title": "What California's 30-Day Rule Actually Says",
+        "body": [
+          "Section 3.3.3(e) of California's April 2026 Cross-Connection Control Policy Handbook says a public water system must ensure that a failed backflow prevention assembly is repaired or replaced within 30 days after notification of the failure. It also says an extension may be allowed when that option is included in the system's Cross-Connection Control Plan.",
+          "That wording matters. The statewide handbook places the program duty on the public water system. Property owners experience that duty through the serving utility's notice, deadline, approved-tester process, reporting requirements, and follow-up steps.",
+          "Do not assume the 30 days begins from the day someone first noticed a leak, or that every utility calculates or communicates the deadline identically. Use the date and instructions on the current failure notice and contact the serving utility promptly if account, assembly, or deadline information appears wrong."
+        ],
+        "statCallout": {
+          "value": "30 days",
+          "label": "repair or replacement after failure notification",
+          "context": "California State Water Resources Control Board, April 2026 Cross-Connection Control Policy Handbook, section 3.3.3(e)."
+        }
+      },
+      {
+        "id": "first-steps",
+        "kind": "narrative",
+        "title": "What to Do Immediately After a Failed Test",
+        "body": [
+          "Start by matching the failed result to the correct address, water account, assembly location, type, make, model, and serial number. A multi-building property may have several similar assemblies, and repairing the wrong one does not close the notice.",
+          "Ask the tester which component failed and record the field-test readings. The failure may involve check valves, a relief valve, shutoff valves, fouling, damaged rubber parts, pressure conditions, or an installation issue. Diagnosis should guide whether repair or replacement is appropriate.",
+          "Contact the serving water utility when its process requires preapproval, an approved tester, a specific form, or installation review. Schedule early enough to leave room for parts, access, shutdown coordination, corrective work, and a passing retest."
+        ]
+      },
+      {
+        "id": "repair-or-replace",
+        "kind": "narrative",
+        "title": "Repair or Replace: The Decision Comes After Diagnosis",
+        "body": [
+          "A repair may involve cleaning, replacing internal rubber parts, rebuilding checks or relief components, or correcting valve problems. Replacement may be more practical when the assembly is obsolete, damaged, improperly sized, inaccessible, missing approved parts, or costly to rebuild.",
+          "The cheapest first action is not always the lowest total-cost path. A repair that cannot pass the certified retest still leaves the compliance file open, while a replacement that ignores utility specifications can create a new installation problem.",
+          "Before replacing or relocating an assembly, confirm current requirements with the serving utility. Assembly approval, type, orientation, drainage, clearance, enclosure, and accessibility can all affect acceptance and future testing."
+        ]
+      },
+      {
+        "id": "retest-and-report",
+        "kind": "narrative",
+        "title": "The Repair Is Not Finished Until the Assembly Passes Again",
+        "body": [
+          "Section 3.3.3(a) of the current handbook requires field testing after installation, repair, winterizing depressurization, or permanent relocation. The test must be performed by a certified backflow prevention assembly tester.",
+          "A repair invoice is evidence that work occurred; it is not a passing field-test result. The post-work test verifies the assembly's performance after the change and provides the result the water system needs for its compliance record.",
+          "Confirm who submits the report. Some programs accept direct tester submission, while others use a portal, utility form, or owner follow-up. Keep the passing report and proof of submission together."
+        ]
+      },
+      {
+        "id": "failed-test-checklist",
+        "kind": "checklist",
+        "title": "Failed Backflow Test Checklist",
+        "body": [
+          "Use this sequence to keep the corrective-work and reporting steps visible."
+        ],
+        "bullets": [
+          "Save the failure notice and original field-test report.",
+          "Verify the address, account, assembly location, type, and serial number.",
+          "Record failed components and test readings before corrective work.",
+          "Confirm the serving utility's deadline, tester rules, forms, and approval requirements.",
+          "Clear access and coordinate any water or fire-system shutdown before the appointment.",
+          "Choose repair or replacement after diagnosis and parts review.",
+          "Complete the certified post-work field test immediately after return to service.",
+          "Keep the passing report and proof that the serving utility received it."
+        ]
+      },
+      {
+        "id": "failed-test-faq",
+        "kind": "faq",
+        "title": "Failed California Backflow Test FAQ",
+        "body": [
+          "These answers summarize the statewide framework. The serving utility's current notice controls the customer process for a specific property."
+        ],
+        "faqItems": [
+          {
+            "question": "Do I always have exactly 30 days from the test date?",
+            "answer": "The handbook describes 30 days after failure notification and places the duty on the public water system. Follow the date and instructions from the serving utility rather than calculating a deadline independently."
+          },
+          {
+            "question": "Can the deadline be extended?",
+            "answer": "Possibly, but not automatically. The handbook says an extension may be allowed when the option is included in the public water system's Cross-Connection Control Plan. Ask the serving utility before relying on extra time."
+          },
+          {
+            "question": "Can any plumber repair the assembly?",
+            "answer": "Repair qualifications and utility processes vary. The post-work field test must be performed by a certified backflow prevention assembly tester, and the serving utility may impose additional approved-tester or reporting requirements."
+          },
+          {
+            "question": "Does replacing the assembly avoid a retest?",
+            "answer": "No. A replacement is a new installation, and the current handbook requires field testing after installation."
+          },
+          {
+            "question": "What proves the issue is closed?",
+            "answer": "Keep the passing post-work field-test report and confirmation that it reached the serving utility through its accepted process."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Move from a failed result through diagnosis, corrective work, and a passing retest."
+      },
+      {
+        "href": "/backflow-testing",
+        "label": "Certified Backflow Testing",
+        "description": "Schedule annual and post-work field testing."
+      },
+      {
+        "href": "/commercial-backflow-specialists",
+        "label": "Commercial Backflow Specialists",
+        "description": "Coordinate multiple assemblies, access, repairs, and records."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the utility notice, failed report, assembly information, and deadline."
+      }
+    ],
+    "cta": {
+      "heading": "Turn a Failed Result Into a Passing Record",
+      "body": "Backflow Test Pros can diagnose the failure, coordinate repair or replacement, complete the certified retest, and keep documentation moving for Southern California properties.",
+      "label": "Schedule Backflow Repair",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Certified Southern California backflow tester diagnosing a failed brass backflow assembly with gauge connected, realistic commercial property, no logos, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "april_2026_handbook_verified",
+        "label": "Current California source verified",
+        "reason": "The 30-day rule, extension language, post-work testing triggers, and certified-tester requirement were checked against the April 2026 handbook on August 17, 2026.",
+        "severity": "info"
+      },
+      {
+        "code": "actor_scope_preserved",
+        "label": "Public-system duty kept explicit",
+        "reason": "The article preserves the handbook's public-water-system duty while explaining the practical owner workflow.",
+        "severity": "info"
+      },
+      {
+        "code": "utility_process_limited",
+        "label": "Utility process kept local",
+        "reason": "Customer deadlines, forms, accepted testers, and reporting are attributed to the serving utility rather than presented as one universal statewide process.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 20,
+        "dataPoint": "Failed-assembly repair or replacement window",
+        "value": "Within 30 days after notification of failure; extension may be allowed through the public water system's Cross-Connection Control Plan",
+        "scope": "California public water system cross-connection control programs",
+        "timePeriod": "April 2026 handbook",
+        "whyItMatters": "Defines the current time-bound workflow after a failed field test.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Verified August 17, 2026. Section 3.3.3(e)."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "Post-work field-testing triggers",
+        "value": "Testing after installation, repair, winterizing depressurization, or permanent relocation by a certified tester",
+        "scope": "California public water system cross-connection control programs",
+        "timePeriod": "April 2026 handbook",
+        "whyItMatters": "Shows why repair or replacement must be followed by a certified field test.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Verified August 17, 2026. Section 3.3.3(a)."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "Current California CCCPH status",
+        "value": "Revised version adopted April 21, 2026",
+        "scope": "California",
+        "timePeriod": "Current page checked August 17, 2026",
+        "whyItMatters": "Confirms use of the current handbook rather than the queue's 2021 draft link.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook (CCCPH)",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/cccph.html",
+        "authorityType": "Government / state program page",
+        "notes": "Current program page verified August 17, 2026."
+      },
+      {
+        "repositoryRow": 24,
+        "dataPoint": "Utility-specific repair and enforcement example",
+        "value": "Otay Water District describes annual and post-work testing, District-approved testers, and customer enforcement steps",
+        "scope": "Otay Water District customers",
+        "timePeriod": "Current page checked August 17, 2026",
+        "whyItMatters": "Illustrates how one utility implements customer-facing requirements without generalizing them statewide.",
+        "sourceOrganization": "Otay Water District",
+        "sourceTitle": "Backflow / Cross-Connection",
+        "sourceUrl": "https://www.otaywater.gov/customer-service/water-services/backflowcross-connection/",
+        "authorityType": "Public water utility",
+        "notes": "Utility-specific example only."
+      }
+    ]
   }
 ]
