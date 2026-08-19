@@ -5,6 +5,8 @@ import { useState, useSyncExternalStore } from "react";
 import { usePostHog } from "posthog-js/react";
 import type { ContactFormField } from "@/lib/content/types";
 
+import { describeNetworkFailure, readContactResponse } from "@/lib/contact-response";
+import { formatFileSize, prepareUploads, totalBytes } from "@/lib/contact-uploads";
 import { siteConfig } from "@/lib/site-config";
 
 interface QuizOption {
@@ -520,6 +522,9 @@ export function TrackedContactForm({
   const [fieldValues, setFieldValues] = useState<Record<string, string>>({});
   const [repairDevices, setRepairDevices] = useState<string[]>(INITIAL_REPAIR_DEVICES);
   const [uploadFiles, setUploadFiles] = useState<File[]>([]);
+  const [uploadNotice, setUploadNotice] = useState("");
+  const [uploadError, setUploadError] = useState("");
+  const [preparingUploads, setPreparingUploads] = useState(false);
   const normalizedAction = formAction?.trim() || "/api/contact";
   const normalizedMethod = (formMethod?.trim() || (formAction ? "get" : "post")).toLowerCase();
   const handlesInlineSubmit = !formAction?.trim();
@@ -556,6 +561,48 @@ export function TrackedContactForm({
     });
   };
 
+  /**
+   * Photos are shrunk the moment they are chosen, not at submit time. Doing it
+   * here means the list below shows the size that will actually be sent, and a
+   * set that still will not fit is refused while the person is looking at the
+   * file picker rather than after they have filled in the rest of the form.
+   */
+  const handleFilesChosen = async (chosen: File[]) => {
+    setUploadFiles(chosen);
+    setUploadNotice("");
+    setUploadError("");
+
+    if (chosen.length === 0) {
+      return;
+    }
+
+    setPreparingUploads(true);
+
+    try {
+      const prepared = await prepareUploads(chosen);
+      const saved = prepared.originalBytes - prepared.finalBytes;
+
+      setUploadFiles(prepared.files);
+      setUploadError(prepared.error || "");
+      setUploadNotice(
+        prepared.error
+          ? ""
+          : saved > 64 * 1024
+            ? `Resized for sending — ${formatFileSize(prepared.originalBytes)} down to ${formatFileSize(prepared.finalBytes)}.`
+            : "",
+      );
+
+      posthog?.capture(prepared.error ? "contact_uploads_rejected" : "contact_uploads_prepared", {
+        file_count: prepared.files.length,
+        original_bytes: prepared.originalBytes,
+        final_bytes: prepared.finalBytes,
+        intake_variant: useQuizIntake ? "quiz" : "legacy",
+      });
+    } finally {
+      setPreparingUploads(false);
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     posthog?.capture("form_submitted", {
       form_action: normalizedAction,
@@ -572,6 +619,20 @@ export function TrackedContactForm({
     if (useQuizIntake && getPhoneDigitCount(fieldValues.phone || "") !== 10) {
       setStatus("error");
       setStatusMessage("Please enter a 10-digit phone number.");
+      return;
+    }
+
+    if (preparingUploads) {
+      setStatus("error");
+      setStatusMessage("Still preparing your photos. Try again in a moment.");
+      return;
+    }
+
+    // Refusing here is the whole point of the change: a request this size dies
+    // at the gateway with a plain-text 413 no route of ours ever sees.
+    if (uploadError) {
+      setStatus("error");
+      setStatusMessage(uploadError);
       return;
     }
 
@@ -596,49 +657,58 @@ export function TrackedContactForm({
       submitData.append("contact_uploads", file, file.name);
     }
 
+    let failure;
+
     try {
       const response = await fetch(normalizedAction, {
         method: "POST",
         headers,
         body: submitData,
       });
-      const payload = (await response.json()) as { error?: string };
 
-      if (!response.ok) {
-        throw new Error(payload.error || "Unable to send your message.");
-      }
+      // Never `response.json()` straight off. Anything that fails above the
+      // route answers in text, and parsing first turns a gateway error into a
+      // syntax error nobody can act on.
+      failure = await readContactResponse(response);
+    } catch {
+      failure = describeNetworkFailure();
+    }
 
-      form.reset();
-      setFieldValues({});
-      setRepairDevices(INITIAL_REPAIR_DEVICES);
-      setUploadFiles([]);
-      setQuizValues({
-        serviceType: normalizeLeadTopicToServiceValue(leadTopic),
-        propertyType: "",
-        county: "",
-        urgency: "",
-      });
-      setCurrentStep(0);
-      setStatus("success");
-      setStatusMessage("Thanks. Your message has been sent.");
-      posthog?.capture("form_submit_succeeded", {
-        form_action: normalizedAction,
-        intake_variant: useQuizIntake ? "quiz" : "legacy",
-      });
-    } catch (error) {
-      const errorMessage =
-        error instanceof Error
-          ? error.message
-          : "Unable to send your message right now.";
-
+    if (failure) {
       setStatus("error");
-      setStatusMessage(errorMessage);
+      setStatusMessage(failure.message);
       posthog?.capture("form_submit_failed", {
         form_action: normalizedAction,
         intake_variant: useQuizIntake ? "quiz" : "legacy",
-        error_message: errorMessage,
+        failure_reason: failure.reason,
+        error_message: failure.message,
+        upload_count: uploadFiles.length,
+        upload_bytes: totalBytes(uploadFiles),
       });
+      return;
     }
+
+    form.reset();
+    setFieldValues({});
+    setRepairDevices(INITIAL_REPAIR_DEVICES);
+    setUploadFiles([]);
+    setUploadNotice("");
+    setUploadError("");
+    setQuizValues({
+      serviceType: normalizeLeadTopicToServiceValue(leadTopic),
+      propertyType: "",
+      county: "",
+      urgency: "",
+    });
+    setCurrentStep(0);
+    setStatus("success");
+    setStatusMessage("Thanks. Your message has been sent.");
+    posthog?.capture("form_submit_succeeded", {
+      form_action: normalizedAction,
+      intake_variant: useQuizIntake ? "quiz" : "legacy",
+      upload_count: uploadFiles.length,
+      upload_bytes: totalBytes(uploadFiles),
+    });
   };
 
   const handleValueChange = (fieldName: string, value: string) => {
@@ -691,6 +761,8 @@ export function TrackedContactForm({
       }));
       setRepairDevices(INITIAL_REPAIR_DEVICES);
       setUploadFiles([]);
+      setUploadNotice("");
+      setUploadError("");
     }
 
     setQuizValues((current) => ({
@@ -724,6 +796,22 @@ export function TrackedContactForm({
   };
 
   const handleDetailContinue = () => {
+    // Caught on the step that holds the file picker, so the fix is in front of
+    // them instead of two screens back.
+    if (preparingUploads) {
+      setStatus("error");
+      setStatusMessage("Still preparing your files. Try again in a moment.");
+      return;
+    }
+
+    // The full explanation is already on screen beside the file picker, so this
+    // points at it rather than printing the same paragraph twice.
+    if (uploadError) {
+      setStatus("error");
+      setStatusMessage("Your files are too large to send. See the note above.");
+      return;
+    }
+
     if (quizValues.serviceType === "Testing" && !fieldValues.testing_count?.trim()) {
       setStatus("error");
       setStatusMessage("Please enter the number of backflow tests needed or choose Not Sure.");
@@ -765,7 +853,9 @@ export function TrackedContactForm({
           multiple
           className="sr-only"
           onFocus={() => handleFocus("contact_uploads", "file")}
-          onChange={(event) => setUploadFiles(Array.from(event.target.files || []))}
+          onChange={(event) => {
+            void handleFilesChosen(Array.from(event.target.files || []));
+          }}
         />
         <span className="space-y-1">
           <span className="block text-base font-semibold">Add PDF or photos</span>
@@ -777,17 +867,38 @@ export function TrackedContactForm({
           Choose files
         </span>
       </label>
-      {uploadFiles.length > 0 ? (
+      {preparingUploads ? (
+        <p className="text-sm font-semibold text-[color:var(--color-foreground)]/78">
+          Preparing your files...
+        </p>
+      ) : null}
+      {uploadFiles.length > 0 && !preparingUploads ? (
         <div className="rounded-none border border-[color:rgba(31,45,78,0.12)] bg-[#f7f7fb] px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-blue)]/70">
             Selected files
           </p>
           <ul className="mt-2 space-y-1 text-sm font-semibold text-[color:var(--color-foreground)]/78">
             {uploadFiles.map((file) => (
-              <li key={`${file.name}-${file.size}`}>{file.name}</li>
+              <li key={`${file.name}-${file.size}`}>
+                {file.name}{" "}
+                <span className="font-normal text-[color:var(--color-foreground)]/60">
+                  {formatFileSize(file.size)}
+                </span>
+              </li>
             ))}
           </ul>
+          {/* Said plainly rather than silently: a customer who watches a 6 MB
+              photo become 400 KB should know we did it, not wonder later
+              whether the picture we got is the picture they sent. */}
+          {uploadNotice ? (
+            <p className="mt-2 text-sm text-[color:var(--color-foreground)]/70">{uploadNotice}</p>
+          ) : null}
         </div>
+      ) : null}
+      {uploadError ? (
+        <p role="status" className="text-sm font-semibold text-[color:#b42318]">
+          {uploadError}
+        </p>
       ) : null}
     </div>
   );
