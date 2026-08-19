@@ -6,6 +6,7 @@ import {
   sendAgentMailMessage,
 } from "@/lib/agentmail";
 import { captureServerEvent } from "@/lib/analytics/posthog-server";
+import { formatFileSize, UPLOAD_BUDGET_BYTES } from "@/lib/contact-uploads";
 import { sendHousecallLead } from "@/lib/housecall";
 import { generatePersonalizedAutoReply } from "@/lib/openrouter";
 import { siteConfig } from "@/lib/site-config";
@@ -46,7 +47,13 @@ interface UploadedFileSummary {
   type: string;
 }
 
-const MAX_UPLOAD_BYTES = 15 * 1024 * 1024;
+/**
+ * Was 15 MB, which no request could ever reach: the platform refuses a body
+ * over 4.5 MB before this route is invoked at all, so the check was dead code
+ * sitting above a ceiling a third its height. One home for the number now, in
+ * `contact-uploads`, shared with the browser-side check that does the real work.
+ */
+const MAX_UPLOAD_BYTES = UPLOAD_BUDGET_BYTES;
 const DEFAULT_NOTIFICATION_EMAIL = "contact@backflowtestpros.com";
 const SUBMISSION_TIME_ZONE = "America/Los_Angeles";
 
@@ -306,7 +313,7 @@ function validateSubmission(submission: ContactSubmission) {
   const uploadBytes = submission.uploadFiles.reduce((total, file) => total + file.size, 0);
 
   if (uploadBytes > MAX_UPLOAD_BYTES) {
-    return "Please keep uploads under 15 MB total.";
+    return `Please keep uploads under ${formatFileSize(MAX_UPLOAD_BYTES)} total.`;
   }
 
   return null;
