@@ -5284,5 +5284,236 @@
         "notes": "Utility-specific example only."
       }
     ]
+  },
+  {
+    "sourceQueueId": "refresh_localized_bank-004",
+    "slug": "riverside-irrigation-backflow-testing-an-annual-compliance-guide",
+    "path": "/blog/riverside-irrigation-backflow-testing-an-annual-compliance-guide",
+    "canonical": "https://www.backflowtestpros.com/blog/riverside-irrigation-backflow-testing-an-annual-compliance-guide",
+    "title": "Riverside Irrigation Backflow Testing: An Annual Compliance Guide",
+    "metaDescription": "Learn how Riverside irrigation backflow testing works, why annual testing matters, and what property owners should prepare before the utility deadline.",
+    "excerpt": "Riverside Public Utilities requires approved backflow assemblies to be tested after installation, relocation, or repair and at least annually. For irrigation customers, the practical job is to identify the correct assembly, use an accepted certified tester, meet the notice deadline, and preserve the submitted result.",
+    "category": "Riverside / irrigation compliance",
+    "audience": "Riverside property owners, HOAs, landscape managers, commercial campuses, and irrigation customers",
+    "geography": "Riverside",
+    "templateType": "localized_service_article",
+    "primaryKeyword": "Riverside irrigation backflow testing",
+    "secondaryKeywords": [
+      "Riverside backflow testing",
+      "irrigation backflow preventer test",
+      "annual backflow testing Riverside CA",
+      "Riverside Public Utilities backflow"
+    ],
+    "publishedAt": "2026-08-21T09:00:00.000Z",
+    "updatedAt": "2026-08-21T09:00:00.000Z",
+    "heroFact": {
+      "value": "At least annually",
+      "label": "Riverside Public Utilities' published minimum testing frequency for approved backflow prevention assemblies",
+      "context": "The utility also requires testing immediately after installation, relocation, or repair and may require more frequent testing when it considers that necessary."
+    },
+    "keyTakeaways": [
+      "Riverside Public Utilities sends customers an annual testing notice with a completion and report-submission date.",
+      "Approved backflow assemblies must be tested immediately after installation, relocation, or repair and at least annually after that.",
+      "Testing and maintenance costs are the water customer's responsibility under Riverside's published rule.",
+      "A California staff report cites survey research in which irrigation appeared in 62% of identified cross-connections; that is survey evidence, not a Riverside prevalence rate.",
+      "A passing test still needs to be matched to the correct assembly and submitted through the utility's accepted process."
+    ],
+    "sections": [
+      {
+        "id": "riverside-rule",
+        "kind": "narrative",
+        "title": "What Riverside's Published Rule Requires",
+        "body": [
+          "Riverside Public Utilities' Water Rule 13 says the water customer receives an annual testing notice when an assembly needs to be tested. The notice includes a date by which testing must be completed and results submitted to the utility.",
+          "The rule says an approved backflow prevention assembly must be tested immediately after installation, relocation, or repair and at least annually after that. It also allows the utility to require more frequent testing when necessary.",
+          "Those are Riverside customer instructions, not a universal deadline for every Inland Empire property. Owners should use the current notice for the account and contact Riverside Public Utilities when the assembly, tester, or due-date information is unclear."
+        ],
+        "statCallout": {
+          "value": "Annual notice",
+          "label": "with a testing and report-submission date for the Riverside water customer",
+          "context": "City of Riverside Public Utilities, Water Rule 13, Cross-Connections and Pollution of Supply."
+        }
+      },
+      {
+        "id": "why-irrigation-matters",
+        "kind": "narrative",
+        "title": "Why Irrigation Systems Belong on the Compliance List",
+        "body": [
+          "An irrigation connection can create a path between a property's landscape system and the public water supply. Fertilizer equipment, standing water, soil, animal waste, broken sprinkler components, or other site conditions can increase the consequence if pressure conditions allow water to move in the wrong direction.",
+          "California's adopted Cross-Connection Control Policy Handbook staff report cites survey research in which irrigation systems appeared in 62% of identified cross-connections. The same cited surveys listed fire systems and garden or washdown hoses at 43% each and boilers at 38%.",
+          "Those percentages describe the cited survey findings. They are not a current Riverside inventory or proof that 62% of Riverside properties have an irrigation cross-connection. Their value is practical: irrigation should not be omitted when a property team inventories assemblies and prepares for annual testing."
+        ],
+        "statCallout": {
+          "value": "62%",
+          "label": "of identified cross-connections involved irrigation in survey findings cited by California's staff report",
+          "context": "Survey scope only; not a Riverside-specific prevalence estimate and no common survey year is stated in the staff report."
+        }
+      },
+      {
+        "id": "statewide-framework",
+        "kind": "narrative",
+        "title": "How the Current California Framework Fits",
+        "body": [
+          "California's revised Cross-Connection Control Policy Handbook was adopted April 21, 2026. It requires public water systems to ensure that backflow prevention assemblies in their programs are field tested at least annually, with more frequent testing possible for high-hazard premises or assemblies at increased risk of failure.",
+          "The handbook also requires field testing after installation, repair, winterizing depressurization, or permanent relocation. For compliance work from July 1, 2026 through June 30, 2027, testers used by public water systems must hold certification from an organization recognized in California.",
+          "The statewide handbook defines the public-water-system program duties. Riverside's rule and current customer notice define the property-facing workflow, including the accepted tester, due date, and report-submission process."
+        ]
+      },
+      {
+        "id": "irrigation-checklist",
+        "kind": "checklist",
+        "title": "Riverside Irrigation Backflow Testing Checklist",
+        "body": [
+          "Prepare the assembly and the paperwork together so a completed field test does not become a missed reporting step."
+        ],
+        "bullets": [
+          "Match the notice to the water account, service address, assembly location, type, size, make, model, and serial number.",
+          "Clear landscaping, irrigation boxes, enclosures, and stored materials so the tester can reach the assembly safely.",
+          "Confirm that the tester's certification is accepted for the required Riverside compliance work.",
+          "Schedule before the notice deadline, leaving time for access problems, repairs, replacement parts, and a passing retest if needed.",
+          "Keep the completed test report and proof that the result was submitted through the utility's accepted process.",
+          "After any repair, relocation, or replacement, arrange the required post-work field test before treating the issue as closed."
+        ]
+      },
+      {
+        "id": "riverside-faq",
+        "kind": "faq",
+        "title": "Riverside Irrigation Backflow Testing FAQ",
+        "body": [
+          "The current utility notice controls the account-specific process, but these distinctions answer the most common planning questions."
+        ],
+        "faqItems": [
+          {
+            "question": "How often is an irrigation backflow assembly tested in Riverside?",
+            "answer": "Riverside's published rule says approved backflow assemblies are tested at least annually and immediately after installation, relocation, or repair. The utility may require more frequent testing when necessary."
+          },
+          {
+            "question": "Does the 62% survey figure describe Riverside properties?",
+            "answer": "No. California's staff report cites survey findings in which irrigation appeared in 62% of identified cross-connections. It is useful hazard-inventory evidence, not a Riverside-specific prevalence estimate."
+          },
+          {
+            "question": "Who pays for the test and maintenance?",
+            "answer": "Riverside's Water Rule 13 states that testing and maintenance costs are the responsibility of the water customer."
+          },
+          {
+            "question": "Is a repair invoice enough after a failed test?",
+            "answer": "No. California's current handbook requires field testing after repair, and the passing result still needs to follow the serving utility's reporting process."
+          },
+          {
+            "question": "Can any tester submit the compliance result?",
+            "answer": "Use a tester whose certification is accepted for the utility's compliance work. Confirm the current Riverside notice and tester requirements before scheduling."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing Services",
+        "description": "Schedule certified annual and post-work field testing."
+      },
+      {
+        "href": "/commercial-backflow-specialists/irrigation-backflow-testing-installation-repair",
+        "label": "Irrigation Backflow Services",
+        "description": "Coordinate irrigation assembly testing, repair, replacement, and retesting."
+      },
+      {
+        "href": "/service-areas/riverside-county",
+        "label": "Riverside County Service Area",
+        "description": "Review regional backflow testing and repair support."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Start with the utility notice, assembly information, and due date."
+      }
+    ],
+    "cta": {
+      "heading": "Get the Riverside Irrigation Test on the Calendar",
+      "body": "Backflow Test Pros can identify the assembly, complete certified field testing, coordinate repairs and retesting, and keep the compliance record moving.",
+      "label": "Schedule Backflow Testing",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Certified backflow tester working on an irrigation backflow assembly at a maintained Riverside commercial landscape, test gauge connected, realistic Southern California setting, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "riverside_rule_verified",
+        "label": "Riverside utility rule verified",
+        "reason": "Annual notice, testing triggers, customer cost responsibility, and submission language were checked against Riverside Public Utilities' official Water Rule 13 on August 21, 2026.",
+        "severity": "info"
+      },
+      {
+        "code": "survey_scope_disclosed",
+        "label": "Survey scope disclosed",
+        "reason": "The 62% irrigation figure is presented as survey research cited by California, not as a Riverside prevalence rate.",
+        "severity": "info"
+      },
+      {
+        "code": "april_2026_handbook_verified",
+        "label": "Current California framework verified",
+        "reason": "Testing frequency, post-work triggers, and certification context were checked against official State Water Board sources on August 21, 2026.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 20,
+        "dataPoint": "Riverside customer testing and submission workflow",
+        "value": "Annual notice; immediate testing after installation, relocation, or repair; at least annual testing afterward",
+        "scope": "City of Riverside Public Utilities water customers",
+        "timePeriod": "Current published utility rule checked August 21, 2026",
+        "whyItMatters": "Defines the local customer-facing testing and reporting workflow.",
+        "sourceOrganization": "City of Riverside Public Utilities",
+        "sourceTitle": "Water Rule 13: Cross-Connections and Pollution of Supply",
+        "sourceUrl": "https://www.riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-water/Water%20Rule%2013.pdf",
+        "authorityType": "Government / public utility",
+        "notes": "Riverside-specific rule; not generalized to other utilities."
+      },
+      {
+        "repositoryRow": 12,
+        "dataPoint": "Most common cross-connections in cited surveys",
+        "value": "Irrigation 62%; fire systems 43%; garden or washdown hoses 43%; boilers 38%",
+        "scope": "Survey findings cited by California's adopted staff report",
+        "timePeriod": "Not specified in source",
+        "whyItMatters": "Supports including irrigation in property hazard inventories.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook Staff Report",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2023/staffrpt-adopt.pdf",
+        "authorityType": "Government / state staff report",
+        "notes": "Survey finding only; no Riverside-specific prevalence claim."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "Current California field-testing framework",
+        "value": "At least annual testing and testing after installation, repair, winterizing depressurization, or permanent relocation",
+        "scope": "California public water systems",
+        "timePeriod": "April 2026 handbook",
+        "whyItMatters": "Provides the current statewide program framework behind the local utility process.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Current handbook verified August 21, 2026."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "Current tester certification transition",
+        "value": "Recognized California certification organization required from July 1, 2026 through June 30, 2027",
+        "scope": "Testers used by California public water systems for CCCPH compliance",
+        "timePeriod": "2026-2027 transition period",
+        "whyItMatters": "Supports confirming that a tester's certification is accepted before scheduling compliance work.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Backflow Tester and Cross-Connection Control Specialists Certification",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/specialists-certification.html",
+        "authorityType": "Government / state program page",
+        "notes": "Current page checked August 21, 2026."
+      }
+    ]
   }
 ]

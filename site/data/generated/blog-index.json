@@ -1,5 +1,25 @@
 [
   {
+    "slug": "riverside-irrigation-backflow-testing-an-annual-compliance-guide",
+    "path": "/blog/riverside-irrigation-backflow-testing-an-annual-compliance-guide",
+    "canonical": "https://www.backflowtestpros.com/blog/riverside-irrigation-backflow-testing-an-annual-compliance-guide",
+    "title": "Riverside Irrigation Backflow Testing: An Annual Compliance Guide",
+    "excerpt": "Riverside Public Utilities requires approved backflow assemblies to be tested after installation, relocation, or repair and at least annually. For irrigation customers, the practical job is to identify the correct assembly, use an accepted certified tester, meet the notice deadline, and preserve the submitted result.",
+    "category": "Riverside / irrigation compliance",
+    "audience": "Riverside property owners, HOAs, landscape managers, commercial campuses, and irrigation customers",
+    "geography": "Riverside",
+    "templateType": "localized_service_article",
+    "primaryKeyword": "Riverside irrigation backflow testing",
+    "heroFact": {
+      "value": "At least annually",
+      "label": "Riverside Public Utilities' published minimum testing frequency for approved backflow prevention assemblies",
+      "context": "The utility also requires testing immediately after installation, relocation, or repair and may require more frequent testing when it considers that necessary."
+    },
+    "publishedAt": "2026-08-21T09:00:00.000Z",
+    "updatedAt": "2026-08-21T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "failed-a-california-backflow-test-the-30-day-repair-rule-explained",
     "path": "/blog/failed-a-california-backflow-test-the-30-day-repair-rule-explained",
     "canonical": "https://www.backflowtestpros.com/blog/failed-a-california-backflow-test-the-30-day-repair-rule-explained",
