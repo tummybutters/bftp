@@ -1,5 +1,25 @@
 [
   {
+    "slug": "inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning",
+    "path": "/blog/inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning",
+    "canonical": "https://www.backflowtestpros.com/blog/inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning",
+    "title": "Inland Empire Backflow Compliance for Commercial Buildings: Why Annual Testing Is Only the Beginning",
+    "excerpt": "California requires annual field testing, but a commercial backflow program also has to account for installation and repair retests, failed-assembly deadlines, urgent incident reporting, accepted tester credentials, and the serving utility's submission process.",
+    "category": "Inland Empire / commercial compliance",
+    "audience": "Commercial owners, facility managers, HOA boards, and multi-site operators",
+    "geography": "Inland Empire",
+    "templateType": "localized_service_article",
+    "primaryKeyword": "Inland Empire backflow compliance",
+    "heroFact": {
+      "value": "More than annual",
+      "label": "California field testing also follows installation, repair, winterizing depressurization, and permanent relocation",
+      "context": "The serving public water system still controls the customer-facing notice, accepted tester, due date, and report-submission workflow."
+    },
+    "publishedAt": "2026-08-31T09:00:00.000Z",
+    "updatedAt": "2026-08-31T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "riverside-irrigation-backflow-testing-an-annual-compliance-guide",
     "path": "/blog/riverside-irrigation-backflow-testing-an-annual-compliance-guide",
     "canonical": "https://www.backflowtestpros.com/blog/riverside-irrigation-backflow-testing-an-annual-compliance-guide",

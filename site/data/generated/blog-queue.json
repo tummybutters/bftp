@@ -4095,8 +4095,10 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning",
-    "status": "Queued",
-    "notes": "Requires reviewer sign-off before publication."
+    "status": "Published",
+    "notes": "Published after verification against the amended April 2026 California handbook, adopted staff report, and current certification transition page.",
+    "publishedAt": "2026-08-31T09:00:00.000Z",
+    "publishedSlug": "inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning"
   },
   {
     "id": "refresh_localized_bank-004",
