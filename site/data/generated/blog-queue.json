@@ -2602,8 +2602,8 @@
     ],
     "ctaType": "schedule_backflow_service",
     "slug": "can-your-water-be-shut-off-over-backflow-non-compliance-one-utility-says-yes",
-    "status": "Queued",
-    "notes": "Requires reviewer sign-off before publication."
+    "status": "Published",
+    "notes": "Published 2026-09-02 after verifying current SFPUC annual-testing and enforcement language; utility-specific scope preserved."
   },
   {
     "id": "local_regulation_article_bank-006",

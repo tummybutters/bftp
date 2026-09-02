@@ -1,5 +1,25 @@
 [
   {
+    "slug": "can-your-water-be-shut-off-over-backflow-non-compliance-one-utility-says-yes",
+    "path": "/blog/can-your-water-be-shut-off-over-backflow-non-compliance-one-utility-says-yes",
+    "canonical": "https://www.backflowtestpros.com/blog/can-your-water-be-shut-off-over-backflow-non-compliance-one-utility-says-yes",
+    "title": "Can Your Water Be Shut Off Over Backflow Non-Compliance? One Utility Says Yes",
+    "excerpt": "SFPUC says failure to complete required annual backflow testing may lead to water-service termination, fines, or both. That consequence is utility-specific, but the operating lesson travels: read the notice, verify the assembly, schedule early, and keep proof of testing and submission together.",
+    "category": "Backflow enforcement / utility compliance",
+    "audience": "Commercial property owners, HOA boards, and building engineers",
+    "geography": "California",
+    "templateType": "compliance_article",
+    "primaryKeyword": "water shut off for backflow non compliance",
+    "heroFact": {
+      "value": "Service termination",
+      "label": "SFPUC lists water-service termination, fines, or both as possible consequences when required backflow testing is not completed",
+      "context": "This is a current San Francisco utility example, not a universal penalty schedule for every California water provider."
+    },
+    "publishedAt": "2026-09-02T09:00:00.000Z",
+    "updatedAt": "2026-09-02T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning",
     "path": "/blog/inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning",
     "canonical": "https://www.backflowtestpros.com/blog/inland-empire-backflow-compliance-for-commercial-buildings-why-annual-testing-is-only-the-beginning",
