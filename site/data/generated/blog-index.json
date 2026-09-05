@@ -1,5 +1,25 @@
 [
   {
+    "slug": "compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests",
+    "path": "/blog/compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests",
+    "canonical": "https://www.backflowtestpros.com/blog/compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests",
+    "title": "Compliance Looks Different by Utility: 10 Days, 30 Days, Annual Tests, and Post-Repair Retests",
+    "excerpt": "Backflow compliance is not one universal deadline. California sets statewide program requirements, while each serving utility controls notices, accepted testers, report submission, and customer follow-up.",
+    "category": "Commercial compliance",
+    "audience": "Multi-location businesses, property managers, HOA boards, and compliance coordinators",
+    "geography": "United States",
+    "templateType": "compliance_article",
+    "primaryKeyword": "backflow compliance deadlines by utility",
+    "heroFact": {
+      "value": "4 different clocks",
+      "label": "annual testing, 30-day corrective work, 10-business-day reporting, and post-repair retesting",
+      "context": "They come from different authorities and do not automatically apply to every property in the same way."
+    },
+    "publishedAt": "2026-09-05T09:00:00.000Z",
+    "updatedAt": "2026-09-05T09:00:00.000Z",
+    "status": "Published"
+  },
+  {
     "slug": "can-your-water-be-shut-off-over-backflow-non-compliance-one-utility-says-yes",
     "path": "/blog/can-your-water-be-shut-off-over-backflow-non-compliance-one-utility-says-yes",
     "canonical": "https://www.backflowtestpros.com/blog/can-your-water-be-shut-off-over-backflow-non-compliance-one-utility-says-yes",

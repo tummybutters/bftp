@@ -5968,5 +5968,232 @@
         "notes": "Utility-specific example verified September 2, 2026; not generalized to other California utilities."
       }
     ]
+  },
+  {
+    "sourceQueueId": "local_regulation_article_bank-021",
+    "slug": "compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests",
+    "path": "/blog/compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests",
+    "canonical": "https://www.backflowtestpros.com/blog/compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests",
+    "title": "Compliance Looks Different by Utility: 10 Days, 30 Days, Annual Tests, and Post-Repair Retests",
+    "metaDescription": "See how California's annual and 30-day backflow rules differ from utility-specific reporting and post-repair requirements.",
+    "excerpt": "Backflow compliance is not one universal deadline. California sets statewide program requirements, while each serving utility controls notices, accepted testers, report submission, and customer follow-up.",
+    "category": "Commercial compliance",
+    "audience": "Multi-location businesses, property managers, HOA boards, and compliance coordinators",
+    "geography": "United States",
+    "templateType": "compliance_article",
+    "primaryKeyword": "backflow compliance deadlines by utility",
+    "secondaryKeywords": [
+      "annual backflow testing deadline",
+      "backflow report submission deadline",
+      "backflow retest after repair",
+      "commercial backflow compliance"
+    ],
+    "publishedAt": "2026-09-05T09:00:00.000Z",
+    "updatedAt": "2026-09-05T09:00:00.000Z",
+    "heroFact": {
+      "value": "4 different clocks",
+      "label": "annual testing, 30-day corrective work, 10-business-day reporting, and post-repair retesting",
+      "context": "They come from different authorities and do not automatically apply to every property in the same way."
+    },
+    "keyTakeaways": [
+      "California public water systems must ensure covered assemblies are field tested at least annually.",
+      "California's current handbook gives public water systems a 30-day framework for repair or replacement after notice of a failed assembly, subject to plan-based extensions.",
+      "Portland requires testers to submit reports within 10 business days, but that is a Portland rule, not a national reporting deadline.",
+      "A passing annual test does not eliminate event-triggered testing after repair or other qualifying work.",
+      "Multi-site operators should maintain a separate compliance record for each account, utility, assembly, and due date."
+    ],
+    "sections": [
+      {
+        "id": "one-program-many-clocks",
+        "kind": "narrative",
+        "title": "One Backflow Program Can Contain Several Different Clocks",
+        "body": [
+          "Backflow notices often look similar, but the deadlines behind them can come from different layers of authority. A state policy may tell a public water system how often assemblies must be tested or how quickly failed equipment must be corrected. The serving utility then turns that framework into account notices, tester-acceptance rules, report forms, submission methods, and follow-up steps.",
+          "That distinction matters for commercial portfolios. A property manager with buildings in several cities may receive different notices for similar assemblies. Copying the due date or submission process from one account to another can create a missed deadline even when both properties are trying to satisfy the same broad public-health goal.",
+          "The practical approach is to treat every utility notice as an account-specific instruction. Record the service address, assembly identity, test date, corrective deadline, accepted tester requirements, report destination, and proof of submission together."
+        ],
+        "statCallout": {
+          "value": "Not universal",
+          "label": "A deadline found on one utility's website does not automatically govern another utility's customers",
+          "context": "Confirm the current notice and process with the public water system serving the property."
+        }
+      },
+      {
+        "id": "california-annual-and-30-day-framework",
+        "kind": "narrative",
+        "title": "California Sets an Annual Floor and a Corrective-Work Framework",
+        "body": [
+          "California's April 2026 Cross-Connection Control Policy Handbook requires public water systems to ensure that backflow prevention assemblies in their programs are field tested at least annually. More frequent testing can be required for high-hazard premises or assemblies with a greater risk of failure.",
+          "The same handbook requires a public water system to ensure that a failed assembly is repaired or replaced within 30 days after notification of failure. A longer period is not automatic; an extension must be allowed through the public water system's approved Cross-Connection Control Plan.",
+          "These are statewide program duties written around public water systems and covered assemblies. A customer should still follow the date and corrective instructions on the serving utility's notice, especially when the utility sets an earlier appointment target or needs time to process a passing retest."
+        ],
+        "statCallout": {
+          "value": "Annual / 30 days",
+          "label": "California's minimum testing frequency and failed-assembly corrective framework",
+          "context": "The serving public water system administers the property-specific workflow."
+        }
+      },
+      {
+        "id": "utility-reporting-and-retest-example",
+        "kind": "narrative",
+        "title": "A Utility May Add Its Own Reporting and Retest Steps",
+        "body": [
+          "Portland Water Bureau provides a clear example of utility-level administration. Its current page says the tester submits the backflow test report within 10 business days. It also says an assembly must be tested again after repairs are made.",
+          "Those instructions are useful because they show why the field test, repair, passing retest, and report submission are separate events. A repair invoice proves that work occurred; it does not prove that the assembly passed afterward. Likewise, a tester completing the field work does not necessarily mean the utility has received and processed the report.",
+          "The Portland timeline should not be copied onto a California account. Instead, use it as a model for the questions every owner should answer locally: who submits the report, where it goes, how quickly it is due, whether a repair needs approval, and what evidence closes the notice."
+        ],
+        "statCallout": {
+          "value": "10 business days",
+          "label": "Portland's current tester report-submission deadline",
+          "context": "This is a Portland-specific example, not a nationwide rule."
+        }
+      },
+      {
+        "id": "multi-site-compliance-checklist",
+        "kind": "checklist",
+        "title": "A Better Backflow Checklist for Multi-Site Properties",
+        "body": [
+          "Build the record around the serving utility and the individual assembly instead of relying on one generic annual reminder."
+        ],
+        "bullets": [
+          "Match each notice to the correct account, service address, assembly location, type, make, model, size, and serial number.",
+          "Confirm that the tester's certification is accepted by the serving utility before scheduling.",
+          "Record the utility's test due date and leave time for access problems, repairs, replacement parts, and a passing retest.",
+          "Keep the original result, repair documentation, passing retest, report submission, and utility confirmation together.",
+          "Do not reuse another city's form, email address, portal, or reporting deadline without checking the current local instructions.",
+          "Review the assembly inventory after construction, tenant improvements, irrigation work, equipment changes, or relocation."
+        ]
+      },
+      {
+        "id": "deadline-faq",
+        "kind": "faq",
+        "title": "Backflow Deadline FAQ",
+        "body": [
+          "The current utility notice remains the controlling customer instruction, but these answers clarify the most common timing mistakes."
+        ],
+        "faqItems": [
+          {
+            "question": "Is every backflow assembly tested on the same annual date?",
+            "answer": "No. California sets an at-least-annual program minimum, while the serving utility manages the account schedule and notice. Different properties and assemblies may have different due dates."
+          },
+          {
+            "question": "Does every failed California assembly have exactly 30 days?",
+            "answer": "The current handbook requires the public water system to ensure repair or replacement within 30 days after notice of failure, unless its approved plan allows an extension. Follow the serving utility's notice and do not assume an extension."
+          },
+          {
+            "question": "Is the 10-business-day reporting rule used everywhere?",
+            "answer": "No. The 10-business-day example comes from Portland Water Bureau. Other utilities may use a different deadline, form, portal, or submission party."
+          },
+          {
+            "question": "Does a repaired assembly need another test?",
+            "answer": "Yes in the cited California framework and Portland example. A repair record and a passing post-repair field test document different parts of the compliance process."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing",
+        "description": "Schedule certified field testing for covered assemblies."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Coordinate corrective work and the passing retest."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Review the notice, assembly, and serving utility before the due date."
+      }
+    ],
+    "cta": {
+      "heading": "Turn the Utility Notice Into a Complete Compliance Record",
+      "body": "Backflow Test Pros can help identify the assembly, schedule certified testing, coordinate repairs and retesting, and organize the documentation required by the serving utility.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Commercial property manager reviewing labeled backflow assembly records beside a certified tester using a differential pressure gauge, realistic Southern California service setting, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "current_california_handbook_verified",
+        "label": "Current California handbook verified",
+        "reason": "Annual testing and the failed-assembly corrective framework were checked against the April 2026 handbook and current State Water Board program page.",
+        "severity": "info"
+      },
+      {
+        "code": "utility_specific_scope_preserved",
+        "label": "Utility-specific deadline scope preserved",
+        "reason": "Portland's 10-business-day deadline is presented only as a Portland example and not generalized to other utilities.",
+        "severity": "info"
+      },
+      {
+        "code": "actor_language_preserved",
+        "label": "Regulatory actors preserved",
+        "reason": "Public-water-system, tester, and customer responsibilities are distinguished throughout the article.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 19,
+        "dataPoint": "California annual field-testing frequency",
+        "value": "At least annually, with more frequent testing possible for higher-risk premises or assemblies",
+        "scope": "California public water systems and assemblies in their cross-connection control programs",
+        "timePeriod": "April 2026 handbook",
+        "whyItMatters": "Establishes the statewide minimum while preserving the serving utility's account-specific administration.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Section 3.3.3(a), verified September 5, 2026."
+      },
+      {
+        "repositoryRow": 20,
+        "dataPoint": "California failed-assembly repair or replacement framework",
+        "value": "Within 30 days after notification of failure; plan-based extensions may be allowed by the public water system",
+        "scope": "California public water systems and failed assemblies in their programs",
+        "timePeriod": "April 2026 handbook",
+        "whyItMatters": "Separates the corrective deadline from annual testing and utility report processing.",
+        "sourceOrganization": "California State Water Resources Control Board",
+        "sourceTitle": "Cross-Connection Control Policy Handbook, April 2026",
+        "sourceUrl": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/docs/2026/cross-connection-control-policy-handbook-apr-2026.pdf",
+        "authorityType": "Government / state policy handbook",
+        "notes": "Section 3.3.3(e), verified September 5, 2026; actor language preserved."
+      },
+      {
+        "repositoryRow": 25,
+        "dataPoint": "Portland tester report-submission deadline",
+        "value": "Tester submits the report within 10 business days",
+        "scope": "Portland Water Bureau customers and accepted testers",
+        "timePeriod": "Current utility page",
+        "whyItMatters": "Shows how a utility can add a specific administrative deadline to the testing workflow.",
+        "sourceOrganization": "Portland Water Bureau",
+        "sourceTitle": "Testing backflow prevention assemblies",
+        "sourceUrl": "https://www.portland.gov/water/backflow-prevention/testing-requirements-and-reports",
+        "authorityType": "Government / utility",
+        "notes": "Utility-specific rule verified September 5, 2026."
+      },
+      {
+        "repositoryRow": 25,
+        "dataPoint": "Portland post-repair testing instruction",
+        "value": "Assemblies must be tested again after repairs",
+        "scope": "Portland Water Bureau customers",
+        "timePeriod": "Current utility page",
+        "whyItMatters": "Demonstrates that repair and passing retest are separate compliance events.",
+        "sourceOrganization": "Portland Water Bureau",
+        "sourceTitle": "Testing backflow prevention assemblies",
+        "sourceUrl": "https://www.portland.gov/water/backflow-prevention/testing-requirements-and-reports",
+        "authorityType": "Government / utility",
+        "notes": "Utility-specific instruction verified September 5, 2026."
+      }
+    ]
   }
 ]

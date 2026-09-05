@@ -3318,8 +3318,10 @@
     ],
     "ctaType": "commercial_compliance_review",
     "slug": "compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests",
-    "status": "Queued",
-    "notes": "Requires reviewer sign-off before publication."
+    "status": "Published",
+    "notes": "Published after verification against the April 2026 California handbook and Portland Water Bureau's current reporting and post-repair instructions.",
+    "publishedAt": "2026-09-05T09:00:00.000Z",
+    "publishedSlug": "compliance-looks-different-by-utility-10-days-30-days-annual-tests-and-post-repair-retests"
   },
   {
     "id": "local_regulation_article_bank-022",
