@@ -6195,5 +6195,201 @@
         "notes": "Utility-specific instruction verified September 5, 2026."
       }
     ]
+  },
+  {
+    "sourceQueueId": "commercial_facility_bank-003",
+    "slug": "more-than-6-of-facility-water-use-can-disappear-through-leaks-before-anyone-notices",
+    "path": "/blog/more-than-6-of-facility-water-use-can-disappear-through-leaks-before-anyone-notices",
+    "canonical": "https://www.backflowtestpros.com/blog/more-than-6-of-facility-water-use-can-disappear-through-leaks-before-anyone-notices",
+    "title": "More Than 6% of Facility Water Use Can Disappear Through Leaks—Before Anyone Notices",
+    "metaDescription": "EPA says leaks average more than 6% of facility water use. Learn how commercial teams can find hidden losses before the next utility bill.",
+    "excerpt": "Commercial leaks are not always visible. EPA WaterSense says they average more than 6% of facility water use and recommends metering, alerts, inspections, and staff reporting to find them sooner.",
+    "category": "Commercial facilities / leak detection",
+    "audience": "Property managers, maintenance supervisors, building engineers, and commercial owners",
+    "geography": "United States",
+    "templateType": "commercial_facility_article",
+    "primaryKeyword": "commercial water leak statistics",
+    "secondaryKeywords": [
+      "facility water leak detection",
+      "commercial water waste",
+      "building water meter monitoring",
+      "property manager leak checklist"
+    ],
+    "publishedAt": "2026-09-09T09:00:00.000Z",
+    "updatedAt": "2026-09-09T09:00:00.000Z",
+    "heroFact": {
+      "value": "More than 6%",
+      "label": "average share of total facility water use that EPA says can be lost to leaks",
+      "context": "Continuously running water may be hidden, so bills and meter trends can reveal problems before occupants do."
+    },
+    "keyTakeaways": [
+      "EPA WaterSense says leaks average more than 6% of total water use in commercial and institutional facilities.",
+      "A stuck commercial toilet fill valve can lose about 4,300 gallons per day in EPA's example table.",
+      "Meter and submeter trends are useful because hidden leaks may not create an obvious puddle or maintenance complaint.",
+      "Cooling towers, boilers, irrigation, restrooms, hoses, and distribution lines should all be included in routine leak checks.",
+      "Leak detection works best as a recurring operating process with alerts, inspections, repair records, and post-repair verification."
+    ],
+    "sections": [
+      {
+        "id": "six-percent-is-an-operating-signal",
+        "kind": "narrative",
+        "title": "Six Percent Is Not a Drip—It Is an Operating Signal",
+        "body": [
+          "EPA WaterSense says leaks can account for more than 6% of a facility's total water use on average. In a large office, retail center, school, medical property, apartment community, or industrial site, that share can represent a meaningful amount of purchased water and wastewater service.",
+          "The difficult part is that continuously running water is not always visible. A toilet can run behind a closed restroom door, an irrigation valve can fail after business hours, or mechanical equipment can keep drawing water without producing the kind of obvious damage that triggers an emergency call.",
+          "That is why the percentage is most useful as a management benchmark. If water use rises without a matching change in occupancy, production, landscaping, or weather, the building needs an explanation rather than another month of assumptions."
+        ],
+        "statCallout": {
+          "value": ">6%",
+          "label": "average facility water use attributed to leaks by EPA WaterSense",
+          "context": "The figure applies to commercial and institutional facilities as a broad benchmark, not a diagnosis for one property."
+        }
+      },
+      {
+        "id": "small-failures-scale-fast",
+        "kind": "narrative",
+        "title": "Small Mechanical Failures Can Scale Into Large Water Losses",
+        "body": [
+          "EPA's current facility guidance illustrates how quickly common failures can add up. Its table estimates about 860 gallons per month from a small leaking toilet, 8,600 gallons per month from a medium toilet leak, and roughly 4,300 gallons per day from a stuck fill valve flowing at 3 gallons per minute.",
+          "The same table shows a one-gallon-per-minute drip-irrigation malfunction at about 43,200 gallons per month. A broken distribution line flowing at 15 gallons per minute reaches an estimated 151,200 gallons in one week and 648,000 gallons in one month.",
+          "These are EPA examples rather than measurements from a specific Southern California property. Actual loss and cost depend on flow rate, duration, local rates, sewer charges, and whether the water also consumes energy for heating, pumping, or treatment."
+        ],
+        "statCallout": {
+          "value": "4,300 gal/day",
+          "label": "EPA example for a commercial toilet with a stuck fill valve",
+          "context": "The example assumes a 3-gallon-per-minute leak running continuously."
+        }
+      },
+      {
+        "id": "measure-before-the-bill-arrives",
+        "kind": "narrative",
+        "title": "Use Meter Data Before the Bill Becomes the Alarm",
+        "body": [
+          "EPA recommends meters and submeters because they help facility managers identify targeted reductions, find leaks, track savings, and detect malfunctioning equipment. Hourly or daily data can expose overnight demand, weekend flow, or a step-change that disappears inside a monthly total.",
+          "A useful baseline separates normal occupied use from periods when the building should be quiet. If the meter never settles overnight, the investigation can move through restrooms, irrigation, cooling towers, boilers, kitchens, tenant spaces, and visible distribution lines in a consistent order.",
+          "Alerts are especially valuable for equipment that can fail continuously. The goal is not merely to receive more data; it is to connect an abnormal reading to a named responder, a documented inspection, and a repair that is verified against the meter afterward."
+        ]
+      },
+      {
+        "id": "facility-leak-checklist",
+        "kind": "checklist",
+        "title": "Commercial Leak-Detection Checklist",
+        "body": [
+          "Turn leak detection into a routine building-control process instead of waiting for visible damage or a utility-bill surprise."
+        ],
+        "bullets": [
+          "Record weekly meter readings and compare occupied, overnight, weekend, and seasonal patterns.",
+          "Configure AMI or building-management alerts when available, with a clear escalation owner and response time.",
+          "Inspect toilets, urinals, faucets, kitchens, janitorial sinks, hoses, irrigation, boilers, and cooling equipment during regular rounds.",
+          "Ask tenants, cleaners, landscapers, and maintenance vendors to report running water and unusual equipment behavior.",
+          "Document the suspected source, measured flow or meter change, repair date, responsible vendor, and verification reading.",
+          "Review water-system and backflow records after equipment changes, tenant improvements, irrigation work, or distribution-line repairs."
+        ]
+      },
+      {
+        "id": "commercial-leak-faq",
+        "kind": "faq",
+        "title": "Commercial Water-Leak FAQ",
+        "body": [
+          "These answers apply EPA's facility guidance without replacing an onsite assessment or the serving utility's account data."
+        ],
+        "faqItems": [
+          {
+            "question": "Does a 6% leak benchmark mean my building is losing exactly 6%?",
+            "answer": "No. EPA presents more than 6% as an average facility benchmark. Your actual loss must be determined from meter data, equipment checks, occupancy patterns, and onsite investigation."
+          },
+          {
+            "question": "Can a building leak exist without visible water damage?",
+            "answer": "Yes. Continuously running fixtures, irrigation, mechanical equipment, and buried or concealed lines can waste water without creating an obvious indoor puddle."
+          },
+          {
+            "question": "What should a property manager check first?",
+            "answer": "Start with meter trends, then inspect high-frequency and continuously supplied uses such as restrooms, irrigation, cooling towers, boilers, kitchens, hoses, and tenant equipment."
+          },
+          {
+            "question": "Why review backflow records after plumbing or equipment work?",
+            "answer": "Repairs, replacements, relocations, and system changes can affect the water-system inventory and may trigger testing or reporting steps. Confirm the serving utility's current requirements for the specific assembly and account."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/commercial-backflow-specialists/office-property-backflow-testing-installation-repair-services",
+        "label": "Office Property Backflow Services",
+        "description": "Coordinate testing, installation, and repair for office water systems."
+      },
+      {
+        "href": "/commercial-backflow-specialists/retail-property-shopping-center-backflow-testing-installation-repair",
+        "label": "Retail and Shopping Center Backflow Services",
+        "description": "Review assemblies across multi-tenant commercial properties."
+      },
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing",
+        "description": "Schedule certified field testing for covered assemblies."
+      }
+    ],
+    "cta": {
+      "heading": "Review the Water-System Work Before the Next Deadline",
+      "body": "Backflow Test Pros can help commercial teams identify covered assemblies, schedule certified testing, coordinate repairs and retesting, and organize utility documentation after water-system changes.",
+      "label": "Schedule Commercial Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Commercial building engineer checking a digital water meter and inspecting mechanical-room piping, realistic facility setting, clean professional lighting, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "epa_source_verified_2026_09_07",
+        "label": "Current EPA source verified",
+        "reason": "The 6% benchmark, meter guidance, and example leak rates were checked against the EPA WaterSense page updated August 7, 2026.",
+        "severity": "info"
+      },
+      {
+        "code": "example_scope_preserved",
+        "label": "EPA examples kept as examples",
+        "reason": "Flow, volume, and cost examples are not presented as measured results or local utility quotes for a specific property.",
+        "severity": "info"
+      },
+      {
+        "code": "service_scope_preserved",
+        "label": "Backflow service scope preserved",
+        "reason": "The CTA is limited to backflow assemblies, related testing, repairs, retesting, and utility documentation.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 66,
+        "dataPoint": "Average facility water use attributed to leaks",
+        "value": "More than 6% of total facility water use",
+        "scope": "Commercial and institutional facilities",
+        "timePeriod": "Current EPA page updated August 7, 2026",
+        "whyItMatters": "Provides a practical benchmark for prioritizing recurring leak detection and repair.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Getting Started",
+        "sourceUrl": "https://www.epa.gov/watersense/getting-started",
+        "authorityType": "Government / federal",
+        "notes": "Verified September 7, 2026."
+      },
+      {
+        "repositoryRow": 66,
+        "dataPoint": "EPA facility leak examples",
+        "value": "Small toilet leak 860 gallons/month; stuck fill valve 4,300 gallons/day; drip irrigation malfunction 43,200 gallons/month",
+        "scope": "Illustrative commercial facility leak scenarios",
+        "timePeriod": "Current EPA page updated August 7, 2026",
+        "whyItMatters": "Translates common fixture and irrigation failures into operating-scale water loss.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Getting Started",
+        "sourceUrl": "https://www.epa.gov/watersense/getting-started",
+        "authorityType": "Government / federal",
+        "notes": "Illustrative estimates only; actual flow, duration, and local costs vary. Verified September 7, 2026."
+      }
+    ]
   }
 ]

@@ -3466,8 +3466,10 @@
     ],
     "ctaType": "commercial_compliance_review",
     "slug": "more-than-6-of-facility-water-use-can-disappear-through-leaks-before-anyone-notices",
-    "status": "Queued",
-    "notes": ""
+    "status": "Published",
+    "notes": "Published after verification against the EPA WaterSense facility guidance updated August 7, 2026.",
+    "publishedAt": "2026-09-09T09:00:00.000Z",
+    "publishedSlug": "more-than-6-of-facility-water-use-can-disappear-through-leaks-before-anyone-notices"
   },
   {
     "id": "commercial_facility_bank-004",
