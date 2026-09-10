@@ -1,39 +1,95 @@
-# Backflow Test Pros Forensics
+# Backflow Test Pros
 
-This workspace captures a public-forensics SEO clone dossier for `https://www.backflowtestpros.com/`.
+The website for [Backflow Test Pros](https://www.backflowtestpros.com), a Southern California backflow testing, repair, replacement, and compliance service.
 
-## Site App
+The production site includes service pages, commercial property pages, location-focused content, a resource blog, contact intake, and analytics.
 
-From the repo root, you can run the site app with:
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Vercel
+- PostHog and Google Analytics
+
+## Local Development
+
+Install the site dependencies:
+
+```bash
+npm --prefix site install
+```
+
+Start the local development server:
 
 ```bash
 npm run dev
-npm run build
-npm run lint
-npm run start
 ```
 
-These proxy into `/Users/tommybutcher/Documents/backflowpro/site`.
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-## Run
+## Commands
+
+Run these commands from the repository root:
 
 ```bash
-python3 scripts/collect_backflow_seo_forensics.py
-python3 scripts/analyze_clone_gap_phase_two.py
+npm run dev       # Start the development server
+npm run build     # Create a production build
+npm run lint      # Run ESLint
+npm run start     # Start the production server
 ```
 
-## Outputs
+Blog-specific commands run from the `site` workspace:
 
-The collector writes a dated dossier under `output/backflowtestpros_forensics/`:
+```bash
+npm --prefix site run blog:build-index
+npm --prefix site run blog:validate
+```
 
-- `url_inventory.csv`
-- `page_seo_matrix.csv`
-- `asset_manifest.csv`
-- `authority_registry.csv`
-- `recovery_gap_report.md`
-- `wayback_snapshot_inventory.csv`
-- `wayback_archived_only_pages.csv`
-- `clone_gap_tracker.csv`
-- `wayback_diff_report.md`
-- `clone_execution_matrix.md`
-- `raw/` with HTML, robots, sitemap, Firecrawl search JSON, screenshot JSON, screenshots, and downloaded first-party assets
+## Project Structure
+
+```text
+site/
+  app/              Next.js routes and API handlers
+  components/       Shared UI and page sections
+  content/          Site content sources
+  data/generated/   Generated page and blog data
+  lib/              Analytics, content, and design utilities
+  public/           Static assets
+  scripts/          Blog build and validation scripts
+  styles/           Shared visual patterns
+```
+
+The root-level `scripts/`, `docs/`, and `output/` directories contain supporting migration, research, and site-recovery materials. The production application lives in `site/`.
+
+## Blog Workflow
+
+Blog entries are stored in `site/data/generated/blog-posts.json`. After changing blog content:
+
+1. Rebuild `blog-index.json`.
+2. Run the blog validator.
+3. Run the production build.
+4. Confirm the blog index and article route render correctly.
+
+```bash
+npm --prefix site run blog:build-index
+npm --prefix site run blog:validate
+npm run build
+```
+
+## Environment Variables
+
+Local environment variables are required for integrations such as contact intake, analytics, email notifications, and Housecall Pro. Keep credentials in local or Vercel environment configuration and never commit secret values.
+
+Public analytics configuration uses:
+
+```text
+NEXT_PUBLIC_GA_MEASUREMENT_ID
+NEXT_PUBLIC_POSTHOG_KEY
+NEXT_PUBLIC_POSTHOG_HOST
+```
+
+## Deployment
+
+Production is deployed through Vercel from the `main` branch. The live site is available at [www.backflowtestpros.com](https://www.backflowtestpros.com).
