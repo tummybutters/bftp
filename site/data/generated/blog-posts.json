@@ -6391,5 +6391,173 @@
         "notes": "Illustrative estimates only; actual flow, duration, and local costs vary. Verified September 7, 2026."
       }
     ]
+  },
+  {
+    "sourceQueueId": "plumbing_water_article_bank-002",
+    "slug": "nearly-900-billion-gallons-why-small-household-leaks-add-up-fast",
+    "path": "/blog/nearly-900-billion-gallons-why-small-household-leaks-add-up-fast",
+    "canonical": "https://www.backflowtestpros.com/blog/nearly-900-billion-gallons-why-small-household-leaks-add-up-fast",
+    "title": "Nearly 900 Billion Gallons: Why Small Household Leaks Add Up Fast",
+    "metaDescription": "EPA says household leaks waste nearly 900 billion gallons yearly. Learn what to check and when water-system work may require backflow follow-up.",
+    "excerpt": "EPA WaterSense says household leaks waste nearly 900 billion gallons nationwide each year. A simple inspection routine can catch common losses and flag water-system changes that deserve a separate backflow review.",
+    "category": "Residential leaks / waste",
+    "audience": "Homeowners, property managers, and cost-conscious residents",
+    "geography": "United States",
+    "templateType": "cost_risk_article",
+    "primaryKeyword": "household leak statistics",
+    "secondaryKeywords": [
+      "household water leaks",
+      "home water waste",
+      "backflow testing after plumbing work",
+      "leak inspection checklist"
+    ],
+    "publishedAt": "2026-09-10T09:00:00.000Z",
+    "updatedAt": "2026-09-10T09:00:00.000Z",
+    "heroFact": {
+      "value": "Nearly 900 billion gallons",
+      "label": "water EPA says household leaks waste nationwide each year",
+      "context": "EPA compares that volume with the annual household water use of nearly 11 million homes."
+    },
+    "keyTakeaways": [
+      "EPA WaterSense says household leaks waste nearly 900 billion gallons of water nationwide each year.",
+      "Toilets, faucets, showerheads, irrigation, and service lines are practical places to begin a leak check.",
+      "A higher bill can be an early signal, but meter readings and onsite inspection are needed to locate the cause.",
+      "Fixing a leak and verifying a backflow assembly are separate jobs with different evidence.",
+      "Plumbing, irrigation, or equipment changes may warrant a review of the serving utility's backflow requirements."
+    ],
+    "sections": [
+      {
+        "id": "national-scale-household-problem",
+        "kind": "narrative",
+        "title": "A Small Leak at Home Becomes a National-Scale Loss",
+        "body": [
+          "EPA WaterSense says household leaks can waste nearly 900 billion gallons of water nationwide each year. The agency compares that volume with the annual household water use of nearly 11 million homes. The number is large because ordinary fixture and irrigation problems can continue quietly for days, weeks, or months.",
+          "The national estimate is not a measurement of any one property. A home's actual loss depends on the source, flow rate, duration, water pressure, and whether the leak runs continuously. Still, the scale makes a useful point: a drip, running toilet, or irrigation problem is worth investigating before it becomes visible damage or another billing cycle.",
+          "Start with evidence from the property. Compare recent bills, read the meter when fixtures are off, listen for running toilets, inspect visible connections, and look for unusually wet landscaping. Those steps help narrow the search without pretending that a national statistic diagnoses a specific house."
+        ],
+        "statCallout": {
+          "value": "~900B gallons/year",
+          "label": "EPA's current estimate of nationwide household water lost to leaks",
+          "context": "The estimate describes total U.S. household leak waste, not the loss at an individual property."
+        }
+      },
+      {
+        "id": "where-to-look-first",
+        "kind": "checklist",
+        "title": "A Practical Household Leak Check",
+        "body": [
+          "Use a short, repeatable inspection before assuming the cause or replacing equipment."
+        ],
+        "bullets": [
+          "Check toilets for continuous running, delayed shutoff, or movement in the bowl when the fixture is idle.",
+          "Inspect faucet, showerhead, hose-bib, appliance, and water-heater connections for drips or mineral trails.",
+          "Review irrigation schedules and walk the active zones for broken emitters, saturated areas, or valves that do not close.",
+          "Compare the water meter before and after a quiet period when no fixtures or water-using equipment should be operating.",
+          "Record the suspected source, repair date, and a post-repair meter or fixture check so the result is verified.",
+          "Escalate concealed, pressurized, or rapidly worsening leaks to a qualified plumbing professional."
+        ]
+      },
+      {
+        "id": "leaks-and-backflow-are-different",
+        "kind": "narrative",
+        "title": "Leak Repair and Backflow Protection Are Different Questions",
+        "body": [
+          "A leak does not by itself prove that a backflow prevention assembly has failed. Leak detection asks where water is escaping or running. Backflow protection addresses whether a reversal of flow could allow contaminants to enter the drinking-water system. Each problem requires its own inspection, testing, and documentation.",
+          "The connection matters when repair work changes the water system. Irrigation modifications, equipment replacement, piping relocation, or work near a protected cross-connection can affect the assembly inventory or trigger testing and reporting requirements. The serving water utility controls the account-specific rules, accepted tester requirements, forms, and deadlines.",
+          "Before closing a project, keep the leak-repair evidence separate from any backflow test report. A repair invoice does not prove that an assembly passed, and a passing backflow test does not prove that every household leak has been found."
+        ]
+      },
+      {
+        "id": "household-leak-faq",
+        "kind": "faq",
+        "title": "Household Leak and Backflow FAQ",
+        "body": [
+          "These answers keep the EPA estimate and BFTP's service scope in the right context."
+        ],
+        "faqItems": [
+          {
+            "question": "Does the EPA estimate mean my home is losing a specific amount?",
+            "answer": "No. Nearly 900 billion gallons is a nationwide annual estimate. Meter data and an onsite inspection are needed to determine whether and where an individual property is leaking."
+          },
+          {
+            "question": "Does a household leak mean my backflow assembly failed?",
+            "answer": "No. A leak and a backflow assembly failure are different conditions. A certified field test is needed to determine whether a testable backflow assembly passes."
+          },
+          {
+            "question": "When should backflow requirements be checked after repair work?",
+            "answer": "Check with the serving utility when irrigation, equipment, piping, or cross-connection conditions change, or when a notice requires testing, repair, replacement, or reporting."
+          },
+          {
+            "question": "What records should I keep?",
+            "answer": "Keep leak findings and repair verification, plus any separate backflow test, repair, retest, submission receipt, and utility confirmation required for the account."
+          }
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing",
+        "description": "Schedule certified field testing for covered assemblies."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Coordinate assembly repairs, replacement, and passing retests."
+      },
+      {
+        "href": "/contact-backflowtestpros",
+        "label": "Contact Backflow Test Pros",
+        "description": "Review a notice, assembly, or water-system change with the BFTP team."
+      }
+    ],
+    "cta": {
+      "heading": "Keep Backflow Follow-Up Separate and Complete",
+      "body": "If water-system work affects a covered assembly, Backflow Test Pros can coordinate certified testing, repair or replacement, retesting, and utility documentation.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Homeowner checking an outdoor water meter beside a Southern California house with irrigation piping visible, realistic daylight, clean professional composition, no text overlay.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "reviewFlags": [
+      {
+        "code": "epa_source_verified_2026_09_10",
+        "label": "Current EPA source verified",
+        "reason": "The nationwide household leak estimate and comparison were checked against the current EPA WaterSense page on September 10, 2026.",
+        "severity": "info"
+      },
+      {
+        "code": "individual_property_scope_preserved",
+        "label": "National estimate kept in scope",
+        "reason": "The EPA estimate is not presented as a measurement or diagnosis for an individual property.",
+        "severity": "info"
+      },
+      {
+        "code": "service_scope_preserved",
+        "label": "Backflow service scope preserved",
+        "reason": "The CTA is limited to backflow testing, assembly work, retesting, and utility documentation.",
+        "severity": "info"
+      }
+    ],
+    "status": "Published",
+    "sourceNotes": [
+      {
+        "repositoryRow": 47,
+        "dataPoint": "Nationwide household water lost to leaks",
+        "value": "Nearly 900 billion gallons per year, equal to the annual household water use of nearly 11 million homes",
+        "scope": "United States household leaks",
+        "timePeriod": "Current EPA page",
+        "whyItMatters": "Shows the cumulative national scale of common household leaks.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Statistics and Facts",
+        "sourceUrl": "https://www.epa.gov/watersense/statistics-and-facts",
+        "authorityType": "Government / federal",
+        "notes": "Verified September 10, 2026. The page currently contains the redundant wording 'approximately nearly'; the article uses 'nearly.'"
+      }
+    ]
   }
 ]
