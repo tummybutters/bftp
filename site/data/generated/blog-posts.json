@@ -6559,5 +6559,102 @@
         "notes": "Verified September 10, 2026. The page currently contains the redundant wording 'approximately nearly'; the article uses 'nearly.'"
       }
     ]
+  },
+  {
+    "sourceQueueId": "plumbing_water_article_bank-003",
+    "slug": "9-of-homes-waste-50-gallons-a-day-what-counts-as-a-real-plumbing-leak",
+    "path": "/blog/9-of-homes-waste-50-gallons-a-day-what-counts-as-a-real-plumbing-leak",
+    "canonical": "https://www.backflowtestpros.com/blog/9-of-homes-waste-50-gallons-a-day-what-counts-as-a-real-plumbing-leak",
+    "title": "9% of Homes Waste 50+ Gallons a Day: What Counts as a Real Plumbing Leak?",
+    "metaDescription": "EPA says 9% of homes leak at least 50 gallons daily. Learn why that benchmark is not a repair threshold and how to document the right follow-up.",
+    "excerpt": "A national leak benchmark is useful context, but it cannot tell you whether your own property needs urgent work. Separate water loss, repair verification, and backflow testing in your maintenance record.",
+    "category": "Residential leaks / waste",
+    "audience": "Homeowners, first-time buyers, landlords",
+    "geography": "United States",
+    "templateType": "cost_risk_article",
+    "primaryKeyword": "signs of a serious plumbing leak",
+    "secondaryKeywords": [],
+    "status": "Published",
+    "publishedAt": "2026-09-11T16:00:00.000Z",
+    "updatedAt": "2026-09-11T16:00:00.000Z",
+    "heroFact": {
+      "value": "9% of homes",
+      "label": "have leaks wasting at least 50 gallons daily, according to EPA WaterSense",
+      "context": "A national benchmark, not a minimum loss required before arranging repairs."
+    },
+    "keyTakeaways": [
+      "EPA reports that 9% of homes have leaks wasting 50 gallons or more daily.",
+      "Do not wait for a numerical threshold before investigating a suspected leak.",
+      "A repair record and a passing backflow test answer different questions."
+    ],
+    "sections": [
+      {
+        "id": "benchmark",
+        "kind": "narrative",
+        "title": "Fifty Gallons Is a Benchmark, Not Permission to Wait",
+        "body": [
+          "EPA WaterSense reports that nine percent of homes have leaks wasting at least 50 gallons per day. That statistic describes a share of homes nationally; it does not establish a safe amount of leakage for your house. A smaller loss can still deserve prompt attention.",
+          "EPA suggests comparing meter readings across two hours with no water use. A changed reading can indicate a leak. Make sure automatic water uses are accounted for when interpreting the result. The reading is a starting point for investigation, not proof of a particular failed component."
+        ]
+      },
+      {
+        "id": "record",
+        "kind": "narrative",
+        "title": "Give the Next Person Enough Information to Act",
+        "body": [
+          "A useful maintenance request should identify the property, the exact place where the problem was noticed, when it started, and whether it is continuous or intermittent. Include a photograph when the condition is visible. These details help the receiving professional understand the request without asking the owner to repeat the entire story.",
+          "For a rental property, name the person who can provide access and record the appointment arrangements alongside the report. Avoid closing the request just because someone has been scheduled. A scheduled visit, completed repair, and verified result are distinct milestones.",
+          "After the work, ask for a description of the component repaired and the check used to confirm the result. Keep that record with the original observations. If symptoms recur, the next professional will have a useful starting point rather than a vague note that the plumbing was previously fixed."
+        ]
+      },
+      {
+        "id": "backflow",
+        "kind": "narrative",
+        "title": "Keep Backflow Follow-Up on Its Own Record",
+        "body": [
+          "Water escaping from plumbing and water flowing backward through a cross-connection are different problems. A visible leak alone cannot establish whether a backflow prevention assembly passes its field test. Likewise, a passing assembly test should not be used to close an unrelated leak complaint.",
+          "When arranging work near an assembly, identify that equipment in the work order and ask the serving utility or qualified tester what follow-up applies to the proposed work. Preserve the assembly identity, test result, and any required report separately from the general repair receipt. That distinction is especially useful when different contractors are involved.",
+          "Backflow Test Pros handles backflow testing, assembly repair and replacement, retesting, and associated utility documentation. For an unrelated household plumbing leak, arrange the appropriate plumbing assessment. Clear ownership helps both jobs reach a documented conclusion."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing",
+        "description": "Arrange certified assembly testing."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Coordinate assembly work and retesting."
+      }
+    ],
+    "cta": {
+      "heading": "Need Backflow Assembly Follow-Up?",
+      "body": "Contact Backflow Test Pros about testing, assembly repairs, retests, and utility documentation.",
+      "label": "Contact Backflow Test Pros",
+      "href": "/contact-backflowtestpros"
+    },
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "sourceNotes": [
+      {
+        "repositoryRow": 48,
+        "dataPoint": "Homes with substantial leaks",
+        "value": "9% of homes waste 50 gallons or more per day",
+        "scope": "United States",
+        "timePeriod": "Current EPA page",
+        "whyItMatters": "Good supporting stat for leak-detection service content.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Fix a Leak Week",
+        "sourceUrl": "https://www.epa.gov/watersense/fix-leak-week",
+        "authorityType": "Government (federal)",
+        "notes": "Workbook anchor verified against EPA Fix a Leak Week on September 11, 2026. National scope preserved; no local incidence claim."
+      }
+    ]
   }
 ]
