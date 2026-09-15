@@ -12,6 +12,8 @@ The server-only repair-credit policy endpoint returns the credit and policy vers
 
 Success requires an explicit `ok: true` from the contact endpoint after the existing email or CRM delivery. Provider rejection, non-JSON responses and connection failures retain the form. Double clicks are blocked while sending. There is no claim of durable exactly-once delivery across user retries.
 
+The existing acknowledgement email honors the new Email me selection; its older call-or-email wording is bypassed for that choice.
+
 Files remain private email attachments. If email fails while HCP accepts the request, the receipt explicitly identifies the missing attachment and provides the contact email. An accepted request is not presented as failed just because its attachment did not arrive.
 
 A Vercel preview rejects contact submissions before any provider writes, even when live environment values are inherited. Preview analytics is disabled. No real customer submission, email, invoice or phone call was used for QA.

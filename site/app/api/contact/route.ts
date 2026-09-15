@@ -365,7 +365,9 @@ function buildAutoReplyText(submission: ContactSubmission) {
     "",
     "Next steps:",
     reviewStep,
-    `2. Expect a call or email from ${expectCallFrom} ${responseWindow}.`,
+    submission.contactPreference === "email"
+      ? `2. Expect an email from our team ${responseWindow}.`
+      : `2. Expect a call or email from ${expectCallFrom} ${responseWindow}.`,
     finalStep,
     "",
     siteConfig.name,
@@ -383,6 +385,9 @@ function buildEmailHtmlFromText(text: string) {
 }
 
 async function buildPersonalizedAutoReplyText(submission: ContactSubmission) {
+  // Honor the explicit email choice instead of the older call-or-email template.
+  if (submission.contactPreference === "email")
+    return buildAutoReplyText(submission);
   const expectCallFrom =
     process.env.CONTACT_AUTOREPLY_EXPECT_CALL_FROM || "our scheduling team";
   const responseWindow =

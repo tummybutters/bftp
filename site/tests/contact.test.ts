@@ -185,7 +185,10 @@ describe("Actual contact handler with captured provider requests", () => {
     expect(calls[0].body.text).toContain("Preferred Contact: email");
     expect(patch?.body.notes).toContain("not booked");
     expect(calls.some((c) => c.url.endsWith("/leads"))).toBe(true);
-    expect(calls.filter((c) => c.url.includes("agentmail"))).toHaveLength(2);
+    const mail = calls.filter((c) => c.url.includes("agentmail"));
+    expect(mail).toHaveLength(2);
+    expect(mail[1].body.text).toContain("Expect an email from our team");
+    expect(mail[1].body.text).not.toContain("Expect a call");
     expect(
       calls.every((c) => /api\.(agentmail\.to|housecallpro\.com)/.test(c.url)),
     ).toBe(true);
