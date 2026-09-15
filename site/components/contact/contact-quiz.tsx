@@ -617,13 +617,15 @@ export function ContactQuiz() {
                           <span>
                             {preparing
                               ? "Preparing attachments…"
-                              : "Add a notice or photo"}
+                              : "Add your notice or a photo"}
                           </span>
+                          <span className={cx("upload-optional")}>Optional</span>
                           <input
                             className={cx("sr-only")}
                             type="file"
                             accept="image/*,application/pdf"
                             multiple
+                            aria-describedby="notice-upload-help"
                             disabled={preparing || status === "sending"}
                             onChange={(e) => {
                               void addFiles(Array.from(e.target.files || []));
@@ -631,6 +633,9 @@ export function ContactQuiz() {
                             }}
                           />
                         </label>
+                        <p id="notice-upload-help">
+                          No notice handy? You can still send your request.
+                        </p>
                       </div>
                       {files.length > 0 && (
                         <ul className={cx("file-list ph-no-capture")}>
