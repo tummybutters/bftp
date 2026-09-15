@@ -51,7 +51,7 @@
   outline: 3px solid #d97c3c;
   outline-offset: 4px;
 }
-.page button:not(:global(.mapboxgl-ctrl-attrib-button)) {
+.page button:where(:not(:global(.mapboxgl-ctrl-attrib-button))) {
   border: 0;
   background: none;
 }
