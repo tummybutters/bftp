@@ -23,11 +23,7 @@ import { siteConfig } from "@/lib/site-config";
  */
 
 export type ContactFailureReason =
-  | "payload_too_large"
-  | "rejected"
-  | "server_error"
-  | "gateway"
-  | "network";
+  "payload_too_large" | "rejected" | "server_error" | "gateway" | "network";
 
 export interface ContactFailure {
   reason: ContactFailureReason;
@@ -36,7 +32,9 @@ export interface ContactFailure {
 
 const CALL_US = `We couldn't send your message right now. Please call ${siteConfig.phone.display}.`;
 
-function parseJsonObject(body: string): { error?: string } | null {
+function parseJsonObject(
+  body: string,
+): { error?: string; ok?: boolean } | null {
   const trimmed = body.trim();
 
   if (!trimmed.startsWith("{")) {
@@ -46,20 +44,25 @@ function parseJsonObject(body: string): { error?: string } | null {
   try {
     const parsed: unknown = JSON.parse(trimmed);
 
-    return parsed && typeof parsed === "object" ? (parsed as { error?: string }) : null;
+    return parsed && typeof parsed === "object"
+      ? (parsed as { error?: string; ok?: boolean })
+      : null;
   } catch {
     return null;
   }
 }
 
 /** Null when the submission went through. */
-export async function readContactResponse(response: Response): Promise<ContactFailure | null> {
-  if (response.ok) {
-    return null;
-  }
-
+export async function readContactResponse(
+  response: Response,
+): Promise<ContactFailure | null> {
   const body = await response.text().catch(() => "");
   const payload = parseJsonObject(body);
+  if (response.ok) {
+    return payload?.ok === true
+      ? null
+      : { reason: "gateway", message: CALL_US };
+  }
 
   // The platform, not the route. Nothing we send back from `/api/contact` is
   // ever a 413, because a body large enough to earn one never arrives.
@@ -79,7 +82,11 @@ export async function readContactResponse(response: Response): Promise<ContactFa
     };
   }
 
-  if (response.status === 502 || response.status === 503 || response.status === 504) {
+  if (
+    response.status === 502 ||
+    response.status === 503 ||
+    response.status === 504
+  ) {
     return { reason: "gateway", message: CALL_US };
   }
 

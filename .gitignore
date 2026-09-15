@@ -7,3 +7,6 @@ next-env.d.ts
 .vercel
 .firecrawl/
 tmp/
+
+# Local browser QA screenshots and fixture receipts
+/qa/

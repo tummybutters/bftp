@@ -1,5 +1,6 @@
 "use client";
 
+import { PhoneTracker } from "./phone-tracker";
 import posthog from "posthog-js";
 import { PostHogProvider as PHProvider, usePostHog } from "posthog-js/react";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -44,6 +45,13 @@ export function PostHogProvider({
         capture_pageview: false,
         capture_pageleave: true,
         autocapture: true,
+        mask_all_element_attributes: true,
+        mask_all_text: true,
+        session_recording: {
+          maskAllInputs: true,
+          blockClass: "ph-no-capture",
+          maskTextSelector: ".ph-no-capture",
+        },
         persistence: "localStorage+cookie",
       });
     }
@@ -58,6 +66,7 @@ export function PostHogProvider({
       <Suspense fallback={null}>
         <PostHogPageView />
       </Suspense>
+      <PhoneTracker />
       {children}
     </PHProvider>
   );

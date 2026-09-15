@@ -6,54 +6,17 @@ import {
   sendAgentMailMessage,
 } from "@/lib/agentmail";
 import { captureServerEvent } from "@/lib/analytics/posthog-server";
-import { formatFileSize, UPLOAD_BUDGET_BYTES } from "@/lib/contact-uploads";
+import {
+  normalizeSubmission,
+  validateSubmission,
+  type ContactSubmission,
+} from "@/lib/contact-submission";
 import { sendHousecallLead } from "@/lib/housecall";
 import { generatePersonalizedAutoReply } from "@/lib/openrouter";
 import { siteConfig } from "@/lib/site-config";
 
 export const runtime = "nodejs";
 
-interface ContactSubmission {
-  submissionId: string;
-  submittedAt: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  companyName: string;
-  propertyType: string;
-  county: string;
-  urgency: string;
-  deviceCount: string;
-  testingCount: string;
-  deviceDetails: string[];
-  sizeMakeModel: string;
-  serviceDetails: string;
-  uploadFiles: UploadedFileSummary[];
-  notes: string;
-  message: string;
-  pagePath: string;
-  sourceUrl: string;
-  leadTopic: string;
-  leadSource: string;
-  city: string;
-  referrer: string;
-  userAgent: string;
-}
-
-interface UploadedFileSummary {
-  name: string;
-  size: number;
-  type: string;
-}
-
-/**
- * Was 15 MB, which no request could ever reach: the platform refuses a body
- * over 4.5 MB before this route is invoked at all, so the check was dead code
- * sitting above a ceiling a third its height. One home for the number now, in
- * `contact-uploads`, shared with the browser-side check that does the real work.
- */
-const MAX_UPLOAD_BYTES = UPLOAD_BUDGET_BYTES;
 const DEFAULT_NOTIFICATION_EMAIL = "contact@backflowtestpros.com";
 const SUBMISSION_TIME_ZONE = "America/Los_Angeles";
 
@@ -67,7 +30,9 @@ function splitRecipientList(value: string) {
 function buildNotificationRecipients(configuredRecipient: string) {
   const recipients = splitRecipientList(configuredRecipient);
 
-  return Array.from(new Set(recipients.length > 0 ? recipients : [DEFAULT_NOTIFICATION_EMAIL]));
+  return Array.from(
+    new Set(recipients.length > 0 ? recipients : [DEFAULT_NOTIFICATION_EMAIL]),
+  );
 }
 
 function formatSubmittedAt(value: string) {
@@ -90,8 +55,14 @@ function readHeader(request: Request, name: string) {
   return request.headers.get(name)?.trim() || "";
 }
 
-function getAnalyticsDistinctId(request: Request, submission: ContactSubmission) {
-  return readHeader(request, "x-posthog-distinct-id") || `lead:${submission.submissionId}`;
+function getAnalyticsDistinctId(
+  request: Request,
+  submission: ContactSubmission,
+) {
+  return (
+    readHeader(request, "x-posthog-distinct-id") ||
+    `lead:${submission.submissionId}`
+  );
 }
 
 function getEmailDomain(email: string) {
@@ -107,6 +78,8 @@ function getLeadAnalyticsProperties(
 
   return {
     submission_id: submission.submissionId,
+    intake_variant: submission.intakeVariant || "legacy",
+    address_present: Boolean(submission.addressStreet),
     posthog_session_id: sessionId || undefined,
     lead_topic: submission.leadTopic || undefined,
     service_type: submission.leadTopic || undefined,
@@ -127,46 +100,9 @@ function getLeadAnalyticsProperties(
   };
 }
 
-function readField(formData: FormData, names: string[]) {
-  for (const name of names) {
-    const value = formData.get(name);
-
-    if (typeof value === "string" && value.trim()) {
-      return value.trim();
-    }
-  }
-
-  return "";
-}
-
-function readUploadedFiles(formData: FormData): UploadedFileSummary[] {
-  return formData
-    .getAll("contact_uploads")
-    .filter((value): value is File => value instanceof File && value.size > 0)
-    .map((file) => ({
-      name: file.name || "upload",
-      size: file.size,
-      type: file.type || "application/octet-stream",
-    }));
-}
-
-function readDeviceDetails(formData: FormData) {
-  return formData
-    .getAll("size_make_model_device")
-    .filter((value): value is string => typeof value === "string")
-    .map((value) => value.trim())
-    .filter(Boolean);
-}
-
-function formatDeviceDetails(deviceDetails: string[]) {
-  return deviceDetails
-    .map((device, index) =>
-      deviceDetails.length > 1 ? `Device ${index + 1}: ${device}` : device,
-    )
-    .join("\n");
-}
-
-async function buildAgentMailAttachments(formData: FormData): Promise<AgentMailAttachment[]> {
+async function buildAgentMailAttachments(
+  formData: FormData,
+): Promise<AgentMailAttachment[]> {
   const files = formData
     .getAll("contact_uploads")
     .filter((value): value is File => value instanceof File && value.size > 0);
@@ -179,144 +115,6 @@ async function buildAgentMailAttachments(formData: FormData): Promise<AgentMailA
       content: Buffer.from(await file.arrayBuffer()).toString("base64"),
     })),
   );
-}
-
-function buildStructuredMessage(submission: ContactSubmission) {
-  const lines = [
-    `Service Type: ${submission.leadTopic || "Not provided"}`,
-    `Property Type: ${submission.propertyType || "Not provided"}`,
-    `County: ${submission.county || "Not provided"}`,
-    `Urgency: ${submission.urgency || "Not provided"}`,
-  ];
-
-  if (submission.companyName) {
-    lines.push(`Company Name: ${submission.companyName}`);
-  }
-
-  if (submission.testingCount) {
-    lines.push(`# of Backflow Tests Needed: ${submission.testingCount}`);
-  }
-
-  if (submission.sizeMakeModel) {
-    lines.push(`Size, Make, Model: ${submission.sizeMakeModel}`);
-  }
-
-  if (submission.serviceDetails) {
-    lines.push(`Brief Description: ${submission.serviceDetails}`);
-  }
-
-  if (submission.deviceCount) {
-    lines.push(`Device Count: ${submission.deviceCount}`);
-  }
-
-  if (submission.uploadFiles.length > 0) {
-    lines.push(
-      `Uploaded Files: ${submission.uploadFiles
-        .map((file) => `${file.name} (${Math.round(file.size / 1024)} KB)`)
-        .join(", ")}`,
-    );
-  }
-
-  if (submission.city) {
-    lines.push(`City: ${submission.city}`);
-  }
-
-  if (submission.notes) {
-    lines.push("", "Additional Details:", submission.notes);
-  }
-
-  return lines.join("\n");
-}
-
-function normalizeSubmission(formData: FormData, request: Request): ContactSubmission {
-  const headers = request.headers;
-  const deviceDetails = readDeviceDetails(formData);
-  const sizeMakeModel =
-    formatDeviceDetails(deviceDetails) || readField(formData, ["size_make_model", "sizeMakeModel"]);
-  const submission: ContactSubmission = {
-    submissionId: crypto.randomUUID(),
-    submittedAt: new Date().toISOString(),
-    firstName: readField(formData, ["first-name-2", "first_name", "firstName"]),
-    lastName: readField(formData, ["last-name-2", "last_name", "lastName"]),
-    email: readField(formData, ["email-field-2", "email", "emailAddress"]),
-    phone: readField(formData, ["phone", "phone_number", "phoneNumber"]),
-    companyName: readField(formData, ["company_name", "companyName", "company"]),
-    propertyType: readField(formData, ["property_type", "propertyType"]),
-    county: readField(formData, ["county", "service_county", "serviceCounty"]),
-    urgency: readField(formData, ["urgency", "timeline"]),
-    deviceCount: readField(formData, ["device_count", "deviceCount"]),
-    testingCount: readField(formData, ["testing_count", "testingCount"]),
-    deviceDetails,
-    sizeMakeModel,
-    serviceDetails: readField(formData, ["service_details", "serviceDetails"]),
-    uploadFiles: readUploadedFiles(formData),
-    notes: readField(formData, ["Message-Field-4", "message", "details"]),
-    message: "",
-    pagePath: readField(formData, ["page_path", "pagePath", "source_path"]),
-    sourceUrl: readField(formData, ["source_url", "sourceUrl"]),
-    leadTopic: readField(formData, [
-      "service_type",
-      "lead_topic",
-      "topic",
-      "service",
-      "subject",
-    ]),
-    leadSource:
-      readField(formData, ["lead_source", "leadSource"]) || "Website Contact Form",
-    city: readField(formData, ["city", "service_city", "serviceCity"]),
-    referrer: headers.get("referer") || "",
-    userAgent: headers.get("user-agent") || "",
-  };
-
-  submission.message = buildStructuredMessage(submission);
-
-  return submission;
-}
-
-function validateSubmission(submission: ContactSubmission) {
-  if (
-    !submission.firstName ||
-    !submission.lastName ||
-    !submission.email ||
-    !submission.phone ||
-    !submission.leadTopic ||
-    !submission.propertyType ||
-    !submission.county ||
-    !submission.urgency
-  ) {
-    return "Please complete all required fields.";
-  }
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submission.email)) {
-    return "Please enter a valid email address.";
-  }
-
-  if (submission.phone.replace(/\D/g, "").length !== 10) {
-    return "Please enter a 10-digit phone number.";
-  }
-
-  if (submission.leadTopic === "Testing" && !submission.testingCount) {
-    return "Please enter the number of backflow tests needed or choose Not Sure.";
-  }
-
-  if (
-    submission.leadTopic === "Repair / Replacement" &&
-    (!submission.sizeMakeModel || !submission.serviceDetails)
-  ) {
-    return "Please add the size/make/model and a brief description.";
-  }
-
-  if (submission.leadTopic === "New Installation" && !submission.serviceDetails) {
-    return "Please add a brief description.";
-  }
-
-  const uploadBytes = submission.uploadFiles.reduce((total, file) => total + file.size, 0);
-
-  if (uploadBytes > MAX_UPLOAD_BYTES) {
-    return `Please keep uploads under ${formatFileSize(MAX_UPLOAD_BYTES)} total.`;
-  }
-
-  return null;
 }
 
 function escapeHtml(value: string) {
@@ -380,14 +178,16 @@ function buildNotificationText(submission: ContactSubmission) {
 }
 
 function buildNotificationHtml(submission: ContactSubmission) {
-  const fullName = escapeHtml(`${submission.firstName} ${submission.lastName}`.trim());
+  const fullName = escapeHtml(
+    `${submission.firstName} ${submission.lastName}`.trim(),
+  );
   const email = escapeHtml(submission.email);
   const pagePath = escapeHtml(submission.pagePath || "Unknown");
   const message = escapeHtml(submission.message).replaceAll("\n", "<br />");
 
   return [
-    "<div style=\"font-family:Arial,sans-serif;color:#1f2d4e;line-height:1.6;\">",
-    "<h2 style=\"margin:0 0 16px;\">New Backflow Test Pros contact form submission</h2>",
+    '<div style="font-family:Arial,sans-serif;color:#1f2d4e;line-height:1.6;">',
+    '<h2 style="margin:0 0 16px;">New Backflow Test Pros contact form submission</h2>',
     `<p style="margin:0 0 8px;"><strong>Submission ID:</strong> ${escapeHtml(submission.submissionId)}</p>`,
     `<p style="margin:0 0 8px;"><strong>Submitted At:</strong> ${escapeHtml(
       formatSubmittedAt(submission.submittedAt),
@@ -455,7 +255,9 @@ function buildNotificationHtml(submission: ContactSubmission) {
       ? [
           `<p style="margin:0 0 8px;"><strong>Uploaded Files:</strong> ${escapeHtml(
             submission.uploadFiles
-              .map((file) => `${file.name} (${Math.round(file.size / 1024)} KB)`)
+              .map(
+                (file) => `${file.name} (${Math.round(file.size / 1024)} KB)`,
+              )
               .join(", "),
           )}</p>`,
         ]
@@ -510,7 +312,8 @@ function buildAutoReplyText(submission: ContactSubmission) {
   const responseWindow =
     process.env.CONTACT_AUTOREPLY_RESPONSE_WINDOW || "within one business day";
   const message = submission.message.trim();
-  const lower = `${submission.pagePath} ${submission.leadTopic} ${submission.urgency} ${message}`.toLowerCase();
+  const lower =
+    `${submission.pagePath} ${submission.leadTopic} ${submission.urgency} ${message}`.toLowerCase();
   const locationLabel = submission.county || submission.city;
   const isUrgent =
     /\b(urgent|asap|deadline|today|tomorrow|this week|rush|immediately)\b/i.test(
@@ -568,7 +371,7 @@ function buildEmailHtmlFromText(text: string) {
   const html = escapeHtml(text).replaceAll("\n", "<br />");
 
   return [
-    "<div style=\"font-family:Arial,sans-serif;color:#1f2d4e;line-height:1.6;\">",
+    '<div style="font-family:Arial,sans-serif;color:#1f2d4e;line-height:1.6;">',
     `<p style="margin:0;">${html}</p>`,
     "</div>",
   ].join("");
@@ -598,13 +401,23 @@ async function buildPersonalizedAutoReplyText(submission: ContactSubmission) {
       return personalizedReply;
     }
   } catch (error) {
-    console.error("OpenRouter auto-reply generation failed. Falling back to default copy.", error);
+    console.error(
+      "OpenRouter auto-reply generation failed. Falling back to default copy.",
+      error,
+    );
   }
 
   return buildAutoReplyText(submission);
 }
 
 export async function POST(request: Request) {
+  // Preview deployments inherit provider variables. Never let a design review create real leads.
+  if (process.env.VERCEL_ENV === "preview") {
+    return NextResponse.json(
+      { error: "This is a preview. Your request has not been sent." },
+      { status: 409 },
+    );
+  }
   const formData = await request.formData();
   const submission = normalizeSubmission(formData, request);
   const validationError = validateSubmission(submission);
@@ -708,12 +521,14 @@ export async function POST(request: Request) {
   if (notificationStatus === "sent") {
     const hasHousecall = Boolean(process.env.HOUSECALLPRO_API_KEY?.trim());
 
-    autoReplyStatus = process.env.CONTACT_AUTOREPLY_ENABLED === "true" ? "queued" : "skipped";
+    autoReplyStatus =
+      process.env.CONTACT_AUTOREPLY_ENABLED === "true" ? "queued" : "skipped";
 
     after(async () => {
       if (process.env.CONTACT_AUTOREPLY_ENABLED === "true") {
         try {
-          const autoReplyText = await buildPersonalizedAutoReplyText(submission);
+          const autoReplyText =
+            await buildPersonalizedAutoReplyText(submission);
 
           // Keep customer auto-replies immediate, but let Next run the work after
           // the response so the browser is not blocked on OpenRouter/AgentMail.
@@ -750,7 +565,9 @@ export async function POST(request: Request) {
           properties: analyticsProperties({
             notification_status: notificationStatus,
             housecall_status: queuedHousecallResult.status,
-            has_housecall_customer_id: Boolean(queuedHousecallResult.customerId),
+            has_housecall_customer_id: Boolean(
+              queuedHousecallResult.customerId,
+            ),
             has_housecall_lead_id: Boolean(queuedHousecallResult.leadId),
           }),
         });
@@ -781,12 +598,15 @@ export async function POST(request: Request) {
   const housecallResult = await sendHousecallLead(submission);
 
   if (housecallResult.status !== "sent") {
-    console.error("Contact form delivery failed for all downstream destinations.", {
-      submissionId: submission.submissionId,
-      notificationStatus,
-      notificationErrorDetail,
-      housecallResult,
-    });
+    console.error(
+      "Contact form delivery failed for all downstream destinations.",
+      {
+        submissionId: submission.submissionId,
+        notificationStatus,
+        notificationErrorDetail,
+        housecallResult,
+      },
+    );
     await captureServerEvent({
       distinctId,
       event: "lead_delivery_failed",

@@ -1,3 +1,4 @@
+import { ContactQuiz } from "@/components/contact/contact-quiz";
 import { SiteShell } from "@/components/chrome/site-shell";
 import { PageContextRegistrar } from "@/components/templates/page-context-registrar";
 import { loadPagePayloadByPath } from "@/lib/content/loaders";
@@ -6,9 +7,14 @@ import { getTemplateDefinition } from "@/lib/templates/registry";
 import type { PageEntry } from "@/lib/site-schema";
 
 export async function PageRenderer({ page }: { page: PageEntry }) {
+  if (page.path === "/contact-backflowtestpros") {
+    return <ContactQuiz />;
+  }
   const catalog = getSiteCatalog();
   const payload = await loadPagePayloadByPath(page.path);
-  const definition = getTemplateDefinition(payload?.family ?? page.templateFamily);
+  const definition = getTemplateDefinition(
+    payload?.family ?? page.templateFamily,
+  );
   const Template = definition.component;
 
   return (

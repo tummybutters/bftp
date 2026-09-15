@@ -16,7 +16,8 @@ export function TrackedHeroCta({
   const isPhone = href.startsWith("tel:");
 
   const handleClick = () => {
-    posthog?.capture(isPhone ? "phone_cta_clicked" : "hero_cta_clicked", {
+    if (isPhone) return;
+    posthog?.capture("hero_cta_clicked", {
       location: "hero",
       label,
       href,
@@ -26,7 +27,12 @@ export function TrackedHeroCta({
 
   if (isPhone) {
     return (
-      <a href={href} className={className} onClick={handleClick}>
+      <a
+        data-phone-placement="hero"
+        href={href}
+        className={className}
+        onClick={handleClick}
+      >
         {label}
       </a>
     );

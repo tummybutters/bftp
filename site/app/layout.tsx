@@ -5,7 +5,8 @@ import { GoogleAnalytics, PostHogProvider } from "@/lib/analytics";
 import { brandAssets } from "@/lib/design";
 import { siteConfig } from "@/lib/site-config";
 
-const posthogPublicKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+const isPreview = process.env.VERCEL_ENV === "preview";
+const posthogPublicKey = isPreview ? undefined : process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const posthogApiHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
 
 const bodyFont = Lato({
@@ -60,7 +61,7 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <GoogleAnalytics />
+        {!isPreview && <GoogleAnalytics />}
         <PostHogProvider apiHost={posthogApiHost} publicKey={posthogPublicKey}>
           {children}
         </PostHogProvider>

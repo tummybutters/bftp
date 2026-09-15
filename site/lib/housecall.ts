@@ -1,6 +1,11 @@
 import { siteConfig } from "@/lib/site-config";
 
 export interface HousecallLeadSubmission {
+  serviceAddress?: string;
+  addressStreet?: string;
+  addressUnit?: string;
+  addressSource?: string;
+  preferredDate?: string;
   submissionId: string;
   firstName: string;
   lastName: string;
@@ -50,7 +55,8 @@ class HousecallApiError extends Error {
 }
 
 const HOUSECALL_BASE_URL =
-  process.env.HOUSECALLPRO_API_BASE_URL?.trim() || "https://api.housecallpro.com";
+  process.env.HOUSECALLPRO_API_BASE_URL?.trim() ||
+  "https://api.housecallpro.com";
 const HOUSECALL_CUSTOMERS_PATH =
   process.env.HOUSECALLPRO_CUSTOMERS_PATH?.trim() || "/customers";
 const HOUSECALL_LEADS_PATH =
@@ -83,7 +89,10 @@ function formatHousecallDetail(detail: unknown) {
 }
 
 function joinUrl(baseUrl: string, path: string) {
-  return new URL(path.replace(/^\/*/, "/"), baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`).toString();
+  return new URL(
+    path.replace(/^\/*/, "/"),
+    baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`,
+  ).toString();
 }
 
 function appendPathSegment(path: string, segment: string) {
@@ -117,7 +126,11 @@ function extractHousecallId(payload: unknown): string {
   for (const key of ["customer", "lead", "data", "result"]) {
     const nested = candidate[key];
 
-    if (nested && typeof nested === "object" && "id" in (nested as Record<string, unknown>)) {
+    if (
+      nested &&
+      typeof nested === "object" &&
+      "id" in (nested as Record<string, unknown>)
+    ) {
       const nestedId = (nested as Record<string, unknown>).id;
 
       if (typeof nestedId === "string" && nestedId.trim()) {
@@ -146,6 +159,20 @@ function normalizePhone(phone: string) {
 function buildHousecallNote(submission: HousecallLeadSubmission) {
   const lines = [
     "Website intake summary",
+    ...(submission.addressStreet
+      ? [`Service Address: ${submission.serviceAddress}`]
+      : []),
+    ...(submission.addressUnit
+      ? [`Suite / Location: ${submission.addressUnit}`]
+      : []),
+    ...(submission.addressStreet
+      ? [
+          `Address Source: ${submission.addressSource} (customer supplied; not independently verified)`,
+        ]
+      : []),
+    ...(submission.preferredDate
+      ? [`Preferred Date (not booked): ${submission.preferredDate}`]
+      : []),
     `Submission ID: ${submission.submissionId}`,
     `Service Type: ${submission.leadTopic || "Not provided"}`,
     `Property Type: ${submission.propertyType || "Not provided"}`,
@@ -289,11 +316,18 @@ async function sendHousecallRequest<T>({
 
   throw (
     lastError ||
-    new HousecallApiError("Housecall request failed before a response was received.", 500, null)
+    new HousecallApiError(
+      "Housecall request failed before a response was received.",
+      500,
+      null,
+    )
   );
 }
 
-async function createHousecallCustomer(apiKey: string, submission: HousecallLeadSubmission) {
+async function createHousecallCustomer(
+  apiKey: string,
+  submission: HousecallLeadSubmission,
+) {
   const normalizedPhone = normalizePhone(submission.phone);
   const variants = [
     {
@@ -352,7 +386,11 @@ async function createHousecallCustomer(apiKey: string, submission: HousecallLead
 
   throw (
     lastError ||
-    new HousecallApiError("Housecall customer creation could not be completed.", 500, null)
+    new HousecallApiError(
+      "Housecall customer creation could not be completed.",
+      500,
+      null,
+    )
   );
 }
 
@@ -390,7 +428,9 @@ async function createHousecallLead(
       ? { customer_id: customerId, lead_source: submission.leadSource, tags }
       : null,
     { customer_id: customerId, tags },
-    submission.leadSource ? { customer_id: customerId, lead_source: submission.leadSource } : null,
+    submission.leadSource
+      ? { customer_id: customerId, lead_source: submission.leadSource }
+      : null,
     { customer_id: customerId },
   ].filter(Boolean) as Array<Record<string, unknown>>;
 
@@ -407,7 +447,10 @@ async function createHousecallLead(
 
       return extractHousecallId(response);
     } catch (error) {
-      if (error instanceof HousecallApiError && [400, 404, 422].includes(error.status)) {
+      if (
+        error instanceof HousecallApiError &&
+        [400, 404, 422].includes(error.status)
+      ) {
         lastError = error;
         continue;
       }
@@ -418,7 +461,11 @@ async function createHousecallLead(
 
   throw (
     lastError ||
-    new HousecallApiError("Housecall lead creation could not be completed.", 500, null)
+    new HousecallApiError(
+      "Housecall lead creation could not be completed.",
+      500,
+      null,
+    )
   );
 }
 
@@ -462,7 +509,9 @@ export async function sendHousecallLead(
     };
   } catch (error) {
     const detail =
-      error instanceof Error ? error.message : "Unknown Housecall delivery error.";
+      error instanceof Error
+        ? error.message
+        : "Unknown Housecall delivery error.";
 
     console.error("Housecall lead delivery failed.", {
       submissionId: submission.submissionId,

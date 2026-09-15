@@ -27,7 +27,8 @@ export function TrackedLink({
   const posthog = usePostHog();
 
   const handleClick = () => {
-    posthog?.capture(event, { href, ...properties });
+    if (!href.startsWith("tel:"))
+      posthog?.capture(event, { href, ...properties });
     onClick?.();
   };
 
@@ -35,6 +36,11 @@ export function TrackedLink({
     return (
       <a
         href={href}
+        data-phone-placement={
+          typeof properties?.location === "string"
+            ? properties.location
+            : undefined
+        }
         className={className}
         target={target || (external ? "_blank" : undefined)}
         rel={external ? "noreferrer" : undefined}

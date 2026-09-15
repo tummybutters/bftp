@@ -47,7 +47,18 @@ export function SiteFooter() {
             <div key={office.heading} className="bftp-footer__office">
               <h2 className="bftp-footer__office-heading">{office.heading}</h2>
               {office.lines.map((line) => (
-                <p key={line}>{line}</p>
+                <p key={line}>
+                  {/\(\d{3}\)\s*\d{3}-\d{4}/.test(line) ? (
+                    <a
+                      href={`tel:+1${line.replace(/\D/g, "")}`}
+                      data-phone-placement="footer-office"
+                    >
+                      {line}
+                    </a>
+                  ) : (
+                    line
+                  )}
+                </p>
               ))}
             </div>
           ))}
@@ -68,7 +79,9 @@ export function SiteFooter() {
             ))}
           </div>
           <div className="bftp-footer__nav-column">
-            <h2 className="bftp-footer__heading">Southern California Water Authorities</h2>
+            <h2 className="bftp-footer__heading">
+              Southern California Water Authorities
+            </h2>
             {siteConfig.footerAuthorities.map((item) => (
               <TrackedLink
                 key={item.href}
