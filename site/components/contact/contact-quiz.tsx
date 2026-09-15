@@ -475,10 +475,13 @@ export function ContactQuiz() {
                     <form className={cx("contact-form")} onSubmit={submit}>
                       {creditCents !== null && (
                         <div className={cx("credit-summary")}>
-                          <span>
-                            Your repair credit
-                            <strong>${creditCents / 100}</strong>
+                          <span className={cx("credit-eyebrow")}>
+                            Your test includes
                           </span>
+                          <div className={cx("credit-value")}>
+                            <strong>${creditCents / 100}</strong>
+                            <span>repair credit</span>
+                          </div>
                           <p>Toward repairs if your test fails.</p>
                         </div>
                       )}
