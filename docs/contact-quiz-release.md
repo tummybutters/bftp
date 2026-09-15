@@ -34,7 +34,7 @@ Primary metric: completed requests or phone taps per contact-page visitor. Repor
 
 ## Verification
 
-See `design-qa.md` for browser evidence. Run `npm ci`, `npm run test:contact`, `npx tsc --noEmit`, focused ESLint, and `npm run build` in `site/`.
+Verified on September 14, 2026: 22 focused tests, TypeScript, focused lint and the 262-route production build passed. Browser testing covered 375, 390, 768, 1366 and 1536 pixel widths. See `design-qa.md` for browser evidence. Run `npm ci`, `npm run test:contact`, `npx tsc --noEmit`, focused ESLint, and `npm run build` in `site/`.
 
 Local full-handler QA uses `node scripts/contact-preview-provider.mjs` and a local Next server with `HOUSECALLPRO_API_KEY=local-test-only` and `HOUSECALLPRO_API_BASE_URL=http://127.0.0.1:4174`. No live provider keys belong in this test. The fixture records requests at `/receipts`; POST `/mode` with `{ "fail": true }` exercises recovery. Automated handler tests replace every provider fetch and inspect notification/CRM payloads.
 
