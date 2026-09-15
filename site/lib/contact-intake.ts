@@ -1,4 +1,4 @@
-export const INTAKE_VARIANT = "address_first_v2";
+export const INTAKE_VARIANT = "address_centered_v3";
 export interface ServiceAddress {
   street: string;
   city: string;
@@ -7,7 +7,7 @@ export interface ServiceAddress {
   county: string;
   formatted: string;
   placeId: string;
-  source: "places" | "manual";
+  source: "places" | "mapbox" | "manual";
   lat?: number;
   lng?: number;
 }
@@ -21,27 +21,6 @@ export const emptyAddress: ServiceAddress = {
   placeId: "",
   source: "manual",
 };
-export function addressFromPlace(
-  place: google.maps.places.Place,
-): ServiceAddress {
-  const part = (type: string, short = false) => {
-    const c = place.addressComponents?.find((c) => c.types.includes(type));
-    return (short ? c?.shortText : c?.longText) || "";
-  };
-  return {
-    street: [part("street_number"), part("route")].filter(Boolean).join(" "),
-    city:
-      part("locality") || part("postal_town") || part("sublocality_level_1"),
-    state: part("administrative_area_level_1", true),
-    postalCode: part("postal_code"),
-    county: part("administrative_area_level_2"),
-    formatted: place.formattedAddress || "",
-    placeId: place.id,
-    source: "places",
-    lat: place.location?.lat(),
-    lng: place.location?.lng(),
-  };
-}
 export function addressIsComplete(address: ServiceAddress) {
   return Boolean(
     address.street.trim() &&

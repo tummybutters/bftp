@@ -21,6 +21,7 @@ export interface ContactSubmission {
   addressSource: string;
   addressPlaceId: string;
   preferredDate: string;
+  contactPreference: string;
   submissionId: string;
   submittedAt: string;
   firstName: string;
@@ -96,6 +97,7 @@ function formatDeviceDetails(deviceDetails: string[]) {
 function buildStructuredMessage(submission: ContactSubmission) {
   const lines = [
     `Service Type: ${submission.leadTopic || "Not provided"}`,
+    `Preferred Contact: ${submission.contactPreference || "Not specified"}`,
     `Property Type: ${submission.propertyType || "Not provided"}`,
     ...(submission.addressStreet
       ? [`Service Address: ${submission.serviceAddress}`]
@@ -170,11 +172,13 @@ export function normalizeSubmission(
     addressUnit: readField(formData, ["address_unit"]),
     addressState: readField(formData, ["address_state"]),
     addressPostalCode: readField(formData, ["address_postal_code"]),
-    addressSource:
-      readField(formData, ["address_source"]) === "places"
-        ? "places"
-        : "manual",
+    addressSource: ["places", "mapbox"].includes(
+      readField(formData, ["address_source"]),
+    )
+      ? readField(formData, ["address_source"])
+      : "manual",
     addressPlaceId: readField(formData, ["address_place_id"]),
+    contactPreference: readField(formData, ["contact_preference"]),
     preferredDate: readField(formData, ["preferred_date"]),
     submissionId: crypto.randomUUID(),
     submittedAt: new Date().toISOString(),
@@ -257,13 +261,28 @@ export function validateSubmission(submission: ContactSubmission) {
     return "Please choose your service, property type and timing.";
   }
   if (
+    addressFirst &&
+    submission.contactPreference &&
+    !["call", "email"].includes(submission.contactPreference)
+  )
+    return "Please choose how we should contact you.";
+  if (
+    addressFirst &&
+    submission.testingCount &&
+    submission.testingCount !== "Not Sure" &&
+    (!/^\d+$/.test(submission.testingCount) ||
+      Number(submission.testingCount) < 1 ||
+      Number(submission.testingCount) > 100)
+  )
+    return "Please enter a device count from 1 to 100, or choose Not sure.";
+  if (
     submission.preferredDate &&
     !/^\d{4}-\d{2}-\d{2}$/.test(submission.preferredDate)
   )
     return "Please check your preferred date.";
   if (
     !submission.firstName ||
-    !submission.lastName ||
+    (!addressFirst && !submission.lastName) ||
     !submission.email ||
     !submission.phone ||
     !submission.leadTopic ||

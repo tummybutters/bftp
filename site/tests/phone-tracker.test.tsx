@@ -15,7 +15,7 @@ beforeEach(() => {
   vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
   document.body.innerHTML = '<div id="app"></div>';
   root = createRoot(document.querySelector("#app")!);
-  mock.capture.mockClear();
+  mock.capture.mockReset();
 });
 afterEach(async () => {
   await act(async () => root.unmount());
@@ -70,4 +70,29 @@ it("cleans up the document listener on remount", async () => {
   );
   document.querySelector("a")!.click();
   expect(mock.capture).toHaveBeenCalledTimes(1);
+});
+
+it("analytics failures cannot cancel the phone link, and GA receives the same event", async () => {
+  mock.capture.mockImplementation(() => {
+    throw Error("blocked analytics");
+  });
+  const ga = vi.fn();
+  vi.stubGlobal("gtag", ga);
+  await act(async () =>
+    root.render(
+      <>
+        <PhoneTracker />
+        <a href="tel:18008036658" data-phone-placement="contact-header">
+          Call
+        </a>
+      </>,
+    ),
+  );
+  const event = new MouseEvent("click", { bubbles: true, cancelable: true });
+  document.querySelector("a")!.dispatchEvent(event);
+  expect(ga).toHaveBeenCalledWith(
+    "event",
+    "phone_cta_clicked",
+    expect.objectContaining({ location: "contact-header", office: "main" }),
+  );
 });

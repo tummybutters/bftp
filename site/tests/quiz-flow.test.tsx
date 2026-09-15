@@ -7,6 +7,9 @@ import { ContactQuiz } from "@/components/contact/contact-quiz";
 import type { ServiceAddress } from "@/lib/contact-intake";
 const mock = vi.hoisted(() => ({ capture: vi.fn() }));
 vi.mock("posthog-js/react", () => ({ usePostHog: () => mock }));
+vi.mock("@/lib/analytics/posthog-provider", () => ({
+  useAnalyticsReady: () => true,
+}));
 vi.mock("next/link", () => ({
   default: (p: React.ComponentProps<"a">) => <a {...p} />,
 }));
@@ -118,8 +121,66 @@ it("the chosen service survives back navigation and changes never skip a questio
   await tick();
   await click("Home");
   await tick();
+  expect(node.querySelector("h1")?.textContent).toBe(
+    "How many backflow devices?",
+  );
+  await click("Continue");
   await click("This week");
   await tick();
   expect(node.querySelector("h1")?.textContent).toBe("How can we reach you?");
   expect(node.textContent).not.toContain("Size, make");
+});
+
+it("keeps a failed request editable, then accepts a retry even when analytics throws", async () => {
+  const fetch = vi
+    .fn()
+    .mockResolvedValueOnce(
+      Response.json({ error: "Please try again." }, { status: 503 }),
+    )
+    .mockResolvedValueOnce(Response.json({ ok: true }));
+  vi.stubGlobal("fetch", fetch);
+  mock.capture.mockImplementation(() => {
+    throw Error("analytics offline");
+  });
+  await act(async () => root.render(<ContactQuiz />));
+  await click("Select fixture address");
+  await tick(600);
+  await click("Testing");
+  await click("Home");
+  await click("Continue");
+  await click("This week");
+  for (const [selector, value] of [
+    ["input[autocomplete=name]", "QA"],
+    ["input[type=email]", "qa@example.invalid"],
+    ["input[type=tel]", "2025550108"],
+  ]) {
+    await act(async () => {
+      const input = node.querySelector(selector)!;
+      Object.getOwnPropertyDescriptor(
+        HTMLInputElement.prototype,
+        "value",
+      )!.set!.call(input, value);
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+  }
+  await act(async () =>
+    node
+      .querySelector("form")!
+      .dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })),
+  );
+  expect(node.querySelector('[role="alert"]')).toBeTruthy();
+  expect(
+    node.querySelector<HTMLInputElement>("input[autocomplete=name]")!.value,
+  ).toBe("QA");
+  expect(node.textContent).not.toContain("Your repair credit");
+  await act(async () =>
+    node
+      .querySelector("form")!
+      .dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })),
+  );
+  expect(node.textContent).toContain("You’re in good hands.");
+  const body = fetch.mock.calls[1][1].body as FormData;
+  expect(body.get("testing_count")).toBe("Not Sure");
+  expect(body.get("first_name")).toBe("QA");
+  mock.capture.mockReset();
 });

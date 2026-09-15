@@ -6,6 +6,7 @@ export interface HousecallLeadSubmission {
   addressUnit?: string;
   addressSource?: string;
   preferredDate?: string;
+  contactPreference?: string;
   submissionId: string;
   firstName: string;
   lastName: string;
@@ -169,6 +170,9 @@ function buildHousecallNote(submission: HousecallLeadSubmission) {
       ? [
           `Address Source: ${submission.addressSource} (customer supplied; not independently verified)`,
         ]
+      : []),
+    ...(submission.contactPreference
+      ? [`Preferred Contact: ${submission.contactPreference}`]
       : []),
     ...(submission.preferredDate
       ? [`Preferred Date (not booked): ${submission.preferredDate}`]

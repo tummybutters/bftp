@@ -1,4 +1,5 @@
 "use client";
+import { safeCapture } from "./safe-capture";
 import { useEffect } from "react";
 import { usePostHog } from "posthog-js/react";
 
@@ -22,7 +23,7 @@ export function PhoneTracker() {
       // Only company numbers belong in analytics; never capture a customer's number.
       if (!offices[digits]) return;
       const quiz = link.closest<HTMLElement>("[data-intake-variant]");
-      posthog?.capture("phone_cta_clicked", {
+      safeCapture(posthog, "phone_cta_clicked", {
         page_path: location.pathname,
         location:
           link.dataset.phonePlacement ||

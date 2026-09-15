@@ -1,84 +1,113 @@
 "use client";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { MapPinIcon } from "@heroicons/react/24/solid";
-import { loadMap, mapsConfigured } from "@/lib/contact-maps";
+import { useEffect, useRef, useState } from "react";
+import type { Map as MapboxMap, Marker } from "mapbox-gl";
 import type { ServiceAddress } from "@/lib/contact-intake";
+import { loadMap, mapboxToken, mapsConfigured } from "@/lib/contact-maps";
+import "mapbox-gl/dist/mapbox-gl.css";
 import s from "./contact-quiz.module.css";
-function subscribeViewport(callback: () => void) {
-  const query = window.matchMedia("(min-width: 701px)");
-  query.addEventListener("change", callback);
-  return () => query.removeEventListener("change", callback);
-}
-const isDesktop = () => window.matchMedia("(min-width: 701px)").matches;
-export function ServiceMap({ address }: { address: ServiceAddress }) {
-  const desktop = useSyncExternalStore(
-    subscribeViewport,
-    isDesktop,
-    () => false,
-  );
-  const host = useRef<HTMLDivElement>(null);
-  const map = useRef<google.maps.Map | null>(null);
-  const [ready, setReady] = useState(false);
-  const [failed, setFailed] = useState(!mapsConfigured);
+export function ServiceMap({
+  address,
+  onEvent,
+}: {
+  address: ServiceAddress;
+  onEvent?: (event: string) => void;
+}) {
+  const host = useRef<HTMLDivElement>(null),
+    map = useRef<MapboxMap | null>(null),
+    marker = useRef<Marker | null>(null),
+    events = useRef(onEvent);
+  useEffect(() => {
+    events.current = onEvent;
+  }, [onEvent]);
+  const [ready, setReady] = useState(false),
+    [failed, setFailed] = useState(!mapsConfigured);
   useEffect(() => {
     let cancelled = false;
-    if (!mapsConfigured || !desktop) return;
-    loadMap()
-      .then(({ Map }) => {
+    let instance: MapboxMap | undefined;
+    if (!mapsConfigured) return;
+    void loadMap()
+      .then((sdk) => {
         if (cancelled || !host.current) return;
-        map.current = new Map(host.current, {
-          center: { lat: 33.45, lng: -117.95 },
-          zoom: 8,
-          disableDefaultUI: true,
-          clickableIcons: false,
-          gestureHandling: "none",
-          keyboardShortcuts: false,
+        const m = new sdk.default.Map({
+          container: host.current,
+          accessToken: mapboxToken,
+          style: "mapbox://styles/mapbox/light-v11",
+          center: [-118.02, 33.82],
+          zoom: 8.6,
+          interactive: false,
+          attributionControl: false,
         });
-        setReady(true);
+        instance = m;
+        map.current = m;
+        m.addControl(new sdk.default.AttributionControl({ compact: true }));
+        m.on("load", () => {
+          if (!cancelled) {
+            setReady(true);
+            setFailed(false);
+            events.current?.("contact_map_loaded");
+          }
+        });
+        m.on("error", () => {
+          if (!cancelled && !m.isStyleLoaded()) {
+            setFailed(true);
+            events.current?.("contact_map_failed");
+          }
+        });
       })
       .catch(() => {
-        if (!cancelled) setFailed(true);
+        if (!cancelled) {
+          setFailed(true);
+          events.current?.("contact_map_failed");
+        }
       });
     return () => {
       cancelled = true;
+      instance?.remove();
       map.current = null;
     };
-  }, [desktop]);
+  }, []);
   useEffect(() => {
+    let cancelled = false;
     if (!ready || !map.current) return;
+    marker.current?.remove();
     if (address.lat === undefined || address.lng === undefined) {
-      map.current.setCenter({ lat: 33.45, lng: -117.95 });
-      map.current.setZoom(8);
+      map.current.jumpTo({ center: [-118.02, 33.82], zoom: 8.6 });
       return;
     }
-    const point = { lat: address.lat, lng: address.lng };
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-      map.current.setCenter(point);
-    else map.current.panTo(point);
-    map.current.setZoom(17);
+    const center: [number, number] = [address.lng, address.lat];
+    void loadMap().then((sdk) => {
+      if (cancelled || !map.current) return;
+      marker.current = new sdk.default.Marker({ color: "#ee812d", scale: 0.8 })
+        .setLngLat(center)
+        .addTo(map.current);
+      map.current.flyTo({
+        center,
+        zoom: 16.3,
+        duration: matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? 0
+          : 1200,
+        essential: false,
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [ready, address.lat, address.lng]);
   return (
-    <aside className={s.map} aria-label="Service area map">
-      {!desktop ? null : failed ? (
-        <iframe
-          tabIndex={-1}
-          title="Southern California service area"
-          src="https://maps.google.com/maps?ll=33.45,-117.95&z=8&output=embed"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      ) : (
-        <div ref={host} className={s.mapCanvas} />
-      )}
-      {ready && address.lat !== undefined && (
-        <MapPinIcon className={s.mapPin} aria-label="Selected location" />
-      )}
-      {address.formatted && (
-        <div className={`${s.mapAddress} ph-no-capture`}>
-          <MapPinIcon aria-hidden="true" />
-          <span>{address.formatted}</span>
+    <div
+      className={`${s["map-wrap"]} ph-no-capture`}
+      aria-label={
+        address.lat !== undefined
+          ? "Selected service location"
+          : "Southern California map"
+      }
+    >
+      <div className={s["map-canvas"]} ref={host} />
+      {failed && (
+        <div className={s["map-fallback"]}>
+          You can keep going without the map.
         </div>
       )}
-    </aside>
+    </div>
   );
 }

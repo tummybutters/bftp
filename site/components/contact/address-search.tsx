@@ -1,285 +1,233 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import {
-  MagnifyingGlassIcon,
   MapPinIcon,
+  ArrowRightIcon,
   ChevronRightIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
+import type {
+  AddressAutofillCore,
+  AddressAutofillSuggestion,
+  SessionToken,
+} from "@mapbox/search-js-core";
 import {
-  addressFromPlace,
   addressIsComplete,
+  emptyAddress,
   type ServiceAddress,
 } from "@/lib/contact-intake";
-import { loadPlaces, mapsConfigured } from "@/lib/contact-maps";
+import { loadSearch, mapboxToken, mapsConfigured } from "@/lib/contact-maps";
 import s from "./contact-quiz.module.css";
-
+const cx = (...names: string[]) => names.map((n) => s[n] || n).join(" ");
+type Props = {
+  value: ServiceAddress;
+  onChange: (v: ServiceAddress) => void;
+  onSelect: (v: ServiceAddress) => void;
+  onStart: () => void;
+  onEvent?: (
+    name: string,
+    properties?: Record<string, string | number | boolean>,
+  ) => void;
+};
 export function AddressSearch({
   value,
   onChange,
   onSelect,
   onStart,
-}: {
-  value: ServiceAddress;
-  onChange: (v: ServiceAddress) => void;
-  onSelect: (v: ServiceAddress) => void;
-  onStart: () => void;
-}) {
-  const [query, setQuery] = useState(value.formatted || value.street);
-  const [manual, setManual] = useState(false);
-  const [suggestions, setSuggestions] = useState<
-    google.maps.places.PlacePrediction[]
-  >([]);
-  const [active, setActive] = useState(-1);
-  const [busy, setBusy] = useState(false);
-  const [notice, setNotice] = useState("");
-  const sequence = useRef(0);
-  const session = useRef<google.maps.places.AutocompleteSessionToken | null>(
-    null,
+  onEvent,
+}: Props) {
+  const [query, setQuery] = useState(value.formatted || value.street),
+    [manual, setManual] = useState(false),
+    [results, setResults] = useState<AddressAutofillSuggestion[]>([]),
+    [active, setActive] = useState(-1),
+    [busy, setBusy] = useState(false),
+    [notice, setNotice] = useState("");
+  const seq = useRef(0),
+    timer = useRef<ReturnType<typeof setTimeout> | null>(null),
+    searchClient = useRef<AddressAutofillCore | null>(null),
+    session = useRef<SessionToken | null>(null),
+    input = useRef<HTMLInputElement>(null);
+  useEffect(
+    () => () => {
+      seq.current++;
+      if (timer.current) clearTimeout(timer.current);
+    },
+    [],
   );
-  useEffect(() => {
-    // This is a request generation counter, not a DOM ref. Invalidate late results on unmount.
-    const counter = sequence;
-    return () => {
-      counter.current++;
-    };
-  }, []);
-  const search = (text: string) => {
+  const emit = (
+    name: string,
+    props: Record<string, string | number | boolean> = {},
+  ) => onEvent?.(name, props);
+  async function search(text: string) {
     setQuery(text);
     setActive(-1);
-    setSuggestions([]);
+    setResults([]);
     setNotice("");
     onStart();
-    // Editing invalidates the old pin and all address components immediately.
-    onChange({
-      street: text,
-      city: "",
-      state: "CA",
-      postalCode: "",
-      county: "",
-      formatted: "",
-      placeId: "",
-      source: "manual",
-    });
-    const id = ++sequence.current;
+    onChange({ ...emptyAddress, street: text });
+    const id = ++seq.current;
+    if (timer.current) clearTimeout(timer.current);
     if (text.trim().length < 3 || !mapsConfigured) {
-      if (!mapsConfigured && text.trim().length >= 3) setNotice("Address search is unavailable. You can enter it yourself.");
       setBusy(false);
+      if (!mapsConfigured && text.length >= 3)
+        setNotice(
+          "Search is unavailable. You can enter your address manually.",
+        );
       return;
     }
     setBusy(true);
-    window.setTimeout(async () => {
-      if (sequence.current !== id) return;
+    timer.current = setTimeout(async () => {
       try {
-        const { AutocompleteSuggestion, AutocompleteSessionToken } =
-          await loadPlaces();
-        if (sequence.current !== id) return;
-        session.current ||= new AutocompleteSessionToken();
-        const result =
-          await AutocompleteSuggestion.fetchAutocompleteSuggestions({
-            input: text,
-            sessionToken: session.current,
-            includedRegionCodes: ["us"],
-            locationBias: {
-              north: 34.9,
-              south: 32.5,
-              east: -115.5,
-              west: -119.6,
-            },
-          });
-        if (sequence.current !== id) return;
-        const matches = result.suggestions.flatMap((item) =>
-          item.placePrediction ? [item.placePrediction] : [],
-        );
-        setSuggestions(matches);
-        if (!matches.length)
-          setNotice("No matching address yet. You can enter it yourself.");
+        const sdk = await loadSearch();
+        if (seq.current !== id) return;
+        searchClient.current ||= new sdk.AddressAutofillCore({
+          accessToken: mapboxToken,
+          country: "us",
+          proximity: [-118.05, 33.85],
+          limit: 5,
+          streets: false,
+        });
+        session.current ||= new sdk.SessionToken();
+        const result = await searchClient.current.suggest(text, {
+          sessionToken: session.current,
+        });
+        if (seq.current !== id) return;
+        setResults(result.suggestions);
+        emit("contact_address_suggestions", {
+          result_count: result.suggestions.length,
+        });
+        if (!result.suggestions.length)
+          setNotice("No match yet. Try adding your city.");
       } catch {
-        if (sequence.current === id)
+        if (seq.current === id) {
           setNotice(
-            "Address search is unavailable. You can enter it yourself.",
+            "Search is unavailable. You can enter your address manually.",
           );
+          emit("contact_address_search_failed");
+        }
       } finally {
-        if (sequence.current === id) setBusy(false);
+        if (seq.current === id) setBusy(false);
       }
-    }, 250);
-  };
-  const select = async (prediction: google.maps.places.PlacePrediction) => {
-    const id = ++sequence.current;
+    }, 220);
+  }
+  async function select(item: AddressAutofillSuggestion) {
+    const id = ++seq.current;
     setBusy(true);
-    setSuggestions([]);
-    setQuery(prediction.text.toString());
+    setResults([]);
+    setNotice("");
     try {
-      const place = prediction.toPlace();
-      await place.fetchFields({
-        fields: ["id", "formattedAddress", "addressComponents", "location"],
+      if (!searchClient.current || !session.current)
+        throw Error("Search session missing");
+      const data = await searchClient.current.retrieve(item, {
+        sessionToken: session.current,
       });
-      if (sequence.current !== id) return;
+      if (seq.current !== id) return;
       session.current = null;
-      const next = addressFromPlace(place);
+      const feature = data.features[0];
+      if (!feature) throw Error("Address missing");
+      const p = { ...item, ...feature.properties };
+      const state = String(p.address_level1 || "").replace(
+        /^California$/i,
+        "CA",
+      );
+      const next: ServiceAddress = {
+        ...emptyAddress,
+        street: String(p.address_line1 || p.feature_name || ""),
+        city: String(p.address_level2 || ""),
+        state,
+        postalCode: String(p.postcode || ""),
+        formatted: String(p.full_address || item.full_address || ""),
+        source: "mapbox",
+        placeId: "",
+        lat: feature.geometry.coordinates[1],
+        lng: feature.geometry.coordinates[0],
+      };
+      // Coordinates and provider IDs stay ephemeral. Only the customer's selected postal fields go into intake.
       onChange(next);
-      setQuery(next.formatted);
+      setQuery(next.formatted || next.street);
       if (addressIsComplete(next)) onSelect(next);
       else {
         setManual(true);
         setNotice("Add the missing address details to continue.");
+        emit("contact_address_incomplete");
       }
     } catch {
-      if (sequence.current === id) {
-        setManual(true);
-        setNotice("Please confirm the address below.");
+      if (seq.current === id) {
+        setNotice(
+          "We couldn’t load that address. Try again or enter it manually.",
+        );
+        emit("contact_address_retrieve_failed");
       }
     } finally {
-      if (sequence.current === id) setBusy(false);
+      if (seq.current === id) setBusy(false);
     }
-  };
-  const openManual = () => {
-    sequence.current++;
-    session.current = null;
+  }
+  function openManual() {
+    seq.current++;
+    if (timer.current) clearTimeout(timer.current);
     setBusy(false);
-    setSuggestions([]);
+    setResults([]);
+    session.current = null;
     setManual(true);
+    setNotice("");
     onStart();
-  };
-  const updateManual = (patch: Partial<ServiceAddress>) =>
+    emit("contact_address_manual_opened");
+  }
+  function edit(patch: Partial<ServiceAddress>) {
     onChange({
       ...value,
       ...patch,
-      county: "",
+      source: "manual",
       formatted: "",
       placeId: "",
-      source: "manual",
       lat: undefined,
       lng: undefined,
     });
+  }
+  function continueSearch() {
+    if (busy) return;
+    if (active >= 0 && results[active]) void select(results[active]);
+    else if (results.length === 1) void select(results[0]);
+    else if (addressIsComplete(value) && value.formatted) onSelect(value);
+    else {
+      input.current?.focus();
+      setNotice(
+        results.length
+          ? "Choose your address from the suggestions."
+          : "Start typing your address, or enter it manually.",
+      );
+    }
+  }
   return (
     <div className="ph-no-capture" data-ph-no-capture>
-      {!manual ? (
-        <>
-          <div className={s.search}>
-            <MagnifyingGlassIcon aria-hidden="true" />
-            <input
-              aria-label="Service address"
-              autoComplete="off"
-              placeholder="Enter your service address"
-              value={query}
-              role="combobox"
-              aria-autocomplete="list"
-              aria-expanded={suggestions.length > 0}
-              aria-controls="address-options"
-              aria-activedescendant={
-                active >= 0 ? `address-option-${active}` : undefined
-              }
-              onChange={(e) => search(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "ArrowDown" && suggestions.length) {
-                  e.preventDefault();
-                  setActive((v) => (v + 1) % suggestions.length);
-                }
-                if (e.key === "ArrowUp" && suggestions.length) {
-                  e.preventDefault();
-                  setActive((v) => (v <= 0 ? suggestions.length - 1 : v - 1));
-                }
-                if (e.key === "Escape") {
-                  sequence.current++;
-                  setBusy(false);
-                  setSuggestions([]);
-                  setActive(-1);
-                }
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  if (active >= 0 && suggestions[active])
-                    void select(suggestions[active]);
-                  else if (suggestions.length === 1)
-                    void select(suggestions[0]);
-                  else if (!mapsConfigured) openManual();
-                }
-              }}
-            />
-            {busy && <span className={s.spinner} aria-label="Searching" />}
-          </div>
-          {suggestions.length > 0 && (
-            <ul
-              id="address-options"
-              role="listbox"
-              aria-label="Matching addresses"
-              className={s.suggestions}
-            >
-              {suggestions.map((item, index) => (
-                <li
-                  key={item.placeId}
-                  id={`address-option-${index}`}
-                  role="option"
-                  aria-selected={index === active}
-                >
-                  <button
-                    type="button"
-                    tabIndex={-1}
-                    className={index === active ? s.highlighted : ""}
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => void select(item)}
-                  >
-                    <MapPinIcon aria-hidden="true" />
-                    <span>
-                      <strong>
-                        {item.mainText?.toString() || item.text.toString()}
-                      </strong>
-                      <small>{item.secondaryText?.toString()}</small>
-                    </span>
-                    <ChevronRightIcon aria-hidden="true" />
-                  </button>
-                </li>
-              ))}
-              <li role="presentation" className={s.googleCredit} translate="no">
-                Powered by Google Maps
-              </li>
-            </ul>
-          )}
-          <p role="status" className={s.notice}>
-            {notice}
-          </p>
-          <button type="button" className={s.textButton} onClick={openManual}>
-            Enter address manually
-          </button>
-          {value.formatted && addressIsComplete(value) && (
-            <button
-              className={s.primary}
-              type="button"
-              onClick={() => onSelect(value)}
-            >
-              Continue <ChevronRightIcon aria-hidden="true" />
-            </button>
-          )}
-        </>
-      ) : (
-        <div className={s.manual}>
+      {manual ? (
+        <div className={cx("manual")}>
           <label>
             Street address
             <input
               autoComplete="street-address"
-              value={value.street}
               maxLength={200}
-              onChange={(e) => updateManual({ street: e.target.value })}
+              value={value.street}
+              onChange={(e) => edit({ street: e.target.value })}
             />
           </label>
-          <label>
-            City
-            <input
-              autoComplete="address-level2"
-              value={value.city}
-              maxLength={100}
-              onChange={(e) => updateManual({ city: e.target.value })}
-            />
-          </label>
-          <div className={s.fieldPair}>
+          <div className={cx("manual-row")}>
+            <label>
+              City
+              <input
+                autoComplete="address-level2"
+                maxLength={100}
+                value={value.city}
+                onChange={(e) => edit({ city: e.target.value })}
+              />
+            </label>
             <label>
               State
               <input
                 autoComplete="address-level1"
-                value={value.state}
                 maxLength={2}
-                onChange={(e) =>
-                  updateManual({ state: e.target.value.toUpperCase() })
-                }
+                value={value.state}
+                onChange={(e) => edit({ state: e.target.value.toUpperCase() })}
               />
             </label>
             <label>
@@ -287,18 +235,18 @@ export function AddressSearch({
               <input
                 autoComplete="postal-code"
                 inputMode="numeric"
-                value={value.postalCode}
                 maxLength={10}
-                onChange={(e) => updateManual({ postalCode: e.target.value })}
+                value={value.postalCode}
+                onChange={(e) => edit({ postalCode: e.target.value })}
               />
             </label>
           </div>
-          <p role="status" className={s.notice}>
+          <p role="status" className={cx("error")}>
             {notice}
           </p>
           <button
             type="button"
-            className={s.primary}
+            className={cx("primary")}
             onClick={() => {
               if (!addressIsComplete(value)) {
                 setNotice("Add your street, city, state and ZIP code.");
@@ -310,18 +258,132 @@ export function AddressSearch({
               });
             }}
           >
-            Continue <ChevronRightIcon aria-hidden="true" />
+            Continue
+            <ArrowRightIcon />
           </button>
           <button
             type="button"
-            className={s.textButton}
+            className={cx("text-button")}
             onClick={() => {
               setManual(false);
+              setQuery(value.street);
               setNotice("");
             }}
           >
             Search instead
           </button>
+        </div>
+      ) : (
+        <div className={cx("search-area")}>
+          <div className={cx("search-box")}>
+            <MapPinIcon className={cx("search-pin")} aria-hidden="true" />
+            <input
+              ref={input}
+              aria-label="Service address"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={results.length > 0}
+              aria-controls="address-options"
+              aria-activedescendant={
+                active >= 0 ? `address-option-${active}` : undefined
+              }
+              placeholder="Start with your street address"
+              autoComplete="off"
+              maxLength={250}
+              value={query}
+              onChange={(e) => void search(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "ArrowDown" && results.length) {
+                  e.preventDefault();
+                  setActive((a) => (a + 1) % results.length);
+                }
+                if (e.key === "ArrowUp" && results.length) {
+                  e.preventDefault();
+                  setActive((a) => (a <= 0 ? results.length - 1 : a - 1));
+                }
+                if (e.key === "Escape") {
+                  seq.current++;
+                  setResults([]);
+                  setActive(-1);
+                  setBusy(false);
+                }
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  continueSearch();
+                }
+              }}
+            />
+            {query && (
+              <button
+                type="button"
+                className={cx("clear")}
+                aria-label="Clear address"
+                onClick={() => {
+                  void search("");
+                  input.current?.focus();
+                }}
+              >
+                <XMarkIcon />
+              </button>
+            )}
+            <button
+              type="button"
+              className={cx("go")}
+              aria-label="Continue with address"
+              disabled={busy}
+              onClick={continueSearch}
+            >
+              {busy ? (
+                <span className={cx("spinner")} aria-label="Searching" />
+              ) : (
+                <ArrowRightIcon />
+              )}
+            </button>
+          </div>
+          {results.length > 0 && (
+            <div
+              role="listbox"
+              id="address-options"
+              aria-label="Matching addresses"
+              className={cx("suggestions")}
+            >
+              {results.map((item, i) => (
+                <button
+                  key={item.mapbox_id || i}
+                  id={`address-option-${i}`}
+                  role="option"
+                  aria-selected={active === i}
+                  tabIndex={-1}
+                  type="button"
+                  className={active === i ? cx("highlighted") : undefined}
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => void select(item)}
+                >
+                  <MapPinIcon />
+                  <span>
+                    <strong>{item.address_line1 || item.feature_name}</strong>
+                    <small>{item.description}</small>
+                  </span>
+                  <ChevronRightIcon />
+                </button>
+              ))}
+              <div className={cx("search-credit")} role="presentation">
+                Search by Mapbox
+              </div>
+            </div>
+          )}
+          <div className={cx("search-under")}>
+            <span role="status">
+              {notice || (busy ? "Finding your address…" : " ")}
+            </span>
+            <button
+              className={cx("text-button")}
+              type="button"
+              onClick={openManual}
+            >
+              Enter manually
+            </button>
+          </div>
         </div>
       )}
     </div>

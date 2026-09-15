@@ -17,6 +17,11 @@ import { siteConfig } from "@/lib/site-config";
 
 export const runtime = "nodejs";
 
+// Analytics flushes after the response; provider latency cannot delay a customer's receipt.
+function queueAnalytics(input: Parameters<typeof captureServerEvent>[0]) {
+  after(() => captureServerEvent(input));
+}
+
 const DEFAULT_NOTIFICATION_EMAIL = "contact@backflowtestpros.com";
 const SUBMISSION_TIME_ZONE = "America/Los_Angeles";
 
@@ -427,7 +432,7 @@ export async function POST(request: Request) {
   ) => getLeadAnalyticsProperties(submission, request, extra);
 
   if (validationError) {
-    await captureServerEvent({
+    queueAnalytics({
       distinctId,
       event: "contact_form_validation_failed",
       properties: analyticsProperties({
@@ -438,7 +443,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: validationError }, { status: 400 });
   }
 
-  await captureServerEvent({
+  queueAnalytics({
     distinctId,
     event: "lead_received",
     properties: analyticsProperties({
@@ -452,7 +457,7 @@ export async function POST(request: Request) {
 
   if (!hasAgentMail && !process.env.HOUSECALLPRO_API_KEY?.trim()) {
     console.error("Contact form has no downstream delivery configured.");
-    await captureServerEvent({
+    queueAnalytics({
       distinctId,
       event: "lead_delivery_failed",
       properties: analyticsProperties({
@@ -507,7 +512,7 @@ export async function POST(request: Request) {
         submissionId: submission.submissionId,
         error,
       });
-      await captureServerEvent({
+      queueAnalytics({
         distinctId,
         event: "lead_notification_failed",
         properties: analyticsProperties({
@@ -545,7 +550,7 @@ export async function POST(request: Request) {
             submissionId: submission.submissionId,
             error,
           });
-          await captureServerEvent({
+          queueAnalytics({
             distinctId,
             event: "lead_auto_reply_failed",
             properties: analyticsProperties({
@@ -559,7 +564,7 @@ export async function POST(request: Request) {
       if (hasHousecall) {
         const queuedHousecallResult = await sendHousecallLead(submission);
 
-        await captureServerEvent({
+        queueAnalytics({
           distinctId,
           event: "lead_housecall_delivery_completed",
           properties: analyticsProperties({
@@ -574,7 +579,7 @@ export async function POST(request: Request) {
       }
     });
 
-    await captureServerEvent({
+    queueAnalytics({
       distinctId,
       event: "lead_delivered",
       properties: analyticsProperties({
@@ -589,6 +594,7 @@ export async function POST(request: Request) {
       ok: true,
       submissionId: submission.submissionId,
       notificationStatus,
+      attachmentStatus: notificationAttachments.length ? "delivered" : "none",
       notificationThreadId: notificationThreadId || undefined,
       autoReplyStatus,
       housecallStatus: hasHousecall ? "queued" : "skipped",
@@ -607,7 +613,7 @@ export async function POST(request: Request) {
         housecallResult,
       },
     );
-    await captureServerEvent({
+    queueAnalytics({
       distinctId,
       event: "lead_delivery_failed",
       properties: analyticsProperties({
@@ -626,7 +632,7 @@ export async function POST(request: Request) {
     );
   }
 
-  await captureServerEvent({
+  queueAnalytics({
     distinctId,
     event: "lead_delivered",
     properties: analyticsProperties({
@@ -643,6 +649,7 @@ export async function POST(request: Request) {
     ok: true,
     submissionId: submission.submissionId,
     notificationStatus,
+    attachmentStatus: notificationAttachments.length ? "not_delivered" : "none",
     notificationThreadId: notificationThreadId || undefined,
     autoReplyStatus,
     housecallStatus: housecallResult.status,

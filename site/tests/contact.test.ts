@@ -161,6 +161,9 @@ describe("Actual contact handler with captured provider requests", () => {
           service_type: "Repair / Replacement",
           address_unit: "Suite 2",
           preferred_date: "2026-10-01",
+          contact_preference: "email",
+          testing_count: "12",
+          address_source: "mapbox",
         }),
       ),
     );
@@ -177,6 +180,9 @@ describe("Actual contact handler with captured provider requests", () => {
       "100 Test Avenue, Los Angeles, CA 90012",
     );
     expect(patch?.body.notes).toContain("Suite 2");
+    expect(patch?.body.notes).toContain("Preferred Contact: email");
+    expect(patch?.body.notes).toContain("12");
+    expect(calls[0].body.text).toContain("Preferred Contact: email");
     expect(patch?.body.notes).toContain("not booked");
     expect(calls.some((c) => c.url.endsWith("/leads"))).toBe(true);
     expect(calls.filter((c) => c.url.includes("agentmail"))).toHaveLength(2);
@@ -226,4 +232,45 @@ it("preserves offer and service intent from existing homepage pricing links", ()
   expect(contactIntentFromSearch("?service=installation").service).toBe(
     "New Installation",
   );
+});
+
+it("preserves exact or unknown device counts without guessing, and accepts a single name", () => {
+  for (const count of ["", "Not Sure", "1", "5", "6", "12", "100"]) {
+    const data = form({
+      testing_count: count,
+      last_name: "",
+      address_source: "mapbox",
+      contact_preference: "email",
+    });
+    const normalized = normalizeSubmission(data, request(data));
+    expect(validateSubmission(normalized)).toBeNull();
+    expect(normalized.testingCount).toBe(count);
+    expect(normalized.addressSource).toBe("mapbox");
+  }
+  for (const count of ["0", "101", "1.5", "More", "-1"]) {
+    const data = form({ testing_count: count });
+    expect(
+      validateSubmission(normalizeSubmission(data, request(data))),
+    ).toContain("device count");
+  }
+});
+
+it("keeps an accepted fallback lead but reports undelivered attachments honestly", async () => {
+  vi.stubEnv("VERCEL_ENV", "development");
+  vi.stubEnv("AGENTMAIL_API_KEY", "");
+  vi.stubEnv("HOUSECALLPRO_API_KEY", "fixture");
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => Response.json({ id: "fixture" })),
+  );
+  const data = form();
+  data.append(
+    "contact_uploads",
+    new File(["fixture"], "notice.pdf", { type: "application/pdf" }),
+  );
+  const { POST } = await import("@/app/api/contact/route");
+  expect(await (await POST(request(data))).json()).toMatchObject({
+    ok: true,
+    attachmentStatus: "not_delivered",
+  });
 });
