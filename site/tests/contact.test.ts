@@ -1,5 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { INTAKE_VARIANT, serviceOptions } from "@/lib/contact-intake";
+import {
+  contactIntentFromSearch,
+  INTAKE_VARIANT,
+  serviceOptions,
+} from "@/lib/contact-intake";
 import {
   normalizeSubmission,
   validateSubmission,
@@ -208,4 +212,18 @@ it("does not mistake an HTML 200 or empty response for an accepted submission", 
     ),
   ).not.toBeNull();
   expect(await readContactResponse(Response.json({ ok: true }))).toBeNull();
+});
+
+it("preserves offer and service intent from existing homepage pricing links", () => {
+  const intent = contactIntentFromSearch(
+    "?topic=Residential+Testing+Value+Package&details=Please+send+pricing",
+  );
+  expect(intent).toMatchObject({ service: "Testing", property: "Residential" });
+  const data = form({ "Message-Field-4": intent.notes });
+  expect(normalizeSubmission(data, request(data)).message).toContain(
+    "Selected offer: Residential Testing Value Package",
+  );
+  expect(contactIntentFromSearch("?service=installation").service).toBe(
+    "New Installation",
+  );
 });

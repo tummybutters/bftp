@@ -15,6 +15,7 @@ import { PhoneIcon } from "@heroicons/react/24/solid";
 import { AddressSearch } from "./address-search";
 import { ServiceMap } from "./service-map";
 import {
+  contactIntentFromSearch,
   emptyAddress,
   INTAKE_VARIANT,
   propertyOptions,
@@ -74,8 +75,18 @@ export function ContactQuiz() {
   const posthog = usePostHog();
   const [step, setStep] = useState(0);
   const [address, setAddress] = useState<ServiceAddress>({ ...emptyAddress });
-  const [service, setService] = useState("");
-  const [property, setProperty] = useState("");
+  const [service, setService] = useState(
+    () =>
+      contactIntentFromSearch(
+        typeof window === "undefined" ? "" : window.location.search,
+      ).service,
+  );
+  const [property, setProperty] = useState(
+    () =>
+      contactIntentFromSearch(
+        typeof window === "undefined" ? "" : window.location.search,
+      ).property,
+  );
   const [timing, setTiming] = useState("");
   const [contact, setContact] = useState(initialContact);
   const [files, setFiles] = useState<File[]>([]);
@@ -198,6 +209,7 @@ export function ContactQuiz() {
     const data = new FormData();
     const fields = {
       ...contact,
+      "Message-Field-4": contactIntentFromSearch(location.search).notes,
       phone,
       intake_variant: INTAKE_VARIANT,
       service_type: service,

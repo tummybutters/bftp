@@ -10,6 +10,7 @@ Baseline: `9e79e11244cba5388ea1b98d733aa85d63dd03ef`, the website production dep
 
 ## What changed
 
+- Existing pricing/service links retain their selected offer and requested details in the email/CRM summary, with the matching service/property preselected. Address remains the first question.
 - Address → service → property → timing → contact. Choice buttons advance automatically. Back preserves answers. A short pause shows a selected address on the desktop map before advancing; reduced motion skips the pause.
 - Uses Google Places Autocomplete (New), fresh session tokens, a Southern California bias and US results. Stale responses cannot overwrite new searches. Editing a selected address clears its old location and cancels pending advancement.
 - Manual address entry remains available during provider failures. City/state/ZIP are collected with the street; no redundant county question. The server checks completeness. Places matching is not represented as independent postal/deliverability verification.
@@ -34,7 +35,7 @@ Primary metric: completed requests or phone taps per contact-page visitor. Repor
 
 ## Verification
 
-Verified on September 14, 2026: 22 focused tests, TypeScript, focused lint and the 262-route production build passed. Browser testing covered 375, 390, 768, 1366 and 1536 pixel widths. See `design-qa.md` for browser evidence. Run `npm ci`, `npm run test:contact`, `npx tsc --noEmit`, focused ESLint, and `npm run build` in `site/`.
+Verified on September 14, 2026: 23 focused tests, TypeScript, focused lint and the 262-route production build passed. Browser testing covered 375, 390, 768, 1366 and 1536 pixel widths. See `design-qa.md` for browser evidence. Run `npm ci`, `npm run test:contact`, `npx tsc --noEmit`, focused ESLint, and `npm run build` in `site/`.
 
 Local full-handler QA uses `node scripts/contact-preview-provider.mjs` and a local Next server with `HOUSECALLPRO_API_KEY=local-test-only` and `HOUSECALLPRO_API_BASE_URL=http://127.0.0.1:4174`. No live provider keys belong in this test. The fixture records requests at `/receipts`; POST `/mode` with `{ "fail": true }` exercises recovery. Automated handler tests replace every provider fetch and inspect notification/CRM payloads.
 

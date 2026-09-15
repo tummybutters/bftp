@@ -75,3 +75,32 @@ export const titles = [
   "When do you need us?",
   "How can we reach you?",
 ];
+
+/** Preserve intent from the existing pricing/service links while still asking for the address first. */
+export function contactIntentFromSearch(search: string) {
+  const params = new URLSearchParams(search);
+  const topic = (params.get("topic") || params.get("service") || "")
+    .trim()
+    .slice(0, 200);
+  const details = (params.get("details") || "").trim().slice(0, 2500);
+  const lower = topic.toLowerCase();
+  const service = lower.includes("test")
+    ? "Testing"
+    : lower.includes("repair") || lower.includes("replacement")
+      ? "Repair / Replacement"
+      : lower.includes("install")
+        ? "New Installation"
+        : "";
+  const property = lower.includes("residential")
+    ? "Residential"
+    : lower.includes("commercial")
+      ? "Commercial / Business"
+      : "";
+  return {
+    service,
+    property,
+    notes: [topic ? `Selected offer: ${topic}` : "", details]
+      .filter(Boolean)
+      .join("\n"),
+  };
+}
