@@ -43,7 +43,9 @@ Run these from the repo root or from `site/`.
 
 ## Contact Form Email
 
-- `AGENTMAIL_API_KEY`: required to send contact-form email notifications.
+- `GOOGLE_SERVICE_ACCOUNT_KEY`: Workspace service-account key (JSON, or base64 of it). When set, contact-form mail is sent through Gmail from a Backflow Test Pros address and AgentMail is not used.
+- `CONTACT_GMAIL_SENDER`: the From address for Gmail sends. Defaults to `contact@backflowtestpros.com`. It must be a registered "Send mail as" identity on the mailbox it resolves to, or Gmail rewrites From to that mailbox's primary address.
+- `AGENTMAIL_API_KEY`: sends contact-form email through AgentMail when the Gmail key is not set.
 - `AGENTMAIL_INBOX_ID`: optional explicit sender inbox ID. When omitted, the app discovers the first inbox available to the key.
 - `CONTACT_NOTIFICATION_TO`: optional recipient for form notifications. Defaults to the sender inbox if unset.
 - `AGENTMAIL_FROM_NAME`: optional label used in the customer auto-reply subject line.

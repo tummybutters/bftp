@@ -1,10 +1,6 @@
 import { after, NextResponse } from "next/server";
 
-import {
-  type AgentMailAttachment,
-  resolveAgentMailInboxId,
-  sendAgentMailMessage,
-} from "@/lib/agentmail";
+import type { AgentMailAttachment } from "@/lib/agentmail";
 import { captureServerEvent } from "@/lib/analytics/posthog-server";
 import {
   normalizeSubmission,
@@ -12,6 +8,7 @@ import {
   type ContactSubmission,
 } from "@/lib/contact-submission";
 import { sendHousecallLead } from "@/lib/housecall";
+import { resolveMailTransport, sendContactMail } from "@/lib/mailer";
 import { generatePersonalizedAutoReply } from "@/lib/openrouter";
 import { siteConfig } from "@/lib/site-config";
 
@@ -457,10 +454,9 @@ export async function POST(request: Request) {
   });
 
   const notificationAttachments = await buildAgentMailAttachments(formData);
-  const agentMailApiKey = process.env.AGENTMAIL_API_KEY?.trim() || "";
-  const hasAgentMail = Boolean(agentMailApiKey);
+  const mailTransport = resolveMailTransport();
 
-  if (!hasAgentMail && !process.env.HOUSECALLPRO_API_KEY?.trim()) {
+  if (!mailTransport && !process.env.HOUSECALLPRO_API_KEY?.trim()) {
     console.error("Contact form has no downstream delivery configured.");
     queueAnalytics({
       distinctId,
@@ -482,23 +478,17 @@ export async function POST(request: Request) {
   let autoReplyStatus: "sent" | "skipped" | "failed" | "queued" = "skipped";
   let notificationStatus: "sent" | "skipped" | "failed" = "skipped";
   let notificationErrorDetail = "";
-  let inboxId = "";
   const fromName = process.env.AGENTMAIL_FROM_NAME || "Backflow Test Pros";
 
-  if (hasAgentMail) {
+  if (mailTransport) {
     try {
-      inboxId = await resolveAgentMailInboxId({
-        apiKey: agentMailApiKey,
-        inboxId: process.env.AGENTMAIL_INBOX_ID,
-      });
       const fullName = `${submission.firstName} ${submission.lastName}`.trim();
       const notificationRecipients = buildNotificationRecipients(
         process.env.CONTACT_NOTIFICATION_TO || "",
       );
 
-      const notification = await sendAgentMailMessage({
-        apiKey: agentMailApiKey,
-        inboxId,
+      const notification = await sendContactMail(mailTransport, {
+        fromName,
         to: notificationRecipients,
         subject: submission.leadTopic
           ? `New contact form lead: ${fullName} - ${submission.leadTopic}`
@@ -512,7 +502,7 @@ export async function POST(request: Request) {
     } catch (error) {
       notificationStatus = "failed";
       notificationErrorDetail =
-        error instanceof Error ? error.message : "Unknown AgentMail error.";
+        error instanceof Error ? error.message : "Unknown mail error.";
       console.error("Contact form email delivery failed.", {
         submissionId: submission.submissionId,
         error,
@@ -528,7 +518,7 @@ export async function POST(request: Request) {
     }
   }
 
-  if (notificationStatus === "sent") {
+  if (notificationStatus === "sent" && mailTransport) {
     const hasHousecall = Boolean(process.env.HOUSECALLPRO_API_KEY?.trim());
 
     autoReplyStatus =
@@ -542,9 +532,8 @@ export async function POST(request: Request) {
 
           // Keep customer auto-replies immediate, but let Next run the work after
           // the response so the browser is not blocked on OpenRouter/AgentMail.
-          await sendAgentMailMessage({
-            apiKey: agentMailApiKey,
-            inboxId,
+          await sendContactMail(mailTransport, {
+            fromName,
             to: submission.email,
             subject: `${fromName} received your message`,
             text: autoReplyText,
@@ -588,7 +577,7 @@ export async function POST(request: Request) {
       distinctId,
       event: "lead_delivered",
       properties: analyticsProperties({
-        delivery_path: "agentmail",
+        delivery_path: mailTransport.kind,
         notification_status: notificationStatus,
         auto_reply_status: autoReplyStatus,
         housecall_status: hasHousecall ? "queued" : "skipped",
