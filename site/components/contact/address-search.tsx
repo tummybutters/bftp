@@ -24,6 +24,8 @@ type Props = {
   onChange: (v: ServiceAddress) => void;
   onSelect: (v: ServiceAddress) => void;
   onStart: () => void;
+  /** Put the cursor in the box on arrival (visitor already began on the homepage). */
+  focusOnArrival?: boolean;
   onEvent?: (
     name: string,
     properties?: Record<string, string | number | boolean>,
@@ -34,6 +36,7 @@ export function AddressSearch({
   onChange,
   onSelect,
   onStart,
+  focusOnArrival,
   onEvent,
 }: Props) {
   const [query, setQuery] = useState(value.formatted || value.street),
@@ -47,6 +50,12 @@ export function AddressSearch({
     searchClient = useRef<AddressAutofillCore | null>(null),
     session = useRef<SessionToken | null>(null),
     input = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    // Only with a mouse or trackpad: on a phone, focusing opens the keyboard
+    // over the page before the visitor has read it.
+    if (focusOnArrival && matchMedia("(pointer: fine)").matches)
+      input.current?.focus({ preventScroll: true });
+  }, [focusOnArrival]);
   useEffect(
     () => () => {
       seq.current++;

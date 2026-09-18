@@ -986,6 +986,73 @@
   width: 100%;
 }
 
+/* The quiz's first question, asked in the homepage hero. */
+.bftp-hero-chips {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.bftp-hero-chips__label {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+}
+
+.bftp-hero-chips__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.bftp-hero-chips__option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding-inline: clamp(1.2rem, 2.4vw, 1.9rem);
+  border-radius: 14px;
+  background: var(--bftp-color-gold);
+  color: var(--bftp-color-navy);
+  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.bftp-hero-chips__option:hover,
+.bftp-hero-chips__option:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 600px) {
+  /* On a phone the copy is a full screen tall; the question goes above it. */
+  .bftp-hero__site-content:has(.bftp-hero-chips) .bftp-hero__site-copy,
+  .bftp-hero__site-content:has(.bftp-hero-chips) .bftp-hero__site-promo {
+    order: 2;
+  }
+
+  .bftp-hero__site-content:has(.bftp-hero-chips) .bftp-hero__site-actions {
+    order: 1;
+  }
+
+  .bftp-hero-chips__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bftp-hero-chips__option {
+    transition: none;
+  }
+}
+
 /* The phone number beside the quote button: present, legible, second. */
 .bftp-cta-button.bftp-hero__secondary {
   background: rgba(255, 255, 255, 0.08);

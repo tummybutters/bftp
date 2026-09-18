@@ -81,6 +81,9 @@ export function ContactQuiz() {
     >("idle"),
     [error, setError] = useState(""),
     [creditOpen, setCreditOpen] = useState(false);
+  // True when the service question was answered before arriving (homepage
+  // chips), so the quiz does not ask it a second time.
+  const [serviceAnswered, setServiceAnswered] = useState(false);
   const [attachmentMissing, setAttachmentMissing] = useState(false);
   const [credit, setCredit] = useState<{ key: string; cents: number } | null>(
     null,
@@ -104,6 +107,7 @@ export function ContactQuiz() {
     const intent = contactIntentFromSearch(window.location.search);
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initialize URL intent without a hydration mismatch
     setService(intent.service);
+    setServiceAnswered(intent.serviceAnswered);
     setProperty(intent.property);
     return () => {
       if (timer.current) clearTimeout(timer.current);
@@ -181,7 +185,7 @@ export function ContactQuiz() {
     capture("contact_quiz_address_completed", { method: next.source });
     if (timer.current) clearTimeout(timer.current);
     timer.current = setTimeout(
-      () => go(1),
+      () => go(serviceAnswered ? 2 : 1),
       matchMedia("(prefers-reduced-motion: reduce)").matches ||
         next.source === "manual"
         ? 0
@@ -352,7 +356,13 @@ export function ContactQuiz() {
                   aria-label="Go back"
                   disabled={status === "sending"}
                   onClick={() =>
-                    go(step === 4 && service !== "Testing" ? 2 : step - 1)
+                    go(
+                      step === 4 && service !== "Testing"
+                        ? 2
+                        : step === 2 && serviceAnswered
+                          ? 0
+                          : step - 1,
+                    )
                   }
                 >
                   <ArrowLeftIcon />
@@ -423,6 +433,19 @@ export function ContactQuiz() {
                     <span style={{ width: `${((step + 1) / 6) * 100}%` }} />
                   </div>
                 )}
+                {step === 0 && serviceAnswered && (
+                  <p className={cx("carried")}>
+                    {service}
+                    <button
+                      onClick={() => {
+                        setServiceAnswered(false);
+                        capture("contact_quiz_carried_service_changed");
+                      }}
+                    >
+                      Change
+                    </button>
+                  </p>
+                )}
                 {step === 0 && creditOpen && (
                   <p className={cx("credit-detail")}>
                     Your paid test can become credit toward repairs if it fails,
@@ -438,6 +461,7 @@ export function ContactQuiz() {
                       onChange={changeAddress}
                       onSelect={chooseAddress}
                       onStart={start}
+                      focusOnArrival={serviceAnswered}
                       onEvent={capture}
                     />
                   )}

@@ -1028,3 +1028,23 @@
   font-family: var(--font-body), Arial, sans-serif;
   color: var(--navy);
 }
+
+/* The answer carried over from the homepage: visible, and correctable. */
+.page .carried {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f3efe9;
+  font-size: 14px;
+  font-weight: 700;
+}
+.page .carried button {
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #bb5617;
+  border-bottom: 1px solid #d9a482;
+}

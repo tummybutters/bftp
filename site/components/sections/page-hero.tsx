@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { heroImages } from "@/lib/design";
+import { HeroServiceChips } from "@/components/sections/hero-service-chips";
 import { TrackedHeroCta } from "@/components/sections/tracked-hero-cta";
 import { TrackedHeroDetails } from "@/components/sections/tracked-hero-details";
 
@@ -112,6 +113,8 @@ interface PageHeroProps {
   primaryAction?: ActionLink;
   /** Shown ahead of the phone number: most visitors are on desktop and will not dial. */
   contactAction?: ActionLink;
+  /** Ask the quiz's first question in the hero instead of linking to it. */
+  serviceChips?: boolean;
   heroVariant?: "photo" | "navy";
   heroImageSrc?: string;
   styleVariant?: "site" | "editorial";
@@ -127,6 +130,7 @@ export function PageHero({
   badges = [],
   primaryAction,
   contactAction,
+  serviceChips,
   heroVariant = "photo",
   heroImageSrc = heroImages[0]?.src,
   styleVariant = "site",
@@ -247,7 +251,8 @@ export function PageHero({
               ) : null}
               {primaryAction ? (
                 <div className="bftp-hero__actions">
-                  {contactAction ? (
+                  {serviceChips ? <HeroServiceChips /> : null}
+                  {contactAction && !serviceChips ? (
                     <TrackedHeroCta
                       href={contactAction.href}
                       label={contactAction.label}
@@ -294,7 +299,8 @@ export function PageHero({
               ) : null}
               {primaryAction ? (
                 <div className="bftp-hero__site-actions">
-                  {contactAction ? (
+                  {serviceChips ? <HeroServiceChips /> : null}
+                  {contactAction && !serviceChips ? (
                     <TrackedHeroCta
                       href={contactAction.href}
                       label={contactAction.label}
