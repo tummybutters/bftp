@@ -727,7 +727,7 @@ function renderHeroSection(context: SectionContext) {
   const contactAction =
     context.page.path === siteConfig.contactPath
       ? undefined
-      : { href: siteConfig.contactPath, label: "Get a Free Quote" };
+      : { href: siteConfig.contactPath, label: "Schedule Your Test" };
   const rawPromoText = context.payload.ctaPattern[0] || context.page.headings.h3[0];
   const promoText =
     context.family === "county_city_landing" && heroPrimaryAction
