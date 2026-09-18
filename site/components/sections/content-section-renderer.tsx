@@ -722,6 +722,12 @@ function renderHeroSection(context: SectionContext) {
   const locationPhoneAction = resolveLocationHeroPhoneAction(context);
   const primaryAction =
     locationPhoneAction ?? heroPhoneAction ?? heroPrimaryAction ?? fallbackPhoneAction;
+  // The phone stays, but the quote form leads: three in four visitors are on
+  // desktop, where a phone number is something to copy, not something to tap.
+  const contactAction =
+    context.page.path === siteConfig.contactPath
+      ? undefined
+      : { href: siteConfig.contactPath, label: "Schedule Your Test" };
   const rawPromoText = context.payload.ctaPattern[0] || context.page.headings.h3[0];
   const promoText =
     context.family === "county_city_landing" && heroPrimaryAction
@@ -739,6 +745,7 @@ function renderHeroSection(context: SectionContext) {
       bodyLines={splitContentBody(hero.body || context.payload.metaDescription)}
       promoText={promoText}
       primaryAction={primaryAction}
+      contactAction={contactAction}
       heroVariant={getFamilyHeroVariant(context.family)}
       heroImageSrc={getHeroImage(context.page, context.payload)}
       heroClassName={getHeroClassName(context.page, context.family)}
