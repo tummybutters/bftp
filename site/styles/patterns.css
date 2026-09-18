@@ -1002,10 +1002,25 @@
 }
 
 .bftp-hero-chips__options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.65rem;
+  width: 100%;
+}
+
+/* Question, answers and phone number read as one block of one width. */
+.bftp-hero__site-actions:has(.bftp-hero-chips) {
+  display: grid;
+  justify-items: stretch;
+  width: min(100%, 620px);
+  margin-inline: auto;
+}
+
+.bftp-hero__site-actions:has(.bftp-hero-chips) .bftp-hero__site-phone {
+  width: 100%;
+  min-height: 54px;
+  border-radius: 14px;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
 }
 
 .bftp-hero-chips__option {
@@ -1013,7 +1028,7 @@
   align-items: center;
   justify-content: center;
   min-height: 54px;
-  padding-inline: clamp(1.2rem, 2.4vw, 1.9rem);
+  padding-inline: 0.5rem;
   border-radius: 14px;
   background: var(--bftp-color-gold);
   color: var(--bftp-color-navy);
@@ -1025,6 +1040,9 @@
 
 .bftp-hero-chips__option:hover,
 .bftp-hero-chips__option:focus-visible {
+  /* The site-wide a:hover turns links gold, which is this button's own colour. */
+  background: #ffbf1c;
+  color: var(--bftp-color-navy-deep);
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
@@ -1041,9 +1059,7 @@
   }
 
   .bftp-hero-chips__options {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
   }
 }
 
