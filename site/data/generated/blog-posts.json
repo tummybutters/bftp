@@ -6656,5 +6656,106 @@
         "notes": "Workbook anchor verified against EPA Fix a Leak Week on September 11, 2026. National scope preserved; no local incidence claim."
       }
     ]
+  },
+  {
+    "sourceQueueId": "plumbing_water_article_bank-004",
+    "slug": "more-than-half-of-indoor-water-use-happens-in-the-bathroom-start-there-first",
+    "path": "/blog/more-than-half-of-indoor-water-use-happens-in-the-bathroom-start-there-first",
+    "canonical": "https://www.backflowtestpros.com/blog/more-than-half-of-indoor-water-use-happens-in-the-bathroom-start-there-first",
+    "title": "More Than Half of Indoor Water Use Happens in the Bathroom: Start There First",
+    "metaDescription": "EPA identifies bathrooms as the largest source of indoor home water use. Plan fixture checks and upgrades without confusing efficiency with backflow protection.",
+    "excerpt": "Start an indoor water-use review with the bathroom, but keep national benchmarks, your own household usage, and backflow protection separate.",
+    "category": "Residential water use",
+    "audience": "Homeowners, remodelers, water-conscious families",
+    "geography": "United States",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "where most home water is used",
+    "secondaryKeywords": [],
+    "status": "Published",
+    "publishedAt": "2026-09-18T16:00:00.000Z",
+    "updatedAt": "2026-09-18T16:00:00.000Z",
+    "heroFact": {
+      "value": "More than 50%",
+      "label": "of indoor home water use happens in bathrooms, according to EPA WaterSense",
+      "context": "A national indoor-use benchmark, not a measurement of your home or a share of your entire water bill."
+    },
+    "keyTakeaways": [
+      "Bathrooms are a useful starting point for reviewing indoor water use.",
+      "Identify existing fixtures and maintenance needs before choosing replacements.",
+      "Water efficiency and backflow protection require different checks."
+    ],
+    "sections": [
+      {
+        "id": "indoor-boundary",
+        "kind": "narrative",
+        "title": "Start With the Right Boundary",
+        "body": [
+          "EPA WaterSense identifies bathrooms as the largest source of home water use, accounting for more than half of indoor use. That makes the bathroom a practical place to begin an indoor review. It does not mean half of every household's total consumption comes from the bathroom, particularly when outdoor irrigation is part of the picture.",
+          "Treat the figure as a starting point, not a diagnosis. A national percentage cannot identify a faulty toilet, predict a particular family's savings, or tell you which purchase will pay for itself. Keep the household's actual usage and the scope of any planned work at the center of the decision."
+        ]
+      },
+      {
+        "id": "fixture-inventory",
+        "kind": "narrative",
+        "title": "Make a Short Fixture List Before Shopping",
+        "body": [
+          "Walk through each bathroom and list the toilet, showerhead, and sink faucet. Record a model number or photograph a label when it is accessible without dismantling anything. Note which fixtures are used daily and which serve a guest room. This small inventory is more useful for an upgrade conversation than assuming every fixture needs replacement.",
+          "Keep observations separate from conclusions. A toilet that refills unexpectedly, a dripping faucet, or a loose fitting is something to describe to a qualified plumber, not a reason to guess at the failed part. Ask which items need repair and which are optional improvements. Do not postpone an active maintenance problem while planning a larger remodel."
+        ]
+      },
+      {
+        "id": "compare-work",
+        "kind": "narrative",
+        "title": "Compare Complete Options, Not Just a Fixture Price",
+        "body": [
+          "For an optional replacement, ask for the proposed model, installation scope, and any compatibility work in writing. A useful comparison includes what is being removed, what is being installed, and how the completed work will be checked. Keep repairs needed today separate from improvements that can wait so the quote remains easy to understand.",
+          "Before accepting a savings estimate, ask what existing fixture and usage assumptions it uses. After work is completed, retain the product information and compare actual water-use records over time. Changes in occupancy, irrigation, and billing-period length can affect comparisons. Do not promise yourself a fixed reduction based only on the national bathroom percentage."
+        ]
+      },
+      {
+        "id": "backflow-separate",
+        "kind": "narrative",
+        "title": "Efficiency Does Not Replace Backflow Protection",
+        "body": [
+          "Reducing fixture consumption and checking a backflow prevention assembly answer different questions. A new bathroom fixture is not evidence that an assembly passes its test, and a passing backflow test is not an audit of household water efficiency. Keep those maintenance records separate, even when both jobs happen during the same property project.",
+          "If proposed work involves an existing backflow assembly or a connection that may require protection, ask the serving utility or qualified tester what applies before work begins. Backflow Test Pros can help with assembly testing, repair or replacement, retesting, and associated documentation. For ordinary bathroom fixture repairs or remodeling, use the appropriate plumbing professional."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Testing",
+        "description": "Keep assembly testing separate from fixture-efficiency checks."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Arrange follow-up for backflow assembly work."
+      }
+    ],
+    "cta": {
+      "heading": "Have a Backflow Assembly to Check?",
+      "body": "Contact Backflow Test Pros for assembly testing, repairs, retesting, and utility documentation. Household fixture repairs should go to the appropriate plumber.",
+      "label": "Contact Backflow Test Pros",
+      "href": "/contact-backflowtestpros"
+    },
+    "schemaTypes": ["BlogPosting", "BreadcrumbList"],
+    "reviewFlags": [],
+    "sourceNotes": [
+      {
+        "repositoryRow": 49,
+        "dataPoint": "Indoor home water used in bathrooms",
+        "value": "More than 50%",
+        "scope": "Typical U.S. home",
+        "timePeriod": "Current EPA page",
+        "whyItMatters": "Provides a starting point for an indoor fixture-efficiency review.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "About WaterSense",
+        "sourceUrl": "https://www.epa.gov/watersense/about-watersense",
+        "authorityType": "Government (federal)",
+        "notes": "Workbook row 49 verified against EPA on September 18, 2026. Indoor-use scope preserved; no property-specific savings or local incidence claim."
+      }
+    ]
   }
 ]
