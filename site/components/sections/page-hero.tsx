@@ -110,6 +110,8 @@ interface PageHeroProps {
   promoText?: string;
   badges?: string[];
   primaryAction?: ActionLink;
+  /** Shown ahead of the phone number: most visitors are on desktop and will not dial. */
+  contactAction?: ActionLink;
   heroVariant?: "photo" | "navy";
   heroImageSrc?: string;
   styleVariant?: "site" | "editorial";
@@ -124,6 +126,7 @@ export function PageHero({
   promoText,
   badges = [],
   primaryAction,
+  contactAction,
   heroVariant = "photo",
   heroImageSrc = heroImages[0]?.src,
   styleVariant = "site",
@@ -244,10 +247,21 @@ export function PageHero({
               ) : null}
               {primaryAction ? (
                 <div className="bftp-hero__actions">
+                  {contactAction ? (
+                    <TrackedHeroCta
+                      href={contactAction.href}
+                      label={contactAction.label}
+                      className="bftp-cta-button bftp-hero__phone"
+                    />
+                  ) : null}
                   <TrackedHeroCta
                     href={primaryAction.href}
                     label={primaryAction.label}
-                    className={editorialActionClassName}
+                    className={
+                      contactAction
+                        ? `${editorialActionClassName} bftp-hero__secondary`
+                        : editorialActionClassName
+                    }
                   />
                 </div>
               ) : null}
@@ -280,10 +294,21 @@ export function PageHero({
               ) : null}
               {primaryAction ? (
                 <div className="bftp-hero__site-actions">
+                  {contactAction ? (
+                    <TrackedHeroCta
+                      href={contactAction.href}
+                      label={contactAction.label}
+                      className="bftp-cta-button bftp-hero__site-phone"
+                    />
+                  ) : null}
                   <TrackedHeroCta
                     href={primaryAction.href}
                     label={primaryAction.label}
-                    className="bftp-cta-button bftp-hero__site-phone"
+                    className={
+                      contactAction
+                        ? "bftp-cta-button bftp-hero__site-phone bftp-hero__secondary"
+                        : "bftp-cta-button bftp-hero__site-phone"
+                    }
                   />
                 </div>
               ) : null}
