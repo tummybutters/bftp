@@ -126,8 +126,14 @@ export function ContactQuiz() {
     property,
     device_count: /^\d+$/.test(count) ? Number(count) : null,
   });
+  // A boolean, not `step`: moving from timing to details must not cancel and
+  // restart the request that was started early on purpose.
+  const wantCredit = step >= 4;
   useEffect(() => {
-    if (step !== 5 || service !== "Testing" || !/^\d+$/.test(count)) return;
+    // Asked as soon as the device count is known (the timing step), not when
+    // the details step opens: by then the card is already there, instead of
+    // arriving late and pushing the form down under the visitor's cursor.
+    if (!wantCredit || service !== "Testing" || !/^\d+$/.test(count)) return;
     const abort = new AbortController();
     void fetch("/api/contact/repair-credit", {
       method: "POST",
@@ -151,7 +157,7 @@ export function ContactQuiz() {
         /* An unavailable benefit never blocks contact. */
       });
     return () => abort.abort();
-  }, [key, step, service, count]);
+  }, [key, wantCredit, service, count]);
   const creditCents = credit?.key === key ? credit.cents : null;
   function start() {
     if (!started.current) {
@@ -498,15 +504,19 @@ export function ContactQuiz() {
                   {step === 5 && (
                     <form className={cx("contact-form")} onSubmit={submit}>
                       {creditCents !== null && (
-                        <div className={cx("credit-summary")}>
-                          <span className={cx("credit-eyebrow")}>
-                            Your test includes
-                          </span>
-                          <div className={cx("credit-value")}>
-                            <strong>${creditCents / 100}</strong>
-                            <span>repair credit</span>
+                        <div className={cx("credit-reveal")}>
+                          <div className={cx("credit-clip")}>
+                            <div className={cx("credit-summary")}>
+                              <span className={cx("credit-eyebrow")}>
+                                Your test includes
+                              </span>
+                              <div className={cx("credit-value")}>
+                                <strong>${creditCents / 100}</strong>
+                                <span>repair credit</span>
+                              </div>
+                              <p>Toward repairs if your test fails.</p>
+                            </div>
                           </div>
-                          <p>Toward repairs if your test fails.</p>
                         </div>
                       )}
                       <div className={cx("contact-grid")}>
@@ -643,7 +653,9 @@ export function ContactQuiz() {
                               ? "Preparing attachments…"
                               : "Add your notice or a photo"}
                           </span>
-                          <span className={cx("upload-optional")}>Optional</span>
+                          <span className={cx("upload-optional")}>
+                            Optional
+                          </span>
                           <input
                             className={cx("sr-only")}
                             type="file"

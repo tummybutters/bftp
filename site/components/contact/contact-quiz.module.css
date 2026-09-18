@@ -810,6 +810,27 @@
   }
 }
 
+/* If the amount still arrives late, the card opens rather than jumps: the row
+   grows from zero so the form below glides down. */
+.page .credit-reveal {
+  display: grid;
+  grid-template-rows: 1fr;
+  animation: credit-open 0.32s ease-out;
+}
+.page .credit-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+@keyframes credit-open {
+  from {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+  to {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
 .page .credit-summary {
   padding: 24px 28px;
   background: #174d3c;
