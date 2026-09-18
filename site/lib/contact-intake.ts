@@ -69,7 +69,13 @@ export function contactIntentFromSearch(search: string) {
       ? "Repair / Replacement"
       : lower.includes("install")
         ? "New Installation"
-        : "";
+        : lower.includes("not sure")
+          ? "Not Sure Yet"
+          : "";
+  // `service=` is an answer the visitor already gave (the homepage asks the
+  // question); `topic=` is only an offer they clicked, so it pre-selects
+  // without skipping the question.
+  const serviceAnswered = Boolean(service) && params.has("service");
   const property = lower.includes("residential")
     ? "Residential"
     : lower.includes("commercial")
@@ -77,6 +83,7 @@ export function contactIntentFromSearch(search: string) {
       : "";
   return {
     service,
+    serviceAnswered,
     property,
     notes: [topic ? `Selected offer: ${topic}` : "", details]
       .filter(Boolean)

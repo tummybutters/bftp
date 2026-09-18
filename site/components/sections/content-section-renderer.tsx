@@ -746,6 +746,7 @@ function renderHeroSection(context: SectionContext) {
       promoText={promoText}
       primaryAction={primaryAction}
       contactAction={contactAction}
+      serviceChips={context.page.path === "/"}
       heroVariant={getFamilyHeroVariant(context.family)}
       heroImageSrc={getHeroImage(context.page, context.payload)}
       heroClassName={getHeroClassName(context.page, context.family)}
