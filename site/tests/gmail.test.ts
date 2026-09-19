@@ -2,7 +2,11 @@ import { generateKeyPairSync, createVerify } from "node:crypto";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { buildMimeMessage, parseServiceAccountKey, resetGmailTokenCache } from "@/lib/gmail";
-import { resolveMailTransport, sendContactMail } from "@/lib/mailer";
+import {
+  mailDeliveryFailureReason,
+  resolveMailTransport,
+  sendContactMail,
+} from "@/lib/mailer";
 
 const { privateKey, publicKey } = generateKeyPairSync("rsa", { modulusLength: 2048 });
 const keyJson = JSON.stringify({
@@ -16,6 +20,11 @@ afterEach(() => {
 });
 
 describe("mail transport", () => {
+  it("labels notification failures with the transport that actually attempted delivery", () => {
+    expect(mailDeliveryFailureReason("gmail")).toBe("gmail_delivery_failed");
+    expect(mailDeliveryFailureReason("agentmail")).toBe("agentmail_delivery_failed");
+  });
+
   it("prefers Gmail from contact@ when the key is present, as JSON or base64", () => {
     for (const value of [keyJson, Buffer.from(keyJson).toString("base64")]) {
       const transport = resolveMailTransport({

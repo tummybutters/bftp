@@ -2,7 +2,8 @@
 
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { isAnalyticsExcluded } from "./traffic-mode";
 
 const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -18,7 +19,7 @@ function GoogleAnalyticsPageView() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (!measurementId || !pathname || typeof window.gtag !== "function") {
+    if (!measurementId || !pathname || typeof window.gtag !== "function" || isAnalyticsExcluded()) {
       return;
     }
 
@@ -36,7 +37,12 @@ function GoogleAnalyticsPageView() {
 }
 
 export function GoogleAnalytics() {
-  if (!measurementId) {
+  const [allowed, setAllowed] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- browser-only QA preference
+    setAllowed(!isAnalyticsExcluded());
+  }, []);
+  if (!measurementId || !allowed) {
     return null;
   }
 

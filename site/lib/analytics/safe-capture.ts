@@ -1,9 +1,11 @@
 import type { PostHog } from "posthog-js";
+import { isAnalyticsExcluded } from "./traffic-mode";
 export function safeCapture(
   client: Pick<PostHog, "capture"> | undefined | null,
   event: string,
   properties: Record<string, string | number | boolean | undefined> = {},
 ) {
+  if (isAnalyticsExcluded()) return;
   try {
     client?.capture(event, properties);
   } catch {

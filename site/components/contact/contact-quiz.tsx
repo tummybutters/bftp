@@ -91,6 +91,7 @@ export function ContactQuiz() {
   const heading = useRef<HTMLHeadingElement>(null),
     started = useRef(false),
     viewed = useRef(false),
+    initialStepViewed = useRef(false),
     sending = useRef(false),
     timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const capture = (
@@ -120,6 +121,15 @@ export function ContactQuiz() {
       intake_variant: INTAKE_VARIANT,
       page_path: siteConfig.contactPath,
     });
+    if (!initialStepViewed.current) {
+      initialStepViewed.current = true;
+      safeCapture(ph, "contact_quiz_step_viewed", {
+        intake_variant: INTAKE_VARIANT,
+        page_path: siteConfig.contactPath,
+        step: 1,
+        step_name: "address",
+      });
+    }
   }, [ph, analyticsReady]);
   const key = JSON.stringify({
     service,
