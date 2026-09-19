@@ -5,17 +5,22 @@ import type { ServiceAddress } from "@/lib/contact-intake";
 import { loadMap, mapboxToken, mapsConfigured } from "@/lib/contact-maps";
 import "mapbox-gl/dist/mapbox-gl.css";
 import s from "./contact-quiz.module.css";
+
+type MapFailureCategory = "not_configured" | "sdk_load" | "style_load";
+type MapEventProperties = Record<string, string | number | boolean>;
+
 export function ServiceMap({
   address,
   onEvent,
 }: {
   address: ServiceAddress;
-  onEvent?: (event: string) => void;
+  onEvent?: (event: string, properties?: MapEventProperties) => void;
 }) {
   const host = useRef<HTMLDivElement>(null),
     map = useRef<MapboxMap | null>(null),
     marker = useRef<Marker | null>(null),
-    events = useRef(onEvent);
+    events = useRef(onEvent),
+    failureReported = useRef(false);
   useEffect(() => {
     events.current = onEvent;
   }, [onEvent]);
@@ -24,7 +29,22 @@ export function ServiceMap({
   useEffect(() => {
     let cancelled = false;
     let instance: MapboxMap | undefined;
-    if (!mapsConfigured) return;
+
+    // Report only a stable category. Mapbox error objects can contain request
+    // URLs, access-token material, or address data, so never forward them.
+    const reportFailure = (category: MapFailureCategory) => {
+      if (failureReported.current) return;
+      failureReported.current = true;
+      setFailed(true);
+      events.current?.("contact_map_failed", {
+        failure_category: category,
+      });
+    };
+
+    if (!mapsConfigured) {
+      reportFailure("not_configured");
+      return;
+    }
     void loadMap()
       .then((sdk) => {
         if (cancelled || !host.current) return;
@@ -42,6 +62,7 @@ export function ServiceMap({
         m.addControl(new sdk.default.AttributionControl({ compact: true }));
         m.on("load", () => {
           if (!cancelled) {
+            failureReported.current = false;
             setReady(true);
             setFailed(false);
             events.current?.("contact_map_loaded");
@@ -49,15 +70,13 @@ export function ServiceMap({
         });
         m.on("error", () => {
           if (!cancelled && !m.isStyleLoaded()) {
-            setFailed(true);
-            events.current?.("contact_map_failed");
+            reportFailure("style_load");
           }
         });
       })
       .catch(() => {
         if (!cancelled) {
-          setFailed(true);
-          events.current?.("contact_map_failed");
+          reportFailure("sdk_load");
         }
       });
     return () => {

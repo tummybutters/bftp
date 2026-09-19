@@ -20,6 +20,10 @@ export type MailTransport =
   | { kind: "gmail"; key: NonNullable<ReturnType<typeof parseServiceAccountKey>>; sender: string }
   | { kind: "agentmail"; apiKey: string; inboxId?: string };
 
+export function mailDeliveryFailureReason(kind: MailTransport["kind"]) {
+  return `${kind}_delivery_failed`;
+}
+
 export interface ContactMail {
   fromName: string;
   to: string | string[];

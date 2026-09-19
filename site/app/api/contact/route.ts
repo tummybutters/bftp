@@ -8,7 +8,11 @@ import {
   type ContactSubmission,
 } from "@/lib/contact-submission";
 import { sendHousecallLead } from "@/lib/housecall";
-import { resolveMailTransport, sendContactMail } from "@/lib/mailer";
+import {
+  mailDeliveryFailureReason,
+  resolveMailTransport,
+  sendContactMail,
+} from "@/lib/mailer";
 import { generatePersonalizedAutoReply } from "@/lib/openrouter";
 import { siteConfig } from "@/lib/site-config";
 
@@ -503,8 +507,9 @@ export async function POST(request: Request) {
       notificationStatus = "failed";
       notificationErrorDetail =
         error instanceof Error ? error.message : "Unknown mail error.";
-      console.error("Contact form email delivery failed.", {
+      console.error("Contact form notification delivery failed.", {
         submissionId: submission.submissionId,
+        mailTransport: mailTransport.kind,
         error,
       });
       queueAnalytics({
@@ -512,7 +517,8 @@ export async function POST(request: Request) {
         event: "lead_notification_failed",
         properties: analyticsProperties({
           notification_status: notificationStatus,
-          failure_reason: "agentmail_delivery_failed",
+          failure_reason: mailDeliveryFailureReason(mailTransport.kind),
+          mail_transport: mailTransport.kind,
         }),
       });
     }
@@ -540,8 +546,9 @@ export async function POST(request: Request) {
             html: buildEmailHtmlFromText(autoReplyText),
           });
         } catch (error) {
-          console.error("AgentMail auto-reply failed.", {
+          console.error("Contact form auto-reply delivery failed.", {
             submissionId: submission.submissionId,
+            mailTransport: mailTransport.kind,
             error,
           });
           queueAnalytics({

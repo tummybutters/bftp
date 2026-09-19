@@ -1,6 +1,7 @@
 "use client";
 
 import { PhoneTracker } from "./phone-tracker";
+import { isAnalyticsExcluded } from "./traffic-mode";
 import posthog from "posthog-js";
 import { PostHogProvider as PHProvider, usePostHog } from "posthog-js/react";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -24,7 +25,7 @@ function PostHogPageView() {
   const ready = useAnalyticsReady();
 
   useEffect(() => {
-    if (pathname && ph && ready) {
+    if (pathname && ph && ready && !isAnalyticsExcluded()) {
       let url = window.origin + pathname;
       const search = searchParams.toString();
 
@@ -56,11 +57,13 @@ export function PostHogProvider({
   useEffect(() => {
     if (typeof window !== "undefined" && publicKey) {
       try {
+        if (isAnalyticsExcluded()) return;
         posthog.init(publicKey, {
           api_host: apiHost,
           capture_pageview: false,
           capture_pageleave: true,
           autocapture: true,
+          before_send: (event) => isAnalyticsExcluded() ? null : event,
           mask_all_element_attributes: true,
           mask_all_text: true,
           session_recording: {
@@ -68,7 +71,10 @@ export function PostHogProvider({
             blockClass: "ph-no-capture",
             maskTextSelector: ".ph-no-capture",
           },
-          loaded: () => setReady(true),
+          loaded: (client) => {
+            client.register({ measurement_version: "2026-09-19" });
+            setReady(true);
+          },
           persistence: "localStorage+cookie",
         });
       } catch {

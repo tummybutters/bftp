@@ -5,10 +5,10 @@ import { createRoot, type Root } from "react-dom/client";
 import { beforeEach, afterEach, expect, it, vi } from "vitest";
 import { ContactQuiz } from "@/components/contact/contact-quiz";
 import type { ServiceAddress } from "@/lib/contact-intake";
-const mock = vi.hoisted(() => ({ capture: vi.fn() }));
+const mock = vi.hoisted(() => ({ capture: vi.fn(), analyticsReady: true }));
 vi.mock("posthog-js/react", () => ({ usePostHog: () => mock }));
 vi.mock("@/lib/analytics/posthog-provider", () => ({
-  useAnalyticsReady: () => true,
+  useAnalyticsReady: () => mock.analyticsReady,
 }));
 vi.mock("next/link", () => ({
   default: (p: React.ComponentProps<"a">) => <a {...p} />,
@@ -65,6 +65,8 @@ let root: Root;
 let node: HTMLDivElement;
 beforeEach(() => {
   vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
+  mock.analyticsReady = true;
+  mock.capture.mockReset();
   vi.stubGlobal("requestAnimationFrame", (f: () => void) => {
     f();
     return 0;
@@ -78,6 +80,8 @@ beforeEach(() => {
 afterEach(async () => {
   await act(async () => root.unmount());
   node.remove();
+  mock.analyticsReady = true;
+  mock.capture.mockReset();
   vi.useRealTimers();
   vi.unstubAllGlobals();
 });
@@ -93,6 +97,38 @@ async function tick(ms = 200) {
     vi.advanceTimersByTime(ms);
   });
 }
+it("tracks the initial address step once when analytics becomes ready", async () => {
+  mock.analyticsReady = false;
+  await act(async () => root.render(<ContactQuiz />));
+  expect(
+    mock.capture.mock.calls.filter(
+      ([event]) => event === "contact_quiz_step_viewed",
+    ),
+  ).toHaveLength(0);
+
+  mock.analyticsReady = true;
+  await act(async () => root.render(<ContactQuiz />));
+  const stepViews = mock.capture.mock.calls.filter(
+    ([event]) => event === "contact_quiz_step_viewed",
+  );
+  expect(stepViews).toEqual([
+    [
+      "contact_quiz_step_viewed",
+      expect.objectContaining({ step: 1, step_name: "address" }),
+    ],
+  ]);
+  expect(
+    mock.capture.mock.calls.filter(([event]) => event === "contact_quiz_viewed"),
+  ).toHaveLength(1);
+
+  await act(async () => root.render(<ContactQuiz />));
+  expect(
+    mock.capture.mock.calls.filter(
+      ([event]) => event === "contact_quiz_step_viewed",
+    ),
+  ).toHaveLength(1);
+});
+
 it("editing during the map pause cancels automatic advancement", async () => {
   await act(async () => root.render(<ContactQuiz />));
   await click("Select fixture address");
