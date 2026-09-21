@@ -40,9 +40,9 @@ const cx = (names: string) =>
     .map((n) => s[n] || n)
     .join(" ");
 const titles = [
-  "Where do you need service?",
   "What can we help with?",
   "What kind of property?",
+  "Where do you need service?",
   "How many backflow devices?",
   "When do you need us?",
   "How can we reach you?",
@@ -101,6 +101,7 @@ export function ContactQuiz() {
     safeCapture(ph, event, {
       intake_variant: INTAKE_VARIANT,
       page_path: siteConfig.contactPath,
+      question_order: "service_property_address",
       ...properties,
     });
   // Hydrate optional URL intent after mount; the server and first browser render stay identical.
@@ -110,6 +111,7 @@ export function ContactQuiz() {
     setService(intent.service);
     setServiceAnswered(intent.serviceAnswered);
     setProperty(intent.property);
+    setStep(intent.serviceAnswered ? 1 : 0);
     return () => {
       if (timer.current) clearTimeout(timer.current);
     };
@@ -120,14 +122,19 @@ export function ContactQuiz() {
     safeCapture(ph, "contact_quiz_viewed", {
       intake_variant: INTAKE_VARIANT,
       page_path: siteConfig.contactPath,
+      question_order: "service_property_address",
     });
     if (!initialStepViewed.current) {
       initialStepViewed.current = true;
+      const carriedService = contactIntentFromSearch(
+        window.location.search,
+      ).serviceAnswered;
       safeCapture(ph, "contact_quiz_step_viewed", {
         intake_variant: INTAKE_VARIANT,
         page_path: siteConfig.contactPath,
-        step: 1,
-        step_name: "address",
+        question_order: "service_property_address",
+        step: carriedService ? 2 : 1,
+        step_name: carriedService ? "property" : "service",
       });
     }
   }, [ph, analyticsReady]);
@@ -169,10 +176,10 @@ export function ContactQuiz() {
     return () => abort.abort();
   }, [key, wantCredit, service, count]);
   const creditCents = credit?.key === key ? credit.cents : null;
-  function start() {
+  function start(entryAction = "address_interaction") {
     if (!started.current) {
       started.current = true;
-      capture("contact_quiz_started", { entry_action: "address_interaction" });
+      capture("contact_quiz_started", { entry_action: entryAction });
     }
   }
   function go(next: number) {
@@ -184,9 +191,9 @@ export function ContactQuiz() {
     capture("contact_quiz_step_viewed", {
       step: next + 1,
       step_name: [
-        "address",
         "service",
         "property",
+        "address",
         "devices",
         "timing",
         "contact",
@@ -201,7 +208,7 @@ export function ContactQuiz() {
     capture("contact_quiz_address_completed", { method: next.source });
     if (timer.current) clearTimeout(timer.current);
     timer.current = setTimeout(
-      () => go(serviceAnswered ? 2 : 1),
+      () => go(service === "Testing" ? 3 : 4),
       matchMedia("(prefers-reduced-motion: reduce)").matches ||
         next.source === "manual"
         ? 0
@@ -213,16 +220,23 @@ export function ContactQuiz() {
     setAddress(next);
   }
   function choose(value: string) {
-    if (step === 1) setService(value);
-    if (step === 2) setProperty(value);
+    if (step === 0) {
+      start("service_selection");
+      setService(value);
+      setServiceAnswered(false);
+    }
+    if (step === 1) {
+      start("property_selection");
+      setProperty(value);
+    }
     if (step === 4) setTiming(value);
     capture("contact_quiz_option_selected", {
-      step: ["address", "serviceType", "propertyType", "devices", "urgency"][
+      step: ["serviceType", "propertyType", "address", "devices", "urgency"][
         step
       ],
       value,
     });
-    go(step === 2 && service !== "Testing" ? 4 : step + 1);
+    go(step + 1);
   }
   async function addFiles(added: File[]) {
     if (preparing) return;
@@ -328,12 +342,13 @@ export function ContactQuiz() {
     }
   }
   const options =
-      step === 1
+      step === 0
         ? serviceOptions
-        : step === 2
+        : step === 1
           ? propertyOptions
           : timingOptions,
-    selected = step === 1 ? service : step === 2 ? property : timing;
+    selected = step === 0 ? service : step === 1 ? property : timing;
+  const isEntryStep = step === 0 || (step === 1 && serviceAnswered);
   return (
     <div
       className={cx("page")}
@@ -361,11 +376,11 @@ export function ContactQuiz() {
       </header>
       <main>
         <section
-          className={cx(`journey ${step ? "in-progress" : ""}`)}
+          className={cx(`journey ${isEntryStep ? "" : "in-progress"}`)}
           aria-label="Service request"
         >
           <div className={cx("section-top")}>
-            {step > 0 && status !== "success" && (
+            {step > 0 && !isEntryStep && status !== "success" && (
               <>
                 <button
                   className={cx("back")}
@@ -373,26 +388,24 @@ export function ContactQuiz() {
                   disabled={status === "sending"}
                   onClick={() =>
                     go(
-                      step === 4 && service !== "Testing"
-                        ? 2
-                        : step === 2 && serviceAnswered
-                          ? 0
-                          : step - 1,
+                      step === 4 && service !== "Testing" ? 2 : step - 1,
                     )
                   }
                 >
                   <ArrowLeftIcon />
                   Back
                 </button>
-                <button
-                  className={cx("address-chip ph-no-capture")}
-                  disabled={status === "sending"}
-                  onClick={() => go(0)}
-                >
-                  <MapPinIcon />
-                  <span>{address.formatted}</span>
-                  <span className={cx("change")}>Change</span>
-                </button>
+                {address.formatted && step !== 2 && (
+                  <button
+                    className={cx("address-chip ph-no-capture")}
+                    disabled={status === "sending"}
+                    onClick={() => go(2)}
+                  >
+                    <MapPinIcon />
+                    <span>{address.formatted}</span>
+                    <span className={cx("change")}>Change</span>
+                  </button>
+                )}
               </>
             )}
           </div>
@@ -430,7 +443,7 @@ export function ContactQuiz() {
                 <h1 ref={heading} tabIndex={-1}>
                   {titles[step]}
                 </h1>
-                {step === 0 ? (
+                {isEntryStep ? (
                   <p className={cx("benefit")}>
                     See how much{" "}
                     <button
@@ -449,20 +462,21 @@ export function ContactQuiz() {
                     <span style={{ width: `${((step + 1) / 6) * 100}%` }} />
                   </div>
                 )}
-                {step === 0 && serviceAnswered && (
+                {step === 1 && serviceAnswered && (
                   <p className={cx("carried")}>
                     {service}
                     <button
                       onClick={() => {
                         setServiceAnswered(false);
                         capture("contact_quiz_carried_service_changed");
+                        go(0);
                       }}
                     >
                       Change
                     </button>
                   </p>
                 )}
-                {step === 0 && creditOpen && (
+                {isEntryStep && creditOpen && (
                   <p className={cx("credit-detail")}>
                     Your paid test can become credit toward repairs if it fails,
                     up to $500.
@@ -471,7 +485,7 @@ export function ContactQuiz() {
               </div>
               <div className={cx("form-area")}>
                 <div className={cx("stage")} key={step}>
-                  {step === 0 && (
+                  {step === 2 && (
                     <AddressSearch
                       value={address}
                       onChange={changeAddress}
@@ -481,7 +495,7 @@ export function ContactQuiz() {
                       onEvent={capture}
                     />
                   )}
-                  {[1, 2, 4].includes(step) && (
+                  {[0, 1, 4].includes(step) && (
                     <div className={cx("options")}>
                       {options.map(([value, label]) => (
                         <button
