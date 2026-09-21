@@ -6757,5 +6757,113 @@
         "notes": "Workbook row 49 verified against EPA on September 18, 2026. Indoor-use scope preserved; no property-specific savings or local incidence claim."
       }
     ]
+  },
+  {
+    "sourceQueueId": "plumbing_water_article_bank-014",
+    "slug": "nearly-8-billion-gallons-a-day-go-to-residential-outdoor-use-why-hose-and-irrigation-habits-matter",
+    "path": "/blog/nearly-8-billion-gallons-a-day-go-to-residential-outdoor-use-why-hose-and-irrigation-habits-matter",
+    "canonical": "https://www.backflowtestpros.com/blog/nearly-8-billion-gallons-a-day-go-to-residential-outdoor-use-why-hose-and-irrigation-habits-matter",
+    "title": "Nearly 8 Billion Gallons a Day Go to Residential Outdoor Use: Why Hose and Irrigation Habits Matter",
+    "metaDescription": "EPA puts U.S. residential outdoor water use near 8 billion gallons daily. Review irrigation habits while keeping efficiency and backflow protection separate.",
+    "excerpt": "Your landscape deserves a place on the water-maintenance checklist. Start with actual usage and irrigation observations, not a national number treated as a savings promise.",
+    "category": "Outdoor use / conservation",
+    "audience": "Homeowners, landscapers, HOA communities",
+    "geography": "United States",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "outdoor water use statistics",
+    "secondaryKeywords": ["irrigation water use", "irrigation backflow testing"],
+    "status": "Published",
+    "publishedAt": "2026-09-21T16:00:00.000Z",
+    "updatedAt": "2026-09-21T16:00:00.000Z",
+    "heroFact": {
+      "value": "Nearly 8 billion gallons daily",
+      "label": "U.S. residential outdoor water use, according to EPA WaterSense",
+      "context": "Mainly landscape irrigation. This is total outdoor use, not a measure of wasted water or a forecast for your property."
+    },
+    "keyTakeaways": [
+      "The national outdoor-use total is a reason to include irrigation in your maintenance review, not an estimate of your waste.",
+      "Record what you observe and compare actual usage before choosing changes.",
+      "An irrigation efficiency check does not replace a backflow assembly test."
+    ],
+    "sections": [
+      {
+        "id": "what-the-number-means",
+        "kind": "narrative",
+        "title": "The Yard Belongs on the Checklist",
+        "body": [
+          "EPA WaterSense reports that residential outdoor water use across the United States accounts for nearly 8 billion gallons each day, mainly for landscape irrigation. For homeowners and HOA managers, the practical takeaway is simple: a water-use review should not stop at the bathroom door.",
+          "That figure measures use, not waste. It does not say how much your property consumes, how much could be saved, or whether a particular sprinkler needs repair. Keep the national context separate from a property-level diagnosis. A small planted courtyard and a large shared landscape need different conversations."
+        ]
+      },
+      {
+        "id": "make-a-useful-record",
+        "kind": "checklist",
+        "title": "Bring Observations, Not Guesses",
+        "body": [
+          "Before requesting an irrigation review, make a short record of what you can safely see. Leave buried components, pressurized equipment, and backflow assemblies to the appropriate professional. The goal is to give that person a clear starting point, not to diagnose a hidden fault yourself."
+        ],
+        "bullets": [
+          "Record the controller schedule and identify which planted areas each zone serves.",
+          "Note visible spraying onto pavement, pooling, or a hose connection that keeps dripping after use.",
+          "Photograph the location of an issue and note when it happens so a contractor can reproduce the observation.",
+          "Collect recent water-use records and note changes in occupancy, landscaping, or irrigation schedules.",
+          "For shared property, name the person who can authorize maintenance and provide access."
+        ]
+      },
+      {
+        "id": "separate-the-work",
+        "kind": "narrative",
+        "title": "Give Efficiency and Backflow Protection Separate Jobs",
+        "body": [
+          "Ask an irrigation professional to assess watering performance and equipment condition. If your property has a testable backflow assembly, keep its testing and repair records in a separate part of the maintenance file. A greener lawn or a lower water bill is not evidence that the assembly has passed a test.",
+          "Before changing equipment near an existing assembly, ask the serving water supplier or qualified tester what protection and follow-up apply to that connection. Do not bypass a device to improve sprinkler flow or assume that a controller upgrade resolves a backflow issue. Describe the planned work first so the right professional can review it."
+        ]
+      },
+      {
+        "id": "close-the-loop",
+        "kind": "narrative",
+        "title": "Finish With a Record You Can Use Next Season",
+        "body": [
+          "Ask for a written summary of completed work, equipment changed, and any unresolved observations. Keep the controller settings and contractor notes alongside the usage records. When comparing later bills, check billing-period length and seasonal watering changes instead of assigning every difference to one repair.",
+          "Backflow Test Pros can help with backflow assembly testing, repair or replacement, retesting, and related documentation. For sprinkler layout, landscape planning, or watering-efficiency work, involve an irrigation specialist. Keeping those responsibilities clear makes the next maintenance visit easier to arrange."
+        ]
+      },
+      {
+        "id": "source-and-scope",
+        "kind": "narrative",
+        "title": "Source and Scope",
+        "body": [
+          "Source: U.S. EPA WaterSense, About WaterSense, https://www.epa.gov/watersense/about-watersense. The national outdoor-use figure was checked on September 21, 2026 and corresponds to Stats Repository row 51 in the BFTP research workbook. EPA also presents the figure at https://www.epa.gov/watersense/outdoors. No property-specific savings or local consumption rate is inferred."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {"href": "/backflow-testing", "label": "Backflow Assembly Testing", "description": "Plan the assembly test separately from an irrigation-efficiency review."},
+      {"href": "/backflow-repair-replacement-services", "label": "Backflow Repair and Replacement", "description": "Arrange follow-up for an assembly that needs corrective work."}
+    ],
+    "cta": {
+      "heading": "Have an Irrigation Backflow Assembly to Test?",
+      "body": "Contact Backflow Test Pros with your property address and any utility notice so we can help with the backflow service you need.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "A real residential irrigation backflow assembly with a clear access path; no invented installation or client proof.",
+    "schemaTypes": ["BlogPosting", "BreadcrumbList"],
+    "reviewFlags": [],
+    "sourceNotes": [
+      {
+        "repositoryRow": 51,
+        "dataPoint": "Residential outdoor water use",
+        "value": "Nearly 8 billion gallons per day",
+        "scope": "United States",
+        "timePeriod": "EPA page checked September 21, 2026; measurement year not specified on page",
+        "whyItMatters": "Provides national context for including irrigation in a property water-maintenance review.",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "About WaterSense",
+        "sourceUrl": "https://www.epa.gov/watersense/about-watersense",
+        "authorityType": "Government (federal)",
+        "notes": "Workbook Plumbing Water Article Bank row 16, queue plumbing_water_article_bank-014. Stats row 51 verified against EPA. Omitted the brief's older row 42 shortage projection rather than framing it as a fresh forecast. Total use is not wasted water."
+      }
+    ]
   }
 ]
