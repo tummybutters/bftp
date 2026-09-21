@@ -65,6 +65,7 @@ let root: Root;
 let node: HTMLDivElement;
 beforeEach(() => {
   vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
+  window.history.replaceState({}, "", "/contact-backflowtestpros");
   mock.analyticsReady = true;
   mock.capture.mockReset();
   vi.stubGlobal("requestAnimationFrame", (f: () => void) => {
@@ -97,7 +98,7 @@ async function tick(ms = 200) {
     vi.advanceTimersByTime(ms);
   });
 }
-it("tracks the initial address step once when analytics becomes ready", async () => {
+it("tracks the initial service step once when analytics becomes ready", async () => {
   mock.analyticsReady = false;
   await act(async () => root.render(<ContactQuiz />));
   expect(
@@ -114,7 +115,7 @@ it("tracks the initial address step once when analytics becomes ready", async ()
   expect(stepViews).toEqual([
     [
       "contact_quiz_step_viewed",
-      expect.objectContaining({ step: 1, step_name: "address" }),
+      expect.objectContaining({ step: 1, step_name: "service", question_order: "service_property_address" }),
     ],
   ]);
   expect(
@@ -131,6 +132,8 @@ it("tracks the initial address step once when analytics becomes ready", async ()
 
 it("editing during the map pause cancels automatic advancement", async () => {
   await act(async () => root.render(<ContactQuiz />));
+  await click("Testing");
+  await click("Home");
   await click("Select fixture address");
   await click("Edit address");
   await tick(600);
@@ -140,8 +143,6 @@ it("editing during the map pause cancels automatic advancement", async () => {
 });
 it("the chosen service survives back navigation and changes never skip a question", async () => {
   await act(async () => root.render(<ContactQuiz />));
-  await click("Select fixture address");
-  await tick(600);
   await click("Repair");
   await tick();
   expect(node.querySelector("h1")?.textContent).toBe("What kind of property?");
@@ -156,7 +157,9 @@ it("the chosen service survives back navigation and changes never skip a questio
   await click("Testing");
   await tick();
   await click("Home");
-  await tick();
+  expect(node.querySelector("h1")?.textContent).toBe("Where do you need service?");
+  await click("Select fixture address");
+  await tick(600);
   expect(node.querySelector("h1")?.textContent).toBe(
     "How many backflow devices?",
   );
@@ -179,10 +182,10 @@ it("keeps a failed request editable, then accepts a retry even when analytics th
     throw Error("analytics offline");
   });
   await act(async () => root.render(<ContactQuiz />));
-  await click("Select fixture address");
-  await tick(600);
   await click("Testing");
   await click("Home");
+  await click("Select fixture address");
+  await tick(600);
   await click("Continue");
   await click("This week");
   for (const [selector, value] of [
@@ -219,4 +222,54 @@ it("keeps a failed request editable, then accepts a retry even when analytics th
   expect(body.get("testing_count")).toBe("Not Sure");
   expect(body.get("first_name")).toBe("QA");
   mock.capture.mockReset();
+});
+
+
+it.each(["Testing", "Repair / Replacement", "New Installation", "Not Sure Yet"])(
+  "starts with property for homepage %s and still asks for the address",
+  async (service) => {
+    window.history.replaceState({}, "", `?service=${encodeURIComponent(service)}`);
+    await act(async () => root.render(<ContactQuiz />));
+    expect(node.querySelector("h1")?.textContent).toBe("What kind of property?");
+    expect(mock.capture).toHaveBeenCalledWith("contact_quiz_step_viewed", expect.objectContaining({
+      step: 2, step_name: "property",
+    }));
+    expect(node.textContent).not.toContain("Select fixture address");
+    await click("Home");
+    expect(node.querySelector("h1")?.textContent).toBe("Where do you need service?");
+    expect(mock.capture).toHaveBeenCalledWith("contact_quiz_step_viewed", expect.objectContaining({
+      step: 3, step_name: "address",
+    }));
+    await click("Select fixture address");
+    await tick(600);
+    expect(node.querySelector("h1")?.textContent).toBe(
+      service === "Testing" ? "How many backflow devices?" : "When do you need us?",
+    );
+    await act(async () => node.querySelector<HTMLButtonElement>('[aria-label="Go back"]')!.click());
+    expect(node.querySelector("h1")?.textContent).toBe("Where do you need service?");
+    await act(async () => node.querySelector<HTMLButtonElement>('[aria-label="Go back"]')!.click());
+    expect(node.querySelector("h1")?.textContent).toBe("What kind of property?");
+    expect([...node.querySelectorAll("button")].find(b => b.textContent === "Home")?.getAttribute("aria-pressed")).toBe("true");
+  },
+);
+
+it("can change a carried service and preserves answers when editing the address", async () => {
+  window.history.replaceState({}, "", "?service=Repair%20%2F%20Replacement");
+  await act(async () => root.render(<ContactQuiz />));
+  await click("Change");
+  expect(node.querySelector("h1")?.textContent).toBe("What can we help with?");
+  await click("Testing");
+  await click("Home");
+  await click("Select fixture address");
+  await tick(600);
+  await click("Continue");
+  await click("This week");
+  expect(node.querySelector("h1")?.textContent).toBe("How can we reach you?");
+  await click("100 Test Avenue, Los Angeles, CA 90012Change");
+  expect(node.querySelector("h1")?.textContent).toBe("Where do you need service?");
+  await click("Select fixture address");
+  await tick(600);
+  expect(node.querySelector<HTMLInputElement>('input[value="Not sure"]')?.checked).toBe(true);
+  await click("Continue");
+  expect([...node.querySelectorAll("button")].find(b => b.textContent === "This week")?.getAttribute("aria-pressed")).toBe("true");
 });
