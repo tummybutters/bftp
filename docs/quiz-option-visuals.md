@@ -1,6 +1,6 @@
 # Quiz option artwork
 
-Created September 22, 2026 with the built-in `image_gen` tool (not the fallback CLI). One call per distinct asset. Final transparent WebP assets are in `site/public/assets/quiz/`; the quiz uses Next Image responsive delivery. Original selected PNGs and alpha/size verification are retained locally in `qa/quiz-visuals/` (excluded from Git).
+Created September 22, 2026 with the built-in `image_gen` tool (not the fallback CLI). One call per distinct asset. Final transparent WebP assets are in `site/public/assets/quiz/`; the quiz serves precompressed images through content-hashed static imports. Original selected PNGs and alpha/size verification are retained locally in `qa/quiz-visuals/` (excluded from Git).
 
 The images are decorative: existing labels provide accessible names. Service, property, timing, device count and contact preference retain their existing values and behavior. Address entry remains a text/search step. Numeric device options reuse one device illustration with the existing exact number beside it; both uncertainty options reuse the guidance illustration.
 
@@ -44,4 +44,4 @@ Shared prefix:
 
 ## Delivery
 
-Selected PNGs are resized to 384 × 384 and encoded as WebP at quality 85 with alpha quality 100, preserving transparency. No scripted background removal or artistic edits were applied. Next Image supplies smaller responsive variants; only the current quiz step mounts its pictures.
+Selected PNGs are resized to 224 × 224 and encoded as WebP at quality 72 with alpha quality 90, preserving transparency. The complete set is 126,760 bytes (65% smaller than the original 365,584-byte sources). No scripted background removal or artistic edits were applied. Static imports produce content-hashed, immutable image URLs. The quiz preloads all 15 small images at low priority and renders current choices eagerly with `unoptimized`, avoiding click-time optimizer requests. Only the current quiz step mounts its visible pictures.

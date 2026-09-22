@@ -16,7 +16,7 @@ import {
 import { AddressSearch } from "./address-search";
 import { ServiceMap } from "./service-map";
 import { DeviceCount } from "./device-count";
-import { QuizOptionVisual } from "./quiz-option-visual";
+import { QuizArtworkPreloads, QuizOptionVisual } from "./quiz-option-visual";
 import {
   emptyAddress,
   contactIntentFromSearch,
@@ -356,6 +356,7 @@ export function ContactQuiz() {
       data-intake-variant={INTAKE_VARIANT}
       data-quiz-step={step + 1}
     >
+      <QuizArtworkPreloads />
       <header>
         <Link
           className={cx("brand")}
