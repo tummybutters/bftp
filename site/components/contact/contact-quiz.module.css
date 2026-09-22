@@ -433,7 +433,10 @@
   background: #fff;
   border: 1px solid #cbd3dc;
   border-radius: 7px;
-  padding: 23px 21px;
+  padding: 14px 18px;
+  min-width: 0;
+  min-height: 138px;
+  gap: 14px;
   text-align: left;
   display: flex;
   align-items: center;
@@ -443,10 +446,33 @@
     border 0.15s,
     background 0.15s;
 }
+.page .option-art {
+  width: 112px;
+  height: 112px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+.page .option-art-compact {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  pointer-events: none;
+  flex: 0 0 auto;
+}
+.page .option-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 1;
+  line-height: 1.35;
+}
 .page .options > button svg {
   height: 16px;
   width: 16px;
   color: #8190a1;
+  flex-shrink: 0;
 }
 .page .options > button:hover,
 .page .options > button.selected {
@@ -533,6 +559,10 @@
   gap: 10px;
 }
 .page .contact-methods button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   padding: 11px 18px;
   border: 1px solid #c6cfd9;
   border-radius: 5px;
@@ -776,7 +806,16 @@
   }
   .page .options > button {
     font-size: 16px;
-    padding: 20px 14px;
+    padding: 10px 12px 14px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .page .option-art {
+    width: 100px;
+    height: 88px;
+  }
+  .page .option-label {
+    width: 100%;
   }
   .page .counts {
     grid-template-columns: 1fr 1fr;
@@ -897,7 +936,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 57px;
+  min-height: 96px;
+  padding: 8px 2px;
+  flex-direction: column;
+  gap: 4px;
   border: 1px solid #c4cfda;
   border-radius: 6px;
   background: white;
@@ -945,7 +987,7 @@
     gap: 8px;
   }
   .page .device-options label {
-    min-height: 52px;
+    min-height: 90px;
     font-size: 17px;
   }
   .page .device-options label:nth-last-child(2) {

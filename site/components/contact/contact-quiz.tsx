@@ -16,6 +16,7 @@ import {
 import { AddressSearch } from "./address-search";
 import { ServiceMap } from "./service-map";
 import { DeviceCount } from "./device-count";
+import { QuizOptionVisual } from "./quiz-option-visual";
 import {
   emptyAddress,
   contactIntentFromSearch,
@@ -506,8 +507,11 @@ export function ContactQuiz() {
                           }
                           onClick={() => choose(value)}
                         >
-                          {label}
-                          <ChevronRightIcon />
+                          <QuizOptionVisual value={value} />
+                          <span className={s["option-label"]}>
+                            {label}
+                            <ChevronRightIcon />
+                          </span>
                         </button>
                       ))}
                     </div>
@@ -605,6 +609,7 @@ export function ContactQuiz() {
                               });
                             }}
                           >
+                            <QuizOptionVisual value={value} compact />
                             {label}
                           </button>
                         ))}
