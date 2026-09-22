@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { QuizOptionVisual } from "./quiz-option-visual";
 import s from "./contact-quiz.module.css";
 export function DeviceCount({
   value,
@@ -50,6 +51,10 @@ export function DeviceCount({
                 value={item}
                 checked={choice === item}
                 onChange={() => setChoice(item)}
+              />
+              <QuizOptionVisual
+                value={item === "Not sure" ? item : "device"}
+                compact
               />
               <span>{item}</span>
             </label>
