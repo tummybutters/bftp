@@ -6865,5 +6865,138 @@
         "notes": "Workbook Plumbing Water Article Bank row 16, queue plumbing_water_article_bank-014. Stats row 51 verified against EPA. Omitted the brief's older row 42 shortage projection rather than framing it as a fresh forecast. Total use is not wasted water."
       }
     ]
+  },
+  {
+    "sourceQueueId": "plumbing_water_article_bank-020",
+    "slug": "27-million-commercial-toilets-why-your-restroom-inventory-matters",
+    "path": "/blog/27-million-commercial-toilets-why-your-restroom-inventory-matters",
+    "canonical": "https://www.backflowtestpros.com/blog/27-million-commercial-toilets-why-your-restroom-inventory-matters",
+    "title": "27 Million Commercial Toilets: Why Your Restroom Inventory Matters",
+    "metaDescription": "EPA estimates nearly 27 million flushometer toilets nationwide. Learn what facility managers should document before planning a commercial restroom upgrade.",
+    "excerpt": "A national fixture estimate is a reason to inspect your records, not a promise of savings. Start with the equipment actually installed in your building.",
+    "category": "Commercial fixture upgrades",
+    "audience": "Office owners, retail operators, facility managers",
+    "geography": "United States",
+    "templateType": "stat_explainer",
+    "primaryKeyword": "commercial toilet replacement",
+    "secondaryKeywords": [
+      "flushometer toilet inventory",
+      "commercial restroom water efficiency"
+    ],
+    "status": "Published",
+    "publishedAt": "2026-09-23T16:00:00.000Z",
+    "updatedAt": "2026-09-23T16:00:00.000Z",
+    "heroFact": {
+      "value": "Nearly 27 million",
+      "label": "Flushometer-valve toilets installed nationwide, according to EPA WaterSense",
+      "context": "A national installed-base estimate, not a current census of your community or a finding about your property's fixtures."
+    },
+    "keyTakeaways": [
+      "Document installed equipment before estimating the value of a restroom retrofit.",
+      "Compare complete, compatible fixture specifications rather than choosing by a flush-volume number alone.",
+      "Restroom efficiency work and backflow assembly testing are separate maintenance responsibilities."
+    ],
+    "sections": [
+      {
+        "id": "national-context",
+        "kind": "narrative",
+        "title": "A Big Number, a Small First Step",
+        "body": [
+          "EPA WaterSense estimates that nearly 27 million flushometer-valve toilets are installed across the United States. Its commercial-toilet page identifies roughly 7 million older units with flush volumes of 3 to 7 gallons. Those estimates make a strong case for knowing what is installed in your building before approving another like-for-like replacement.",
+          "They do not establish that your restrooms are inefficient. The page does not identify a measurement year for the installed-base estimate, so treat it as EPA's published national context, not a new 2026 count. Your next step is a fixture inventory, not a savings forecast copied from a national example."
+        ]
+      },
+      {
+        "id": "inventory-before-quote",
+        "kind": "checklist",
+        "title": "Make the Contractor's First Visit More Useful",
+        "body": [
+          "Create a simple record for each restroom before requesting a retrofit proposal. Use visible labels, existing manuals, and maintenance records. Leave dismantling, valve adjustment, and diagnosis to a qualified plumbing professional. Where a detail is unknown, mark it unknown instead of filling the gap with an assumption."
+        ],
+        "bullets": [
+          "Record the restroom location and the number of fixtures included in the proposed work.",
+          "Photograph visible manufacturer and model markings on both the bowl and the flushometer valve.",
+          "Collect documented flush-volume information and any previous repair or replacement invoices.",
+          "List recurring complaints, observed running water, and fixtures that are temporarily out of service.",
+          "Note access restrictions, occupancy schedules, and who can authorize a shutdown."
+        ]
+      },
+      {
+        "id": "compare-the-complete-system",
+        "kind": "narrative",
+        "title": "The Lowest Number Is Not the Whole Specification",
+        "body": [
+          "EPA describes WaterSense-labeled flushometer-valve toilets as using no more than 1.28 gallons per flush, with a minimum of 1.0 gallon. The lower boundary addresses adequate flow through the plumbing system. EPA advises facility managers to consult a plumbing engineer when they have questions about suitability in their buildings.",
+          "Ask the person preparing your proposal to identify the complete proposed equipment, compatibility considerations, installation scope, and maintenance documentation. A product label is useful evidence, but it is not a substitute for reviewing your building. Keep any estimated water or cost savings tied to stated assumptions about existing equipment and actual use."
+        ]
+      },
+      {
+        "id": "separate-maintenance-responsibilities",
+        "kind": "narrative",
+        "title": "Keep the Backflow File Separate",
+        "body": [
+          "A restroom upgrade does not tell you whether the property's testable backflow assembly has passed its required test. Give the plumbing contractor the fixture scope, and keep the assembly's identification, utility notices, test reports, and corrective-work records in a separate maintenance file.",
+          "If planned work affects a protected water connection, ask the serving water supplier and qualified professionals what review or follow-up applies. Do not assume that installing an efficient toilet changes the testing obligations for a separate assembly. Backflow Test Pros can help with backflow testing and assembly repair or replacement; discuss restroom retrofit design with a qualified plumbing contractor or engineer."
+        ]
+      },
+      {
+        "id": "source-and-scope",
+        "kind": "narrative",
+        "title": "Source and Scope",
+        "body": [
+          "Source: U.S. EPA WaterSense, Commercial Toilets, https://www.epa.gov/watersense/commercial-toilets, checked September 23, 2026. Installed-base figures correspond to BFTP research workbook Stats Repository row 73; labeled flush-volume figures correspond to row 74. The page was last updated March 31, 2026. No local fixture count, guaranteed savings, or property-specific replacement recommendation is inferred."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/backflow-testing",
+        "label": "Backflow Assembly Testing",
+        "description": "Keep the property's assembly test separate from restroom retrofit planning."
+      },
+      {
+        "href": "/backflow-repair-replacement-services",
+        "label": "Backflow Repair and Replacement",
+        "description": "Arrange corrective work for an assembly that needs service."
+      }
+    ],
+    "cta": {
+      "heading": "Need Backflow Service at Your Commercial Property?",
+      "body": "Share the property address and any utility notice with Backflow Test Pros so we can help identify the backflow service you need.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "An actual commercial restroom flushometer valve with visible equipment details; no invented client installation or savings claim.",
+    "schemaTypes": [
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "reviewFlags": [],
+    "sourceNotes": [
+      {
+        "repositoryRow": 73,
+        "dataPoint": "Installed base of flushometer-valve toilets and older high-volume units",
+        "value": "Nearly 27 million installed; approximately 7 million older units with 3.0-7.0 gpf volumes",
+        "scope": "United States",
+        "timePeriod": "EPA page checked September 23, 2026; last updated March 31, 2026; estimate measurement year not stated",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Commercial Toilets",
+        "sourceUrl": "https://www.epa.gov/watersense/commercial-toilets",
+        "authorityType": "Government (federal)",
+        "notes": "Plumbing Water Article Bank row 22; queue plumbing_water_article_bank-020. National estimates are not a new local inventory."
+      },
+      {
+        "repositoryRow": 74,
+        "dataPoint": "WaterSense flushometer-valve toilet flush-volume range",
+        "value": "Maximum 1.28 gpf; minimum 1.0 gpf",
+        "scope": "United States / WaterSense labeled products",
+        "timePeriod": "EPA page checked September 23, 2026",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Commercial Toilets",
+        "sourceUrl": "https://www.epa.gov/watersense/commercial-toilets",
+        "authorityType": "Government (federal)",
+        "notes": "No property-specific suitability or savings guarantee. Workbook row 75 national savings scenario intentionally omitted."
+      }
+    ]
   }
 ]
