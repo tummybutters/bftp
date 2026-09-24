@@ -224,6 +224,42 @@ it("keeps a failed request editable, then accepts a retry even when analytics th
   mock.capture.mockReset();
 });
 
+it("joins an accepted form event to its receipt without exposing contact fields", async () => {
+  const id = "82615aaa-f269-47e4-8dc0-af367a94a18f";
+  const gtag = vi.fn();
+  vi.stubGlobal("gtag", gtag);
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ ok: true, submissionId: id })));
+  await act(async () => root.render(<ContactQuiz />));
+  await click("Repair");
+  await click("Home");
+  await click("Select fixture address");
+  await tick(600);
+  await click("This week");
+  for (const [selector, value] of [
+    ["input[autocomplete=name]", "QA Example"],
+    ["input[type=email]", "qa@example.invalid"],
+    ["input[type=tel]", "2025550108"],
+  ]) {
+    await act(async () => {
+      const input = node.querySelector<HTMLInputElement>(selector)!;
+      Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")!
+        .set!.call(input, value);
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+  }
+  await act(async () =>
+    node.querySelector("form")!.dispatchEvent(
+      new Event("submit", { bubbles: true, cancelable: true }),
+    ),
+  );
+  const [, properties] = mock.capture.mock.calls.find(
+    ([event]) => event === "form_submit_succeeded",
+  )!;
+  expect(properties).toMatchObject({ submission_id: id, service_type: "Repair / Replacement" });
+  expect(JSON.stringify(properties)).not.toContain("qa@example.invalid");
+  expect(gtag).toHaveBeenCalledWith("event", "form_submit_succeeded", properties);
+});
+
 
 it.each(["Testing", "Repair / Replacement", "New Installation", "Not Sure Yet"])(
   "starts with property for homepage %s and still asks for the address",

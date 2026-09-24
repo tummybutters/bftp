@@ -645,6 +645,16 @@ export async function POST(request: Request) {
       has_housecall_lead_id: Boolean(housecallResult.leadId),
     }),
   });
+  queueAnalytics({
+    distinctId,
+    event: "lead_housecall_delivery_completed",
+    properties: analyticsProperties({
+      notification_status: notificationStatus,
+      housecall_status: housecallResult.status,
+      has_housecall_customer_id: Boolean(housecallResult.customerId),
+      has_housecall_lead_id: Boolean(housecallResult.leadId),
+    }),
+  });
 
   return NextResponse.json({
     ok: true,

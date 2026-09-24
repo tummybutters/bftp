@@ -28,6 +28,7 @@ import {
 } from "@/lib/contact-intake";
 import { prepareUploads, formatFileSize } from "@/lib/contact-uploads";
 import {
+  acceptedSubmissionId,
   readContactResponse,
   describeNetworkFailure,
 } from "@/lib/contact-response";
@@ -97,7 +98,7 @@ export function ContactQuiz() {
     timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const capture = (
     event: string,
-    properties: Record<string, string | number | boolean> = {},
+    properties: Record<string, string | number | boolean | undefined> = {},
   ) =>
     safeCapture(ph, event, {
       intake_variant: INTAKE_VARIANT,
@@ -329,7 +330,12 @@ export function ContactQuiz() {
       const accepted = await receipt.json().catch(() => ({}));
       setAttachmentMissing(accepted.attachmentStatus === "not_delivered");
       setStatus("success");
-      capture("form_submit_succeeded", { form_action: "/api/contact" });
+      capture("form_submit_succeeded", {
+        form_action: "/api/contact",
+        submission_id: acceptedSubmissionId(accepted),
+        service_type: service,
+        property_type: property,
+      });
       requestAnimationFrame(() =>
         heading.current?.focus({ preventScroll: true }),
       );

@@ -30,6 +30,15 @@ export interface ContactFailure {
   message: string;
 }
 
+export function acceptedSubmissionId(payload: unknown): string | undefined {
+  if (!payload || typeof payload !== "object") return undefined;
+  const id = (payload as { submissionId?: unknown }).submissionId;
+  return typeof id === "string" &&
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
+    ? id
+    : undefined;
+}
+
 const CALL_US = `We couldn't send your message right now. Please call ${siteConfig.phone.display}.`;
 
 function parseJsonObject(

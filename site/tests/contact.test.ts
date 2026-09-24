@@ -8,10 +8,12 @@ import {
   normalizeSubmission,
   validateSubmission,
 } from "@/lib/contact-submission";
-import { readContactResponse } from "@/lib/contact-response";
+import { acceptedSubmissionId, readContactResponse } from "@/lib/contact-response";
 import { UPLOAD_BUDGET_BYTES } from "@/lib/contact-uploads";
 
 const queued = vi.hoisted(() => ({ tasks: [] as Array<() => Promise<void>> }));
+const analyticsCapture = vi.hoisted(() => vi.fn(async () => {}));
+vi.mock("@/lib/analytics/posthog-server", () => ({ captureServerEvent: analyticsCapture }));
 vi.mock("next/server", () => ({
   after: (task: () => Promise<void>) => queued.tasks.push(task),
   NextResponse: {
@@ -223,6 +225,13 @@ it("does not mistake an HTML 200 or empty response for an accepted submission", 
   expect(await readContactResponse(Response.json({ ok: true }))).toBeNull();
 });
 
+it("only joins analytics to a server-generated opaque submission ID", () => {
+  const id = "82615aaa-f269-47e4-8dc0-af367a94a18f";
+  expect(acceptedSubmissionId({ submissionId: id })).toBe(id);
+  expect(acceptedSubmissionId({ submissionId: "someone@example.com" })).toBeUndefined();
+  expect(acceptedSubmissionId({ submissionId: "" })).toBeUndefined();
+});
+
 it("preserves offer and service intent from existing homepage pricing links", () => {
   const intent = contactIntentFromSearch(
     "?topic=Residential+Testing+Value+Package&details=Please+send+pricing",
@@ -259,6 +268,8 @@ it("preserves exact or unknown device counts without guessing, and accepts a sin
 });
 
 it("keeps an accepted fallback lead but reports undelivered attachments honestly", async () => {
+  queued.tasks = [];
+  analyticsCapture.mockClear();
   vi.stubEnv("VERCEL_ENV", "development");
   vi.stubEnv("AGENTMAIL_API_KEY", "");
   vi.stubEnv("HOUSECALLPRO_API_KEY", "fixture");
@@ -272,8 +283,17 @@ it("keeps an accepted fallback lead but reports undelivered attachments honestly
     new File(["fixture"], "notice.pdf", { type: "application/pdf" }),
   );
   const { POST } = await import("@/app/api/contact/route");
-  expect(await (await POST(request(data))).json()).toMatchObject({
+  const receipt = await (await POST(request(data))).json();
+  expect(receipt).toMatchObject({
     ok: true,
     attachmentStatus: "not_delivered",
   });
+  for (const task of queued.tasks) await task();
+  expect(analyticsCapture).toHaveBeenCalledWith(expect.objectContaining({
+    event: "lead_housecall_delivery_completed",
+    properties: expect.objectContaining({
+      submission_id: receipt.submissionId,
+      housecall_status: "sent",
+    }),
+  }));
 });

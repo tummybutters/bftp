@@ -5,7 +5,8 @@ import { useState, useSyncExternalStore } from "react";
 import { usePostHog } from "posthog-js/react";
 import type { ContactFormField } from "@/lib/content/types";
 
-import { describeNetworkFailure, readContactResponse } from "@/lib/contact-response";
+import { acceptedSubmissionId, describeNetworkFailure, readContactResponse } from "@/lib/contact-response";
+import { safeCapture } from "@/lib/analytics/safe-capture";
 import { formatFileSize, prepareUploads, totalBytes } from "@/lib/contact-uploads";
 import { siteConfig } from "@/lib/site-config";
 
@@ -658,6 +659,7 @@ export function TrackedContactForm({
     }
 
     let failure;
+    let submissionId: string | undefined;
 
     try {
       const response = await fetch(normalizedAction, {
@@ -665,11 +667,15 @@ export function TrackedContactForm({
         headers,
         body: submitData,
       });
+      const receipt = response.clone();
 
       // Never `response.json()` straight off. Anything that fails above the
       // route answers in text, and parsing first turns a gateway error into a
       // syntax error nobody can act on.
       failure = await readContactResponse(response);
+      if (!failure) {
+        submissionId = acceptedSubmissionId(await receipt.json().catch(() => ({})));
+      }
     } catch {
       failure = describeNetworkFailure();
     }
@@ -703,9 +709,10 @@ export function TrackedContactForm({
     setCurrentStep(0);
     setStatus("success");
     setStatusMessage("Thanks. Your message has been sent.");
-    posthog?.capture("form_submit_succeeded", {
+    safeCapture(posthog, "form_submit_succeeded", {
       form_action: normalizedAction,
       intake_variant: useQuizIntake ? "quiz" : "legacy",
+      submission_id: submissionId,
       upload_count: uploadFiles.length,
       upload_bytes: totalBytes(uploadFiles),
     });
