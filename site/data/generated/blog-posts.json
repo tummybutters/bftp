@@ -6998,5 +6998,112 @@
         "notes": "No property-specific suitability or savings guarantee. Workbook row 75 national savings scenario intentionally omitted."
       }
     ]
+  },
+  {
+    "sourceQueueId": "commercial_facility_bank-002",
+    "slug": "a-hotel-is-not-an-office-a-water-checklist-for-multi-site-managers",
+    "path": "/blog/a-hotel-is-not-an-office-a-water-checklist-for-multi-site-managers",
+    "canonical": "https://www.backflowtestpros.com/blog/a-hotel-is-not-an-office-a-water-checklist-for-multi-site-managers",
+    "title": "A Hotel Is Not an Office: A Water Checklist for Multi-Site Managers",
+    "metaDescription": "EPA WaterSense shows how commercial water use differs across offices, hotels, restaurants, hospitals, and schools. Build a property-specific water and backflow record.",
+    "excerpt": "National facility shares can help organize a portfolio, but they cannot tell you which assembly or fixture at your property needs attention.",
+    "category": "Commercial property management",
+    "audience": "Multi-property owners, portfolio managers, and facility teams",
+    "geography": "United States",
+    "templateType": "commercial_facility_article",
+    "primaryKeyword": "commercial facility water use by building type",
+    "secondaryKeywords": ["commercial property water checklist", "multi-site backflow records"],
+    "status": "Published",
+    "publishedAt": "2026-09-25T16:00:00.000Z",
+    "updatedAt": "2026-09-25T16:00:00.000Z",
+    "heroFact": {
+      "value": "15%",
+      "label": "EPA's approximate share of U.S. commercial and institutional water use attributed to hotels and other lodging businesses",
+      "context": "This national sector share is not a water-use estimate for a particular hotel or portfolio."
+    },
+    "keyTakeaways": [
+      "Compare properties by their actual uses and equipment, not a single portfolio-wide assumption.",
+      "Keep an assembly inventory, utility notices, test results, and corrective-work records for each service address.",
+      "Use EPA's national figures as context; local service requirements come from the serving water supplier."
+    ],
+    "sections": [
+      {
+        "id": "different-buildings",
+        "kind": "narrative",
+        "title": "One Portfolio, Different Water Demands",
+        "body": [
+          "EPA WaterSense estimates that office buildings account for approximately 9% of U.S. commercial and institutional facility water use, hospitals and other health care facilities 7%, hotels and other lodging businesses 15%, hospitality and food service establishments 15%, and educational facilities 6%. These are shares of the national commercial and institutional total. They are not the percentage of water used inside any one building, and they should not be added up as if these five categories were the entire sector.",
+          "The more useful lesson for a portfolio manager is that a standard checklist needs property-specific details. EPA identifies restrooms, heating and cooling, and landscaping as major uses in offices. Hotels add laundry and kitchens; restaurant kitchens lead their water use. A hospital or school brings a different operating schedule and equipment mix."
+        ]
+      },
+      {
+        "id": "portfolio-inventory",
+        "kind": "checklist",
+        "title": "Build a Record for Each Service Address",
+        "body": [
+          "Start with facts you can verify from maintenance records, utility notices, and a walk-through with the responsible facility team. Do not infer a property's consumption or compliance status from an EPA national percentage."
+        ],
+        "bullets": [
+          "List each property, its serving water supplier, and the person who receives compliance notices.",
+          "Record the location, type, and identifying information of each known testable backflow assembly.",
+          "Keep the latest test report, due date or utility notice, and any repair, replacement, or retest documentation together.",
+          "Note water-using systems that differ by building, such as irrigation, commercial kitchens, cooling equipment, or laundry.",
+          "Flag missing records for confirmation rather than marking an assembly compliant without evidence."
+        ]
+      },
+      {
+        "id": "where-backflow-fits",
+        "kind": "narrative",
+        "title": "Separate Efficiency Work From Backflow Compliance",
+        "body": [
+          "A water-use review may identify leaks or opportunities for more efficient equipment. It does not replace backflow assembly testing. Likewise, a completed assembly test does not measure how much water a building uses. Treat them as related but separate workstreams in the same property record.",
+          "For backflow work, use the serving water supplier's requirements and the property's actual notices to establish which assemblies need testing and when. If a test fails, retain the test result, corrective-work record, and any required follow-up result. A multi-location account benefits from one reporting format, but each address still needs its own evidence."
+        ]
+      },
+      {
+        "id": "next-review",
+        "kind": "narrative",
+        "title": "Make the Next Review Specific",
+        "body": [
+          "Choose a small sample of properties with different uses, such as an office, a hotel, and a restaurant. Compare their actual records, not just their sector labels. Where documents are missing, identify the utility and the assembly before deciding what service to request. This is more useful than ordering identical work across every address on a national assumption.",
+          "Backflow Test Pros handles backflow testing and assembly repair or replacement for properties in its service area. Share the property addresses, utility notices, and available reports so the team can scope the backflow work. A qualified plumbing professional should review fixture or water-efficiency work outside that scope."
+        ]
+      },
+      {
+        "id": "source-and-scope",
+        "kind": "narrative",
+        "title": "Source and Scope",
+        "body": [
+          "Source: U.S. EPA WaterSense, Types of Facilities, https://www.epa.gov/watersense/types-facilities, checked September 25, 2026. BFTP research workbook Commercial Facility Bank row 4 and Stats Repository row 65. EPA's facility shares describe U.S. commercial and institutional water use, not an individual property's consumption, a California market share, or a backflow testing rule."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {"href": "/backflow-testing", "label": "Backflow Assembly Testing", "description": "See what an assembly test covers."},
+      {"href": "/backflow-repair-replacement-services", "label": "Backflow Repair and Replacement", "description": "Plan corrective work when an assembly needs service."}
+    ],
+    "cta": {
+      "heading": "Managing Backflow Work Across Properties?",
+      "body": "Send the addresses and any utility notices or prior reports. We can help organize the testing or corrective work needed at each location we serve.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Real commercial properties with distinct uses, such as an office and a hotel; no invented client sites or water-use chart.",
+    "schemaTypes": ["BlogPosting", "BreadcrumbList"],
+    "reviewFlags": [],
+    "sourceNotes": [
+      {
+        "repositoryRow": 65,
+        "dataPoint": "Share of U.S. commercial and institutional water use by facility type",
+        "value": "Office buildings about 9%; hospitals and health care about 7%; hotels and lodging about 15%; hospitality and food service about 15%; educational facilities about 6%",
+        "scope": "United States commercial and institutional sector",
+        "timePeriod": "EPA page checked September 25, 2026; measurement year not stated on page",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Types of Facilities",
+        "sourceUrl": "https://www.epa.gov/watersense/types-facilities",
+        "authorityType": "Government (federal)",
+        "notes": "Commercial Facility Bank row 4; queue commercial_facility_bank-002. Shares are national context, not property-level estimates."
+      }
+    ]
   }
 ]
