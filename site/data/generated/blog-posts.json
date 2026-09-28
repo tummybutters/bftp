@@ -7105,5 +7105,113 @@
         "notes": "Commercial Facility Bank row 4; queue commercial_facility_bank-002. Shares are national context, not property-level estimates."
       }
     ]
+  },
+  {
+    "sourceQueueId": "commercial_facility_bank-008",
+    "slug": "one-running-fill-valve-can-waste-up-to-4-000-gallons-a-day-in-a-commercial-restroom",
+    "path": "/blog/one-running-fill-valve-can-waste-up-to-4-000-gallons-a-day-in-a-commercial-restroom",
+    "canonical": "https://www.backflowtestpros.com/blog/one-running-fill-valve-can-waste-up-to-4-000-gallons-a-day-in-a-commercial-restroom",
+    "title": "One Running Fill Valve Can Waste Up to 4,000 Gallons a Day in a Commercial Restroom",
+    "metaDescription": "EPA WaterSense says a constantly running tank-type toilet fill valve can waste up to 4,000 gallons a day. A practical checklist for commercial facility teams.",
+    "excerpt": "A running tank-type toilet can be easy to miss during a busy workday. A simple inspection and a clear repair record help facility teams catch the problem.",
+    "category": "Commercial property management",
+    "audience": "Property managers, janitorial leaders, and facility technicians",
+    "geography": "United States",
+    "templateType": "commercial_facility_article",
+    "primaryKeyword": "commercial toilet fill valve leak gallons per day",
+    "secondaryKeywords": ["running toilet commercial restroom", "facility restroom leak checklist"],
+    "status": "Published",
+    "publishedAt": "2026-09-28T16:00:00.000Z",
+    "updatedAt": "2026-09-28T16:00:00.000Z",
+    "heroFact": {
+      "value": "Up to 4,000 gallons/day",
+      "label": "EPA WaterSense example for a constantly running tank-type toilet fill valve",
+      "context": "An upper-end illustration, not a measurement or savings forecast for any particular property."
+    },
+    "keyTakeaways": [
+      "Check tank-type toilets after a flush and record any continuous running by fixture location.",
+      "Have maintenance or a qualified plumber diagnose and repair fixture faults, then document the recheck.",
+      "Keep restroom leak records separate from backflow assembly testing and compliance records."
+    ],
+    "sections": [
+      {
+        "id": "possible-impact",
+        "kind": "narrative",
+        "title": "A Small Fault With a Large Possible Impact",
+        "body": [
+          "A toilet that keeps running after a flush may have a fill valve that is not shutting off properly. In a commercial property, the sound can disappear into the background, especially in a private restroom that sees intermittent use.",
+          "EPA WaterSense says a constantly running tank-type toilet fill valve can waste between 0.5 and 3 gallons per minute, or up to 4,000 gallons per day. This illustrates what a persistent fault can do; it is not an estimate of waste or savings at any particular property. The actual amount depends on the fixture, flow rate, and how long the problem continues."
+        ]
+      },
+      {
+        "id": "where-to-look",
+        "kind": "narrative",
+        "title": "Know Where to Look",
+        "body": [
+          "Tank-type toilets may be found in office suites, staff restrooms, and other private-use spaces. During routine rounds, listen after a flush: does the tank refill and become quiet, or does water continue to run? An unexplained rise in water use can prompt a closer inspection, but it cannot identify the fixture by itself.",
+          "Ask occupants and cleaning staff to report running toilets promptly. They may notice the problem between scheduled maintenance visits."
+        ]
+      },
+      {
+        "id": "restroom-check",
+        "kind": "checklist",
+        "title": "A Practical Restroom Check",
+        "body": [
+          "Use this as a simple observation and follow-up record, not a substitute for a plumbing assessment. A quiet fixture alone does not rule out every leak."
+        ],
+        "bullets": [
+          "List the tank-type toilets in each building or suite.",
+          "Flush each one and confirm that refilling stops.",
+          "Note continuous running, an unusually long refill, or water entering the overflow tube.",
+          "Record the fixture location, observation, and date.",
+          "Send the finding to maintenance or a qualified plumber for diagnosis and repair.",
+          "Recheck the fixture afterward and record the result."
+        ]
+      },
+      {
+        "id": "separate-records",
+        "kind": "narrative",
+        "title": "Keep the Property Record Clear",
+        "body": [
+          "For a property manager, the useful fixture record is straightforward: what was observed, where, who handled it, and whether a follow-up check confirmed the running stopped. Keep that maintenance record distinct from the property's backflow documentation.",
+          "Backflow Test Pros handles backflow assembly testing, repair, and replacement in its service area, not toilet or plumbing-fixture repairs. A running toilet does not mean a backflow assembly has failed. If your team is organizing commercial property records, BFTP can help with the backflow side while your plumber or maintenance team handles the fill valve."
+        ]
+      },
+      {
+        "id": "source-and-scope",
+        "kind": "narrative",
+        "title": "Source and Scope",
+        "body": [
+          "Source: U.S. EPA WaterSense, Saving Water and Costs in Restrooms with WaterSense, May 28, 2025 webinar, slide 15 (PDF page 14): https://www.epa.gov/system/files/documents/2025-07/watersense_webinar_saving_water_and_costs_in_restrooms_may_28_-2025.pdf. The figures describe a constantly running tank-type toilet fill valve. They are not a property-specific measurement, a promised repair outcome, or a backflow testing requirement."
+        ]
+      }
+    ],
+    "internalLinks": [
+      {"href": "/backflow-testing", "label": "Backflow Assembly Testing", "description": "See what an assembly test covers."},
+      {"href": "/backflow-repair-replacement-services", "label": "Backflow Repair and Replacement", "description": "Plan corrective work when a backflow assembly needs service."}
+    ],
+    "cta": {
+      "heading": "Managing Backflow Work Across Properties?",
+      "body": "Share the service addresses and any utility notices or prior reports. We can help scope the backflow testing or corrective work needed at locations we serve.",
+      "label": "Schedule Backflow Service",
+      "href": "/contact-backflowtestpros"
+    },
+    "imageBrief": "Real commercial restroom with a tank-type toilet; no invented client site or leak measurement.",
+    "schemaTypes": ["BlogPosting", "BreadcrumbList"],
+    "reviewFlags": [],
+    "sourceNotes": [
+      {
+        "repositoryRow": 71,
+        "dataPoint": "Running tank-type toilet fill valve leak magnitude",
+        "value": "0.5 to 3 gallons per minute; up to 4,000 gallons per day",
+        "scope": "Constantly running tank-type toilet fill valve",
+        "timePeriod": "May 28, 2025 webinar",
+        "sourceOrganization": "U.S. EPA WaterSense",
+        "sourceTitle": "Saving Water and Costs in Restrooms with WaterSense",
+        "sourceUrl": "https://www.epa.gov/system/files/documents/2025-07/watersense_webinar_saving_water_and_costs_in_restrooms_may_28_-2025.pdf",
+        "authorityType": "Government (federal)",
+        "notes": "Commercial Facility Bank row 10; Stats Repository row 71; queue commercial_facility_bank-008. EPA slide 15, PDF page 14."
+      }
+    ]
   }
 ]
