@@ -34,6 +34,7 @@ import {
 } from "@/lib/contact-response";
 import { safeCapture } from "@/lib/analytics/safe-capture";
 import { useAnalyticsReady } from "@/lib/analytics/posthog-provider";
+import { readAttribution } from "@/lib/lead-attribution";
 import { siteConfig } from "@/lib/site-config";
 import s from "./contact-quiz.module.css";
 const cx = (names: string) =>
@@ -64,6 +65,7 @@ const initialContact = {
   unit: "",
   company: "",
   preferredDate: "",
+  referredBy: "",
 };
 export function ContactQuiz() {
   const ph = usePostHog(),
@@ -114,6 +116,8 @@ export function ContactQuiz() {
     setServiceAnswered(intent.serviceAnswered);
     setProperty(intent.property);
     setStep(intent.serviceAnswered ? 1 : 0);
+    const referredBy = readAttribution().referredBy;
+    if (referredBy) setContact((c) => ({ ...c, referredBy }));
     return () => {
       if (timer.current) clearTimeout(timer.current);
     };
@@ -271,6 +275,7 @@ export function ContactQuiz() {
     setStatus("sending");
     setError("");
     const [first, ...last] = contact.name.trim().split(/\s+/);
+    const attribution = readAttribution();
     const data = new FormData();
     const fields = {
       intake_variant: INTAKE_VARIANT,
@@ -297,6 +302,9 @@ export function ContactQuiz() {
       page_path: siteConfig.contactPath,
       source_url: location.origin + location.pathname,
       lead_source: "Website Contact Form",
+      referred_by: contact.referredBy,
+      landing_url: attribution.landingUrl,
+      came_from: attribution.cameFrom,
     };
     Object.entries(fields).forEach(([k, v]) => data.set(k, v));
     files.forEach((file) => data.append("contact_uploads", file));
@@ -583,20 +591,37 @@ export function ContactQuiz() {
                           />
                         </label>
                       </div>
-                      <label>
-                        Phone
-                        <input
-                          className="ph-no-capture"
-                          required
-                          type="tel"
-                          autoComplete="tel"
-                          maxLength={25}
-                          value={contact.phone}
-                          onChange={(e) =>
-                            setContact({ ...contact, phone: e.target.value })
-                          }
-                        />
-                      </label>
+                      <div className={cx("contact-grid")}>
+                        <label>
+                          Phone
+                          <input
+                            className="ph-no-capture"
+                            required
+                            type="tel"
+                            autoComplete="tel"
+                            maxLength={25}
+                            value={contact.phone}
+                            onChange={(e) =>
+                              setContact({ ...contact, phone: e.target.value })
+                            }
+                          />
+                        </label>
+                        <label>
+                          Referred by
+                          <input
+                            className="ph-no-capture"
+                            placeholder="Optional"
+                            maxLength={80}
+                            value={contact.referredBy}
+                            onChange={(e) =>
+                              setContact({
+                                ...contact,
+                                referredBy: e.target.value,
+                              })
+                            }
+                          />
+                        </label>
+                      </div>
                       <div
                         className={cx("contact-methods")}
                         aria-label="Preferred contact method"

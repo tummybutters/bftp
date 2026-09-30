@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato, PT_Sans } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics, PostHogProvider } from "@/lib/analytics";
+import { FirstTouch } from "@/components/chrome/first-touch";
 import { brandAssets } from "@/lib/design";
 import { siteConfig } from "@/lib/site-config";
 
@@ -61,6 +62,7 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <FirstTouch />
         {!isPreview && <GoogleAnalytics />}
         <PostHogProvider apiHost={posthogApiHost} publicKey={posthogPublicKey}>
           {children}

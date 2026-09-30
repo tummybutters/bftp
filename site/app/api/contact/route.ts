@@ -95,6 +95,8 @@ function getLeadAnalyticsProperties(
     city: submission.city || undefined,
     page_path: submission.pagePath || undefined,
     lead_source: submission.leadSource || undefined,
+    referred: Boolean(submission.referredBy),
+    landing_url_present: Boolean(submission.landingUrl),
     submitted_at: submission.submittedAt,
     email_domain: getEmailDomain(submission.email) || undefined,
     has_company_name: Boolean(submission.companyName),
@@ -173,6 +175,9 @@ function buildNotificationText(submission: ContactSubmission) {
     ...(submission.urgency ? [`Urgency: ${submission.urgency}`] : []),
     ...(submission.city ? [`City: ${submission.city}`] : []),
     `Lead Source: ${submission.leadSource || "Unknown"}`,
+    ...(submission.referredBy ? [`Referred By: ${submission.referredBy}`] : []),
+    ...(submission.landingUrl ? [`Landing Page: ${submission.landingUrl}`] : []),
+    ...(submission.cameFrom ? [`Came From: ${submission.cameFrom}`] : []),
     `Page: ${submission.pagePath || "Unknown"}`,
     ...(submission.sourceUrl ? [`Source URL: ${submission.sourceUrl}`] : []),
     ...(submission.referrer ? [`Referrer: ${submission.referrer}`] : []),
@@ -285,6 +290,18 @@ function buildNotificationHtml(submission: ContactSubmission) {
     `<p style="margin:0 0 8px;"><strong>Lead Source:</strong> ${escapeHtml(
       submission.leadSource || "Unknown",
     )}</p>`,
+    ...(
+      [
+        ["Referred By", submission.referredBy],
+        ["Landing Page", submission.landingUrl],
+        ["Came From", submission.cameFrom],
+      ] as const
+    )
+      .filter(([, value]) => value)
+      .map(
+        ([label, value]) =>
+          `<p style="margin:0 0 8px;"><strong>${label}:</strong> ${escapeHtml(value)}</p>`,
+      ),
     `<p style="margin:0 0 16px;"><strong>Page:</strong> ${pagePath}</p>`,
     ...(submission.sourceUrl
       ? [

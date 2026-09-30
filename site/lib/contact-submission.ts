@@ -10,6 +10,7 @@ import {
   formatFileSize,
   UPLOAD_BUDGET_BYTES as MAX_UPLOAD_BYTES,
 } from "./contact-uploads";
+import { cleanReferralCode } from "./lead-attribution";
 
 export interface ContactSubmission {
   intakeVariant: string;
@@ -44,6 +45,9 @@ export interface ContactSubmission {
   sourceUrl: string;
   leadTopic: string;
   leadSource: string;
+  referredBy: string;
+  landingUrl: string;
+  cameFrom: string;
   city: string;
   referrer: string;
   userAgent: string;
@@ -214,6 +218,9 @@ export function normalizeSubmission(
     leadSource:
       readField(formData, ["lead_source", "leadSource"]) ||
       "Website Contact Form",
+    referredBy: cleanReferralCode(readField(formData, ["referred_by", "referredBy"])),
+    landingUrl: readField(formData, ["landing_url"]).slice(0, 500),
+    cameFrom: readField(formData, ["came_from"]).slice(0, 500),
     city: readField(formData, [
       "address_city",
       "city",
