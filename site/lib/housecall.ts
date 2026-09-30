@@ -31,6 +31,9 @@ export interface HousecallLeadSubmission {
   sourceUrl: string;
   leadTopic: string;
   leadSource: string;
+  referredBy?: string;
+  landingUrl?: string;
+  cameFrom?: string;
   city: string;
   referrer: string;
   userAgent: string;
@@ -220,6 +223,18 @@ function buildHousecallNote(submission: HousecallLeadSubmission) {
     lines.push(`Additional Details: ${submission.notes}`);
   }
 
+  if (submission.referredBy) {
+    lines.push(`Referred By: ${submission.referredBy}`);
+  }
+
+  if (submission.landingUrl) {
+    lines.push(`Landing Page: ${submission.landingUrl}`);
+  }
+
+  if (submission.cameFrom) {
+    lines.push(`Came From: ${submission.cameFrom}`);
+  }
+
   if (submission.pagePath) {
     lines.push(`Page Path: ${submission.pagePath}`);
   }
@@ -246,6 +261,8 @@ function cleanTagValue(value: string) {
 function buildHousecallTags(submission: HousecallLeadSubmission) {
   const candidates = [
     "Website Intake",
+    "Source: Website form",
+    submission.referredBy ? "Referral" : "",
     submission.leadTopic ? `Service: ${submission.leadTopic}` : "",
     submission.propertyType ? `Property: ${submission.propertyType}` : "",
     submission.county ? `County: ${submission.county}` : "",

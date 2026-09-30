@@ -195,6 +195,61 @@ describe("Actual contact handler with captured provider requests", () => {
       calls.every((c) => /api\.(agentmail\.to|housecallpro\.com)/.test(c.url)),
     ).toBe(true);
   });
+  it("tags the HCP customer and lead with the website source and the referrer", async () => {
+    const calls: { url: string; body: Record<string, unknown> }[] = [];
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string | URL, options?: RequestInit) => {
+        calls.push({ url: String(url), body: JSON.parse(String(options?.body || "{}")) });
+        return Response.json(
+          String(url).includes("agentmail")
+            ? { message_id: "fixture-message", thread_id: "fixture-thread" }
+            : { id: String(url).includes("customers") ? "fixture-customer" : "fixture-lead" },
+        );
+      }),
+    );
+    const { POST } = await import("@/app/api/contact/route");
+    const response = await POST(
+      request(
+        form({
+          referred_by: "Jane-Smith",
+          landing_url: "https://www.backflowtestpros.com/?ref=jane-smith",
+          came_from: "https://www.google.com/",
+        }),
+      ),
+    );
+    expect(response.status).toBe(200);
+    expect(calls[0].body.text).toContain("Referred By: Jane Smith");
+    expect(calls[0].body.text).toContain("Came From: https://www.google.com/");
+    for (const task of queued.tasks) await task();
+    const patch = calls.find((c) => c.url.endsWith("/customers/fixture-customer"));
+    const lead = calls.find((c) => c.url.endsWith("/leads"));
+    for (const tags of [patch?.body.tags, lead?.body.tags])
+      expect(tags).toEqual(expect.arrayContaining(["Source: Website form", "Referral"]));
+    expect(patch?.body.notes).toContain("Referred By: Jane Smith");
+    expect(patch?.body.notes).toContain("Landing Page: https://www.backflowtestpros.com/?ref=jane-smith");
+  });
+  it("tags an unreferred website lead with the source only", async () => {
+    const calls: { url: string; body: Record<string, unknown> }[] = [];
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string | URL, options?: RequestInit) => {
+        calls.push({ url: String(url), body: JSON.parse(String(options?.body || "{}")) });
+        return Response.json(
+          String(url).includes("agentmail")
+            ? { message_id: "fixture-message", thread_id: "fixture-thread" }
+            : { id: String(url).includes("customers") ? "fixture-customer" : "fixture-lead" },
+        );
+      }),
+    );
+    const { POST } = await import("@/app/api/contact/route");
+    await POST(request(form()));
+    for (const task of queued.tasks) await task();
+    const tags = calls.find((c) => c.url.endsWith("/leads"))?.body.tags as string[];
+    expect(tags).toContain("Source: Website form");
+    expect(tags).not.toContain("Referral");
+    expect(calls[0].body.text).not.toContain("Referred By");
+  });
   it("blocks every provider write in a Vercel preview even when live credentials are inherited", async () => {
     vi.stubEnv("VERCEL_ENV", "preview");
     const fetch = vi.fn();
